@@ -447,3 +447,96 @@ test('monster listings support columns, difficulty sorting, terrain reports and 
   assert.equal(W.storage.get('wandering-enemies').rows.length, 3);
   assert.match(W.routes.wander.generate({ game: 'data', data: customFixture, terrain: 'none' }), /No Enemies Found/);
 });
+
+test('settlements number every building, keep residents local and respect race/population controls', async () => {
+  for (const [route, page, game, phpGame] of [['town', 'tool_ftown.php', 'fantasy', 'Fantasy'], ['ttown', 'tool_ttown.php', 'tt5e', 'Tunnels & Trolls 5th Edition'], ['wtown', 'tool_wtown.php', 'osric', 'OSRIC'], ['mtown', 'tool_mtown.php', 'mutfut', 'Mutant Future']]) {
+    const options = { game, x_game: phpGame, map_rooms: 12, empty: '1', rulers: '0', ruler: '0', stores: '0', guilds: '0', police: '0', church: '0', banks: '0', law: '0', x_race_human: '1', species_human: '1', species_mhuman: '0', species_insect: '0', species_animal: '0', species_plant: '0', species_robot: '0', race: 'Human', race_part: 100, seed: 'town-buildings', might1: 1, might2: 8 };
+    const php = await phpResult(page, options);
+    assert.equal(occurrences(php, route === 'mtown' ? /width="80"><font size="2">\d+<\/font>/g : /<font size="3">\d+<\/font>|<font size='3'>\d+<\/font>/g), 12, page);
+    const js = W.renderRoute('#/' + route + '?' + new URLSearchParams({ ...options, run: '1' })).html;
+    assert.equal(occurrences(js, /class="town-building"/g), 12, route);
+    const town = W.storage.get('last-town');
+    assert.equal(town.buildings.length, 12);
+    for (const building of town.buildings.filter(b => b.owner)) assert.equal(building.owner.race.toLowerCase(), 'human', route);
+    assert.doesNotMatch(js, /class="geomorph"|class="town-business"|ROYAL VAULT/);
+  }
+});
+test('settlements assign each merchant and institution a distinct numbered building', () => {
+  for (const route of ['town', 'ttown', 'wtown', 'mtown']) {
+    W.rng = W.random(route);
+    const js = W.routes[route].generate({ map_rooms: 50, empty: '0', stock: 100, shelf: '1', rulers: '0', law: '0' });
+    const town = W.storage.get('last-town');
+    assert.equal(town.buildings.length, 50);
+    assert.equal(new Set(town.buildings.filter(b => b.type).map(b => b.number)).size, occurrences(js, /class="town-business"/g));
+    assert.match(js, /In Stock/);
+    assert.match(js, /Merchants/);
+    assert.doesNotMatch(js, /undefined|NaN/);
+    const owners = town.buildings.filter(b => b.type).map(b => b.owner.name);
+    for (const name of owners) assert.ok(js.includes(W.escape(name)));
+    if (route === 'ttown') assert.match(js, /STR:|CON:/);
+  }
+});
+
+test('Adventurers Guild retains class counts, level caps and character sections', async () => {
+  for (const [route, page] of [['bxadvg', 'tool_bxadvg.php'], ['ladvg', 'tool_ladvg.php'], ['oadvg', 'tool_oadvg.php']]) {
+    const p = { x_qty_cleric: 2, x_qty_fighter: 1, x_qty_mage: 1, x_qty_thief: 1, x_lvl1: 3, x_lvl2: 3, x_sex: 'Female', x_output: 'Character Listing', x_name: '1', x_show_al: '1', x_show_sk: '1', x_show_eq: '1', x_show_ss: '1', x_lang_set: '1', x_maxhp: '1' };
+    const php = await phpResult(page, p);
+    const js = W.routes[route].generate(p);
+    assert.equal(occurrences(js, /class="character"/g), 5);
+    assert.match(php, /Cleric/i); assert.match(js, /Cleric/);
+    assert.match(php, /Fighter/i); assert.match(js, /Fighter/);
+    assert.match(js, /Saving Throws/); assert.match(js, /Attack Rolls/); assert.match(js, /Equipment:/);
+    const characters = W.storage.get('last-characters').characters;
+    for (const c of characters) { assert.equal(c.sex, 'Female'); assert.equal(c.level, 3); assert.ok(c.hitPoints > 0); assert.equal(c.saves.length, 5); }
+  }
+  for (const [className, limit] of [['Dwarf', 12], ['Elf', 10], ['Halfling', 8]]) {
+    assert.equal(W.character({ x_lvl1: 20, x_lvl2: 20 }, 'll', className).level, limit);
+  }
+});
+test('all basic class levels use original progression, saves and spell lists', () => {
+  for (const rules of ['bx', 'll']) for (const className of ['Cleric', 'Dwarf', 'Elf', 'Fighter', 'Halfling', 'Magic-User', 'Thief']) for (let level = 1; level <= (rules === 'bx' ? 14 : 20); level++) {
+    const c = W.character({ x_lvl1: level, x_lvl2: level, x_maxhp: '1' }, rules, className);
+    assert.equal(c.stats.STR >= 3 && c.stats.STR <= 18, true);
+    assert.ok(c.saves.every(n => Number.isInteger(n) && n > 0));
+    assert.ok(c.xp >= 0);
+    if (className === 'Magic-User' || className === 'Elf') assert.ok(c.spells.length > 0);
+    assert.doesNotMatch(W.renderCharacter(c, { x_show_ss: '1' }), /undefined|NaN/);
+  }
+});
+
+test('adventures keep room keys tied to maps and obey all disabled-content controls', async () => {
+  for (const [route, page, game, phpGame] of [['ultimate', 'tool_ultimate.php', 'lablord', 'Labyrinth Lord'], ['uexfl', 'tool_uexfl.php', 'meta', 'Metamorphosis Alpha'], ['uruins', 'tool_uruins.php', 'mutfut', 'Mutant Future']]) {
+    const options = { game, x_package: phpGame, x_area: 'Test Dungeon', map_rooms: 4, x_c_c: 0, x_t_c: 0, x_l_c: 0, x_u_c: 0, x_furnish: '0', x_weird: 0, atmo: 999, x_outside: '0', wandering: '0', map_numbers: 1 };
+    const php = await phpResult(page, options);
+    const js = W.routes[route].generate(options);
+    assert.match(php, /Test Dungeon/);
+    assert.equal(occurrences(js, /class="adventure-room"/g), 4);
+    assert.doesNotMatch(js, /class="room-encounter"|class="room-trap"|class="room-treasure"|class="adventure-wandering"/);
+    assert.equal(W.storage.get('last-adventure').rooms.length, 4);
+  }
+});
+test('delve simple, complex and progressive modes create matching floor/room keys', () => {
+  for (const mode of ['Simple', 'Complex', 'Progressive']) {
+    W.rng = W.random('delve-' + mode);
+    const js = W.routes.delve.generate({ game: 'lablord', width: 1, height: 1, x_delve: mode, x_c_c: 0, x_t_c: 0, x_l_c: 0, wandering: '0' });
+    const adventure = W.storage.get('last-adventure');
+    assert.equal(occurrences(js, /class="adventure-room"/g), adventure.rooms.length);
+    assert.ok(adventure.rooms.length > 0);
+    if (mode !== 'Simple') {
+      assert.equal(occurrences(js, /class="delve-floor"/g), adventure.floors.length);
+      assert.equal(adventure.floors.reduce((sum, floor) => sum + floor.rooms.length, 0), adventure.rooms.length);
+      for (const floor of adventure.floors) for (const room of floor.rooms) assert.ok(adventure.rooms.some(r => r.floor === floor.number && r.number === room.number));
+      if (mode === 'Progressive') assert.ok(adventure.floors.at(-1).level > adventure.floors[0].level);
+    }
+    assert.doesNotMatch(js, /undefined|NaN/);
+  }
+});
+test('adventure contents honor forced counts and every fantasy trap table entry renders', () => {
+  for (const game of ['lablord', 'tt5e', 'tt7e', 'ttde', 'ssxs', 'osric']) {
+    for (let trap = 0; trap < 51; trap++) assert.doesNotMatch(W.trap({ game }, 'room', trap), /undefined|NaN|\[object Object\]/);
+    const html = W.routes.ultimate.generate({ game, map_rooms: 2, x_c_c: 100, x_c_c_min: 2, x_c_c_max: 2, x_t_c: 100, x_t_c_min: 3, x_t_c_max: 3, x_l_c: 100, x_l_c_min: 2, x_l_c_max: 2, x_l_c_low: 0, x_weird: 0, wandering: '0' });
+    assert.equal(occurrences(html, /class="room-encounter"/g), 4, game);
+    assert.equal(occurrences(html, /class="room-trap"/g), 6, game);
+    assert.equal(occurrences(html, /class="room-treasure"/g), 4, game);
+  }
+});

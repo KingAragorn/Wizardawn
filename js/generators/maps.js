@@ -13,23 +13,24 @@
     const keyed = String(params.keyed) === '1';
     let key = W.number(params.start ?? params.map_numbers, 1, 1, 100000) - 1;
     let available = D.geomorphs;
-    const castleIndex = ['City', 'Keep', 'Village'].includes(type) && W.d(2) === 1 ? W.rng.int(0, width * height - 1) : -1;
+    const castleIndex = params.castle !== '0' && ['City', 'Keep', 'Village'].includes(type) && (params.castle === '1' || W.d(2) === 1) ? W.rng.int(0, width * height - 1) : -1;
     const castle = type === 'Village' ? 'village_ruler' : width * height >= 50 ? 'keep_king' : width * height >= 20 ? W.pick(['keep_king', 'keep_prince']) : width * height >= 5 ? W.pick(['keep_prince', 'keep_baron']) : 'keep_baron';
     const climate = W.d(100) > 30 ? 'scifi-ma-desert' : 'scifi-ma-woods';
     if (kind === 'dungeon') {
       if (side) available = available.filter(t => t.image.includes('dgside'));
       else {
-        const terrain = type.toLowerCase() === 'dungeon' ? ['dungeon'] : type.toLowerCase() === 'cavernous' ? ['cave'] : ['cave', 'dungeon'];
+        const terrain = type.toLowerCase() === 'dungeon' ? ['dungeon'] : ['cavernous', 'water cavern'].includes(type.toLowerCase()) ? ['cave'] : ['cave', 'dungeon'];
         const selectedAuthors = authors.filter(([slug]) => String(params['cave_' + slug] ?? '1') === '1');
         available = available.filter(t => terrain.includes(t.terrain) && selectedAuthors.some(([, token]) => t.image.includes(token)));
       }
     } else if (kind === 'settlement') {
       const terrains = type === 'Village' ? ['village', 'village_ruler'] : type === 'Keep' ? ['keep', 'city', castle, 'docks'] : ['city', castle, 'docks'];
-      available = available.filter(t => terrains.includes(t.terrain));
+      available = available.filter(t => terrains.includes(t.terrain) && (params.water !== '0' || t.terrain !== 'docks'));
     } else if (kind === 'scifi') {
       const terrains = type === 'Building' ? ['scifi-building'] : type === 'Spaceship' ? ['scifi-ship'] : ['scifi-ship', climate];
       available = available.filter(t => terrains.includes(t.terrain));
     } else available = available.filter(t => t.terrain === ({ sewer: 'sewers', ruins: 'ruins', suburb: 'suburb' }[kind] || kind));
+    if (params.interior === '1') available = available.filter(t => t.wayout !== 1 && t.delve !== 'X' && (type === 'Water Cavern' ? t.delve === 'W' : t.delve !== 'W'));
     const tiles = [], rooms = [], gates = new Set();
     const dock = W.d(4);
     for (let y = 0; y < height + 2; y++) for (let x = 0; x < width + 2; x++) {
@@ -62,9 +63,11 @@
       const left = 20 + (x ? border + (x - 1) * 300 : 0), top = 20 + (y ? topHeight + (y - 1) * 300 : 0);
       const image = (kind === 'scifi' && String(params.geomorph_colored) === '1' ? 'bw_' : '') + chosen.image;
       tiles.push({ image, left, top, width: tileWidth, height: tileHeight, spot });
-      if (keyed) for (const coordinate of chosen.rooms) {
+      const levels = side && params.complex === '1' ? chosen.more.split('_').filter(Boolean).map(cell => { const [coordinate, type, size] = cell.split('^'); return { coordinate: +coordinate, type, size }; }) : chosen.rooms.map(coordinate => ({ coordinate, type: chosen.terrain === 'cave' ? 'C' : 'D' }));
+      if (keyed) for (const area of levels) {
+        const coordinate = area.coordinate;
         const columns = tileWidth === 150 ? 5 : 10;
-        rooms.push({ number: ++key, x: left + (((coordinate - 1) % columns) * 10 + 5) * 3 - 2, y: top + (Math.floor((coordinate - 1) / columns) * 10 + 5) * 3 - 3 });
+        rooms.push({ number: ++key, type: area.type, size: area.size, x: left + (((coordinate - 1) % columns) * 10 + 5) * 3 - 2, y: top + (Math.floor((coordinate - 1) / columns) * 10 + 5) * 3 - 3 });
       }
     }
     const html = `<div class="geomorph-map" role="img" aria-label="${W.escape(type)} map" style="position:relative;background:white;width:${fullWidth}px;height:${fullHeight}px">${tiles.map(t => `<img class="geomorph" src="maps/${W.escape(t.image)}" alt="${t.spot || 'central'} geomorph" style="position:absolute;left:${t.left}px;top:${t.top}px;width:${t.width}px;height:${t.height}px">`).join('')}${rooms.map(r => `<span class="map-number" style="position:absolute;left:${r.x}px;top:${r.y}px;font:12px Arial;color:red;background:white">${r.number}</span>`).join('')}</div>`;

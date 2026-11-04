@@ -88,7 +88,7 @@
       const magic = potions.length && W.d(100) <= chance;
       let item;
       if (magic && W.isTroll(p)) { const potion = W.pick(W.trollPotions(p)); item = `${potion.name} (${potion.effect})`; }
-      else item = magic ? W.pick(potions) : W.reagent(game, 3);
+      else item = magic ? W.potionChoice(p) : W.reagent(game, 3);
       return [i, esc(`${W.bottle()} (${magic ? item : 'filled with ' + item})`), ...(min ? [magic ? 'Magic' : `${W.rng.int(Math.max(1, min), Math.max(1, max))}gp`] : [])];
     }));
   });
