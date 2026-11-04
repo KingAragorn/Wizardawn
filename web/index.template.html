@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wizardawn – Generators</title>
+<link rel="stylesheet" href="launcher.css">
+</head>
+<body>
+<main>
+  <h1>Wizardawn</h1>
+  <p class="lede">Random generators and tools for old-school role-playing games, by Wizardawn. This copy runs entirely in your browser: the original PHP code runs on PHP&nbsp;7.4 compiled to WebAssembly, with the database bundled as SQLite. No server is needed and nothing you make is sent anywhere.</p>
+  <div id="status" class="status">Starting the generator engine… (first visit downloads about 17&nbsp;MB)</div>
+  <p><a class="btn" href="index.php">Open the original Wizardawn portal</a></p>
+<!--LISTS-->
+  <footer>
+    <p>Wizardawn generators and material © Wizardawn (wizardawn.com). Game licences and notices are kept as published: see <a href="notices.php">Notices</a> and the <a href="lic/">lic/</a> folder (Open Game License and others). Fonts: Cinzel and EB Garamond, SIL Open Font License (<a href="fonts/OFL-Cinzel.txt">Cinzel</a>, <a href="fonts/OFL-EBGaramond.txt">EB Garamond</a>). PHP runtime: WordPress Playground php-wasm (GPL-2.0-or-later), PHP licence.</p>
+    <p>Build __BUILD_ID__</p>
+  </footer>
+</main>
+<script>
+(async () => {
+  const s = document.getElementById('status');
+  const say = (t, c) => { s.textContent = t; s.className = 'status ' + (c || ''); };
+  if (!('serviceWorker' in navigator)) { say('This browser does not support service workers, so the generators cannot run here. Try a current Chrome, Firefox, Edge or Safari (not in private mode).', 'bad'); return; }
+  try {
+    await navigator.serviceWorker.register('sw.js', { type: 'module', scope: './' });
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) {
+      await new Promise((ok) => navigator.serviceWorker.addEventListener('controllerchange', ok, { once: true }));
+    }
+    const r = await fetch('help_about.php', { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    say('Ready. Pick a generator below.', 'ok');
+  } catch (e) { say('The generator engine failed to start: ' + e.message, 'bad'); }
+})();
+</script>
+</body>
+</html>

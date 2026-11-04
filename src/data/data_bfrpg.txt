@@ -1,0 +1,1439 @@
+This is the data file for the Basic Fantasy Role-Playing Game.  This consists of creatures and treasure from the core rulebook.
+You can use this with some of the tools here that allow for data files to be input. You may only want to use 
+this file if you want to customize your creations. You may have no electrum in your land or maybe you want to 
+remove the chance of dinosaurs from appearing. You may want to add custom monsters and items. Anything is possible.
+
+This is published under the Open Game License Version 1.0a (which can be found at http://www.wizardawn.com/rpg/lic_ogl.html)
+
+Below are the codes used for the creatures' terrain types...
+
+DG = Dungeon
+PF = Forest
+PH = Hills
+PM = Mountains
+PP = Plains
+PS = Swamp
+PD = Desert
+FW = Freshwater
+SW = Sea
+CF = Snowy Forest
+CH = Snowy Hills
+CM = Snowy Mountains
+CP = Snowy Plains
+TF = Jungle/Tropics Forest
+TH = Jungle/Tropics Hills
+TM = Jungle/Tropics Mountains
+TS = Jungle/Tropics Swamp
+
+--BEGIN--
+Aboleth	DG FW SW	9	1	[AC: 16 | HD: 8*** | ATK: 4 tentacles | DMG: 1d6 each | MV: 10` Swim 60` | #APP: 1, Lair 1d3+1 | SV: Magic User: 8 | ML: 9 | TRS: H | XP: 1085 ]
+Alicorn	PH	5	2	[AC: 19 | HD: 4* | ATK: 2 hooves/1 horn | DMG: 2d4/2d4/2d6 | MV: 70` | #APP: Wild 1d8 | SV: Fighter: 6 | ML: 9 | TRS: None | XP: 280 ]
+Allip	CF CH CM CP DG PF PH PM PP PS TF TH TM TS	7	1	[AC: 15 | HD: 6** | ATK: 1 touch + special | DMG: energy drain (2 levels) | MV: Fly 30` | #APP: 1d4 Lair 1d6 | SV: Fighter: 6 | ML: 12 | TRS: None | XP: 405 ]
+Ankheg	DG	6	3	[AC: 18 | HD: 5* | ATK: 1 bite + special | DMG: 2d6 + special | MV: 30` Burrow 20` | #APP: 2d8 Wild 2d8 Lair 1 | SV: Fighter: 5 | ML: 7 | TRS: None | XP: 405 ]
+Ant Lion, Giant	DG PD PF PH PP TF TH	5	2	[AC: 16 | HD: 4 | ATK: 1 bite | DMG: 1d10 | MV: 40` | #APP: 1d4 Wild 1d6 Lair | SV: Fighter: 4 | ML: 8 | TRS: None | XP: 240 ]
+Ant, Giant	PD PP PF PH TF TH DG	5	3	[AC: 17 | HD: 4 | ATK: 1 | DMG: 2d6 | MV: 60` (10`) | #APP: 2d6, Wild 2d6, Lair 4d6 | SV: Fighter: 4 | ML: 7 on first | TRS: U or special | XP: 240 ]
+Antelope	PF PH PP	2	13	[AC: 13 | HD: 1 to 4 | ATK: 1 butt | DMG: 1d4 or 1d6 or 1d8 | MV: 80` (10`) | #APP: Wild 3d10 | SV: Fighter: 1 to 4 (as Hit Dice) | ML: 5 (7) | TRS: None | XP: 25 - 240 ]
+Anubian	DG PD	2	13	[AC: 14 (11) | HD: 1+1 | ATK: 1 | DMG: 1d4 or weapon | MV: 40` (subject to encumbrance, usually 30`) | #APP: 1d6, wild 2d4, lair 4d8 | SV: Fighter: 1 | ML: 8 | TRS: Q, R each; D, K in lair | XP: 25 ]
+Ape, Carnivorous	DG TF TH TS	5	2	[AC: 14 | HD: 4 | ATK: 2 claws | DMG: 1d4/1d4 | MV: 40` | #APP: 1d6, Wild 2d4, Lair 2d4 | SV: Fighter: 4 | ML: 7 | TRS: None | XP: 240 ]
+Ape, Winged	TF TH TS	4	2	[AC: 14 | HD: 3 | ATK: 2 claws or 1 thrown rock | DMG: 1d4/1d4 or 1d6 | MV: 40` Fly 40` (10`) | #APP: 1d6, Wild 2d4, Lair 2d4 | SV: Fighter: 4 | ML: 7 (9 in fl | TRS: None | XP: 240 ]
+Aranea	DG PF PH PM TF TH TM	5	2	[AC: 13 | HD: 4** | ATK: 1 bite or 1 web or spells | DMG: 1d6+poison or web or spells | MV: 50` Climb 30` | #APP: 1d6 Wild/Lair 1d6 | SV: Magic-User | ML: 7 | TRS: D | XP: 320 ]
+Assassin Vine	PF PH PS TF TH TS	7	1	[AC: 15 | HD: 6 | ATK: 1 + special | DMG: 1d6 + special | MV: 5` | #APP: 2d2 | SV: Fighter: 6 | ML: 12 | TRS: U | XP: 555 ]
+Basilisk	DG PF PH PM PP PS TF TH TM	7	13	[AC: 16 | HD: 6** | ATK: 1 bite/1 gaze | DMG: 1d10/petrification | MV: 20` (10`) | #APP: 1d6, Wild 1d6, Lair 1d6 | SV: Fighter: 6 | ML: 9 | TRS: F | XP: 610 ]
+Bat	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	13	[AC: 14 | HD: 1 Hit Point | ATK: 1 | DMG: Confusion | MV: 30` Fly 40` | #APP: 1d100, Wild 1d100, Lair 1d100 | SV: Normal Man | ML: 6 | TRS: None | XP: 10 ]
+Bat, Giant	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	13	5	[AC: 14 | HD: 12 | ATK: 1 bite | DMG: 1d4 | MV: 10` Fly 60` (10`) | #APP: 1d10, Wild 1d10, Lair 1d10 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 75 ]
+Bear, Cave	PF PH PM CF CH CM DG	8	5	[AC: 15 | HD: 7 | ATK: 2 claws/1 bite + hug | DMG: 1d8/1d8/2d6 + 2d8 hug | MV: 40` | #APP: 1d2, Wild 1d2, Lair 1d2 | SV: Fighter: 7 | ML: 9 | TRS: None | XP: 670 ]
+Bear, Grizzly	PP PF PH PM	6	3	[AC: 14 | HD: 5 | ATK: 2 claws/1 bite + hug | DMG: 1d4/1d4/1d8 + 2d8 hug | MV: 40` | #APP: 1, Wild 1d4, Lair 1d4 | SV: Fighter: 5 | ML: 8 | TRS: None | XP: 360 ]
+Bear, Polar	CF CH CM CP FW PF PH PM PP	7	2	[AC: 14 | HD: 6 | ATK: 2 claws/1 bite + hug | DMG: 1d6/1d6/1d10 + 2d8 hug | MV: 40` | #APP: 1, Wild 1d2, Lair 1d2 | SV: Fighter: 6 | ML: 8 | TRS: None | XP: 500 ]
+Bee, Giant	DG PD PF PH PM PP PS TF TH TM TS	1	3	[AC: 13 | HD: 1d4hp* | ATK: 1 sting | DMG: 1d4 + poison | MV: 10` Fly 50` | #APP: 1d6, Wild 1d6, Lair 5d6 | SV: Fighter: 1 | ML: 9 | TRS: Special | XP: 13 ]
+Beetle, Giant Fire	DG PF PH PM PS TF TH TM TS	2	13	[AC: 16 | HD: 1+2 | ATK: 1 bite | DMG: 2d4 | MV: 40` | #APP: 1d8, Wild 2d6, Lair 2d6 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 25 ]
+Beetle, Giant Tiger	PP PS PF PH DG	4	13	[AC: 17 | HD: 3+1 | ATK: 1 | DMG: 2d6 | MV: 60` (10`) | #APP: 1d6, Wild 2d4, Lair 2d4 | SV: Fighter: 3 | ML: 9 | TRS: U | XP: 145 ]
+Behir	DG PH PM TH TM	12	3	[AC: 20 | HD: 11** (+9) | ATK: 1 bite/6 claws or breath | DMG: 2d10/1d6 x 6 or breath | MV: 40` | #APP: 1d2 | SV: Fighter: 11 | ML: 9 | TRS: L | XP: 1,765 ]
+Bisren	DG PF PH PM PP PS TF TH TM TS CF CH CM CP	2	4	[AC: 15 (11) | HD: 1+2 | ATK: 1 | DMG: 1d6 Gore or by weapon | MV: 40` (subject to encumbrance) | #APP: 1d8, Wild 5d8, Lair 5d8 | SV: Fighter: 1 | ML: 9 | TRS: D | XP: 37 ]
+Black Pudding*	DG	11	13	[AC: 14 | HD: 10* (+9) | ATK: 1 | DMG: 3d8 | MV: 20` | #APP: 1 | SV: Fighter: 10 | ML: 12 | TRS: None | XP: 1,390 ]
+Blade Spirit, Common	DG	10	13	[AC: 17 | HD: 9 | ATK: 3/2 | DMG: By weapon +4 | MV: 30 feet hovering | #APP: 1 | SV: Fighter 9 | ML: 9 | TRS: Special | XP: 1250 ]
+Blade Spirit, Greater	DG	13	13	[AC: 19 | HD: 12 | ATK: 2 | DMG: By weapon +6 | MV: 30 feet hovering | #APP: 1 | SV: Fighter 12 | ML: 10 | TRS: Special | XP: 2075 ]
+Blink Dog	DG PD PF PH PM PP	5	13	[AC: 15 | HD: 4* | ATK: 1 bite | DMG: 1d6 | MV: 40` | #APP: 1d6, Wild 1d6, Lair 1d6 | SV: Fighter: 4 | ML: 6 | TRS: C | XP: 280 ]
+Blood Rose	PF PH PP	3	1	[AC: 13 | HD: 2* to 4* | ATK: 1 to 3 plus blood drain | DMG: 1d6 | MV: 1` | #APP: Wild 1d8 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 100 - 280 ]
+Boar	PP PS PF PH CP CF CH TS TF TH	4	13	[AC: 13 | HD: 3 | ATK: 1 tusk | DMG: 2d4 | MV: 50` (10`) | #APP: Wild 1d6 | SV: Fighter: 3 | ML: 9 | TRS: None | XP: 145 ]
+Boglin	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	1	[AC: 11 | HD: 1* to 5* | ATK: 1 weapon or by spell | DMG: 1d6 or weapon | MV: 30` | #APP: 1d4 | SV: Magic-User: 2 to 10 (see rules) | ML: 8 | TRS: R | XP: Varies ]
+Bone Horror, Common	DG	5	3	[AC: 14 | HD: 4 | ATK: 2 or 1 special | DMG: 1d6+3/1d6+3 or 1d4+special | MV: 20 feet, fly 30 feet | #APP: Varies | SV: Cleric 4 | ML: 12 | TRS: None | XP: 360 ]
+Bone Horror, Greater	DG	13	1	[AC: 19 | HD: 12 | ATK: 2 or 1 special | DMG: 1d10+4/1d10+4 or 1d6+special | MV: 20 feet, fly 40 feet | #APP: Varies | SV: Cleric 12 | ML: 12 | TRS: None | XP: 2,175 ]
+Bronze Birds	CF CH CM CP FW PD PF PM PP PS SW TF TH TM TS	1	2	[AC: 16 | HD: 1 | ATK: 1 beak/1 flogging or 1 feather throw | DMG: 1d4/1d6 or 1d4 | MV: 30` Fly 120` Swim 30` | #APP: Wild 1d10 or 10d10 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 25 ]
+Bugbear	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	4	13	[AC: 15 | HD: 3+1 | ATK: 1 weapon | DMG: 1d8+1 or by weapon +1 | MV: 30` | #APP: 2d4, Wild 5d4, Lair 5d4 | SV: Fighter: 3 | ML: 9 | TRS: Q, R each; B, L, M in lair | XP: 145 ]
+Bulette	PD PF PH PP	20	13	[AC: 22 | HD: 19** (+12) | ATK: 1 bite/2 claws or 4 claws | DMG: 2d8/2d6/2d6 or 2d6/2d6/2d6/2d6 | MV: 40` Burrow 10` | #APP: 1d2 | SV: Fighter: 19 | ML: 12 | TRS: None | XP: 4,675 ]
+Bunyip	FW PS TS	7	2	[AC: 15 | HD: 6 | ATK: 1 bite | DMG: 1d10+2 | MV: 40` | #APP: 1 | SV: Fighter: 6 | ML: 14 | TRS: None | XP: 500]
+Caecilia, Giant	DG	7	4	[AC: 14 | HD: 6* | ATK: 1 bite + swallow on 19/20 | DMG: 1d8 + 1d8/round if swallowed | MV: 20` (10`) | #APP: 1d3, Lair 1d3 | SV: Fighter: 3 | ML: 9 | TRS: B | XP: 555 ]
+Camel	CF CH CP PD PF PH PP PS TF TH TS	3	13	[AC: 13 | HD: 2 | ATK: 1 bite/1 hoof | DMG: 1/1d4 | MV: 50` (10`) [ 40` (10`) ] | #APP: Wild 2d4 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Canein	DG PF PH PM PP PS TF TH TM TS	1	4	[AC: 14 (11) | HD: 1 | ATK: 1 weapon | DMG: 1d8 or by weapon | MV: 40` (subject to encumbrance) | #APP: 2d4, Wild 3d6, Lair 10d6 | SV: Fighter: 1 (+2 on Death Ray or Poison, Paralysis or Petrification). | ML: 8 | TRS: D | XP: 25 ]
+Cave Locust, Giant	DG	3	3	[AC: 16 | HD: 2** | ATK: 1 bite or 1 bump or 1 spit | DMG: 1d2 or 1d4* or special | MV: 20` Fly 60` (15`) | #APP: 2d10, Wild 1d10 | SV: Fighter: 2 | ML: 5 | TRS: None | XP: 125 ]
+Caveman	CF CH CM DG PF PH PM TF TH TM TS	3	3	[AC: 12 | HD: 2 | ATK: 1 weapon | DMG: 1d8 or weapon + 1 | MV: 40` | #APP: 1d10, Wild 10d4, Lair 10d4 | SV: Fighter: 2 | ML: 7 | TRS: C | XP: 75 ]
+Centaur	PF PH PP	5	13	[AC: 15 (13) | HD: 4 | ATK: 2 hooves/1 weapon | DMG: 1d6/1d6/1d6 or by weapon | MV: 60` (10`) | #APP: Wild 2d10 | SV: Fighter: 4 | ML: 8 | TRS: A | XP: 240 ]
+Centipede, Giant	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	13	[AC: 11 | HD: 1d4 Hit Points* | ATK: 1 bite | DMG: poison | MV: 40` | #APP: 2d4, Wild 2d4, Lair 2d4 | SV: Normal Man | ML: 7 | TRS: None | XP: 13 ]
+Cheetah	PD PF PH PM PP PS TF TH TM TS	3	2	[AC: 14 | HD: 2 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/2d4 | MV: 100` | #APP: Wild 1d3, Lair 1d3 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Chimera	DG PD PH PM TH TM	10	13	[AC: 16 | HD: 9** (+8) | ATK: 2 claws/3 heads + special | DMG: 1d4/1d4/2d4/2d4/3d4 + special | MV: 40` (10`) Fly 60` (15`) | #APP: 1d2, Wild 1d4, Lair 1d4 | SV: Fighter: 9 | ML: 9 | TRS: F | XP: 1,225 ]
+Choker	DG	4	5	[AC: 17 | HD: 3+3 | ATK: 2 tentacles | DMG: 1d3 + special | MV: 20` | #APP: 1 | SV: Fighter: 3 | ML: 7 | TRS: U | XP: 145 ]
+Cockatrice	DG FW PD PF PH PM PP PS TF TH TM TS	6	13	[AC: 14 | HD: 5** | ATK: 1 beak + special | DMG: 1d6 + petrification | MV: 30` Fly 60` (10`) | #APP: 1d4, Wild 1d8, Lair 1d8 | SV: Fighter: 5 | ML: 7 | TRS: D | XP: 450 ]
+Cockroach, Balroach	DG	6	3	[AC: 18 | HD: 5** | ATK: 1 bite | DMG: 1d8 | MV: 40` | #APP: 1, Wild 1, Lair 1d6 | SV: Fighter: 5* | ML: 9 | TRS: G | XP: 450 ]
+Cockroach, Giant	DG	2	13	[AC: 15 | HD: 1* | ATK: 1 bite | DMG: 1d4 | MV: 50` | #APP: 1d4, Wild 2d4, Lair 2d8 | SV: Fighter: 1* | ML: 6 | TRS: None | XP: 37 ]
+Couatl	DG TH	14	1	[AC: 21 | HD: 13*** (+10) | ATK: 1 bite + special | DMG: 1d3+poison, 2d8 | MV: 20` Fly 60` | #APP: 1d2 Wild/Lair 1d6 | SV: Fighter: 13 | ML: 12 | TRS: B, I | XP: 2,615 ]
+Crab, Giant	PS TS FW SW	4	3	[AC: 18 | HD: 3 | ATK: 2 pincers | DMG: 2d6/2d6 | MV: 20` Swim 20` | #APP: 1d2, Wild 1d6, Lair 1d6 | SV: Fighter: 3 | ML: 7 | TRS: None | XP: 145 ]
+Crocodile	PS TS FW	3	13	[AC: 15 | HD: 2 | ATK: 1 | DMG: 1d8 | MV: 30` (10`) Swim 30` (10`) | #APP: Wild 1d8 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Crocodile, Giant	PS TS FW	16	3	[AC: 19 | HD: 15 (+11) | ATK: 1 | DMG: 3d8 | MV: 30` (10`) Swim 30` (10`) | #APP: Wild 1d3 | SV: Fighter: 15 | ML: 9 | TRS: None | XP: 2,850 ]
+Crocodile, Large	PS TS FW	7	1	[AC: 17 | HD: 6 | ATK: 1 | DMG: 2d8 | MV: 30` (10`) Swim 30` (10`) | #APP: Wild 1d4 | SV: Fighter: 6 | ML: 8 | TRS: None | XP: 500 ]
+Crypt Dweller	CM DG PD PM TM	3	1	[AC: 13 | HD: 2* | ATK: 2 | DMG: 1d4/1d4 or by weapon type | MV: 60` | #APP: 1-2 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 100 ]
+Darkmantle	DG	2	5	[AC: 17 | HD: 1+2* | ATK: 1 slam | DMG: 1d4 | MV: 20` Fly 60` | #APP: 2d6 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 37 ]
+Delver	DG	33	2	[AC: 24 | HD: 32 (+16) | ATK: 2 slams | DMG: 2d6+2/2d6+2 + special | MV: 30` | #APP: 1 | SV: Fighter: 32 | ML: 11 | TRS: None | XP: 9800 ]
+Demon, Succubus*	DG	8	1	[AC: 20 | HD: 7*** | ATK: 2 claws + special | DMG: 1d6/1d6 | MV: 30` Fly 50` (D) | #APP: 1 | SV: C6 | ML: 7 | TRS: I, L | XP: 830 ]
+Devil, Ice	DG	4	1	[AC: 18 | HD: 3*** | ATK: 1 claw | DMG: 1d3 claw + 1d4 cold | MV: 30` fly 50` | #APP: 1-4 | SV: Fighter: 3 | ML: 9 | TRS: None | XP: 235]
+Devil, Spined	DG	9	1	[AC: 19* | HD: 8 | ATK: 1 bite or 2 blades (or horns) or spines or by 3/2 weapon | DMG: 1d6+poison or 1d8+2/1d8+2 or 4d6 or by weapon+2 | MV: 30` | #APP: 2-5 (wild), 3-18 (lair) | SV: Fighter 8 | ML: 9 | TRS: None | XP: 1225 ]
+Devourer	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	18	1	[AC: 24 | HD: 17** (+12) | ATK: 2 claws | DMG: 2d6/2d6 + energy drain (1 level) | MV: 30` | #APP: 1 | SV: Fighter: 17 | ML: 12 | TRS: None | XP: 3890 ]
+Digester	DG	16	1	[AC: 17 | HD: 15 (+11) | ATK: 1 claw + special | DMG: 1d8 + special | MV: 60` | #APP: 0 Wild 1d3 Lair 1d3+3 | SV: Fighter: 15 | ML: 7 | TRS: None | XP: 2975 ]
+Deinonychus	TS TF TH TM	4	1	[AC: 15 | HD: 3 | ATK: 1 bite | DMG: bite 1d8 | MV: 50` | #APP: 1d3, Wild 2d3, Lair 2d6 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 145 ]
+Velociraptor	TS TF TH TM	1	1	[AC: 15 | HD: 1 | ATK: 1 bite | DMG: bite 1d4 | MV: 80` | #APP: 1d4, Wild 2d4, Lair 2d8 | SV: Fighter: 1 | ML: 8 | TRS: None | XP: 25 ]
+Displacer	DG PD PF PH PM PP PS TF TH TM TS	7	1	[AC: 16 | HD: 6* | ATK: 2 blades | DMG: 1d8/1d8 | MV: 50` | #APP: 1d4, Wild 1d4 | SV: Fighter: 6 | ML: 8 | TRS: D | XP: 555 ]
+Dog	CF CH CM CP PD PF PH PM PP PS TF TH TM TS	2	13	[AC: 14 | HD: 1+1 | ATK: 1 bite | DMG: 1d4 + hold | MV: 50` | #APP: Wild 3d4 | SV: Fighter: 1 | ML: 9 | TRS: None | XP: 25 ]
+Dog, Riding	CF CH CM CP PD PS	3	4	[AC: 14 | HD: 2 | ATK: 1 bite | DMG: 1d4+1 + hold | MV: 50` | #APP: domestic only | SV: Fighter: 2 | ML: 9 | TRS: None | XP: 75 ]
+Donkey	CF CH CM CP PF PH PM PP PS TF TH TM TS	3	13	[AC: 13 | HD: 2 | ATK: 1 bite | DMG: 1d2 | MV: 40` (10`) | #APP: Wild 2d4 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Doppleganger	CM DG PM PS TM TS	5	13	[AC: 15 | HD: 4* | ATK: 1 | DMG: 1d12 or by weapon | MV: 30` | #APP: 1d6, Wild 1d6, Lair 1d6 | SV: Fighter: 4 | ML: 10 | TRS: E | XP: 280 ]
+Dragon Turtle	FW SW	31	2	[AC: 22 | HD: 30** | ATK: 2 claws/1 bite or breath | DMG: 2d8/2d8/10d6 or 30d8 | MV: 10` (10`) Swim 30` (15`) | #APP: Wild 1 | SV: Fighter: 20 at +5 | ML: 10 | TRS: H | XP: 13,650 ]
+Dragon, Black	DG FW PM PS SW TM TS	8	2	[AC: 18 | HD: 7** | ATK: 2 claws/1 bite or breath/1 tail | DMG: 1d6/1d6/2d10 or breath/1d6 | MV: 30` Fly 80` (15`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 7 (as Hit Dice) | ML: 8 | TRS: H | XP: 800 ]
+Dragon, Black	DG FW PM PS SW TM TS	8	2	[AC: 18 | HD: 7** | ATK: 2 claws/1 bite or breath/1 tail | DMG: 1d6/1d6/2d10 or breath/1d6 | MV: 30` Fly 80` (15`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 7 (as Hit Dice) | ML: 8 | TRS: H | XP: 800 ]
+Dragon, Gold	CF CH CM CP DG FW PD PF PH PM PP PS SW TF TH TM TS	12	2	[AC: 22 | HD: 11** (+9) | ATK: 2 claws/1 bite or breath/1 tail | DMG: 2d4/2d4/6d6 or breath/2d4 | MV: 30` Fly 80` (20`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 11 (as Hit Dice) | ML: 10 | TRS: H | XP: 1,765 ]
+Dragon, Green	CF CH DG FW PF PH PS SW TF TH TS	9	2	[AC: 19 | HD: 8** | ATK: 2 claws/1 bite or breath/1 tail | DMG: 1d6/1d6/3d8 or breath/1d6 | MV: 30` Fly 80` (15`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 8 (as Hit Dice) | ML: 8 | TRS: H | XP: 1,015 ]
+Dragon, Red	DG CF CH CM FW PF PH PM SW TF TM	11	2	[AC: 21 | HD: 10** (+9) | ATK: 2 claws/1 bite or breath/1 tail | DMG: 1d8/1d8/4d8 or breath/1d8 | MV: 30` Fly 80` (20`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 10 (as Hit Dice) | ML: 8 | TRS: H | XP: 1,480 ]
+Dragon, Sea	FW SW	9	3	[AC: 19 | HD: 8** | ATK: 1 bite or breath | DMG: 3d8 or breath/1d6 | MV: Fly 60` (20`) Swim 60` (15`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 8 (as Hit Dice) | ML: 8 | TRS: H | XP: 1,015 ]
+Dragon, White	CF CH CM CP DG FW PD PS	7	13	[AC: 17 | HD: 6** | ATK: 2 claws/1 bite or breath/1 tail | DMG: 1d4/1d4/2d8 or breath/1d4 | MV: 30` Fly 80` (10`) | #APP: 1, Wild 1, Lair 1d4 | SV: Fighter: 6 (as Hit Dice) | ML: 8 | TRS: H | XP: 610 ]
+Dragonne	TM DG	10	3	[AC: 18 | HD: 9* | ATK: 2 claws/1 bite | DMG: 2d4x2/2d6 | MV: 40` fly 30` | #APP: 1d6 Wild 1d6 Lair 1d10 | SV: Fighter: 9 | ML: 10 | TRS: None | XP: 1150 ]
+Dryad	PF	3	13	[AC: 15 | HD: 2* | ATK: special | DMG: 0 | MV: 40` | #APP: Lair 1d6 | SV: Magic-User: 4 | ML: 6 | TRS: D | XP: 100 ]
+Eagle, Giant	PF PH PM CF CH CM FW SW	5	3	[AC: 15 | HD: 4 | ATK: 2 claws/1 bite | DMG: 1d6x2/1d8 | MV: 10` fly 90` | #APP: 2d6 | SV: Fighter: 4 | ML: 7 | TRS: None | XP: 240 ]
+Eel, Common	FW SW	1	4	[AC: 11 | HD: 1 | ATK: 1 bite | DMG: 1d6 | MV: 60` (swim only) | #APP: Wild 1d6 | SV: Fighter: 1 | ML: 8 | TRS: None | XP: 25 ]
+Eel, Giant	FW SW	7	4	[AC: 12 | HD: 6 | ATK: 1 bite | DMG: 1d12 | MV: 60` | #APP: Wild 1d6 | SV: Fighter: 6 | ML: 8 | TRS: None | XP: 500 or 555 for electrical ]
+Eel, Huge	FW SW	5	4	[AC: 12 | HD: 4 | ATK: 1 bite | DMG: 1d10 | MV: 60` | #APP: Wild 1d6 | SV: Fighter: 4 | ML: 8 | TRS: None | XP: 240 or 280 for electrical ]
+Eel, Large	FW SW	3	4	[AC: 12 | HD: 2 | ATK: 1 bite | DMG: 1d8 | MV: 60` | #APP: Wild 1d6 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 75 or 100 for electrical ]
+Eelbat	PF TF DG	2	3	[AC: 14 | HD: 1* | ATK: 1 bite | DMG: 1d6 + 1d6/round blood drain | MV: 5` Fly 70` | #APP: 2d6 | SV: Fighter: 1 | ML: 10 | TRS: None | XP: 37 ]
+Efreeti*	DG	11	13	[AC: 21 ‡ | HD: 10* (+9) | ATK: 1 | DMG: 2d8 | MV: 30` Fly 80` (10`) | #APP: 1 | SV: Fighter: 15 | ML: 12 (9) | TRS: None | XP: 1,390 ]
+Elemental, Air*	DG	13	1	[AC: 20 ‡ | HD: 12* (+10) | ATK: special | DMG: 2d8 | MV: Fly 120` | #APP: special | SV: Fighter: 12 | ML: 10 | TRS: None | XP: 1,975 ]
+Elemental, Air, Greater*	DG	17	1	[AC: 22 ‡ | HD: 16* (+12) | ATK: special | DMG: 3d6 | MV: Fly 120` | #APP: special | SV: Fighter: 16 | ML: 10 | TRS: None | XP: 3,385 ]
+Elemental, Air, Lesser*	DG	9	1	[AC: 18 ‡ | HD: 8* | ATK: special | DMG: 1d12 | MV: Fly 120` | #APP: special | SV: Fighter: 8 | ML: 10 | TRS: None | XP: 945 ]
+Elemental, Earth*	DG	13	1	[AC: 20 ‡ | HD: 12* (+10) | ATK: 1 | DMG: 2d8 | MV: 20` (10`) | #APP: special | SV: Fighter: 12 | ML: 10 | TRS: None | XP: 1,975 ]
+Elemental, Earth, Greater*	DG	17	1	[AC: 22 ‡ | HD: 16* (+12) | ATK: 1 | DMG: 3d6 | MV: 20` (10`) | #APP: special | SV: Fighter: 16 | ML: 10 | TRS: None | XP: 3,385 ]
+Elemental, Earth, Lesser*	DG	9	1	[AC: 18 ‡ | HD: 8* | ATK: 1 | DMG: 1d12 | MV: 20` (10`) | #APP: special | SV: Fighter: 8 | ML: 10 | TRS: None | XP: 945 ]
+Elemental, Fire*	PD DG	13	1	[AC: 20 ‡ | HD: 12* (+10) | ATK: 1 | DMG: 2d8 | MV: 40` Fly 30` | #APP: special | SV: Fighter: 12 | ML: 10 | TRS: None | XP: 1,975 ]
+Elemental, Fire, Greater*	PD DG	17	1	[AC: 22 ‡ | HD: 16* (+12) | ATK: 1 | DMG: 3d6 | MV: 40` Fly 30` | #APP: special | SV: Fighter: 16 | ML: 10 | TRS: None | XP: 3,385 ]
+Elemental, Fire, Lesser*	PD DG	9	1	[AC: 18 ‡ | HD: 8* | ATK: 1 | DMG: 1d12 | MV: 40` Fly 30` | #APP: special | SV: Fighter: 8 | ML: 10 | TRS: None | XP: 945 ]
+Elemental, Water*	DG FW SW	13	1	[AC: 20 ‡ | HD: 12* (+10) | ATK: 1 | DMG: 2d8 | MV: 20` (15`) Swim 60` | #APP: special | SV: Fighter: 12 | ML: 10 | TRS: None | XP: 1,975 ]
+Elemental, Water, Greater*	DG FW SW	17	1	[AC: 22 ‡ | HD: 16* (+12) | ATK: 1 | DMG: 3d6 | MV: 20` (15`) Swim 60` | #APP: special | SV: Fighter: 16 | ML: 10 | TRS: None | XP: 3,385 ]
+Elemental, Water, Lesser*	DG FW SW	9	1	[AC: 18 ‡ | HD: 8* | ATK: 1 | DMG: 1d12 | MV: 20` (15`) Swim 60` | #APP: special | SV: Fighter: 8 | ML: 10 | TRS: None | XP: 945 ]
+Elephant	TF TH TS	10	13	[AC: 18 | HD: 9 (+8)* | ATK: 2 tusks or 1 trample | DMG: 2d4/2d4 or 4d8 | MV: 40` (15`) | #APP: Wild 1d20 | SV: Fighter: 9 | ML: 8 | TRS: special | XP: 1,075 ]
+Ettercap	DG PF PH PM TF TH TM	7	3	[AC: 14 | HD: 6+1 | ATK: 2 claws/1 bite + poison | DMG: 1d3x2/1d8 | MV: 30` | #APP: 1d2 | SV: Fighter: 6 | ML: 7 | TRS: None | XP: 555 ]
+Ettin	PF PH PM CM TM DG	14	2	[AC: 18 | HD: 13 (+10) | ATK: 2 weapons | DMG: 2d6 or by weapon type | MV: 30` | #APP: 1d4 | SV: Fighter: 13 | ML: 7 | TRS: J (Y in lair) | XP: 2,175 ]
+Faun	PF PH	1	5	[AC: 15 (11) | HD: 1 | ATK: 1 | DMG: 1d6 or by weapon | MV: 40` | #APP: 1d8, Wild 5d8, Lair 5d8 | SV: Fighter: 1 (with Dwarf bonuses) | ML: 8 | TRS: D | XP: 25 ]
+Ferret, Giant	PF PH	6	5	[AC: 17 | HD: 5 | ATK: 1 bite + hold | DMG: 2d4 + 2d4 per round | MV: 50` | #APP: 1d4, Wild 1d6, Lair 1d6 | SV: Fighter: 5 | ML: 8 | TRS: V | XP: 360 ]
+Fish, Giant Barracuda	FW SW	10	3	[AC: 15 | HD: 9 (+8) | ATK: 1 bite | DMG: 2d8+1 | MV: Swim 60` (10`) | #APP: Wild 1 | SV: Fighter: 9 | ML: 10 | TRS: None | XP: 1,075 ]
+Fish, Giant Bass	FW SW	3	3	[AC: 13 | HD: 2 | ATK: 1 bite | DMG: 1d6 | MV: Swim 40` (10`) | #APP: Wild 1d6 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 75 ]
+Fish, Giant Catfish	FW SW	9	3	[AC: 16 | HD: 8 | ATK: 1 bite/2 fins | DMG: 2d8/1d4+poison/1d4+poison | MV: Swim 30` (10`) | #APP: Wild 1d2 | SV: Fighter: 8 | ML: 8 | TRS: None | XP: 875 ]
+Fish, Giant Piranha	FW SW	5	3	[AC: 15 | HD: 4 | ATK: 1 bite | DMG: 1d8 | MV: Swim 50` | #APP: Wild 2d4 | SV: Fighter: 4 | ML: 7 (11) | TRS: None | XP: 240 ]
+Fish, Huge Barracuda	FW SW	6	3	[AC: 16 | HD: 5 | ATK: 1 bite | DMG: 2d6 | MV: Swim 60` | #APP: Wild 2d4 | SV: Fighter: 5 | ML: 8 | TRS: None | XP: 360 ]
+Fly, Giant	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	2	[AC: 14 | HD: 2 | ATK: 1 bite | DMG: 1d8 | MV: 30` Fly 60` | #APP: 1d6, Wild 2d6 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 75 ]
+Frog, Giant	PP PS PF TS TF DG FW SW	3	5	[AC: 13 | HD: 2 | ATK: 1 tongue or 1 bite | DMG: grab or 1d4+1 | MV: 30` Swim 30` | #APP: 1d4, Wild 1d4 | SV: Fighter: 2 | ML: 6 | TRS: None | XP: 75 ]
+Frogman	DG PF PS TF TS	4	2	[AC: 13 | HD: 3 | ATK: 2 weapons | DMG: 1d8+1/1d8+1 or by weapon +1 | MV: 40` | #APP: 2d6 | SV: Fighter: 3 | ML: 10 | TRS: | XP: 145 ]
+Frost Worm	CH CM CP DG PD	33	1	[AC: 18 | HD: 32** (+15) | ATK: 1 bite + special | DMG: 2d8 + special | MV: 30` | #APP: 1 | SV: Fighter: 16 | ML: 10 | TRS: None | XP: 14450 ]
+Gargoyle*	CF CM DG FW PF PM PS TF TM TS	5	13	[AC: 15 ‡ | HD: 4** | ATK: 2 claws/1 bite/1 horn | DMG: 1d4/1d4/1d6/1d4 | MV: 30` Fly 50` (15`) | #APP: 1d6, Wild 2d4, Lair 2d4 | SV: Fighter: 6 | ML: 11 | TRS: C | XP: 320 ]
+Gelatinous Cube	DG PM TM	5	13	[AC: 12 | HD: 4* | ATK: 1 | DMG: 2d4 + paralysis | MV: 20` | #APP: 1 | SV: Fighter: 2 | ML: 12 | TRS: V | XP: 280 ]
+Gerbalaine	CF PF TF	1	1	[AC: 15 | HD: 1 | ATK: 1 | DMG: 1d4 or weapon | MV: 40` | #APP: 1d6, wild 2d4, lair 4d8 | SV: Fighter: 1 (halfling bonuses) | ML: 6 | TRS: 1d4 random small gems | XP: 25 ]
+Ghast	CH CM CP DG PH PM PP PS TH TM TS	3	2	[AC: 15 | HD: 2** | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d4 + paralysis + stench | MV: 30` | #APP: 1d4 Wild/Lair 1d8 | SV: Fighter: 2 | ML: 9 | TRS: B | XP: 125 ]
+Ghost	CF CH CM CP DG PF PH PM PP PS TF TH TM TS	11	1	[AC: 20* | HD: 10 (+9) | ATK: 1 touch/1 gaze | DMG: 1d6 + special | MV: 30` | #APP: 1 | SV: Fighter: 10 | ML: 10 | TRS: E, N, O | XP: 5,500 ]
+Ghoul	CH CM CP DG PH PM PP PS TH TM TS	3	13	[AC: 14 | HD: 2* | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d4, all plus paralysis | MV: 30` | #APP: 1d6, Wild 2d8, Lair 2d8 | SV: Fighter: 2 | ML: 9 | TRS: B | XP: 100 ]
+Giant, Cloud	CH CM PH PM TH TM	13	2	[AC: 19 (13) | HD: 12+3* (+10) | ATK: 1 giant weapon or 1 thrown rock | DMG: 6d6 or 3d6 | MV: 40` (10`) | #APP: 1d2, Wild 1d3, Lair 1d3 | SV: Fighter: 12 | ML: 10 | TRS: E plus 1d12x1000 gp | XP: 1,975 ]
+Giant, Cyclops	CH CM DG PH PM TH TM	14	2	[AC: 15 | HD: 13* (+10) | ATK: 1 giant club or 1 rock (thrown) | DMG: 3d10 or 3d6 | MV: 30` | #APP: 1, Wild 1d4, Lair 1d4 | SV: Fighter: 13 | ML: 9 | TRS: E plus 1d8x1000 gp | XP: 2,285 ]
+Giant, Fire	CF CH CM CP DG PD PF PH PM PP TF TH TM	12	2	[AC: 17 (13) | HD: 11+2* (+9) | ATK: 1 giant weapon or 1 thrown rock | DMG: 5d6 or 3d6 | MV: 40` (10`) | #APP: 1d2, Wild 1d3, Lair 1d3 | SV: Fighter: 11 | ML: 9 | TRS: E plus 1d10x1000 gp | XP: 1,670 ]
+Giant, Frost	CF CH CM DG PF PH PM	11	2	[AC: 17 (13) | HD: 10+1* (+9) | ATK: 1 giant weapon or 1 thrown rock | DMG: 4d6 or 3d6 | MV: 40` (10`) | #APP: 1d2, Wild 1d4, Lair 1d4 | SV: Fighter: 10 | ML: 9 | TRS: E plus 1d10x1000 gp | XP: 1,390 ]
+Giant, Hill	CF CH CM CP DG PF PH PM PP PS TF TH TM TS	9	2	[AC: 15 (13) | HD: 8 | ATK: 1 | DMG: 2d8 | MV: 40` | #APP: 1d4, Wild 2d4, Lair 2d4 | SV: Fighter: 8 | ML: 8 | TRS: E plus 1d8x1000 gp | XP: 875 ]
+Giant, Stone	CH CM DG PH PM TH TM	10	2	[AC: 17 (15) | HD: 9 (+8) | ATK: 1 stone club or 1 thrown rock | DMG: 3d6 or 3d6 | MV: 40` | #APP: 1d2, Wild 1d6, Lair 1d6 | SV: Fighter: 9 | ML: 9 | TRS: E plus 1d8x1000 gp | XP: 1,075 ]
+Giant, Storm	CM FW PM SW TM	16	2	[AC: 19 (13) | HD: 15** (+11) | ATK: 1 giant weapon or 1 lightning bolt | DMG: 8d6 or 15d6 | MV: 50` (10`) | #APP: 1, Wild 1d3, Lair 1d3 | SV: Fighter: 15 | ML: 10 | TRS: E plus 1d20x1000 gp | XP: 3,100 ]
+Gibbering Mouther	DG	10	1	[AC: 19 | HD: 9** | ATK: 6 bites + special | DMG: 1d6 + special | MV: 10 ft. swim 20 ft. | #APP: 1 | SV: Fighter: 9 | ML: 12 | TRS: None | XP: 1225 ]
+Girallon	TF	8	1	[AC: 16 | HD: 7 | ATK: 4 claws/1 bite | DMG: 1d4x4/1d8 | MV: 40` | #APP: 1 Wild 1d2 Lair 2d4 | SV: Fighter: 7 | ML: 10 | TRS: None | XP: 1225 ]
+Gnoll	DG PF PH PM PP PS TF TH TM TS	3	13	[AC: 15 (13) | HD: 2 | ATK: 1 weapon | DMG: 2d4 or by weapon +1 | MV: 30` Unarmored 40` | #APP: 1d6, Wild 3d6, Lair 3d6 | SV: Fighter: 2 | ML: 8 | TRS: Q, S each; D, K in lair | XP: 75 ]
+Gnome	CF CH CM DG PF PH PM TF TH TM	1	2	[AC: 15 (11) | HD: 1 | ATK: 1 | DMG: 1d6 or by weapon | MV: 20` Unarmored 40` | #APP: 1d8, Wild 5d8, Lair 5d8 | SV: Fighter: 1 (with Dwarf bonuses) | ML: 8 | TRS: D | XP: 25 ]
+Goblin	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	13	[AC: 14 (11) | HD: 1-1 | ATK: 1 weapon | DMG: 1d6 or by weapon | MV: 20` Unarmored 30` | #APP: 2d4 ,Wild 6d10, Lair 6d10 | SV: Fighter: 1 | ML: 7 or see r | TRS: R each; C in lair | XP: 10 ]
+Golem, Amber*	DG	11	1	[AC: 21 ‡ | HD: 10* (+9) | ATK: 2 claws/1 bite | DMG: 2d6/2d6/2d10 | MV: 60` | #APP: 1 | SV: Fighter: 5 | ML: 12 | TRS: None | XP: 1,390 ]
+Golem, Bone*	DG	9	1	[AC: 19 ‡ | HD: 8* | ATK: 4 weapons | DMG: 1d6/1d6/1d6/1d6 or by weapon | MV: 40` (10`) | #APP: 1 | SV: Fighter: 4 | ML: 12 | TRS: None | XP: 945 ]
+Golem, Bronze*	DG	21	1	[AC: 20 ‡ | HD: 20** (+13) | ATK: 1 fist + special | DMG: 3d10 + special | MV: 80` (10`) | #APP: 1 | SV: Fighter:10 | ML: 12 | TRS: None | XP: 5,650 ]
+Golem, Clay*	DG	12	4	[AC: 22 ‡ | HD: 11** (+9) | ATK: 1 fist | DMG: 3d10 | MV: 20` | #APP: 1 | SV: Fighter: 6 | ML: 12 | TRS: None | XP: 1,765 ]
+Golem, Flesh*	DG	10	4	[AC: 20 ‡ | HD: 9** (+8) | ATK: 2 fists | DMG: 2d8/2d8 | MV: 30` | #APP: 1 | SV: Fighter: 5 | ML: 12 | TRS: None | XP: 1,225 ]
+Golem, Iron*	DG	18	4	[AC: 25 ‡ | HD: 17** (+12) | ATK: 1 + special | DMG: 4d10 + special | MV: 20` (10`) | #APP: 1 | SV: Fighter: 9 | ML: 12 | TRS: None | XP: 3,890 ]
+Golem, Stone*	DG	15	4	[AC: 25 ‡ | HD: 14** (+11) | ATK: 1 + special | DMG: 3d8 + special | MV: 20` (10`) | #APP: 1 | SV: Fighter: 7 | ML: 12 | TRS: None | XP: 2,730 ]
+Golem, Wood*	DG	3	1	[AC: 13 ‡ | HD: 2+2* | ATK: 1 fist | DMG: 1d8 | MV: 40` | #APP: 1 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 100 ]
+Gorgon	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	9	13	[AC: 19 | HD: 8* | ATK: 1 gore or 1 breath | DMG: 2d6 or petrification | MV: 40` (10`) | #APP: Wild 1d4 | SV: Fighter: 8 | ML: 8 | TRS: None | XP: 945 ]
+Gray Ooze	DG	4	3	[AC: 12 | HD: 3* | ATK: 1 | DMG: 2d8 | MV: 1` | #APP: 1 | SV: Fighter: 3 | ML: 12 | TRS: None | XP: 175 ]
+Gray Render	DG	11	3	[AC: 19 | HD: 10 | ATK: 2 claws/1 bite | DMG: 1d6/2d6 | MV: 30` | #APP: 1 | SV: Fighter: 10 | ML: 12 | TRS: None | XP: 1300 ]
+Great Orb of Eyes	DG PS	13	1	[AC: 19 | HD: 12 | ATK: 1d4 rays or spell-like ability | DMG: varies by ray or spell | MV: Fly 30` | #APP: 1 (wild), 1 (lair) | SV: Magic-user 12 | ML: 9 | TRS: None | XP: 2,275 ]
+Green Slime*	DG	3	13	[AC: can always be hit | HD: 2** | ATK: 1 | DMG: special | MV: 1` | #APP: 1 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 125 ]
+Grick	DG	3	3	[AC: 16 | HD: 2 | ATK: 4 tentacles/1 bite | DMG: 1d4x4/1d3 | MV: 30` | #APP: 1 Wild 1d4 | SV: Fighter: 2 | ML: 12 | TRS: V | XP: 75 ]
+Griffon	CH CM FW PD PH PM SW TM	8	13	[AC: 18 | HD: 7 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/2d8 | MV: 40` (10`) Fly 120` (10`) | #APP: Wild 2d8, Lair 2d8 | SV: Fighter: 7 | ML: 8 | TRS: E | XP: 670 ]
+Grimlock	DG	3	3	[AC: 15 | HD: 2 | ATK: 1 battleaxe | DMG: 1d8 | MV: 30` | #APP: 1d4 Wild 1d10+10 Lair 1d6x10 | SV: Fighter: 2 | ML: 7 | TRS: D | XP: 100 ]
+Gump	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	4	[AC: 14 | HD: 4* | ATK: 1 weapon | DMG: 1d8+3 or by weapon +3 | MV: 30` | #APP: 1 | SV: Fighter: 4 | ML: 10 | TRS: C | XP: 280 ]
+Hangman Tree	PF PH PS TF TH TS	6	1	[AC: 16 | HD: 5 | ATK: 4 limbs plus strangle | DMG: 1d6 | MV: 0 | #APP: Wild 1 | SV: Fighter: 4 | ML: 12 | TRS: None | XP: 360 ]
+Harpy	CF CH CM CP DG FW PD PF PH PM PP PS SW TF TH TM TS	3	13	[AC: 13 | HD: 2* | ATK: 2 claws/1 weapon + special | DMG: 1d4/1d4/1d6 or by weapon + special | MV: 20` Fly 50` (10`) | #APP: 1d6, Wild 2d4, Lair 2d4 | SV: Fighter: 2 | ML: 7 | TRS: C | XP: 100 ]
+Haunted Bones	DG PS TS	4	2	[AC: 15 (see rules) | HD: 3 | ATK: 1 | DMG: 1d6 or by weapon | MV: 50` | #APP: 1d4, Wild 2d4 | SV: Fighter: 3 | ML: 11 | TRS: None | XP: 145 ]
+Hawk	CF CH CM CP FW PD PF PM PP PS SW TF TH TM TS	1	2	[AC: 12 | HD: 1d4 Hit Points | ATK: 1 | DMG: 1d2 | MV: Fly 160` | #APP: Wild 1d6, Lair 1d6 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 10 ]
+Hawk, Giant	PD PP PS PF PH PM CP CF CH CM TF TH FW SW	5	3	[AC: 14 | HD: 4 | ATK: 1 | DMG: 1d6 | MV: Fly 150` (10`) | #APP: Wild 1d3, Lair 1d3 | SV: Fighter: 4 | ML: 8 | TRS: None | XP: 240 ]
+Headless Horseman	CF CH CM CP PD PF PH PM PP PS TF TH TM TS DG	8	4	[AC: According to armor worn | HD: 7+*** | ATK: 1 weapon (also see Mount in rules) | DMG: 1d8 or by weapon (also see Mount in rules) | MV: 30` subject to encumbrance (also see Mount in rules) | #APP: 1 (plus Mount from rules) | SV: Fighter: 7+ | ML: special | TRS: Non-magical gear worn | XP: 670+ (also add for Mount from rules) ]
+Hellhound	DG PD PH PM PS TH TM TS	5	13	[AC: 14 to 18 | HD: 3** to 7** | ATK: 1 bite or 1 breath | DMG: 1d6 or 1d6 per Hit Die | MV: 40` | #APP: 2d4, Wild 2d4, Lair 2d4 | SV: Fighter: 3 to 7 (same as Hit Dice) | ML: 9 | TRS: C | XP: 205 - 800 ]
+Hippogriff	CH CM FW PH PM SW TH TM	4	13	[AC: 15 | HD: 3 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/1d10 | MV: 60` (10`) Fly 120` (10`) | #APP: Wild 2d8 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 145 ]
+Hippopotamus	TS FW	7	4	[AC: 17 | HD: 6 | ATK: 1 bite or 1 trample | DMG: bite 2d6 trample 4d6 | MV: 40` Swim 40` | #APP: Wild 3d10 | SV: Fighter: 6 | ML: 9 | TRS: None | XP: 500 ]
+Hobgoblin	CF CH CM CP DG PD PF PH PM PP PS TH TM TS	1	13	[AC: 14 (11) | HD: 1 | ATK: 1 weapon | DMG: 1d8 or by weapon | MV: 30` Unarmored 40` | #APP: 1d6, Wild 2d4, Lair 4d8 | SV: Fighter: 1 | ML: 8 | TRS: Q, R each; D, K in lair | XP: 25 ]
+Homunculus	DG	3	1	[AC: 14 | HD: 2 | ATK: 1 bite + poison | DMG: 1d4-1 + poison | MV: 20` | #APP: 1 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 100 ]
+Horse, Draft	CF CH CM CP PD PF PH PM PP PS TF TH TM TS	4	13	[AC: 13 | HD: 3 | ATK: 2 hooves | DMG: 1d4/1d4 | MV: 60` (10`) | #APP: domestic only | SV: Fighter: 3 | ML: 7 | TRS: None | XP: 145 ]
+Horse, Riding	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	3	1	[AC: 13 | HD: 2 | ATK: 2 hooves | DMG: 1d4/1d4 | MV: 80` (10`) | #APP: Wild 10d10 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Horse, War	CF CH CM CP PD PF PH PM PP PS TF TH TM TS	4	4	[AC: 13 | HD: 3 | ATK: 2 hooves | DMG: 1d6/1d6 | MV: 60` (10`) | #APP: domestic only | SV: Fighter: 3 | ML: 9 | TRS: None | XP: 145 ]
+Hydra	CF CM CP DG PF PM PP PS TF TM TS	10	4	[AC: 16 to 23 | HD: 5 to 12 (+10) | ATK: 5 to 12 bites | DMG: 1d10 per bite | MV: 40` (10`) | #APP: 1, Wild 1, Lair 1 | SV: Fighter: 5 to 12 | ML: 9 | TRS: B | XP: 360 - 1,875 ]
+Hydramander	CF CM CP DG PF PM PP PS TF TM TS	11	4	[AC: 18 to 21 | HD: 8 to 12 | ATK: 5 to 8 bites | DMG: 2d6 per bite | MV: 20` (10`) | #APP: 1, Lair 1 | SV: Fighter: 8 to 12 | ML: 11 | TRS: None | XP: Varies ]
+Hyena	TF TH TS	3	13	[AC: 13 | HD: 2+1 | ATK: 1 bite | DMG: 1d6 | MV: 60` | #APP: 1d6 to 10d10 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 320 ]
+Hyenodon	TF TH TS	4	1	[AC: 13 | HD: 3+1 | ATK: 1 bite | DMG: 1d8 | MV: 40` | #APP: 1d6, 1d8 Wild Lair 1d8 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 145 ]
+Ibix	PF PH	1	5	[AC: 15 (11) | HD: 1 | ATK: 1 | DMG: 1d6 or by weapon | MV: 40` | #APP: 1d8, Wild 5d8, Lair 5d8 | SV: Fighter: 1 (with Dwarf bonuses) | ML: 8 | TRS: D | XP: 25 ]
+Illusion Trapper	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	10	2	[AC: 18 | HD: 9** | ATK: 1 | DMG: 5d4 | MV: 30` | #APP: 1 | SV: Fighter: 9 | ML: 9 | TRS: U, see rules | XP: 1225 ]
+Insect Swarm	PS PF	3	1	[AC: 13 | HD: 2* to 4* | ATK: 1 swarm | DMG: 1d3 (double against no armor) | MV: 10` Fly 20` | #APP: 1 swarm, Wild 1d3 swarms | SV: N/A | ML: 11 | TRS: None | XP: 100 - 280 ]
+Invisible Stalker	DG	9	13	[AC: 19 | HD: 8* | ATK: 1 | DMG: 4d4 | MV: 40` | #APP: 1 (special) | SV: Fighter: 8 | ML: 12 | TRS: None | XP: 945 ]
+Jaguar	TF TH TS	5	4	[AC: 16 | HD: 4 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/2d4 | MV: 70` Swim 30` | #APP: 1d2, Wild 1d6 | SV: Fighter: 4 | ML: 8 | TRS: None | XP: 240 ]
+Kappa	FW PS TS	1	2	[AC: 14, 17 rear (13, 17 rear) | HD: 1 | ATK: 1 | DMG: 1d6 or by weapon | MV: 30` (subject to encumbrance) | #APP: 1d8, Wild 5d8, Lair 5d8 | SV: Fighter: 1 (+2 on Poison saves) | ML: 8 | TRS: D | XP: 25 ]
+Kobold	CF CH CM DG PF PH PM PS TF TH TM TS	1	13	[AC: 13 (11) | HD: 1d4 Hit Points | ATK: 1 weapon | DMG: 1d4 or by weapon | MV: 20` Unarmored 30` | #APP: 4d4, Wild 6d10, Lair 6d10 | SV: Normal Man | ML: 6 | TRS: P, Q each; C in lair | XP: 10 ]
+Kraken	SW	37	1	[AC: 20 | HD: 36 | ATK: 10 tentacles, and 1 bite | DMG: 7d6x10/4d6 | MV: 20 ft. | #APP: 1 | SV: Fighter: 20 | ML: 11 | TRS: None | XP: 12,500 ]
+Leech, Giant	DG FW PS TS	7	13	[AC: 17 | HD: 6 | ATK: 1 + hold | DMG: 1d6 + 1d6/round | MV: 30` | #APP: Wild 1d4 | SV: Fighter: 6 | ML: 10 | TRS: None | XP: 500 ]
+Leper Zombie	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	2	2	[AC: 13 | HD: 1* | ATK: 2 claws/1 bite | DMG: 1d3/1d3/1d3 + disease | MV: 30` | #APP: 1d12 | SV: Fighter: 1 | ML: 9 | TRS: None | XP: 100 ]
+Lerini	PS TS PF TF	1	2	[AC: 13 (11) | HD: 1 | ATK: 1 | DMG: 1d6 or by weapon | MV: 20` Unarmored 40` Swim 30` (not in armor) | #APP: 2d4, Wild 3d6, Lair 6d6 | SV: Fighter: 1 | ML: 8 | TRS: D | XP: 25 ]
+Lion	PD PF PH PM PP PS TF TH TM TS	6	13	[AC: 14 | HD: 5 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/1d10 | MV: 50` | #APP: Wild 1d8 | SV: Fighter: 5 | ML: 9 | TRS: None | XP: 360 ]
+Living Statue, Crystal	DG	4	2	[AC: 16 | HD: 3 | ATK: 2 fists | DMG: 1d6/1d6 | MV: 30` | #APP: 1d6 | SV: Fighter: 3 | ML: 12 | TRS: None | XP: 145 ]
+Living Statue, Iron	DG	5	2	[AC: 18 | HD: 4* | ATK: 2 fists | DMG: 1d8/1d8 + special | MV: 10` | #APP: 1d4 | SV: Fighter: 4 | ML: 12 | TRS: None | XP: 280 ]
+Living Statue, Stone	DG	6	2	[AC: 16 | HD: 5* | ATK: 2 lava sprays | DMG: 2d6/2d6 | MV: 20` | #APP: 1d3 | SV: Fighter: 5 | ML: 12 | TRS: None | XP: 405 ]
+Lizard Man	DG FW PS TS	3	2	[AC: 15 (12) | HD: 2 | ATK: 1 weapon | DMG: 1d6+1 or by weapon +1 | MV: 20` Unarmored 30` Swim 40` (not in armor) | #APP: 2d4, Wild 2d4, Lair 6d6 | SV: Fighter: 2 | ML: 11 | TRS: D | XP: 75 ]
+Lizard, Giant Draco	PP PS PF DG	5	5	[AC: 15 | HD: 4+2 | ATK: 1 bite | DMG: 1d10 | MV: 40` Fly 70` (C, and see rules) | #APP: 1d4, Wild 1d8 | SV: Fighter: 3 | ML: 7 | TRS: None | XP: 240 ]
+Lizard, Giant Gecko	TS TF TH TM DG	4	5	[AC: 15 | HD: 3+1 | ATK: 1 bite | DMG: 1d8 | MV: 40` (special) | #APP: 1d6, Wild 1d10 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 145 ]
+Lizard, Giant Horned Chameleon	TS TF TH TM DG	6	5	[AC: 18 | HD: 5 | ATK: 1 tongue or 1 bite | DMG: grab or 2d6 | MV: 40` (10`) | #APP: 1d3, Wild 1d6 | SV: Fighter: 4 | ML: 7 | TRS: None | XP: 360 ]
+Lizard, Giant Tuatara	PP PS PF DG	7	5	[AC: 16 | HD: 6 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/2d6 | MV: 40` (10`) | #APP: 1d2, Wild 1d4 | SV: Fighter: 5 | ML: 6 | TRS: None | XP: 500 ]
+Locathah	FW SW	3	3	[AC: 14 | HD: 2 | ATK: 1 spear or 1 light crossbow | DMG: 1d6 | MV: 10` swim 60` | #APP: 1d4 Wild 1d20 Lair 3d10+70 | SV: Fighter: as per hit dice | ML: 7 | TRS: D | XP: 75 ]
+Lycanthrope, Werebear*	CF CH CM DG PF PH PM PS	7	3	[AC: 18 † | HD: 6* | ATK: 2 claws/1 bite + hug | DMG: 2d4/2d4/2d8 + 2d8 | MV: 40` | #APP: 1d4, Wild 1d4, Lair 1d4 | SV: Fighter: 6 | ML: 10 | TRS: C | XP: 555 ]
+Lycanthrope, Wereboar*	CF CH CP PD PF PH PP PS TF TH TS	5	3	[AC: 16 † | HD: 4* | ATK: 1 bite | DMG: 2d6 | MV: 50` Human Form 40` | #APP: 1d4, Wild 2d4, Lair 2d4 | SV: Fighter: 4 | ML: 9 | TRS: C | XP: 280 ]
+Lycanthrope, Werecockroach	DG PD PF PH PM PP PS TF TH TM TS	4	3	[AC: 15 † | HD: 3** | ATK: 1 bite or 1 weapon | DMG: 1d4 or 1d6 or by weapon | MV: 50` Human Form 40` Fly 10` | #APP: 2d4, Wild 2d10, Lair 2d10 | SV: Fighter: 3* | ML: 8 | TRS: C | XP: 205]
+Lycanthrope, Wererat*	CF CH CM CP DG PD PS	4	3	[AC: 13 † | HD: 3* | ATK: 1 bite or 1 weapon | DMG: 1d4 or 1d6 or by weapon | MV: 40` | #APP: 1d8, Wild 2d8, Lair 2d8 | SV: Fighter: 3 | ML: 8 | TRS: C | XP: 175]
+Lycanthrope, Weretiger*	CF CH CM CP PF PH PM PP PS TF TH TM TS	6	3	[AC: 17 † | HD: 5* | ATK: 2 claws/1 bite | DMG: 1d6/1d6/2d6 | MV: 50` Human Form 40` | #APP: 1d4, Wild 1d4, Lair 1d4 | SV: Fighter: 5 | ML: 9 | TRS: C | XP: 405 ]
+Lycanthrope, Werewolf*	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	3	[AC: 15 † | HD: 4* | ATK: 1 bite | DMG: 2d4 | MV: 60` Human Form 40` | #APP: 1d6, Wild 2d6, Lair 2d6 | SV: Fighter: 4 | ML: 8 | TRS: C | XP: 280 ]
+Manticore	CF CH CM CP DG FW PD PH PM PP PS SW TF TH TM TS	7	13	[AC: 18 | HD: 6+1* | ATK: 2 claws/1 bite or 6 spikes (180` range) | DMG: 1d4/1d4/2d4 or 1d6 per spike | MV: 40` Fly 60` (10`) | #APP: 1d2, Wild 1d4, Lair 1d4 | SV: Fighter: 6 | ML: 9 | TRS: D | XP: 555 ]
+Mastodon	CF CH CM CP PD PF PH PM PP PS	16	13	[AC: 18 | HD: 15 *(+11) | ATK: 2 tusks or 1 trample | DMG: 2d6/2d6 or 4d8 | MV: 40` (15`) | #APP: Wild 2d8 | SV: Fighter: 15 | ML: 8 | TRS: special | XP: 2,975 ]
+Medusa	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	13	[AC: 12 | HD: 4** | ATK: 1 snakebite + gaze | DMG: 1d6+poison + petrification | MV: 30` | #APP: 1d3, Wild 1d4, Lair 1d4 | SV: Fighter: 4 | ML: 8 | TRS: F | XP: 320 ]
+Mermaid	FW SW	2	5	[AC: 12 | HD: 1* | ATK: 1 | DMG: 1d6 or by weapon | MV: Swim 40` | #APP: Wild 1d2 or 3d6 (see rules) | SV: Fighter: 1 | ML: 8 | TRS: A | XP: 37 ]
+Mimic	DG	8	1	[AC: 15 | HD: 7** | ATK: 1 slam | DMG: 3d4 | MV: 10` | #APP: 1 | SV: Fighter: 7 | ML: 10 | TRS: None | XP: 800 ]
+Minotaur	CF CH CM DG PF PH PM PS TF TH TM TS	7	13	[AC: 14 (12) | HD: 6 | ATK: 1 gore/1 bite or 1 weapon | DMG: 1d6/1d6 or by weapon + 2 | MV: 40` | #APP: 1d6, Wild 1d8, Lair 1d8 | SV: Fighter: 6 | ML: 11 | TRS: C | XP: 500 ]
+Mohrg	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	15	2	[AC: 23 | HD: 14** | ATK: 1 slam or 1 tongue | DMG: 1d6 or special | MV: 30` | #APP: 1 Wild 1d4 Lair 1d4 (plus 5d4 zombies) | SV: Fighter: 14 | ML: 12 | TRS: None | XP: 2615 ]
+Mountain Lion	CF CH CM CP PD PH PM PP TF TH TM	4	4	[AC: 14 | HD: 3+2 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d6 | MV: 50` | #APP: Wild 1d4, Lair 1d4 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 145 ]
+Mule	CF CH CM CP PF PH PM PP PS TF TH TM TS	3	13	[AC: 13 | HD: 2 | ATK: 1 kick or 1 bite | DMG: 1d4 or 1d2 | MV: 40` (10`) | #APP: domestic only | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Mummy*	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	6	13	[AC: 17 ‡ (see rules) | HD: 5** | ATK: 1 touch + disease | DMG: 1d12 + disease | MV: 20` | #APP: 1d4, Lair 1d12 | SV: Fighter: 5 | ML: 12 | TRS: D | XP: 450 ]
+Necrotic Ooze	DG	5	4	[AC: 13, 15 or 17 | HD: 3, 5 or 7 | ATK: 1 | DMG: 1d6, 1d8, or 1d10 by Hit Dice | MV: 10` | #APP: 1d4 Wild 1d4 Lair 1d4 | SV: Fighter: 3, 5, or 7 | ML: 11 | TRS: None | XP: 145, 360, 670 ]
+Nixie	FW SW	2	2	[AC: 16 | HD: 1* | ATK: 1 dagger | DMG: 1d4 | MV: 40` Swim 40` | #APP: Wild 2d20, Lair 2d20 | SV: Fighter: 2 | ML: 6 | TRS: B | XP: 37 ]
+Ochre Jelly*	DG	6	13	[AC: 12 (only hit by fire or cold) | HD: 5* | ATK: 1 | DMG: 2d6 | MV: 10` | #APP: 1 | SV: Fighter: 5 | ML: 12 | TRS: None | XP: 405 ]
+Octopus, Giant	FW SW	9	13	[AC: 19 | HD: 8 | ATK: 8 tentacles/1 bite | DMG: 8x 1d4/1d6 | MV: Swim 30` | #APP: Wild 1d2 | SV: Fighter: 8 | ML: 7 | TRS: None | XP: 875 ]
+Ogre	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	10	[AC: 15 (12) | HD: 4+1 | ATK: 1 weapon | DMG: 2d6 | MV: 30` Unarmored 40` | #APP: 1d6, Wild 2d6, Lair 2d6 | SV: Fighter: 4 | ML: 10 | TRS: C + 1d20x100 gp | XP: 240 ]
+Orc	CF CH CM CP DG PD PF PH PM PP PS TF TM TS	1	13	[AC: 14 (11) | HD: 1 | ATK: 1 weapon | DMG: 1d8 or by weapon | MV: 40` | #APP: 2d4, Wild 3d6, Lair 10d6 | SV: Fighter: 1 | ML: 8 | TRS: D | XP: 25 ]
+Orc, Snow	CF CH CM CP DG	2	13	[AC: 14 (11) | HD: 1* | ATK: 1 | DMG: 1d8 or by weapon | MV: 40` | #APP: 2d4, Wild 3d6, Lair 10d6, Horde 10d20 | SV: Fighter: 1 (but see rules) | ML: 8 | TRS: D | XP: 37 ]
+Otyugh	PM CM TM DG	7	5	[AC: 17 | HD: 6* | ATK: 2 tentacles/1 bite + special | DMG: 1d4x2/1d6 + special | MV: 20` | #APP: 1 Lair 1d3+1 Wild 1d2 | SV: Fighter: 6 | ML: 9 | TRS: U | XP: 555 ]
+Owl, Giant	CF CH CM CP PD PF PH PM PP PS TF TH TM TS	7	2	[AC: 15 | HD: 6 | ATK: 2 claws | DMG: 1d6 x2 | MV: 10` fly 70` | #APP: 1 Lair 1d2 Wild 1d4 | SV: Fighter: 6 | ML: 9 | TRS: None | XP: 5 ]
+Owlbear	DG PF PM PS	6	13	[AC: 15 | HD: 5 | ATK: 2 claws/1 bite + 1 hug | DMG: 1d8/1d8/1d8 + 2d8 | MV: 40` | #APP: 1d4, Wild 1d4, Lair 1d4 | SV: Fighter: 5 | ML: 9 | TRS: C | XP: 360 ]
+Owlbear, Fire-breathing	DG PF PM PS	9	13	[AC: 18 | HD: 8 | ATK: 2 claws/1 bite + 1 hug or 1 breath | DMG: 1d8/1d8/1d8 + 2d8 or 4d6 | MV: 40`, fly 40` (10`) | #APP: 1d4, Lair 1d4, Wild 1d4 | SV: Fighter 8 | ML: 9 | TRS: C x2 | XP: 1015 ]
+Pegasus	CF CM FW PD PF PH PM SW TF TH TM	5	13	[AC: 15 | HD: 4 | ATK: 2 hooves | DMG: 1d6/1d6 | MV: 80` (10`) Fly 160` (10`) | #APP: Wild 1d12 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 240 ]
+Phaerim	PF	1	2	[AC: 15 | HD: 1d6 hp (1 HD) | ATK: 1 weapon | DMG: 1d6 or by weapon | MV: 30` (subject to encumbrance), 60` flight | #APP: 2d4, Wild 3d6, Lair 10d6 | SV: Fighter: 1 (elf bonuses). | ML: 8 | TRS: D | XP: 25 ]
+Phantom Fungus	DG	3	1	[AC: 14 | HD: 2 | ATK: 1 bite | DMG: 1d6 | MV: 20` | #APP: 1 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 100 ]
+Phase Spider	DG PF PH PM TF TH TM	10	4	[AC: 15 | HD: 9+1 (+8) | ATK: 1 bite + poison | DMG: 1d6 + poison | MV: 40` | #APP: 1d4 | SV: Fighter: 9 | ML: 7 | TRS: None | XP: 100 ]
+Pixie	CF PF TF	2	1	[AC: 17 | HD: 1*** | ATK: 1 dagger | DMG: 1d4 | MV: 30` Fly 60` | #APP: 2d4, Wild 10d4, Lair 10d4 | SV: Fighter: 1 (with Elf bonuses) | ML: 7 | TRS: R, S | XP: 61 ]
+Plague Hound	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	5	3	[AC: 14 | HD: 4* | ATK: 1 bite | DMG: 2d4 | MV: 50` | #APP: 1d8, Wild 2d8, Lair 3d8 | SV: Fighter: 4 | ML: 9 | TRS: None | XP: 280]
+Poludnitsa	CF CH CM FW PF PH PM SW TF TH	4	1	[AC: 15 | HD: 3* | ATK: 1 scythe | DMG: 1d8 | MV: 40` | #APP: 1, Lair 1d6 | SV: Fighter: 3 | ML: 8 | TRS: D | XP: 175 ]
+Pony	CF CH CM CP PD PF PH PM PP PS TF TH TM TS	1	4	[AC: 13 | HD: 1 | ATK: 1 bite | DMG: 1d4 | MV: 40` (10`) | #APP: domestic only | SV: Fighter: 1 | ML: 6 (9) | TRS: None | XP: 25 ]
+Preying Mantis, Giant	PF PH TF TH	6	2	[AC: 16 | HD: 5 | ATK: 1 bite | DMG: 1d12 | MV: 40` Fly 120` | #APP: 1d4 Wild 1d6 Lair | SV: Fighter: 5 | ML: 8 | TRS: None | XP: 360 ]
+Prince Frog	DG FW PF PP PS TF TS	3	1	[AC: 13 | HD: 2* | ATK: 2 claws/1 bite + special | DMG: 1d4/1d4/1d6 + paralysis | MV: 20` Leap 20` | #APP: 1d4 | SV: Fighter 2 | ML: 9 | TRS: None | XP: Varies ]
+Pseudodragon	PF DG PH PM	3	1	[AC: 18 | HD: 2* | ATK: 1 bite/1 sting + poison | DMG: 1/1d3 + poison | MV: 10` fly 60` | #APP: 1 Wild 1d2 Lair 1d4 | SV: Magic User: 2 | ML: 7 | TRS: None | XP: 125 ]
+Pteranodon	TM TH TF TS	6	13	[AC: 13 | HD: 5 | ATK: 1 | DMG: 2d6 | MV: Fly 60` (15`) | #APP: Wild 1d4 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 360 ]
+Pterodactyl	TM TH TF TS	1	13	[AC: 12 | HD: 1 | ATK: 1 | DMG: 1d4 | MV: Fly 60` (10`) | #APP: Wild 2d4 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 25 ]
+Purple Worm	CH CP DG PD PH PP TH	16	13	[AC: 16 | HD: 11* (+9) to 20* (+13) | ATK: 1 bite/1 sting | DMG: 2d8/1d8+poison | MV: 20` (15`) | #APP: 1d2, Wild 1d4 | SV: Fighter: 6 to 10 (½ of Hit Dice) | ML: 10 | TRS: None | XP: 1,670 – 5,450 ]
+Ram	CH CM CP PD PH PM PP	3	4	[AC: 13 | HD: 2 | ATK: 1 | DMG: 1d6 | MV: 40`, Climb 20` | #APP: wild 2d4 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Ram, War	CH CM CP PD PH PM PP	4	1	[AC: 13 | HD: 3 | ATK: 1 | DMG: 1d6 Horns or 1d4 via Hooves | MV: 40`, Climb 20` | #APP: domestic only | SV: Fighter: 3 | ML: 9 | TRS: None | XP: 145 ]
+Rat	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	13	[AC: 1113 | HD: 1 Hit Point | ATK: 1 bite per pack | DMG: 1d6 + disease | MV: 20` Swim 10` | #APP: 5d10, Wild 5d10, Lair 5d10 | SV: Normal Man | ML: 5 | TRS: None | XP: 360* ]
+Rat Dog	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	4	4	[AC: 15 | HD: 3 | ATK: 1 | DMG: 1d6 bite | MV: 40` | #APP: 1d10, wild 2d20 | SV: Fighter: 3 | ML: 9 | TRS: None | XP: 145 ]
+Rat, Giant	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	13	[AC: 13 | HD: 1d4 Hit Points | ATK: 1 bite | DMG: 1d4 + disease | MV: 40` Swim 20` | #APP: 3d6, Wild 3d10, Lair 3d10 | SV: Fighter: 1 | ML: 8 | TRS: C | XP: 13 ]
+Red Cap	DG	4	1	[AC: 14 (14) | HD: 3* | ATK: 1 | DMG: 1d6 or by weapon | MV: 60` | #APP: 1d4 | SV: Thief: 6 | ML: 8 | TRS: D | XP: 175 ]
+Red Slime	DG	4	6	[AC: 13 | HD: 3 | ATK: 1 | DMG: 1d8 per round by Hit Dice | MV: 10` | #APP: 1 | SV: Fighter: 3 | ML: 12 | TRS: None | XP: 145 ]
+Red Slime, Huge	DG	7	1	[AC: 16 | HD: 6 | ATK: 1 | DMG: 2d8 per round by Hit Dice | MV: 10` | #APP: 1 | SV: Fighter: 6 | ML: 12 | TRS: None | XP: 500 ]
+Red Slime, Small	DG	1	13	[AC: 11 | HD: 1 | ATK: 1 | DMG: 1d4 per round by Hit Dice | MV: 10` | #APP: 1 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 25 ]
+Remorhaz	CP CH CM DG	17	1	[AC: 20 | HD: 16* (+12) | ATK: 1 bite | DMG: 2d8 + fire | MV: 30` burrow 20` | #APP: 1 | SV: Fighter: 16 | ML: 12 | TRS: None | XP: 3185 ]
+Rhagodessa, Giant	PP PS PF PH PM TS TF TH TM DG	5	1	[AC: 16 | HD: 4 | ATK: 2 legs/1 bite | DMG: grab/grab/2d8 | MV: 50` | #APP: 1d4, Wild 1d6, Lair 1d6 | SV: Fighter: 4 | ML: 9 | TRS: U | XP: 240 ]
+Rhinoceros, Black	PD PF PH PM PP PS TH TM TS	9	13	[AC: 17 | HD: 8 | ATK: 1 butt or 1 trample | DMG: 2d6 or 2d8 | MV: 40` (15`) | #APP: Wild 1d12 | SV: Fighter: 6 | ML: 6 | TRS: None | XP: 875 ]
+Rhinoceros, Woolly	PD PF PH PM PP PS TH TM TS	13	13	[AC: 19 | HD: 12 (+10) | ATK: 1 butt or 1 trample | DMG: 2d8 or 2d12 | MV: 40` (15`) | #APP: Wild 1d8 | SV: Fighter: 8 | ML: 6 | TRS: None | XP: 1,875 ]
+Roc	TM	7	13	[AC: 18 | HD: 6 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/2d6 | MV: 20` Fly 160` (10`) | #APP: Wild 1d12 | SV: Fighter: 6 | ML: 8 | TRS: I | XP: 500 ]
+Roc, Giant	TM	33	2	[AC: 18 | HD: 32 (+16) | ATK: 2 claws/1 bite | DMG: 3d6/3d6/6d6 | MV: 20` Fly 160` (10`) | #APP: Wild 1 | SV: Fighter: 20 at +5 | ML: 10 | TRS: I | XP: 14,250 ]
+Roc, Large	TM	13	3	[AC: 18 | HD: 12 (+10) | ATK: 2 claws/1 bite | DMG: 1d8/1d8/2d10 | MV: 20` Fly 160` (10`) | #APP: Wild 1d8 | SV: Fighter: 12 | ML: 9 | TRS: I | XP: 1,875 ]
+Rock Baboon	TS TF TH TM	3	13	[AC: 14 | HD: 2 | ATK: 1 club/1 bite | DMG: 1d6/1d4 | MV: 40` | #APP: 2d6, Wild 2d6, Lair 5d6 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 75 ]
+Roper**	DG	19	3	[AC: 20 | HD: 18 (+12) | ATK: 6 strands/1 bite | DMG: 2d6 | MV: 10` | #APP: 1d4 | SV: Fighter: 18 | ML: 12 | TRS: I | XP: 3890 ]
+Rot Grub	DG	1	3	[AC: 10 | HD: 1 hp | ATK: 1 bite | DMG: special | MV: 5` | #APP: 5d4 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 16 ]
+Rot Vulture	PD PF PH PM PP PS TF TH TM TS	3	13	[AC: 12 | HD: 2 | ATK: 1 flogging | DMG: 1d6 | MV: 10` FLY 120` | #APP: 1d10 Wild 1d10 Lair 1d10 | SV: Fighter: 2 | ML: 10 | TRS: None | XP: 100 ]
+Rousirl	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	6	[AC: 13 | HD: 2 | ATK: 1 bite | DMG: 2d6 | MV: 60` | #APP: 1d6 | SV: Fighter: 1 | ML: 6 | TRS: None | XP: 75 ]
+Rust Monster*	DG	6	5	[AC: 18 | HD: 5* | ATK: 1 | DMG: special | MV: 40` | #APP: 1d4 | SV: Fighter: 5 | ML: 7 | TRS: None | XP: 405 ]
+Sabre-Tooth Cat	TF TH TM TS	9	2	[AC: 14 | HD: 8 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/2d8 | MV: 50` | #APP: Wild 1d4, Lair 1d4 | SV: Fighter: 8 | ML: 10 | TRS: None | XP: 875 ]
+Sahuagin	SW	3	5	[AC: 16 | HD: 2+2* | ATK: 1 trident/1 bite or 2 talons/1 bite or heavy crossbow or net | DMG: 1d8/1d4 or 1d4x2/1d4 or 1d8 | MV: 30` | #APP: 1d8 Lair 1d6x10 Wild 1d10+10 | SV: Fighter: 2 | ML: 7 | TRS: Individuals N; Lair E, I, O | XP: 100 ]
+Salamander, Flame*	PD TH TM DG	9	3	[AC: 19 ‡ | HD: 8* | ATK: 2 claws/1 bite + heat | DMG: 1d4/1d4/1d8 + 1d8/round | MV: 40` | #APP: 1d4+1, Wild 2d4, Lair 2d4 | SV: Fighter: 8 | ML: 8 | TRS: F | XP: 945 ]
+Salamander, Frost*	CF CH CM DG	13	3	[AC: 21 ‡ | HD: 12* (+10) | ATK: 4 claws/1 bite + cold | DMG: 1d6/1d6/1d6/1d6/2d6 + 1d8/round | MV: 40` | #APP: 1d3, Wild 1d3, Lair 1d3 | SV: Fighter: 12 | ML: 9 | TRS: E | XP: 1,975 ]
+Satyr	PH	6	4	[AC: 15 | HD: 5* | ATK: 1 head butt/dagger or shortbow | DMG: 1d6/1d4 or 1d6 | MV: 40` | #APP: 1 Lair 1d10 Wild 1d6 | SV: Fighter: 5 | ML: 10 | TRS: Individuals S; Lair I | XP: 405 ]
+Scorpion, Giant	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	4	[AC: 15 | HD: 4* | ATK: 2 claws/1 stinger | DMG: 1d10/1d10/1d6 + poison | MV: 50` (10`) | #APP: 1d6, Wild 1d6 | SV: Fighter: 2 | ML: 11 | TRS: None | XP: 280 ]
+Scrab	PS TS FW SW	6	3	[AC: 18 | HD: 5* | ATK: 2 claws | DMG: 1d8/1d8 | MV: 20` Swim 20` | #APP: 1d2, Wild 1d6, Lair 1d6 | SV: Fighter: 3 | ML: 7 | TRS: None | XP: Varies ]
+Sea Cat	SW	12	4	[AC: 18 | HD: 11 (+7) | ATK: 2 claws/1 bite | DMG: 1d6x2/1d8 | MV: 10` Swim 40` | #APP: 1 Wild 1d10 | SV: Fighter: 11 | ML: 12 | TRS: None | XP: 1670 ]
+Sea Hag	SW	5	3	[AC: 14 | HD: 4+1 | ATK: 2 daggers | DMG: 1d4+4/1d4+4 | MV: 30` Swim 40` | #APP: 1 | SV: Fighter: 4 | ML: 8 | TRS: F | XP: 480 ]
+Sea Serpent	SW	7	13	[AC: 17 | HD: 6 | ATK: 1 bite | DMG: 2d6 | MV: Swim 50` (10`) | #APP: Wild 2d6 | SV: Fighter: 6 | ML: 8 | TRS: None | XP: 500 ]
+Shadow*	CF CM DG PF PM PS TF TM TS	3	13	[AC: 13 ‡ | HD: 2* | ATK: 1 touch | DMG: 1d4 + 1 point Strength loss | MV: 30` | #APP: 1d10, Wild 1d10, Lair 1d10 | SV: Fighter: 2 | ML: 12 | TRS: F | XP: 100 ]
+Shambling Mound	DG PS TS	14	13	[AC: 20 | HD: 13** (+10) | ATK: 2 Slams | DMG: 2d6 | MV: 20` Swim 20` | #APP: 1 | SV: Fighter: 13 | ML: 12 | TRS: B, O | XP: 2395 ]
+Shark, Bull	SW	3	13	[AC: 13 | HD: 2 | ATK: 1 bite | DMG: 2d4 | MV: Swim 60` (10`) | #APP: Wild 3d6 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 75 ]
+Shark, Great White	SW	9	13	[AC: 19 | HD: 8 | ATK: 1 bite | DMG: 2d10 | MV: Swim 60` (10`) | #APP: Wild 1d4 | SV: Fighter: 8 | ML: 8 | TRS: None | XP: 875 ]
+Shark, Mako	SW	5	13	[AC: 15 | HD: 4 | ATK: 1 bite | DMG: 2d6 | MV: Swim 80` | #APP: Wild 2d6 | SV: Fighter: 4 | ML: 7 | TRS: None | XP: 240 ]
+Shield Guardian	DG	26	1	[AC: 24 | HD: 25** (+14) | ATK: 2 Slams | DMG: 1d10x2 | MV: 30` | #APP: 1 | SV: Fighter: 13 | ML: 12 | TRS: B, O | XP: 2395 ]
+Shocker Lizard	DG PS TS	3	1	[AC: 16 | HD: 2* | ATK: 1 bite | DMG: 1d4 | MV: 40` Swim 20` | #APP: 1d6 Lair 2d6 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 100 ]
+Shrew, Giant	DG	2	5	[AC: 16 | HD: 1* | ATK: 2 bites | DMG: 1d6/1d6 | MV: 60` | #APP: 1d4, Wild 1d8, Lair 1d8 | SV: Fighter: 2 | ML: 10 | TRS: None | XP: 37 ]
+Shrieker	DG	4	13	[AC: 13 | HD: 3 | ATK: Special | DMG: None | MV: 5` | #APP: 1d8 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 145 ]
+Skeletaire	PD PS CF TS DG	2	1	[AC: 13 (see rules) | HD: 1* (variable) | ATK: 1 dagger or 1 spell | DMG: 1d4 or per spell | MV: 40` | #APP: 1 | SV: Magic-User: 1 (variable) | ML: 12 | TRS: None | XP: 37 ]
+Skeleton	DG PS TS	1	13	[AC: 13 (see rules) | HD: 1 | ATK: 1 | DMG: 1d6 or by weapon | MV: 40` | #APP: 3d6, Wild 3d10 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 25 ]
+Skeleton, Blackbone	PD PS CF TS DG	2	1	[AC: 13 (see rules) | HD: 1* | ATK: 1 | DMG: 1d6 plus 1d4 fire damage, or by weapon | MV: 40` | #APP: 3d6, Wild 3d10 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 37 ]
+Skeleton, Pitch	PD PS CF TS DG	7	1	[AC: 15 | HD: 6* | ATK: 1 | DMG: 1d6+special | MV: 40` | #APP: 1d4 | SV: Fighter: 6 | ML: 12 (specia | TRS: B | XP: 555 ]
+Skeleton, Warrior	DG	3	1	[AC: 14 | HD: 2 | ATK: 1 | DMG: by weapon +1 | MV: 40` | #APP: 3d6 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 125 ]
+Skum	DG FW SW	3	1	[AC: 13 | HD: 2* | ATK: 1 bite and 2 claws, or 1 weapon | DMG: bite 2d6 claws 1d4 each | MV: 20` Swim 40` | #APP: 1d4+1, Wild 1d4+1, Lair 1d10+5 | SV: Fighter: 2 | ML: 8 or 12 | TRS: B | XP: 100 ]
+Snail, Giant Barb	DG	9	1	[AC: 19 | HD: 8 or 8* | ATK: 1 bite or spit barbs | DMG: 2d8 | MV: 10` | #APP: 1d4 | SV: Fighter: 8 | ML: 8 | TRS: None | XP: 875 or poisonous: 945 ]
+Snail, Giant Cone	DG	4	13	[AC: 16 | HD: 3* | ATK: 1 dart | DMG: 1d6 + paralysis | MV: 10` | #APP: 1d3, 1d3 Wild Lair 1d3 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 175 ]
+Snail, Huge Barb	DG	7	3	[AC: 18 | HD: 6 or 6* | ATK: 1 bite or spit barbs | DMG: 1d12 | MV: 10` | #APP: 1d4 | SV: Fighter: 6 | ML: 8 | TRS: None | XP: 500 or poisonous: 555 ]
+Snail, Large Barb	DG	5	6	[AC: 17 | HD: 4 or 4* | ATK: 1 bite or spit barbs | DMG: 1d8 | MV: 10` | #APP: 1d4 | SV: Fighter: 4 | ML: 8 | TRS: None | XP: 240 or poisonous: 280 ]
+Snake, Giant Rattlesnake	PD	3	5	[AC: 15 | HD: 2* | ATK: 1 bite | DMG: 1d8 + poison | MV: 40` | #APP: 1d2, Wild 1d2, Lair 1d2 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 100 ]
+Snake, Pit Viper	PP PS PF PH PM TS TF TH TM DG	2	5	[AC: 14 | HD: 1* | ATK: 1 bite | DMG: 1d4 + poison | MV: 30` | #APP: 1d4, Wild 1d4, Lair 1d4 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 37 ]
+Snake, Python	PS TS TF TH TM	6	5	[AC: 14 | HD: 5* | ATK: 1 bite/1 constrict | DMG: 1d4/2d4 | MV: 30` | #APP: 1d3, Wild 1d3, Lair 1d3 | SV: Fighter: 5 | ML: 8 | TRS: None | XP: 405 ]
+Snake, Sea Snake	SW	4	4	[AC: 14 | HD: 3* | ATK: 1 bite | DMG: 1 + poison | MV: 10` Swim 30` | #APP: Wild 1d8 | SV: Fighter: 3 | ML: 7 | TRS: None | XP: 175 ]
+Snake, Spitting Cobra	PD PP PF PH PM DG	2	5	[AC: 13 | HD: 1* | ATK: 1 bite or 1 spit | DMG: 1d4 + poison or blindness | MV: 30` | #APP: 1d6, Wild 1d6, Lair 1d6 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 37 ]
+Spectre*	CM DG PM PS TM TS	7	2	[AC: 17 ‡ | HD: 6** | ATK: 1 touch | DMG: Energy drain 2 levels/touch | MV: Fly 100` | #APP: 1d4, Lair 1d8 | SV: Fighter: 6 | ML: 11 | TRS: E | XP: 610 ]
+Sphinx	DG TF TH TM TS	13	2	[AC: 18 | HD: 12 | ATK: 2 claws | DMG: 2d4+5/2d4+5 | MV: 50`, fly 80` (20`) | #APP: 1 | SV: Fighter 12 | ML: 8 | TRS: | XP: 2,375 ]
+Spider, Giant Black Widow	PP PS PF PH PM TS TF TH TM DG	4	13	[AC: 14 | HD: 3* | ATK: 1 bite | DMG: 2d6 + poison | MV: 20` Web 40` | #APP: 1d3, Wild 1d3, Lair 1d3 | SV: Fighter: 3 | ML: 8 | TRS: None | XP: 175 ]
+Spider, Giant Crab	PP PS PF PH PM TS TF TH TM DG	3	13	[AC: 13 | HD: 2* | ATK: 1 bite | DMG: 1d8 + poison | MV: 40` | #APP: 1d4, Wild 1d4, Lair 1d4 | SV: Fighter: 2 | ML: 7 | TRS: None | XP: 100 ]
+Spider, Giant Tarantula	PD	5	13	[AC: 15 | HD: 4* | ATK: 1 bite | DMG: 1d8 + poison | MV: 50` | #APP: 1d3, Wild 1d3, Lair 1d3 | SV: Fighter: 4 | ML: 8 | TRS: None | XP: 280 ]
+Spiderwolf	DG PD PF PH PM PP PS TF TH TM TS	5	3	[AC: 14 | HD: 4** | ATK: 1 bite | DMG: 1d10 plus poison | MV: 60` | #APP: 2d4 Wild/Lair 2d4 | SV: Fighter: 5 | ML: 10 | TRS: None | XP: Varies ]
+Sprite	PF	1	2	[AC: 15 | HD: 1d4 Hit Points | ATK: 1 dagger or 1 spell | DMG: 1d4 or by spell | MV: 20` Fly 60` | #APP: 3d6, Wild 3d6, Lair 5d8 | SV: Magic-User: 4 (with Elf bonuses) | ML: 7 | TRS: S | XP: 13 ]
+Squid, Giant	SW	7	13	[AC: 17 | HD: 6 | ATK: 8 tentacles/1 bite | DMG: 8x 1d4/1d10 | MV: Swim 40` | #APP: Wild 1d4 | SV: Fighter: 6 | ML: 8 | TRS: None | XP: 500 ]
+Stalag	DG	1	13	[AC: 17 | HD: 1 | ATK: 1 | DMG: 1d6 (1d6 per hit die) | MV: 10` | #APP: 3d6 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 25 ]
+Stalag, Greater	DG	5	3	[AC: 17 | HD: 4 | ATK: 1 | DMG: 4d6 (1d6 per hit die) | MV: 10` | #APP: 3d6 | SV: Fighter: 1 | ML: 12 | TRS: None | XP: 240 ]
+Stegosaurus	TF TH TM TS	12	13	[AC: 17 | HD: 11 (+9) | ATK: 1 tail/1 bite or 1 trample | DMG: 2d8/1d6 or 2d8 | MV: 20` (15`) | #APP: Wild 1d4 | SV: Fighter: 6 | ML: 7 | TRS: None | XP: 1,575 ]
+Stirge	CF DG PF TF	2	13	[AC: 13 | HD: 1* | ATK: 1 bite | DMG: 1d4 + 1d4/round blood drain | MV: 10` Fly 60` | #APP: 1d10, Wild 3d12, Lair 3d12 | SV: Fighter: 1 | ML: 9 | TRS: D | XP: 37 ]
+Tapper	DG	4	1	[AC: 15 † | HD: 3 | ATK: 1 | DMG: 1d6 Mining Pick | MV: 30` | #APP: 1d6 | SV: Fighter: 3 | ML: 14 | TRS: special | XP: 145 ]
+Tarrasque	DG	49	1	[AC: 35 | HD: 48 (+16) | ATK: 2 claws, 2 horns, 1 tail slap, 1 bite | DMG: 1d12x2, 1d10x2, 3d8, 4d8 | MV: 20` Rush 150` | #APP: 1 | SV: Fighter: 20 | ML: 12 | TRS: None | XP: 20,400 ]
+Tendriculos	PF TF PS TS	10	1	[AC: 16 | HD: 9* | ATK: 1 bite/2 tendrils | DMG: 2d8/1d6 | MV: 20` | #APP: 1 | SV: Fighter: 9 | ML: 12 | TRS: None | XP: 1075 ]
+Tentacle Worm	DG PM	4	4	[AC: 13 | HD: 3* | ATK: 6 tentacles | DMG: paralysis | MV: 40` | #APP: 1d3, Lair 1d3 | SV: Fighter: 3 | ML: 9 | TRS: B | XP: 175 ]
+Thulid	DG	5	3	[AC: 15 | HD: 4* (4** if a Magic-User) | ATK: 1 | DMG: by weapon or special | MV: 40` | #APP: 1d4 | SV: Magic-User: 4 | ML: 7 | TRS: F | XP: 280 (320) ]
+Thulid, Greater	DG	9	1	[AC: 15 | HD: 8* (8** if a Magic-User) | ATK: 1 | DMG: by weapon or special | MV: 40` | #APP: 1d4 | SV: Magic-User: 8 | ML: 7 | TRS: F | XP: 945 (1015) ]
+Thulid, Lesser	DG	1	5	[AC: 15 | HD: 1(1** if a Magic-User) | ATK: 1 | DMG: by weapon or special | MV: 40` | #APP: 1d4 | SV: Magic-User: 1 | ML: 7 | TRS: F | XP: 37 (49) ]
+Tiger	CF CH CM CP PD PF PH PM PP PS TF TH TM TS	7	4	[AC: 14 | HD: 6 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/2d6 | MV: 50` | #APP: Wild 1d3, Lair 1d3 | SV: Fighter: 6 | ML: 9 | TRS: None | XP: 500 ]
+Titanothere	PD PF PH PP PS	13	4	[AC: 15 | HD: 12 (+10) | ATK: 1 butt or 1 trample | DMG: 2d6 or 3d8 | MV: 40` (10`) | #APP: Wild 1d6 | SV: Fighter: 8 | ML: 7 | TRS: None | XP: 1,875 ]
+Toad, Giant	DG PD PF PH PM PP PS TF TH TM TS	3	13	[AC: 13 | HD: 2 | ATK: 1 tongue or 1 bite | DMG: grab or 1d4+1 | MV: 30` Swim 30` | #APP: 1d4, Wild 1d4 | SV: Fighter: 2 | ML: 6 | TRS: None | XP: 75 ]
+Treant	CF PF PS TF TS	9	13	[AC: 19 | HD: 8* | ATK: 2 fists | DMG: 2d6/2d6 | MV: 20` | #APP: Wild 1d8, Lair 1d8 | SV: Fighter: 8 | ML: 9 | TRS: C | XP: 945 ]
+Triceratops	TF TH TM TS	12	13	[AC: 19 | HD: 11 (+9) | ATK: 1 gore or 1 trample | DMG: 3d6 or 3d6 | MV: 30` (15`) | #APP: Wild 1d4 | SV: Fighter: 7 | ML: 8 | TRS: None | XP: 1,575 ]
+Troglodyte	DG	3	13	[AC: 15 | HD: 2 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d4 | MV: 40` | #APP: 1d8, Lair 5d8 | SV: Fighter: 2 | ML: 9 | TRS: A | XP: 75 ]
+Troll	CF CH CM CP DG PD PF PH PP PS TF TH TM TS	7	13	[AC: 16 | HD: 6* | ATK: 3 | DMG: 1d6/1d6/1d10 | MV: 40` | #APP: 1d8, Wild 1d8, Lair 1d8 | SV: Fighter: 6 | ML: 10 (8) | TRS: D | XP: 555 ]
+Tyrannosaurus Rex	TF TH TM TS	19	4	[AC: 23 | HD: 18 (+12) | ATK: 1 bite | DMG: 6d6 | MV: 40` (10`) | #APP: Wild 1d4 | SV: Fighter: 9 | ML: 11 | TRS: None | XP: 4,000 ]
+Unicorn	PH	5	13	[AC: 19 | HD: 4* | ATK: 2 hooves/1 horn (+3 attack bonus) | DMG: 1d8/1d8/1d6+3 | MV: 80` | #APP: Wild 1d6 | SV: Fighter: 8 | ML: 7 | TRS: None | XP: 280 ]
+Urgoblin	CF CH CM CP DG PD PF PH PM PP PS TH TM TS	3	4	[AC: 14 (11) | HD: 2* | ATK: 1 weapon | DMG: 1d8 or by weapon | MV: 30` Unarmored 40` | #APP: Special | SV: Fighter: 2 | ML: 9 | TRS: Q, R, S each; special in lair | XP: 100 ]
+Vampire*	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	9	6	[AC: 19 | HD: 8** (+8) | ATK: 1 weapon or special | DMG: 1d8 or by weapon or special | MV: 40` Fly 60` | #APP: 1d6 | SV: Fighter: 8 (as Hit Dice) | ML: 11 | TRS: F | XP: 1,012 ]
+Vampire, Greater*	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	10	1	[AC: 20 | HD: 9** (+8) | ATK: 1 weapon or special | DMG: 1d8 or by weapon or special | MV: 40` Fly 60` | #APP: 1d6 | SV: Fighter: 9 | ML: 11 | TRS: F | XP: 1,225 ]
+Vampire, Lesser*	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	8	13	[AC: 18 | HD: 7** (+8) | ATK: 1 weapon or special | DMG: 1d8 or by weapon or special | MV: 40` Fly 60` | #APP: 1d6 | SV: Fighter: 7 | ML: 11 | TRS: F | XP: 800 ]
+Vermen (Ratman)	CF CH CM CP DG PD PS	2	4	[AC: 16 (13) | HD: 1+1 | ATK: 1 bite or 1 weapon | DMG: 1d3 or by weapon | MV: 30` | #APP: 1d6, Wild 2d10, Lair 2d6X10 | SV: Fighter: 1 | ML: 5 (see rul | TRS: P each, E in lair | XP: 25 ]
+Violet Fungus	DG	3	3	[AC: 13 | HD: 2 | ATK: 1 tentacle | DMG: 1d6 + poison | MV: 10` | #APP: 1d6 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 75 ]
+Vort (Crested Serpent)	CF CH CM CP DG PD PF PH PM PP PS TF TM TS	2	1	[AC: 15 | HD: 1+2 | ATK: 1 | DMG: 1d3 + poison | MV: 50` | #APP: 1d4 | SV: Fighter: 1 | ML: 7 | TRS: None | XP: 25 ]
+Water Termite, Giant	FW SW PS TS	5	5	[AC: 13 | HD: 4 | ATK: 1 spray | DMG: Stun | MV: Swim 30` | #APP: Wild 1d4 | SV: Fighter: 4 | ML: 10 | TRS: None | XP: 240 ]
+Water Termite, Huge	FW SW PS TS	1	13	[AC: 13 | HD: 1 | ATK: 1 spray | DMG: Stun | MV: Swim 30` | #APP: Wild 1d4 | SV: Fighter: 1 | ML: 10 | TRS: None | XP: 25 ]
+Weasel, Giant	PP PS PF PH PM CP CF CH CM	6	3	[AC: 17 | HD: 5 | ATK: 1 bite + hold | DMG: 2d4 + 2d4 per round | MV: 50` | #APP: 1d4, Wild 1d6, Lair 1d6 | SV: Fighter: 5 | ML: 8 | TRS: V | XP: 360 ]
+Whale, Killer	SW	7	13	[AC: 17 | HD: 6 | ATK: 1 bite | DMG: 2d10 | MV: Swim 80` (10`) | #APP: Wild 1d6 | SV: Fighter: 6 | ML: 10 | TRS: None | XP: 500 ]
+Whale, Narwhal	SW	13	13	[AC: 19 | HD: 12 (+10) | ATK: 1 horn | DMG: 2d6 | MV: Swim 60` | #APP: Wild 1d4 | SV: Fighter: 6 | ML: 8 | TRS: Special | XP: 1,875 ]
+Whale, Sperm	SW	37	13	[AC: 22 | HD: 36* (+16) | ATK: 1 bite or special | DMG: 3d20 | MV: Swim 60` (20`) | #APP: Wild 1d3 | SV: Fighter: 8 | ML: 7 | TRS: None | XP: 18,000 ]
+Wight*	CM DG PM PS TM TS	4	13	[AC: 15 † | HD: 3* | ATK: 1 touch | DMG: Energy drain (1 level) | MV: 30` | #APP: 1d6, Wild 1d8, Lair 1d8 | SV: Fighter: 3 | ML: 12 | TRS: B | XP: 175 ]
+Will-o`-wisp	CM DG PM PS SW TM TS	10	4	[AC: 29 | HD: 9** | ATK: 1 shock | DMG: 2d8 | MV: Fly 50` | #APP: 1d4 | SV: Fighter: 9 | ML: 12 | TRS: U | XP: 1225 ]
+Winter Wolf	CP CF CH CM DG	7	3	[AC: 15 | HD: 6 | ATK: 1 bite | DMG: 1d6 + cold | MV: 50` | #APP: 1d4 Lair 1d6 | SV: Fighter: 6 | ML: 7 | TRS: U in lair only | XP: 555 ]
+Wolf	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	13	[AC: 13 | HD: 2 | ATK: 1 bite | DMG: 1d6 | MV: 60` | #APP: 2d6, Wild 3d6, Lair 3d6 | SV: Fighter: 2 | ML: 8 | TRS: None | XP: 75 ]
+Wolf, Dire	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	2	[AC: 14 | HD: 4 | ATK: 1 bite | DMG: 2d4 | MV: 50` | #APP: 1d4, Wild 2d4, Lair 2d4 | SV: Fighter: 4 | ML: 9 | TRS: None | XP: 240 ]
+Wolverine	CF CH CM CP DG	4	4	[AC: 14 | HD: 3 | ATK: 2 claws/1 bite | DMG: 1d4+2/1d4+2/1d6 | MV: 30’ climb 10’ burrow 1` | #APP: 1 | SV: Fighter: 3 | ML: 9 or 12 (s | TRS: None | XP: 500 ]
+Worg	CF CH CM CP DG PD PF PM PP PS TF TH TM TS	5	13	[AC: 14 | HD: 4 | ATK: 1 bite | DMG: 1d6 | MV: 50` | #APP: 1d4 Pack 1d6 | SV: Fighter: 4 | ML: 7 | TRS: U in lair only | XP: 240 ]
+Wraith*	CM DG PM PS TM TS	5	13	[AC: 15 ‡ | HD: 4** | ATK: 1 touch | DMG: 1d6 + energy drain (1 level) | MV: Fly 80` | #APP: 1d4, Lair 1d6 | SV: Fighter: 4 | ML: 12 | TRS: E | XP: 320 ]
+Wyvern	DG PD PF PM PP PS TF TM TS	8	13	[AC: 18 | HD: 7* | ATK: 1 bite/1 stinger or 2 talons/1 stinger | DMG: 2d8/1d6 + poison or 1d10/1d10/1d6 + poison | MV: 30` (10`) Fly 80` (15`) | #APP: Wild 1d6, Lair 1d6 | SV: Fighter: 7 | ML: 9 | TRS: E | XP: 735 ]
+Yellow Mold	DG	3	1	[AC: Can always be hit | HD: 2* | ATK: Spores | DMG: see rules | MV: 0 | #APP: 1d8 | SV: Normal Man | ML: N/A | TRS: None | XP: 100 ]
+Zombie	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	13	[AC: 12 (see rules) | HD: 2 | ATK: 1 | DMG: 1d8 or by weapon | MV: 20` | #APP: 2d4, Wild 4d6 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 75 ]
+Zombie, Flesh Eater	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	13	[AC: 14 | HD: 2 | ATK: 2 claws/1 bite | DMG: 1d3/1d3/1d6 | MV: 40` | #APP: 2d8 | SV: Fighter: 2 | ML: 12 | TRS: None | XP: 125 ]
+Zombraire	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	1	[AC: 12 (see rules) | HD: 2* (variable) | ATK: 1 dagger or 1 spell | DMG: 1d4 or per spell | MV: 20` | #APP: 1 | SV: Magic-User: 2 (equal to hit dice) | ML: 9 to 12 (s | TRS: None | XP: 100 (variable) ]
+--END--
+acid spray
+bolt, crossbow
+bridge, collapsing
+bridge, illusory 
+caltrops drop from ceiling
+ceiling block drops behind players
+ceiling blocks drop in front of and behind players
+ceiling block drops in front of players
+ceiling block drops on players
+ceiling block seals players in room or area
+elevator room
+elevator room, deactivates for 24 hours
+elevator room, one way
+falling door
+flame jets
+flooding room
+gas, blinding
+gas, fear
+gas, flammable
+gas, sleep
+gas, slowing
+greased chute
+lightning bolt
+log trap, swinging
+obscuring fog
+oil-filled pit with dropping lit torch
+pit trap triggered by false door
+pit with dropping ceiling block
+pit with locking trap door
+pit, 10 ft
+poisoned bolt, crossbow
+poisoned caltrops
+poisoned spear, ballista
+poisoned spike pit
+portcullis drops behind players
+portcullises drop in front of and behind players
+portcullis drops in front of players
+rolling stone ball, height and width of corridor
+scything blade, ankle-high
+scything blade, neck-high
+sliding room changes facing or location
+spear, ballista
+spiked log trap
+spiked pit
+spring-loaded pile-driver disguised as a door
+stairs fold flat into a sliding chute
+stairs collapse
+teleporter
+trip wire
+wire, neck high
+--END--
+ashes
+badly dented helmet
+bent iron bar
+bits of hair or fur
+blunted javelin head
+bones
+broken arrow
+broken bottle
+corroded chain
+cobwebs
+bent copper coin
+cracks in ceiling
+cracks in floor
+cracks in wall
+cracked flask
+cracked hammer
+head
+dagger hilt
+dripping water
+dried blood
+dry leaves
+twigs 
+dung
+dust
+food
+fungi
+guano
+leather boot
+lantern
+mold
+pick handle
+rope
+pottery shards
+rags
+rats
+rubble
+sack
+scattered teeth or fang
+scratches on wall
+slime on ceiling
+slime on floor
+slime on wall
+spike
+sticks
+strap
+straw
+stones
+sword hilt
+torch stub
+water puddle
+wax drippings
+wax blob
+candle stub
+wood
+altar
+armchair
+armoire
+bag
+barrel
+bed
+bench
+blanket
+box
+brazier
+bucket
+buffet
+bunks
+barrel
+cabinet
+candelabrum
+carpet
+cask
+cauldron
+chandelier
+charcoal
+kettle
+loom
+mat
+mattress
+mural
+oven
+pail
+painting
+pallet
+pans
+pedestal
+pegs
+pillow
+pots
+quilt
+rug
+rushes
+sack
+sconce
+screen
+sheet
+shelf
+chair
+chest
+chest of drawers
+coal
+couch
+crate
+cupboard
+cushion
+desk
+fireplace with wood
+fountain
+grindstone
+hammock
+hamper
+hogshead
+idol
+shrine
+sideboard
+sofa
+spinning wheel
+staff
+stand
+statue
+stool
+table
+tapestry
+throne
+trunk
+tub
+utensil
+urn
+wall basin
+wardrobe
+wood billets
+workbench
+--END--
+Locked Chest
+Locked Huge Chest
+Locked Iron Trunk
+Loose
+Bag
+Sack
+Coffer
+Chest
+Huge Chest
+Hidden in Wall
+Hidden under Floor
+Hidden
+Iron Trunk
+--END--
+Weapon	25	1
+Armor	10	2
+Potion	20	3
+Scroll	30	4
+Ring	5	5
+Relic	5	6
+Magic Item	5	7
+Treasure	200	8
+--END-- weapon
+Spear	3	10
+Sling Bullet	1	11
+Pole Arm	1	10
+Maul	1	10
+Mace	8	10
+Warhammer	3	10
+Two-Handed Sword	2	10
+Scimitar	2	10
+Longsword	14	10
+Shortsword	6	10
+Dagger	12	10
+Heavy Quarrel	4	11
+Light Quarrel	8	11
+Longbow Arrow	4	11
+Longbow	4	11
+Shortbow Arrow	8	11
+Shortbow	8	11
+Hand Axe	2	10
+Battle Axe	7	10
+Great Axe	2	10
+--END-- armor
+Shield	57	9
+Plate Mail	15	9
+Chain Mail	11	9
+Leather Armor	8	9
+--END--
+Clairaudience	1	0
+Clairvoyance	1	0
+Control Animal	1	0
+Control Dragon	1	0
+Control Giant	1	0
+Control Human	1	0
+Control Plant	1	0
+Control Undead	1	0
+Delusion	1	0
+Diminution	1	0
+ESP	1	0
+Fire Resistance	1	0
+Flying	1	0
+Gaseous Form	1	0
+Giant Strength	1	0
+Growth	1	0
+Healing	1	0
+Heroism	1	0
+Invisibility	1	0
+Invulnerability	1	0
+Levitation	1	0
+Longevity	1	0
+Poison	1	0
+Polymorph Self	1	0
+Speed	1	0
+Treasure Finding	1	0
+--END--
+ClericSpell Scroll (1 Spell)	3	0
+Cleric Spell Scroll (2 Spells)	3	0
+Cleric Spell Scroll (3 Spells)	2	0
+Cleric Spell Scroll (4 Spells)	1	0
+Magic-User Spell Scroll (1 Spell)	7	0
+Magic-User Spell Scroll (2 Spells)	6	0
+Magic-User Spell Scroll (3 Spells)	5	0
+Magic-User Spell Scroll (4 Spells)	4	0
+Magic-User Spell Scroll (5 Spells)	3	0
+Magic-User Spell Scroll (6 Spells)	2	0
+Magic-User Spell Scroll (7 Spells)	1	0
+Cursed Scroll	4	0
+Protection from Elementals	2	0
+Protection from Lycanthropes	9	0
+Protection from Magic	5	0
+Protection from Undead	3	0
+Map to Treasure Type A	9	0
+Map to Treasure Type E	3	0
+Map to Treasure Type G	2	0
+Map to 1d4 Magic Items	7	0
+--END--
+X-Ray Vision	2	0
+Wishes	1	0
+Weakness	7	0
+Water Walking	7	0
+Telekinesis	2	0
+Spell Turning	6	0
+Spell Storing	2	0
+Regeneration	2	0
+Protection +3	1	0
+Protection +2	4	0
+Protection +1	9	0
+Invisibility	7	0
+Fire Resistance	11	0
+Djinni Summoning	3	0
+Delusion	21	0
+Control Plant	7	0
+Control Human	6	0
+Control Animal	6	0
+--END--
+Wand of Trap Detection	8	0
+Wand of Secret Door Detection	8	0
+Wand of Polymorph	5	0
+Wand of Paralyzation	6	0
+Wand of Magic Detection	8	0
+Wand of Lightning Bolts	5	0
+Wand of Illusion	5	0
+Wand of Fireballs	5	0
+Wand of Fear	5	0
+Wand of Enemy Detection	5	0
+Wand of Cold	5	0
+Staff of Wizardry	1	0
+Staff of Striking	4	0
+Staff of Power	2	0
+Staff of Healing	9	0
+Staff of Commanding	4	0
+Snake Staff	5	0
+Rod of Cancellation	8	0
+--END--
+Stone of Commanding Earth Elementals	1	0
+Scarab of Protection	3	0
+Rope of Climbing	5	0
+Mirror of Life Trapping	1	0
+Medallion of ESP	9	0
+Horn of Blasting	1	0
+Helm of Teleportation	1	0
+Helm of Telepathy	1	0
+Helm of Reading Languages & Magic	6	0
+Girdle of Giant Strength	2	0
+Gauntlets of Ogre Power	7	0
+Flying Carpet	2	0
+Elven Cloak	7	0
+Elven Boots	7	0
+Efreeti Bottle	1	0
+Drums of Panic	1	0
+Crystal Ball with Clairaudience	2	0
+Crystal Ball	4	0
+Cloak of Displacement	3	0
+Censer of Commanding Air Elementals	1	0
+Broom of Flying	6	0
+Brazier of Commanding Fire Elementals	1	0
+Bowl of Commanding Water Elementals	1	0
+Boots of Traveling & Leaping	5	0
+Boots of Speed	5	0
+Boots of Levitation	5	0
+Bag of Holding	6	0
+Bag of Devouring	2	0
+Amulet of Proof against Detection & Location	4	0
+--END--
+68,000cp   1   0
+683sp / 1,865cp   1   0
+1gp / 1ep   1   0
+11gp / 2sp / 30cp   1   0
+GEM: Azurite (1gp)   1   0
+1pp / 2gp / 32ep / 18sp / 220cp   1   0
+217gp / 287ep / 130sp / 500cp   1   0
+JEWELRY: Silver Chalice (50gp)   1   0
+JEWELRY: Silvery Gold Headband (24gp)   1   0
+2,160cp   1   0
+105pp / 101gp / 291ep / 101sp / 14,330cp   1   0
+14pp / 249gp / 159ep / 532sp / 26,510cp   1   0
+GEM: Red Spinel (22gp)   1   0
+JEWELRY: Silver Headband (138gp)   1   0
+49gp / 851sp / 8,456cp   1   0
+11,400cp   1   0
+JEWELRY: Silver Choker (24gp)   1   0
+62gp / 18,100cp   1   0
+28pp / 410gp / 20ep / 1cp   1   0
+960sp / 48,800cp   1   0
+20gp / 26cp   1   0
+64gp / 7ep / 7sp / 10cp   1   0
+47sp / 560cp   1   0
+30pp / 361gp / 19ep / 198sp / 1,490cp   1   0
+a magnificent gray, fashioned cotton shirt worth 9gp   1   0
+4pp / 2gp / 15ep / 5sp / 101cp   1   0
+9pp / 107gp / 3ep / 7sp / 110cp   1   0
+594gp / 85ep / 69sp / 1,470cp   1   0
+1gp / 1ep / 15cp   1   0
+81ep / 48sp / 11,790cp   1   0
+JEWELRY: Exceptional Belt (330gp)   1   0
+GEM: Amethyst (17gp)   1   0
+2pp / 3ep / 87sp / 350cp   1   0
+6pp / 2gp / 3ep / 4sp / 1,160cp   1   0
+13gp / 32sp / 40cp   1   0
+7pp / 44gp / 8ep / 31sp / 155cp   1   0
+1pp / 9gp / 28ep / 14sp / 281cp   1   0
+60,000cp   1   0
+38gp / 69sp / 85cp   1   0
+33pp / 62gp / 1ep   1   0
+1gp / 60ep / 75sp / 4,400cp   1   0
+14pp / 262gp / 200ep / 71sp / 9,380cp   1   0
+JEWELRY: Silvery Gold Bracelet (240gp)   1   0
+1pp / 2gp / 1sp   1   0
+22pp / 64gp / 23ep / 15sp / 1,150cp   1   0
+60gp / 1,400sp / 2,000cp   1   0
+GEM: Chrysoprase (16gp)   1   0
+a lovely musical mandolin worth 7gp   1   0
+1pp / 1gp / 1ep / 3sp / 10cp   1   0
+21pp / 20gp / 18ep / 14sp / 321cp   1   0
+11gp / 29ep / 10sp / 750cp   1   0
+3,150cp   1   0
+GEM: Tiger Eye (5gp)   1   0
+JEWELRY: Exceptional Earring (880gp)   1   0
+a unique ceramic jug of phoenix hair/skin worth 6gp to an alchemist   1   0
+7pp / 4gp / 262ep / 707sp / 9,360cp   1   0
+11pp / 114gp / 49ep / 11sp / 381cp   1   0
+7pp / 67gp / 1,269ep / 351sp / 42,830cp   1   0
+612ep / 44,400cp   1   0
+5pp / 59ep / 10cp   1   0
+2pp / 3gp / 1sp   1   0
+JEWELRY: Golden Gemmed Coronet (2,000gp)   1   0
+28sp / 3,040cp   1   0
+551ep / 164sp / 6,220cp   1   0
+45gp / 92sp / 1,760cp   1   0
+an exquisite gray, knitted cotton coat worth 42gp   1   0
+JEWELRY: Silver Amulet (1gp)   1   0
+64pp / 119gp / 93ep / 357sp / 2,310cp   1   0
+7pp / 106gp / 6ep   1   0
+13pp / 12gp / 69ep / 39sp / 1,570cp   1   0
+29ep / 416sp / 230cp   1   0
+GEM: Black Pearl (40gp)   1   0
+a unique wine bottle of serpent scales worth 450gp to an herbalist   1   0
+12gp / 66ep / 24sp / 645cp   1   0
+4 inch tall limestone carving of a snake worth 8gp   1   0
+GEM: Azurite (3gp)   1   0
+GEM: Moonstone (22gp)   1   0
+3pp / 16gp / 1ep / 10sp / 70cp   1   0
+4pp / 10gp / 40ep / 4sp / 50cp   1   0
+11pp / 11gp / 12ep   1   0
+4pp / 1gp   1   0
+GEM: White Opal (365gp)   1   0
+JEWELRY: Silver Comb/brush (144gp)   1   0
+75gp / 164ep / 95sp / 400cp   1   0
+3pp / 10gp / 26sp / 220cp   1   0
+1,426ep / 360sp / 41,500cp   1   0
+a delightful musical small harp worth 15gp   1   0
+an extraordinary crystal bottle of ghost ectoplasm worth 6gp to an alchemist   1   0
+4pp / 1gp / 17ep / 5sp / 400cp   1   0
+817gp / 259sp / 5,120cp   1   0
+5,400cp   1   0
+JEWELRY: Golden Arm-ring (315gp)   1   0
+1gp / 67ep / 15sp / 750cp   1   0
+13pp / 633gp / 202ep / 435sp / 1,400cp   1   0
+5,070cp   1   0
+2sp / 80cp   1   0
+an unusual jade jug worth 85gp   1   0
+an odd yellow, tailored cotton shirt worth 333gp   1   0
+1gp / 6ep / 1sp   1   0
+21gp / 43ep / 11sp / 90cp   1   0
+36ep / 10sp / 700cp   1   0
+21pp / 65gp / 160ep / 351sp / 1,980cp   1   0
+an odd gray-colored, decanter of lion hearts worth 62gp to an alchemist   1   0
+20gp / 184ep / 2sp / 10cp   1   0
+JEWELRY: Silver Bracelet (80gp)   1   0
+21pp / 24gp / 3ep   1   0
+1,373sp / 192,540cp   1   0
+8gp / 31sp / 380cp   1   0
+GEM: Tiger Eye (2gp)   1   0
+28gp / 17ep / 266sp / 1,030cp   1   0
+GEM: Aquamarine (154gp)   1   0
+8pp / 5gp / 3ep / 17sp / 50cp   1   0
+a large brown canvas backpack of odd coins of a secret order that are made of iron with a symbol of a bat on it (58 ea) worth a total of 47gp   1   0
+a superb clay jug worth 30gp   1   0
+33ep / 52sp / 4,311cp   1   0
+14pp / 3ep / 7sp / 1cp   1   0
+450cp   1   0
+a small brown canvas satchel of unique coins from a missing land that are made of bronze with a symbol of a ram on it (21 ea) worth a total of 54gp   1   0
+5pp / 50gp / 1ep / 5sp / 46cp   1   0
+7pp / 2gp / 3ep / 6sp / 30cp   1   0
+16pp / 22gp / 4ep / 4sp / 21cp   1   0
+JEWELRY: Silvery Gold Chain (40gp)   1   0
+225sp / 12,600cp   1   0
+JEWELRY: Exceptional Goblet (2,310gp)   1   0
+176ep / 27sp / 110cp   1   0
+1,665sp / 4,950cp   1   0
+a splendid musical small harp worth 240gp   1   0
+17gp / 6sp / 70cp   1   0
+174sp / 1,020cp   1   0
+JEWELRY: Silver Choker (10gp)   1   0
+3,300cp   1   0
+8pp / 261gp / 41ep / 52sp / 1,810cp   1   0
+2sp / 275cp   1   0
+1pp / 5gp / 1ep / 13sp / 265cp   1   0
+a wonderful iron flask of ghoul skin flakes worth 95gp to an herbalist   1   0
+3pp / 11gp / 13ep / 24sp / 545cp   1   0
+a black canvas sack of delightful coins from a mysterious land that are made of bronze with a symbol of a hippogriff on it (48 ea) worth a total of 254gp   1   0
+42pp / 13gp / 3ep / 2sp / 10cp   1   0
+JEWELRY: Silver Goblet (17gp)   1   0
+4pp / 9gp / 3ep / 20sp / 150cp   1   0
+7pp / 1gp / 23ep / 1sp / 75cp   1   0
+227gp / 35ep / 853sp / 491cp   1   0
+GEM: Emerald (30gp)   1   0
+5,500sp / 72,000cp   1   0
+6 inch tall jasper statue of a axe worth 53gp   1   0
+1pp / 5gp / 11ep / 5sp / 225cp   1   0
+7 inch tall jade statue of a horse worth 32gp   1   0
+GEM: Amber (20gp)   1   0
+a strange pair of brown shoes made of wolf skin worth 102gp   1   0
+69ep / 55sp / 1,570cp   1   0
+an extraordinary brown belt made of animal skin and with a adamant buckle worth 6gp   1   0
+7ep / 8sp / 90cp   1   0
+a lovely musical pipes worth 65gp   1   0
+22gp / 4ep / 8sp / 440cp   1   0
+7pp / 9gp / 1ep / 23sp / 40cp   1   0
+JEWELRY: Silvery Gold Choker (145gp)   1   0
+119,001cp   1   0
+JEWELRY: Exceptional Earring (560gp)   1   0
+a superb musical chimes worth 725gp   1   0
+a strange, small lexicon titled `The Diary of Minoson the Bard` and is bound in white dragon skin with jade colored symbols of a hawk on the front and a boar on the back, and is worth 3gp   1   0
+3pp / 1ep / 1sp / 5cp   1   0
+5sp / 14,900cp   1   0
+5pp / 26gp / 2sp / 1,161cp   1   0
+121ep / 430cp   1   0
+JEWELRY: Silver Earring (77gp)   1   0
+422ep / 147sp / 5,960cp   1   0
+an odd ceremonial sword made of gold where the hilt is decorated with 3 iolites worth 455gp   1   0
+1pp / 15gp / 2ep   1   0
+JEWELRY: Silver Earring (96gp)   1   0
+an extraordinary glass bottle of giant bone dust worth 57gp to an herbalist   1   0
+1pp / 7gp / 6ep / 16sp / 130cp   1   0
+1gp / 4ep / 30cp   1   0
+168ep / 91sp / 1,480cp   1   0
+76gp / 191ep / 39sp / 3,820cp   1   0
+14pp / 90sp / 200cp   1   0
+41pp / 29gp / 20ep / 1sp / 81cp   1   0
+8pp / 14gp / 6ep / 7sp / 25cp   1   0
+GEM: Sard Quartz (10gp)   1   0
+JEWELRY: Silvery Gold Belt (39gp)   1   0
+GEM: Sardonyx Quartz (13gp)   1   0
+JEWELRY: Silver Amulet (171gp)   1   0
+1pp / 1gp / 1ep / 1sp / 5cp   1   0
+2pp / 52gp / 35ep / 3sp / 90cp   1   0
+120sp / 15,100cp   1   0
+2pp / 7gp / 3ep / 60sp / 3,505cp   1   0
+140ep / 30sp / 276cp   1   0
+a rare tan-colored, glass bottle of harpy tongues worth 14gp to an alchemist   1   0
+22ep / 250cp   1   0
+GEM: White Pearl (10gp)   1   0
+8pp / 2gp / 6ep / 5sp / 200cp   1   0
+21gp / 2ep / 4sp / 120cp   1   0
+JEWELRY: Golden Buckle (22gp)   1   0
+10pp / 32gp / 43ep / 40sp / 14,350cp   1   0
+2,451sp / 38,730cp   1   0
+134ep / 21,300cp   1   0
+3pp / 13gp / 8ep / 38sp / 30cp   1   0
+76sp / 40cp   1   0
+64ep / 83sp / 6,690cp   1   0
+GEM: Black Pearl (48gp)   1   0
+1ep / 1sp / 20cp   1   0
+902ep / 210sp / 54,700cp   1   0
+GEM: Malachite (4gp)   1   0
+1gp / 19ep / 6sp / 315cp   1   0
+GEM: Hematite (2gp)   1   0
+2ep / 6sp / 80cp   1   0
+1,445gp / 2,610ep / 199sp / 1,020cp   1   0
+14pp / 208gp / 134ep / 90sp / 1,200cp   1   0
+111gp / 175ep / 12sp / 15,910cp   1   0
+5pp / 186gp / 64ep / 131sp / 80cp   1   0
+40gp / 22ep / 900cp   1   0
+JEWELRY: Golden Clasp (12gp)   1   0
+64sp / 11,321cp   1   0
+3gp / 2ep / 2sp / 10cp   1   0
+48gp / 130sp / 430cp   1   0
+660ep / 729sp / 2,420cp   1   0
+7pp / 20gp / 1ep / 13sp / 190cp   1   0
+GEM: Zircon (9gp)   1   0
+51gp / 3ep / 9sp / 2,070cp   1   0
+31gp / 6ep / 23sp / 340cp   1   0
+2gp / 3ep / 2sp   1   0
+3pp   1   0
+GEM: Eye Agate (5gp)   1   0
+347ep / 42,650cp   1   0
+5pp / 35gp / 50ep / 39sp / 1,220cp   1   0
+8pp / 1gp / 1sp / 5cp   1   0
+2pp / 35gp / 32ep / 42sp / 3,860cp   1   0
+GEM: Obsidian (3gp)   1   0
+GEM: Turquoise (2gp)   1   0
+11pp / 44gp / 143ep / 203sp / 2,890cp   1   0
+11gp / 21ep / 10cp   1   0
+7gp / 18ep / 48sp / 1,535cp   1   0
+2gp / 172ep / 394sp / 820cp   1   0
+an exquisite golden jug worth 23gp   1   0
+JEWELRY: Silvery Gold Arm-ring (189gp)   1   0
+JEWELRY: Silvery Gold Anklet (4gp)   1   0
+JEWELRY: Silvery Gold Goblet (24gp)   1   0
+a delightful ceremonial crown made of iron worth 6gp   1   0
+229,501cp   1   0
+55gp / 37sp / 5,760cp   1   0
+2gp / 25sp / 1,800cp   1   0
+35gp / 66ep / 2,650cp   1   0
+9pp / 5ep / 20sp / 4,450cp   1   0
+18pp / 14ep / 2sp / 10cp   1   0
+158ep / 1,977sp / 9,560cp   1   0
+10pp / 22gp   1   0
+64ep / 31sp / 4,180cp   1   0
+17pp / 19gp / 58ep / 16sp / 130cp   1   0
+GEM: Rock Crystal (21gp)   1   0
+1,920cp   1   0
+a large leather backpack of fine coins of an old race that are made of steel with a symbol of a sword on it (81 ea) worth a total of 6gp   1   0
+JEWELRY: Silver Chain (21gp)   1   0
+JEWELRY: Exceptional Headband (3,480gp)   1   0
+266pp / 50gp / 20ep / 22sp / 560cp   1   0
+1gp / 1ep   1   0
+274pp / 58gp / 775ep / 326sp / 20,930cp   1   0
+525cp   1   0
+2pp / 1gp / 8ep / 2sp / 215cp   1   0
+a tan canvas backpack of strange coins of unknown origin that are made of bronze with a symbol of a demon on it (35 ea) worth a total of 6gp   1   0
+45pp / 29gp / 24ep / 12sp / 160cp   1   0
+27gp / 21sp / 6,630cp   1   0
+1gp / 1ep / 9sp / 45cp   1   0
+4sp / 1,000cp   1   0
+4pp / 16gp / 4ep / 8sp / 90cp   1   0
+7pp / 7gp / 3ep / 28sp / 340cp   1   0
+312gp / 9,050cp   1   0
+3gp / 330cp   1   0
+GEM: Red Spinel (11gp)   1   0
+21pp / 67gp / 101ep / 74sp / 570cp   1   0
+JEWELRY: Exceptional Earring (90gp)   1   0
+48gp / 242sp / 1,160cp   1   0
+an unusual purple belt made of wolf skin and with a steel buckle worth 6gp   1   0
+an odd small white carpet worth 23gp   1   0
+158gp / 31ep / 53sp / 1,590cp   1   0
+GEM: Hematite (3gp)   1   0
+471gp / 5,889sp / 24,120cp   1   0
+186ep / 269sp / 9,320cp   1   0
+10 inch tall onyx carving of a sword worth 16gp   1   0
+GEM: Banded Agate (2gp)   1   0
+7pp / 2gp / 1ep / 1sp / 10cp   1   0
+JEWELRY: Silver Anklet (12gp)   1   0
+a marvelous iron flask of werecat essence worth 70gp to an herbalist   1   0
+JEWELRY: Silver Bracelet (270gp)   1   0
+2pp / 2gp / 42ep / 57sp / 2,040cp   1   0
+a gorgeous ornamental knife made of iron and the name of `Meta` is engraved on the blade worth 78gp   1   0
+29ep / 22sp / 105cp   1   0
+JEWELRY: Silver Box (115gp)   1   0
+a large gray leather bag of splendid coins from a lost city that are made of palladium with a symbol of a dog on it (65 ea) worth a total of 21gp   1   0
+59gp / 11ep / 300cp   1   0
+130pp / 65gp / 69ep / 2sp / 10cp   1   0
+8 inch tall onyx statue of a hippogriff worth 390gp   1   0
+55pp / 349gp / 38ep / 707sp / 1,310cp   1   0
+25pp / 50gp / 5ep / 9sp / 70cp   1   0
+331sp / 880cp   1   0
+2sp / 230cp   1   0
+a strange ceremonial shield made of steel with a tower symbol on it that is indigo in color worth 36gp   1   0
+1pp / 7gp / 8ep / 41sp / 280cp   1   0
+123,250cp   1   0
+33ep / 32sp / 17,710cp   1   0
+JEWELRY: Silvery Gold Bracelet (104gp)   1   0
+295ep / 2sp / 60cp   1   0
+JEWELRY: Exceptional Earring (550gp)   1   0
+1pp / 10cp   1   0
+41pp / 72gp / 15ep / 1sp / 30cp   1   0
+3gp / 4ep / 13sp / 230cp   1   0
+730sp / 13,450cp   1   0
+2pp / 18gp / 1ep / 5sp / 20cp   1   0
+1gp / 7ep   1   0
+GEM: Rhodochrosite (1gp)   1   0
+GEM: White Opal (240gp)   1   0
+JEWELRY: Silver Chalice (18gp)   1   0
+1gp / 6cp   1   0
+270,000cp   1   0
+3ep / 2sp / 5cp   1   0
+326sp / 35cp   1   0
+a leather pouch of magnificent coins of unknown origin that are made of iron with a symbol of a hawk on it (27 ea) worth a total of 5gp   1   0
+9gp / 4ep / 2sp / 110cp   1   0
+45ep / 782sp / 7,610cp   1   0
+4pp / 8gp / 17ep / 19sp / 20cp   1   0
+21pp / 5gp / 8ep   1   0
+36gp / 23ep / 26sp / 130cp   1   0
+3gp / 1ep / 2sp / 30cp   1   0
+3pp / 1sp / 235cp   1   0
+8pp / 65sp / 2,800cp   1   0
+103ep / 4sp / 21cp   1   0
+136sp / 1,105cp   1   0
+JEWELRY: Silver Earring (40gp)   1   0
+GEM: Violet Garnet (6gp)   1   0
+a pretty ceramic jug of viper essence worth 200gp to an alchemist   1   0
+GEM: Jacinth (1,200gp)   1   0
+JEWELRY: Silvery Gold Broach (99gp)   1   0
+14ep / 22sp / 1,020cp   1   0
+2,160cp   1   0
+2pp / 29gp   1   0
+JEWELRY: Silvery Gemmed Coronet (232gp)   1   0
+7pp / 35gp / 1ep / 16sp / 55cp   1   0
+JEWELRY: Silver Box (38gp)   1   0
+632gp / 39ep / 23sp / 8,640cp   1   0
+8 inch tall sandstone statue of a cross worth 280gp   1   0
+GEM: Sardonyx Quartz (10gp)   1   0
+JEWELRY: Silvery Gemmed Bracelet (36gp)   1   0
+23gp / 1sp / 20cp   1   0
+GEM: Blue Star Sapphire (365gp)   1   0
+750cp   1   0
+28ep / 47sp / 3,060cp   1   0
+a unique, small book titled `The Jackal in the Clouds` and is bound in brown wolf skin, and is worth 5gp   1   0
+JEWELRY: Silver Clasp (18gp)   1   0
+2gp / 7ep / 36sp / 50cp   1   0
+23sp / 3,050cp   1   0
+643gp / 89sp / 37,420cp   1   0
+an odd pair of brown sandals made of alligator skin worth 6gp   1   0
+GEM: Moss Agate (2gp)   1   0
+6ep / 720cp   1   0
+1pp / 2gp / 4ep   1   0
+152ep / 8sp / 40cp   1   0
+10pp / 29gp / 23ep / 7sp / 2,810cp   1   0
+1gp / 3ep / 2sp / 40cp   1   0
+GEM: Turquoise (1gp)   1   0
+173sp / 3,170cp   1   0
+50gp / 2ep / 55,651cp   1   0
+19gp / 11ep / 14sp / 20cp   1   0
+JEWELRY: Exceptional Goblet (1,000gp)   1   0
+44sp / 440cp   1   0
+GEM: Blue Sapphire (162gp)   1   0
+14,400cp   1   0
+GEM: White Pearl (28gp)   1   0
+a marvelous musical pipes worth 17gp   1   0
+1pp / 15gp / 1ep / 41sp / 1,130cp   1   0
+208ep / 248sp / 1,515cp   1   0
+262sp / 2,260cp   1   0
+1pp / 4ep / 8sp / 40cp   1   0
+6gp / 19sp / 145cp   1   0
+1pp / 2gp / 1sp   1   0
+GEM: Rhodochrosite (1gp)   1   0
+23gp / 2ep / 7sp / 340cp   1   0
+a leather satchel of lovely coins from a mysterious land that are made of steel with a symbol of a tower on it (46 ea) worth a total of 126gp   1   0
+an exquisite small yellow carpet worth 102gp   1   0
+34gp / 1,665ep / 779sp / 21,270cp   1   0
+2pp   1   0
+492ep / 1,354sp / 8,320cp   1   0
+3pp / 8gp / 27sp / 101cp   1   0
+GEM: Silver Pearl (10gp)   1   0
+GEM: Eye Agate (1gp)   1   0
+an unusual purple, knitted hemp shirt worth 11gp   1   0
+JEWELRY: Golden Bracelet (232gp)   1   0
+20gp / 8ep / 27sp / 480cp   1   0
+12pp / 14gp / 75ep / 3sp / 40cp   1   0
+611gp / 289ep / 643sp / 1,590cp   1   0
+GEM: Malachite (2gp)   1   0
+a splendid musical lute worth 45gp   1   0
+JEWELRY: Exceptional Headband (1,560gp)   1   0
+5pp / 3gp / 39ep / 138sp / 471cp   1   0
+91gp / 80ep / 7,900cp   1   0
+JEWELRY: Silvery Gold Bracelet (8gp)   1   0
+453sp / 6,940cp   1   0
+658gp / 708ep / 78,800cp   1   0
+11gp / 13ep / 141cp   1   0
+2,405sp / 19,400cp   1   0
+1gp / 4ep / 5sp / 21cp   1   0
+a pretty red, fashioned fur shirt worth 6gp   1   0
+1gp / 1ep / 2sp / 5cp   1   0
+246pp / 4gp / 1ep / 1sp / 30cp   1   0
+GEM: Fire Opal (96gp)   1   0
+JEWELRY: Silvery Gemmed Arm-ring (147gp)   1   0
+1pp / 1gp / 4ep / 43sp / 140cp   1   0
+7sp / 160cp   1   0
+1,102sp / 93,960cp   1   0
+1pp / 1gp / 1sp / 10cp   1   0
+20gp / 3ep / 5sp   1   0
+558gp / 674ep / 1,189sp / 2,720cp   1   0
+JEWELRY: Silver Bracelet (72gp)   1   0
+2pp / 1gp / 21sp / 280cp   1   0
+1pp / 445cp   1   0
+a small leather backpack of splendid coins from an unknown era that are made of sandstone with a symbol of a pegasus on it (12 ea) worth a total of 72gp   1   0
+GEM: Golden Pearl (10gp)   1   0
+20pp / 118gp / 40ep / 136sp / 3,480cp   1   0
+31gp / 13ep / 85sp / 550cp   1   0
+JEWELRY: Silver Earring (7gp)   1   0
+15,000cp   1   0
+28,350cp   1   0
+44pp / 2gp / 4ep / 2sp / 60cp   1   0
+9pp / 26gp / 107ep / 18sp / 1,690cp   1   0
+JEWELRY: Silvery Gold Chain (36gp)   1   0
+GEM: Obsidian (2gp)   1   0
+GEM: Freshwater Pearl (5gp)   1   0
+JEWELRY: Silver Headband (64gp)   1   0
+32gp / 1,075cp   1   0
+an elegant painting of some ruins worth 70gp   1   0
+JEWELRY: Silver Arm-ring (120gp)   1   0
+21pp / 42gp / 356sp / 1,281cp   1   0
+15pp / 12gp / 16ep / 1sp / 480cp   1   0
+a strange crystal plate worth 4gp   1   0
+110sp / 2,300cp   1   0
+1pp / 10gp / 9ep / 3sp / 15cp   1   0
+10sp / 11cp   1   0
+69pp / 10gp / 2ep / 1sp / 5cp   1   0
+an unusual painting of a scenic ocean view worth 1,040gp   1   0
+26pp / 1gp / 10ep / 19sp / 21cp   1   0
+109gp / 2ep / 70sp / 1,100cp   1   0
+4pp / 23gp / 362ep / 123sp / 11,140cp   1   0
+a rare decorative war hammer made of iron where the handle is decorated with 2 aquamarines and the name of `Zasfus` is engraved on the head worth 8gp   1   0
+7pp / 9gp / 2ep / 32sp / 260cp   1   0
+JEWELRY: Silver Amulet (120gp)   1   0
+145sp / 100cp   1   0
+14,001cp   1   0
+1pp / 4gp / 14ep / 2sp / 10cp   1   0
+3pp / 1ep / 10cp   1   0
+a strange ceremonial battle hammer made of gold where the handle is decorated with 2 bloodstones worth 200gp   1   0
+a wonderful purple belt made of snake skin and with a mithril buckle worth 5gp   1   0
+824sp / 13,520cp   1   0
+3pp / 4gp / 9ep / 3sp / 110cp   1   0
+a lovely decorative helm made of iron and the name of `Tothryth` is engraved on the inside worth 68gp   1   0
+3pp / 60gp / 330ep / 50sp   1   0
+2pp / 4gp / 2ep / 3sp   1   0
+a unique musical horn worth 6gp   1   0
+3pp / 1sp / 10cp   1   0
+1pp / 1gp / 1ep / 1sp / 5cp   1   0
+a lovely painting of Franie the Magician worth 525gp   1   0
+JEWELRY: Silvery Gold Headband (168gp)   1   0
+1pp / 21gp / 12ep / 1sp / 606cp   1   0
+225pp / 38gp / 25ep / 30sp / 851cp   1   0
+1pp / 1gp / 1sp / 11cp   1   0
+20pp / 56gp / 89ep / 87sp / 210cp   1   0
+1pp / 1gp / 3ep / 8sp / 50cp   1   0
+3gp / 1ep / 10cp   1   0
+GEM: Green Spinel (4gp)   1   0
+69sp / 1,771cp   1   0
+8pp / 113gp / 98ep / 278sp / 1,541cp   1   0
+a superb painting of some ruins worth 176gp   1   0
+JEWELRY: Silvery Gemmed Arm-ring (176gp)   1   0
+6,750cp   1   0
+JEWELRY: Silvery Gemmed Chalice (250gp)   1   0
+424pp / 71ep / 1,066sp / 9,630cp   1   0
+10ep / 18sp / 640cp   1   0
+a wonderful musical small harp worth 1,495gp   1   0
+24gp   1   0
+7pp / 7gp / 3ep / 5sp / 110cp   1   0
+187ep / 1,060sp / 3,050cp   1   0
+1pp / 1gp / 3ep / 1sp / 130cp   1   0
+75pp / 601gp / 363ep / 25sp / 8,750cp   1   0
+10gp / 9sp / 320cp   1   0
+140gp / 191ep / 98sp / 890cp   1   0
+a pretty yellow, fashioned silk shirt worth 106gp   1   0
+1pp / 2gp / 9sp / 120cp   1   0
+a delightful omnibus titled `The Chronicles of the Minstrel in the Lamp` and is bound in black bear skin with a amber colored symbol of a eye on the front, and is worth 7gp   1   0
+GEM: Deep Blue Spinel (130gp)   1   0
+3gp / 6sp / 330cp   1   0
+18sp / 840cp   1   0
+17,325cp   1   0
+1pp / 11gp / 1ep / 39sp / 195cp   1   0
+GEM: Jasper (14gp)   1   0
+GEM: Coral (23gp)   1   0
+2pp / 21gp / 53ep / 39sp / 370cp   1   0
+a large leather bag of odd coins from an ancient race that are made of pewter with a symbol of a bat on it (88 ea) worth a total of 24gp   1   0
+an extraordinary brown-colored, glass bottle of dead bees worth 109gp to an herbalist   1   0
+JEWELRY: Silver Clasp (43gp)   1   0
+an extraordinary white belt made of wolf skin and with a iron buckle worth 254gp   1   0
+GEM: Bloodstone (7gp)   1   0
+32pp / 2gp / 109ep / 100sp / 1,100cp   1   0
+1pp / 99ep / 45sp / 26cp   1   0
+JEWELRY: Silvery Gold Arm-ring (15gp)   1   0
+242gp / 88sp / 1,040cp   1   0
+an odd musical recorder worth 113gp   1   0
+7pp / 102ep / 122sp / 2,460cp   1   0
+99ep / 19,350cp   1   0
+8pp / 2gp / 21ep / 15sp / 75cp   1   0
+55pp / 27gp / 222ep / 44sp / 320cp   1   0
+243ep / 89sp / 8,870cp   1   0
+3pp / 35gp / 20ep / 27sp / 210cp   1   0
+77gp / 48ep / 245sp / 12,000cp   1   0
+GEM: Rich Purple Corundum (56gp)   1   0
+1pp / 18ep / 7sp / 80cp   1   0
+4pp / 1gp / 1ep / 10cp   1   0
+879sp / 9,721cp   1   0
+208gp / 30ep / 15sp / 2,900cp   1   0
+16ep / 1,450cp   1   0
+an extraordinary, small volume titled `The Wizardly Adventures of the Warrior` and is bound in brown dragon skin with a emerald colored symbol of a bear on the front, and is worth 68gp   1   0
+a gray cloth sack of marvelous coins from an unknown era that are made of jade with a symbol of a crown on it (26 ea) worth a total of 29gp   1   0
+JEWELRY: Silver Coronet (99gp)   1   0
+15gp / 6ep / 31sp / 115cp   1   0
+4pp / 57gp / 57ep / 19sp / 320cp   1   0
+22sp / 235cp   1   0
+109gp / 9ep / 3sp / 140cp   1   0
+2pp / 17gp / 10ep / 1sp / 230cp   1   0
+31ep / 5sp / 150cp   1   0
+5pp / 18gp / 3ep / 2sp / 10cp   1   0
+14ep / 245cp   1   0
+JEWELRY: Exceptional Earring (440gp)   1   0
+21pp / 1gp / 12ep / 1sp / 30cp   1   0
+a small orange canvas backpack of marvelous coins of unknown origin that are made of jade with a symbol of a pegasus on it (25 ea) worth a total of 150gp   1   0
+41pp / 5gp / 1cp   1   0
+2ep / 709sp / 4,720cp   1   0
+JEWELRY: Exceptional Earring (1,560gp)   1   0
+a unique red, sewn cloth cape worth 7gp   1   0
+a unique ceremonial dagger made of mithril where the handle is decorated with 2 brown diamonds worth 45gp   1   0
+GEM: Red Spinel (21gp)   1   0
+JEWELRY: Silvery Gold Choker (260gp)   1   0
+GEM: Black Star Sapphire (64gp)   1   0
+57pp / 11gp / 23ep / 15sp / 450cp   1   0
+420gp / 4,208sp / 3,840cp   1   0
+JEWELRY: Silvery Gemmed Headband (504gp)   1   0
+63gp / 18ep / 12sp / 60cp   1   0
+GEM: Jasper (5gp)   1   0
+JEWELRY: Exceptional Earring (1,800gp)   1   0
+JEWELRY: Golden Chalice (240gp)   1   0
+28pp / 12gp / 1ep / 1sp / 31cp   1   0
+410gp / 1,625sp / 14,250cp   1   0
+356gp / 3ep / 5sp / 150cp   1   0
+19sp / 565cp   1   0
+33pp / 38gp / 15ep / 142sp / 260cp   1   0
+3pp / 76gp / 16ep / 11sp / 1,880cp   1   0
+a splendid, small tome titled `Manticore in the Desert` and is bound in red demon skin with scarlet colored symbols of a eagle on the front and a scorpion on the back, and is worth 20gp   1   0
+205ep / 85sp / 875cp   1   0
+3pp / 8gp / 7ep / 2sp / 10cp   1   0
+14 inch tall pewter carving of a eye worth 7gp   1   0
+4pp / 1gp / 1ep / 8sp / 90cp   1   0
+6pp / 4gp / 2ep / 2sp / 60cp   1   0
+a fine wooden bottle worth 207gp   1   0
+20 inch tall onyx statue of a tower worth 132gp   1   0
+GEM: Garnet (5gp)   1   0
+1ep / 2sp   1   0
+1pp / 72gp / 63ep / 2sp / 110cp   1   0
+an odd orange, stitched wool dress worth 225gp   1   0
+a rare crystal plate worth 38gp   1   0
+8gp / 2sp   1   0
+34gp / 650cp   1   0
+JEWELRY: Exceptional Earring (480gp)   1   0
+17gp / 7ep / 2,150cp   1   0
+163gp / 168ep / 14sp / 1,420cp   1   0
+2pp / 1gp / 2ep   1   0
+35sp / 25,300cp   1   0
+8ep / 1,100cp   1   0
+1pp / 5ep / 3,241cp   1   0
+46gp / 19ep / 2sp / 35cp   1   0
+3pp / 13gp / 272ep / 125sp / 6,600cp   1   0
+65pp / 101gp / 100ep / 255sp / 4,300cp   1   0
+JEWELRY: Silvery Gold Bracelet (225gp)   1   0
+JEWELRY: Silver Coronet (250gp)   1   0
+596sp / 10,580cp   1   0
+JEWELRY: Silvery Gold Choker (120gp)   1   0
+14pp / 5gp / 1ep / 15sp / 26cp   1   0
+5pp / 1sp / 1cp   1   0
+4pp / 11gp / 1ep   1   0
+109ep / 20sp / 1,801cp   1   0
+1pp / 3gp / 20ep / 6sp / 480cp   1   0
+9pp / 9gp / 1ep / 5sp / 60cp   1   0
+GEM: Blue Sapphire (120gp)   1   0
+1gp / 4ep / 15cp   1   0
+4pp / 4gp   1   0
+5pp / 512gp / 147ep / 582sp / 810cp   1   0
+23sp / 1,430cp   1   0
+42gp   1   0
+a superb medium-sized purple carpet worth 12gp   1   0
+GEM: Freshwater Pearl (2gp)   1   0
+7ep / 3sp / 25cp   1   0
+64pp / 594gp / 395ep / 3,876sp / 330cp   1   0
+GEM: Green Spinel (31gp)   1   0
+5,500cp   1   0
+3pp / 34gp / 306ep / 49sp / 1,320cp   1   0
+GEM: Tourmaline (6gp)   1   0
+2pp / 16gp / 18ep / 14sp / 210cp   1   0
+144gp / 7ep / 20sp / 3,600cp   1   0
+a fine large brown rug worth 90gp   1   0
+a unique, small volume titled `The Power of the Gem of Galzieth` and is bound in tan manticore skin with ivory colored symbols of a skull on the front and a hand on the back, and is worth 9gp   1   0
+a superb yellow, knitted cotton shirt worth 22gp   1   0
+GEM: Amethyst (20gp)   1   0
+JEWELRY: Silver Clasp (60gp)   1   0
+56pp / 25gp / 7ep / 11sp / 2,080cp   1   0
+6pp / 69gp / 124ep / 208sp / 2,015cp   1   0
+2pp / 1gp / 7ep / 1sp / 30cp   1   0
+10pp / 2gp / 1ep   1   0
+1pp / 70gp / 11ep / 2sp / 310cp   1   0
+JEWELRY: Silvery Gold Belt (6gp)   1   0
+an unusual medium-sized brown rug worth 12gp   1   0
+1pp / 1gp / 1ep / 1sp / 80cp   1   0
+GEM: Bloodstone (20gp)   1   0
+132pp / 882gp / 1,212ep / 228sp / 20,640cp   1   0
+a small black cloth backpack of gorgeous coins from a mysterious land that are made of bronze with a symbol of a angel on it (6 ea) worth a total of 26gp   1   0
+JEWELRY: Silvery Gold Broach (174gp)   1   0
+3pp / 32gp / 8ep / 3sp / 1,590cp   1   0
+15pp / 24gp / 3ep / 77sp / 3,410cp   1   0
+1gp / 5cp   1   0
+12gp / 1ep / 6sp / 55cp   1   0
+GEM: Chalcedony (3gp)   1   0
+JEWELRY: Silver Broach (147gp)   1   0
+11ep / 162sp / 10,385cp   1   0
+3ep / 6sp / 30cp   1   0
+20pp / 253gp / 11ep / 3sp / 90cp   1   0
+2pp / 5gp / 4ep / 10sp / 50cp   1   0
+1ep / 2sp   1   0
+84pp / 388gp / 6ep / 18sp / 3,040cp   1   0
+7 inch tall marble statue of a hawk worth 5gp   1   0
+50pp / 406gp / 81ep / 80sp   1   0
+3ep / 24sp / 120cp   1   0
+a delightful musical flute worth 63gp   1   0
+1,050cp   1   0
+a magnificent painting of a city worth 96gp   1   0
+6pp / 6gp / 2sp / 320cp   1   0
+2gp / 113ep / 16sp / 1,225cp   1   0
+JEWELRY: Golden Broach (272gp)   1   0
+756ep / 98,700cp   1   0
+1pp / 8gp / 27ep / 27sp / 185cp   1   0
+37pp / 454gp / 104ep / 37sp / 5,160cp   1   0
+an exquisite, small book titled `Legend of Sobran the Invoker` and is bound in white dinosaur skin with a royal blue colored symbol of a wolf on the front, and is worth 7gp   1   0
+13pp / 36gp / 4,900cp   1   0
+an extraordinary glass bottle of serpent scales worth 28gp to an alchemist   1   0
+an odd, large tome titled `The Spider in the Stars` and is bound in brown rhinoceros skin with a scarlet colored symbol of a spider on the front, and is worth 128gp   1   0
+2pp / 1gp / 2sp   1   0
+JEWELRY: Silver Anklet (25gp)   1   0
+12sp / 75cp   1   0
+68gp / 12ep / 32sp / 61cp   1   0
+31ep / 14sp / 1,320cp   1   0
+2pp / 56ep / 118sp / 141cp   1   0
+GEM: Aquamarine (6gp)   1   0
+12sp / 285cp   1   0
+11pp / 8gp   1   0
+1pp / 39gp / 1ep / 39sp / 170cp   1   0
+62pp / 268gp / 226ep / 24sp / 5,420cp   1   0
+97ep / 3sp / 490cp   1   0
+6pp / 7ep / 52sp / 2,090cp   1   0
+120sp / 840cp   1   0
+155sp / 216cp   1   0
+113sp / 13,265cp   1   0
+7gp / 20ep / 1,030cp   1   0
+1gp / 1ep / 19sp / 280cp   1   0
+15pp / 101gp / 32ep / 253sp / 1,390cp   1   0
+a nice decorative suit of armor made of steel with a eagle symbol on the chest piece that is jade in color worth 216gp   1   0
+7 inch tall limestone carving of a ram worth 266gp   1   0
+a magnificent iron flask of doppleganger flesh worth 32gp to an herbalist   1   0
+--END--
+Cursed (AC 11)	5	0
+Cursed -3	1	0
+Cursed -2	2	0
+Cursed -1	3	0
++3	10	0
++2	30	0
++1	50	0
+--END--
++1	40	0
++2	9	0
++3	4	0
++4	2	0
++5	1	0
++1, +2 vs. Dragons	2	0
++1, +2 vs. Enchanted	2	0
++1, +2 vs. Lycanthropes	2	0
++1, +2 vs. Regenerators	2	0
++1, +2 vs. Spell Users	2	0
++1, +2 vs. Undead	2	0
++1, +3 vs. Dragons	1	0
++1, +3 vs. Enchanted	1	0
++1, +3 vs. Lycanthropes	1	0
++1, +3 vs. Regenerators	1	0
++1, +3 vs. Spell Users	1	0
++1, +3 vs. Undead	1	0
++1	5	12
++2	3	12
++3	1	12
+Cursed -2	2	0
+Cursed -1	3	0
+--END--
++1	46	0
++2	11	0
++3	5	0
++1, +2 vs. Dragons	2	0
++1, +2 vs. Enchanted	2	0
++1, +2 vs. Lycanthropes	2	0
++1, +2 vs. Regenerators	2	0
++1, +2 vs. Spell Users	2	0
++1, +2 vs. Undead	2	0
++1, +3 vs. Dragons	1	0
++1, +3 vs. Enchanted	1	0
++1, +3 vs. Lycanthropes	1	0
++1, +3 vs. Regenerators	1	0
++1, +3 vs. Spell Users	1	0
++1, +3 vs. Undead	1	0
+Cursed -2	2	0
+Cursed -1	3	0
+--END--
+Casts Light on Command	10	0
+Charm Person	2	0
+Drains Energy	1	0
+Flames on Command	4	0
+Locate Objects	3	0
+Wishes	1	0

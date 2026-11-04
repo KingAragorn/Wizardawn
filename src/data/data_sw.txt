@@ -1,0 +1,1355 @@
+This is the data file for Swords & Wizardry™.  This consists of creatures and treasure from the core rulebook.
+You can use this with some of the tools here that allow for data files to be input. You may only want to use 
+this file if you want to customize your creations. You may have no gold in your land or maybe you want to 
+remove the chance of demons from appearing. You may want to add custom monsters and items. Anything is possible.
+
+This is published under the Open Game License Version 1.0a (which can be found at http://www.wizardawn.com/rpg/lic_ogl.html)
+and is in compliance with the Swords & Wizardry™ Compatibility-Statement License (which can be found at http://www.wizardawn.com/rpg/lic_sw.html).
+
+Swords & Wizardry, S&W, and Mythmere Games are trademarks of Matthew J. Finch
+Wizardawn™ is not affiliated with Matthew J. Finch, Mythmere Games™, or Frog God Games.
+
+Below are the codes used for the creatures' terrain types...
+
+DG = Dungeon
+PF = Forest
+PH = Hills
+PM = Mountains
+PP = Plains
+PS = Swamp
+PD = Desert
+FW = Freshwater
+SW = Sea
+CF = Snowy Forest
+CH = Snowy Hills
+CM = Snowy Mountains
+CP = Snowy Plains
+TF = Jungle/Tropics Forest
+TH = Jungle/Tropics Hills
+TM = Jungle/Tropics Mountains
+TS = Jungle/Tropics Swamp
+
+--BEGIN--
+Ant, Giant (Worker)	DG PF PH PP TF TH	2	5	HD: 2; AC: 3 [16]; ATK: Bite (1d6); SV: 16; SPC: None; MV: 18; AL: Neutrality; LV/XP: 2/30
+Ant, Giant (Warrior)	DG PF PH PP TF TH	4	5	HD: 3; AC: 3 [16]; ATK: Bite (1d6 + poison); SV: 14; SPC: None; MV: 18; AL: Neutrality; LV/XP: 4/120
+Ant, Giant (Queen)	DG	8	3	HD: 10; AC: 3 [16]; ATK: Bite (1d6); SV: 5; SPC: None; MV: 3; AL: Neutrality; LV/XP: 8/800
+Badger, Giant	CF CH CM CP DG PD PF PH PM PP PS	3	13	HD: 3; AC: 4 [15]; ATK: 2 claws (1d3), bite (1d6); SV: 14; SPC: None; MV: 6; AL: Neutrality; LV/XP: 3/60
+Banshee	CF CH CP DG PD PF PH PP TF	11	13	HD: 7; AC: 0 [19]; ATK: Claw (1d8); SV: 9; SPC: See rules; MV: 6; AL: Chaos; LV/XP: 11/1700
+Basilisk	DG PF PH PM PP PS TF TH TM	8	13	HD: 6; AC: 4 [15]; ATK: Bite (2d6); SV: 11; SPC: Petrifying gaze; MV: 12; AL: Neutrality; LV/XP: 8/800
+Bat, Giant (Vampire Bat)	CF CH CM CP DG PF PH PM PP PS TF TH TM TS	3	4	HD: 1; AC: 8 [11]; ATK: Bite (1d6); SV: 17; SPC: Sucks blood; MV: 4/18 (flying); AL: Neutrality; LV/XP: 3/60
+Bat, Giant (Greater Bat)	CF CH CM CP DG PF PH PM PP PS TF TH TM TS	5	4	HD: 4; AC: 7 [12]; ATK: Bite (1d10); SV: 13; SPC: None; MV: 4/18 (flying); AL: Neutrality; LV/XP: 5/240
+Bat, Giant (Bat Monster)	DG TF TH TM	9	4	HD: 8; AC: 6 [13]; ATK: Bite (2d8), claws (1d6); SV: 8; SPC: None; MV: 4/18 (flying); AL: Neutrality unless intelligent (Chaos); LV/XP: 9/1,100
+Bear	CF CH CM PF PH PM PS	4	13	HD: 4+1; AC: 7 [12]; ATK: 2 Claws (1d3) and bite (1d6); SV: 13; SPC: Hug; MV: 9; AL: Neutrality; LV/XP: 4/120
+Beetle, Giant (Fire)	DG PF PH PM PS TF TH TM TS	1	13	HD: 1+3; AC: 4 [15]; ATK: Bite (1d4+2); SV: 18; SPC: None; MV: 12; AL: Neutrality; LV/XP: 1/15
+Black Pudding	DG	11	13	HD: 10; AC: 6 [13]; ATK: Attack (3d8); SV: 5; SPC: Acidic surface, immune to cold, divides when hit with lightning; MV: 6; AL: Neutrality; LV/XP: 11/1,700
+Blink Dog	DG PD PF PH PM PP	4	13	HD: 4; AC: 5 [15]; ATK: Bite (1d6); SV: 13; SPC: Teleports without error; MV: 12; AL: Law; LV/XP: 4/120
+Boar, Wild	CF CH CP PD PF PH PP PS TF TH TS	4	13	HD: 3+3; AC: 7 [12]; ATK: Gore (3d4); SV: 14; SPC: Continues attacking 2 rounds after being “killed”; MV: 15; AL: Neutrality; LV/XP: 4/120
+Bugbear	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	13	HD: 3+1; AC: 5 [14]; ATK: Bite (2d4) or by weapon; SV: 14; SPC: Surprise opponents on a 1–3; MV: 9; AL: Chaos; LV/XP: 3/60
+Bulette	PD PF PH PP	10	13	HD: 7 to 10; AC: -2 [21]; ATK: Bite (4d12) and 2 Claws (3d6); SV: 9 (7HD), 8 (8HD), 6 (9HD), 5 (10HD); SPC: Leaping, surprise; MV: 15; AL: Neutrality; LV/XP: 7 HD (9/1100), 8 HD (10/1400), 9 HD (11/1700), 10 HD (12/2000)
+Carrion Creeper	DG PM	4	13	HD: 2+4; AC: 7 [12]; ATK: Bite (1 hp) and 6 tentacles; SV: 14; SPC: Tentacles cause paralysis; MV: 12; AL: Neutrality; LV/XP: 4/240
+Centaur	PF PH PP	5	13	HD: 4; AC: 5 [15] or 4 [16] with shield; ATK: 2 kicks (1d6) and weapon; SV: 13; SPC: None; MV: 18; AL: Any (usually Neutrality); LV/XP: 5/240
+Centipede, Giant (Small, Lethal)	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	2	3	HD: 1d2; AC: 9 [10]; ATK: Bite (deals 0 damage); SV: 18; SPC: Lethal poison, +4 save; MV: 13; AL: Neutrality; LV/XP: 2/30
+Centipede, Giant (Small, Non-lethal)	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	3	HD: 1d2; AC: 9 [10]; ATK: Bite (1 hp damage); SV: 18; SPC: Non-lethal poison, +4 save; MV: 13; AL: Neutrality; LV/XP: 1/15
+Centipede, Giant (Man-sized)	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	4	3	HD: 2; AC: 5 [14]; ATK: Bite (1d8); SV: 16; SPC: Lethal poison, +6 save; MV: 15; AL: Neutrality; LV/XP: 4/120
+Centipede, Giant (Large, 20 ft long)	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	6	3	HD: 4; AC: 0 [20]; ATK: Bite (3d8); SV: 13; SPC: Lethal poison, +4 save; MV: 18; AL: Neutrality; LV/XP: 6/400
+Chimera	DG PD PH PM TH TM	11	13	HD: 9; AC: Goat 6 [13], Lion 5 [14], Dragon 2 [17]; ATK: 2 claws (1d3), 2 goat horns (1d4), 1 lion bite (2d4), and 1 dragon bite (3d4); SV: 6; SPC: Breathes fire; MV: 9/18 (flying); AL: Chaos (sometimes Neutrality); LV/XP: 11/1,700
+Cockatrice	DG FW PD PF PH PM PP PS TF TH TM TS	7	13	HD: 5; AC: 6 [13]; ATK: Bite (1d3+ turn to stone); SV: 12; SPC: Bite turns to stone; MV: 6/18 (flying); AL: Neutrality; LV/XP: 7/600
+Crocodile, Normal	FW PS TS	3	7	HD: 3; AC: 4 [15]; ATK: Bite (1d6); SV: 14; SPC: None; MV: 9 (12 swimming); AL: Neutrality; LV/XP: 3/60
+Crocodile, Giant or Sea	FW PS TS	6	6	HD: 6; AC: 3 [16]; ATK: Bite (3d6); SV: 11; SPC: None; MV: 9 (12 swimming); AL: Neutrality; LV/XP: 6/400
+Demon, Baalroch (Balor)	DG	10	1	HD: 9; AC: 2 [17]; ATK: Sword (1d12+2) and whip (see rules); SV: 6; SPC: Magic resistance (75%), surrounded by fire; MV: 6/15 (flying); AL: Chaos; LV/XP: 10/1,400
+Demon, Dretch	DG	6	1	HD: 4; AC: 2 [17]; ATK: 2 claws (1d4), 1 bite (1d6); SV: 13; SPC: Magical abilities.; MV: 9; AL: Chaos; LV/XP: 6/400
+Demon, Erinyes	DG	9	1	HD: 6; AC: 2[17]; ATK: 1 bronze sword (1d6 + paralysis); SV: 11; SPC: Magic resistance (25%), magical abilities, immune to fire and cold, entangle; MV: 12/24 (flying); AL: Chaos; LV/XP: 9/1100
+Demon, Glabrezu (Third-Category Demon)	DG	11	1	HD: 10; AC: –3[22]; ATK: 2 pincers (2d6), 2 claws (1d3), 1 bite 1d4+1; SV: 5; SPC: Magic resistance (60%), immune to fire, magical abilities; MV: 9; AL: Chaos; LV/XP: 11/1700
+Demon, Hezrou (Second-Category Demon)	DG	11	1	HD: 9; AC: 0[19]; ATK: 2 claws (1d3), 1 bite (2d8); SV: 6; SPC: Magic resistance 50%, magical abilities; MV: 9/14 (flying); AL: Chaos; LV/XP: 11/1700
+Demon, Lemures	DG	4	1	HD: 3; AC: 7 [12]; ATK: Claw (1d3); SV: 14; SPC: Regenerate (1 hp/round); MV: 3; AL: Chaos; LV/XP: 4/120
+Demon, Manes	DG	2	1	HD: 1; AC: 5[14]; ATK: 2 claws (1d2), 1 bite (1d4); SV: 18; SPC: Half damage from non-magic weapons; MV: 5; AL: Chaos; LV/XP: 2/30
+Demon, Marilith (Fifth-Category Demon)	DG	13	1	HD: 8; AC: –3[22]; ATK: 6 weapons (1d8), tail (1d8); SV: 8; SPC: Magic resistance (80%), +1 or better magic weapon required to hit, immune to fire, magical abilities; MV: 12; AL: Chaos; LV/XP: 13/2300
+Demon, Nalfeshnee (Fourth-Category Demon)	DG	13	1	HD: 11; AC: –1[20]; ATK: 2 claws (1d4), 1 bite (1d6+2); SV: 4; SPC: Magic resistance (65%), +1 or better magic weapon needed to hit, immune to fire, +2 on to-hit rolls, magical abilities; MV: 9/14 (flying); AL: Chaos; LV/XP: 13/2300
+Demon, Quasit	DG	7	1	HD: 3; AC: 2[17]; ATK: Attack: 2 claws (1d2 + non-lethal poison), 1 bite (1d3); SV: 14; SPC: Magic resistance (25%), regenerate (1 hp/round), non-lethal poison, magical abilities; MV: 14; AL: Chaos; LV/XP: 7/600
+Demon, Succubus	DG	9	1	HD: 6; AC: 9 [10]; ATK: 2 scratches (1d3); SV: 11; SPC: Magic resistance (70%), immune to non-magic weapons, cause darkness in a 10-foot diameter, level drain (1 level) with kiss, summon other demons, spells,change shape.; MV: 12 (18 fly); AL: Chaotic; LV/XP: 9/1,100
+Demon, Vrock (First-Category Demon)	DG	9	1	HD: 8; AC: 1 [18]; ATK: 1 beak (1d6), 2 foreclaws (1d4), 2 rear claws (1d6); SV: 8; SPC: Magic resistance (50%), immune to fire, darkness; MV: 12/18 (flying); AL: Chaos; LV/XP: 9/1100
+Demon Prince, ORCUS	DG	35	1	HD: 30 (125hp); AC: –6 [25]; ATK: 1 staff (death – no save), tail (2d8), 1 claw (2d8); SV: 3; SPC: Magic resistance (75%), +3 magic weapon required to hit, immune to fire and charm, death staff, spells, magical abilities, control undead, summon demon minions; MV: 9 (Fly 20); AL: Chaos; LV/XP: 35/5900
+Djinni	DG	9	13	HD: 7+3; AC: 4 [15]; ATK: Fist or weapon (1d10+1); SV: 9; SPC: magical powers, whirlwind; MV: 9/24 (flying); AL: Any; LV/XP: 9/1,100
+Doppleganger	CM DG PM PS TM TS	5	13	HD: 4; AC: 5 [14]; ATK: Claw (1d12); SV: 13 (5 against any magic); SPC: Mimics shape, immune to sleep and charm spells; MV: 9; AL: Chaos; LV/XP: 5/240
+Dragon, Black	DG FW PM PS SW TM TS	6	2	HD: 6–8; AC: 2 [17]; ATK: 2 claws (1d4), bite (3d6); SV: 11, 9, or 8; SPC: Spits acid; MV: 9/24 (flying); AL: Chaos; LV/XP: Challenge Level = HP/4 +2
+Dragon, Blue	DG PD PP	8	2	HD: 8–10; AC: 2 [17]; ATK: 2 claws (1d6), bite (3d6); SV: 8, 6, or 5; SPC: Spits lightning; MV: 9/24 (flying); AL: Chaos; LV/XP: Challenge Level = HP/4 +2
+Dragon, Gold	CF CH CM CP DG FW PD PF PH PM PP PS SW TF TH TM TS	10	2	HD: 10–12; AC: 2 [17]; ATK: 2 claws (1d8), bite (2d10); SV: 5, 4, or 3; SPC: Breathes poisonous gas or fire; MV: 9/24 (flying); AL: Law; LV/XP: Challenge Level = HP/4 +2
+Dragon, Green	CF CH DG FW PF PH PS SW TF TH TS	7	2	HD: 7–9; AC: 2 [17]; ATK: 2 claws (1d6), bite (2d10); SV: 9, 8, or 6; SPC: Breathes poisonous gas; MV: 9/24 (flying); AL: Chaos; LV/XP: Challenge Level = HP/4 +2
+Dragon, Red	DG CF CH CM FW PF PH PM SW TF TM	9	2	HD: 9–11; AC: 2 [17]; ATK: 2 claws (1d8), bite (3d10); SV: 6, 5, or 4; SPC: Breathes fire; MV: 9/24 (flying); AL: Chaos; LV/XP: Challenge Level = HP/4 +2
+Dragon, White	CF CH CM CP DG FW PD PS	5	2	HD: 5–7; AC: 2 [17]; ATK: 2 claws (1d4), bite (2d8); SV: 12, 11, or 9; SPC: Breathes cold; MV: 9/24 (flying); AL: Chaos; LV/XP: Challenge Level = HP/4 +2
+Dragon Turtle	FW SW	15	13	HD: 11 to 14; AC: 2 [17]; ATK: 2 claws (1d8), bite (3d10); SV: 4 (11HD) or 3; SPC: Break ships, breathe steam; MV: 3 (9 swimming); AL: Neutrality or Chaos; LV/XP: 11 HD (13/2,300); 12 HD (14/2,600); 13 HD (15/2,900); 14 HD (16/3,200)
+Dryad	PF	3	13	HD: 2; AC: 9 [10]; ATK: Wooden dagger (1d4); SV: 16; SPC: Charm person (-2 save); MV: 12; AL: Neutrality; LV/XP: 3/60
+Dwarf	CF CH CM CP DG PD PF PH PM PP TF TH TM	1	13	HD: 1; AC: 4 [15]; ATK: War hammer (1d4+1); SV: 17; SPC: Detects attributes of stonework; MV: 6; AL: Law; LV/XP: 1/15
+Efreeti	DG	12	13	HD: 10; AC: 2 [17]; ATK: Fist or sword (1d8+5); SV: 5; SPC: Wall of fire; MV: 9/24 (flying); AL: Chaos; LV/XP: 12/2,000
+Elemental, Air	DG	8	4	HD: 8, 12, or 16; AC: 2 [17]; ATK: Strike (2d8); SV: 8, 3, or 3; SPC: Whirlwind; MV: 36 (flying); AL: Neutrality; LV/XP: 8 HD (9/1,100), 12 HD (13/2,300), 16 HD (17/3,500)
+Elemental, Earth	DG	8	4	HD: 8, 12, or 16; AC: 2 [17]; ATK: Fist (3d6); SV: 8, 3, or 3; SPC: Tear down stone; MV: 6; AL: Neutrality; LV/XP: 8 HD (9/1,100), 12 HD (13/2,300), 16 HD (17/3,500)
+Elemental, Fire	DG	8	4	HD: 8, 12, or 16; AC: 2 [17]; ATK: Strike (2d6); SV: 8, 3, or 3; SPC: Ignite materials; MV: 12; AL: Neutrality; LV/XP: 8 HD (9/1,100), 12 HD (13/2,300), 16 HD (17/3,500)
+Elemental, Water	DG	8	4	HD: 8, 12, or 16; AC: 2 [17]; ATK: Strike (3d6); SV: 8, 3, or 3; SPC: Can overturn boats; MV: 6/18 (swimming); AL: Neutrality; LV/XP: 8 HD (9/1,100), 12 HD (13/2,300), 16 HD (17/3,500)
+Elf	CF CH DG PF PH PS TF TH TS	1	13	HD: 1+1; AC: 5 [14]; ATK: Sword (1d8) or 2 arrows (1d6); SV: 17; SPC: None; MV: 12; AL: Law (sometimes Neutrality); LV/XP: 1/15
+Fish, Giant	FW SW	10	13	HD: varies (see rules); AC: 7 [12]; ATK: 1 bite (1d6 per 5 feet in length); SV: varies (see rules); SPC: None (or swallow whole: see rules); MV: varies (roll 1d4+1 x10); AL: Neutrality (usually); LV/XP: varies
+Gargoyle	CF CM DG FW PF PM PS TF TM TS	6	13	HD: 4+4; AC: 5 [14]; ATK: 2 claws (1d3), 1 bite (1d4), 1 horn (1d6); SV: 13; SPC: None; MV: 9/15 (flying); AL: Chaos; LV/XP: 6/400
+Gelatinous Cube	DG PM TM	5	13	HD: 4; AC: 8 [11]; ATK: Attack (2d4); SV: 13; SPC: Paralysis, immune to lightning and cold; MV: 6; AL: Neutrality; LV/XP: 5/240
+Ghoul	CH CM CP DG PH PM PP PS TH TM TS	3	13	HD: 2; AC: 6 [13]; ATK: 2 claws (1d3), 1 bite (1d4); SV: 16; SPC: Immunities, paralysis; MV: 9; AL: Chaos; LV/XP: 3/60
+Giant, Cloud	CH CM PH PM TH TM	13	2	HD: 12+1d6 points; AC: 2 [17]; ATK: Weapon (6d6); SV: 3; SPC: Hurl boulders; MV: 15; AL: Chaos (sometimes Neutrality); LV/XP: 13/2,300
+Giant, Fire	CF CH CM CP DG PD PF PH PM PP TF TH TM	12	2	HD: 11 +1d6 points; AC: 3 [16]; ATK: Weapon (5d6); SV: 4; SPC: Hurl boulders, immune to fire; MV: 12; AL: Chaos (sometimes Neutrality); LV/XP: 12/2,000
+Giant, Frost	CF CH CM DG PF PH PM	11	2	HD: 10+1d6 hit points; AC: 4 [15]; ATK: Weapon (4d6); SV: 5; SPC: Hurl boulders, immune to cold; MV: 12; AL: Chaos (sometimes Neutrality); LV/XP: 11/1,700
+Giant, Hill	CF CH CM CP DG PF PH PM PP PS TF TH TM TS	9	2	HD: 8+2; AC: 4 [15]; ATK: Weapon (2d8); SV: 8; SPC: Hurl boulders; MV: 12; AL: Chaos; LV/XP: 9/1,100
+Giant, Stone	CH CM DG PH PM TH TM	10	2	HD: 9+3 hit points; AC: 0 [20]; ATK: Club (3d6); SV: 6; SPC: Hurl boulders; MV: 12; AL: Chaos (sometimes Neutrality); LV/XP: 10/1,400
+Giant, Storm	CM FW PM SW TM	16	2	HD: 15+5; AC: 1 [18]; ATK: Weapon (7d6); SV: 3; SPC: Throw boulders, control weather; MV: 15; AL: Neutral (sometimes Law or Chaos); LV/XP: 16/ 3,200
+Gnoll	DG PF PH PM PP PS TF TH TM TS	2	13	HD: 2; AC: 5 [14]; ATK: Bite (2d4) or weapon (1d10); SV: 16; SPC: None; MV: 9; AL: Chaos; LV/XP: 2/30
+Goblin	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	13	HD: 1d6 hit points; AC: 7 [12]; ATK: Weapon (1d6); SV: 18; SPC: -1 to hit in sunlight; MV: 9; AL: Chaos; LV/XP: 1/10
+Golem, Clay	DG	14	4	HD: 10 (50 hit points); AC: 7 [12]; ATK: 1 fist (3d10); SV: 5; SPC: Immune to slashing and piercing weapons, immune to most spells.; MV: 8; AL: Neutrality; LV/XP: 14/2,600
+Golem, Flesh	DG	12	4	HD: 8 (40 hit points); AC: 9 [10]; ATK: 2 fists (2d8); SV: 8; SPC: Hit only by magic weapons, slowed by fire and cold, immune to most spells, healed by lightning; MV: 8; AL: Neutrality; LV/XP: 12/2,000
+Golem, Iron	DG	17	4	HD: 16 (80 hit points); AC: 3 [16]; ATK: Weapon or fist (4d10); SV: 3; SPC: Poison gas, immune to all weapons +2 or less, slowed by lightning, healed by fire, immune to most spells; MV: 6; AL: Neutrality; LV/XP: 17/3,500
+Golem, Stone	DG	16	4	HD: 12 (60 hit points); AC: 5 [14]; ATK: Fist (3d8); SV: 3; SPC: Unaffected by +1 or lesser weapons, immune to most spells; MV: 6; AL: Neutrality; LV/XP: 16/3,200
+Gorgon	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	10	13	HD: 8; AC: 2 [17]; ATK: Gore (2d6); SV: 8; SPC: Breath turns creatures to stone; MV: 12; AL: Chaos; LV/XP: 10/1,400
+Grey Ooze	DG	5	13	HD: 3+3; AC: 7 [12]; ATK: Strike (2d6); SV: 14; SPC: None; MV: 1; AL: Neutrality; LV/XP: 5/ 240
+Green Slime	DG	1	13	HD: 2; AC: Always Hit; ATK: Special; SV: 16; SPC: Acid, immunities; MV: 0; AL: Neutrality; LV/XP: 1/ 30
+Griffon	CH CM FW PD PH PM SW TM	8	13	HD: 7; AC: 3 [16]; ATK: 2 claws (1d4), 1 bite (2d8); SV: 9; SPC: None; MV: 12/27 (flying); AL: Neutrality; LV/XP: 8/800
+Harpy	CF CH CM CP DG FW PD PF PH PM PP PS SW TF TH TM TS	4	13	HD: 3; AC: 7 [12]; ATK: 2 talons (1d3) and weapon (1d6); SV: 14; SPC: Siren-song; MV: 6/18 (flying); AL: Chaos; LV/XP: 4/120
+Hell Hound	DG PD PH PM PS TH TM TS	6	13	HD: 4–7; AC: 4 [15]; ATK: Bite (1d6); SV: 13, 12, 11, or 9; SPC: Breathe fire; MV: 12; AL: Chaos; LV/XP: 4 HD (5/240), 5 HD (6/400), 6 HD (7/600), 7 HD (8/800)
+Hippogriff	CH CM FW PH PM SW TH TM	4	13	HD: 3+3; AC: 5 [14]; ATK: 2 claws (1d6), 1 bite (1d10); SV: 14; SPC: None; MV: 18/24 (flying); AL: Neutrality; LV/XP: 4/120
+Hobgoblin	CF CH CM CP DG PD PF PH PM PP PS TH TM TS	1	13	HD: 1+1; AC: 5 [14]; ATK: Weapon (1d8); SV: 17; SPC: None; MV: 9; AL: Chaos; LV/XP: 1/15
+Human, Bandit	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	3	HD: 1; AC: 7 [12]; ATK: Weapon (1d8); SV: 17; SPC: None; MV: 12; AL: Chaos; LV/XP: 1/15
+Human, Berserker	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	2	3	HD: 1; AC: 7 [12]; ATK: Weapon (1d8); SV: 17; SPC: Berserking; MV: 12; AL: Neutrality or Chaos; LV/XP: 2/30
+Human, Normal	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	3	HD: 1d6; AC: 9 [10]; ATK: Weapon (1d6); SV: 18; SPC: None; MV: 12; AL: Any; LV/XP: 1/10
+Human, Sergeant-at-Arms	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	3	3	HD: 3; AC: 5 [14]; ATK: Weapon (1d8); SV: 17; SPC: None; MV: 12; AL: Any; LV/XP: 3/60
+Human, Soldier	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	3	HD: 1; AC: 7 [12]; ATK: Weapon (1d8); SV: 17; SPC: None; MV: 12; AL: Any; LV/XP: 1/15
+Hydra	CF CM CP PF PM PP PS TF TM TS	9	13	HD: 5-12 (equal to the number of heads); AC: 5 [14]; ATK: 5-12 bites (1d6); SV: 12, 11, 9, 8, 6, 5, 4, or 3; SPC: None; MV: 9; AL: Neutrality; LV/XP: 5 HD (7/600), 6 HD (8/800), 7 HD (9/1,100), 8 HD (10/1,400), 9 HD (11/1,700), 10 HD (12/2,000), 11 HD (13/2,300), 12 HD (14/2,600)
+Invisible Stalker	DG	9	13	HD: 8; AC: 3 [16]; ATK: “Bite” (4d4); SV: 8; SPC: Invisible, flies; MV: 12; AL: Neutrality; LV/XP: 9/1,100
+Kobold	CF CH CM DG PF PH PM PS TF TH TM TS	1	13	HD: 1d4 hp; AC: 6 [13]; ATK: Weapon (1d6); SV: 18; SPC: None; MV: 6; AL: Chaos; LV/XP: 1/5
+Leech, Giant	DG FW PS TS	5	13	HD: 2; AC: 8 [11]; ATK: 1 bite; SV: 16; SPC: Suck blood; MV: 6; AL: Neutrality; LV/XP: 5/240
+Lich	DG	15	13	HD: 12+; AC: 0 [20]; ATK: Hand (1d10 + automatic paralysis); SV: 3; SPC: Appearance causes paralytic fear, touch causes automatic paralysis, spells; MV: 6; AL: Chaos; LV/XP: 12 HD (15/2,900), 13 HD (16/3,200), 14 HD (17/3,500), 15 HD (18,3800), 16 HD (19/4,100), 17 HD (20/4,400), 18 HD (21/4,700)
+Lion	PD PF PH PM PP PS TF TH TM TS	5	13	HD: 5+2; AC: 6 [13]; ATK: 2 claws (1d4), 1 bite (1d8); SV: 12; SPC: None; MV: 12; AL: Neutrality; LV/XP: 5/240
+Lizardman	DG FW PS TS	2	13	HD: 2+1; AC: 5 [14]; ATK: 2 claws (1d3), 1 bite (1d8); SV: 16; SPC: Underwater; MV: 6/12 (swimming); AL: Usually Chaos; LV/XP: 2/30
+Lurker, Ceiling	DG	10	13	HD: 10; AC: 6 [13]; ATK: 1 crush (1d6); SV: 5; SPC: Smother; MV: 1/7 (flying); AL: Neutrality; LV/XP: 10/1400
+Lycanthrope, Werebear	CF CH CM DG PF PH PM PS	8	3	HD: 7+3; AC: 2 [17]; ATK: 2 claws (1d3), 1 bite (2d4); SV: 9; SPC: Lycanthropy, hit only by magic or silver weapons; MV: 9; AL: Neutrality or Chaos; LV/XP: 8/800
+Lycanthrope, Wereboar	CF CH CP PD PF PH PP PS TF TH TS	6	3	HD: 5+2; AC: 4 [15]; ATK: Bite (2d6); SV: 12; SPC: Lycanthropy, hit only by magic or silver weapons; MV: 12; AL: Neutrality or Chaos; LV/XP: 6/400
+Lycanthrope, Wererat	CF CH CM CP DG PD PS	4	3	HD: 3; AC: 6 [13]; ATK: Bite (1d3), Weapon (1d6); SV: 14; SPC: Control rats, lycanthropy, hit only by magic or silver weapons; MV: 12; AL: Chaos; LV/XP: 4/120
+Lycanthrope, Weretiger	CF CH CM CP PF PH PM PP PS TF TH TM TS	7	3	HD: 6; AC: 3 [16]; ATK: 2 claws (1d4), 1 bite (1d10); SV: 11; SPC: Lycanthropy, hit only by magic or silver weapons; MV: 12; AL: Neutrality or Chaos; LV/XP: 7/600
+Lycanthrope, Werewolf	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	5	3	HD: 4+4; AC: 5 [14]; ATK: Bite (2d4); SV: 13; SPC: Lycanthropy, hit only by magic or silver weapons; MV: 12; AL: Usually Chaos; LV/XP: 5/240
+Manticore	CF CH CM CP DG FW PD PH PM PP PS SW TF TH TM TS	8	13	HD: 6+4; AC: 4 [15]; ATK: 2 claws (1d3), 1 bite (1d8), 6 tail spikes (1d6); SV: 11; SPC: Tail spikes; MV: 12/18 (flying); AL: Chaos; LV/XP: 8/800
+Medusa	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	8	13	HD: 6; AC: 5 [14]; ATK: Weapon (1d4); SV: 11; SPC: Gaze turns to stone; MV: 9; AL: Chaos; LV/XP: 8/800
+Merman	FW SW	1	13	HD: 1+3; AC: 7 [12]; ATK: Weapon (1d6); SV: 17; SPC: Breathe water; MV: 1/18 (swimming); AL: Any; LV/XP: 1/15
+Minotaur	CF CH CM DG PF PH PM PS TF TH TM TS	6	13	HD: 6+4; AC: 6 [13]; ATK: Head butt (2d4), bite (1d3) and weapon (1d8); SV: 11; SPC: Never get lost in labyrinths; MV: 12; AL: Chaos; LV/XP: 6/400
+Mummy	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	7	13	HD: 6+4; AC: 3 [16]; ATK: Fist (1d12); SV: 11; SPC: Rot, hit only by magic weapons; MV: 6; AL: Chaos; LV/XP: 7/600
+Naga, Guardian	CM DG PM PS TM TS	13	4	HD: 11; AC: 3 [16]; ATK: Bite (1d6 + poison); SV: 4; SPC: Spit poison, constriction, spells.; MV: 18; AL: Law; LV/XP: 13/2300
+Naga, Spirit	CM DG PM PS TM TS	13	4	HD: 9; AC: 4 [15]; ATK: Bite (1d3 + poison); SV: 6; SPC: Poison, charm gaze, spells.; MV: 12; AL: Chaos; LV/XP: 13/2300
+Naga, Water	FW SW	10	4	HD: 7; AC: 5 [14]; ATK: Bite (1d4 + poison); SV: 9; SPC: Poison, spells.; MV: 12/20 (swimming); AL: Any; LV/XP: 10/1400
+Nixie	FW SW	1	13	HD: 1d4 hit points; AC: 7 [12]; ATK: Weapon (1d6); SV: 18; SPC: Charm; MV: 6/12 (swimming); AL: Neutrality; LV/XP: 1/10
+Ochre Jelly	DG	6	13	HD: 6; AC: 8 [11]; ATK: Acid-laden strike (3d4); SV: 11; SPC: Lightning divides creature; MV: 3; AL: Neutrality; LV/XP: 6/400
+Octopus, Giant	FW SW	6	13	HD: 4; AC: 7 [12]; ATK: 8; SV: 13; SPC: Jet, Ink; MV: 9 (swimming); AL: Neutrality; LV/XP: 6/400
+Ogre	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	4	10	HD: 4+1; AC: 5 [14]; ATK: Weapon (1d10+1); SV: 13; SPC: None; MV: 9; AL: Chaos; LV/XP: 4/120
+Ogre Mage	CM DG PM TM TS	7	3	HD: 5+4; AC: 4 [15]; ATK: Weapon (1d12); SV: 12; SPC: Magic use (See rules); MV: 12/18 (flying); AL: Chaos; LV/XP: 7/600
+Orc	CF CH CM CP DG PD PF PH PM PP PS TF TM TS	1	13	HD: 1; AC: 6 [14]; ATK: Weapon, usually spear (1d6) or scimitar (1d8); SV: 17; SPC: None; MV: 12; AL: Chaos; LV/XP: 1/15
+Owlbear	DG PF PM PS	5	13	HD: 5+1; AC: 5 [14]; ATK: 2 claws (1d6), 1 bite (2d6); SV: 12; SPC: Hug for additional 2d8 if to-hit roll is 18+; MV: 12; AL: Neutrality; LV/XP: 5/240
+Pegasus	CF CM FW PD PF PH PM SW TF TH TM	4	13	HD: 4; AC: 6 [13]; ATK: 2 hooves (1d8); SV: 13; SPC: None; MV: 24/48 (flying); AL: Law; LV/XP: 4/120
+Piercer	DG	3	13	HD: 1 to 4; AC: 3 [16]; ATK: 1 drop/pierce (1d6 per HD); SV: 17, 16, 14, or 13; SPC: Drop from ceiling; MV: 1; AL: Neutrality; LV/XP: 1 HD (1/15), 2 HD (2/30), 3 HD (3/60), 4 HD (4/120)
+Purple Worm	CH CP DG PD PH PP TH	17	13	HD: 15; AC: 6 [13]; ATK: Bite (2d12), sting (1d8); SV: 3; SPC: Poison sting, swallows whole; MV: 9; AL: Neutrality; LV/XP: 17/3,500
+Rakshasa	DG	12	13	HD: 7; AC: -4 [23]; ATK: 2 claws (1d3) 1 bite (1d6); SV: 9; SPC: Illusory appearance, special magic resistance, spells; MV: 15; AL: Chaos; LV/XP: 12/2,000
+Rat, Giant	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	1	6	HD: 1d4 hit points; AC: 7 [12]; ATK: Bite (1d3); SV: 18; SPC: 5% are diseased; MV: 12; AL: Neutrality; LV/XP: 1/5
+Rat, Giant (Monstrously Huge)	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	4	7	HD: 3; AC: 6 [13]; ATK: 2 claws (1d3), 1 bite (1d6); SV: 14; SPC: 5% are diseased; MV: 12; AL: Neutrality unless intelligent (Chaos); LV/XP: 4/120
+Roc	TM	12	13	HD: 12; AC: 4 [15]; ATK: Bite (3d12), 2 claws (3d6); SV: 3; SPC: None; MV: 3/30 flying); AL: Neutrality or Law; LV/XP: 12/2,000
+Salamander	DG TH TM	8	13	HD: 7; AC: 5 [14] (torso); 3 [16] (serpent body); ATK: Touch and constrict (2d8 + 1d6 heat), 1 weapon (1d6); SV: 9; SPC: Heat, constrict; MV: 9; AL: Chaos; LV/XP: 8/800
+Sea Monster	SW	30	13	HD: 30; AC: 2 [17]; ATK: Bite (4d10); SV: 3; SPC: Swallow whole; MV: 0/18 (swimming); AL: Neutrality; LV/XP: 30/12,900
+Sea Serpent	SW	17	13	HD: 15; AC: 6 [13]; ATK: Bite (2d12); SV: 3; SPC: Swallow whole; MV: 0/20 (swimming); AL: Neutrality; LV/XP: 17/3,500
+Shadow	CF CM DG PF PM PS TF TM TS	4	13	HD: 3+3; AC: 7 [12]; ATK: 1 touch (1d4 + Str drain); SV: 14; SPC: Drains 1 Str with hit, can only be hit by magical weapons; MV: 12; AL: Chaos; LV/XP: 4/120
+Shambling Mound	DG PS TS	12	13	HD: 7 to 12; AC: 1 [18]; ATK: 2 fists (2d8); SV: 9, 8, 6, 5, 4, or 3; SPC: Immunities, enfold and suffocate victims.; MV: 6; AL: Neutrality; LV/XP: HD 7 (10/1400); HD 8 (11/1700); HD 9 (12/2000); HD 10 (13/2300); HD 11 (14/2600); HD 12 (15/2900)
+Shrieker	DG	3	13	HD: 3; AC: 7 [12]; ATK: None; SV: 14; SPC: Shriek; MV: 1; AL: Neutrality; LV/XP: 3/60
+Skeleton	DG PS TS	1	13	HD: 1; AC: 8 [11], with shield 7 [12]; ATK: Weapon or strike (1d6); SV: 17; SPC: None; MV: 12; AL: Neutrality; LV/XP: 1/15
+Slithering Tracker	DG	6	13	HD: 4; AC: 5 [14]; ATK: No normal attack; SV: 13; SPC: Transparent, paralysis; MV: 12; AL: Neutrality; LV/XP: 6/400
+Slug, Giant	DG	13	13	HD: 12; AC: 8 [11]; ATK: Bite (1d12) or acid; SV: 3; SPC: Spit acid (6d6); MV: 6; AL: Neutrality; LV/XP: 13/2,300
+Specter	CM DG PM PS TM TS	9	13	HD: 7; AC: 2 [17]; ATK: Spectral weapon or touch (1d8 + level drain); SV: 9; SPC: Level drain (2 levels) with hit; MV: 15/30 (flying); AL: Chaos; LV/XP: 9/1,100
+Spider, Giant (Smaller)	DG PD PF PH PM PP PS TF TH TM TS	3	5	HD: 1+1; AC: 8 [11]; ATK: Bite (1 hp) + poison; SV: 17; SPC: Poison (+2 save or die); MV: 9; AL: Neutrality; LV/XP: 3/60
+Spider, Giant (Man-sized, 4-foot diameter)	DG PD PF PH PM PP PS TF TH TM TS	5	4	HD: 2+2; AC: 6 [13]; ATK: Bite (1d6) + poison; SV: 16; SPC: Poison (+1 save or die), surprise; MV: 18; AL: Neutrality unless intelligent (Chaos); LV/XP: 5/240
+Spider, Giant (Greater, 6-foot diameter)	DG PD PF PH PM PP PS TF TH TM TS	7	4	HD: 4+2; AC: 4 [15]; ATK: Bite (1d6+2) + poison; SV: 13; SPC: Poison (save or die), webs; MV: 4; AL: Chaos; LV/XP: 7/600
+Spider, Phase	DG PF PH PM TF TH TM	6	4	HD: 2+2; AC: 3 [16]; ATK: Bite (1d6) + poison; SV: 16; SPC: Poison (+1 save or die), phase shifting; MV: 18; AL: Neutrality; LV/XP: 6/400
+Squid, Giant	SW	9	13	HD: 6; AC: 3 [16] (body shell), 7 [12] tentacles and front; ATK: 10 (1d3); SV: 11; SPC: Jet, Ink, Constrict; MV: 9 (swimming); AL: Neutrality; LV/XP: 9/1100
+Stirge	CF DG PF TF	1	13	HD: 1+1; AC: 7 [12]; ATK: “Sting” (1d3 + blood drain); SV: 17; SPC: Drain blood 1d4/round; MV: 3/18 (when flying); AL: Neutrality; LV/XP: 1/15
+Tick, Giant	DG PF PS TF TS	3	13	HD: 3; AC: 4 [15]; ATK: Bite (1d4); SV: 14; SPC: Drains blood; MV: 3; AL: Neutrality; LV/XP: 3/60
+Titan	CM DG PM SW TM	19	13	HD: 16 HD+1d6 HD; AC: 2 [17] to –3 [22]; ATK: Weapon (2d8); SV: 3; SPC: Spells; MV: 21; AL: Any; LV/XP: 17 HD (19/4,100), 18+ HD (Add 1 challenge level and 300 XP per additional HD over 17)
+Trapper Beast	DG	12	13	HD: 10 to 12; AC: 3 [16]; ATK: 1 enfold; SV: 5, 4, or 3; SPC: Immunities; enfold and smother; MV: 1; AL: Neutrality; LV/XP: 10 HD (11/1,700), 11 HD (12/2,000), 12 HD (13/2,300)
+Treant	CF PF PS TF TS	10	13	HD: 6 HD + 1d6 HD; AC: 2 [17]; ATK: 2 strikes (2d6, 3d6, or 4d6); SV: 9, 8, 6, 5, 4, or 3; SPC: Control trees; MV: 12; AL: Neutrality; LV/XP: 7 HD (7/600), 8 HD (8/800), 9 HD (9/1,100), 10 HD (10/1,400), 11 HD (11/1,700) 12 HD (12/2,000)
+Troll	CF CH CM CP DG PD PF PH PP PS TF TH TM TS	8	13	HD: 6+3; AC: 4 [15]; ATK: 2 claws (1d4), 1 bite (1d8); SV: 11; SPC: Regenerates; MV: 12; AL: Chaos; LV/XP: 8/800
+Unicorn	PH	5	13	HD: 4+5; AC: 2 [17]; ATK: 2 hoofs (1d8), 1 horn (1d8); SV: 13; SPC: Magic resistance (25%), double damage for charge, teleport; MV: 24; AL: Law; LV/XP: 5/240
+Vampire	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	10	13	HD: 7–9; AC: 2 [17]; ATK: Bite (1d10 + level drain); SV: 9, 8, or 6; SPC: See rules; MV: 12/18 (flying); AL: Chaos; LV/XP: 7 HD (9/1,100), 8 HD (10/1,400), 9 HD (11/1,700)
+Wight	CM DG PM PS TM TS	5	13	HD: 3; AC: 5 [14]; ATK: Claw (1 hp + level drain); SV: 14; SPC: Level drain (1 level) with hit, can only be hit by magical or silver weapons; MV: 9; AL: Chaos; LV/XP: 5/240
+Will-o-the-Wisp	CM DG PM PS SW TM TS	10	13	HD: 9; AC: -8 [27]; ATK: Shock (2d6); SV: 6; SPC: Change appearance, lightning; MV: 18; AL: Chaos; LV/XP: 10/1400
+Wolf	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	2	13	HD: 2+2; AC: 7 [12]; ATK: Bite (1d4+1); SV: 16; SPC: None; MV: 18; AL: Neutrality; LV/XP: 2/30
+Worg	CF CH CM CP DG PD PF PM PP PS TF TH TM TS	4	13	HD: 4; AC: 6 [13]; ATK: Bite (1d6+1); SV: 13; SPC: None; MV: 18; AL: Chaos; LV/XP: 4/120
+Wraith	CM DG PM PS TM TS	6	13	HD: 4; AC: 3 [16]; ATK: Touch (1d6 + level drain); SV: 13; SPC: Level drain (1 level) with hit; MV: 9; AL: Chaos; LV/XP: 6/400
+Wyvern	DG PD PF PM PP PS TF TM TS	9	13	HD: 8; AC: 3 [16]; ATK: Bite (2d8) or sting (1d6); SV: 8; SPC: Poison sting; MV: 6/24 (flying); AL: Neutrality; LV/XP: 9/1,100
+Yellow Mold	DG	1	13	HD: 0; AC: Always Hit; ATK: 1d6 damage if touched; SV: 16; SPC: Poisonous spores; MV: 0; AL: Neutrality; LV/XP: 3/60
+Yeti	CM DG	7	13	HD: 5; AC: 6[13]; ATK: 2 fists (1d6); SV: 12; SPC: Immune to cold, hug, fear.; MV: 14; AL: Chaos; LV/XP: 7/600
+Zombie	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS	2	13	HD: 2; AC: 8 [11], or 7 [12] with shield; ATK: Weapon or strike (1d8); SV: 16; SPC: Immune to sleep and charm spells; MV: 6; AL: Neutrality; LV/XP: 2/30
+--END--
+acid spray
+bolt, crossbow
+bridge, collapsing
+bridge, illusory 
+caltrops drop from ceiling
+ceiling block drops behind players
+ceiling blocks drop in front of and behind players
+ceiling block drops in front of players
+ceiling block drops on players
+ceiling block seals players in room or area
+elevator room
+elevator room, deactivates for 24 hours
+elevator room, one way
+falling door
+flame jets
+flooding room
+gas, blinding
+gas, fear
+gas, flammable
+gas, sleep
+gas, slowing
+greased chute
+lightning bolt
+log trap, swinging
+obscuring fog
+oil-filled pit with dropping lit torch
+pit trap triggered by false door
+pit with dropping ceiling block
+pit with locking trap door
+pit, 10 ft
+poisoned bolt, crossbow
+poisoned caltrops
+poisoned spear, ballista
+poisoned spike pit
+portcullis drops behind players
+portcullises drop in front of and behind players
+portcullis drops in front of players
+rolling stone ball, height and width of corridor
+scything blade, ankle-high
+scything blade, neck-high
+sliding room changes facing or location
+spear, ballista
+spiked log trap
+spiked pit
+spring-loaded pile-driver disguised as a door
+stairs fold flat into a sliding chute
+stairs collapse
+teleporter
+trip wire
+wire, neck high
+--END--
+ashes
+badly dented helmet
+bent iron bar
+bits of hair or fur
+blunted javelin head
+bones
+broken arrow
+broken bottle
+corroded chain
+cobwebs
+bent copper coin
+cracks in ceiling
+cracks in floor
+cracks in wall
+cracked flask
+cracked hammer
+head
+dagger hilt
+dripping water
+dried blood
+dry leaves
+twigs 
+dung
+dust
+food
+fungi
+guano
+leather boot
+lantern
+mold
+pick handle
+rope
+pottery shards
+rags
+rats
+rubble
+sack
+scattered teeth or fang
+scratches on wall
+slime on ceiling
+slime on floor
+slime on wall
+spike
+sticks
+strap
+straw
+stones
+sword hilt
+torch stub
+water puddle
+wax drippings
+wax blob
+candle stub
+wood
+altar
+armchair
+armoire
+bag
+barrel
+bed
+bench
+blanket
+box
+brazier
+bucket
+buffet
+bunks
+barrel
+cabinet
+candelabrum
+carpet
+cask
+cauldron
+chandelier
+charcoal
+kettle
+loom
+mat
+mattress
+mural
+oven
+pail
+painting
+pallet
+pans
+pedestal
+pegs
+pillow
+pots
+quilt
+rug
+rushes
+sack
+sconce
+screen
+sheet
+shelf
+chair
+chest
+chest of drawers
+coal
+couch
+crate
+cupboard
+cushion
+desk
+fireplace with wood
+fountain
+grindstone
+hammock
+hamper
+hogshead
+idol
+shrine
+sideboard
+sofa
+spinning wheel
+staff
+stand
+statue
+stool
+table
+tapestry
+throne
+trunk
+tub
+utensil
+urn
+wall basin
+wardrobe
+wood billets
+workbench
+--END--
+Locked Chest
+Locked Huge Chest
+Locked Iron Trunk
+Loose
+Bag
+Sack
+Coffer
+Chest
+Huge Chest
+Hidden in Wall
+Hidden under Floor
+Hidden
+Iron Trunk
+--END--
+Potion	4	1
+Ring	1	2
+Staff	1	3
+Wand	1	4
+Scroll	3	9
+Jewelry	5	19
+Gem	9	22
+Loot	20	23
+Armor	3	20
+Magic Item	3	10
+Weapon	6	21
+--END--
+Animal Control	6
+Clairaudience	6
+Clairvoyance	6
+Diminution	6
+Dragon Control (Black)	1
+Dragon Control (Blue)	1
+Dragon Control (Gold)	1
+Dragon Control (Green)	1
+Dragon Control (Red)	1
+Dragon Control (White)	1
+Ethereality	6
+Fire Resistance	6
+Flying	6
+Frozen Concoction	6
+Gaseous Form	6
+Giant Strength	6
+Growth	6
+Heroism	6
+Invisibility	6
+Invulnerability	6
+Levitation	6
+Plant Control	6
+Poison	6
+Slipperiness	6
+Treasure Finding	6
+Undead Control	6
+Extra Healing	6
+Healing	6
+--END--
+Fire Resistance	6
+Invisibility	6
+Mammal Control	6
+Poison Resistance	6
+Protection, +1	6
+Protection, +2	4
+Djinni Summoning	2
+Human Control	3
+Regeneration	2
+Shooting Stars	3
+Spell Storing, Magic-User (M)	3
+Spell Storing, Cleric (C)	3
+Spell Turning	3
+Telekinesis	3
+Three Wishes	1
+X-ray Vision	3
+--END--
+Absorption (M)	5
+Beguiling (C, M)	5
+Command (C, M)	5
+Healing (C)	5
+Power (M)	5
+Resurrection (C)	5
+Snake (C)	5
+Striking (C, M)	5
+Withering (C)	5
+Wizardry (M)	5
+--END--
+Spell [level 1 - 10 charges]	6
+Spell [level 2 - 5 charges]	6
+Spell [level 3 - 2 charges]	6
+Spell [level 3 - 10 charges]	1
+Spell [level 4 - 10 charges]	1
+Cold	1
+Detection [Enemies]	1
+Detection, [Magic]	1
+Detection, [Metal]	1
+Detection, [Traps & Secret Doors]	1
+Fear	1
+Paralyzing	1
+Polymorph	1
+--END--
+Demons	6
+Drowning	6
+Elementals	6
+Magic	6
+Metal	6
+Poison	6
+Undead	6
+Lycanthropes	6
+Demons (x2 duration)	3
+Drowning (x2 duration)	3
+Elementals (x2 duration)	3
+Magic (x2 duration)	3
+Metal (x2 duration)	3
+Poison (x2 duration)	3
+Undead (x2 duration)	3
+Lycanthropes (x2 duration)	3
+Demons (x3 duration)	1
+Drowning (x3 duration)	1
+Elementals (x3 duration)	1
+Magic (x3 duration)	1
+Metal (x3 duration)	1
+Poison (x3 duration)	1
+Undead (x3 duration)	1
+Lycanthropes (x3 duration)	1
+--END--
+Blindness (3d6 turns)	6
+The character gains a strong aversion to swords.	1
+The character gains a strong aversion to spiders.	1
+The character gains a strong aversion to armor.	1
+The character gains a strong aversion to spell casting.	1
+The character gains a strong aversion to bathing.	1
+The character gains a strong aversion to being underground.	1
+Confusion. Character acts randomly.	6
+Despondency (1d6 days’ duration). The character will refuse to go anywhere, as there is simply no point to it.	6
+Dimensional Vortex. The character is physically sucked up into the scroll, appearing as a new word on the page until rescued by a remove curse spell.	6
+Hallucinations (3d6 turns). The exact nature of the hallucinations varies, but in general the character will either begin casting spells and/or attacking nearby people, or will remain fascinated by the colors, unwilling to move.	6
+Instant Death.	6
+Levitation. The character levitates one inch off the ground, and cannot get back down.	6
+Lose 1d10 x100 experience points.	6
+Lose one point strength.	1
+Lose one point intelligence.	1
+Lose one point wisdom.	1
+Lose one point dexterity.	1
+Lose one point charisma.	1
+Lose one point constitution.	1
+Magically adhesive scroll.	6
+Obedience (3d6 turns). The character does what anyone suggests.	6
+Paralysis (3d6 turns).	6
+Paralysis: Everyone in a radius of 20 feet must make a saving throw or be paralyzed for 3d6 turns, with the exception of the reader of the scroll, who is unaffected.	6
+Permanent diminution in size. Some of these reduce the reader to half size (50%) and the rest reduce the reader to 6 inches tall.	6
+Polymorph into a pig.	1
+Polymorph into a mouse.	1
+Polymorph into a flamingo.	1
+Polymorph into a talking parrot.	1
+Polymorph into a dog.	1
+Polymorph into a water buffalo.	1
+Sleep (until curse is removed). In some cases, magical sleep can be broken by a kiss. Otherwise, the curse can only be removed by magic.	6
+Smell. The character smells foul for 1d8 days.	6
+Turned to Stone.	6
+Uncontrollable sneezing (3d6 turns). The reader is likely to attract wandering monsters, especially those that prey upon the weak.	6
+--END--
+Banded Eye (10gp)	32
+Moss Agate (10gp)	32
+Azurite (10gp)	32
+Blue Quartz (10gp)	32
+Hematite (10gp)	32
+Lapis Lazuli (10gp)	32
+Malachite (10gp)	32
+Obsidian (10gp)	32
+Rhodochrosite (10gp)	32
+Tiger Eye (10gp)	32
+Turquoise (10gp)	32
+Freshwater Pearl (10gp)	32
+Bloodstone (50gp)	16
+Carnelian (50gp)	16
+Chalcedony (50gp)	16
+Chryso-Prase (50gp)	16
+Citrine (50gp)	16
+Iolite (50gp)	16
+Jasper (50gp)	16
+Moonstone (50gp)	16
+Onyx (50gp)	16
+Peridot (50gp)	16
+Clear Quartz (50gp)	16
+Sardonyx (50gp)	16
+Rose Quartz (50gp)	16
+Smoky Quartz (50gp)	16
+Star Rose Quartz (50gp)	16
+Zircon (50gp)	16
+Amber (100gp)	8
+Amethyst (100gp)	8
+Chrysoberyl (100gp)	8
+Coral (100gp)	8
+Red Garnet (100gp)	8
+Green Garnet (100gp)	8
+Jade (100gp)	8
+White Pearl (100gp)	8
+Golden Pearl (100gp)	8
+Pink Pearl (100gp)	8
+Silver Pearl (100gp)	8
+Red Spinel (100gp)	8
+Green Spinel (100gp)	8
+Tourmaline (100gp)	8
+Alexandrite (500gp)	4
+Aquamarine (500gp)	4
+Violet Garnet (500gp)	4
+Black Pearl (500gp)	4
+Deep Blue Spinel (500gp)	4
+Golden Yellow Topaz (500gp)	4
+Emerald (1,000gp)	2
+White Opal (1,000gp)	2
+Black Opal (1,000gp)	2
+Fire Opal (1,000gp)	2
+Blue Sapphire (1,000gp)	2
+Fiery Yellow Corundum (1,000gp)	2
+Rich Purple Corundum (1,000gp)	2
+Blue Sapphire (1,000gp)	2
+Black Star Sapphire (1,000gp)	2
+Star Ruby (1,000gp)	2
+Diamond (5,000gp)	1
+--END--
+Silver (1d10x100gp)	64
+Silver and Gold (2d6x100gp)	32
+Gold (3d6x100gp)	16
+Silver and Gems (5d6x100gp)	8
+Gold and Gems (2d4x1,000gp)	4
+Exceptional (2d6x1,000gp)	1
+--END--
+(Protection)	7	5
+(Cursed)	1	6
+(Cleric)	3	17
+(Magic User)	11	18
+--END--
+Arrow of Direction	10
+Bag of Holding	10
+Boots of Elvenkind	10
+Boots of Speed	10
+Boots of Leaping	10
+Bracers of Defense AC 6[13]	10
+Chime of Opening	10
+Cloak of Elvenkind	10
+Cloak of Protection, +1 (C, M, T)	10
+Bag of Devouring [Cursed]	1
+Censer of Hostile Elementals [Cursed]	1
+Cloak of Poison [Cursed]	1
+Crystal Ball of Suggestion [Cursed]	1
+Dancing Boots [Cursed]	1
+Flask of Stoppered Curses [Cursed]	1
+Horn of Collapse [Cursed]	1
+Medallion of Projecting Thoughts [Cursed]	1
+Mirror of Opposition [Cursed]	1
+Robe of Feeblemindedness [Cursed]	1
+Decanter of Endless Water	10
+Dust of Appearance	10
+Dust of Disappearance	10
+Dust of Sneezing and Choking	10
+Gauntlets of Swimming and Climbing (C, F, T)	10
+Horseshoes of Speed	10
+Luckstone	10
+Manual of Beneficial Exercise	10
+Pipes of the Sewers	10
+Rope of Climbing	10
+Rope of Entanglement	10
+Spade of Excavation (F)	10
+Amulet against Scrying	5
+Boots of Flying	5
+Bracers of Defense AC 4[15]	5
+Bracers of Defense AC 2[17]	5
+Carpet of Flying	5
+Cloak of Displacement	5
+Cloak of Protection +2 (C, M, T)	5
+Cloak of Protection +3 (C, M, T)	5
+Deck of Many Things	5
+Figurine of the Onyx Dog	5
+Gauntlets of Ogre Power (C, F, T)	5
+Helm of Reading Magic and Languages	5
+Hole, Portable	5
+Horn of Valhalla, Bronze (C, F)	5
+Horn of Valhalla, Silver	5
+Jug of Alchemy	5
+Manual of Quickness	5
+Medallion of ESP	5
+Mirror of Mental Scrying	5
+Robe of Blending	5
+Robe of Eyes (M)	5
+Robe of Wizardry (M)	5
+Amulet of Demon Control (C, M)	1
+Beaker of Potions	1
+Censer, Bowl, Brazier, or Stone of Controlling Elementals (M)	1
+Crystal Ball (M)	1
+Efreeti Bottle	1
+Figurine of the Golden Lion	1
+Gauntlets of Dexterity	1
+Gem of Seeing	1
+Girdle of Giant Strength	1
+Helm of Fiery Brilliance	1
+Helm of Teleportation (M)	1
+Horn of Blasting	1
+Horn of Valhalla, Iron (F)	1
+Lenses of Charming	1
+Libram, Magical [level gain specific to one class]	1
+Manual of Golems (M)	1
+Manual of Intelligence	1
+Manual of Wisdom	1
+Necklace of Firebaubles	1
+Scarab of Insanity	1
+--END--
+(+1)	72
+(+2)	36
+(+3)	12
+(+4)	4
+(+5)	1
+Armor of Arrow Deflection	1
+Demonic Armor	1
+Ethereal Armor	1
+Fiery Armor	1
+[Cursed] (-1)	1
+[Cursed] (-2)	1
+[Cursed] (-3)	1
+[Cursed] Causes the wearer to run away from combat	1
+[Cursed] Causes the wearer to charge into combat	1
+--END--
+(+1)	72
+(+2)	36
+(+3)	12
+(+4)	4
+(+5)	1
+[Cursed] (-1)	1
+[Cursed] (-2)	1
+[Cursed] (-3)	1
+[Cursed] Attracts missiles	1
+--END--
+(+1)	48
+(+2)	24
+(+3)	6
+[Cursed] (-1)	1
+[Cursed] (-2)	1
+[Cursed] (-3)	1
+[Cursed] Causes the wearer to run away from combat	1
+[Cursed] Causes the wearer to charge into combat	1
+Inflicts additional +1 damage	1
+Sheds light [15-foot radius]	1
+Sheds light [30-foot radius]	1
++1 weapon, extra attack	1
+Inflicts an additional +4 vs	1	16
++1, +2 vs	1	16
++1, +4 vs	1	16
++2, +3 vs	1	16
+Flaming weapon	1
+Freezing Weapon	1
+Dancing Weapon	1
+Intelligent Weapon	1
+--END--
+(+1)	48
+(+2)	24
+(+3)	6
+[Cursed] (-1)	1
+[Cursed] (-2)	1
+[Cursed] (-3)	1
+--END--
+[Flaming Sword]	1
+[Dancing Sword]	1
+[Detects Traps]	1
+[Wielder can see invisible objects]	1
+[Detects Magic]	1
+[Wielder can Clairaudience]	1
+[Wielder can Fly]	1
+[Wielder can Levitate]	1
+[Healing Sword]	1
+[Wielder is granted dwarven abilities]	1
+[Wielder is granted elven abilities]	1
+[Wielder can Confuse enemies]	1
+[25% Deflects Arrows]	1
+[Warns sleeping owner of danger]	1
+Detects	1	16
+[Detects Lawful creatures 20 feet away]	1
+[Detects Chaotic creatures 20 feet away]	1
+[Wielder can magical change facial features]	1
+[Detects cursed items 50% of the time]	1
+[Wielder can walk through 20 feet of stone twice a day]	1
+[Wielder immune to level-draining effects]	1
+--END--
+[lycanthropes]	1
+[spell-casters]	1
+[trolls]	1
+[giants]	1
+[dragons]	1
+[demons]	1
+[undead]	1
+[golems]	1
+[elementals]	1
+[insects]	1
+[ogres]	1
+[snakes]	1
+[lizards]	1
+[canines]	1
+[felines]	1
+[birds]	1
+[worms]	1
+[humanoids]	1
+[sea creatures]	1
+[spiders]	1
+[slimes]	1
+[feys]	1
+[plants]	1
+[magical beasts]	1
+[frogs and toads]	1
+[fire creatures]	1
+[frost creatures]	1
+--END--
+Cure Light Wounds	7
+Detect Evil	7
+Detect Magic	7
+Light	7
+Protection from Evil	7
+Purify Food and Drink	7
+Bless	6
+Find Traps	6
+Hold Person	6
+Silence, 15-foot Radius	6
+Snake Charm	6
+Speak with Animals	6
+Continual Light	5
+Cure Disease	5
+Locate Object	5
+Prayer	5
+Remove Curse	5
+Speak with Dead	5
+Create Water	4
+Cure Serious Wounds	4
+Neutralize Poison	4
+Protection from Evil, 10-ft Radius	4
+Speak with Plants	4
+Sticks to Snakes	4
+Commune	3
+Create Food	3
+Dispel Evil	3
+Finger of Death	3
+Insect Plague	3
+Quest	3
+Raise Dead	3
+Animate Object	2
+Blade Barrier	2
+Conjuration of Animals	2
+Find the Path	2
+Speak with Monsters	2
+Word of Recall	2
+Aerial Servant	1
+Astral Spell	1
+Control Weather	1
+Earthquake	1
+Holy Word	1
+Part Water	1
+Restoration	1
+Resurrection	1
+Symbol	1
+Wind Walk	1
+--END--
+Charm Person	9
+Detect Magic	9
+Hold Portal	9
+Light	9
+Magic Missile	9
+Protection from Evil	9
+Read Languages	9
+Read Magic	9
+Shield	9
+Sleep	9
+Continual Light	8
+Darkness, 15-foot Radius	8
+Detect Evil	8
+Detect Invisibility	8
+ESP	8
+Invisibility	8
+Knock	8
+Levitate	8
+Locate Object	8
+Magic Mouth	8
+Mirror Image	8
+Phantasmal Force	8
+Pyrotechnics	8
+Strength	8
+Web	8
+Wizard Lock	8
+Clairaudience	7
+Clairvoyance	7
+Darkvision	7
+Dispel Magic	7
+Explosive Runes	7
+Fireball	7
+Fly	7
+Haste	7
+Hold Person	7
+Invisibility, 10-foot Radius	7
+Lightning Bolt	7
+Monster Summoning I	7
+Protection from Evil, 10-foot Radius	7
+Protection from Normal Missiles	7
+Rope Trick	7
+Slow	7
+Suggestion	7
+Water Breathing	7
+Charm Monster	6
+Confusion	6
+Dimension Door	6
+Extension I	6
+Fear	6
+Hallucinatory Terrain	6
+Ice Storm	6
+Massmorph	6
+Monster Summoning II	6
+Plant Growth	6
+Polymorph Other	6
+Polymorph Self	6
+Remove Curse	6
+Wall of Fire	6
+Wall of Ice	6
+Wizard Eye	6
+Animal Growth	5
+Animate Dead	5
+Cloudkill	5
+Conjuration of Elementals	5
+Contact Other Plane	5
+Extension II	5
+Feeblemind	5
+Hold Monster	5
+Magic Jar	5
+Monster Summoning III	5
+Passwall	5
+Telekinesis	5
+Teleport	5
+Transmute Rock to Mud	5
+Wall of Iron	5
+Wall of Stone	5
+Anti-Magic Shell	4
+Control Weather	4
+Death Spell	4
+Disintegrate	4
+Enchant Item	4
+Geas	4
+Invisible Stalker	4
+Legend Lore	4
+Lower Water	4
+Monster Summoning IV	4
+Move Earth	4
+Part Water	4
+Project Image	4
+Reincarnation	4
+Repulsion	4
+Stone to Flesh	4
+Charm Plants	3
+Conjuration of Demons	3
+Delayed Blast Fireball	3
+Extension III	3
+Limited Wish	3
+Mass Invisibility	3
+Monster Summoning V	3
+Phase Door	3
+Power Word, Stun	3
+Reverse Gravity	3
+Simulacrum	3
+Clone	2
+Mass Charm	2
+Mind Blank	2
+Monster Summoning VI	2
+Permanency	2
+Polymorph Object	2
+Power Word, Blind	2
+Symbol	2
+Astral Spell	1
+Maze	1
+Gate	1
+Meteor Swarm	1
+Monster Summoning VII	1
+Power Word, Kill	1
+Prismatic Sphere	1
+Shape Change	1
+Time Stop	1
+Wish 	1
+--END--
+Amulet	1	8
+Anklet	1	8
+Belt	1	8
+Box	1	8
+Bracelet	1	8
+Brooch	1	8
+Buckle	1	8
+Chain	1	8
+Chalice	1	8
+Choker	1	8
+Clasp	1	8
+Comb	1	8
+Coronet	1	8
+Crown	1	8
+Diadem	1	8
+Earring	1	8
+Goblet	1	8
+Idol	1	8
+Knife	1	8
+Locket	1	8
+Medal	1	8
+Medallion	1	8
+Necklace	1	8
+Orb	1	8
+Pendant	1	8
+Pin	1	8
+Ring	1	8
+Sceptre	1	8
+Seal	1	8
+Statuette	1	8
+Tiara	1	8
+--END--
+Chain Mail Armor	1	11
+Leather Armor	1	11
+Plate Mail Armor	1	11
+Ring Mail Armor	1	11
+Shield	1	12
+--END--
+Battle Axe	10	13
+Hand Axe	10	13
+Dagger	20	13
+War Hammer	10	13
+Lance	1	13
+Heavy Mace	10	13
+Light Mace	10	13
+Spear	10	13
+Staff	10	13
+Short Sword	28	13
+Two-handed Sword	20	13
+Bastard Sword	20	13
+Long Sword	40	13
+Arrows [2d6]	10	14
+Sling Stones [1d10]	10	14
+Javelin	4	14
+Darts [2d4]	4	14
+Crossbow Bolts [2d6]	10	14
+Dart +1 [returns to hand when thrown]	1	
+Javelin +1 [returns to hand when thrown]	1	
+Dagger +1 [returns to hand when thrown]	1	
+Hand Axe +1 [returns to hand when thrown]	1	
+War Hammer +1 [destroys undead]	1	
+Heavy Mace +1 [destroys undead]	1	
+Light Mace +1 [destroys undead]	1	
+Short Sword	3	15
+Two-handed Sword	3	15
+Bastard Sword	3	15
+Long Sword	3	15
+--END--
+(1)	240	7
+(1d4)	140	7
+(1d6)	95	7
+(1d8)	65	7
+(1d10)	45	7
+(1d12)	1	7
+--END--
+an exquisite small yellow rug worth 8gp   1   0
+12gp / 29sp / 695cp   1   0
+97,500cp   1   0
+8 inch tall sandstone statue of a axe worth 225gp   1   0
+137gp / 178sp / 23,990cp   1   0
+340gp / 1,966sp / 21,180cp   1   0
+16sp / 10cp   1   0
+GEM: Tiger Eye (1gp)   1   0
+a gorgeous glass jar of pepper worth 38gp to an herbalist   1   0
+GEM: Moss Agate (2gp)   1   0
+30gp   1   0
+a splendid ceremonial sword made of adamant where the hilt is decorated with 6 aquamarines worth 59gp   1   0
+21gp / 46sp / 3,280cp   1   0
+1,267gp / 501sp / 19,280cp   1   0
+a delightful gray, sewn cotton cloak worth 315gp   1   0
+a rare golden plate worth 27gp   1   0
+2gp / 7sp / 81cp   1   0
+7 inch tall agate statue of a griffin worth 162gp   1   0
+24gp / 179sp / 770cp   1   0
+73gp / 414sp / 7,220cp   1   0
+310gp / 236sp / 13,780cp   1   0
+298gp / 298sp / 240cp   1   0
+22gp / 115sp / 1,500cp   1   0
+a magnificent ornamental shield made of mithril worth 29gp   1   0
+420cp   1   0
+an extraordinary brown, stitched cloth cloak worth 21gp   1   0
+420gp / 13sp / 1,240cp   1   0
+a unique black, knitted cloth cape worth 84gp   1   0
+3gp / 49sp / 761cp   1   0
+8gp / 105sp / 3,100cp   1   0
+a magnificent musical flute worth 3gp   1   0
+780cp   1   0
+10 inch tall wooden carving of a tower worth 12gp   1   0
+JEWELRY: Exceptional Earring (520gp)   1   0
+an odd decorative knife made of steel and the name of `Kronos` is engraved on the blade worth 10gp   1   0
+2gp / 1sp / 5cp   1   0
+1,229sp / 22,920cp   1   0
+122gp / 50sp   1   0
+399gp / 14sp / 19,820cp   1   0
+a unique purple-colored, decanter of spider oil worth 160gp to an alchemist   1   0
+a nice, small book titled `The Ettin in the Hills` and is bound in green rhinoceros skin, and is worth 8gp   1   0
+14gp / 50sp / 1,425cp   1   0
+7gp / 2sp / 760cp   1   0
+a magnificent ceremonial knife made of iron worth 360gp   1   0
+49sp / 6,021cp   1   0
+a gorgeous painting of a house worth 22gp   1   0
+19gp / 162sp / 260cp   1   0
+345sp / 9,900cp   1   0
+GEM: Golden Pearl (1gp)   1   0
+8 inch tall pewter statue of a spider worth 72gp   1   0
+an odd ceremonial dagger made of steel where the handle is decorated with 2 tiger eyes worth 36gp   1   0
+2sp / 2,690cp   1   0
+16,000cp   1   0
+GEM: Violet Garnet (168gp)   1   0
+JEWELRY: Golden Comb/brush (65gp)   1   0
+41gp / 55sp / 1,550cp   1   0
+23gp / 46sp / 1,265cp   1   0
+140sp / 980cp   1   0
+a splendid golden bottle worth 3gp   1   0
+24gp / 24sp / 61cp   1   0
+GEM: Chrysoberyl (15gp)   1   0
+7 inch tall pewter statue of a fist worth 30gp   1   0
+GEM: Aquamarine (64gp)   1   0
+GEM: Bloodstone (17gp)   1   0
+GEM: Rhodochrosite (3gp)   1   0
+235sp / 2,950cp   1   0
+GEM: Smoky Quartz (3gp)   1   0
+a strange musical small harp worth 675gp   1   0
+388gp / 721sp / 6,780cp   1   0
+an exquisite musical horn worth 26gp   1   0
+3gp / 2sp / 200cp   1   0
+GEM: Fiery Yellow Corundum (130gp)   1   0
+19gp / 25sp / 1,350cp   1   0
+43sp / 1,540cp   1   0
+10 inch tall marble statue of a horse worth 71gp   1   0
+25gp / 1,010cp   1   0
+15gp / 12sp / 2,310cp   1   0
+29gp / 341sp / 3,780cp   1   0
+24gp / 47sp / 110cp   1   0
+119gp / 19sp / 3,021cp   1   0
+5gp / 121sp / 1,040cp   1   0
+a small brown canvas backpack of magnificent coins from a lost city that are made of pewter with a symbol of a snake on it (21 ea) worth 14gp   1   0
+GEM: Zircon (3gp)   1   0
+3gp / 9sp / 180cp   1   0
+1gp / 10sp / 2,100cp   1   0
+GEM: Blue Quartz (1gp)   1   0
+a unique golden vase worth 180gp   1   0
+631gp / 392sp / 43,060cp   1   0
+19gp / 19sp / 30cp   1   0
+GEM: Citrine (4gp)   1   0
+an elegant decorative knife made of iron and the name of `Jisa` is engraved on the blade worth 14gp   1   0
+GEM: Turquoise (3gp)   1   0
+JEWELRY: Silver Earring (96gp)   1   0
+276sp / 2,480cp   1   0
+a gorgeous, small lexicon titled `The Shield and the Monk` and is bound in brown animal skin, and is worth 19gp   1   0
+96gp / 9sp / 195cp   1   0
+GEM: Chalcedony (1gp)   1   0
+11gp / 3sp / 190cp   1   0
+JEWELRY: Exceptional Earring (560gp)   1   0
+200gp / 44sp / 3,120cp   1   0
+30gp / 176sp / 80cp   1   0
+GEM: Bloodstone (8gp)   1   0
+a pretty blue, tailored cloth cloak worth 92gp   1   0
+57gp / 5sp / 500cp   1   0
+a lovely white-colored, decanter of giant powder worth 4gp to an alchemist   1   0
+a magnificent, large omnibus titled `The Manual of the Thief in the Castle` and is bound in purple animal skin, and is worth 12gp   1   0
+6gp / 100sp / 370cp   1   0
+315gp / 52,500cp   1   0
+1,293gp / 408sp / 2,540cp   1   0
+JEWELRY: Silver Comb/brush (52gp)   1   0
+126gp / 58sp / 1,240cp   1   0
+JEWELRY: Silvery Gold Chalice (100gp)   1   0
+69gp / 31sp / 580cp   1   0
+2gp / 13sp / 3,140cp   1   0
+299gp / 866sp / 18,780cp   1   0
+25gp / 133sp / 3,240cp   1   0
+JEWELRY: Silver Amulet (105gp)   1   0
+4,320cp   1   0
+7,991sp / 38,180cp   1   0
+127sp / 520cp   1   0
+8gp / 42sp / 250cp   1   0
+12gp / 3sp / 5,340cp   1   0
+248sp / 13,040cp   1   0
+JEWELRY: Exceptional Earring (1,320gp)   1   0
+JEWELRY: Silvery Gold Broach (66gp)   1   0
+22gp / 19sp / 4,170cp   1   0
+72gp / 47sp / 260cp   1   0
+a tan leather rucksack of extraordinary coins from a mysterious land that are made of steel with a symbol of a lion on it (46 ea) worth 100gp   1   0
+36gp / 15sp / 720cp   1   0
+706gp / 63sp / 140cp   1   0
+GEM: Eye Agate (3gp)   1   0
+12sp / 3,660cp   1   0
+7gp / 72sp / 591cp   1   0
+19gp / 317sp / 1,760cp   1   0
+30gp / 50sp / 1,100cp   1   0
+106sp / 520cp   1   0
+296gp / 36sp / 5,680cp   1   0
+GEM: Tiger Eye (1gp)   1   0
+7gp / 1,495sp / 7,650cp   1   0
+22gp / 56sp / 430cp   1   0
+GEM: Blue Sapphire (216gp)   1   0
+GEM: Rock Crystal (15gp)   1   0
+a lovely bundle of animal leather worth 96gp   1   0
+13gp / 14sp / 130cp   1   0
+an odd, large tome titled `Myth of Zandoni the Defender` and is bound in brown animal skin, and is worth 44gp   1   0
+99sp / 120cp   1   0
+119gp / 2,071sp / 15,680cp   1   0
+JEWELRY: Exceptional Earring (560gp)   1   0
+an exquisite large green carpet with a dark purple design on it worth 16gp   1   0
+GEM: Star Rose Quartz (5gp)   1   0
+6,900cp   1   0
+GEM: Zircon (20gp)   1   0
+59gp / 180sp / 4,750cp   1   0
+6 inch tall pewter carving of a cross worth 19gp   1   0
+15gp / 89sp / 1,220cp   1   0
+a small brown canvas bag of delightful coins from an unknown era that are made of steel with a symbol of a hawk on it (18 ea) worth 22gp   1   0
+22 inch tall limestone carving of a buffalo worth 90gp   1   0
+JEWELRY: Silver Choker (175gp)   1   0
+19gp / 35sp / 650cp   1   0
+a strange test tube of ant eyes worth 23gp to an herbalist   1   0
+5,850cp   1   0
+9gp / 3sp / 195cp   1   0
+592gp / 3,255sp / 28,700cp   1   0
+GEM: Pink Pearl (12gp)   1   0
+25gp / 110sp / 550cp   1   0
+a brown leather backpack of unique coins from long ago that are made of palladium with a symbol of a griffin on it (27 ea) worth 9gp   1   0
+11 inch tall limestone carving of a bear worth 55gp   1   0
+387gp / 172sp / 2,860cp   1   0
+JEWELRY: Silver Arm-ring (207gp)   1   0
+1,200cp   1   0
+a rare blue, knitted hemp cloak worth 328gp   1   0
+9gp / 256sp / 2,980cp   1   0
+169gp / 183sp / 1,040cp   1   0
+31gp / 64sp / 240cp   1   0
+5gp / 236sp / 1,260cp   1   0
+a gorgeous clay vase worth 108gp   1   0
+GEM: Rhodochrosite (2gp)   1   0
+136sp / 52,280cp   1   0
+43gp / 404sp / 4,945cp   1   0
+7gp / 12sp / 185cp   1   0
+16gp / 27sp / 20cp   1   0
+142gp / 480sp / 200cp   1   0
+257gp / 904sp / 8,470cp   1   0
+923gp / 43sp / 1,340cp   1   0
+1sp / 25cp   1   0
+23gp / 30sp / 100cp   1   0
+23gp / 32sp / 1,140cp   1   0
+9gp   1   0
+20gp / 136sp / 1,280cp   1   0
+a rare ceremonial dagger made of steel and the name of `Crenabil` is engraved on the blade worth 63gp   1   0
+185sp / 3,050cp   1   0
+45gp / 51sp / 135cp   1   0
+a marvelous decorative dagger made of mithril worth 27gp   1   0
+an unusual, large diary titled `The Spiritual Jar of the Barbarian` and is bound in brown pegasus skin, and is worth 14gp   1   0
+300cp   1   0
+95sp / 1,610cp   1   0
+225cp   1   0
+1gp / 2sp / 760cp   1   0
+22 inch tall silver statue of a dragon worth 55gp   1   0
+GEM: Rose Quartz (1gp)   1   0
+a gorgeous black, knitted cotton coat worth 11gp   1   0
+3gp / 24sp / 30cp   1   0
+44gp / 6sp / 2,440cp   1   0
+GEM: Zircon (5gp)   1   0
+JEWELRY: Silvery Gold Headband (192gp)   1   0
+107sp / 20cp   1   0
+27gp / 30sp / 120cp   1   0
+49gp / 25sp / 12,600cp   1   0
+1,067sp / 10,160cp   1   0
+GEM: Chrysoberyl (8gp)   1   0
+JEWELRY: Silvery Gemmed Choker (75gp)   1   0
+3,522sp / 34,560cp   1   0
+9 inch tall granite statue of a eye worth 120gp   1   0
+29gp / 163sp / 141cp   1   0
+GEM: Violet Garnet (57gp)   1   0
+JEWELRY: Silvery Gemmed Coronet (360gp)   1   0
+6gp / 2sp / 35cp   1   0
+2,152sp / 2,460cp   1   0
+GEM: Turquoise (3gp)   1   0
+GEM: Rhodochrosite (1gp)   1   0
+JEWELRY: Silver Chalice (32gp)   1   0
+JEWELRY: Golden Buckle (40gp)   1   0
+78sp / 435cp   1   0
+76sp / 1,105cp   1   0
+231gp / 1,160sp / 41,700cp   1   0
+a gray cloth bag of fine coins from a lost city that are made of steel with a symbol of a bat on it (29 ea) worth 74gp   1   0
+12gp / 146sp / 1,130cp   1   0
+200gp / 339sp / 7,220cp   1   0
+a brown canvas pouch of unusual coins of lost race that are made of pewter with a symbol of a fist on it (31 ea) worth 6gp   1   0
+25gp / 126sp / 5,780cp   1   0
+JEWELRY: Exceptional Goblet (2,100gp)   1   0
+124sp / 2,920cp   1   0
+164gp / 12sp / 6,310cp   1   0
+JEWELRY: Silvery Gemmed Coronet (540gp)   1   0
+a small blue canvas pouch of delightful coins of a far off land that are made of jade with a symbol of a snake on it (7 ea) worth 6gp   1   0
+39gp / 37sp / 160cp   1   0
+GEM: Garnet (7gp)   1   0
+3,915cp   1   0
+34gp / 1,390sp / 301cp   1   0
+63gp / 14sp / 320cp   1   0
+145gp / 496sp / 4,830cp   1   0
+GEM: Azurite (2gp)   1   0
+GEM: Star Rose Quartz (2gp)   1   0
+GEM: Bloodstone (21gp)   1   0
+3gp / 3sp / 30cp   1   0
+7gp / 32sp / 160cp   1   0
+13,800cp   1   0
+an elegant omnibus titled `The Magician and the Stone` and is bound in brown animal skin, and is worth 289gp   1   0
+13gp / 27sp / 320cp   1   0
+11sp / 2,900cp   1   0
+218gp / 1,015sp / 40,400cp   1   0
+187gp / 345sp / 74,400cp   1   0
+60sp / 3,480cp   1   0
+6,630cp   1   0
+873sp / 16,540cp   1   0
+21gp / 29sp / 51cp   1   0
+194gp / 630sp / 25,750cp   1   0
+GEM: Moonstone (2gp)   1   0
+15gp / 177sp / 360cp   1   0
+JEWELRY: Silvery Gemmed Choker (195gp)   1   0
+57sp / 2,640cp   1   0
+JEWELRY: Silvery Gold Broach (75gp)   1   0
+22gp / 34sp   1   0
+61gp / 218sp / 2,740cp   1   0
+JEWELRY: Silvery Gold Amulet (60gp)   1   0
+3gp   1   0
+748sp / 72,040cp   1   0
+6,407sp / 14,360cp   1   0
+61gp / 219sp / 3,020cp   1   0
+12gp / 29sp / 1,520cp   1   0
+12sp / 1,760cp   1   0
+365gp / 2,045sp / 36,600cp   1   0
+a rare bundle of serpent leather worth 148gp   1   0
+60gp / 10,800cp   1   0
+4gp / 63sp / 590cp   1   0
+GEM: Violet Garnet (105gp)   1   0
+299gp / 512sp / 360cp   1   0
+7gp / 2sp / 10cp   1   0
+1gp / 3sp / 20cp   1   0
+18sp / 15cp   1   0
+GEM: Rhodochrosite (2gp)   1   0
+344sp / 13,370cp   1   0
+JEWELRY: Exceptional Goblet (1,080gp)   1   0
+8gp / 209sp / 420cp   1   0
+282gp / 1,325sp / 3,300cp   1   0
+an unusual pair of brown shoes made of pegasus skin worth 9gp   1   0
+1,447sp / 31,060cp   1   0
+GEM: Jasper (4gp)   1   0
+a splendid orange, fashioned cloth coat worth 12gp   1   0
+a delightful musical lute worth 405gp   1   0
+224,001cp   1   0
+312sp / 1,410cp   1   0
+5gp / 35sp / 525cp   1   0
+15gp / 4sp / 5,170cp   1   0
+52gp / 35sp / 926cp   1   0
+7gp / 11sp / 55cp   1   0
+17gp / 72sp / 280cp   1   0
+a gorgeous waterskin of froglok serum worth 35gp to an alchemist   1   0
+43gp / 1,334sp / 520cp   1   0
+6gp / 3sp / 240cp   1   0
+1,076gp / 4,569sp / 1,020cp   1   0
+464sp / 19,070cp   1   0
+12gp / 690sp / 13,500cp   1   0
+JEWELRY: Silver Choker (132gp)   1   0
+2gp / 47sp / 885cp   1   0
+1gp / 4sp / 30cp   1   0
+293gp / 461sp / 1,381cp   1   0
+GEM: Moonstone (2gp)   1   0
+21gp / 29sp / 320cp   1   0
+5gp / 15sp / 625cp   1   0
+JEWELRY: Silvery Gold Buckle (99gp)   1   0
+23gp / 940cp   1   0
+130sp / 8,400cp   1   0
+1gp / 1sp / 15cp   1   0
+an exquisite volume titled `Manual of the Ornate Frog` and is bound in yellow mammoth skin with a ivory colored symbol of a unicorn on the front, and is worth 81gp   1   0
+21gp / 27sp / 60cp   1   0
+105gp / 44sp / 20cp   1   0
+42gp / 113sp / 1,540cp   1   0
+2sp / 1,040cp   1   0
+12gp / 60sp / 1,500cp   1   0
+565sp / 7,225cp   1   0
+784sp / 15,820cp   1   0
+7gp / 6sp / 5cp   1   0
+471gp / 548sp / 1,940cp   1   0
+344sp / 7,821cp   1   0
+JEWELRY: Silvery Gold Clasp (197gp)   1   0
+41gp / 4sp / 545cp   1   0
+9gp / 48sp / 660cp   1   0
+JEWELRY: Golden Amulet (88gp)   1   0
+67gp / 92sp / 1,960cp   1   0
+23sp / 4,385cp   1   0
+1gp / 40sp / 1,410cp   1   0
+6 inch tall onyx carving of a dragon worth 4gp   1   0
+JEWELRY: Golden Comb/brush (54gp)   1   0

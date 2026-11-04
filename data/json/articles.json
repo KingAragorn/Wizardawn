@@ -1,0 +1,1 @@
+{"table":"articles","columns":[{"name":"ar_id","type":"int","key":"PRI"},{"name":"ar_date","type":"date","key":""},{"name":"ar_title","type":"varchar","key":""},{"name":"ar_text","type":"longtext","key":""}],"rows":[]}

@@ -1,0 +1,1682 @@
+This is the data file for Labyrinth Lord™ and the Advanced Edition Companion.  This consists of creatures and treasure from those rulebooks.
+You can use this with some of the tools here that allow for data files to be input. You may only want to use this file
+if you want to customize your creations. You may have no electrum in your land or maybe you want to remove
+the chance of certain creatures from appearing. You may want to add custom monsters and items. Anything is possible.
+
+Labyrinth Lord™ is copyright 2007-2012, Daniel Proctor.
+Labyrinth Lord™ is a trademark of Daniel Proctor.
+These trademarks are used under the Labyrinth Lord™ Trademark License 1.2 (which can be found at http://www.wizardawn.com/rpg/lic_ll.pdf).
+
+This is published under the Open Game License Version 1.0a (which can be found at http://www.wizardawn.com/rpg/lic_ogl.html)
+
+Below are the codes used for the creatures' terrain types...
+
+DG = Dungeon
+PF = Forest
+PH = Hills
+PM = Mountains
+PP = Plains
+PS = Swamp
+PD = Desert
+FW = Freshwater
+SW = Sea
+CF = Snowy Forest
+CH = Snowy Hills
+CM = Snowy Mountains
+CP = Snowy Plains
+TF = Jungle/Tropics Forest
+TH = Jungle/Tropics Hills
+TM = Jungle/Tropics Mountains
+TS = Jungle/Tropics Swamp
+
+--BEGIN--
+Aerial Servant		16	1	ENC: 1 (1); AL: N; MV: 240` (80`); AC: 3; HD: 1; ATK: 1; DMG: 8d4; SV: F16; ML: 10; TRS: None; XP: 3,000; THAC0: 19; BOOK: AEC 105
+Ankheg	DG	6	1	ENC: 1d6 (1d6); AL: N; MV: 120` (40`); AC: 3; HD: 1d6+2; ATK: 1; DMG: 3d6, +1d4; SV: As HD; ML: 9; TRS: XIX; XP: 80-2,800; THAC0: 17/16/15/14/13/12; BOOK: AEC 105
+Ant, Giant	PD PP PF PH TF TH DG	4	1	ENC: 2d4 (4d6); AL: N; MV: 180` (60`); AC: 3; HD: 4; ATK: 1; DMG: 2d6; SV: F2; ML: 7; TRS: VI; XP: 80; THAC0: 16; BOOK: LL 63
+Ape, Albino	TS TF TH TM DG	4	1	ENC: 1d6 (2d4); AL: N; MV: 120` (40`); AC: 6; HD: 4; ATK: 2 (claw, claw); DMG: 1d4/1d4; SV: F2; ML: 7; TRS: None; XP: 80; THAC0: 16; BOOK: LL 63
+Ape, Chimpanzee	TS TF TH TM	3	1	ENC: 1d4 (3d4); AL: N; MV: 120` (40`); AC: 6; HD: 3; ATK: 3 (2 claws, 1 bite); DMG: 1d3/1d3/1d6; SV: F3; ML: 9; TRS: None; XP: 50; THAC0: 17; BOOK: AEC 105
+Ape, Gorilla	TS TF TH TM	4	1	ENC: 1d4 (3d4); AL: N; MV: 120` (40`); AC: 6; HD: 4+1; ATK: 3 (2 claws, 1 bite); DMG: 1d3/1d3/1d6; SV: F4; ML: 8; TRS: None; XP: 80; THAC0: 15; BOOK: AEC 105
+Ape, Man-Eating	TS TF TH TM DG	5	1	ENC: 2d4 (3d4); AL: N; MV: 120` (40`); AC: 6; HD: 5; ATK: 3 (2 claws, 1 bite); DMG: 1d4/1d4/1d8; SV: F5; ML: 10; TRS: XIX; XP: 350; THAC0: 15; BOOK: AEC 106
+Axe Beak	PP PS PF PH TS TF TH	3	1	ENC: 1d6 (2d4); AL: N; MV: 180` (60`); AC: 6; HD: 3; ATK: 3 (2 claws, 1 bite); DMG: 1d3/1d3/2d4; SV: F3; ML: 8; TRS: None; XP: 50; THAC0: 17; BOOK: AEC 106
+Baboon	TS TF TH TM	1	1	ENC: 2d4 (1d4x10); AL: N; MV: 120` (40`); AC: 7; HD: 1+1; ATK: 1 (bite); DMG: 1d4; SV: F1; ML: 7; TRS: None; XP: 15; THAC0: 18; BOOK: AEC 106
+Baboon, Higher	TS TF TH TM	2	1	ENC: 2d6 (5d6); AL: N; MV: 120` (40`); AC: 6; HD: 2; ATK: 2 (bite, club); DMG: 1d3/1d6; SV: F2; ML: 8; TRS: VI; XP: 20; THAC0: 18; BOOK: LL 63
+Badger	PP PF PH PM CP CF CH CM DG	1	1	ENC: 1d2 (1d4+1); AL: N; MV: 60` (20`); AC: 4; HD: 1+2; ATK: 3 (2 claws, 1 bite); DMG: 1d2/1d2/1d3; SV: F1; ML: 8; TRS: None; XP: 15; THAC0: 18; BOOK: AEC 106
+Badger, Giant	PP PF PH PM CP CF CH CM DG	3	1	ENC: 1d2 (1d4+1); AL: N; MV: 60` (20`); AC: 4; HD: 3; ATK: 3 (2 claws, 1 bite); DMG: 1d3/1d3/1d6; SV: F3; ML: 8; TRS: None; XP: 50; THAC0: 17; BOOK: AEC 106
+Basilisk	PP PS PF PH PM TS TF TH TM DG	6	1	ENC: 1d6 (1d6); AL: N; MV: 60` (20`); AC: 4; HD: 6+1; ATK: 2 (bite, gaze); DMG: 1d10/petrify); SV: F6; ML: 9; TRS: XVII; XP: 570; THAC0: 13; BOOK: LL 63
+Bat	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	1	1	ENC: 1d00 (1d00); AL: N; MV: 9` (3`) Fly 120` (40`); AC: 6; HD: 1 hp; ATK: confuse; DMG: None; SV: 0 Human; ML: 6; TRS: None; XP: 6; THAC0: 19; BOOK: LL 64
+Bat, Giant	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	2	1	ENC: 1d10 (1d10); AL: N; MV: 30` (10`) Fly 180` (60`); AC: 6; HD: 2; ATK: 1 (bite); DMG: 1d4; SV: F1; ML: 8; TRS: None; XP: 20; THAC0: 18; BOOK: LL 64
+Bear, Black	PS PF PH PM CF CH CM	4	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`); AC: 6; HD: 4; ATK: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: F2; ML: 7; TRS: VI; XP: 80; THAC0: 16; BOOK: LL 64
+Bear, Cave	PF PH PM CF CH CM DG	7	1	ENC: 1 (1d2); AL: N; MV: 120` (40`); AC: 5; HD: 7; ATK: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: F3; ML: 9; TRS: VII; XP: 440; THAC0: 13; BOOK: LL 64
+Bear, Grizzly	PP PF PH PM	5	1	ENC: 1 (1d4); AL: N; MV: 120` (40`); AC: 6; HD: 5; ATK: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: F2; ML: 8; TRS: VI; XP: 200; THAC0: 15; BOOK: LL 64
+Bear, Polar	CP CF CH	6	1	ENC: 1 (1d2); AL: N; MV: 120` (40`); AC: 6; HD: 6; ATK: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: F3; ML: 8; TRS: VI; XP: 320; THAC0: 14; BOOK: LL 64
+Bee, Giant Killer	PD PP PS PF PH PM TS TF TH TM DG	1	1	ENC: 1d6 (5d6); AL: N; MV: 150` (50`); AC: 7; HD: 1d4 hp; ATK: 1 (sting); DMG: 1d3 + poison; SV: F1; ML: 9; TRS: None; XP: 7; THAC0: 19; BOOK: LL 65
+Beetle, Giant Boring	PS PF PH PM TS TF TH TM DG	5	1	ENC: 3d6 (3d6); AL: N; MV: 60` (20`); AC: 3; HD: 5; ATK: 1 (bite); DMG: 5d4; SV: F5; ML: 7; TRS: VIII, IX, XXI; XP: 200; THAC0: 15; BOOK: AEC 107
+Beetle, Giant Carnivorous	PP PS PF PH DG	3	1	ENC: 1d6 (2d4); AL: N; MV: 150` (50`); AC: 3; HD: 3+1; ATK: 1 (bite); DMG: 2d6; SV: F1; ML: 9; TRS: VI; XP: 65; THAC0: 16; BOOK: LL 65
+Beetle, Giant Fire	PS PF PH PM TS TF TH TM DG	1	1	ENC: 1d8 (2d6); AL: N; MV: 120` (40`); AC: 4; HD: 1+2; ATK: 1 (bite); DMG: 2d4; SV: F1; ML: 7; TRS: None; XP: 15; THAC0: 18; BOOK: LL 65
+Beetle, Giant Rhinoceros	PS PF PH TS TF TH	12	1	ENC: 1d6 (1d6); AL: N; MV: 60` (20`); AC: 2; HD: 12; ATK: 2 (bite, horn); DMG: 3d6/2d8; SV: F12; ML: 8; TRS: None; XP: 1,200; THAC0: 10; BOOK: AEC 107
+Beetle, Giant Spitting	PS PF	2	1	ENC: 1d8 (2d6); AL: N; MV: 120` (40`); AC: 4; HD: 2; ATK: 1 (bite); DMG: 1d6 + toxic spray; SV: F1; ML: 8; TRS: None; XP: 38; THAC0: 18; BOOK: LL 65
+Beetle, Giant Stag	PP PS PF PH	7	1	ENC: 2d6 (2d6); AL: N; MV: 60` (20`); AC: 3; HD: 7; ATK: 3 (bite, 2 horns); DMG: 4d4/1d10/1d10; SV: F7; ML: 8; TRS: None; XP: 440; THAC0: 13; BOOK: AEC 107
+Black Pudding	PM TM DG	10	1	ENC: 1 (0); AL: N; MV: 60` (20`); AC: 6; HD: 10; ATK: 1; DMG: 3d8; SV: F5; ML: 12; TRS: None; XP: 3,100; THAC0: 11; BOOK: LL 65
+Blink Dog	PD PP PF PH PM DG	4	1	ENC: 1d6 (1d6); AL: L; MV: 120` (40`); AC: 5; HD: 4; ATK: 1 (bite); DMG: 1d6; SV: F4; ML: 6; TRS: XX; XP: 135; THAC0: 16; BOOK: LL 66
+Boar	PP PS PF PH CP CF CH TS TF TH	3	1	ENC: 1d6 (1d6); AL: N; MV: 150` (50`); AC: 7; HD: 3; ATK: 1 (tusk); DMG: 2d4; SV: F2; ML: 9; TRS: None; XP: 50; THAC0: 17; BOOK: LL 66
+Boar, Giant	PP PS PF PH CP CF CH TS TF TH	3	1	ENC: 1d4 (1d4+1); AL: N; MV: 120` (40`); AC: 6; HD: 5; ATK: 1 (tusk); DMG: 3d4; SV: F5; ML: 9; TRS: None; XP: 200; THAC0: 15; BOOK: LL 66
+Boar, Warthog	PP PS PF PH CP CF CH TS TF TH	3	1	ENC: 1d6 (1d6); AL: N; MV: 120` (40`); AC: 7; HD: 3+3; ATK: 2; DMG: 2d4/2d4; SV: F3; ML: 9; TRS: None; XP: 65; THAC0: 16; BOOK: AEC 107
+Brownie	PS PF PH CF CH TS TF TH	1	1	ENC: 4d4 (4d4); AL: LG; MV: 120` (40`); AC: 3; HD: 1d4 hp; ATK: 1 (weapon); DMG: 1d3; SV: M1; ML: 7; TRS: X, XI, XIII; XP: 12; THAC0: 19; BOOK: AEC 107
+Bugbear	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	3	1	ENC: 2d4 (5d4); AL: C; MV: 90` (30`); AC: 5; HD: 3+1; ATK: 1 (weapon); DMG: 2d4 or weapon; SV: F3; ML: 9; TRS: XXI; XP: 100; THAC0: 16; BOOK: LL 66
+Bulette	PP PF PH	9	1	ENC: 1d2 (1d2); AL: N; MV: 150` (50`); AC: -2 (6); HD: 9; ATK: 3 (2 claws, 1 bite) or 4 (4 claws); DMG: 4d12/2d6/3d6 or 3d6/3d6/3d6/3d6; SV: F9; ML: 9; TRS: None; XP: 1,000; THAC0: 12; BOOK: AEC 107
+Camel	PD	2	1	ENC: 0 (2d4); AL: N; MV: 150` (50`); AC: 7; HD: 2; ATK: 2 (bite, hoof); DMG: 1/1d4; SV: F1; ML: 7; TRS: None; XP: 20; THAC0: 18; BOOK: LL 66
+Carcass Scavenger	PM DG	3	1	ENC: 1d3 (1d3); AL: N; MV: 120` (40`); AC: 7; HD: 3+1; ATK: 8 (stingers); DMG: paralysis; SV: F2; ML: 9; TRS: XXI; XP: 135; THAC0: 16; BOOK: LL 67
+Cat, Lion	PD PP PS PF PH PM CP CF	5	1	ENC: 1d4 (1d8); AL: N; MV: 150` (50`); AC: 6; HD: 5; ATK: 3 (2 claws, bite); DMG: 1d4+1/1d4+1/1d10; SV: F3; ML: 9; TRS: VI; XP: 200; THAC0: 15; BOOK: LL 67
+Cat, Mountain Lion	PP PF PH PM CH CM	3	1	ENC: 1d4 (1d4); AL: N; MV: 150` (50`); AC: 6; HD: 3+2; ATK: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: F2; ML: 8; TRS: VI; XP: 65; THAC0: 16; BOOK: LL 67
+Cat, Panther	TS TF TH TM	4	1	ENC: 1d2 (1d6); AL: N; MV: 210` (70`); AC: 4; HD: 4; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/1d8; SV: F2; ML: 8; TRS: VI; XP: 80; THAC0: 16; BOOK: LL 67
+Cat, Sabre-tooth Tiger	CP CF TS TF TH TM	8	1	ENC: 1d4 (1d4); AL: N; MV: 150` (50`); AC: 6; HD: 8; ATK: 3 (2 claws, bite); DMG: 1d8/1d8/2d8; SV: F4; ML: 10; TRS: VII; XP: 560; THAC0: 12; BOOK: LL 67
+Cat, Tiger	TS TF TH TM	6	1	ENC: 1 (1d3); AL: N; MV: 150` (50`); AC: 6; HD: 6; ATK: 3 (2 claws, bite); DMG: 1d6/1d6/2d6; SV: F3; ML: 9; TRS: VI; XP: 570; THAC0: 14; BOOK: LL 67
+Centaur	PP PF PH	4	1	ENC: 0 (2d10); AL: N; MV: 180` (60`); AC: 5; HD: 4; ATK: 3 (2 hooves, weapon); DMG: 1d6/1d6/weapon; SV: F4; ML: 8; TRS: XXII; XP: 80; THAC0: 16; BOOK: LL 67
+Centipede, Giant	PD PP PS PF PH PM TS TF TH TM DG	1	1	ENC: 2d4 (1d8); AL: N; MV: 60` (20`); AC: 9; HD: 1d4 hp; ATK: 1 (bite); DMG: poison; SV: 0 Human; ML: 7; TRS: None; XP: 6; THAC0: 19; BOOK: LL 68
+Chimera	PD PH PM TH TM DG	9	1	ENC: 1d2 (1d4); AL: C; MV: 120` (40`) Fly 180` (60`); AC: 4; HD: 9; ATK: 5 (2 claws, 3 heads, breath); DMG: 1d3/1d3/2d4/2d4/3d4/3d6 fire breath; SV: F9; ML: 9; TRS: XVII; XP: 1,700; THAC0: 12; BOOK: LL 68
+Cockatrice	PD PP PS PF PH PM TS TF TH TM DG FW	5	1	ENC: 1d4 (1d8); AL: N; MV: 90` (30`) Fly 180` (60`); AC: 6; HD: 5; ATK: 2 (beak, petrify); DMG: 1d6/petrify; SV: F5; ML: 7; TRS: XIX; XP: 350; THAC0: 15; BOOK: LL 68
+Couatl	TH DG	9	1	ENC: 1d4 (1d4); AL: LG; MV: 60` (20`) Fly 180` (60`); AC: 5; HD: 9; ATK: 2 (bite, constrict); DMG: 1d3/2d4; SV: M9; ML: 8; TRS: XXI; XP: 3,100; THAC0: 12; BOOK: AEC 108
+Crab, Giant	PS TS FW SW	3	1	ENC: 1d2 (1d6); AL: N; MV: 60` (20`); AC: 2; HD: 3; ATK: 2 (pinchers); DMG: 2d6/2d6; SV: F2; ML: 7; TRS: None; XP: 50; THAC0: 17; BOOK: LL 68
+Crayfish, Giant	PS TS FW	4	1	ENC: 1d4 (1d4); AL: N; MV: 60` (`20) Swim 120` (40`); AC: 4; HD: 4+4; ATK: 2 (claws); DMG: 2d6/2d6; SV: F4; ML: 9; TRS: None; XP: 140; THAC0: 15; BOOK: AEC 108
+Crocodile	PS TS FW	2	1	ENC: 0 (1d8); AL: N; MV: 90` (30`) Swim 90` (30`); AC: 5; HD: 2; ATK: 1; DMG: 1d8; SV: F1; ML: 7; TRS: None; XP: 20; THAC0: 18; BOOK: LL 68
+Crocodile, Giant	PS TS FW	15	1	ENC: 0 (1d3); AL: N; MV: 90` (30`) Swim 90` (30`); AC: 1; HD: 15; ATK: 1; DMG: 3d8; SV: F8; ML: 9; TRS: None; XP: 1,500; THAC0: 9; BOOK: LL 68
+Crocodile, Large	PS TS FW	6	1	ENC: 0 (1d4); AL: N; MV: 90` (30`) Swim 90` (30`); AC: 3; HD: 6; ATK: 1; DMG: 2d8; SV: F3; ML: 7; TRS: None; XP: 320; THAC0: 14; BOOK: LL 68
+Cyclops	PH PM CH CM TH TM DG	13	1	ENC: 1 (1d4); AL: C; MV: 90` (30`); AC: 5; HD: 13; ATK: 1; DMG: 3d10; SV: F13; ML: 9; TRS: XVII + 5,000 gp; XP: 2,400; THAC0: 10; BOOK: LL 69
+Demon Boar	DG	9	1	ENC: 1d4 (1d4); AL: C; MV: 120` (40`) Boar 180` (60`); AC: 3 (9); HD: 9; ATK: 1 (gore or weapon); DMG: 2d6/weapon; SV: F9; ML: 10; TRS: XX; XP: 3,800; THAC0: 12; BOOK: LL 69
+Demon, Astarot (Demon Lord)	DG	23	1	ENC: Unique; AL: CE; MV: 150` (50`); AC: -7; HD: 184 hp (23 HD); ATK: 3 (2 tentacles, tail); DMG: 1d6/1d6/2d6; SV: F23; ML: 12; TRS: VIII, IX, XXII; XP: 17,000; THAC0: 5; BOOK: AEC 109
+Demon, Babau (Standard Order Demon)	DG	7	1	ENC: 1d3 (1d6); AL: CE; MV: 150` (50`); AC: -3; HD: 7+10; ATK: 3 (2 claws, horn) or 1 (weapon); DMG: 1d4+1/1d4+1/2d4 or As weapon +4; SV: F7; ML: 10; TRS: XXI; XP: 1,700; THAC0: 12; BOOK: AEC 109
+Demon, Balor (Standard Order Demon)	DG	8	1	ENC: 1d3 (1d6); AL: CE; MV: 60` (20`) Fly 150` (50`); AC: -2; HD: 8+7; ATK: 1 (sword or whip); DMG: 1d8+1 or 1d6 and 3d6 fire damage; SV: F8; ML: 10; TRS: XXII; XP: 1,820; THAC0: 12; BOOK: AEC 110
+Demon, Glabrezu (Higher Order Demon)	DG	10	1	ENC: 1d3 (1d6); AL: CE; MV: 90` (30`); AC: -4; HD: 10; ATK: 5 (2 pinchers, 2 claws, bite); DMG: 2d6/2d6/1d3/1d3/1d4+1; SV: F10; ML: 9; TRS: XXII; XP: 3,100; THAC0: 11; BOOK: AEC 110
+Demon, Hezrou (Higher Order Demon)	DG	9	1	ENC: 1d3 (1d6); AL: CE; MV: 120` (40`); AC: -2; HD: 9; ATK: 3 (2 claws, 1 bite); DMG: 1d3/1d3/4d4; SV: F9; ML: 10; TRS: XIV; XP: 3,100; THAC0: 12; BOOK: AEC 111
+Demon, Juiblex (Demon Lord)	DG	21	1	ENC: 1 (Unique); AL: CE; MV: 30` (10`); AC: -7; HD: 100 hp (21 HD); ATK: 1; DMG: 4d10; SV: F21; ML: 10; TRS: Xx2, XIIx2; XP: 7,000; THAC0: 5; BOOK: AEC 111
+Demon, Marilith (Standard Order Demon)	DG	7	1	ENC: 1d3 (1d6); AL: CE; MV: 120` (40`); AC: -6; HD: 7+6; ATK: 7 (6 weapons, constrict); DMG: As weapon/2d4; SV: F7; ML: 9; TRS: XVII; XP: 1,700; THAC0: 12; BOOK: AEC 112
+Demon, Nalfeshnee (Higher Order Demon)	DG	11	1	ENC: 1d3 (1d6); AL: CE; MV: 90` (30`) Fly 120` (40`); AC: -1; HD: 11; ATK: 3 (2 claws, 1 bite); DMG: 1d4/1d4/2d4; SV: F11; ML: 10; TRS: XVIII; XP: 4,400; THAC0: 11; BOOK: AEC 112
+Demon, Orcus (Demon Lord)	DG	22	1	ENC: 1 (Unique); AL: CE; MV: 90` (30`) Fly 180` (60`); AC: -6; HD: 125 hp (22 HD); ATK: 2 (fists and tail); DMG: 2d6+1/2d4 + poison; SV: F22; ML: 10; TRS: VIII, IX, XII; XP: 13,000; THAC0: 5; BOOK: AEC 113
+Demon, Quasit (Lower Order Demon)	DG	3	1	ENC: 1 (0); AL: CE; MV: 150` (50`); AC: 2; HD: 3; ATK: 3 (2 claws, 1 bite); DMG: 1d2/1d2/1d4; SV: F3; ML: 10; TRS: XIx2; XP: 95; THAC0: 17; BOOK: AEC 113
+Demon, Succubus/Incubus (Standard Order Demon)	DG	6	1	ENC: 1 (1); AL: CE; MV: 120` (40`) Fly 180` (60`); AC: 0; HD: 6; ATK: 2 (claws); DMG: 1d3/1d3; SV: F6; ML: 7; TRS: XI, XIV, XV; XP: 1,320; THAC0: 14; BOOK: AEC 114
+Demon, Vrock (Standard Order Demon)	DG	8	1	ENC: 1d3 (1d6); AL: CE; MV: 120` (40`) Fly 180` (60`); AC: 0; HD: 8; ATK: 5 (2 claws, 2 rear claws, beak); DMG: 1d4/1d4/1d8/1d8/1d6; SV: F8; ML: 11; TRS: XXI; XP: 2,060; THAC0: 13; BOOK: AEC 114
+Devil, Amon (Arch-devil)	DG	22	1	ENC: 1 (Unique); AL: LE; MV: 180` (60`); AC: -2; HD: 132 hp (22 HD); ATK: 1 (weapon or bite); DMG: AS weapon +4 or 3d4; SV: F22; ML: 10; TRS: XII, XVI; XP: 13,000; THAC0: 5; BOOK: AEC 115
+Devil, Bael (Arch-devil)	DG	21	1	ENC: 1 (Unique); AL: LE; MV: 120` (40`); AC: -3; HD: 110 hp (21 HD); ATK: 2; DMG: As weapon +6; SV: F21; ML: 10; TRS: XII, XVI; XP: 11,000; THAC0: 5; BOOK: AEC 116
+Devil, Barbed (Lesser devil)	DG	8	1	ENC: 1d2 (3d4); AL: LE; MV: 120` (40`); AC: 0; HD: 8; ATK: 3 (2 claws, tail); DMG: 1d3/1d3/4d4; SV: F8; ML: 10; TRS: None; XP: 2,560; THAC0: 12; BOOK: AEC 116
+Devil, Bone (Lesser devil)	DG	9	1	ENC: 1d2 (2d4); AL: LE; MV: 150` (50`); AC: -1; HD: 9; ATK: 1 (hook or tail); DMG: 3d4 or 2d4 + STR drain; SV: F9; ML: 10; TRS: None; XP: 3,100; THAC0: 12; BOOK: AEC 117
+Devil, Erinyes (Lesser devil)	DG	6	1	ENC: 1d3 (14d4); AL: LE; MV: 60` (20`) Fly 210` (70`); AC: 2; HD: 6+5; ATK: 1; DMG: 2d4; SV: F6; ML: 10; TRS: X; XP: 1,280; THAC0: 13; BOOK: AEC 117
+Devil, Geryon (Arch-devil)	DG	23	1	ENC: 1 (Unique); AL: LE; MV: 60` (20`) Fly 180` (60`); AC: -3; HD: 135 hp (23HD); ATK: 3 (2 claws, sting); DMG: 3d6/3d6/2d4; SV: F23; ML: 10; TRS: X, XV; XP: 13,000; THAC0: 5; BOOK: AEC 118
+Devil, Horned (Greater devil)	DG	5	1	ENC: 1d2 (1d4+1); AL: LE; MV: 90` (30`) Fly 180` (60`); AC: -5; HD: 5+5; ATK: 4 (2 claws, bite, tail) or 1 (weapon); DMG: 1d4/1d4/1d4+1/1d3 or 2d6; SV: F5; ML: 9; TRS: XIV; XP: 1,260; THAC0: 14; BOOK: AEC 118
+Devil, Ice (Greater devil)	DG	11	1	ENC: 1 (1d4); AL: LE; MV: 60` (20`); AC: -4; HD: 11; ATK: 4 (2 claws, mandibles, tail) or 1 (weapon); DMG: 1d4/1d4/1d4/3d4 or 2d6 + paralyzation; SV: F11; ML: 11; TRS: X, XI; XP: 4,800; THAC0: 11; BOOK: AEC 119
+Devil, Imp (Lesser devil)	DG	2	1	ENC: 1 (1); AL: LE; MV: 60` (20`) Fly 180` (60`); AC: 2; HD: 2+2; ATK: 1 (tail); DMG: 1d4; SV: F2; ML: 8; TRS: XIII; XP: 83; THAC0: 17; BOOK: AEC 119
+Devil, Lemure	DG	3	1	ENC: 0 (5d6); AL: LE; MV: 30` (10`); AC: 7; HD: 3; ATK: 1 (claws); DMG: 1d4; SV: F3; ML: 6; TRS: None; XP: 95; THAC0: 17; BOOK: AEC 120
+Devil, Pit Fiend (Greater devil)	DG	13	1	ENC: 1 (1d3); AL: LE; MV: 60` (20`) Fly 150` (50`); AC: -3; HD: 13; ATK: 2 (weapons) or 1 (tail); DMG: 1d6+6/1d6+6 or 2d4; SV: F13; ML: 10; TRS: II, X; XP: 5,100; THAC0: 10; BOOK: AEC 120
+Dinosaur, Pteranodon	TS TF TH TM	5	1	ENC: 0 (1d4); AL: N; MV: Fly 240` (120`); AC: 6; HD: 5; ATK: 1 (bite); DMG: 1d12; SV: F3; ML: 8; TRS: VII; XP: 350; THAC0: 15; BOOK: LL 92
+Dinosaur, Pterodactyl	TS TF TH TM	1	1	ENC: 0 (2d4); AL: N; MV: Fly 180` (60`); AC: 7; HD: 1; ATK: 1 (bite); DMG: 1d3; SV: F1; ML: 7; TRS: None; XP: 13; THAC0: 13; BOOK: LL 92
+Dinosaur, Stegosaurus	TS TF TH TM	11	1	ENC: 0 (1d4); AL: N; MV: 60` (20`); AC: 3; HD: 11; ATK: 1 (tail or trample); DMG: 2d8 or 2d6; SV: F6; ML: 7; TRS: None; XP: 1,200; THAC0: 11; BOOK: LL 98
+Dinosaur, Titanothere	TS TF TH TM	12	1	ENC: 0 (1d6); AL: N; MV: 120` (40`); AC: 5; HD: 12; ATK: 1 (butt or trample); DMG: 2d6 or 2d8; SV: F6; ML: 7; TRS: None; XP: 2,000; THAC0: 10; BOOK: LL 99
+Dinosaur, Triceratops	TS TF TH TM	11	1	ENC: 0 (1d4); AL: N; MV: 90` (30`); AC: 2; HD: 11; ATK: 1 (gore or trample); DMG: 3d6; SV: F6; ML: 8; TRS: None; XP: 1,200; THAC0: 11; BOOK: LL 99
+Dinosaur, Tyrannosaurus Rex	TS TF TH TM	20	1	ENC: 0 (1); AL: N; MV: 120` (40`); AC: 3; HD: 20; ATK: 1 (bite); DMG: 6d6; SV: F10; ML: 11; TRS: VII x 3; XP: 2,250; THAC0: 6; BOOK: LL 100
+Djinni	DG	7	1	ENC: 1 (1); AL: N; MV: 90` (30`) Fly 240` (80`); AC: 5; HD: 7+1; ATK: 1 (fist, whirlwind); DMG: 2d8/2d6; SV: F14; ML: 12; TRS: None; XP: 1,700; THAC0: 12; BOOK: LL 69
+Dog, War	CP CF CH CM	2	1	ENC: 0 (0); AL: N; MV: 120` (40`); AC: 6; HD: 2+2; ATK: 1; DMG: 2d4; SV: F2; ML: 11; TRS: None; XP: 35; THAC0: 17; BOOK: AEC 121
+Dog, Wild	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	1	1	ENC: 4d4 (4d4); AL: N; MV: 150` (50`); AC: 7; HD: 1+1; ATK: 1; DMG: 1d4; SV: F1; ML: 7; TRS: None; XP: 15; THAC0: 18; BOOK: AEC 121
+Doppelganger	PS PM CF CM TS TM DG	4	1	ENC: 1d6 (1d6); AL: C; MV: 90` (30`); AC: 5; HD: 4; ATK: 1; DMG: 1d12; SV: F10; ML: 10; TRS: XVIII; XP: 190; THAC0: 16; BOOK: LL 70
+Dragon Turtle	FW SW	30	1	ENC: 0 (1); AL: C; MV: 30` (10`) Swim 90` (30`); AC: -2; HD: 30; ATK: 3 (2 claws, bite); DMG: 1d8/1d8/1d6x10; SV: F15; ML: 10; TRS: XV; XP: 9,500; THAC0: 5; BOOK: LL 72
+Dragon, Black	PS PM TS TM DG FW SW	7	1	ENC: 1d4 (1d4); AL: C; MV: 90` (30`) Fly 240` (80`); AC: 2; HD: 7; ATK: 3 or 1 (2 claws, bite or breath); DMG: 1d4+1/1d4+1/2d10; SV: F7; ML: 8; TRS: XV; XP: 1,490; THAC0: 13; BOOK: LL 70
+Dragon, Blue	PD PP DG	9	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`) Fly 240` (80`); AC: 0; HD: 9; ATK: 3 or 1 (2 claws, bite or breath); DMG: 1d6+1/1d6+1/3d10; SV: F9; ML: 9; TRS: XV; XP: 3,100; THAC0: 12; BOOK: LL 70
+Dragon, Brass	TM DG	7	1	ENC: 1d4 (1d4); AL: CG; MV: 120` (40`) Fly 240` (80`); AC: 2; HD: 7; ATK: 3 (2 claws, bite) or 1 (breathe); DMG: 1d4/1d4/4d4 or Breathe; SV: F7; ML: 9; TRS: XV; XP: 1,490; THAC0: 13; BOOK: AEC 121
+Dragon, Bronze	PM TM DG FW SW	9	1	ENC: 1d4 (1d4); AL: LG; MV: 90` (30`) Fly 240` (80`); AC: 0; HD: 9; ATK: 3 (2 claws, bite) or 1 (breathe); DMG: 1d6/1d6/4d6 or Breathe; SV: F9; ML: 9; TRS: XV; XP: 3,100; THAC0: 12; BOOK: AEC 121
+Dragon, Chromatic	DG	18	1	ENC: 1 (1); AL: CE; MV: 60` (20`) Fly 180` (60`); AC: 0; HD: 16 hp per head, 8 HD for body (18 HD); ATK: 6 (5 bites, tail); DMG: As head/1d6 + poison; SV: F18; ML: 10; TRS: XVx4; XP: 5,250; THAC0: 7; BOOK: AEC 121
+Dragon, Copper	TH TM DG	8	1	ENC: 1d4 (1d4); AL: CG; MV: 90` (30`) Fly 240` (80`); AC: 1; HD: 8; ATK: 3 (2 claws, bite) or 1 (breathe); DMG: 1d4/1d4/5d4 or Breathe; SV: F8; ML: 9; TRS: XV; XP: 2,060; THAC0: 12; BOOK: AEC 121
+Dragon, Gold	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG FW SW	11	1	ENC: 1d4 (1d4); AL: L; MV: 90` (30`) Fly 240` (80`); AC: -2; HD: 11; ATK: 3 or 1 (2 claws, bite or breath); DMG: 2d4/2d4/6d6; SV: F11; ML: 10; TRS: XV; XP: 3,600; THAC0: 11; BOOK: LL 70
+Dragon, Green	PS PF PH CF CH TS TF TH DG FW SW	8	1	ENC: 1d4 (1d4); AL: C; MV: 90` (30`) Fly 240` (80`); AC: 1; HD: 8; ATK: 3 or 1 (2 claws, bite or breath); DMG: 1d6/1d6/3d8; SV: F8; ML: 9; TRS: XV; XP: 2,060; THAC0: 12; BOOK: LL 70
+Dragon, Red	PF PH PM CF CH CM TF TH TM DG FW SW	10	1	ENC: 1d4 (1d4); AL: C; MV: 90` (30`) Fly 240` (80`); AC: -1; HD: 10; ATK: 3 or 1 (2 claws, bite or breath); DMG: 1d8/1d8/4d8; SV: F10; ML: 10; TRS: XV; XP: 3,100; THAC0: 11; BOOK: LL 70
+Dragon, Sea	FW SW	8	1	ENC: 0 (1d4); AL: N; MV: 180` (60`) Swim and Fly; AC: 1; HD: 8; ATK: 1 (bite or spit); DMG: 3d8 or poison; SV: F8; ML: 9; TRS: XV; XP: 2,060; THAC0: 12; BOOK: LL 70
+Dragon, Silver	PM CM TM DG FW SW	10	1	ENC: 1d4 (1d4); AL: LG; MV: 90` (30`) Fly 240` (80`); AC: -1; HD: 10; ATK: 3 (2 claws, bite) or 1 (breathe); DMG: 1d6/1d6/5d6 or Breathe; SV: F10; ML: 10; TRS: XV; XP: 3,100; THAC0: 11; BOOK: AEC 121
+Dragon, White	CP CF CH CM DG	6	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`) Fly 240` (80`); AC: 3; HD: 6; ATK: 3 or 1 (2 claws, bite or breath); DMG: 1d4/1d4/2d8; SV: F6; ML: 8; TRS: XV; XP: 1,070; THAC0: 14; BOOK: LL 70
+Dragonne	TM DG	9	1	ENC: 1 (1); AL: N; MV: 150` (50`) Fly 90` (30`); AC: 2; HD: 9; ATK: 3 (2 claws, bite) or 1 (roar); DMG: 1d8/1d8/3d6 or Roar (SV paralyze or suffer weakness); SV: F9; ML: 9; TRS: IX, XX, VII; XP: 2,800; THAC0: 12; BOOK: AEC 122
+Dryad	PF	2	1	ENC: 0 (1d6); AL: N; MV: 120` (40`); AC: 5; HD: 2; ATK: 1 (charm); DMG: 0; SV: F4; ML: 6; TRS: XIX; XP: 29; THAC0: 18; BOOK: LL 72
+Dwarf	PD PP PF PH PM CP CF CH CM TF TH TM DG	1	1	ENC: 1d6 (5d8); AL: L or N; MV: 60` (20`); AC: 4; HD: 1; ATK: 1; DMG: 1d8 or weapon; SV: D1; ML: 8; TRS: XVI; XP: 10; THAC0: 19; BOOK: LL 72
+Dwarf, Duergar	DG	1	1	ENC: 2d4 (1d00+100); AL: CE; MV: 60` (20`); AC: 4; HD: 1+2; ATK: 1 (weapon); DMG: As weapon; SV: F1; ML: 8; TRS: VI, XX; XP: 21; THAC0: 18; BOOK: AEC 122
+Eagle, Giant	PF PH PM CF CH CM FW SW	4	1	ENC: 1d6 (1d20); AL: N; MV: 30` (10`) Fly 480` (120`); AC: 7; HD: 4; ATK: 3 (2 claws, bite); DMG: 1d6/1d6/2d6/; SV: F4; ML: 8; TRS: XI, XXII (no coins); XP: 80; THAC0: 16; BOOK: AEC 122
+Ear Seeker	PF CF TF DG	1	1	ENC: 1d4 (1d4); AL: N; MV: 10` (3`); AC: 9; HD: 1 hp; ATK: Special; DMG: Special; SV: F1; ML: N/A; TRS: None; XP: 5; THAC0: 19; BOOK: AEC 123
+Eel, Electric	FW	2	1	ENC: 1d3 (1d3); AL: N; MV: 120` (40`); AC: 9; HD: 2; ATK: 1 (bite); DMG: 1d4; SV: F2; ML: 7; TRS: None; XP: 29; THAC0: 18; BOOK: AEC 123
+Eel, Giant	FW	5	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`); AC: 6; HD: 5; ATK: 1 (bite); DMG: 3d6; SV: F5; ML: 8; TRS: None; XP: 200; THAC0: 15; BOOK: AEC 123
+Eel, Sea	SW	1	1	ENC: 1d6x10; AL: N; MV: 150` (50`); AC: 8; HD: 1 -1; ATK: 1 (bite); DMG: 1; SV: F1; ML: 7; TRS: X, XII, XIII; XP: 6; THAC0: 19; BOOK: AEC 123
+Efreeti	DG	10	1	ENC: 1 (1); AL: C; MV: 90` (30`); AC: 3; HD: 10; ATK: 1; DMG: 2d8; SV: F15; ML: 12; TRS: None; XP: 4,500; THAC0: 11; BOOK: LL 73
+Elemental, Air	DG	12	1	ENC: 1 (1); AL: N; MV: Fly 360` (120`); AC: 2/0/-2; HD: 8/12/16; ATK: special; DMG: 1d8 or 2d8 or 3d8; SV: F8-16; ML: 10; TRS: None; XP: 1,570; 2,800; 3,300; THAC0: 13/10/8; BOOK: LL 73
+Elemental, Earth	DG	12	1	ENC: 1 (1); AL: N; MV: 60` (20`); AC: 2/0/-2; HD: 8/12/16; ATK: special; DMG: 1d8 or 2d8 or 3d8; SV: F8-16; ML: 10; TRS: None; XP: 1,570; 2,800; 3,300; THAC0: 13/10/8; BOOK: LL 73
+Elemental, Fire	PD DG	12	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 2/0/-2; HD: 8/12/16; ATK: special; DMG: 1d8 or 2d8 or 3d8; SV: F8-16; ML: 10; TRS: None; XP: 1,570; 2,800; 3,300; THAC0: 13/10/8; BOOK: LL 73
+Elemental, Water	DG FW SW	12	1	ENC: 1 (1); AL: N; MV: 60` (20`) Swim 180` (60`); AC: 2/0/-2; HD: 8/12/16; ATK: special; DMG: 1d8 or 2d8 or 3d8; SV: F8-16; ML: 10; TRS: None; XP: 1,570; 2,800; 3,300; THAC0: 13/10/8; BOOK: LL 73
+Elephant	TS TF TH	9	1	ENC: 0 (1d20); AL: N; MV: 120` (40`); AC: 5; HD: 9; ATK: 2 or 1 (2 tusks or trample); DMG: 2d4/2d4 or 4d8; SV: F5; ML: 8; TRS: None; XP: 2,400; THAC0: 12; BOOK: LL 74
+Elf	PS PF PH PM CF CH CM TS TF TH TM DG	1	1	ENC: 1d4 (2d12); AL: N; MV: 120` (40`); AC: 5; HD: 1+1; ATK: 1 (weapon); DMG: 1d8 or weapon; SV: E1; ML: 8; TRS: XVIII; XP: 15; THAC0: 18; BOOK: LL 74
+Elf, Deep	DG	1	1	ENC: 1d10 (4d12); AL: NE; MV: 120` (40`); AC: 5; HD: 1; ATK: 1 (weapon); DMG: As weapon; SV: F1; ML: 7; TRS: XX; XP: 10; THAC0: 19; BOOK: AEC 123
+Elf, Drow	DG	1	1	ENC: 2d4 (5d10); AL: CE; MV: 120` (40`); AC: 4; HD: 2; ATK: 1 or 2 (weapon); DMG: As weapon; SV: F2; ML: 10; TRS: Vx5, XIx2; XP: 38; THAC0: 18; BOOK: AEC 123
+Ettin	PF PH PM CM TM DG	10	1	ENC: 1d2 (1d4); AL: C; MV: 120` (40`); AC: 3; HD: 10; ATK: 2 (club, club); DMG: 2d8/3d6; SV: F10; ML: 9; TRS: XIX; XP: 1,700; THAC0: 11; BOOK: LL 74
+Eye of Terror	DG	11	1	ENC: 1 (1); AL: CE; MV: 60` (20`); AC: 0 (body), 2 (central eye), 3 (eye stalks); HD: 10-12; ATK: 3 (2 tentacles, bite); DMG: 1d6/1d6/2d4; SV: F12; ML: 9; TRS: VII, IX, XIV; XP: 7,300; THAC0: 11/11/10; BOOK: AEC 125
+Eye of the Deep	FW SW	11	1	ENC: 1 (1); AL: CE; MV: 60` (20`); AC: 5; HD: 10-12; ATK: 3 (2 claws, bite); DMG: 2d4/2d4/1d6; SV: F10-12; ML: 8; TRS: X; XP: 3,800; THAC0: 11/11/10; BOOK: AEC 124
+Eye, Floating	FW SW	1	1	ENC: 1d12 (1d12); AL: N; MV: 300` (100`); AC: 9; HD: 1d4 hp; ATK: 1 (eye); DMG: SV paralyzation or stunned; SV: F1; ML: 6; TRS: None; XP: 6; THAC0: 19; BOOK: AEC 124
+Eye, Tentacled	DG	14	1	ENC: 1 (1); AL: CE; MV: 90` (30`); AC: 4 (tentacles 5); HD: 14-16; ATK: 8 (tentacles) or 1 (bite); DMG: 1d8 (tentacles) or 2d6 (bite); SV: F14-16; ML: 10; TRS: VII, IX, XIV; XP: 4,200; THAC0: 9/9/8; BOOK: AEC 125
+Ferret, Giant	PF PH	1	1	ENC: 1d8 (1d12); AL: N; MV: 150` (50`); AC: 5; HD: 1+1; ATK: 1 (bite); DMG: 1d8; SV: F1; ML: 8; TRS: None; XP: 15; THAC0: 18; BOOK: LL 74
+Fish, Giant Catfish	FW SW	8	1	ENC: 0 (1d2); AL: N; MV: Swim 90` (30`); AC: 4; HD: 8+3; ATK: 5 (bite, 4 feelers); DMG: 2d8/1d4 each feeler; SV: F4; ML: 8; TRS: None; XP: 620; THAC0: 12; BOOK: LL 75
+Fish, Giant Piranha	FW SW	3	1	ENC: 0 (2d4); AL: N; MV: Swim 150` (50`); AC: 6; HD: 3+3; ATK: 1 (bite); DMG: 1d8; SV: F2; ML: 7; TRS: None; XP: 65; THAC0: 16; BOOK: LL 75
+Fish, Giant Rockfish	FW SW	5	1	ENC: 0 (2d4); AL: N; MV: Swim 180` (60`); AC: 7; HD: 5+5; ATK: 4 (spines); DMG: 1d4x4 (each, poison); SV: F3; ML: 8; TRS: None; XP: 460; THAC0: 14; BOOK: LL 75
+Fish, Giant Sturgeon	FW SW	10	1	ENC: 0 (1); AL: N; MV: Swim 180` (60`); AC: 0; HD: 10+2; ATK: 1 (bite); DMG: 2d10; SV: F5; ML: 9; TRS: None; XP: 1,700; THAC0: 11; BOOK: LL 75
+Flightless Bird	TS TF TH	2	1	ENC: 2d10 (2d10); AL: N; MV: 180` (60`); AC: 7; HD: 1-3; ATK: 1 (bite or claws); DMG: 1d4 or 2d4; SV: F1-3; ML: 8; TRS: None; XP: 10; 20; 50; THAC0: 19/18/17; BOOK: AEC 126
+Fly, Giant Carnivorous	PD PP PS PF PH PM TS TF TH TM DG	2	1	ENC: 1d6 (2d6); AL: N; MV: 90` (30`) Fly 180` (60`); AC: 6; HD: 2; ATK: 1 (bite); DMG: 1d8; SV: F1; ML: 8; TRS: VI; XP: 29; THAC0: 18; BOOK: LL 75
+Frog, Giant	PP PS PF TS TF DG FW SW	2	1	ENC: 5d8 (5d8); AL: N; MV: 30` (`10) Swim 90` (30`); AC: 7; HD: 1-3; ATK: 1 (bite); DMG: 1d3, 1d6, 2d4; SV: F1-3; ML: 7; TRS: None; XP: 13; 29; 65; THAC0: 19/18/17; BOOK: AEC 126
+Frog, Giant Killer	TS DG FW SW	1	1	ENC: 3d6; AL: N; MV: 60` (`20) Swim 120` (40`); AC: 8; HD: 1+4; ATK: 3 (2 claws, bite); DMG: 1d2/1d2/1d4+1; SV: F1; ML: 7; TRS: None; XP: 21; THAC0: 18; BOOK: AEC 126
+Frog, Giant Poisonous	PS TS DG FW SW	1	1	ENC: 2d6; AL: N; MV: 30` (`10) Swim 90` (30`); AC: 8; HD: 1; ATK: 1; DMG: 1 and SV poison (with +4) or die; SV: F1; ML: 7; TRS: None; XP: 13; THAC0: 19; BOOK: AEC 126
+Fungi, Violet	DG	3	1	ENC: 1d4 (1d4); AL: N; MV: 10` (3`); AC: 7; HD: 3; ATK: 1d4; DMG: SV poison or rot into corpse after 1 round; SV: F3; ML: 8; TRS: None; XP: 80; THAC0: 17; BOOK: AEC 126
+Gargoyle	PF PM CF CM TS TF TM DG FW	4	1	ENC: 1d6 (2d4); AL: C; MV: 90` (30`) Fly 150` (50`); AC: 5; HD: 4; ATK: 4 (2 claws, bite, horn); DMG: 1d3/1d3/1d6/1d4; SV: F8; ML: 11; TRS: XX; XP: 500; THAC0: 16; BOOK: LL 75
+Gas Spore	PS DG	1	1	ENC: 1d3 (1d3); AL: N; MV: 30` (10`); AC: 9; HD: 1 hp; ATK: 1; DMG: SV poison die in 1 day (if hit, SV wands or suffer 6d6 damage); SV: F1; ML: 12; TRS: None; XP: 6; THAC0: 19; BOOK: AEC 126
+Gelatinous Cube	PM TM DG	4	1	ENC: 1 (0); AL: N; MV: 60` (20`); AC: 8; HD: 4; ATK: 1; DMG: 2d4/special; SV: F2; ML: 12; TRS: VII; XP: 245; THAC0: 16; BOOK: LL 76
+Ghast (Undead)	PP PS PH PM CP CF CH CM TS TH TM DG	4	1	ENC: 1d6 (1d6); AL: CE; MV: 150` (50`); AC: 4; HD: 4; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/1d8; SV: F4; ML: 9; TRS: VIII, IX, XI, XXI; XP: 190; THAC0: 16; BOOK: AEC 127
+Ghost (Undead)	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	10	1	ENC: 1 (1); AL: CE; MV: 90` (30`); AC: 0 (8); HD: 10; ATK: 1; DMG: Special; SV: F10; ML: 10; TRS: IX, XIX; XP: 3,100; THAC0: 11; BOOK: AEC 127
+Ghoul (Undead)	PP PS PH PM CP CF CH CM TS TH TM DG	2	1	ENC: 1d6 (2d8); AL: C; MV: 90` (30`); AC: 6; HD: 2 (turn as 3 HD); ATK: 3; DMG: 1d3/1d3/1d3 + paralysis; SV: F2; ML: 9; TRS: XXI; XP: 47; THAC0: 18; BOOK: LL 76
+Giant, Cloud	PH PM CH CM TH TM	12	1	ENC: 1d2 (1d3); AL: N; MV: 120` (40`); AC: 4; HD: 12+3; ATK: 1; DMG: 6d6; SV: F12; ML: 10; TRS: XVIII + 5,000 gp; XP: 2,000; THAC0: 10; BOOK: LL 77
+Giant, Fire	PD PP PF PH PM TF TH TM DG	11	1	ENC: 1d2 (1d3); AL: C; MV: 120` (40`); AC: 4; HD: 11+2; ATK: 1; DMG: 5d6; SV: F11; ML: 9; TRS: XVIII + 5,000 gp; XP: 2,000; THAC0: 10; BOOK: LL 77
+Giant, Frost	CP CF CH CM DG	10	1	ENC: 1d2 (1d4); AL: C; MV: 120` (40`); AC: 4; HD: 10+1; ATK: 1; DMG: 4d6; SV: F10; ML: 9; TRS: XVIII + 5,000 gp; XP: 1,700; THAC0: 11; BOOK: LL 76
+Giant, Hill	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	8	1	ENC: 1d4 (2d4); AL: C; MV: 120` (40`); AC: 4; HD: 8; ATK: 1; DMG: 2d8; SV: F8; ML: 8; TRS: XVIII + 5,000 gp; XP: 560; THAC0: 12; BOOK: LL 76
+Giant, Stone	PH PM CH CM TH TM DG	9	1	ENC: 1d2 (1d6); AL: N; MV: 120` (40`); AC: 4; HD: 9; ATK: 1; DMG: 3d6; SV: F9; ML: 9; TRS: XVIII + 5,000 gp; XP: 1,700; THAC0: 12; BOOK: LL 76
+Giant, Storm	PM TM SW	15	1	ENC: 1 (1d3); AL: L; MV: 150` (50`); AC: 2; HD: 15; ATK: 1 (rocks or lightning); DMG: 6d8; SV: F15; ML: 10; TRS: XVIII + 5,000 gp; XP: 3,300; THAC0: 9; BOOK: LL 77
+Gnoll	PP PS PF PH PM TS TF TH TM DG	2	1	ENC: 1d6 (3d6); AL: C; MV: 90` (30`); AC: 5; HD: 2; ATK: 1 (weapon); DMG: 2d4 or weapon; SV: F2; ML: 8; TRS: XIX; XP: 47; THAC0: 18; BOOK: LL 77
+Gnome	PF PH PM CF CH CM TF TH TM DG	1	1	ENC: 1d8 (5d8); AL: L or N; MV: 60` (20`); AC: 5; HD: 1; ATK: 1 (weapon); DMG: 1d6 or weapon; SV: D1; ML: 8; TRS: XX; XP: 10; THAC0: 19; BOOK: LL 78
+Goblin	PD PP PS PF PH PM CP CF CH CM TS TF TH DG	1	1	ENC: 2d4 (6d10); AL: C; MV: 60` (20`); AC: 6; HD: 1 -1; ATK: 1 (weapon); DMG: 1d6 or weapon; SV: 0 human; ML: 7; TRS: III (XX); XP: 5; THAC0: 19; BOOK: LL 78
+Golem, Amber	DG	10	1	ENC: 1 (1); AL: N; MV: 180` (60`); AC: 6; HD: 10; ATK: 3 (2 claws, bite); DMG: 2d6/2d6/2d10; SV: F5; ML: 12; TRS: None; XP: 3,100; THAC0: 11; BOOK: LL 79
+Golem, Bone	DG	8	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 2; HD: 8; ATK: 4 (weapons); DMG: weapon type; SV: F4; ML: 12; TRS: None; XP: 2,065; THAC0: 12; BOOK: LL 79
+Golem, Bronze	DG	20	1	ENC: 1 (1); AL: N; MV: 240` (80`); AC: 0; HD: 20; ATK: 1 (fist); DMG: 3d10 + heat; SV: F10; ML: 12; TRS: None; XP: 4,250; THAC0: 6; BOOK: LL 79
+Golem, Clay	DG	11	1	ENC: 1 (0); AL: N; MV: 60` (20`); AC: 7; HD: 11; ATK: 1 (fist); DMG: 3d10; SV: F11; ML: 12; TRS: None; XP: 3,000; THAC0: 11; BOOK: AEC 127
+Golem, Flesh	DG	9	1	ENC: 1 (0); AL: N; MV: 90` (30`); AC: 9; HD: 9; ATK: 2 (fists); DMG: 2d8/2d8; SV: F9; ML: 12; TRS: None; XP: 2,400; THAC0: 12; BOOK: AEC 127
+Golem, Iron	DG	18	1	ENC: 1 (0); AL: N; MV: 60` (20`); AC: 3; HD: 18; ATK: 1 (fist); DMG: 4d10; SV: F18; ML: 12; TRS: None; XP: 5,250; THAC0: 7; BOOK: AEC 127
+Golem, Stone	DG	14	1	ENC: 1 (0); AL: N; MV: 60` (20`); AC: 5; HD: 14; ATK: 1 (fist); DMG: 3d8; SV: F14-16; ML: 12; TRS: None; XP: 4,200; THAC0: 9; BOOK: AEC 127
+Golem, Wood	DG	2	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 7; HD: 2+2; ATK: 1 (fist); DMG: 1d8; SV: F1; ML: 12; TRS: None; XP: 59; THAC0: 17; BOOK: LL 79
+Gorgon	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	8	1	ENC: 1d2 (1d4); AL: C; MV: 120` (40`); AC: 2; HD: 8; ATK: 1 (gore or breath); DMG: 2d6 or petrify; SV: F8; ML: 8; TRS: XVIII; XP: 1,060; THAC0: 12; BOOK: LL 79
+Gray Ooze	DG	3	1	ENC: 1 (1); AL: N; MV: 10` (3`); AC: 8; HD: 3; ATK: 1; DMG: 2d8; SV: F2; ML: 12; TRS: None; XP: 80; THAC0: 17; BOOK: LL 79
+Gray Worm	DG	6	1	ENC: 1d3 (1d3); AL: N; MV: 60` (20`); AC: 6; HD: 6; ATK: 1 (bite); DMG: 1d8; SV: F3; ML: 9; TRS: XXI; XP: 570; THAC0: 14; BOOK: LL 80
+Green Slime	DG	2	1	ENC: 1 (0); AL: N; MV: 3` (1`); AC: NA; HD: 2; ATK: 1; DMG: digestion; SV: F1; ML: 12; TRS: None; XP: 38; THAC0: 18; BOOK: LL 80
+Griffon	PD PH PM CH CM TM FW SW	7	1	ENC: 0 (2d8); AL: N; MV: 120` (40`) Fly 360` (120`); AC: 5; HD: 7; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/2d8; SV: F4; ML: 8; TRS: XVIII; XP: 440; THAC0: 13; BOOK: LL 80
+Groaning Spirit (Banshee) (Undead)	PD PP PF PH CP CF CH TF DG	7	1	ENC: 1 (1); AL: CE; MV: 150` (50`); AC: 0; HD: 8; ATK: 1; DMG: 1d8; SV: F7; ML: 10; TRS: XXII; XP: 1,490; THAC0: 12; BOOK: AEC 128
+Halfling	CP CF CH DG	1	1	ENC: 3d6 (5d8); AL: L; MV: 90` (30`); AC: 7; HD: 1 -1; ATK: 1 (weapon); DMG: 1d6 or weapon; SV: H1; ML: 7; TRS: XXI; XP: 5; THAC0: 19; BOOK: LL 80
+Harpy	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG FW SW	3	1	ENC: 1d6 (2d4); AL: C; MV: 60` (20`) Fly 150` (50`); AC: 7; HD: 3; ATK: 3 (2 claws, weapon, charm); DMG: 1d4/1d4/1d6; SV: F3; ML: 7; TRS: XX; XP: 80; THAC0: 17; BOOK: LL 81
+Hawk	PD PP PS PF PH PM CP CF CH CM TH FW SW	1	1	ENC: 0 (1d6); AL: N; MV: Fly 480` (160`); AC: 8; HD: 1d4 hp; ATK: 1; DMG: 1d2; SV: 0 human; ML: 7; TRS: None; XP: 5; THAC0: 19; BOOK: LL 81
+Hawk, Giant	PD PP PS PF PH PM CP CF CH CM TF TH FW SW	3	1	ENC: 0 (1d3); AL: N; MV: Fly 450` (150`); AC: 6; HD: 3+3; ATK: 1; DMG: 1d6; SV: F2; ML: 8; TRS: None; XP: 65; THAC0: 16; BOOK: LL 81
+Hell Hound	PD PS PH PM TS TH TM DG	5	1	ENC: 2d4 (2d4); AL: C; MV: 120` (40`); AC: 4; HD: 3-7; ATK: 1 (bite or breath); DMG: 1d6 or 1d6 per HD; SV: F3 to F7; ML: 9; TRS: XX; XP: 80; 190; 500; 820; 1,140; THAC0: 17/16/15/14/13; BOOK: LL 81
+Herd Animals	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	2	1	ENC: 0 (3d10); AL: N; MV: 240` (80`); AC: 7; HD: 1-4; ATK: 1 (butt); DMG: 1d4, 1d6, or 1d8; SV: F1 or F2; ML: 5; TRS: None; XP: 10; 20; 50; 80; THAC0: 19/18/17/16; BOOK: LL 81
+Hippocampus	FW SW	4	1	ENC: 2d4 (2d4); AL: CG; MV: 240` (80`); AC: 5; HD: 4; ATK: 1; DMG: 1d4; SV: F4; ML: 8; TRS: None; XP: 200; THAC0: 16; BOOK: AEC 128
+Hippogriff	PH PM CH TH TM FW SW	3	1	ENC: 0 (2d8); AL: N; MV: 180` (60`) Fly 360` (120`); AC: 5; HD: 3+1; ATK: 3 (2 claws, bite); DMG: 1d6/1d6/1d10; SV: F2; ML: 8; TRS: None; XP: 65; THAC0: 16; BOOK: LL 82
+Hobgoblin	PD PP PS PF PH PM CP CF CH CM TS TH TM DG	1	1	ENC: 1d6 (4d6); AL: C; MV: 90` (30`); AC: 6; HD: 1+1; ATK: 1 (weapon); DMG: 1d8 or weapon; SV: F1; ML: 8; TRS: XIX; XP: 15; THAC0: 18; BOOK: LL 82
+Homunculus		6	1	ENC: 1 (0); AL: As creator; MV: 60` (20`) Fly 180` (60`); AC: 6; HD: 2; ATK: 1 (bite); DMG: 1d3; SV: As creator; ML: 11; TRS: None; XP: 38; THAC0: 18; BOOK: AEC 129
+Horse, Draft	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	3	1	ENC: 0; AL: N; MV: 90` (30`); AC: 7; HD: 3; ATK: None; DMG: None; SV: F2; ML: 6; TRS: None; XP: 50; THAC0: 17; BOOK: LL 82
+Horse, Riding		2	1	ENC: 0 (1d10x10); AL: N; MV: 240` (80`); AC: 7; HD: 2; ATK: 2 (hooves); DMG: 1d4/1d4; SV: F1; ML: 7; TRS: None; XP: 20; THAC0: 18; BOOK: LL 82
+Horse, War		3	1	ENC: 0; AL: N; MV: 120` (40`); AC: 7; HD: 3; ATK: 2 (hooves); DMG: 1d6/1d6; SV: F2; ML: 9; TRS: None; XP: 50; THAC0: 17; BOOK: LL 82
+Hydra	PP PS PF PM CP CF CM TS TF TM DG	9	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 5; HD: 5-12; ATK: Per head; DMG: 1d10 per head; SV: F5 to F12; ML: 9; TRS: XXI; XP: As HD; THAC0: 15/14/13/12/12/11/11/10; BOOK: LL 82
+Hyena	TS TF TH	3	1	ENC: 2d6 (2d6); AL: N; MV: 120` (40`); AC: 7; HD: 3; ATK: 1 (bite); DMG: 2d4; SV: F3; ML: 9; TRS: None; XP: 50; THAC0: 17; BOOK: AEC 129
+Hyena, Giant	TS TF TH	5	1	ENC: 2d4 (2d4); AL: N; MV: 120` (40`); AC: 7; HD: 5; ATK: 1 (bite); DMG: 3d4; SV: F5; ML: 9; TRS: None; XP: 200; THAC0: 15; BOOK: AEC 129
+Insect Swarm	PS PF	3	1	ENC: 1 swarm (3 swarms); AL: N; MV: 30` (10`) Fly 60` (20`); AC: 7; HD: 2-4; ATK: 1; DMG: 2 hp; SV: 0 human; ML: 11; TRS: None; XP: 29; 65; 135; THAC0: 18/17/16; BOOK: LL 83
+Invisible Stalker	DG	8	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 3; HD: 8; ATK: 1; DMG: 4d4; SV: F8; ML: 12; TRS: None; XP: 215; THAC0: 12; BOOK: LL 83
+Jackal	PD PP PS PF PH TS TF TH	1	1	ENC: 1d6 (2d4); AL: N; MV: 150` (50`); AC: 7; HD: 1d4 hp; ATK: 1 (bite); DMG: 1d2; SV: F1; ML: 7; TRS: None; XP: 5; THAC0: 19; BOOK: AEC 129
+Jackalwere	PD PS PF PH TS TF TH DG	4	1	ENC: 1d4 (1d4); AL: CE; MV: 120` (40`); AC: 4; HD: 4; ATK: 1 (bite or weapon); DMG: 2d4 or weapon; SV: F4; ML: 9; TRS: XXII; XP: 190; THAC0: 16; BOOK: AEC 129
+Kobold	PS PF PH PM CF CH CM TS TF TH TM DG	1	1	ENC: 4d4 (6d10); AL: C; MV: 60` (20`); AC: 7; HD: 1d4 hp; ATK: 1 (weapon); DMG: 1d4 or weapon -1; SV: 0 human; ML: 6; TRS: I (XIII); XP: 5; THAC0: 19; BOOK: LL 83
+Lamia	PD DG	9	1	ENC: 1 (1); AL: CE; MV: 240` (80`); AC: 3; HD: 9; ATK: 1 (weapon); DMG: 1d6; SV: F9; ML: 9; TRS: XXII; XP: 4,500; THAC0: 12; BOOK: AEC 129
+Lammasu	PD PP PS PF PH PM TS TF TH TM DG FW SW	7	1	ENC: 2d4 (2d4); AL: LG; MV: 120` (40`) Fly 240` (80`); AC: 6; HD: 7+7; ATK: 2 (claws); DMG: 1d6/1d6; SV: F7; ML: 9; TRS: VIII, IX, X; XP: 1,300; THAC0: 12; BOOK: AEC 130
+Leech, Giant	PS TS DG FW	6	1	ENC: 0 (1d4); AL: N; MV: 120` (40`); AC: 7; HD: 6; ATK: 1 (drain blood); DMG: 1d6; SV: F3; ML: 10; TRS: None; XP: 570; THAC0: 14; BOOK: LL 84
+Leprechaun	PP PF PH DG	1	1	ENC: 1 (1d20); AL: N; MV: 150` (50`); AC: 8; HD: 1d4+1 hp; ATK: 0; DMG: Special; SV: M1; ML: 6; TRS: XVII; XP: 6; THAC0: 19; BOOK: AEC 130
+Lich (Undead)	DG	12	1	ENC: 1 (1); AL: NE; MV: 60` (20`); AC: 0; HD: 12+; ATK: 1 (cold touch); DMG: 1d10 cold damage; SV: M18+; ML: 9; TRS: XXII; XP: 4,400; THAC0: 10; BOOK: AEC 130
+Lizard, Giant Draco	PP PS PF DG	4	1	ENC: 1d4 (1d8); AL: N; MV: 120` (40`) Fly 210` (70`); AC: 5; HD: 4+2; ATK: 1 (bite); DMG: 1d10; SV: F3; ML: 7; TRS: VI; XP: 215; THAC0: 15; BOOK: LL 84
+Lizard, Giant Gecko	TS TF TH TM DG	3	1	ENC: 1d6 (1d10); AL: N; MV: 120` (40`); AC: 5; HD: 3+1; ATK: 1 (bite); DMG: 1d8; SV: F2; ML: 7; TRS: VI; XP: 100; THAC0: 16; BOOK: LL 84
+Lizard, Giant Horned Chameleon	TS TF TH TM DG	5	1	ENC: 1d3 (1d6); AL: N; MV: 120` (40`); AC: 5; HD: 5; ATK: 2 (bite, horn); DMG: 2d4/1d6; SV: F3; ML: 7; TRS: VI; XP: 800; THAC0: 15; BOOK: LL 84
+Lizard, Giant Tuatara	PP PS PF DG	6	1	ENC: 1d2 (1d4); AL: N; MV: 90` (30`); AC: 4; HD: 6; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/1d6; SV: F4; ML: 6; TRS: VII; XP: 570; THAC0: 14; BOOK: LL 84
+Lizardfolk	PS TS TF TH TM DG FW	2	1	ENC: 2d4 (6d6); AL: N; MV: 60` (20`); AC: 5; HD: 2+1; ATK: 1 (weapon); DMG: 1d6+1 or weapon +1; SV: F2; ML: 12; TRS: XIX; XP: 47; THAC0: 17; BOOK: LL 84
+Locathah	FW SW	2	1	ENC: 3d4 (2d10x10); AL: N; MV: 120` (40`); AC: 6; HD: 2; ATK: 1 (weapon); DMG: As weapon; SV: F2; ML: 9; TRS: XXII; XP: 20; THAC0: 18; BOOK: AEC 131
+Locust, Subterranean	DG	2	1	ENC: 2d10 (1d10); AL: N; MV: 60` (20`) Fly 180` (60`); AC: 4; HD: 2; ATK: 1 (bite, slam, or spit); DMG: 1d2/1d4 or special; SV: F2; ML: 5; TRS: None; XP: 38; THAC0: 18; BOOK: LL 85
+Lurker Above	DG	10	1	ENC: 1 (1d4); AL: N; MV: 10` (3`) Fly 90` (30`); AC: 6; HD: 10; ATK: 1; DMG: 1d6; SV: F10; ML: 12; TRS: XXI; XP: 1,700; THAC0: 11; BOOK: AEC 131
+Lycanthrope, Werebear	PS PF PH PM CF CH CM DG	6	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`); AC: 2 (8); HD: 6; ATK: 3 (2 claws, bite); DMG: 2d4/2d4/2d8; SV: F6; ML: 10; TRS: XX; XP: 1,070; THAC0: 14; BOOK: LL 85
+Lycanthrope, Wereboar	PP PS PF PH CP CF CH TS TF TH	4	1	ENC: 1d4 (2d4); AL: N; MV: 150` (50`); AC: 4 (9); HD: 4+1; ATK: 1 (tusk bite); DMG: 2d6; SV: F4; ML: 9; TRS: XX; XP: 365; THAC0: 15; BOOK: LL 85
+Lycanthrope, Wererat	CP CF CH CM DG	3	1	ENC: 1d8 (2d6); AL: C; MV: 120` (40`); AC: 7 (9); HD: 3; ATK: 1 (bite or weapon); DMG: 1d4 or weapon; SV: F3; ML: 8; TRS: XX; XP: 95; THAC0: 17; BOOK: LL 85
+Lycanthrope, Weretiger	TS TF TH TM	5	1	ENC: 1d4 (1d4); AL: N; MV: 150` (50`); AC: 3 (9); HD: 5; ATK: 3 (2 claws, bite); DMG: 1d6/1d6/2d6; SV: F5; ML: 9; TRS: XX; XP: 650; THAC0: 15; BOOK: LL 85
+Lycanthrope, Werewolf	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	4	1	ENC: 1d6 (2d6); AL: C; MV: 180` (60`); AC: 5 (9); HD: 4; ATK: 1 (bite); DMG: 2d4; SV: F4; ML: 8; TRS: XX; XP: 190; THAC0: 16; BOOK: LL 85
+Manticore	PD PP PS PH PM CP CF CH CM TS TF TH TM DG FW SW	6	1	ENC: 1d2 (1d4); AL: C; MV: 120` (40`) Fly 180` (60`); AC: 4; HD: 6+1; ATK: 3 (2 claws, bite) or 1 (spikes); DMG: 1d4/1d4/2d4 or 1d6; SV: F6; ML: 9; TRS: XIX; XP: 980; THAC0: 13; BOOK: LL 86
+Mastodon	PP PS PF PH PM CP CF CH CM	15	1	ENC: 0 (2d8); AL: N; MV: 120` (40`); AC: 3; HD: 15; ATK: 2 (tusks) or 1 (trample); DMG: 2d6/2d6 or 4d8; SV: F8; ML: 8; TRS: None; XP: 3,300; THAC0: 9; BOOK: LL 86
+Medusa	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	4	1	ENC: 1d3 (1d4); AL: C; MV: 90` (30`); AC: 8; HD: 4; ATK: 1 (snakebite or gaze); DMG: 1d6, poison or petrify; SV: F4; ML: 8; TRS: XVII; XP: 245; THAC0: 16; BOOK: LL 87
+Men, Berserker	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	1	1	ENC: 1d6 (3d10); AL: N; MV: 120` (40`); AC: 7; HD: 1+1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: N/A; TRS: I (XXI); XP: 21; THAC0: 18; BOOK: LL 87
+Men, Brigand	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	1	1	ENC: 0 (1d4x10); AL: N or C; MV: 120` (40`); AC: Armor type; HD: 1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: 8; TRS: XXII; XP: 10; THAC0: 19; BOOK: LL 87
+Men, Merchant	CP CF CH CM FW SW	1	1	ENC: 0 (1d20); AL: N; MV: 90` (30`); AC: 5; HD: 1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: Varies; TRS: XXII; XP: 10; THAC0: 19; BOOK: LL 87
+Men, Nomad	PD PP CP	1	1	ENC: 0 (1d4x10); AL: N; MV: 120` (40`); AC: Armor type; HD: 1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: 8; TRS: XXII; XP: 10; THAC0: 19; BOOK: LL 87
+Men, Pirate	PS TS FW SW	1	1	ENC: 0 (special); AL: C; MV: 120` (40`); AC: Armor type; HD: 1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: 6; TRS: XXII; XP: 10; THAC0: 19; BOOK: LL 87
+Merfolk	FW SW	2	1	ENC: 0 (1d20); AL: N; MV: Swim 120` (40`); AC: 6; HD: 1-4; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: 8; TRS: XXII; XP: 20; THAC0: 19/18/17/16; BOOK: LL 88
+Mimic	DG	9	1	ENC: 1 (1); AL: N; MV: 30` (`10); AC: 7; HD: 7-10; ATK: 1; DMG: 3d4; SV: F7-10; ML: 8; TRS: None; XP: 790; THAC0: 13/12/12/11; BOOK: AEC 131
+Minotaur	PS PF PH PM CF CH CM TS TF TH TM DG	6	1	ENC: 1d6 (1d8); AL: C; MV: 120` (40`); AC: 6; HD: 6; ATK: 2 or 1 (gore and bite, or weapon); DMG: 1d6/1d6 or weapon; SV: F6; ML: 12; TRS: XXII; XP: 820; THAC0: 14; BOOK: LL 88
+Morlock	DG	1	1	ENC: 1d12 (5d10); AL: C; MV: 120` (40`); AC: 8; HD: 1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: 9; TRS: XX; XP: 5; THAC0: 19; BOOK: LL 88
+Mule	PP PS PF PH PM CP CF CH CM TS TF TH TM	2	1	ENC: 1d8 (2d6); AL: N; MV: 120` (40`); AC: 7; HD: 2; ATK: 1 (kick or bite); DMG: 1d4 or 1d3; SV: 0 human; ML: 8; TRS: None; XP: 20; THAC0: 18; BOOK: LL 88
+Mummy (Undead)	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	5	1	ENC: 1d4 (1d12); AL: C; MV: 60` (20`); AC: 3; HD: 5+1; ATK: 1; DMG: 1d12, disease; SV: F5; ML: 12; TRS: XIX; XP: 860; THAC0: 14; BOOK: LL 89
+Naga, Guardian	PS PM CF CM TS TM DG	11	1	ENC: 1d2 (0); AL: L; MV: 150` (50`); AC: 3; HD: 11-12; ATK: 2 (bite, constrict); DMG: 1d6/2d4; SV: F11-12; ML: 11; TRS: XXII; XP: 2,800; THAC0: 11/10; BOOK: AEC 131
+Naga, Spirit	PS PM CF CM TS TM DG	9	1	ENC: 1d3 (0); AL: C; MV: 120` (40`); AC: 4; HD: 9-10; ATK: 1 (bite); DMG: 1d3; SV: F9-10; ML: 8; TRS: VIII, XXI; XP: 2,400; THAC0: 12/11; BOOK: AEC 131
+Naga, Water	FW SW	7	1	ENC: 1d4 (0); AL: N; MV: 90` (30`) Swim 180` (60`); AC: 5; HD: 7-8; ATK: 1 (bite); DMG: 1d4; SV: F7-8; ML: 8; TRS: XIX; XP: 1,140; THAC0: 13/12; BOOK: AEC 131
+Neanderthal	PF PH PM CF CH CM TS TF TH TM DG	2	1	ENC: 1d10 (4d10); AL: L; MV: 120` (40`); AC: 8; HD: 2; ATK: 1; DMG: 2d4 or weapon; SV: F2; ML: 7; TRS: XX; XP: 20; THAC0: 18; BOOK: LL 89
+Night Hag	PS PM TS TM DG	8	1	ENC: 1 (1); AL: NE; MV: 90` (30`); AC: 9; HD: 8; ATK: 1; DMG: 2d6; SV: F8; ML: 8; TRS: None; XP: 1,560; THAC0: 12; BOOK: AEC 132
+Nightmare	PM CM TM DG	6	1	ENC: 1 (0); AL: CE; MV: 150` (50`) Fly 360` (120`); AC: -4; HD: 6+6; ATK: 3 (bite, 2 hooves); DMG: 2d4/1d6+4/1d6+4; SV: F6; ML: 10; TRS: None; XP: 980; THAC0: 13; BOOK: AEC 132
+Nixie	FW SW	1	1	ENC: 0 (2d20); AL: N; MV: Swim 120` (40`); AC: 7; HD: 1; ATK: 1; DMG: 1d4; SV: E1; ML: 6; TRS: XXI; XP: 16; THAC0: 19; BOOK: LL 89
+Nymph	PF PH PM CF CH CM TF FW SW	3	1	ENC: 0 (1d4); AL: NG; MV: 120` (40`); AC: 9; HD: 3; ATK: 0; DMG: if seen (SV spell or permanent blindness); SV: F3; ML: 6; TRS: IX, XIx10; XP: 80; THAC0: 17; BOOK: AEC 132
+Ochre Jelly	DG	5	1	ENC: 1 (0); AL: N; MV: 30` (10`); AC: 8; HD: 5; ATK: 1; DMG: 2d6; SV: F3; ML: 12; TRS: None; XP: 500; THAC0: 15; BOOK: LL 89
+Octopus, Giant	FW SW	8	1	ENC: 0 (1d2); AL: N; MV: Swim 90` (30`); AC: 7; HD: 8; ATK: 8 (tentacles) or 1 (bite); DMG: 1d3 (per tentacle)/1d6; SV: F4; ML: 7; TRS: None; XP: 2,060; THAC0: 12; BOOK: LL 90
+Ogre	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	4	1	ENC: 1d6 (2d6); AL: C; MV: 90` (30`); AC: 5; HD: 4+1; ATK: 1 (club); DMG: 1d10; SV: F4; ML: 10; TRS: XX + 1,000 gp; XP: 215; THAC0: 15; BOOK: LL 90
+Ogre Mage	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	5	1	ENC: 1d5 (1d6); AL: LE; MV: 90` (30`) Fly 150` (50`); AC: 4; HD: 5+2; ATK: 1; DMG: 1d12; SV: M5; ML: 9; TRS: IX, XVII; XP: 660; THAC0: 14; BOOK: AEC 132
+Orc	PD PP PS PF PH PM CF CH CM TS TF TM DG	1	1	ENC: 2d4 (1d6x10); AL: C; MV: 120` (40`); AC: 6; HD: 1; ATK: 1 (weapon); DMG: 1d6 or weapon; SV: F1; ML: 8; TRS: XIX; XP: 10; THAC0: 19; BOOK: LL 90
+Otyugh	PM CM TM DG	7	1	ENC: 1 (2); AL: N; MV: 60` (20`); AC: 3; HD: 6-8; ATK: 3 (2 tentacles, bite); DMG: 1d8/1d8/1d4+1; SV: F6-8; ML: 10; TRS: None; XP: 820; 1,140; 1,560; THAC0: 14/13/12; BOOK: AEC 133
+Otyugh, Advanced	PM CM TM DG	10	1	ENC: 1 (1); AL: N; MV: 60` (20`); AC: 0; HD: 9-12; ATK: 3 (2 tentacles, bite); DMG: 2d6/2d6/2d4; SV: F9-12; ML: 9; TRS: None; XP: 2,400; 2,800; THAC0: 12/11/11/10; BOOK: AEC 133
+Owl Bear	PS PF PM CF DG	5	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`); AC: 5; HD: 5; ATK: 3 (2 claws, bite); DMG: 1d8/1d8/1d8; SV: F3; ML: 9; TRS: XX; XP: 350; THAC0: 15; BOOK: LL 91
+Owl, Giant	PD PP PS PF PH PM CP CF CH CM TS TF TH TM	4	1	ENC: 1d4+1 (1d4+1); AL: N; MV: 30` (10`) Fly 180` (60`); AC: 6; HD: 4; ATK: 3 (2 talons, beak); DMG: 2d4/2d4/1d4+1; SV: F4; ML: 8; TRS: XIx5, XXI (magic only); XP: 80; THAC0: 16; BOOK: AEC 133
+Pegasus	PD PF PH PM CF CM TF TH TM FW SW	2	1	ENC: 0 (1d12); AL: L; MV: 240` (80`) Fly 480` (160`); AC: 6; HD: 2+2; ATK: 2 (hooves); DMG: 1d6/1d6; SV: F2; ML: 8; TRS: None; XP: 47; THAC0: 17; BOOK: LL 91
+Phase Tiger	TF TH TM DG	6	1	ENC: 1d4 (1d4); AL: N; MV: 150` (50`); AC: 4; HD: 6; ATK: 2 (tentacles); DMG: 2d4/2d4; SV: F6; ML: 8; TRS: XIX; XP: 570; THAC0: 14; BOOK: LL 91
+Piercer	DG	2	1	ENC: 3d6 (3d6); AL: N; MV: 10` (3`); AC: 3; HD: 1-4; ATK: 1; DMG: 1d6 per HD; SV: F1-4; ML: 10; TRS: None; XP: 10; 20; 50; 80; THAC0: 19/18/17/16; BOOK: AEC 133
+Pixie	PF CF TF	1	1	ENC: 2d4 (1d4x10); AL: N; MV: 90` (30`) Fly 180` (60`); AC: 3; HD: 1; ATK: 1 (dagger); DMG: 1d4; SV: E1; ML: 7; TRS: III + IV; XP: 16; THAC0: 19; BOOK: LL 91
+Pseudo-dragon	PF DG	2	1	ENC: 1 (1); AL: NG; MV: 60` (20`) Fly 240` (80`); AC: 2; HD: 2; ATK: 1 (bite or tail); DMG: 1d3 or SV poison or feign death; SV: F2; ML: 7; TRS: XIx10; XP: 38; THAC0: 18; BOOK: AEC 134
+Purple Worm	PD PP PH CP CH TH DG	15	1	ENC: 1d2 (1d4); AL: N; MV: 60` (20`); AC: 6; HD: 15; ATK: 2 (bite, sting); DMG: 2d8/1d8/poison; SV: F8; ML: 10; TRS: XIX; XP: 3,300; THAC0: 9; BOOK: LL 92
+Rakshasa	DG	7	1	ENC: 1d4 (1d4); AL: LE; MV: 150` (50`); AC: -4; HD: 7; ATK: 3 (2 claws, bite); DMG: 1d3/1d3/1d4+1; SV: F7; ML: 9; TRS: XVIII; XP: 1,840; THAC0: 13; BOOK: AEC 134
+Rat	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	1	1	ENC: 5d10 (2d10); AL: N; MV: 60` (20`) Swim 30` (10`); AC: 9; HD: 1 hp; ATK: 1 (bite, per group); DMG: 1d6 + disease; SV: 0 human; ML: 5; TRS: XI; XP: 6; THAC0: 19; BOOK: LL 92
+Rat, Giant	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	1	1	ENC: 3d6 (3d10); AL: N; MV: 120` (40`) Swim 60` (20`); AC: 7; HD: 1d4 hp; ATK: 1 (bite); DMG: 1d3 + disease; SV: F1; ML: 8; TRS: XX; XP: 6; THAC0: 19; BOOK: LL 92
+Remorhaz	CP CH CM DG	10	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 0, belly 4, head 2; HD: 7-14; ATK: 1 (bite); DMG: 6d6; SV: F7-14; ML: 10; TRS: XVIII; XP: 1,140; THAC0: 13/12/12/11/11/10/10/9; BOOK: AEC 134
+Rhagodessa, Giant	PP PS PF PH PM TS TF TH TM DG	4	1	ENC: 1d4 (1d6); AL: N; MV: 150` (50`); AC: 5; HD: 4+2; ATK: 1 (leg or bite); DMG: 0 or 2d8; SV: F2; ML: 9; TRS: VI; XP: 215; THAC0: 15; BOOK: LL 92
+Rhinoceros	PP PS PF PH PM TS TH TM	6	1	ENC: 0 (1d12); AL: N; MV: 120` (40`); AC: 5; HD: 6; ATK: 1 (butt or trample); DMG: 2d4 or 2d8; SV: F3; ML: 6; TRS: None; XP: 570; THAC0: 14; BOOK: LL 93
+Rhinoceros, Woolly	CP CF CH CM	8	1	ENC: 0 (1d8); AL: N; MV: 120` (40`); AC: 4; HD: 8; ATK: 1 (butt or trample); DMG: 2d6 or 2d12; SV: F4; ML: 6; TRS: None; XP: 1,060; THAC0: 12; BOOK: LL 93
+Roc, Giant	TM	36	1	ENC: 0 (1); AL: L; MV: 60` (20`) Fly 480` (160`); AC: 0; HD: 36; ATK: 3 (2 claws, bite); DMG: 3d6/3d6/8d6; SV: F9; ML: 10; TRS: XIV; XP: 6,750; THAC0: 5; BOOK: LL 93
+Roc, Large	TM	12	1	ENC: 0 (1d8); AL: L; MV: 60` (20`) Fly 480` (160`); AC: 2; HD: 12; ATK: 3 (2 claws, bite); DMG: 1d8/1d8/2d10; SV: F6; ML: 9; TRS: XIV; XP: 1,200; THAC0: 10; BOOK: LL 93
+Roc, Small	TM	6	1	ENC: 0 (1d12); AL: L; MV: 60` (20`) Fly 480` (160`); AC: 4; HD: 6; ATK: 3 (2 claws, bite); DMG: 1d4+1/1d4+1/2d6; SV: F3; ML: 8; TRS: XIV; XP: 320; THAC0: 14; BOOK: LL 93
+Roper	DG	11	1	ENC: 1d3 (1d3); AL: CE; MV: 30` (10`); AC: 0; HD: 10-12; ATK: 1; DMG: 5d4; SV: F10-12; ML: 8; TRS: Vx2; XP: 2,400; THAC0: 11/11/10; BOOK: AEC 135
+Rot Grub	DG	1	1	ENC: 0 (5d4); AL: N; MV: 10` (2`); AC: 9; HD: 1 hp; ATK: special; DMG: special; SV: 0 human; ML: N/A; TRS: None; XP: 5; THAC0: 19; BOOK: LL 93
+Rust Monster	DG	5	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`); AC: 2; HD: 5; ATK: 1; DMG: special; SV: F3; ML: 7; TRS: None; XP: 500; THAC0: 15; BOOK: LL 93
+Sahuagin	SW	2	1	ENC: 4d4 (3d4x10); AL: LE; MV: 120` (40`) Swim 240` (80`); AC: 5; HD: 2+2; ATK: 3 (2 claws, bite) or 1 (weapon); DMG: 1d2/1d2/1d4 or As weapon; SV: F2; ML: 8; TRS: V, XI, XV; XP: 47; THAC0: 17; BOOK: AEC 135
+Salamander, Flame	PD TH TM DG	8	1	ENC: 1d4+1 (2d4); AL: N; MV: 120` (40`); AC: 2; HD: 8; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/1d8; SV: F8; ML: 8; TRS: XVII; XP: 2,060; THAC0: 12; BOOK: LL 94
+Salamander, Frost	CF CH CM DG	12	1	ENC: 1d3 (1d3); AL: C; MV: 120` (40`); AC: 3; HD: 12; ATK: 5 (4 claws, bite); DMG: 1d6 (per claw)/2d6; SV: F8; ML: 8; TRS: XVIII; XP: 3,600; THAC0: 10; BOOK: LL 94
+Satyr	PH	5	1	ENC: 2d4 (2d4); AL: N; MV: 180` (60`); AC: 5; HD: 5; ATK: 1 (horns); DMG: 2d4; SV: F5; ML: 7; TRS: IX, XVIII; XP: 350; THAC0: 15; BOOK: AEC 135
+Scorpion, Giant	PD PP PS PF PH PM TS TF TH TM DG	4	1	ENC: 1d6 (1d6); AL: C; MV: 150` (50`); AC: 2; HD: 4; ATK: 3 (2 claws, sting); DMG: 1d10/1d10/1d4 + poison; SV: F2; ML: 11; TRS: VII; XP: 190; THAC0: 16; BOOK: LL 94
+Sea Hag	SW	3	1	ENC: 1d4 (1d4); AL: CE; MV: 150` (50`); AC: 7; HD: 3; ATK: 1 (dagger); DMG: 1d4 (dagger); SV: F3; ML: 7; TRS: XIV; XP: 95; THAC0: 17; BOOK: AEC 135
+Sea Serpent	SW	6	1	ENC: 0 (2d6); AL: N; MV: Swim 150` (50`); AC: 5; HD: 6; ATK: 1 (bite or constrict); DMG: 2d6 or special; SV: F3; ML: 8; TRS: None; XP: 570; THAC0: 14; BOOK: LL 94
+Shadow	PS PF PM CF CM TS TF TM DG	2	1	ENC: 1d8 (1d12); AL: C; MV: 90` (30`); AC: 7; HD: 2+2; ATK: 1; DMG: 1d4 + special; SV: F2; ML: 12; TRS: XVII; XP: 83; THAC0: 17; BOOK: LL 94
+Shambling Mound	PS DG	10	1	ENC: 1d3 (1d3); AL: N; MV: 60` (20`); AC: 0; HD: 8-11; ATK: 2; DMG: 2d8/2d8; SV: F8-11; ML: 12; TRS: VIII, IX, XIV; XP: 1,820; THAC0: 12/12/11/11; BOOK: AEC 136
+Shark, Bull	SW	2	1	ENC: 0 (3d6); AL: N; MV: Swim 180` (60`); AC: 4; HD: 2; ATK: 1 (bite); DMG: 2d4; SV: F1; ML: 7; TRS: None; XP: 29; THAC0: 18; BOOK: LL 95
+Shark, Giant	SW	12	1	ENC: 1d3 (1d3); AL: N; MV: 180` (60`); AC: 5; HD: 10-15; ATK: 1 (bite); DMG: 4d4(10-11HD), 5d4(12-13 HD), 6d4 (14-15 HD); SV: F10-15; ML: 10; TRS: None; XP: 1,700; THAC0: 11/11/10/10/9/9; BOOK: AEC 136
+Shark, Great White	SW	8	1	ENC: 0 (1d4); AL: N; MV: Swim 180` (60`); AC: 4; HD: 8; ATK: 1 (bite); DMG: 2d10; SV: F4; ML: 7; TRS: None; XP: 1,060; THAC0: 12; BOOK: LL 95
+Shark, Mako	SW	4	1	ENC: 0 (2d6); AL: N; MV: Swim 180` (60`); AC: 4; HD: 4; ATK: 1 (bite); DMG: 2d6; SV: F2; ML: 7; TRS: None; XP: 135; THAC0: 16; BOOK: LL 95
+Shrew, Giant	DG	1	1	ENC: 1d4 (1d8); AL: N; MV: 180` (60`); AC: 4; HD: 1; ATK: 2 (bite); DMG: 1d6/1d6; SV: F1; ML: 10; TRS: None; XP: 19; THAC0: 19; BOOK: LL 95
+Shrieker	DG	3	1	ENC: 1d8 (0); AL: N; MV: 9` (3`); AC: 7; HD: 3; ATK: special; DMG: special; SV: F1; ML: 12; TRS: None; XP: 65; THAC0: 17; BOOK: LL 95
+Skeleton (Undead)	PD PS CF TS DG	1	1	ENC: 3d4 (3d10); AL: C; MV: 60` (20`); AC: 7; HD: 1; ATK: 1; DMG: 1d6 or weapon; SV: F1; ML: 12; TRS: None; XP: 13; THAC0: 19; BOOK: LL 95
+Slithering Tracker	DG	5	1	ENC: 1 (1); AL: N; MV: 120` (40`); AC: 5; HD: 5; ATK: 0; DMG: If victim sleeps SV paralyze; SV: F5; ML: 10; TRS: XX; XP: 500; THAC0: 15; BOOK: AEC 136
+Slug, Giant	DG	12	1	ENC: 1 (1); AL: N; MV: 60` (20`); AC: 8; HD: 12; ATK: 1 (bite); DMG: 1d12; SV: F12; ML: 10; TRS: None; XP: 2,000; THAC0: 10; BOOK: AEC 136
+Snake, Giant Python	PS TS TF TH TM	5	1	ENC: 1d3 (1d3); AL: N; MV: 90` (30`); AC: 6; HD: 5; ATK: 2 (bite, constrict); DMG: 1d4/2d8; SV: F3; ML: 8; TRS: VI; XP: 350; THAC0: 15; BOOK: LL 96
+Snake, Giant Rattler	PD	4	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`); AC: 5; HD: 4; ATK: 2 (bite); DMG: 1d4 + poison; SV: F2; ML: 8; TRS: VI; XP: 135; THAC0: 16; BOOK: LL 96
+Snake, Pit Viper	PP PS PF PH PM TS TF TH TM DG	2	1	ENC: 1d8 (1d8); AL: N; MV: 90` (30`); AC: 6; HD: 2; ATK: 1 (bite); DMG: 1d4 + poison; SV: F1; ML: 7; TRS: None; XP: 38; THAC0: 18; BOOK: LL 96
+Snake, Sea	SW	3	1	ENC: 1d8 (1d8); AL: N; MV: 90` (30`); AC: 6; HD: 3; ATK: 1 (bite); DMG: 1 + poison; SV: F2; ML: 7; TRS: None; XP: 65; THAC0: 17; BOOK: LL 96
+Snake, Spitting Cobra	PD PP PF PH PM DG	1	1	ENC: 1d6 (1d6); AL: N; MV: 90` (30`); AC: 7; HD: 1; ATK: 1 (bite or spit); DMG: 1d3 + poison; SV: F1; ML: 7; TRS: None; XP: 13; THAC0: 19; BOOK: LL 96
+Spectre (Undead)	PS PH PM CF CM TS DG	6	1	ENC: 1d4 (1d8); AL: C; MV: 150` (50`); AC: 2; HD: 6; ATK: 1 (touch); DMG: 1d8 + drain level; SV: F6; ML: 11; TRS: XVIII; XP: 1,070; THAC0: 14; BOOK: LL 96
+Sphinx, Androsphinx	TF TH TM DG	12	1	ENC: 1 (1); AL: CG; MV: 180` (60`) Fly 300` (100`); AC: -2; HD: 12; ATK: 2 (claws); DMG: 2d6/2d6; SV: F12; ML: 9; TRS: XVI; XP: 3,600; THAC0: 10; BOOK: AEC 137
+Sphinx, Criosphinx	TS TF TH TM DG	10	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`) Fly 240` (80`); AC: 0; HD: 10; ATK: 3 (2 claws, head butt); DMG: 2d4/2d4/3d6; SV: F10; ML: 9; TRS: XVIII; XP: 1,700; THAC0: 11; BOOK: AEC 137
+Sphinx, Gynosphinx	TF TH TM DG	8	1	ENC: 1 (1); AL: N; MV: 150` (50`) Fly 240` (80`); AC: -1; HD: 8; ATK: 2 (claws); DMG: 2d4/2d4; SV: F8; ML: 9; TRS: X, XIV; XP: 1,560; THAC0: 12; BOOK: AEC 137
+Sphinx, Hieracosphinx	TF TH TM DG	9	1	ENC: 1d6 (1d6); AL: CE; MV: 90` (30`) Fly 360` (120`); AC: 1; HD: 9; ATK: 3 (2 claws, beak); DMG: 2d4/2d4/1d10; SV: F9; ML: 10; TRS: XVIII; XP: 1,700; THAC0: 12; BOOK: AEC 137
+Spider, Giant Black Widow	PP PS PF PH PM TS TF TH TM DG	3	1	ENC: 1d3 (1d3); AL: N; MV: 60` (20`) Web 120` (40`); AC: 6; HD: 3; ATK: 1 (bite); DMG: 2d6 + poison; SV: F2; ML: 8; TRS: VI; XP: 80; THAC0: 17; BOOK: LL 97
+Spider, Giant Crab Spider	PP PS PF PH PM TS TF TH TM DG	2	1	ENC: 1d4 (1d4); AL: N; MV: 120` (40`); AC: 7; HD: 2; ATK: 1 (bite); DMG: 1d8 + poison; SV: F1; ML: 7; TRS: VI; XP: 38; THAC0: 18; BOOK: LL 97
+Spider, Giant Tarantula	PD	4	1	ENC: 1d3 (1d3); AL: N; MV: 120` (40`); AC: 5; HD: 4; ATK: 1 (bite); DMG: 1d8 + poison; SV: F2; ML: 8; TRS: VI; XP: 135; THAC0: 16; BOOK: LL 97
+Spider, Phase	PF PH PM TF TH TM DG	5	1	ENC: 1d4 (1d4); AL: N; MV: 60` (20`) On web 150` (50`); AC: 7; HD: 5+5; ATK: 1 (bite); DMG: 1d6 SV poison or die; SV: F5; ML: 8; TRS: XVIII; XP: 660; THAC0: 14; BOOK: AEC 137
+Sprite	PF	1	1	ENC: 3d6; AL: N; MV: 60` (20`) Fly 180` (60`); AC: 5; HD: 1d4 hp; ATK: 1 (spell); DMG: special; SV: E1; ML: 7; TRS: IV; XP: 6; THAC0: 19; BOOK: LL 97
+Squid, Giant	SW	6	1	ENC: 0 (1d4); AL: N; MV: Swim 120` (40`); AC: 7; HD: 6; ATK: 9 (8 tentacles, bite); DMG: 1d4 (all tentacles)/1d10; SV: F3; ML: 7 (9); TRS: VII; XP: 1,070; THAC0: 14; BOOK: LL 97
+Statue, Animate Crystal	DG	3	1	ENC: 1d6 (1d6); AL: L; MV: 90` (30`); AC: 4; HD: 3; ATK: 2 (fists); DMG: 1d6/1d6; SV: F3; ML: 11; TRS: None; XP: 65; THAC0: 17; BOOK: LL 98
+Statue, Animate Iron	DG	4	1	ENC: 1d4 (1d4); AL: N; MV: 30` (10`); AC: 4; HD: 4; ATK: 2 (fists); DMG: 1d8/1d8; SV: F4; ML: 11; TRS: None; XP: 190; THAC0: 16; BOOK: LL 98
+Statue, Animate Stone	DG	5	1	ENC: 1d3 (1d3); AL: C; MV: 60` (20`); AC: 4; HD: 5; ATK: 2 (fists); DMG: 2d6/2d6; SV: F5; ML: 11; TRS: None; XP: 500; THAC0: 15; BOOK: LL 98
+Stirge	PF TF DG	1	1	ENC: 1d10 (3d12); AL: N; MV: 30` (10`) Fly 180` (60`); AC: 7; HD: 1; ATK: 1; DMG: 1d3; SV: F2; ML: 9; TRS: XI; XP: 16; THAC0: 19; BOOK: LL 98
+Strangle Weed	FW SW	3	1	ENC: 3d4 (3d4); AL: N; MV: None; AC: 6; HD: 2-4; ATK: 1; DMG: Special; SV: F2-4; ML: N/A; TRS: I, II, III, IV, V, XI, XIV; XP: 29; THAC0: 18/17/16; BOOK: AEC 138
+Throghrin	DG	3	1	ENC: 1d6 (1d10); AL: C; MV: 120` (40`); AC: 6; HD: 3; ATK: 2 or 1 (2 claws or weapon); DMG: 1d3/1d3 or weapon; SV: F3; ML: 10; TRS: XX; XP: 80; THAC0: 17; BOOK: LL 98
+Tick, Giant	PS PF TS TF DG	3	1	ENC: 3d4 (3d4); AL: N; MV: 30` (10`); AC: 3; HD: 2-4; ATK: 1; DMG: 1d4; SV: F2-4; ML: 8; TRS: None; XP: 29; THAC0: 18/17/16; BOOK: AEC 138
+Titan	PM CM TM DG SW	19	1	ENC: 1d2 (1d2); AL: CG; MV: 210` (70`) or 150` (50`); AC: 2 to -3; HD: 17-22; ATK: 1 (fist); DMG: 7d6 or 8d6; SV: F17-22; ML: 10; TRS: X, XIx8, XVIII; XP: 4,250; 7,000; THAC0: 8/7/7/6/6/5; BOOK: AEC 138
+Toad, Giant	PD PP PS PF PH PM TS TF TH TM DG	27	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`); AC: 7; HD: 2+2; ATK: 1 (bite); DMG: 1d4+1; SV: F1; ML: 6; TRS: None; XP: 71; THAC0: 17; BOOK: LL 99
+Toad, Giant Ice	CP CF CH CM DG	5	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`); AC: 4; HD: 5; ATK: 1 (bite); DMG: 3d4; SV: F5; ML: 7; TRS: XIV; XP: 500; THAC0: 15; BOOK: AEC 138
+Toad, Giant Poisonous	PD PP PS PF PH PM TS TF TH TM DG	2	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`); AC: 7; HD: 2+2; ATK: 1 (bite); DMG: 1d4+1 SV poison or die; SV: F1; ML: 6; TRS: None; XP: 59; THAC0: 17; BOOK: AEC 138
+Trapper	DG	12	1	ENC: 1 (1); AL: N; MV: 30` (10`); AC: 3; HD: 12; ATK: 1 (squeeze); DMG: 1d6; SV: F12; ML: 10; TRS: XVII; XP: 2,000; THAC0: 10; BOOK: AEC 139
+Treant	PS PF CF	8	1	ENC: 0 (1d8); AL: L; MV: 60` (20`); AC: 2; HD: 8; ATK: 2; DMG: 2d6/2d6; SV: F8; ML: 6; TRS: XX; XP: 1,560; THAC0: 12; BOOK: LL 99
+Triton	SW	3	1	ENC: 3d4 (2d6x10); AL: NG; MV: Swim 150` (50`); AC: 5; HD: 3; ATK: 1 (weapon); DMG: As weapon; SV: F3; ML: 7; TRS: VIII, IX, X, XIX; XP: 50; THAC0: 17; BOOK: AEC 139
+Troglodyte	DG	2	1	ENC: 1d8 (5d8); AL: C; MV: 120` (40`); AC: 5; HD: 2; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/1d4; SV: F2; ML: 9; TRS: XXII; XP: 38; THAC0: 18; BOOK: LL 100
+Troll	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	6	1	ENC: 1d8 (1d8); AL: C; MV: 120` (40`); AC: 4; HD: 6+3; ATK: 3 (2 claws, bite); DMG: 1d6/1d6/1d10; SV: F6; ML: 10; TRS: XIX; XP: 600; THAC0: 13; BOOK: LL 100
+Turtle, Giant Sea	SW	15	1	ENC: 1d3 (1d3); AL: N; MV: 10` (3`) Swim 150` (50`); AC: 2 (head, flippers 5); HD: 15; ATK: 1 (bite); DMG: 4d4; SV: F15; ML: 6; TRS: None; XP: 1,500; THAC0: 9; BOOK: AEC 139
+Turtle, Giant Snapping	FW	10	1	ENC: 1d4 (1d4); AL: N; MV: 30` (10`) Swim 120` (40`); AC: 0 (head, flippers 5); HD: 10; ATK: 1 (bite); DMG: 6d4; SV: F10; ML: 9; TRS: None; XP: 1,700; THAC0: 11; BOOK: AEC 139
+Unicorn	PF PH	4	1	ENC: 1d6 (1d8); AL: L; MV: 240` (80`); AC: 2; HD: 4; ATK: 3 (2 hooves, horn); DMG: 1d8/1d8/1d8; SV: F8; ML: 7; TRS: None; XP: 135; THAC0: 16; BOOK: LL 100
+Vampire (Undead)	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	8	1	ENC: 1d4 (1d6); AL: C; MV: 120` (40`) Fly 180` (60`); AC: 2; HD: 7-9; ATK: 1 (touch or special); DMG: 1d10 or drain life energy; SV: F7 to F9; ML: 11; TRS: XVII; XP: 3,150; 5,060; 7,300; THAC0: 13/12/12; BOOK: LL 101
+Wasp, Giant	PD PP PS PF PH PM TS TF TH TM FW	4	1	ENC: 1d20 (1d20+20); AL: N; MV: 60` (20`) Fly 210` (70`); AC: 4; HD: 4; ATK: 2 (bite, sting); DMG: 2d4/1d4 sting SV poison or paralyze; SV: F4; ML: 10; TRS: XIx15; XP: 135; THAC0: 16; BOOK: AEC 140
+Weasel, Giant	PP PS PF PH PM CP CF CH CM	4	1	ENC: 1d4 (1d6); AL: N; MV: 150` (50`); AC: 7; HD: 4+4; ATK: 1 (bite); DMG: 2d4; SV: F3; ML: 8; TRS: VII; XP: 290; THAC0: 15; BOOK: LL 101
+Whale, Killer	SW	6	1	ENC: 0 (1d6); AL: N; MV: 240` (80`); AC: 6; HD: 6; ATK: 1 (bite); DMG: 1d20; SV: F3; ML: 10; TRS: VII; XP: 570; THAC0: 14; BOOK: LL 102
+Whale, Narwhal	SW	12	1	ENC: 0 (1d4); AL: L; MV: 180` (60`); AC: 7; HD: 12; ATK: 2 (bite, horn); DMG: 2d6/1d8; SV: F12; ML: 8; TRS: None; XP: 1,200; THAC0: 10; BOOK: LL 102
+Whale, Sperm	SW	36	1	ENC: 0 (1d3); AL: N; MV: 180` (60`); AC: 6; HD: 36; ATK: 1 (bite); DMG: 3d20; SV: F15; ML: 7; TRS: VII; XP: 12,500; THAC0: 5; BOOK: LL 102
+Wight (Undead)	PS PM CF CM TS TM DG	3	1	ENC: 1d6 (1d8); AL: C; MV: 90` (30`); AC: 5; HD: 3; ATK: 1; DMG: drain life energy; SV: F3; ML: 12; TRS: XXI; XP: 110; THAC0: 17; BOOK: LL 102
+Will-O-Wisp	PS PM CF CM TS TM DG	9	1	ENC: 1 (1d3); AL: CE; MV: 180` (60`); AC: -8; HD: 9; ATK: 1; DMG: 2d8; SV: F9; ML: 7; TRS: XVIII; XP: 3,100; THAC0: 12; BOOK: AEC 140
+Wind Walker	PD PM CM TM DG SW	6	1	ENC: 1d3 (1d3); AL: N; MV: 150` (50`) Fly 300` (100`); AC: 7; HD: 6+3; ATK: 1; DMG: 3d6; SV: F6; ML: 9; TRS: XXII; XP: 680; THAC0: 13; BOOK: AEC 140
+Wolf	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	2	1	ENC: 2d6 (3d6); AL: N; MV: 180` (60`); AC: 7; HD: 2+2; ATK: 1 (bite); DMG: 1d6; SV: F1; ML: 8; TRS: None; XP: 35; THAC0: 17; BOOK: LL 102
+Wolf, Dire	PP PS PF PH PM CP CF CH CM TS TF TH TM DG	4	1	ENC: 1d4 (2d4); AL: N; MV: 150` (50`); AC: 6; HD: 4+1; ATK: 1 (bite); DMG: 2d4; SV: F2; ML: 8; TRS: None; XP: 140; THAC0: 15; BOOK: LL 102
+Wolf, Winter	CP CF CH CM DG	6	1	ENC: 2d4 (2d4); AL: NE; MV: 180` (60`); AC: 5; HD: 6; ATK: 1 (bite) or 1 (breathe); DMG: 2d4 or 6d4 breathe (SV breath attacks for half damage); SV: F6; ML: 10; TRS: XIV; XP: 820; THAC0: 14; BOOK: AEC 140
+Wolverine	PF CF CH CM DG	3	1	ENC: 1 (1d3); AL: N; MV: 120` (40`); AC: 5; HD: 3; ATK: 3 (2 claws, bite); DMG: 1d4/1d4/1d4+1; SV: F3; ML: 10; TRS: None; XP: 80; THAC0: 17; BOOK: AEC 141
+Wolverine, Giant	PF CF CH CM DG	4	1	ENC: 1 (1d3); AL: N; MV: 150` (50`); AC: 4; HD: 4+4; ATK: 3 (2 claws, bite); DMG: 1d4+1/1d4+1/2d4; SV: F4; ML: 11; TRS: None; XP: 290; THAC0: 15; BOOK: AEC 141
+Wraith (Undead)	PS PM CF CM TS DG	4	1	ENC: 1d4 (1d6); AL: C; MV: 120` (40`) Fly 240` (80`); AC: 3; HD: 4; ATK: 1 (touch); DMG: 1d6 + drain life energy; SV: F4; ML: 12; TRS: XVIII; XP: 300; THAC0: 16; BOOK: LL 102
+Wyvern	PD PP PS PF PM TS TF TM DG	7	1	ENC: 1d2 (1d6); AL: C; MV: 90` (30`) Fly 240` (80`); AC: 3; HD: 7; ATK: 2 (bite, sting); DMG: 2d8/2d8 + poison; SV: F4; ML: 9; TRS: XVIII; XP: 1,140; THAC0: 13; BOOK: LL 103
+Xorn	PH PM CH CM TH DG	7	1	ENC: 1d4 (1d4); AL: N; MV: 90` (30`); AC: -2; HD: 7+7; ATK: 4 (3 claws, bite); DMG: 1d3/1d3/1d3/6d4; SV: F7; ML: 10; TRS: XIx3, XII, XIII, XXI; XP: 1,700; THAC0: 12; BOOK: AEC 141
+Yellow Mold	DG	2	1	ENC: 1d8 (1d4); AL: N; MV: 0; AC: NA; HD: 2; ATK: Spores; DMG: 1d6 + special; SV: F2; ML: NA; TRS: None; XP: 38; THAC0: 18; BOOK: LL 103
+Yeti	CH CM DG	4	1	ENC: 1d6 (2d4); AL: N; MV: 150` (50`); AC: 6; HD: 4+4; ATK: 2 (claws); DMG: 1d6/1d6; SV: F4; ML: 8; TRS: XX; XP: 38; THAC0: 15; BOOK: AEC 141
+Zombie (Undead)	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG	2	1	ENC: 2d4 (4d6); AL: C; MV: 120` (40`); AC: 8; HD: 2; ATK: 1; DMG: 1d8 or weapon; SV: F1; ML: 12; TRS: None; XP: 29; THAC0: 18; BOOK: LL 103
+--END--
+arrow trap
+arrow trap (poisoned)
+collapsing ceiling (blocks passage ahead)
+collapsing ceiling (blocks passage behind)
+compacting ceiling
+compacting walls
+dropping ceiling
+false door (pit trap)
+false door
+false door (poison needle)
+falling stones
+flooding passage
+flooding room
+fire ball
+gas (blinding)
+gas (confusion)
+gas (fear)
+gas (poison)
+gas (sleep)
+gas (slowing)
+lightning bolt
+pit (10' deep)
+pit (10' deep and floods)
+pit (10' deep with spikes)
+pit (10' deep with poison spikes)
+pit (locks shut)
+pit (locks shut and floods)
+pit (locks shut with spikes)
+pit (locks shut with poison spikes)
+portcullis trap (blocks passage ahead)
+portcullis trap (blocks passage behind)
+room (flooding)
+room (elevator)
+room (collapsing)
+room (spiked)
+room (compacting)
+scything blade
+sliding pit
+sliding pit (floods)
+sliding pit (spikes)
+sliding pit (poison spikes)
+sliding pit (locks shut)
+sliding pit (locks shut and floods)
+sliding pit (locks shut and spikes)
+sliding pit (locks shut and poison spikes)
+spear trap
+spear trap (poisoned)
+swinging ball/block
+teleporter
+--END--
+ashes
+axe, bloody
+bandages, bloody
+blood, dried
+blood, puddle
+blood, wet smear
+bones, broken
+boot, chewed
+candles, partly burned
+cart, broken
+cobwebs
+dagger hilt
+desiccated corpse
+excrement
+figurine, small wood
+firewood
+grappling hook, rusty
+grave marker
+helmet, cleaved
+holy symbol, ruined
+incense and burner
+potion bottle, empty
+rope, hemp, rotten
+sack, large, rotten
+shield, cracked
+shirt, stained
+skeletal part (random)
+skeleton, animal
+skeleton, human
+skin, furred, dry
+skin, tattooed, dry
+skull, animal
+skull, human
+skull, humanoid
+slimy ceiling
+slimy floor
+slimy wall
+spikes, iron, rusty
+stain, indiscernible
+stain, water
+stones, large
+stones, small
+key
+sword, long, broken 
+lantern, broken
+tooth, large sharp 
+manacles, rusty
+torch, partially burned 
+map, illegible
+warning (chalk on a wall)
+mirror, small, broken
+water, puddle 
+mold
+water, droplets on wall 
+moss
+waterskin, empty, rotten
+mushrooms
+withered flowers
+withered herbs
+--END--
+Locked Chest
+Locked Huge Chest
+Locked Iron Trunk
+Loose
+Bag
+Sack
+Coffer
+Chest
+Huge Chest
+Hidden in Wall
+Hidden under Floor
+Hidden
+Iron Trunk
+--END--
+Potion	268	1
+Ring	70	2
+Rod, Staff or Wand	70	3
+Armor	200	4
+Scroll (Ward)	70	5
+Scroll (Cursed)	10	0
+Scroll (Cleric)	27	12
+Scroll (Druid)	18	13
+Scroll (Illusionist)	18	14
+Scroll (Magic User)	117	15
+Treasure Map	117	16
+Magic Sword	100	6
+Magic Weapon	100	7
+Magic Items	200	8
+Gem	490	9
+Gems (1d4)	280	9
+Gems (1d6)	190	9
+Gems (1d8)	130	9
+Gems (1d10)	90	9
+Gems (1d12)	20	9
+Amulet	40	10
+Anklet	40	10
+Belt	40	10
+Box	40	10
+Bracelet	40	10
+Brooch	40	10
+Buckle	40	10
+Chain	40	10
+Chalice	40	10
+Choker	40	10
+Clasp	40	10
+Comb	40	10
+Coronet	40	10
+Crown	40	10
+Diadem	40	10
+Earring	40	10
+Goblet	40	10
+Idol	40	10
+Knife	40	10
+Locket	40	10
+Medal	40	10
+Medallion	40	10
+Necklace	40	10
+Orb	40	10
+Pendant	40	10
+Pin	40	10
+Ring	40	10
+Sceptre	40	10
+Seal	40	10
+Statuette	40	10
+Tiara	40	10
+Loot	500	11
+--END--
+Animal Control 	1
+Clairaudience 	1
+Clairvoyance 	1
+Climbing 	1
+Delusion 	1
+Diminution 	1
+Dragon Control 	1
+ESP 	1
+Extra-healing 	1
+Fire Resistance 	1
+Flying 	1
+Gaseous form 	1
+Giant Control 	1
+Giant Strength 	1
+Growth 	1
+Healing 	1
+Heroism 	1
+Human Control 	1
+Invisibility 	1
+Invulnerability 	1
+Levitation 	1
+Longevity 	1
+Oil of Etherealness 	1
+Oil of Slipperiness 	1
+Philter of Love 	1
+Plant Control 	1
+Poison 	1
+Polymorph 	1
+Speed 	1
+Super-heroism 	1
+Sweet Water 	1
+Treasure Finding 	1
+Undead Control 	1
+Water Breathing 	1
+--END--
+Animal Command 	1
+Command Human 	1
+Command Plant 	1
+Delusion 	1
+Djinni Calling 	1
+Fire Resistance 	1
+Invisibility 	1
+Protection 	1
+Regeneration 	1
+Spell Storing 	1
+Spell Turning 	1
+Telekinesis 	1
+Water Walking 	1
+Weakness 	1
+Wishes 	1
+X-ray Vision 	1
+--END--
+Rod of Absorption 	4
+Rod of Cancellation (LL) 	3
+Rod of Captivation 	2
+Rod of Lordly Might 	2
+Rod of Resurrection 	3
+Rod of Rulership 	2
+Rod of Striking 	3
+Staff of Commanding [C] (LL) 	2
+Staff of Healing [C] (LL) 	3
+Staff of the Magi 	1
+Staff of Power [MU/E] (LL) 	3
+Staff of Striking [C] (LL) 	3
+Staff of Withering [C] (LL) 	2
+Staff of Wizardry [MU/E] (LL) 	2
+Staff of the Serpent [C] (LL) 	5
+Wand of Cold (LL) 	2
+Wand of Detecting Enemies (LL) 	3
+Wand of Detecting Magic (LL) 	3
+Wand of Detecting Metals (LL) 	3
+Wand of Detecting Secret Doors (LL) 	3
+Wand of Detecting Traps (LL) 	3
+Wand of Device Negation (LL) 	2
+Wand of Fear (LL) 	2
+Wand of Fire 	2
+Wand of Fire Balls (LL) 	3
+Wand of Ice 	3
+Wand of Illusion (LL) 	3
+Wand of Light 	3
+Wand of Lightning 	2
+Wand of Lightning Bolts (LL) 	3
+Wand of Magic Missiles (LL) 	4
+Wand of Negation 	2
+Wand of Paralyzation (LL) 	3
+Wand of Polymorphing (LL) 	3
+Wand of Summoning 	2
+Wand of Wonder 	3
+--END--
+Armor +1 	15
+Armor +1 and Shield +1 	5
+Armor +1 and Shield +2 	2
+Armor +1 and Shield +3 	1
+Armor +2 	5
+Armor +2 and Shield +1 	3
+Armor +2 and Shield +2 	3
+Armor +2 and Shield +3 	1
+Armor +3 	1
+Armor +3 and Shield +1 	1
+Armor +3 and Shield +2 	1
+Armor +3 and Shield +3 	1
+Shield +1 	10
+Shield +2 	10
+Shield +3 	5
+Armor –1 (cursed) 	3
+Armor –2 (cursed) 	3
+Armor –1 (cursed) and Shield +1 	1
+Armor –2 (cursed) and Shield +1 	1
+Armor AC 9 (cursed) 	3
+Shield –1 (cursed) 	3
+Shield –2 (cursed) 	3
+Shield AC 9 (cursed) 	3
+--END--
+Elemental Warding	2
+Lycanthrope Warding	2
+Magic Warding	3
+Undead Warding	2
+--END--
+Sword +1 	14
+Sword +1, +2 versus lycanthropes (LL) 	5
+Sword +1, +2 versus spell casters (LL) 	5
+Sword +1, +3 versus undead (LL) 	5
+Sword +1, +3 versus dragons (LL) 	5
+Sword +1, +3 vs. regenerating monsters (LL) 	5
+Sword +1, +3 versus magical monsters (LL) 	5
+Sword +1, Dancing 	3
+Sword +1, Dismembering 	1
+Sword +1, Wounding 	2
+Sword +1, light 30Ê radius 	3
+Sword +1, Flame Tongue (LL) 	1
+Sword +1, Life Drinker (LL) 	1
+Sword +1, locate objects	2
+Sword +1, Luck Blade (LL) 	1
+Sword +1, Wish Blade (LL) 	1
+Sword +2 	10
+Sword +2, +3 versus giants 	5
+Sword +2, Berserking 	1
+Sword +2, Holy Avenger 	1
+Sword +2, Nine Lives Stealer 	1
+Sword +2, charm person 	2
+Sword +3 	2
+Sword +3, Frost Brand (LL) 	2
+Sword +4, Defending 	1
+Sword –1 (cursed) 	4
+Sword –2 (cursed) 	4
+Sapient Sword (LL) 	1
+--END--
+Arrows +1 (quantity 2d6) 	5
+Arrows +1 (quantity 3d10) 	4
+Arrows +2 (quantity 1d6) 	3
+Arrows +3 (quantity 1d4) 	2
+Arrow +3, Slaying Arrow (LL) 	2
+Axe +1 	5
+Axe +2 	3
+Bow +1 	4
+Crossbow Bolts +1 (quantity 2d6) 	5
+Crossbow Bolts +1 (quantity 3d10 	4
+Crossbow Bolts +2 (quantity 1d6) 	3
+Crossbow Bolts +3 (quantity 1d4) 	2
+Dagger -1, cursed 	3
+Dagger +1 	8
+Dagger +1, Venom 	1
+Dagger +2, +3 versus goblins, kobolds and orcs 	2
+Dagger +2, Assassin 	1
+Mace +1 	5
+Mace +1, Disruption 	2
+Mace +2 	3
+Sling +1 	5
+Spear +1 	4
+Spear +2 	3
+Spear +3 	2
+Trident +1, Fish Command 	3
+Trident +2, Warning 	3
+War Hammer +1 	7
+War Hammer +2 	4
+War Hammer +2, Dwarven Thrower (LL) 	2
+--END--
+Amulet against Possession 	1
+Amulet of the Planes 	1
+Amulet of Proof against Detection and Location	1
+Amulet of Inescapable Location 	1
+Amulet versus Crystal Balls and ESP (LL) 	1
+Arrow of Location 	1
+Apparatus of the Crab (LL) 	1
+Bag of Devouring (LL) 	1
+Bag of Holding (LL) 	1
+Bag of Transformation 	1
+Bag of Tricks 	1
+Boat, Folding (LL) 	1
+Book of Chaotic Wisdom 	1
+Book of Infinite Spells 	1
+Book of Lawful Wisdom 	1
+Boots of Dancing 	1
+Boots of Levitation (LL) 	1
+Boots of Speed (LL) 	1
+Boots of Traveling and Springing (LL) 	1
+Bowl of Commanding Water Elementals (LL) 	1
+Bowl of Drowning 	1
+Bracers of Armor (LL) 	1
+Brazier of Commanding Fire Elementals (LL) 	1
+Brazier of Cursed Sleep 	1
+Brooch of Shielding (LL) 	1
+Broom of Animated Attack 	1
+Broom of Cursed Flight 	1
+Broom of Flying (LL) 	1
+Censer of Controlling Air Elementals (LL) 	1
+Censer of Cursed Summoning 	1
+Chime of Cannibalism 	1
+Chime of Opening (LL) 	1
+Cloak of Arachnida 	1
+Cloak of Poisonousness 	1
+Cloak of Protection (LL) 	1
+Crystal Ball (LL) 	1
+Crystal Ball with Clairaudience (LL) 	1
+Crystal Ball with ESP (LL) 	1
+Crystal Hypnosis Ball 	1
+Cube of Force (LL) 	1
+Cube of Frost Resistance (LL) 	1
+Cubic Gate 	1
+Decanter of Endless Water (LL) 	1
+Deck of Many Things 	1
+Displacer Cloak (LL) 	1
+Drums of Panic (LL) 	1
+Drums of Stunning 	1
+Dust of Appearance (LL) 	1
+Dust of Disappearance (LL) 	1
+Dust of Sneezing and Choking 	1
+Eversmoking Bottle 	1
+Efreeti Bottle (LL) 	1
+Elven Cloak (LL) 	1
+Elven Boots (LL) 	1
+Eyes of Charming (LL) 	1
+Eyes of the Eagle (LL) 	1
+Eyes of Magnification  	1
+Eyes of Petrification (LL) 	1
+Feather Token 	1
+Figurines of Wondrous Power 	1
+Flask of Curses 	1
+Flying Carpet (LL) 	1
+Gauntlets of Fumbling	1
+Gauntlets of Ogre Power (LL) 	1
+Gem of Brightness 	1
+Gem of Seeing 	1
+Girdle of Giant Strength (LL) 	1
+Gloves of Dexterity 	1
+Gloves of Swimming and Climbing 	1
+Golem Manual 	1
+Helm of Alignment Changing (LL) 	1
+Helm of Brilliance 	1
+Helm of Comprehend Languages and Read 	1
+Magic (LL) 	1
+Helm of Opposite Alignment 	1
+Helm of Telepathy (LL) 	1
+Helm of Teleportation (LL) 	1
+Helm of Underwater Action 	1
+Horn of Blasting (LL) 	1
+Horn of Valhalla 	1
+Horseshoes of Speed 	1
+Horseshoes of a Zephyr 	1
+Incense of Meditation 	1
+Incense of Obsession 	1
+Instant Fortress 	1
+Ioun Stones 	1
+Javelin of Lightning 	1
+Jewel of Monster Attraction 	1
+Lyre of Building 	1
+Manual of Bodily Health 	1
+Manual of Gainful Exercise 	1
+Manual of Quickness of Action 	1
+Marvelous Pigments 	1
+Mattock of the Titans 	1
+Maul of the Titans 	1
+Medallion of thoughts (LL) 	1
+Medallion of thoughts (90') (LL) 	1
+Mirror of Life Trapping (LL) 	1
+Mirror of Mental Prowess 	1
+Mirror of Opposition (LL) 	1
+Necklace of Adaptation (LL) 	1
+Necklace of Strangulation 	1
+Net of Entanglement 	1
+Net of Snaring 	1
+Ointment of Healing 	1
+Pearl of Power 	1
+Pearl of Wisdom 	1
+Periapt of Foul Rotting 	1
+Periapt of Health 	1
+Periapt of Proof against Poison 	1
+Periapt of Wound Closure 	1
+Phylactery of Faithfulness 	1
+Phylactery of Undead Turning 	1
+Phylactery of Youth 	1
+Pipes of the Sewers 	1
+Portable Hole 	1
+Potion Jug 	1
+Robe of the Archmagi 	1
+Robe of Blending 	1
+Robe of Eyes 	1
+Robe of Powerlessness 	1
+Robe of Scintillating Colors 	1
+Robe of Useful Items 	1
+Rope of Climbing (LL) 	1
+Rope of Entanglement 	1
+Rope of Strangulation 	1
+Scarab of Death 	1
+Scarab of Protection (LL) 	1
+Slippers of Spider Climbing 	1
+Sphere of Annihilation 	1
+Stone of Controlling Earth Elementals (LL) 	1
+Stone of Good Luck (Luckstone) 	1
+Stone of Weight (Loadstone) 	1
+Talisman of Pure Good 	1
+Talisman of the Sphere 	1
+Talisman of Ultimate Evil 	1
+Tome of Clear Thought 	1
+Tome of Knowledge 	1
+Tome of Leadership and Influence 	1
+Tome of Martial Knowledge 	1
+Tome of Stealth 	1
+Tome of Understanding 	1
+Well of Many Worlds 	1
+Wings of Flying 	1
+--END--
+Banded Eye (10gp)	20
+Moss Agate (10gp)	20
+Azurite (10gp)	20
+Blue Quartz (10gp)	20
+Hematite (10gp)	20
+Lapis Lazuli (10gp)	20
+Malachite (10gp)	20
+Obsidian (10gp)	20
+Rhodochrosite (10gp)	20
+Tiger Eye (10gp)	20
+Turquoise (10gp)	20
+Freshwater Pearl (10gp)	20
+Bloodstone (50gp)	16
+Carnelian (50gp)	16
+Chalcedony (50gp)	16
+Chryso-Prase (50gp)	16
+Citrine (50gp)	16
+Iolite (50gp)	16
+Jasper (50gp)	16
+Moonstone (50gp)	16
+Onyx (50gp)	16
+Peridot (50gp)	16
+Clear Quartz (50gp)	16
+Sardonyx (50gp)	16
+Rose Quartz (50gp)	16
+Smoky Quartz (50gp)	16
+Star Rose Quartz (50gp)	16
+Zircon (50gp)	16
+Amber (100gp)	8
+Amethyst (100gp)	8
+Chrysoberyl (100gp)	8
+Coral (100gp)	8
+Red Garnet (100gp)	8
+Green Garnet (100gp)	8
+Jade (100gp)	8
+White Pearl (100gp)	8
+Golden Pearl (100gp)	8
+Pink Pearl (100gp)	8
+Silver Pearl (100gp)	8
+Red Spinel (100gp)	8
+Green Spinel (100gp)	8
+Tourmaline (100gp)	8
+Alexandrite (500gp)	4
+Aquamarine (500gp)	4
+Violet Garnet (500gp)	4
+Black Pearl (500gp)	4
+Deep Blue Spinel (500gp)	4
+Golden Yellow Topaz (500gp)	4
+Emerald (1,000gp)	2
+White Opal (1,000gp)	2
+Black Opal (1,000gp)	2
+Fire Opal (1,000gp)	2
+Blue Sapphire (1,000gp)	2
+Fiery Yellow Corundum (1,000gp)	2
+Rich Purple Corundum (1,000gp)	2
+Blue Sapphire (1,000gp)	2
+Black Star Sapphire (1,000gp)	2
+Star Ruby (1,000gp)	2
+Diamond (5,000gp)	1
+--END--
+Silver (1d10x100gp)	32
+Silver and Gold (2d6x100gp)	16
+Gold (3d6x100gp)	8
+Silver and Gems (5d6x100gp)	4
+Gold and Gems (2d4x1,000gp)	2
+Exceptional (2d6x1,000gp)	1
+--END--
+55pp / 21gp / 3ep / 1cp   1   0
+1pp / 1gp / 4ep / 7sp / 20cp   1   0
+15pp / 59gp / 9ep / 12sp / 910cp   1   0
+12gp / 7ep / 83sp / 840cp   1   0
+8 inch tall granite carving of a hand worth 5gp   1   0
+1pp / 8gp / 1ep / 6sp / 780cp   1   0
+16ep / 40cp   1   0
+1,010gp / 85ep / 237sp / 2,510cp   1   0
+9pp / 4gp / 32ep / 16sp / 20cp   1   0
+JEWELRY: Silver Goblet (75gp)   1   0
+112pp / 48gp / 6ep / 39sp / 1,120cp   1   0
+a brown cloth satchel of exquisite coins from a long dead civilization that are made of sandstone with a symbol of a eye on it (30 ea) worth 48gp   1   0
+13pp / 1gp / 2ep / 2sp / 10cp   1   0
+a strange purple, stitched fur cloak worth 6gp   1   0
+4pp / 37gp / 3ep   1   0
+60pp / 133gp / 42ep / 59sp / 920cp   1   0
+1pp / 3gp / 1sp / 5cp   1   0
+29gp / 80sp / 225cp   1   0
+11gp / 5ep   1   0
+61pp / 145gp / 294ep / 102sp / 3,260cp   1   0
+1gp / 2ep / 10cp   1   0
+21pp / 2gp / 1ep / 1sp / 30cp   1   0
+2pp / 4gp / 8ep   1   0
+a gorgeous iron flask of coffin nails worth 31gp to an herbalist   1   0
+JEWELRY: Golden Bracelet (110gp)   1   0
+GEM: Black Pearl (105gp)   1   0
+a rare yellow, sewn wool coat worth 68gp   1   0
+120cp   1   0
+116,000cp   1   0
+19gp / 6ep / 1sp / 30cp   1   0
+a delightful white, tailored cloth robe worth 30gp   1   0
+JEWELRY: Silvery Gold Earring (24gp)   1   0
+112pp / 229gp / 62ep / 16sp / 180cp   1   0
+17pp / 6gp / 3ep / 3sp / 65cp   1   0
+1ep / 76sp / 1,565cp   1   0
+37ep / 5,650cp   1   0
+2pp / 3gp / 171cp   1   0
+9pp / 15gp / 10ep / 1sp / 5cp   1   0
+47pp / 195gp / 28ep / 6sp / 480cp   1   0
+42pp / 49gp / 4ep / 22sp / 1,960cp   1   0
+1pp / 6gp / 5ep   1   0
+a splendid, small journal titled `The Book of Beelzebuth the Hobbit` and is bound in brown animal skin with violet colored symbols of a snake on the front and a eye on the back, and is worth 35gp   1   0
+6ep / 4,650cp   1   0
+JEWELRY: Silvery Gold Choker (168gp)   1   0
+an odd ceremonial knife made of steel worth 12gp   1   0
+1pp / 16gp / 44ep / 6sp / 65cp   1   0
+JEWELRY: Silver Box (24gp)   1   0
+268gp / 56ep / 363sp / 8,140cp   1   0
+11pp / 24gp / 5ep / 1sp / 80cp   1   0
+41pp / 290ep / 5,981sp / 82,880cp   1   0
+4pp / 14gp / 25ep / 85sp / 2,050cp   1   0
+2pp / 22gp / 5ep / 14sp / 110cp   1   0
+2pp / 25gp / 4ep / 3sp / 20cp   1   0
+a wonderful decorative axe made of iron and the name of `Nahehoehsas` is engraved on the head worth 49gp   1   0
+3pp / 33gp / 8ep / 39sp / 770cp   1   0
+1pp / 9ep / 1sp / 245cp   1   0
+77ep / 65sp / 265cp   1   0
+7 inch tall golden statue of a buffalo worth 12gp   1   0
+293sp / 10,341cp   1   0
+a fine painting of a wolf worth 625gp   1   0
+40pp / 56gp / 19ep / 15sp / 1,150cp   1   0
+636sp / 23,280cp   1   0
+81ep / 9,450cp   1   0
+2gp / 340cp   1   0
+JEWELRY: Golden Coronet (168gp)   1   0
+73pp / 129gp / 53ep / 87sp / 210cp   1   0
+8pp / 18gp / 2ep / 4sp / 20cp   1   0
+a magnificent bundle of demon leather worth 12gp   1   0
+6pp / 1gp / 1sp   1   0
+JEWELRY: Exceptional Earring (20gp)   1   0
+972sp / 8,560cp   1   0
+a unique, small compendium titled `Mystery of the Crown of Orler` and is bound in blue deer skin, and is worth 6gp   1   0
+a gorgeous gray, stitched wool shirt worth 13gp   1   0
+8pp / 18gp / 60ep / 9sp / 20cp   1   0
+GEM: Red Spinel (5gp)   1   0
+66pp / 197ep / 1,217sp / 4,310cp   1   0
+1pp / 2gp / 1ep / 3sp   1   0
+4pp   1   0
+2pp / 2gp / 1ep / 10cp   1   0
+JEWELRY: Silver Arm-ring (18gp)   1   0
+GEM: Moss Agate (4gp)   1   0
+4pp / 3gp / 2ep / 3sp / 240cp   1   0
+31gp / 6ep / 9sp / 1,820cp   1   0
+GEM: Emerald (113gp)   1   0
+23pp / 31gp / 100ep / 305sp / 4,300cp   1   0
+a rare musical mandolin worth 83gp   1   0
+16ep / 41sp / 2,430cp   1   0
+a lovely lexicon titled `The Bufallo in the Keep` and is bound in brown snake skin with a maroon colored symbol of a griffin on the front, and is worth 11gp   1   0
+18pp / 32gp / 15sp / 1,675cp   1   0
+8gp / 131ep / 282sp / 5,160cp   1   0
+81gp / 3,936sp / 7,680cp   1   0
+571sp / 28,580cp   1   0
+1,127gp / 813ep / 269sp / 3,270cp   1   0
+1gp / 2ep / 2sp   1   0
+42pp / 29gp / 8ep / 41sp / 81cp   1   0
+2gp / 4ep / 1sp / 1cp   1   0
+73pp / 135gp / 273ep / 174sp / 370cp   1   0
+17pp / 1gp / 2ep / 1sp / 205cp   1   0
+4,177sp / 20,460cp   1   0
+JEWELRY: Silver Bracelet (198gp)   1   0
+157gp / 13ep / 21sp / 30cp   1   0
+630gp / 40ep / 33sp / 18,340cp   1   0
+JEWELRY: Silver Clasp (27gp)   1   0
+GEM: Turquoise (1gp)   1   0
+JEWELRY: Golden Bracelet (80gp)   1   0
+GEM: Citrine (14gp)   1   0
+55gp / 18ep / 151sp / 1,455cp   1   0
+311sp / 31,580cp   1   0
+JEWELRY: Silvery Gold Amulet (60gp)   1   0
+a small green cloth sack of unique coins from a missing land that are made of bronze with a symbol of a eagle on it (11 ea) worth 80gp   1   0
+2ep / 1sp / 15cp   1   0
+13pp / 6gp / 2ep   1   0
+JEWELRY: Silvery Gold Bracelet (77gp)   1   0
+1pp / 8gp / 2ep / 6sp / 40cp   1   0
+GEM: White Opal (308gp)   1   0
+15gp / 104sp / 920cp   1   0
+25sp / 11cp   1   0
+6gp / 9ep / 9sp / 30cp   1   0
+3pp / 48gp / 26ep / 7sp / 4,860cp   1   0
+1pp / 22gp / 17ep / 9sp / 1,145cp   1   0
+15pp / 170gp / 2ep / 7sp / 10cp   1   0
+GEM: Black Star Sapphire (320gp)   1   0
+GEM: Green Spinel (2gp)   1   0
+an elegant white, sewn wool cloak worth 7gp   1   0
+24pp / 29gp / 26ep / 94sp / 1,495cp   1   0
+1pp / 2gp / 3ep / 2sp / 55cp   1   0
+GEM: White Opal (21gp)   1   0
+2pp / 13sp / 660cp   1   0
+1gp / 1ep   1   0
+26gp / 386sp / 1,680cp   1   0
+3pp / 2gp / 3ep / 4sp / 170cp   1   0
+9pp / 64gp / 119ep / 10sp / 50cp   1   0
+28pp / 72gp / 80ep / 62sp / 2,060cp   1   0
+10gp / 4sp / 1,395cp   1   0
+20pp / 59gp / 2ep / 2sp / 160cp   1   0
+351gp / 463ep / 107sp / 2,610cp   1   0
+an unusual musical mandolin worth 94gp   1   0
+4gp / 180ep / 7sp / 1,710cp   1   0
+640sp / 17,200cp   1   0
+5pp / 2ep / 13sp / 1,190cp   1   0
+5pp / 21gp / 1ep / 4sp / 70cp   1   0
+1gp / 1sp / 15cp   1   0
+GEM: Fire Opal (350gp)   1   0
+GEM: Lapis Lazuli (2gp)   1   0
+7gp / 10ep / 63sp / 15cp   1   0
+111ep / 10,201cp   1   0
+2pp / 103gp / 77ep / 423sp / 2,641cp   1   0
+176gp / 111ep / 707sp / 4,035cp   1   0
+1pp / 1gp / 2ep / 6sp / 5cp   1   0
+371gp / 767ep / 443sp / 10,690cp   1   0
+22pp / 3gp / 2ep / 3sp / 40cp   1   0
+JEWELRY: Silvery Gemmed Arm-ring (300gp)   1   0
+130pp / 115ep / 15sp / 22,450cp   1   0
+77,000cp   1   0
+33pp / 35gp / 4ep / 27sp / 260cp   1   0
+514ep / 56sp / 15,680cp   1   0
+152ep / 269sp / 7,020cp   1   0
+20pp / 1gp / 43ep / 6sp / 130cp   1   0
+a strange small blue rug with a dark purple design on it worth 54gp   1   0
+9pp / 4gp / 26ep / 101sp / 2,580cp   1   0
+2pp / 3gp / 1ep / 1sp / 70cp   1   0
+1sp / 40cp   1   0
+7gp / 19ep / 252sp / 435cp   1   0
+6pp / 15gp / 212ep / 10sp / 1,275cp   1   0
+58gp / 19ep / 15sp / 75cp   1   0
+JEWELRY: Silver Earring (30gp)   1   0
+3pp / 1gp / 1ep   1   0
+1pp / 5gp / 1ep / 1sp / 10cp   1   0
+a large brown canvas satchel of extraordinary coins from long ago that are made of pewter with a symbol of a dog on it (51 ea) worth 33gp   1   0
+8gp / 43ep / 67sp / 990cp   1   0
+a fine musical lute worth 1,100gp   1   0
+116,000cp   1   0
+JEWELRY: Golden Clasp (155gp)   1   0
+27pp / 11gp / 266ep / 364sp / 16,820cp   1   0
+3pp / 261gp / 82ep / 239sp / 3,770cp   1   0
+27gp / 33sp / 90cp   1   0
+13pp / 42gp / 1ep / 61sp / 180cp   1   0
+62gp / 3ep / 16sp / 156cp   1   0
+7 inch tall sandstone carving of a snake worth 18gp   1   0
+GEM: Moonstone (3gp)   1   0
+3pp / 5gp / 59ep / 9sp / 525cp   1   0
+a wonderful fox fur cape worth 315gp   1   0
+JEWELRY: Silver Chain (9gp)   1   0
+GEM: Star Rose Quartz (12gp)   1   0
+61pp / 201sp / 9,480cp   1   0
+15pp / 18gp / 118ep / 22sp / 5,060cp   1   0
+GEM: Alexandrite (197gp)   1   0
+45pp / 34gp / 75ep / 65sp / 5,050cp   1   0
+57pp / 76gp / 53ep / 10sp / 50cp   1   0
+96pp / 573gp / 13ep / 48sp / 1,090cp   1   0
+582sp / 9,360cp   1   0
+77pp / 28gp / 139ep / 46sp / 330cp   1   0
+2pp / 20gp / 12ep / 5sp / 300cp   1   0
+42gp / 60ep / 77sp / 260cp   1   0
+3pp / 17gp / 2ep   1   0
+4 inch tall limestone carving of a unicorn worth 69gp   1   0
+a gorgeous musical mandolin worth 15gp   1   0
+195pp / 21gp / 2ep / 2sp / 260cp   1   0
+976sp / 16,480cp   1   0
+68sp / 4,490cp   1   0
+an elegant glass bottle of black cat hair worth 17gp to an herbalist   1   0
+11sp / 1,205cp   1   0
+JEWELRY: Golden Arm-ring (120gp)   1   0
+8pp / 6gp / 2ep / 16sp / 80cp   1   0
+a pretty, large omnibus titled `The Chronicles of Mozed the Cavalier` and is bound in brown animal skin with scarlet colored symbols of a dragon on the front and a wolf on the back, and is worth 67gp   1   0
+3pp / 9gp / 1ep / 16sp / 200cp   1   0
+1gp / 48sp / 440cp   1   0
+50ep / 3sp / 140cp   1   0
+JEWELRY: Silver Box (18gp)   1   0
+97pp / 544gp / 108ep / 2,960sp / 70,000cp   1   0
+JEWELRY: Silvery Gold Earring (90gp)   1   0
+1gp / 1ep / 1sp / 25cp   1   0
+a fine green, fashioned silk cape worth 46gp   1   0
+25pp / 96gp / 538ep / 4sp / 4,920cp   1   0
+31ep / 2sp / 30cp   1   0
+JEWELRY: Golden Chalice (11gp)   1   0
+61pp / 51gp / 56ep / 37sp / 10cp   1   0
+JEWELRY: Exceptional Earring (480gp)   1   0
+1pp / 2gp / 18ep / 85sp / 600cp   1   0
+1pp / 1gp / 11ep / 7sp / 60cp   1   0
+an exquisite musical horn worth 126gp   1   0
+GEM: Obsidian (2gp)   1   0
+GEM: Blue-white Diamond (360gp)   1   0
+18pp / 9gp / 14ep / 16sp / 105cp   1   0
+a superb musical recorder worth 9gp   1   0
+24pp / 171gp / 250ep / 339sp / 28,620cp   1   0
+a small brown leather satchel of rare coins of an old race that are made of steel with a symbol of a man on it (23 ea) worth 5gp   1   0
+716sp / 1,205cp   1   0
+JEWELRY: Exceptional Earring (880gp)   1   0
+2pp / 38gp / 3ep / 6sp / 105cp   1   0
+43pp / 12gp / 47ep / 124sp / 970cp   1   0
+1pp / 7ep / 14sp / 355cp   1   0
+2,626cp   1   0
+2pp / 14gp / 5ep / 1sp / 30cp   1   0
+GEM: Rose Quartz (20gp)   1   0
+30ep / 49sp / 85cp   1   0
+2gp / 3ep / 1sp / 5cp   1   0
+1pp / 1gp / 5ep / 1sp / 30cp   1   0
+a magnificent silver-colored, decanter of bugbear herbs worth 21gp to an alchemist   1   0
+68ep / 14,450cp   1   0
+an elegant clay jug of kraken spit worth 36gp to an herbalist   1   0
+17pp / 18gp / 134ep / 68sp / 540cp   1   0
+6pp / 9gp   1   0
+GEM: Emerald (315gp)   1   0
+1gp / 3ep / 1sp / 15cp   1   0
+277ep / 734sp / 11,470cp   1   0
+4pp / 41gp / 8ep / 32sp / 211cp   1   0
+6gp / 4ep / 1sp / 20cp   1   0
+GEM: Sard Quartz (9gp)   1   0
+280sp / 41,150cp   1   0
+JEWELRY: Silvery Gold Broach (288gp)   1   0
+2pp / 2gp / 6ep   1   0
+16gp / 27ep / 2sp / 10cp   1   0
+a magnificent black, fashioned fur dress worth 47gp   1   0
+7 inch tall onyx carving of a pegasus worth 137gp   1   0
+3pp / 14gp / 309ep / 31sp / 5cp   1   0
+3pp / 3gp / 2ep / 3sp / 65cp   1   0
+417gp / 32ep / 21sp / 280cp   1   0
+36pp / 84gp / 485ep / 25sp / 2,850cp   1   0
+a brown canvas rucksack of nice coins of an old race that are made of iron with a symbol of a dragon on it (33 ea) worth 9gp   1   0
+5pp / 7gp / 28ep / 7sp / 260cp   1   0
+72pp / 271gp / 134ep / 57sp / 4,060cp   1   0
+JEWELRY: Silver Amulet (147gp)   1   0
+1ep / 400cp   1   0
+790sp / 11,800cp   1   0
+9ep / 6,901cp   1   0
+5pp / 22gp / 14ep / 53sp / 140cp   1   0
+625gp / 94ep / 91sp / 4,480cp   1   0
+JEWELRY: Golden Coronet (4gp)   1   0
+1pp / 1gp   1   0
+392sp / 11,160cp   1   0
+JEWELRY: Silvery Gold Bracelet (205gp)   1   0
+11sp / 13,580cp   1   0
+6pp   1   0
+35ep / 30sp / 50cp   1   0
+a brown leather rucksack of magnificent coins from a missing land that are made of iron with a symbol of a demon on it (38 ea) worth 26gp   1   0
+an extraordinary musical pipes worth 218gp   1   0
+1,261cp   1   0
+an exquisite decorative crown made of steel and the name of `Sophanon` is engraved on the inside worth 24gp   1   0
+8 inch tall obsidian statue of a ram worth 7gp   1   0
+12pp / 84gp / 255ep / 151sp / 9,731cp   1   0
+963ep / 10sp / 651cp   1   0
+3pp / 13gp / 2ep / 5sp / 45cp   1   0
+JEWELRY: Silvery Gold Buckle (144gp)   1   0
+141gp / 146ep / 92sp / 6,161cp   1   0
+1pp / 2sp   1   0
+22gp / 5ep / 8sp / 195cp   1   0
+JEWELRY: Silvery Gold Bracelet (160gp)   1   0
+1pp / 1gp / 8ep / 3sp / 80cp   1   0
+22sp / 6,281cp   1   0
+5pp / 38sp / 700cp   1   0
+889sp / 6,595cp   1   0
+30pp / 26gp / 3ep / 5sp / 150cp   1   0
+174sp / 645cp   1   0
+43gp / 226ep / 104sp / 2,320cp   1   0
+2pp / 4gp / 3ep / 10cp   1   0
+16pp / 77gp / 17sp / 5,410cp   1   0
+JEWELRY: Silver Comb/brush (60gp)   1   0
+896gp / 23ep / 301sp / 5,231cp   1   0
+55pp / 184ep / 69sp / 421cp   1   0
+2pp / 13gp / 4ep / 25sp / 105cp   1   0
+42ep / 3,123sp / 13,440cp   1   0
+66gp / 900cp   1   0
+2pp / 5gp / 7ep / 9sp / 820cp   1   0
+GEM: Sardonyx Quartz (3gp)   1   0
+3pp / 20gp / 57ep / 7sp / 110cp   1   0
+1,098ep / 404sp / 3,520cp   1   0
+138sp / 1,230cp   1   0
+6ep / 465cp   1   0
+a large leather knapsack of marvelous coins from a long dead civilization that are made of steel with a symbol of a hawk on it (57 ea) worth 6gp   1   0
+GEM: Aquamarine (52gp)   1   0
+10ep / 4sp / 170cp   1   0
+a delightful ornamental dagger made of iron where the handle is decorated with 4 green spinels and the name of `Spath` is engraved on the blade worth 26gp   1   0
+JEWELRY: Exceptional Headband (1,600gp)   1   0
+35pp / 2gp / 61ep / 18sp / 2,290cp   1   0
+114sp / 4,845cp   1   0
+JEWELRY: Golden Gemmed Crown (580gp)   1   0
+66,500cp   1   0
+1gp / 2ep / 11sp   1   0
+480sp / 4,400cp   1   0
+GEM: Amber (12gp)   1   0
+49gp / 30ep / 69sp / 201cp   1   0
+92pp / 637gp / 562ep / 211sp / 980cp   1   0
+a small red cloth satchel of exquisite coins from a long dead civilization that are made of jade with a symbol of a pegasus on it (22 ea) worth 281gp   1   0
+GEM: Amethyst (24gp)   1   0
+a marvelous muskrat fur cape worth 15gp   1   0
+4pp / 4gp / 1sp / 10cp   1   0
+10 inch tall crystal statue of a eye worth 5gp   1   0
+JEWELRY: Silver Box (50gp)   1   0
+GEM: Malachite (1gp)   1   0
+a large brown canvas sack of gorgeous coins of lost race that are made of jade with a symbol of a crown on it (100 ea) worth 21gp   1   0
+JEWELRY: Silvery Gold Amulet (160gp)   1   0
+1gp / 2ep / 6sp / 160cp   1   0
+5pp / 8gp / 2ep / 1sp / 30cp   1   0
+--END--
+Command	7
+Create Water (reversible)	7
+Cure Light Wounds	7
+Detect Evil	7
+Detect Magic	7
+Light	7
+Protection from Evil	7
+Purify Food and Drink	7
+Remove Fear	7
+Resist Cold	7
+Sanctuary	7
+Augury	6
+Bless	6
+Delay Poison	6
+Find Traps	6
+Know Alignment	6
+Hold Person	6
+Holy Chant	6
+Resist Fire	6
+Reveal Charm	6
+Silence 15' Radius	6
+Snake Charm	6
+Speak with Animal	6
+Spiritual Weapon	6
+Animal Growth	5
+Animate Dead	5
+Continual Light	5
+Cure Blindness	5
+Cure Disease	5
+Dispel Magic	5
+Feign Death	5
+Glyph of Warding	5
+Locate Object	5
+Prayer	5
+Remove Curse (reversible)	5
+Speak with Dead	5
+Striking	5
+Create Food and Water	4
+Cure Serious Wounds	4
+Detect Lie	4
+Divination	4
+Exorcise	4
+Lower Water	4
+Neutralize Poison	4
+Protection from Evil 10' Radius	4
+Speak with Plants	4
+Sticks to Snakes	4
+Tongues	4
+Atonement	3
+Commune	3
+Cure Critical Wounds	3
+Dispel Evil	3
+Flame Strike	3
+Insect Plague	3
+Quest	3
+Plane Shift	3
+Raise Dead	3
+True Seeing	3
+Animate Objects	2
+Blade barrier	2
+Conjure Animals	2
+Find the Path	2
+Heal	2
+Part Water	2
+Speak with Creatures	2
+Stone Tell	2
+Summon Aerial Servant	2
+Word of Recall	2
+Astral Projection	1
+Control Weather	1
+Earthquake	1
+Gate	1
+Holy Word	1
+Regenerate	1
+Restoration	1
+Resurrection	1
+Symbol	1
+Wind Walk	1
+--END--
+Animal Companion	7
+Detect Magic	7
+Detect Snares and Pits	7
+Divine Weather	7
+Entangle	7
+Faerie Fire	7
+Invisibility, Animal	7
+Locate Creature	7
+Pass without Trace	7
+Purify Water	7
+Shillelagh	7
+Speak with Animals	7
+Barkskin	6
+Charm Person or Mammal	6
+Create Water	6
+Cure Light Wounds	6
+Feign Death	6
+Find Plant	6
+Fire Trap	6
+Heat Metal	6
+Obscuring Mist	6
+Produce Flame	6
+Stumble	6
+Warp Wood	6
+Call Lightning	5
+Cure Disease	5
+Hold Animal	5
+Insect Swarm	5
+Neutralize Poison	5
+Plant Growth	5
+Protection from Fire	5
+Pyrotechnics	5
+Snare	5
+Stone Shape	5
+Tree Shape	5
+Water Breathing	5
+Cure Serious Wounds	4
+Dispel Magic	4
+Flash Fire	4
+Hallucinatory Terrain	4
+Hold Vegetation and Fungus	4
+Passplant	4
+Protection from Electricity	4
+Repel Vermin	4
+Speak with Plants	4
+Summon Animal I	4
+Summon Sylvan Beings	4
+Temperature Control	4
+Animal Growth	3
+Anti-Plant Shell	3
+Commune with Nature	3
+Control Winds	3
+Insect Plague	3
+Sticks to Snakes	3
+Summon Animal II	3
+Transmute Rock to Mud (reversible)	3
+Tree Stride	3
+Wall of Fire	3
+Anti-Animal Shell	2
+Conjure Fire Elemental	2
+Control Weather	2
+Cure Critical Wounds	2
+Feeblemind	2
+Fire Seeds	2
+Repel Wood	2
+Summon Animal III	2
+Transport via Plants	2
+Wall of Thorns	2
+Animate Mineral	1
+Conjure Earth Elemental	1
+Control Weather (Greater)	1
+Confusion	1
+Creeping Doom	1
+Finger of Death	1
+Fire Chariot	1
+Fire Storm	1
+Reincarnate	1
+Transmute Metal to Wood	1
+--END--
+Auditory Illusion	7
+Color Spray	7
+Dancing Lights	7
+Darkness Globe	7
+Detect Illusion	7
+Detect Invisibility	7
+Doppelganger	7
+Hypnotism	7
+Light	7
+Phantasmal Force	7
+Refraction	7
+Wall of Vapor	7
+Blindness	6
+Blur	6
+Deafness	6
+Detect Magic	6
+Fog Cloud	6
+Hypnotic Pattern	6
+Invisibility	6
+Magic Mouth	6
+Mirror Image	6
+Misdirection	6
+Phantasmal Force, Greater	6
+Ventriloquism	6
+Continual Light (reversible)	5
+Dispel Phantasm	5
+Fear	5
+Hallucinatory Terrain	5
+Illusionary Script	5
+Invisibility 10' Radius	5
+Nondetection	5
+Paralyze	5
+Rope Trick	5
+Spectral Force	5
+Suggestion	5
+Confusion	4
+Illusory Stamina	4
+Implant Emotion	4
+Invisibility, Greater	4
+Massmorph	4
+Minor Creation	4
+Phantasmal Killer	4
+Phantasmal Monsters	4
+Confusion, Greater	3
+Major Creation	3
+Maze	3
+Phantasmal Door	3
+Phantasmal Monsters, Greater	3
+Project Image	3
+Shadow Evocation	3
+Summon Shadow	3
+Conjure Animals	2
+Phantasmal Monsters, Advanced	2
+Shadow Evocation, Greater	2
+Spectral Force, Permanent	2
+Spectral Force, Programmed	2
+Suggestion, Mass	2
+True Seeing	2
+Veil	2
+Astral Spell	1
+Limited Wish	1
+Prismatic Spray	1
+Prismatic Wall	1
+Vision	1
+--END--
+Allure 	9
+Burning Hands	9
+Charm Person	9
+Comprehend Languages	9
+Dancing  Lights	9
+Detect Magic	9
+Enlarge	9
+Erase	9
+Feather Fall	9
+Floating Disc	9
+Hold Portal	9
+Identify	9
+Jarring Hand	9
+Jump	9
+Light	9
+Magic Aura	9
+Magic Missile	9
+Manipulate Fire	9
+Mending	9
+Message	9
+Protection from Evil	9
+Read Languages	9
+Read Magic	9
+Scribe	9
+Shield	9
+Shocking Grasp	9
+Sleep	9
+Spider Climb	9
+Summon Familiar	9
+Unseen Servant	9
+Ventriloquism	9
+Amnesia	8
+Arcane Lock	8
+Auditory Illusion	8
+Continual Light	8
+Darkness Globe	8
+Detect Evil	8
+Detect Invisible	8
+ESP	8
+False Gold	8
+False Trap	8
+Invisibility	8
+Knock	8
+Levitate	8
+Locate Object	8
+Magic Mouth	8
+Mirror Image	8
+Phantasmal Force	8
+Pyrotechnics	8
+Ray of Enfeeblement	8
+Rope Trick	8
+Scare	8
+Shatter	8
+Stinking Cloud	8
+Strength	8
+Web	8
+Blink	7
+Clairaudience	7
+Clairvoyance	7
+Dispel Magic	7
+Explosive Runes	7
+Feign Death	7
+Fire Ball	7
+Fly	7
+Gust of Wind	7
+Haste (reversible)	7
+Hold Person	7
+Infravision	7
+Invisibility 10' radius	7
+Lightning Bolt	7
+Protection from Evil 10' radius	7
+Protection from Normal Missiles	7
+Tiny Hut	7
+Tongues	7
+Suggestion	7
+Summon Monster I	7
+Water Breathing	7
+Arcane Eye	6
+Charm Monster	6
+Confusion	6
+Dimension Door	6
+Enchant Arms	6
+Fear	6
+Fire Shield	6
+Fire Trap	6
+Flame Charm	6
+Fumble	6
+Globe of Invulnerability, Lesser	6
+Hallucinatory Terrain	6
+Ice Storm	6
+Massmorph	6
+Mnemonic Enhancer	6
+Move Earth, lesser	6
+Plant Growth	6
+Polymorph Others	6
+Polymorph Self	6
+Remove Curse (reversible)	6
+Summon Monster II	6
+Wall of Fire	6
+Wall of Ice	6
+Animate Dead	5
+Atmosphere Bubble	5
+Cloudkill	5
+Cone of Cold	5
+Conjure Elemental	5
+Contact Other Plane	5
+Distort Distance	5
+Faithful Hound	5
+Feeblemind	5
+Hold Monster	5
+Interposing Hand	5
+Magic Jar	5
+Passwall	5
+Secret Chest	5
+Stone Shape	5
+Telekinesis	5
+Teleport	5
+Transmute Rock to Mud	5
+Wall of Force	5
+Wall of Iron	5
+Wall of Stone	5
+Anti-Magic Shell	4
+Arcane Window	4
+Control Weather	4
+Death Spell	4
+Disintegrate	4
+Dweomer of Rage	4
+Extension III	4
+Forceful Hand	4
+Freezing Sphere	4
+Geas	4
+Globe of Invulnerability	4
+Guards and Wards	4
+Invisible Stalker	4
+Legend Lore	4
+Lower Water	4
+Monster Summoning IV	4
+Move Earth	4
+Part Water	4
+Project Image	4
+Reincarnate	4
+Repulsion	4
+Spiritwrath	4
+Stone to Flesh	4
+Charm Plants	3
+Delayed Blast Fireball	3
+Duo-Dimension	3
+Grasping Hand	3
+Instant Summons	3
+Limited Wish	3
+Mass Invisibility	3
+Magic Sword	3
+Phase Door	3
+Power Word Stun	3
+Reverse Gravity	3
+Simulacrum	3
+Statue	3
+Summon Demon	3
+Summon Monster V	3
+Vanish	3
+Antipathy/Sympathy	2
+Clenched Fist	2
+Clone	2
+Glass Like Steel	2
+Incendiary Cloud	2
+Irresistible Dance	2
+Mass Charm	2
+Maze	2
+Mind Blank	2
+Permanency	2
+Polymorph Any Object	2
+Power Word Blind	2
+Spell Resistance	2
+Summon Monster VI	2
+Symbol	2
+Trap the Soul	2
+Astral Projection	1
+Crushing Hand	1
+Gate	1
+Imprisonment	1
+Meteor Swarm	1
+Power Word Kill	1
+Prismatic Sphere	1
+Shape Change	1
+Summon Monster VII	1
+Temporal Stasis	1
+Time Stop	1
+Wish	1
+--END--
+Treasure Map (Value 1d4x1000 gp)	12
+Treasure Map (Value 5d6x1000 gp)	11
+Treasure Map (Value 6d6x1000 gp)	10
+Treasure Map (Value 5d6x1000 gp, 5d6 gems)	9
+Treasure Map (Value 1d6 gems, 2d10 jewelry)	8
+Treasure Map (Value 1 magic item)	7
+Treasure Map (Value 2 magic items)	6
+Treasure Map (Value 3 magic items, no weapons)	5
+Treasure Map (Value 3 magic items, +1 potion)	4
+Treasure Map (Value 3 magic items, +1 potion, +1 Scroll)	3
+Treasure Map (Value 5d6x1000 gp, 1 magic item)	2
+Treasure Map (Value 5d6 gems, 2 magic items)	1

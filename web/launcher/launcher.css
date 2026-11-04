@@ -1,0 +1,21 @@
+@font-face { font-family: "Cinzel"; src: url("fonts/cinzel-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Cinzel"; src: url("fonts/cinzel-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("fonts/ebgaramond-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "EB Garamond"; src: url("fonts/ebgaramond-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+:root { --ink:#2a2118; --ink-soft:#5c4f40; --parchment:#fbf6ec; --desk:#e7d8c0; --rule:#d7c4a4; --oxblood:#6e2b33; --gold:#9a7436;
+  --serif:"EB Garamond","Palatino Linotype",Palatino,Georgia,serif; --display:"Cinzel","Palatino Linotype",Palatino,serif; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--desk); color:var(--ink); font:18px/1.45 var(--serif); }
+main { max-width:1100px; margin:2rem auto; padding:2rem 2.5rem; background:var(--parchment); border:1px solid var(--rule); box-shadow:0 2px 12px rgba(60,40,20,.15); }
+h1 { font-family:var(--display); color:var(--oxblood); font-size:2.4rem; margin:.2rem 0; letter-spacing:.04em; }
+h2 { font-family:var(--display); color:var(--oxblood); font-size:1.2rem; border-bottom:1px solid var(--rule); padding-bottom:.2rem; margin-top:2rem; }
+.lede { color:var(--ink-soft); margin-top:0; }
+.status { padding:.6rem .9rem; border:1px solid var(--rule); background:#fff8e8; margin:1rem 0; }
+.status.ok { border-color:#9cb79a; background:#eef6ec; }
+.status.bad { border-color:var(--oxblood); background:#f8e8e8; }
+ul.grid { list-style:none; padding:0; margin:0; columns:3 16rem; column-gap:2rem; }
+ul.grid li { break-inside:avoid; padding:.15rem 0; }
+a { color:var(--oxblood); text-decoration:none; } a:hover { text-decoration:underline; }
+.btn { display:inline-block; font-family:var(--display); background:var(--oxblood); color:#fff; padding:.5rem 1rem; border-radius:3px; }
+.btn:hover { text-decoration:none; background:#521f26; }
+footer { margin-top:2.5rem; font-size:.9rem; color:var(--ink-soft); border-top:1px solid var(--rule); padding-top:1rem; }

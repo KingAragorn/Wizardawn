@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+# Rulebooks, modules and other PDF/ZIP documents are not kept in git.
+# The build copies them into dist/ if they are present in src/ (see build/fetch-docs.sh).
+src/**/*.pdf
+src/**/*.zip
+!src/lic/*.pdf
+data/tsv/

@@ -1,0 +1,44 @@
+<?php
+
+include("db.php");
+
+$game_defaults = "Data";
+include("game_defaults.php");
+
+$menu_on_left = "menus/menu_data.php";
+
+$menu_on_right = "menus/menu_generators.php";
+
+$menu_in_center = str_replace($webfld, "", $_SERVER['SCRIPT_FILENAME']);
+
+if ($menu_section == 3){
+
+	echo "<p style='font-size:" . round(45 * $font_size_adjust_main) . "px; font-family: WizardawnTitle; line-height: 50px; width:600px; margin-top: 0; margin-bottom: 0'>Data File Help</p>";
+	echo "<p style='text-align: justify;'>"; ?>
+		This &quot;data file&quot; is assembled to your particular game system and style.  You are now in control of what these generators can create for you.  No longer are you limited to just a couple of game systems, you can use whatever you want.  Let's get started by going over the format of the data file you will need...
+		<br><br>Figure A. is an example of the format for your data file.  You can create this in notepad or some other text editing software.  The colors do not matter and are only shown for the purposes of explaining the format.  The first section is any notes about your data file.  This can be the codes you use for any area codes or maybe any notes you may want a friend to know when using your data file.  This set of notes is ended with a --BEGIN-- to start the actual &quot;data&quot; of your file.  Each section is separated with --END-- between each one.  Some sections are further broken down by TABs and each line is separated by carriage returns (the ENTER key).  Although Figure A. shows where your TABs are, the layout should look similar...where you need to include the --END-- between each section for the data to process properly (even if you decide to skip a section, you will still need the --END-- where those sections should be).  Each line needs to be followed by the ENTER key only when you are done with that line.  This means that...
+		<br><br>Attacks with a<br>
+		  3 damage sword.
+		<br><br>...is wrong.  It needs to be one string of text before pressing the ENTER key...
+		<br><br>Attacks with a 3 damage sword.
+		<br><br>...because then the utility knows that is the end of that line so it can then process the Phantom after that.
+		<br><br><img src="pics/data_file_help_1.jpg" width="600" height="656"><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;Figure A.
+		
+		<br><br>The first section is your list of enemies.  Each line is separated with TABs so you should have 5 values for each line.  The first value is the name of the enemy...in this example, Goblin.  Press the TAB key and you can now enter the areas that this enemy is found.  If you are not going to use this part of the data, then simply enter zero (0).  If you want to use this, then enter the code(s) of your choosing.  For the example below, I am using DG (dungeon), FS (forest), and CV (cave).  You can create your own codes that fit your style.  These codes are used if you decide you just want to use the &quot;dungeon&quot; creatures in your list (so you will possible get a Goblin or Phantom).  You may decide you want to only use &quot;forest&quot; creatures so you will only get the Goblin.  Press the TAB key again and you can enter a &quot;level&quot; of the enemy.  This value can simply be zero (0), or you can enter the actual value dependent on your game rules.  This will be used if you decide you want a &quot;level 1&quot; area, where you will only get the Goblin.  If you chose a &quot;level 5&quot; area, you may get the Goblin or the Phantom.  The level you choose during area generation will search for enemies that level or lower of the value you enter.  If you chose to generate a level 10 area, you will get the enemies from level 1-10...for example.  Press the TAB key and you can then enter the ratio in which the enemies appear compared to each other.  A lower number means the enemy appears less often.  In Figure A. the Goblin will appear 6 times for every Phantom.  If you do not want to use such a feature, you must enter at least 1 here.  Press the TAB key again and you can enter some text about the enemy.  It might be a description or some vital statistics... whatever you want to accompany the enemy on the generated area.  Press the ENTER key and enter your next enemy in the same fashion.  When you are done entering your enemies, press the ENTER key...type in --END--...press the ENTER key again and begin entering your traps.
+		<br><br>Traps are just your simple list of traps for your game system.  It could be explosives, lasers, spikes, poison, or anything else you want to put in there.  When you are done entering traps, make sure to put the --END-- as the next line to end this list.
+		<br><br>Contents are next.  This is a list of contents that your area might have.  It could be a chair, cobweb, computer, and pencil...just anything loose that you want to randomly appear in the area.  It differs from loot because it is meant to be un-extraordinary.  When you are done entering contents, make sure to put the --END-- as the next line to end this list.
+		<br><br>Containers are next.  This is a list of containers that your loot might appear in.  It could be a locker, safe, chest, or bag...once again, whatever you want to have.  When you are done entering containers, make sure to put the --END-- as the next line to end this list.
+		<br><br>It is time for the loot.  This section has 3 columns of information (separated by TABs).  The first is the general name of the loot.  The second is the ratio that this loot item will come up in a random pick.  In this example, a list of loot will consist of 30 Gold Coins, 10 Gems, and 5 Wands.  This means that the Gold Coins will probably be picked more often.  You would get a similar result if you broke down the values to 6 Gold Coins, 2 Gems, and 1 Wand...but Figure A. is just an example.  This gives you some control especially if you want to have some artifact set to 1, while other items may be set to 10, 20 or 30...for example.  The third value is an indicator of a sub-list of loot.  A zero (0), or simply no number, indicates that there is no sub-list so the loot generated on those results would be simply &quot;Gold Coins&quot; if using Figure A. as an example.  A one (1) indicates that if this item is ever picked, it will use the first section (after this section) to refine the loot item even further.  This means that the &quot;Gems&quot; will produce either a &quot;Diamond&quot;, &quot;Sapphire&quot;, or &quot;Emerald&quot;.  The &quot;Wand&quot; will produce a &quot;Wand of Fire&quot;, &quot;Wand of Ice&quot;, etc.  You can have as many sub-lists as you need (meaning you can have sub-lists, within other sub-lists, within other sub-lists, until you don't need any more)
+		<br><br>The last sections were already talked about in the previous paragraph.  They are sub-lists for the loot table.  These come in handy if you want a loot list that consists of &quot;Laser Guns&quot; and &quot;Medicine&quot;...for example.  You can then have a sub-list with 5 different laser guns and then another sub-list with 20 different types of medicine.  Each line will have a TAB and then a number.  This number works similar to numbers from the loot list (in this case...the 30, 10, and 5).  They simply allow you to control the ratio of how often an item will appear.  Since the &quot;Wand of Death&quot; has a value of 60, that means it will appear more often than the other 3 wands.  Each sub-list needs to be separated with an --END-- as you create each one that you need.
+		<br><br>These sub-lists are not a necessary part of your data file and you could simply do without them if you want.  If you did do this, you would only need the last --END-- after the &quot;Coffin&quot;...when looking at Figure A.  The only requirements for your data file is to have all the way up to the loot listing.  Figure B. has an example of a data file if we left out the traps, contents, and sub-lists.  We would still need to include the --END-- where the other sections would be, and the data file ends at the &quot;Wand&quot; because we have no sub-lists defined.
+		<br><br><img src="pics/data_file_help_2.jpg" width="588" height="218"><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;Figure B.
+		<br><br>This was a very descriptive section of the data file, but it is important to understand what the list consists of, how it is assembled, and what it does for you. These tools no longer limit you to only the game systems that I enjoy.  You can now generate material quickly with whatever game system &quot;you&quot; play.  You are not limited to a particular set of enemies or loot.  You can mix and match any of these elements you want.  If you created your own custom enemies, traps, or loot...you are now able to incorporate that into your generated material.  If you want a goblin infested cave, you can make one.  Maybe you don't want any traps or loot at all, and now it is all up to you.
+		</p>
+	<?php
+}
+
+else { include("body.php");}
+
+?>

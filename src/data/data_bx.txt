@@ -1,0 +1,1464 @@
+This is the data file for the 1981 version of Moldvay's Basic Dungeons & Dragons™.  This consists of creatures
+and treasure from the Basic and Expert rule books. You can use this with some of the tools here that allow for
+data files to be input. You may only want to use this file if you want to customize your creations. You may have
+no electrum in your land or maybe you want to remove the chance of dragons from appearing. You may want to add
+custom monsters and items. Anything is possible.
+
+Below are the codes used for the creatures' terrain types...
+
+DG = Dungeon
+PF = Forest
+PH = Hills
+PM = Mountains
+PP = Plains
+PS = Swamp
+PD = Desert
+FW = Freshwater
+SW = Sea
+CF = Snowy Forest
+CH = Snowy Hills
+CM = Snowy Mountains
+CP = Snowy Plains
+TF = Jungle/Tropics Forest
+TH = Jungle/Tropics Hills
+TM = Jungle/Tropics Mountains
+TS = Jungle/Tropics Swamp
+
+--BEGIN--
+Adventuring Party 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG VG 	1 	1 	[AC: Varies | HD: Varies | MV: Varies | THAC0: 19 | ATK: Varies | DMG: Varies | #APP: 5-8 (5-8) | SV: Varies | ML: 8 | TT: U, V | AL: Any | LV: 1 | XP: 5 | PAGE: B40 | Must be created ahead of time by using page B52 (optionally X37 as well). ]
+Ant, Driver 	PD PP PF PH TF TH DG 	4 	3 	[AC: 3 | HD: 4* | MV: 180` (60`) | THAC0: 16 | ATK: 1 | DMG: 2d6 | #APP: 2-8 (4-24) | SV: Fighter 2 | ML: 7 | TT: U | AL: N | LV: 4 | XP: 125 | PAGE: B34 | Will fight to the death and have a 30% chance of having 1d10x1,000gp worth of gold nuggets. ]
+Antelope 	PP PH 	2 	5 	[AC: 7 | HD: 2 | MV: 240` (80`) | THAC0: 18 | ATK: 1 butt | DMG: 1d6 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Ape, White 	TS TF TH TM DG LW 	4 	3 	[AC: 6 | HD: 4 | MV: 120` (40`) | THAC0: 16 | ATK: 2 claws | DMG: 1d4/1d4 | #APP: 1-6 (2-8) | SV: Fighter 2 | ML: 7 | TT: Nil | AL: N | LV: 4 | XP: 75 | PAGE: B30 | May throw a stone doing 1d6 damage. ]
+Baboon, Rock 	TS TF TH TM 	2 	13 	[AC: 6 | HD: 2 | MV: 120` (40`) | THAC0: 18 | ATK: 1 club/1 bite | DMG: 1d6/1d3 | #APP: 2-12 (5-30) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 2 | XP: 20 | PAGE: B41 ]
+Basilisk 	DG PF PH PM PP PS TF TH TM TS 	9 	3 	[AC: 4 | HD: 6 + 1** | MV: 60` (20`) | THAC0: 13 | ATK: 1 bite + gaze | DMG: 1d10 + petrification | #APP: 1-6 (1-6) | SV: Fighter 6 | ML: 9 | TT: F | AL: N | LV: 9 | XP: 950 | PAGE: X28 | Anyone looking or touching it must save versus petrification or be turned to stone. Surprised characters automatically look at it. If fighting it without looking, there is a -4 to hit or -1 to hit if using a mirror and the basilisk gets +2 to hit them. If they see their own reflection (1 or 2 on 1d6 chance) they must make the same save or turn to stone. ]
+Bat, Giant 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG 	2 	5 	[AC: 6 | HD: 2 | MV: 30` (10`), Fly 180` (60`) | THAC0: 18 | ATK: 1 bite | DMG: 1d4 | #APP: 1-10 (1-10) | SV: Fighter 1 | ML: 8 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: B31 ]
+Bat, Giant Vampire 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG 	2 	5 	[AC: 6 | HD: 2 | MV: 30` (10`), Fly 180` (60`) | THAC0: 18 | ATK: 1 bite | DMG: Unconsciousness | #APP: 1-10 (1-10) | SV: Fighter 1 | ML: 8 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: B31 | A bite does no damage but a save versus paralysis is required or fall unconscious for 1d10 rounds. They then drain 1d4 damage of blood per round. ]
+Bat, Normal 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS VG 	1 	5 	[AC: 6 | HD: 1 hp | MV: 9` (3`), Fly 120` (40`) | THAC0: 19 | ATK: Confusion | DMG: Nil | #APP: 1-100 (1-100) | SV: Normal Man | ML: 6 | TT: Nil | AL: N | LV: 1 | XP: 5 | PAGE: B31 | Only cause confusion causing -2 to attacks and spell cannot be cast. ]
+Bear, Black 	CF CH CM PF PH PM PS 	4 	13 	[AC: 6 | HD: 4 | MV: 120` (40`) | THAC0: 16 | ATK: 2 claws/1 bite | DMG: 1d3/1d3/1d6 | #APP: 1-4 (1-4) | SV: Fighter 2 | ML: 7 | TT: U | AL: N | LV: 4 | XP: 75 | PAGE: B31 | If both claws hit a single target, then the bear will hug them for an additional 2d8 damage. ]
+Bear, Cave 	CF CH CM DG PF PH PM LW 	7 	5 	[AC: 5 | HD: 7 | MV: 120` (40`) | THAC0: 13 | ATK: 2 claws/1 bite | DMG: 1d8/1d8/2d6 | #APP: 1-2 (1-2) | SV: Fighter 3 | ML: 9 | TT: V | AL: N | LV: 7 | XP: 450 | PAGE: B31 | If both claws hit a single target, then the bear will hug them for an additional 2d8 damage. ]
+Bear, Grizzly 	PP PF PH PM 	5 	3 	[AC: 6 | HD: 5 | MV: 120` (40`) | THAC0: 15 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d8 | #APP: 1 (1-4) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 5 | XP: 175 | PAGE: B31 | If both claws hit a single target, then the bear will hug them for an additional 2d8 damage. ]
+Bear, Polar 	CF CH CM CP 	6 	3 	[AC: 6 | HD: 6 | MV: 120` (40`) | THAC0: 14 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/1d10 | #APP: 1 (1-2) | SV: Fighter 3 | ML: 8 | TT: U | AL: N | LV: 6 | XP: 275 | PAGE: B31 | If both claws hit a single target, then the bear will hug them for an additional 2d8 damage. ]
+Bee, Killer 	DG PD PF PH PM PP PS TF TH TM TS 	1 	3 	[AC: 7 | HD: 1d4 hp* | MV: 150` (50`) | THAC0: 19 | ATK: 1 sting | DMG: 1d3 + special | #APP: 1-6 (5-30) | SV: Fighter 1 | ML: 9 | TT: Special | AL: N | LV: 1 | XP: 6 | PAGE: B37 | If it stings another, it will die but the victim must save versus poison or die. If they survive, then the stinger does 1 damage per round until removed. Their honey acts as a potion of healing at half strength (curing 1d4) requiring all the honey in the hive. ]
+Beetle, Giant Fire 	DG PF PH PM PS TF TH TM TS 	2 	13 	[AC: 4 | HD: 1 + 2 | MV: 120` (40`) | THAC0: 18 | ATK: 1 bite | DMG: 2d4 | #APP: 1-8 (2-12) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 2 | XP: 15 | PAGE: B31 | Have glands that glow in a 10` radius for 1d6 days after removal. ]
+Beetle, Giant Oil 	DG PF PH PM PS TF TH TM TS 	2 	13 	[AC: 4 | HD: 2* | MV: 120` (40`) | THAC0: 18 | ATK: 1 bite + special | DMG: 1d6 + special | #APP: 1-8 (2-12) | SV: Fighter 1 | ML: 8 | TT: Nil | AL: N | LV: 2 | XP: 25 | PAGE: B31 | May squirt hot oil up to 5` away causing blisters and a -2 to attack rolls. ]
+Beetle, Giant Tiger 	PP PS PF PH DG 	4 	5 	[AC: 3 | HD: 3 + 1 | MV: 150` (50`) | THAC0: 16 | ATK: 1 bite | DMG: 2d6 | #APP: 1-6 (2-8) | SV: Fighter 1 | ML: 9 | TT: U | AL: N | LV: 4 | XP: 50 | PAGE: B31 ]
+Black Pudding 	DG PM TM 	11 	3 	[AC: 6 | HD: 10* | MV: 60` (20`) | THAC0: 11 | ATK: 1 | DMG: 3d8 | #APP: 1 (0) | SV: Fighter 5 | ML: 12 | TT: Nil | AL: N | LV: 11 | XP: 1,600 | PAGE: X28 | Can dissolve metal or wood in 1 turn and can be killed by fire. Other attacks make more 2HD puddings doing 1d8 damage when they hit. Flame weapons do normal damage. ]
+Blink Dog 	DG PD PF PH PM PP 	4 	3 	[AC: 5 | HD: 4* | MV: 120` (40`) | THAC0: 16 | ATK: 1 bite | DMG: 1d6 | #APP: 1-6 (1-6) | SV: Fighter 4 | ML: 6 | TT: C | AL: L | LV: 4 | XP: 125 | PAGE: X28 | They attack and then teleport about 10-40 feet away and can only be hit if they lost initiative that round. ]
+Boar 	PP PS PF PH CP CF CH TS TF TH 	3 	13 	[AC: 7 | HD: 3 | MV: 150` (50`) | THAC0: 17 | ATK: 1 tusk | DMG: 2d4 | #APP: 1-6 (1-6) | SV: Fighter 2 | ML: 9 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: B32 ]
+Bugbear 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	4 	5 	[AC: 5 | HD: 3 + 1 | MV: 90` (30`) | THAC0: 16 | ATK: 1 weapon | DMG: 2d4 or weapon+1 | #APP: 2-8 (5-20) | SV: Fighter 3 | ML: 9 | TT: B | AL: C | LV: 4 | XP: 50 | PAGE: B32 | They surprise others on a 1-3. ]
+Caecilia 	DG 	7 	3 	[AC: 6 | HD: 6* | MV: 60` (20`) | THAC0: 14 | ATK: 1 bite | DMG: 1d8 | #APP: 1-3 (1-3) | SV: Fighter 3 | ML: 9 | TT: B | AL: N | LV: 7 | XP: 500 | PAGE: X28 | Giant gray worms that swallow victims on a natural 19 or 20 and the victim takes 1d8 damage each round inside and can attack with daggers inside at -4. ]
+Camel 	CF CH CP PD PF PH PP PS TF TH TS VG 	2 	13 	[AC: 7 | HD: 2 | MV: 150` (50`) | THAC0: 18 | ATK: 1 bite/1 hoof | DMG: 1/1d4 | #APP: 0 (2-8) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X28 ]
+Caribou 	CF CP CH CM 	3 	5 	[AC: 7 | HD: 3 | MV: 240` (80`) | THAC0: 17 | ATK: 1 butt | DMG: 1d8 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Carrion Crawler 	PM DG 	4 	5 	[AC: 7 | HD: 3 + 1* | MV: 120` (40`) | THAC0: 16 | ATK: 8 tentacles | DMG: Paralysis | #APP: 1-3 (1-3) | SV: Fighter 2 | ML: 9 | TT: B | AL: N | LV: 4 | XP: 75 | PAGE: B32 | Victim is paralyzed for 2d4 turns unless a save versus paralysis is successful. ]
+Cat, Lion 	PD PP PS PF PH PM CP CF 	5 	13 	[AC: 6 | HD: 5 | MV: 150` (50`) | THAC0: 15 | ATK: 2 claws/1 bite | DMG: 1d4+1/1d4+1/1d10 | #APP: 1-4 (1-8) | SV: Fighter 3 | ML: 9 | TT: U | AL: N | LV: 5 | XP: 175 | PAGE: B32 ]
+Cat, Mountain Lion 	PP PF PH PM CH CM 	4 	13 	[AC: 6 | HD: 3 + 2 | MV: 150` (50`) | THAC0: 16 | ATK: 2 claws/1 bite | DMG: 1d3/1d3/1d6 | #APP: 1-4 (1-4) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 4 | XP: 50 | PAGE: B32 ]
+Cat, Panther 	TS TF TH TM 	4 	13 	[AC: 4 | HD: 4 | MV: 150` (50`) | THAC0: 16 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d8 | #APP: 1-2 (1-6) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 4 | XP: 75 | PAGE: B32 ]
+Cat, Sabre-tooth Tiger 	CP CF TS TF TH TM LW 	8 	3 	[AC: 6 | HD: 8 | MV: 150` (50`) | THAC0: 12 | ATK: 2 claws/1 bite | DMG: 1d8/1d8/2d8 | #APP: 1-4 (1-4) | SV: Fighter 4 | ML: 10 | TT: V | AL: N | LV: 8 | XP: 650 | PAGE: B32 | They surprise others on a 1-4. ]
+Cat, Tiger 	TS TF TH TM 	6 	13 	[AC: 6 | HD: 6 | MV: 150` (50`) | THAC0: 14 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/2d6 | #APP: 1 (1-3) | SV: Fighter 3 | ML: 9 | TT: U | AL: N | LV: 6 | XP: 275 | PAGE: B32 ]
+Cave Locust 	DG 	2 	5 	[AC: 4 | HD: 2 | MV: 60` (20`), Fly 180` (60`) | THAC0: 18 | ATK: 1 bite, 1 bump, or 1 spit | DMG: 1d2 or 1d4 or special | #APP: 2-20 (1-10) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: B33 | Immune to poison and 50% chance they will bump into a character when jumping to flee. They will make a loud noise 20% of the time, drawing wandering monsters. If cornered, they will spit a brown goo up to 10` versus an AC of 9. One must save versus poison or smells so bad they cannot perform an action for 1 turn. Anyone near a stinky character must also make a save from the smell. ]
+Centaur 	PF PH PP 	4 	3 	[AC: 5 | HD: 4 | MV: 180` (60`) | THAC0: 16 | ATK: 2 hooves or weapon | DMG: 1d6/1d6 or weapon | #APP: 0 (2-20) | SV: Fighter 4 | ML: 8 | TT: A | AL: N | LV: 4 | XP: 75 | PAGE: X29 | Young fight as 2HD doing 1d2/1d2 or weapon damage. ]
+Centipede, Giant 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	1 	3 	[AC: 9 | HD: 1d4 hp | MV: 60` (20`) | THAC0: 19 | ATK: 1 bite | DMG: Poison | #APP: 2-8 (1-8) | SV: Normal Man | ML: 7 | TT: Nil | AL: N | LV: 1 | XP: 5 | PAGE: B33 | If bitten, a save versus poison is needed to avoid becoming violently ill for 10 days and moving at only half speed. ]
+Chimera 	DG PD PH PM TH TM 	11 	3 	[AC: 4 | HD: 9** | MV: 120` (40`), Fly 180` (60`) | THAC0: 12 | ATK: 2 claws/3 heads + special | DMG: 1d3/1d3/2d4/2d4/3d4 + special | #APP: 1-2 (1-4) | SV: Fighter 9 | ML: 9 | TT: F | AL: C | LV: 11 | XP: 2,300 | PAGE: X29 | Goat head uses horns. Lion head will bite. Dragon head can bite or breath a 50` fire cone (save for half damage) 3 times (50% chance to use it) a day. ]
+Cockatrice 	DG FW PD PF PH PM PP PS TF TH TM TS 	5 	5 	[AC: 6 | HD: 5** | MV: 90` (30`), Fly 180` (60`) | THAC0: 17 | ATK: 1 beak + special | DMG: 1d6 + petrification | #APP: 1-4 (1-8) | SV: Fighter 5 | ML: 7 | TT: D | AL: N | LV: 5 | XP: 45 | PAGE: X29 | Anyone touching it must save versus petrification or turn to stone. ]
+Cow 	PP PH VG 	3 	5 	[AC: 7 | HD: 3 | MV: 240` (80`) | THAC0: 17 | ATK: 1 butt | DMG: 1d8 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Crab, Giant 	PS TS FW SW LW 	3 	3 	[AC: 2 | HD: 3 | MV: 60` (20`) | THAC0: 17 | ATK: 2 pincers | DMG: 2d6/2d6 | #APP: 1-2 (1-6) | SV: Fighter 2 | ML: 7  | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: X29 ]
+Crocodile 	PS TS FW 	2 	3 	[AC: 5 | HD: 2 | MV: 90` (30`), Swim 90` (30`) | THAC0: 18 | ATK: 1 | DMG: 1d8 | #APP: 0 (1-8) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X29 ]
+Crocodile, Giant 	PS TS FW LW 	15 	3 	[AC: 1 | HD: 15 | MV: 90` (30`), Swim 90` (30`) | THAC0: 9 | ATK: 1 | DMG: 3d8 | #APP: 0 (1-3) | SV: Fighter 8 | ML: 9 | TT: Nil | AL: N | LV: 15 | XP: 1,350 | PAGE: X29 ]
+Crocodile, Large 	PS TS FW 	6 	3 	[AC: 3 | HD: 6 | MV: 90` (30`), Swim 90` (30`) | THAC0: 14 | ATK: 1 | DMG: 1d8 | #APP: 0 (1-4) | SV: Fighter 3 | ML: 7 | TT: Nil | AL: N | LV: 6 | XP: 275 | PAGE: X29 ]
+Cyclops 	CH CM DG PH PM TH TM 	14 	2 	[AC: 5 | HD: 13* | MV: 90` (30`) | THAC0: 10 | ATK: 1 | DMG: 3d10 | #APP: 1 (1-4) | SV: Fighter 13 | ML: 9 | TT: E + 5,000gp | AL: C | LV: 14 | XP: 2,300 | PAGE: X29 | They are 20` tall and suffer -2 to hit. They can throw rocks up to 200` causing 3d6 damage. There is a 5% chance they can cast curse. ]
+Deer 	PF PH PM PP 	2 	5 	[AC: 7 | HD: 2 | MV: 240` (80`) | THAC0: 18 | ATK: 1 butt | DMG: 1d6 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Displacer Beast 	DG PD PF PH PM PP PS TF TH TM TS 	7 	2 	[AC: 4 | HD: 6* | MV: 150` (50`) | THAC0: 14 | ATK: 2 tentacles | DMG: 2d4/2d4 | #APP: 1-4 (1-4) | SV: Fighter 6 | ML: 8 | TT: D | AL: N | LV: 7 | XP: 500 | PAGE: X30 | They actually seem to be 3` from where they really are making attackers suffer -2 to hit. They have +2 to all saves. ]
+Djinni (Lesser) 	DG 	8 	1 	[AC: 5 | HD: 7 + 1 | MV: 90` (30`), Fly 240` (80`) | THAC0: 12 | ATK: 1 + special | DMG: 2d8 fists or 2d6 whirlwind | #APP: 1 (1) | SV: Fighter 14 | ML: 12 | TT: Nil | AL: N | LV: 8 | XP: 450 | PAGE: X30 | Can only be hit with spells and magic weapons. Three times a day they can create food & drink, create metal object, create soft goods, turn invisible, assume gaseous form, form a whirlwind, or create illusion. The whirlwind will blow away creatures (fewer than 2HD) unless they save versus death ray. ]
+Doppleganger 	CM DG PM PS TM TS VG 	4 	2 	[AC: 5 | HD: 4* | MV: 90` (30`) | THAC0: 16 | ATK: 1 | DMG: 1d12 | #APP: 1-6 (1-6) | SV: Fighter 10 | ML: 10 | TT: E | AL: C | LV: 4 | XP: 125 | PAGE: B33 | Immune to sleep and charm. Will take the shape of another. ]
+Dragon Turtle 	FW SW 	30 	1 	[AC: -2 | HD: 30 | MV: 30` (10`), Swim 90` (30`) | THAC0: 3 | ATK: 2 claws/1 bite | DMG: 1d8/1d8/10d6 | #APP: 0 (1) | SV: Fighter 15 | ML: 10 | TT: H | AL: C | LV: 30 | XP: 4,750 | PAGE: X30 | Steam breath cone (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. ]
+Dragon, Black 	DG FW PM PS SW TM TS 	9 	5 	[AC: 2 | HD: 7** | MV: 90` (30`), Fly 240` (80`) | THAC0: 13 | ATK: 2 claws/1 bite + breath | DMG: 1d4+1/1d4+1/2d10 | #APP: 1-4 (1-4) | SV: Fighter 7 | ML: 8 | TT: H | AL: C | LV: 9 | XP: 1,250 | PAGE: B33 | Acid breath line (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. 20% chance to talk, 40% asleep, 4 spells (level 1). ]
+Dragon, Blue 	DG PD PP 	11 	3 	[AC: 0 | HD: 9** | MV: 90` (30`), Fly 240` (80`) | THAC0: 12 | ATK: 2 claws/1 bite + breath | DMG: 1d6+1/1d6+1/3d10 | #APP: 1-4 (1-4) | SV: Fighter 9 | ML: 9 | TT: H | AL: N | LV: 11 | XP: 2,300 | PAGE: B33 | Lightning breath line (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. 40% chance to talk, 20% asleep, 4 spells each (level 1 and 2). ]
+Dragon, Gold 	CF CH CM CP DG FW PD PF PH PM PP PS SW TF TH TM TS 	13 	1 	[AC: -2 | HD: 11** | MV: 90` (30`), Fly 240` (80`) | THAC0: 11 | ATK: 2 claws/1 bite + breath | DMG: 2d4/2d4/6d6 | #APP: 1-4 (1-4) | SV: Fighter 11 | ML: 10 | TT: H | AL: L | LV: 13 | XP: 2,700 | PAGE: B33 | Fire/chlorine breath cone/cloud (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. 100% chance to talk, 5% asleep, 4 spells each (level 1, 2 and 3). They can appear as a human. ]
+Dragon, Green 	CF CH DG FW PF PH PS SW TF TH TS 	10 	3 	[AC: 1 | HD: 8** | MV: 90` (30`), Fly 240` (80`) | THAC0: 12 | ATK: 2 claws/1 bite + breath | DMG: 1d6/1d6/3d8 | #APP: 1-4 (1-4) | SV: Fighter 8 | ML: 9 | TT: H | AL: C | LV: 10 | XP: 1,750 | PAGE: B33 | Chlorine breath cloud (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. 30% chance to talk, 30% asleep, 3 spells each (level 1 and 2). ]
+Dragon, Red 	CF CH CM DG FW PF PH PM SW TF TH TM 	12 	3 	[AC: -1 | HD: 10** | MV: 90` (30`), Fly 240` (80`) | THAC0: 11 | ATK: 2 claws/1 bite + breath | DMG: 1d8/1d8/4d8 | #APP: 1-4 (1-4) | SV: Fighter 10 | ML: 10 | TT: H | AL: C | LV: 12 | XP: 2,300 | PAGE: B33 | Fire breath cone (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. 50% chance to talk, 10% asleep, 3 spells each (level 1, 2 and 3). ]
+Dragon, Sea 	FW SW 	10 	4 	[AC: 1 | HD: 8** | MV: Fly/Swim 180` (60`) | THAC0: 12 | ATK: 1 bite or 1 spit | DMG: 3d6 | #APP: 0 (1-4) | SV: Fighter 8 | ML: 9 | TT: H | AL: N | LV: 10 | XP: 1,750 | PAGE: X39 | Poison breath glob up to 100` (save for dragon breath or die) 3 times (50% chance to use it) a day. 20% chance to talk, 3 spells each (level 1 and 2). ]
+Dragon, White 	CF CH CM CP DG FW PD PS SW 	8 	5 	[AC: 3 | HD: 6** | MV: 90` (30`), Fly 240` (80`) | THAC0: 14 | ATK: 2 claws/1 bite + breath | DMG: 1d4/1d4/2d8 | #APP: 1-4 (1-4) | SV: Fighter 6 | ML: 8 | TT: H | AL: N | LV: 8 | XP: 725 | PAGE: B33 | Cold breath cone (save for half damage) 3 times (50% chance to use it) a day causing their hit points in damage. 10% chance to talk, 50% asleep, 3 spells (level 1). ]
+Dryad 	PF 	2 	2 	[AC: 5 | HD: 2* | MV: 120` (40`) | THAC0: 18 | ATK: Special | DMG: Nil | #APP: 0 (1-6) | SV: Fighter 4 | ML: 6 | TT: D | AL: N | LV: 2 | XP: 25 | PAGE: X30 | Use a charm person spell to draw them into the tree home forever (unless found) unless a save versus spells is successful (at -2 on the roll). ]
+Dwarf 	CF CH CM CP DG PD PF PH PM PP TF TH TM VG 	1 	13 	[AC: 4 | HD: 1 | MV: 60` (20`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 1-6 (5-40) | SV: Dwarf 1 | ML: 8 | TT: G | AL: L or N | LV: 1 | XP: 10 | PAGE: B35 | For every 20 dwarves, there will be 1 leader in which they all have a morale of 10. The leader may have a magical item. ]
+Efreeti (Lesser) 	DG 	11 	1 	[AC: 3 | HD: 10* | MV: 90` (30`), Fly 240` (80`) | THAC0: 11 | ATK: 1 | DMG: 2d8 | #APP: 1 (1) | SV: Fighter 15 | ML: 12 | TT: Nil | AL: C | LV: 11 | XP: 1,600 | PAGE: X31 | Usually appear as smoke and then turn into giant demon looking creature. They can only be hit with magical weapons. They can create objects, create illusions, or turn invisible. They can make a wall of fire 3 times a day and transform into a fire pillar for 3 rounds that will set fire to items within 5` also doing 1d8 damage to others. ]
+Elemental, Air 	DG TM CM PM 	12 	2 	[AC: 0 | HD: 12 | MV: Fly 360` (120`) | THAC0: 10 | ATK: Special | DMG: 2d8 | #APP: 1 (1) | SV: Fighter 12 | ML: 10 | TT: Nil | AL: N | LV: 12 | XP: 1,100 | PAGE: X31 | Can only be hit with spells or magic weapons. Their whirlwind will blow away creatures (fewer than 2HD) unless they save versus death ray. They do 1d8 extra damage to flying opponents. ]
+Elemental, Air, Greater 	DG TM CM PM 	16 	1 	[AC: -2 | HD: 16 | MV: Fly 360` (120`) | THAC0: 8 | ATK: Special | DMG: 3d8 | #APP: 1 (1) | SV: Fighter 16 | ML: 10 | TT: Nil | AL: N | LV: 16 | XP: 1,350 | PAGE: X31 | Can only be hit with spells or magic weapons. Their whirlwind will blow away creatures (fewer than 2HD) unless they save versus death ray. They do 1d8 extra damage to flying opponents. ]
+Elemental, Air, Lesser 	DG TM CM PM 	8 	2 	[AC: 2 | HD: 8 | MV: Fly 360` (120`) | THAC0: 12 | ATK: Special | DMG: 1d8 | #APP: 1 (1) | SV: Fighter 8 | ML: 10 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X31 | Can only be hit with spells or magic weapons. Their whirlwind will blow away creatures (fewer than 2HD) unless they save versus death ray. They do 1d8 extra damage to flying opponents. ]
+Elemental, Earth 	DG TM CM PM 	12 	2 	[AC: 0 | HD: 12 | MV: 60` (20`) | THAC0: 10 | ATK: Special | DMG: 2d8 | #APP: 1 (1) | SV: Fighter 12 | ML: 10 | TT: Nil | AL: N | LV: 12 | XP: 1,100 | PAGE: X31 | Can only be hit with spells or magic weapons. They cannot cross water and do an extra 1d8 damage to opponents on the ground. ]
+Elemental, Earth, Greater 	DG TM CM PM 	16 	1 	[AC: -2 | HD: 16 | MV: 60` (20`) | THAC0: 8 | ATK: Special | DMG: 3d8 | #APP: 1 (1) | SV: Fighter 16 | ML: 10 | TT: Nil | AL: N | LV: 16 | XP: 1,350 | PAGE: X31 | Can only be hit with spells or magic weapons. They cannot cross water and do an extra 1d8 damage to opponents on the ground. ]
+Elemental, Earth, Lesser 	DG TM CM PM 	8 	2 	[AC: 2 | HD: 8 | MV: 60` (20`) | THAC0: 12 | ATK: Special | DMG: 1d8 | #APP: 1 (1) | SV: Fighter 8 | ML: 10 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X31 | Can only be hit with spells or magic weapons. They cannot cross water and do an extra 1d8 damage to opponents on the ground. ]
+Elemental, Fire 	PD DG 	12 	2 	[AC: 0 | HD: 12 | MV: 120` (40`) | THAC0: 10 | ATK: Special | DMG: 2d8 | #APP: 1 (1) | SV: Fighter 12 | ML: 10 | TT: Nil | AL: N | LV: 12 | XP: 1,100 | PAGE: X31 | Can only be hit with spells or magic weapons. Cannot cross water wider than them and do an extra 1d8 damage to creatures with cold based attacks. ]
+Elemental, Fire, Greater 	PD DG 	16 	1 	[AC: -2 | HD: 16 | MV: 120` (40`) | THAC0: 8 | ATK: Special | DMG: 3d8 | #APP: 1 (1) | SV: Fighter 16 | ML: 10 | TT: Nil | AL: N | LV: 16 | XP: 1,350 | PAGE: X31 | Can only be hit with spells or magic weapons. Cannot cross water wider than them and do an extra 1d8 damage to creatures with cold based attacks. ]
+Elemental, Fire, Lesser 	PD DG 	8 	2 	[AC: 2 | HD: 8 | MV: 120` (40`) | THAC0: 12 | ATK: Special | DMG: 1d8 | #APP: 1 (1) | SV: Fighter 8 | ML: 10 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X31 | Can only be hit with spells or magic weapons. Cannot cross water wider than them and do an extra 1d8 damage to creatures with cold based attacks. ]
+Elemental, Water 	DG FW SW 	12 	2 	[AC: 0 | HD: 12 | MV: 60` (20`), Swim 180` (60`) | THAC0: 10 | ATK: Special | DMG: 2d8 | #APP: 1 (1) | SV: Fighter 12 | ML: 10 | TT: Nil | AL: N | LV: 12 | XP: 1,100 | PAGE: X31 | Can only be hit with spells or magic weapons. Cannot move more than 60` from water and do an extra 1d8 damage to those in water. ]
+Elemental, Water, Greater 	DG FW SW 	16 	1 	[AC: -2 | HD: 16 | MV: 60` (20`), Swim 180` (60`) | THAC0: 8 | ATK: Special | DMG: 3d8 | #APP: 1 (1) | SV: Fighter 16 | ML: 10 | TT: Nil | AL: N | LV: 16 | XP: 1,350 | PAGE: X31 | Can only be hit with spells or magic weapons. Cannot move more than 60` from water and do an extra 1d8 damage to those in water. ]
+Elemental, Water, Lesser 	DG FW SW 	8 	2 	[AC: 2 | HD: 8 | MV: 60` (20`), Swim 180` (60`) | THAC0: 12 | ATK: Special | DMG: 1d8 | #APP: 1 (1) | SV: Fighter 8 | ML: 10 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X31 | Can only be hit with spells or magic weapons. Cannot move more than 60` from water and do an extra 1d8 damage to those in water. ]
+Elephant 	TS TF TH VG 	9 	13 	[AC: 5 | HD: 9 | MV: 120` (40`) | THAC0: 12 | ATK: 2 tusks or 1 trample | DMG: 2d4/2d4 or 4d8 | #APP: 0 (1-20) | SV: Fighter 5 | ML: 8 | TT: Special | AL: N | LV: 9 | XP: 900 | PAGE: X31 | They will first charge, strike with tusks for double damage and after that they will either tusk (25%) or trample (75%) where they get a +4 to trample when man-sized or smaller opponent. Their tusks are worth 100-600gp each. ]
+Elf 	PS PF PH PM CF CH CM TS TF TH TM DG VG 	2 	5 	[AC: 5 | HD: 1 + 1* | MV: 120` (40`) | THAC0: 18 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 1-4 (2-24) | SV: Elf 1 | ML: 8 | TT: E | AL: N | LV: 2 | XP: 19 | PAGE: B35 | Each has a random level 1 spell. If 15 or more elves, then they will have a leader level 1d6+1 with possible magic items. If a leader is present, then the morale is 10. ]
+Elk 	PF PH PM PP 	4 	3 	[AC: 7 | HD: 4 | MV: 240` (80`) | THAC0: 16 | ATK: 1 butt | DMG: 1d8 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 4 | XP: 75 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Ferret, Giant 	PF PH LW 	2 	5 	[AC: 5 | HD: 1 + 1 | MV: 150` (50`) | THAC0: 18 | ATK: 1 bite | DMG: 1d8 | #APP: 1-8 (1-12) | SV: Fighter 1 | ML: 8 | TT: Nil | AL: N | LV: 2 | XP: 15 | PAGE: B35 ]
+Fish, Giant Bass 	FW SW LW 	2 	3 	[AC: 7 | HD: 2 | MV: Swim 120` (40`) | THAC0: 18 | ATK: 1 | DMG: 1d6 | #APP: 0 (1) | SV: Fighter 1 | ML: 8 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X36 ]
+Fish, Giant Catfish 	FW SW LW 	9 	3 	[AC: 4 | HD: 8 + 3* | MV: Swim 90` (30`) | THAC0: 12 | ATK: 1 bite/4 feelers | DMG: 2d8/1d4x4 | #APP: 0 (1-2) | SV: Fighter 4 | ML: 8 | TT: Nil | AL: N | LV: 9 | XP: 1,200 | PAGE: X31 ]
+Fish, Giant Piranha 	FW SW LW 	4 	3 	[AC: 6 | HD: 3 + 3 | MV: Swim 150` (50`) | THAC0: 16 | ATK: 1 bite | DMG: 1d8 | #APP: 0 (2-8) | SV: Fighter 2 | ML: 7 | TT: Nil | AL: N | LV: 4 | XP: 50 | PAGE: X31 | No morale checks after feeding frenzy starts. ]
+Fish, Giant Rockfish 	FW SW LW 	6 	3 	[AC: 7 | HD: 5 + 5 | MV: Swim 180` (60`) | THAC0: 14 | ATK: 4 spines + poison | DMG: 1d4x4 + poison | #APP: 0 (2-8) | SV: Fighter 3 | ML: 8 | TT: Nil | AL: N | LV: 6 | XP: 225 | PAGE: X31 | They look like normal boulders about 70% of the time. If hit with the spines a failed save versus poison will kill the victim. Mistaking the fish for a rock will do 4 automatic spine hits. ]
+Fish, Giant Sturgeon 	FW SW LW 	12 	3 	[AC: 0 | HD: 10 + 2* | MV: Swim 180` (60`) | THAC0: 11 | ATK: 1 bite | DMG: 2d10 | #APP: 0 (1) | SV: Fighter 5 | ML: 9 | TT: Nil | AL: N | LV: 12 | XP: 1,600 | PAGE: X31 | They will swallow an opponent if they roll of 18 or better. Anyone swallowed suffers 2d6 damage per round and must make a save versus death ray or be paralyzed. If successful, the victim must attack the insides at -4 to hit and an AC of 7. ]
+Fly, Robber 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	2 	2 	[AC: 6 | HD: 2 | MV: 90` (30`), Fly 180` (60`) | THAC0: 18 | ATK: 1 bite | DMG: 1d8 | #APP: 1-6 (2-12) | SV: Fighter 1 | ML: 8 | TT: U | AL: N | LV: 2 | XP: 20 | PAGE: B41 | They hide in shadows and surprise others on a 1-4. They can leap up to 30`. ]
+Gargoyle 	CF CM DG FW PF PM PS TF TM TS 	4 	5 	[AC: 5 | HD: 4 | MV: 90` (30`), Fly 150` (50`) | THAC0: 16 | ATK: 2 claws/1 bite/1 horn | DMG: 1d3/1d3/1d6/1d4 | #APP: 1-6 (2-8) | SV: Fighter 8 | ML: 11 | TT: C | AL: C | LV: 4 | XP: 75 | PAGE: B35 | Can only be hit with magic weapons or spells and are immune to sleep and charm spells. ]
+Gelatinous Cube 	DG PM TM 	4 	5 	[AC: 8 | HD: 4* | MV: 60` (20`) | THAC0: 16 | ATK: 1 | DMG: 2d8 + special | #APP: 1 (0) | SV: Fighter 2 | ML: 12 | TT: V | AL: N | LV: 4 | XP: 125 | PAGE: B35 | They surprise others on a 1-4 and will paralyze another if a failed save versus paralysis occurs when hit (lasting 2d4 turns). They can be hurt with fire and weapons but not cold or lightning. ]
+Ghoul 	PP PS PH PM CP CF CH CM TS TH TM DG 	2 	5 	[AC: 6 | HD: 2* | MV: 90` (30`) | THAC0: 18 | ATK: 2 claws/1 bite | DMG: 1d3/1d3/1d3 + special | #APP: 1-6 (2-16) | SV: Fighter 2 | ML: 9 | TT: B | AL: C | LV: 2 | XP: 25 | PAGE: B35 | Will paralyze anyone they hit if a save versus paralysis fails, lasting 2d4 turns. ]
+Giant, Cloud 	CH CM PH PM TH TM 	13 	3 	[AC: 4 | HD: 12 + 3 | MV: 120` (40`) | THAC0: 10 | ATK: 1 | DMG: 6d6 | #APP: 1-2 (1-3) | SV: Fighter 12 | ML: 10 | TT: E + 5,000gp | AL: N | LV: 13 | XP: 1,100 | PAGE: X32 | Have keen senses and are surprise 1 out of 6 times. They can hurl rocks 200` for 3d6 damage and always have 3d6 giant hawks or 6d6 dire wolves guarding lairs. ]
+Giant, Fire 	CF CH CM CP DG PD PF PH PM PP TF TH TM 	12 	5 	[AC: 4 | HD: 11 + 2 | MV: 120` (40`) | THAC0: 10 | ATK: 1 | DMG: 5d6 | #APP: 1-2 (1-3) | SV: Fighter 11 | ML: 9 | TT: E + 5,000gp | AL: C | LV: 12 | XP: 1,100 | PAGE: X32 | Can hurl rocks 200` for 3d6 damage and always have 1d3 hydras (20%) or 3d6 hellhounds (80%) guarding lairs. They are not affected by fire based attacks. ]
+Giant, Frost 	CF CH CM DG PF PH PM 	11 	3 	[AC: 4 | HD: 10 + 1 | MV: 120` (40`) | THAC0: 11 | ATK: 1 | DMG: 4d6 | #APP: 1-2 (1-4) | SV: Fighter 10 | ML: 9 | TT: E + 5,000gp | AL: C | LV: 11 | XP: 900 | PAGE: X32 | Can hurl rocks 200` for 3d6 damage and always have 3d6 polar bears (20%) or 6d6 wolves (80%) guarding lairs. They are not affected by cold based attacks. ]
+Giant, Hill 	CF CH CM CP DG PF PH PM PP PS TF TH TM TS 	8 	13 	[AC: 4 | HD: 8 | MV: 120` (40`) | THAC0: 12 | ATK: 1 | DMG: 2d8 | #APP: 1-4 (2-8) | SV: Fighter 8 | ML: 8 | TT: E + 5,000gp | AL: C | LV: 8 | XP: 650 | PAGE: X32 ]
+Giant, Stone 	CH CM DG PH PM TH TM 	9 	5 	[AC: 4 | HD: 9 | MV: 120` (40`) | THAC0: 12 | ATK: 1 | DMG: 3d6 | #APP: 1-2 (1-6) | SV: Fighter 9 | ML: 9 | TT: E + 5,000gp | AL: N | LV: 9 | XP: 900 | PAGE: X32 | Can hurl rocks 300` for 3d6 damage and may have 1d4 cave bears guarding lairs. ]
+Giant, Storm 	CM FW PM SW TM 	15 	3 	[AC: 2 | HD: 15 | MV: 150` (50`) | THAC0: 9 | ATK: 1 + special | DMG: 8d6 + special | #APP: 1 (1-3) | SV: Fighter 15 | ML: 10 | TT: E + 5,000gp | AL: C | LV: 15 | XP: 1,350 | PAGE: X32 | Can create a thunderstorm in 1 turn or throw a lightning bolt ever 5 rounds. This bolt (save versus spells for half damage) will cause their hit points in damage. They always have 2d4 griffons or 3d6 giant crabs guarding lairs. They are unaffected by lightning attacks. ]
+Gnoll 	DG PF PH PM PP PS TF TH TM TS 	2 	5 	[AC: 5 | HD: 2 | MV: 90` (30`) | THAC0: 18 | ATK: 1 weapon | DMG: 2d4 or weapon+1 | #APP: 1-6 (3-18) | SV: Fighter 2 | ML: 8 | TT: D | AL: C | LV: 2 | XP: 20 | PAGE: B35 | For every 20 gnolls, there will be a 16hp leader that attacks with 3HD. ]
+Gnome 	CF CH CM DG PF PH PM TF TH TM VG 	1 	3 	[AC: 5 | HD: 1 | MV: 60` (20`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 1-8 (5-40) | SV: Dwarf 1 | ML: 8 | TT: C | AL: L or N | LV: 1 | XP: 10 | PAGE: B35 | Can see up to 90` in the dark. For every 20 gnomes, there will be an 11hp leader that fights as 2HD. A clan chieftain has 18hp and fights a 4HD with +1 to damage. Gnomes with a chieftain have a morale of 10. ]
+Goat, Young 	CH CM CP PD PH PM PP VG 	1 	5 	[AC: 7 | HD: 1 | MV: 240` (80`) | THAC0: 19 | ATK: 1 butt | DMG: 1d4 | #APP: 0 (3-30) | SV: Fighter 1 | ML: 5 | TT: Nil | AL: N | LV: 1 | XP: 10 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Goblin 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	1 	5 	[AC: 6 | HD: 1 -1 | MV: 60` (20`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 2-8 (6-60) | SV: Normal Man | ML: 7 | TT: R (C) | AL: C | LV: 1 | XP: 5 | PAGE: B36 | Can see up to 90` in the dark but suffer -1 to hit when in daylight. There is a 20% chance they are riding a dire wolf. A goblin king will inspire others to have a morale of 9. The king will have 15hp and attack as 3HD with +1 to damage. ]
+Golem, Amber 	DG 	12 	2 	[AC: 6 | HD: 10** | MV: 180` (60`) | THAC0: 11 | ATK: 2 claws/1 bite | DMG: 2d6/2d6/2d10 | #APP: 1 (1) | SV: Fighter 5 | ML: 12 | TT: Nil | AL: N | LV: 12 | XP: 2,300 | PAGE: X33 | They are immune to sleep, charm, gases, & hold spells and can only be hit with magic weapons. They can detect invisible creatures up to 60` away. ]
+Golem, Bone 	DG 	8 	2 	[AC: 2 | HD: 8 | MV: 120` (40`) | THAC0: 12 | ATK: 4 weapons | DMG: By weapons | #APP: 1 (1) | SV: Fighter 4 | ML: 12 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X33 | They are immune to sleep, charm, gases, & hold spells and can only be hit with magic weapons. They will attack 2 opponents per round and are immune to fire, cold, and electrical attacks. ]
+Golem, Bronze 	DG 	22 	2 	[AC: 0 | HD: 20** | MV: 240` (80`) | THAC0: 6 | ATK: 1 fist + special | DMG: 3d10 + special | #APP: 1 (1) | SV: Fighter 10 | ML: 12 | TT: Nil | AL: N | LV: 22 | XP: 4,300 | PAGE: X33 | They are immune to sleep, charm, gases, & hold spells and can only be hit with magic weapons. They are not affected by fire based attacks and are filled with liquid fire. Anyone hitting with edged weapons must save versus death ray or take 2d6 damage from the liquid. ]
+Golem, Wood 	DG 	3 	2 	[AC: 7 | HD: 2 + 2 | MV: 120` (40`) | THAC0: 17 | ATK: 1 fist | DMG: 1d8 | #APP: 1 (1) | SV: Fighter 1 | ML: 12 | TT: Nil | AL: N | LV: 3 | XP: 25 | PAGE: X33 | They are immune to sleep, charm, gases, & hold spells and can only be hit with magic weapons. They are slow with a -1 to initiative and burn easily with -2 to saves and an extra point of damage from such attacks.. ]
+Gorgon 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	9 	3 	[AC: 2 | HD: 8* | MV: 120` (40`) | THAC0: 12 | ATK: 1 gore or breath | DMG: 2d6 or petrification | #APP: 1-2 (1-4) | SV: Fighter 8 | ML: 8 | TT: E | AL: C | LV: 9 | XP: 1,200 | PAGE: X33 | They may breath a gas up to 60` where anyone in it must save versus petrification or turn to stone. ]
+Gray Ooze 	DG 	3 	3 	[AC: 8 | HD: 3* | MV: 10` (3`) | THAC0: 17 | ATK: 1 | DMG: 2d8 | #APP: 1 (1) | SV: Fighter 2 | ML: 12 | TT: Nil | AL: N | LV: 3 | XP: 50 | PAGE: B36 | Cannot be harmed by cold or fire, but weapons and lightning work. Their ooze will eat away normal armor immediately and magic armor in 1 turn. Any ooze stuck on a victim will do 2d8 damage per round. ]
+Green Slime 	DG 	2 	3 	[AC: Always Hit | HD: 2* | MV: 3` (1`) | THAC0: 18 | ATK: 1 | DMG: Special | #APP: 1 (0) | SV: Fighter 1 | ML: 12 | TT: Nil | AL: N | LV: 2 | XP: 25 | PAGE: B36 | Can only be harmed by fire or cold and can dissolve metal or wood in 6 rounds. If the slime gets on skin it must be burned off or magically cured...otherwise the victim will turn into green slime in 1d4 rounds. Burning does half damage to victim and half damage to slime. ]
+Griffon 	CH CM FW PD PH PM SW TM 	7 	5 	[AC: 5 | HD: 7 | MV: 120` (40`), Flying 360` (120`) | THAC0: 13 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/2d8 | #APP: 0 (2-16) | SV: Fighter 4 | ML: 8 | TT: E | AL: N | LV: 7 | XP: 450 | PAGE: X33 | They favor horses for food and young can be captured and tamed. ]
+Halfling 	CP CF CH DG VG 	1 	3 	[AC: 7 | HD: 1 -1 | MV: 90` (30`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 3-18 (5-40) | SV: Halfling 1 | ML: 7 | TT: V (B) | AL: L | LV: 1 | XP: 5 | PAGE: B36 ]
+Harpy 	CF CH CM CP DG FW PD PF PH PM PP PS SW TF TH TM TS 	3 	3 	[AC: 7 | HD: 3* | MV: 60` (20`), Fly 150` (50`) | THAC0: 17 | ATK: 2 claws/1 weapon + special | DMG: 1d4/1d4/1d6 + special | #APP: 1-6 (2-8) | SV: Fighter 3 | ML: 7 | TT: C | AL: C | LV: 3 | XP: 50 | PAGE: B36 | Their song will charm others if they fail a save versus spells. If the save succeeds, one need not do it again during that battle. They get +2 to saves. ]
+Hawk 	CF CH CM CP FW PD PF PM PP PS SW TF TH TM TS 	1 	13 	[AC: 8 | HD: 1d4 hp | MV: 480` (160`) | THAC0: 19 | ATK: 1 | DMG: 1d2 | #APP: 0 (1-6) | SV: Normal Man | ML: 7 | TT: Nil | AL: N | LV: 1 | XP: 5 | PAGE: X33 ]
+Hawk, Giant 	CF CH CM CP FW PD PF PM PP PS SW TF TH TM TS 	4 	3 	[AC: 6 | HD: 3 + 3 | MV: 450` (150`) | THAC0: 16 | ATK: 1 | DMG: 1d6 | #APP: 0 (1-3) | SV: Fighter 2 | ML: 8 | TT: Nil | AL: N | LV: 4 | XP: 50 | PAGE: X33 | Can carry off halfling sized prey. ]
+Hellhound 	DG PD PH PM PS TH TM TS 	4 	2 	[AC: 4 | HD: 3 to 7* | MV: 120` (40`) | THAC0: 16 | ATK: bite or breath | DMG: 1d6 or special | #APP: 2-8 (2-8) | SV: Fighter 3 to 7 | ML: 9 | TT: C | AL: C | LV: 4 | XP: 125 | PAGE: X33 | They will do their fire breath 50% of the time and it does 1d6 damage for each hit dice of the hellhound and a save versus dragon breath will reduce it to half damage. They have a 75% chance to detect invisible creatures or objects within 60`. ]
+Hippogriff 	CH CM FW PH PM SW TH TM 	4 	3 	[AC: 5 | HD: 3 + 1 | MV: 180` (60`), Fly 360` (120`) | THAC0: 16 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/1d10 | #APP: 0 (2-16) | SV: Fighter 2 | ML: 8 | TT: Nil | AL: N | LV: 4 | XP: 50 | PAGE: X34 | Can be tamed and ridden. ]
+Hobgoblin 	CF CH CM CP DG PD PF PH PM PP PS TH TM TS 	2 	5 	[AC: 6 | HD: 1 + 1 | MV: 90` (30`) | THAC0: 18 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 1-6 (4-24) | SV: Fighter 1 | ML: 8 | TT: D | AL: C | LV: 2 | XP: 15 | PAGE: B36 | If a 22hp hobgoblin king (attacks as 5HD) is present, then they have a morale of 10. ]
+Horse, Draft 	CF CH CM CP PD PF PH PM PP PS TF TH TM TS VG 	3 	5 	[AC: 7 | HD: 3 | MV: 90` (30`) | THAC0: 17 | ATK: Nil | DMG: Nil | #APP: 0 (domestic only) | SV: Fighter 2 | ML: 6 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: X34 ]
+Horse, Riding 	CF CH CM CP PD PF PH PM PP PS TF TH TM TS VG 	2 	5 	[AC: 7 | HD: 2 | MV: 240` (80`) | THAC0: 18 | ATK: 2 hooves | DMG: 1d4/1d4 | #APP: 0 (10-100) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X34 ]
+Horse, War 	CF CH CM CP PD PF PH PM PP PS TF TH TM TS VG 	3 	5 	[AC: 7 | HD: 3 | MV: 120` (40`) | THAC0: 17 | ATK: 2 hooves | DMG: 1d6/1d6 | #APP: 0 (domestic only) | SV: Fighter 2 | ML: 9 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: X34 ]
+Hydra 	PP PS PF PM CP CF CM TS TF TM DG 	8 	5 	[AC: 5 | HD: 5 to 12 | MV: 120` (40`) | THAC0: 12 | ATK: 5 to 12 | DMG: 1d10 per head | #APP: 1 (1) | SV: Fighter 5 to 12 | ML: 9 | TT: B | AL: N | LV: 8 | XP: 650 | PAGE: X34 | Have 1d8+4 heads with each being 1 HD and 8 hp. ]
+Hydra, Sea 	SW 	8 	5 	[AC: 5 | HD: 5 to 12 | MV: 120` (40`) | THAC0: 12 | ATK: 5 to 12 | DMG: 1d10 per head | #APP: 1 (1) | SV: Fighter 5 to 12 | ML: 9 | TT: B | AL: N | LV: 8 | XP: 650 | PAGE: X34 | Have 1d8+4 heads with each being 1 HD and 8 hp. ]
+Insect Swarm 	PS PF TF TS VG 	3 	1 	[AC: 7 | HD: 2, 3, or 4 | MV: 30` (10`), Fly 60` (20`) | THAC0: 17 | ATK: 1 swarm | DMG: 2 points | #APP: 1 swarm (1-3 swarms) | SV: Normal Man | ML: 11 | TT: Nil | AL: N | LV: 3 | XP: 80 | PAGE: B37 | Random insects taking up 10`x30` of space automatically hitting anyone where victims with no armor take double damage. It takes 3 rounds to completely swat away insects after escaping. Torches will only do damage to them as weapons doing 1d4 damage. ]
+Invisible Stalker 	DG 	9 	1 	[AC: 3 | HD: 8* | MV: 120` (40`) | THAC0: 12 | ATK: 1 | DMG: 4d4 | #APP: 1 (1) | SV: Fighter 8 | ML: 12 | TT: Nil | AL: N | LV: 9 | XP: 1,200 | PAGE: X34 | They surprise anyone that cannot detect invisible on a 1 to 5. ]
+Kobold 	CF CH CM DG PF PH PM PS TF TH TM TS 	1 	5 	[AC: 7 | HD: 1d4 hp | MV: 60` (20`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d4 or weapon-1 | #APP: 4-16 (6-60) | SV: Normal Man | ML: 6 | TT: P (J) | AL: C | LV: 1 | XP: 5 | PAGE: B37 | Can see in the dark up to 90`. Their lair may have a 9hp chieftain that fights as 2HD. When near a chieftain, they will have a morale of 8. ]
+Leech, Giant 	DG FW PS TS LW 	6 	5 	[AC: 7 | HD: 6 | MV: 90` (30`) | THAC0: 14 | ATK: blood suck | DMG: 1d6 | #APP: 0 (1-4) | SV: Fighter 3 | ML: 10 | TT: Nil | AL: N | LV: 6 | XP: 275 | PAGE: X34 | Must be killed to remove them from a victim that it successfully hits, doing 1d6 damage each round to them. ]
+Lizard Man 	DG FW PS TS LW 	3 	3 	[AC: 5 | HD: 2 + 1 | MV: 60` (20`), Swim 120` (40`) | THAC0: 17 | ATK: 1 weapon | DMG: 1d6+1 or weapon+1 | #APP: 2-8 (6-36) | SV: Fighter 2 | ML: 12 | TT: D | AL: N | LV: 3 | XP: 25 | PAGE: B38 ]
+Lizard, Giant Draco 	PP PS PF DG LW 	5 	5 	[AC: 5 | HD: 4 + 2 | MV: 120` (40`), Fly 210` (70`) | THAC0: 15 | ATK: 1 bite | DMG: 1d10 | #APP: 1-4 (1-8) | SV: Fighter 3 | ML: 7 | TT: U | AL: N | LV: 5 | XP: 125 | PAGE: B38 | Can glide with skin between the legs. ]
+Lizard, Giant Gecko 	TS TF TH TM DG LW 	4 	5 	[AC: 5 | HD: 3 + 1 | MV: 120` (40`) | THAC0: 16 | ATK: 1 bite | DMG: 1d8 | #APP: 1-6 (1-10) | SV: Fighter 2 | ML: 7 | TT: U | AL: N | LV: 4 | XP: 50 | PAGE: B38 | Sleep during the day and climb walls when hunting. ]
+Lizard, Giant Horned Chameleon 	TS TF TH TM DG LW 	5 	5 	[AC: 2 | HD: 5* | MV: 120` (40`) | THAC0: 17 | ATK: 1 bite/1 horn | DMG: 2d4/1d6 | #APP: 1-3 (1-6) | SV: Fighter 3 | ML: 7 | TT: U | AL: N | LV: 5 | XP: 35 | PAGE: B38 | Surprises others on a 1-5 and can shoot a sticky tongue 5`. Anyone hit with the tongue is pulled into the mouth and bitten for 2d4 damage. Can hit others with the tail and knocking them down so they miss a combat round. ]
+Lizard, Giant Tuatara 	PP PS PF DG LW 	6 	5 	[AC: 4 | HD: 6 | MV: 90` (30`) | THAC0: 14 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/2d6 | #APP: 1-2 (1-4) | SV: Fighter 4 | ML: 6 | TT: V | AL: N | LV: 6 | XP: 275 | PAGE: B38 | Can see in the dark up to 90`. ]
+Lycanthrope, Devil Swine 	CF CH CP PD PF PH PP PS TF TH TS VG 	10 	2 	[AC: 3 (9 as human) | HD: 9* | MV: 180` (60`), Human 120` (40`) | THAC0: 12 | ATK: 1 gore or weapon | DMG: 2d6 or weapon | #APP: 1-3 (1-4) | SV: Fighter 9 | ML: 10 | TT: C | AL: C | LV: 10 | XP: 1,600 | PAGE: X30 | Can only be hit with magic/silver weapons or spells. They can charm 3 times a day taking control of humans unless a save versus spells is successful (at -2 on the roll). ]
+Lycanthrope, Werebear 	CF CH CM DG PF PH PM PS VG 	7 	3 	[AC: 2 (9 as human) | HD: 6* | MV: 120` (40`) | THAC0: 14 | ATK: 2 claws/1 bite | DMG: 2d4/2d4/2d8 | #APP: 1-4 (1-4) | SV: Fighter 6 | ML: 10 | TT: C | AL: N | LV: 7 | XP: 500 | PAGE: B38 | Can only be hit with magic/silver weapons or spells. They can summon 1-2 animals like them in 1d4 rounds. If within wolfsbane, they must save versus poison or flee in fear. If both claws hit a single target, then the werebear will hug them for an additional 2d8 damage. ]
+Lycanthrope, Wereboar 	CF CH CP PD PF PH PP PS TF TH TS VG 	5 	3 	[AC: 4 (9 as human) | HD: 4 + 1* | MV: 150` (50`) | THAC0: 15 | ATK: 1 tusk-bite | DMG: 2d6 | #APP: 1-4 (2-8) | SV: Fighter 4 | ML: 9 | TT: C | AL: N | LV: 5 | XP: 200 | PAGE: B38 | Can only be hit with magic/silver weapons or spells. They can summon 1-2 animals like them in 1d4 rounds. If within wolfsbane, they must save versus poison or flee in fear. They fight to the death and have +2 to hit. ]
+Lycanthrope, Wererat 	CF CH CM CP DG PD PS VG 	3 	5 	[AC: 7 (9 as human) | HD: 3* | MV: 120` (40`) | THAC0: 17 | ATK: 1 bite or weapon | DMG: 1d4 or weapon | #APP: 1-8 (2-16) | SV: Fighter 3 | ML: 8 | TT: C | AL: C | LV: 3 | XP: 50 | PAGE: B38 | Can only be hit with magic/silver weapons or spells. They can summon 1-2 animals like them in 1d4 rounds. If within wolfsbane, they must save versus poison or flee in fear. Can surprise others on a 1-4. ]
+Lycanthrope, Weretiger 	CF CH CM CP PF PH PM PP PS TF TH TM TS VG 	5 	2 	[AC: 3 (9 as human) | HD: 5* | MV: 150` (50`) | THAC0: 17 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/2d6 | #APP: 1-4 (1-4) | SV: Fighter 5 | ML: 9 | TT: C | AL: N | LV: 5 | XP: 35 | PAGE: B38 | Can only be hit with magic/silver weapons or spells. They can summon 1-2 animals like them in 1d4 rounds. If within wolfsbane, they must save versus poison or flee in fear. They surprise others on a 1-4. ]
+Lycanthrope, Werewolf 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS VG 	4 	13 	[AC: 5 (9 as human) | HD: 4* | MV: 180` (60`) | THAC0: 16 | ATK: 1 bite | DMG: 2d4 | #APP: 1-6 (2-12) | SV: Fighter 4 | ML: 8 | TT: C | AL: C | LV: 4 | XP: 125 | PAGE: B38 | Can only be hit with magic/silver weapons or spells. They can summon 1-2 animals like them in 1d4 rounds. If within wolfsbane, they must save versus poison or flee in fear. Groups of five or more will have a 30hp pack leader that attacks as 5HD with +2 damage. ]
+Man, Acolyte (Cleric) 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG VG 	1 	5 	[AC: 2 | HD: 1 | MV: 60` (20`) | THAC0: 19 | ATK: 1 mace | DMG: 1d6 | #APP: 1-8 (1-20) | SV: Cleric 1 | ML: 7 | TT: U | AL: Any | LV: 1 | XP: 10 | PAGE: B30 | If four or more encountered, they will be led by a higher level cleric. ]
+Man, Bandit 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM VG 	1 	5 	[AC: 6 | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 1-8 (3-30) | SV: Thief 1 | ML: 8 | TT: U (A) | AL: C or N | LV: 1 | XP: 10 | PAGE: B30 | May have a leader of any class. ]
+Man, Berserker 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM VG 	2 	5 	[AC: 7 | HD: 1 + 1* | MV: 120` (40`) | THAC0: 18 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 1-6 (3-30) | SV: Fighter 1 | ML: Nil | TT: P (B) | AL: N | LV: 2 | XP: 19 | PAGE: B32 | They have +2 when attacking humanoid creatures. ]
+Man, Brigand 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM VG 	1 	5 	[AC: Varies | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (10-40) | SV: Fighter 1 | ML: 8 | TT: A | AL: C | LV: 1 | XP: 10 | PAGE: X35 | See Rules ]
+Man, Buccaneer 	PS TS SW VG 	1 	5 	[AC: Varies | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (special) | SV: Fighter 1 | ML: 6 (7) | TT: A | AL: N or C | LV: 1 | XP: 10 | PAGE: X35 | See Rules ]
+Man, Dervish 	CP PD PP VG 	1 	1 	[AC: Varies | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (20-70) | SV: Fighter 1 | ML: 10 | TT: A | AL: L | LV: 1 | XP: 10 | PAGE: X35 | See Rules ]
+Man, Human 	VG 	1 	1 	[AC: 9 | HD: 1d4 hp | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: Weapon | #APP: 1-4 (1-20) | SV: Normal Man | ML: 6 | TT: U | AL: Any | LV: 1 | XP: 5 | PAGE: B40 ]
+Man, Medium (Magic-User) 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG VG 	1 	5 	[AC: 9 | HD: 1** | MV: 120` (40`) | THAC0: 19 | ATK: 1 dagger or spell | DMG: 1d4 or spell | #APP: 1-4 (1-12) | SV: Magic-User 1 | ML: 7 | TT: V | AL: Any | LV: 1 | XP: 16 | PAGE: B39 | They have a level 1 spell and there is a 50% chance they will have a 3rd level magic-user master with two level 1 spells and one level 2 spell. ]
+Man, Merchant 	CP CF CH CM SW VG 	1 	1 	[AC: 5 | HD: 1 | MV: 90` (30`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (1-20) | SV: Fighter 1 | ML: Varies | TT: A | AL: N | LV: 1 | XP: 10 | PAGE: X35 | See Rules ]
+Man, Neanderthal (Caveman) 	PF PH PM CF CH CM TS TF TH TM DG LW 	2 	5 	[AC: 8 | HD: 2 | MV: 120` (40`) | THAC0: 18 | ATK: 1 weapon | DMG: 2d4 or weapon+1 | #APP: 1-10 (10-40) | SV: Fighter 2 | ML: 7 | TT: C | AL: L | LV: 2 | XP: 20 | PAGE: B39 | May have a 6HD leader that is about 10` tall, where 10-40 cavemen will have 2 leaders. ]
+Man, Noble 	VG 	3 	1 	[AC: 2 | HD: 3 | MV: 60` (20`) | THAC0: 17 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 2-12 (2-12) | SV: Varies | ML: 8 | TT: Vx3 | AL: Any | LV: 3 | XP: 35 | PAGE: B39 ]
+Man, Nomad 	PD PP CP VG 	1 	1 	[AC: Varies | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (10-40) | SV: Fighter 1 | ML: 8 | TT: A | AL: N | LV: 1 | XP: 10 | PAGE: X35 | See Rules ]
+Man, Pirate 	PS TS SW VG 	1 	5 	[AC: Varies | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (special) | SV: Fighter 1 | ML: 6 (7) | TT: A | AL: N or C | LV: 1 | XP: 10 | PAGE: X35 | See Rules ]
+Man, Trader 	CP CF CH CM SW VG 	1 	1 	[AC: 6 | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 1-8 (3-18) | SV: Fighter 1 | ML: 7 | TT: U, V | AL: Any | LV: 1 | XP: 10 | PAGE: B43 | Usually trade goods and have 1d4 mules with them. ]
+Man, Veteran 	VG 	2 	1 	[AC: 2 | HD: 1 to 3 | MV: 60` (20`) | THAC0: 18 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 2-8 (2-12) | SV: Fighter 1 to 3 | ML: 9 (Varies) | TT: V | AL: Any | LV: 2 | XP: 20 | PAGE: B44 | These are varying types of fighters. You can create them ahead of time using page B52. ]
+Manticore 	CF CH CM CP DG FW PD PH PM PP PS SW TF TH TM TS 	7 	5 	[AC: 4 | HD: 6 + 1 | MV: 120` (40`), Fly 180` (60`) | THAC0: 13 | ATK: 2 claws/1 bite or spikes | DMG: 1d4/1d4/2d4 or special | #APP: 1-2 (1-4) | SV: Fighter 6 | ML: 9 | TT: D | AL: C | LV: 7 | XP: 350 | PAGE: X35 | They have 24 spikes and can fire 6 per round with 180` range doing 1d6 damage each. They will regrow 2 spikes per day. ]
+Mastadon 	CF CH CM CP PD PF PH PM PP PS LW 	15 	3 	[AC: 3 | HD: 15 | MV: 120` (40`) | THAC0: 9 | ATK: 2 tusks or 1 trample | DMG: 2d6/2d6 or 4d8 | #APP: 0 (2-16) | SV: Fighter 8 | ML: 8 | TT: Special | AL: N | LV: 15 | XP: 1,350 | PAGE: X35 | They will first charge, strike with tusks for double damage and after that they will either tusk (25%) or trample (75%) where they get a +4 to trample when man-sized or smaller opponent. Their tusks are worth 200-800gp each. ]
+Medusa 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	4 	3 	[AC: 8 | HD: 4** | MV: 90` (30`) | THAC0: 16 | ATK: 1 snakebite + special | DMG: 1d6 + poison | #APP: 1-3 (1-4) | SV: Fighter 4 | ML: 8 | TT: F | AL: C | LV: 4 | XP: 175 | PAGE: B39 | The sight will turn others to stone if they fail a save versus petrification. Any bites require a save versus poison or death occurs in 1 turn. If they see their own reflection, they will turn to stone if they fail the save. They have +2 to magical saves. Anyone attacking it without looking suffer -4 to hit and the medusa gets a +2 to hit. ]
+Mermen 	FW SW 	1 	5 	[AC: 6 | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 0 (1-20) | SV: Fighter 1 | ML: 8 | TT: A | AL: N | LV: 1 | XP: 10 | PAGE: X36 | For every 10 mermen, there will be a 2HD leader with saves of a level 2 fighter. For every 50 mermen, there will be a 4HD leader with saves of a level 4 fighter. ]
+Minotaur 	CF CH CM DG PF PH PM PS TF TH TM TS 	6 	3 	[AC: 6 | HD: 6 | MV: 120` (40`) | THAC0: 14 | ATK: 1 gore/1 bite or weapon | DMG: 1d6/1d6 or weapon+2 | #APP: 1-6 (1-8) | SV: Fighter 6 | ML: 12 | TT: C | AL: C | LV: 6 | XP: 275 | PAGE: B39 ]
+Moose 	PF PH PM PP 	4 	5 	[AC: 7 | HD: 4 | MV: 240` (80`) | THAC0: 16 | ATK: 1 butt | DMG: 1d8 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 4 | XP: 75 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Mule 	CF CH CM CP PF PH PM PP PS TF TH TM TS VG 	2 	13 	[AC: 7 | HD: 2 | MV: 120` (40`) | THAC0: 18 | ATK: 1 kick or 1 bite | DMG: 1d4 or 1d3 | #APP: 1-8 (2-12) | SV: Normal Man | ML: 8 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: B39 ]
+Mummy 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	7 	3 	[AC: 3 | HD: 5 + 1* | MV: 60` (20`) | THAC0: 14 | ATK: 1 touch + disease | DMG: 1d12 + disease | #APP: 1-4 (1-12) | SV: Fighter 5 | ML: 12 | TT: D | AL: C | LV: 7 | XP: 400 | PAGE: X36 | Seeing them requires a successful save versus paralysis or be frozen with fear until they are out of sight or attack someone. Anyone hit will suffer a disease that will resist magical healing and wounds take 10x longer to heal. It can be cured with magic. They can only be hurt with fire, spells, or magic weapons all of which do half damage. They are immune to sleep, charm, or hold spells. ]
+Nixie 	FW SW 	1 	3 	[AC: 7 | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 | DMG: 1d4 | #APP: 0 (2-40) | SV: Elf 1 | ML: 6 | TT: B | AL: N | LV: 1 | XP: 10 | PAGE: X36 | They try to avoid combat and 10 nixies can charm someone to enter the water and serve them for 1 year. A save versus spells will avoid this charm. They will summon a giant bass to aid them. ]
+Ochre Jelly 	DG 	5 	3 	[AC: 8 | HD: 5* | MV: 30` (10`) | THAC0: 17 | ATK: 1 | DMG: 2d6 | #APP: 1 (0) | SV: Fighter 3 | ML: 12 | TT: Nil | AL: N | LV: 5 | XP: 35 | PAGE: B40 | Can only be harmed by fire or cold and any attacks with weapons or lightning will make several (1d4+1) smaller (2HD) ochre jellies, doing only 1d6 damage each. They can destroy wood, leather, and cloth in 1 round. ]
+Octopus, Giant 	FW SW LW 	8 	3 	[AC: 7 | HD: 8 | MV: 90` (30`) | THAC0: 12 | ATK: 8 tentacles/1 bite | DMG: 1d3x8/1d6 | #APP: 0 (1-2) | SV: Fighter 4 | ML: 7 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X37 | Each hit with a tentacle will wrap around the victim doing 1d3 damage each round and causing the victim -1 to hit. This is for each tentacle wrapped around the victim. They can sever a tentacle if they roll do more than 5 damage. If the octopus is losing, they will squirt ink and try to flee. ]
+Ogre 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	5 	13 	[AC: 5 | HD: 4 + 1 | MV: 90` (30`) | THAC0: 15 | ATK: 1 club | DMG: 1d10 | #APP: 1-6 (2-12) | SV: Fighter 4 | ML: 10 | TT: C + 1,000gp | AL: C | LV: 5 | XP: 125 | PAGE: B40 ]
+Orc 	CF CH CM CP DG PD PF PH PM PP PS TF TM TS 	1 	13 	[AC: 6 | HD: 1 | MV: 120` (40`) | THAC0: 19 | ATK: 1 weapon | DMG: 1d6 or weapon | #APP: 2-8 (10-60) | SV: Fighter 1 | ML: 6 | TT: D | AL: C | LV: 1 | XP: 10 | PAGE: B40 | Fighting in daylight they get -1 to hit. One in a group will be a 8hp leader with +1 damage giving morale to other orcs of 8. One in a tribe will be a 15hp chieftain that attacks as 4HD and has +2 damage. Every 20 orcs has a 1 in 6 chance of an ogre or a 1 in 10 chance of a troll with them. ]
+Owl Bear 	PS PF PM CF DG 	5 	3 	[AC: 5 | HD: 5 | MV: 120` (40`) | THAC0: 15 | ATK: 2 claws/1 bite | DMG: 1d8/1d8/1d8 | #APP: 1-4 (1-4) | SV: Fighter 3 | ML: 9 | TT: C | AL: N | LV: 5 | XP: 175 | PAGE: B40 | If both claws hit a single target, then the owl bear will hug them for an additional 2d8 damage. ]
+Oxen 	PP PS PF PH PM TS TF TH TM VG 	3 	5 	[AC: 7 | HD: 3 | MV: 240` (80`) | THAC0: 17 | ATK: 1 butt | DMG: 1d8 | #APP: 0 (3-30) | SV: Fighter 2 | ML: 5 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: X28 | Young will half hit points while males will have 1d4 extra hit points. ]
+Pegasus 	CF CM FW PD PF PH PM SW TF TH TM 	3 	1 	[AC: 6 | HD: 2 + 2 | MV: 240` (80`), Fly 480` (160`) | THAC0: 17 | ATK: 2 hooves | DMG: 1d6/1d6 | #APP: 0 (1-12) | SV: Fighter 2 | ML: 8 | TT: Nil | AL: L | LV: 3 | XP: 25 | PAGE: X37 | They cannot be tamed but will serve lawful characters if captured young and trained. ]
+Pixie 	CF PF TF 	1 	2 	[AC: 3 | HD: 1* | MV: 90` (30`), Fly 180` (60`) | THAC0: 19 | ATK: 1 dagger | DMG: 1d4 | #APP: 2-8 (10-40) | SV: Elf 1 | ML: 7 | TT: R, S | AL: N | LV: 1 | XP: 13 | PAGE: B41 | They are invisible unless they want to be seen or detect invisible magic is used. They can attack when invisible giving those -2 to hit them. ]
+Pteranodon 	TH TM LW 	5 	13 	[AC: 6 | HD: 5 | MV: Fly 240` (120`) | THAC0: 15 | ATK: 1 | DMG: 1d12 | #APP: 0 (1-4) | SV: Fighter 3 | ML: 8 | TT: V | AL: N | LV: 5 | XP: 175 | PAGE: X37 | Giant flying dinosaurs with a wingspan of 50 feet. ]
+Pterodactyl 	TS TF TH TM LW 	1 	13 	[AC: 7 | HD: 1 | MV: Fly 180` (60`) | THAC0: 19 | ATK: 1 | DMG: 1d3 | #APP: 0 (2-8) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 1 | XP: 10 | PAGE: X37 | Flying dinosaurs with a wingspan of 8 to 10 feet. ]
+Purple Worm 	CH CP DG PD PH PP TH 	16 	3 	[AC: 6 | HD: 15* | MV: 60` (20`) | THAC0: 9 | ATK: 1 bite/1 sting | DMG: 2d8/1d8 + poison | #APP: 1-2 (1-4) | SV: Fighter 8 | ML: 10 | TT: D | AL: N | LV: 16 | XP: 2,300 | PAGE: X38 | Will swallow creatures if a hit is 4 more than needed or a 20, taking 3d6 damage each round while inside. Anyone stung by the tail must save versus poison or die. ]
+Rat 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS VG 	1 	13 	[AC: 9 | HD: 1 hp | MV: 60` (20`), Swim 30` (10`) | THAC0: 19 | ATK: 1 bite per pack | DMG: 1d6 + disease | #APP: 5-50 (2-20) | SV: Normal Man | ML: 5 | TT: L | AL: N | LV: 1 | XP: 5 | PAGE: B41 | There is a 1 in 20 chance that a bite will cause a disease. The victim can save versus poison or die (only if a 1 is rolled on 1d4) one in 1d6 days or they have to remain in bed for a month. If attacking someone, they must make a save versus death or fall down and be covered in rats until they can get back on their feet. ]
+Rat, Giant 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS VG 	1 	13 	[AC: 7 | HD: 1d4 hp | MV: 120` (40`), Swim 60` (20`) | THAC0: 19 | ATK: 1 bite | DMG: 1d3 + disease | #APP: 3-18 (3-30) | SV: Fighter 1 | ML: 8 | TT: C | AL: N | LV: 1 | XP: 5 | PAGE: B41 | There is a 1 in 20 chance that a bite will cause a disease. The victim can save versus poison or die (only if a 1 is rolled on 1d4) one in 1d6 days or they have to remain in bed for a month. ]
+Rhagodessa 	PP PS PF PH PM TS TF TH TM DG 	5 	1 	[AC: 5 | HD: 4 + 2 | MV: 150` (50`) | THAC0: 15 | ATK: 1 leg/1 bite | DMG: 0/2d8 | #APP: 1-4 (1-6) | SV: Fighter 2 | ML: 9 | TT: U | AL: N | LV: 5 | XP: 125 | PAGE: X38 | These giant arachnids are active at night where anyone hit with one of its 5 legs will get stuck and pulled to the mouth next round. ]
+Rhinoceros 	PD PF PH PM PP PS TH TM TS 	6 	13 	[AC: 5 | HD: 6 | MV: 120` (40`) | THAC0: 14 | ATK: butt or trample | DMG: 2d4 or 2d8 | #APP: 0 (1-12) | SV: Fighter 3 | ML: 6 | TT: Nil | AL: N | LV: 6 | XP: 275 | PAGE: X38 | They do double damage on their first attack. ]
+Rhinoceros, Woolly 	PD PF PH PM PP PS TH TM TS LW 	8 	13 	[AC: 4 | HD: 8 | MV: 120` (40`) | THAC0: 12 | ATK: butt or trample | DMG: 2d6 or 2d12 | #APP: 0 (1-8) | SV: Fighter 4 | ML: 6 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X38 | They do double damage on their first attack. ]
+Roc, Giant 	TM TH 	36 	3 	[AC: 0 | HD: 36 | MV: 60` (20`), Fly 480` (160`) | THAC0: 3 | ATK: 2 claws/1 bite | DMG: 3d6/3d6/8d6 | #APP: 0 (1) | SV: Fighter 15 | ML: 10 | TT: I | AL: L | LV: 36 | XP: 6,250 | PAGE: X38 | Huge birds that are unfriendly to non-lawfuls (-1 to neutrals and -2 to chaotics). Young rocs can be trained. ]
+Roc, Large 	TM TH 	12 	3 	[AC: 2 | HD: 12 | MV: 60` (20`), Fly 480` (160`) | THAC0: 10 | ATK: 2 claws/1 bite | DMG: 1d8/1d8/2d10 | #APP: 0 (1-8) | SV: Fighter 12 | ML: 9 | TT: I | AL: L | LV: 12 | XP: 1,100 | PAGE: X38 | Huge birds that are unfriendly to non-lawfuls (-1 to neutrals and -2 to chaotics). Young rocs can be trained. ]
+Roc, Small 	TM TH 	6 	3 	[AC: 4 | HD: 6 | MV: 60` (20`), Fly 480` (160`) | THAC0: 14 | ATK: 2 claws/1 bite | DMG: 1d4+1/1d4+1/2d6 | #APP: 0 (1-12) | SV: Fighter 3 | ML: 8 | TT: I | AL: L | LV: 6 | XP: 275 | PAGE: X38 | Huge birds that are unfriendly to non-lawfuls (-1 to neutrals and -2 to chaotics). Young rocs can be trained. ]
+Rust Monster 	DG 	5 	5 	[AC: 2 | HD: 5 | MV: 120` (40`) | THAC0: 15 | ATK: 1 | DMG: Special | #APP: 1-4 (1-4) | SV: Fighter 3 | ML: 7 | TT: Nil | AL: N | LV: 5 | XP: 175 | PAGE: B41 | If it touches metal, it will immediately rust. There is a 10% chance per + of magic items to remain intact. ]
+Salamander, Flame 	PD TH TM DG 	9 	3 	[AC: 2 | HD: 8* | MV: 120` (40`) | THAC0: 12 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d8 | #APP: 2-5 (2-8) | SV: Fighter 8 | ML: 8 | TT: F | AL: N | LV: 9 | XP: 1,200 | PAGE: X38 | Anyone within 20` will take 1d8 damage from the heat. They are immune to fire based attacks. ]
+Salamander, Frost 	CF CH CM DG 	13 	3 	[AC: 3 | HD: 12* | MV: 120` (40`) | THAC0: 10 | ATK: 4 claws/1 bite | DMG: 1d6x4/2d6 | #APP: 1-3 (1-3) | SV: Fighter 12 | ML: 9 | TT: E | AL: C | LV: 13 | XP: 1,900 | PAGE: X38 | Anyone within 20` will take 1d8 damage from the cold. They are immune to cold based attacks. ]
+Scorpion, Giant 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	4 	5 	[AC: 2 | HD: 4* | MV: 150` (50`) | THAC0: 16 | ATK: 2 claws/1 sting | DMG: 1d10/1d10/1d4 + poison | #APP: 1-6 (1-6) | SV: Fighter 2 | ML: 11 | TT: V | AL: C | LV: 4 | XP: 125 | PAGE: X39 | If a claw hits it grabs the opponent so the tail can sting them where they die from the poison if hit unless a save versus poison is successful. ]
+Sea Serpent (Lesser) 	SW LW 	6 	5 	[AC: 5 | HD: 6 | MV: 150` (50`) | THAC0: 14 | ATK: 1 bite or squeeze | DMG: 2d6 | #APP: 0 (2-12) | SV: Fighter 3 | ML: 8 | TT: Nil | AL: N | LV: 6 | XP: 275 | PAGE: X39 | This 30` giant snake will wrap around sea crafts and squeeze for 1d10 damage to the hull. ]
+Shadow 	CF CM DG PF PM PS TF TM TS VG 	3 	3 	[AC: 7 | HD: 2 + 2* | MV: 90` (30`) | THAC0: 17 | ATK: 1 | DMG: 1d4 + special | #APP: 1-8 (1-12) | SV: Fighter 2 | ML: 12 | TT: F | AL: C | LV: 3 | XP: 35 | PAGE: B41 | Can only be harmed by magical weapons and surprise on a 1 to 5. If it hits someone, they will lose 1 strength and lasts for 8 turns. Anyone who is reduced to 0 strength becomes a shadow. They are immune to sleep and charm. ]
+Shark, Bull 	SW 	2 	13 	[AC: 4 | HD: 2 | MV: 180` (60`) | THAC0: 18 | ATK: 1 bite | DMG: 2d4 | #APP: 0 (3-18) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: X39 | Can sense blood 300` away and will get into a feeding frenzy with no morale checks. ]
+Shark, Great White 	SW LW 	8 	13 	[AC: 4 | HD: 8 | MV: 180` (60`) | THAC0: 12 | ATK: 1 bite | DMG: 2d10 | #APP: 0 (1-4) | SV: Fighter 4 | ML: 7 | TT: Nil | AL: N | LV: 8 | XP: 650 | PAGE: X39 | Can sense blood 300` away and will get into a feeding frenzy with no morale checks. ]
+Shark, Mako 	SW 	4 	13 	[AC: 4 | HD: 4 | MV: 180` (60`) | THAC0: 16 | ATK: 1 bite | DMG: 2d6 | #APP: 0 (2-12) | SV: Fighter 2 | ML: 7 | TT: Nil | AL: N | LV: 4 | XP: 75 | PAGE: X39 | Can sense blood 300` away and will get into a feeding frenzy with no morale checks. ]
+Shrew, Giant 	DG 	1 	5 	[AC: 4 | HD: 1 | MV: 180` (60`) | THAC0: 19 | ATK: 2 bites | DMG: 1d6/1d6 | #APP: 1-4 (1-8) | SV: Fighter 1 | ML: 10 | TT: Nil | AL: N | LV: 1 | XP: 10 | PAGE: B42 | They can jump up 5` and cannot see but use sounds to detect things up to 60` away. A silence 15` radius will blind them and then have an AC of 8 and -4 to hit. They always have 1st initiative and then +1 to initiative after. ]
+Shrieker 	DG 	3 	13 	[AC: 7 | HD: 3 | MV: 9` (3`) | THAC0: 17 | ATK:  | DMG: Nil | #APP: 1-8 (0) | SV: Fighter 1 | ML: 12 | TT: Nil | AL: N | LV: 3 | XP: 35 | PAGE: B42 | These mushrooms will react to movement (30`) and light (60`) and thus shriek for 1d3 rounds where wandering monsters may hear it and come along. ]
+Skeleton 	DG PS TS 	1 	3 	[AC: 7 | HD: 1 | MV: 60` (20`) | THAC0: 19 | ATK: 1 | DMG: 1d6 or weapon | #APP: 3-12 (3-30) | SV: Fighter 1 | ML: 12 | TT: Nil | AL: C | LV: 1 | XP: 10 | PAGE: B42 | Unaffected by sleep, charm, or mind-reading magic. ]
+Snake, Giant Rattler 	PD 	4 	5 	[AC: 5 | HD: 4* | MV: 120` (40`) | THAC0: 16 | ATK: 1 bite x 2 | DMG: 1d4/1d4 + poison | #APP: 1-4 (1-4) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 4 | XP: 125 | PAGE: B42 | Their bite requires a save versus poison or death occurs in 1d6 turns. They may attack a 2nd time at the end of a round. ]
+Snake, Pit Viper 	PP PS PF PH PM TS TF TH TM DG 	2 	5 	[AC: 6 | HD: 2* | MV: 90` (30`) | THAC0: 18 | ATK: 1 bite | DMG: 1d4 + poison | #APP: 1-8 (1-8) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 2 | XP: 25 | PAGE: B42 | Can detect heat up to 60` away and always has initiative. A bite requires a save versus poison or death occurs. ]
+Snake, Rock Python 	PS TS TF TH TM LW 	5 	5 	[AC: 6 | HD: 5* | MV: 90` (30`) | THAC0: 17 | ATK: 1 bite/1 squeeze | DMG: 1d4/2d4 | #APP: 1-3 (1-3) | SV: Fighter 3 | ML: 8 | TT: U | AL: N | LV: 5 | XP: 35 | PAGE: B42 | These 20` snakes will wrap around a victim if they can bite them first. ]
+Snake, Sea Snake 	SW LW 	3 	5 	[AC: 6 | HD: 3* | MV: 90` (30`) | THAC0: 17 | ATK: 1 bite | DMG: 1 + poison | #APP: 1-8 (1-8) | SV: Fighter 2 | ML: 7 | TT: Nil | AL: N | LV: 3 | XP: 50 | PAGE: B42 | Bites go unnoticed 50% of the time but a save versus poison is required or death occurs in 1d4+2 turns. ]
+Snake, Spitting Cobra 	PD PP PF PH PM DG 	1 	3 	[AC: 7 | HD: 1* | MV: 90` (30`) | THAC0: 19 | ATK: 1 bite or spit | DMG: 1d3 + poison | #APP: 1-6 (1-6) | SV: Fighter 1 | ML: 7 | TT: Nil | AL: N | LV: 1 | XP: 13 | PAGE: B42 | Can spray venom 6` into the eyes causing blindness unless a save versus poison can be made. It can either spit or bite, but a bite requires a save versus poison or death occurs. ]
+Spectre 	PS PH PM CF CM TS DG VG 	8 	3 	[AC: 2 | HD: 6** | MV: 150` (50`), Fly 300` (100`) | THAC0: 14 | ATK: 1 touch + special | DMG: 1d8 + 2 level drain | #APP: 1-4 (1-8) | SV: Fighter 6 | ML: 11 | TT: E | AL: C | LV: 8 | XP: 725 | PAGE: X39 | Can only be hit with magic and silver weapons and are immune to sleep, charm, and hold spells. Any hits from it will drain 2 levels of experience. ]
+Spider, Giant Black Widow 	PP PS PF PH PM TS TF TH TM DG 	3 	13 	[AC: 6 | HD: 3* | MV: 60` (20`), Web 120` (40`) | THAC0: 17 | ATK: 1 bite | DMG: 2d6 + poison | #APP: 1-3 (1-3) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 3 | XP: 50 | PAGE: B43 | The web is like the spell and can be burned. A bite requires a save versus poison or death occurs in 1 turn. ]
+Spider, Giant Crab 	PP PS PF PH PM TS TF TH TM DG 	2 	13 	[AC: 7 | HD: 2* | MV: 120` (40`) | THAC0: 18 | ATK: 1 bite | DMG: 1d8 + poison | #APP: 1-4 (1-4) | SV: Fighter 1 | ML: 7 | TT: U | AL: N | LV: 2 | XP: 25 | PAGE: B43 | They climb on ceilings and surprise others on a 1 to 4. Any bites require a save versus poison or death occurs in 1d4 turns, but the victim gets +2 to the roll. ]
+Spider, Giant Tarantella 	PD 	4 	13 	[AC: 5 | HD: 4* | MV: 120` (40`) | THAC0: 16 | ATK: 1 bite | DMG: 1d8 + poison | #APP: 1-3 (1-3) | SV: Fighter 2 | ML: 8 | TT: U | AL: N | LV: 4 | XP: 125 | PAGE: B43 | A bite requires a save versus poison or the victim spasms and dances. Others watching need to make a save versus spells or start dancing the same way. Dancers have -4 to hit and the spider has +4 to hit them. This effect lasts 2d6 turns but can be stopped with a dispel magic spell. The dancer will collapse after 5 turns from exhaustion. ]
+Sprite 	PF 	1 	2 	[AC: 5 | HD: 1d4 hp* | MV: 60` (20`), Fly 180` (60`) | THAC0: 19 | ATK: 1 spell | DMG: Special | #APP: 3-18 (5-40) | SV: Elf 1 | ML: 7 | TT: S | AL: N | LV: 1 | XP: 6 | PAGE: B43 | Five sprites may cast a curse spell. ]
+Squid, Giant 	SW LW 	6 	3 	[AC: 7 | HD: 6 | MV: 120` (40`) | THAC0: 14 | ATK: 8 tentacles/1 beak | DMG: 1d4 tentacles/1d10 beak | #APP: 0 (1-4) | SV: Fighter 3 | ML: 7 (9) | TT: V | AL: N | LV: 6 | XP: 275 | PAGE: X40 | They will wrap 2 of the largest tentacles around a ship (25%) squeezing and doing 1d10 damage and the beak does 2 points per round after that. They may grab a crewman (75%) and any damage of 6 or more will sever the tentacle while the 2 larger tentacles need 10 or more to sever. If it needs to flee, it will squirt 30` radius of ink twice per day. ]
+Statue, Living Crystal 	DG 	3 	2 	[AC: 4 | HD: 3 | MV: 90` (30`) | THAC0: 17 | ATK: 2 fists | DMG: 1d6/1d6 | #APP: 1-6 (1-6) | SV: Fighter 3 | ML: 11 | TT: Nil | AL: L | LV: 3 | XP: 35 | PAGE: B37 | Immune to sleep spells. ]
+Statue, Living Iron 	DG 	4 	2 	[AC: 2 | HD: 4 | MV: 30` (10`) | THAC0: 16 | ATK: 2 fists | DMG: 1d8/1d8 + special | #APP: 1-4 (1-4) | SV: Fighter 4 | ML: 11 | TT: Nil | AL: N | LV: 4 | XP: 75 | PAGE: B37 | Immune to sleep spells. If a normal weapon is used, a save versus spells is needed or the weapon will get stuck in it. ]
+Statue, Living Rock 	DG 	5 	2 	[AC: 4 | HD: 5** | MV: 60` (20`) | THAC0: 17 | ATK: 2 magma | DMG: 2d6/2d6 | #APP: 1-3 (1-3) | SV: Fighter 5 | ML: 11 | TT: Nil | AL: C | LV: 5 | XP: 45 | PAGE: B37 | Immune to sleep spells. They are filled with magma and will squirt it from their fingers. ]
+Stegosaurus 	TF TH TM TS LW 	11 	13 	[AC: 3 | HD: 11 | MV: 60` (20`) | THAC0: 11 | ATK: Tail or trample | DMG: 2d8 or 2d8 | #APP: 0 (1-4) | SV: Fighter 6 | ML: 7 | TT: Nil | AL: N | LV: 11 | XP: 1,100 | PAGE: X40 ]
+Stirge 	CF DG PF TF 	1 	5 	[AC: 7 | HD: 1* | MV: 30` (10`), Fly 180` (60`) | THAC0: 19 | ATK: 1 | DMG: 1d3 | #APP: 1-10 (3-36) | SV: Fighter 2 | ML: 9 | TT: L | AL: N | LV: 1 | XP: 13 | PAGE: B43 | If it bites, it will attach to the victim and keep doing damage each round until removed. They get +2 to their first attack. ]
+Termite, Freshwater 	FW 	3 	8 	[AC: 6 | HD: 2 + 1 | MV: 120` (40`) | THAC0: 17 | ATK: Spray or ink or bite | DMG: Bite 1d3 or special | #APP: 0 (1-3) | SV: Fighter 2 | ML: 8 | TT: Nil | AL: N | LV: 3 | XP: 25 | PAGE: X40 | When frightened above water they will spit causing a stun for 1 turn unless a save versus poison can succeed. When frightened underwater they will release a black ink to obscure vision. If they attach to a boat they will do 1d3 damage to the hull and leave. ]
+Termite, Sea 	SW 	4 	8 	[AC: 5 | HD: 4 | MV: 180` (60`) | THAC0: 16 | ATK: Spray or ink or bite | DMG: Bite 1d3 or special | #APP: 0 (2-7) | SV: Fighter 3 | ML: 11 | TT: Nil | AL: N | LV: 4 | XP: 75 | PAGE: X40 | When frightened above water they will spit causing a stun for 1 turn unless a save versus poison can succeed. When frightened underwater they will release a black ink to obscure vision. If they attach to a boat they will do 1d3 damage to the hull and leave. ]
+Termite, Swamp 	PS TS 	2 	8 	[AC: 4 | HD: 1 + 1 | MV: 90` (30`) | THAC0: 18 | ATK: Spray or ink or bite | DMG: Bite 1d3 or special | #APP: 0 (1-4) | SV: Fighter 1 | ML: 10 | TT: Nil | AL: N | LV: 2 | XP: 15 | PAGE: X40 | When frightened above water they will spit causing a stun for 1 turn unless a save versus poison can succeed. When frightened underwater they will release a black ink to obscure vision. If they attach to a boat they will do 1d3 damage to the hull and leave. ]
+Thoul 	PP PS PH PM CP CF CH CM TS TH TM DG 	3 	2 	[AC: 6 | HD: 3** | MV: 120` (40`) | THAC0: 17 | ATK: 2 claws or weapon | DMG: 1d3/1d3 or weapon | #APP: 1-6 (1-10) | SV: Fighter 3 | ML: 10 | TT: C | AL: C | LV: 3 | XP: 65 | PAGE: B43 | Will paralyze anyone they hit if a save versus paralysis fails, lasting 2d4 turns. It will regenerate 1hp per round when alive. ]
+Titanothere 	PD PF PH PP PS LW 	12 	4 	[AC: 5 | HD: 12 | MV: 120` (40`) | THAC0: 10 | ATK: butt or trample | DMG: 2d6/3d8 | #APP: 0 (1-6) | SV: Fighter 6 | ML: 7 | TT: Nil | AL: N | LV: 12 | XP: 1,100 | PAGE: X40 ]
+Toad, Giant 	DG PD PF PH PM PP PS TF TH TM TS LW 	3 	13 	[AC: 7 | HD: 2 + 2 | MV: 90` (30`) | THAC0: 17 | ATK: 1 bite | DMG: 1d4+1 | #APP: 1-4 (1-4) | SV: Fighter 1 | ML: 6 | TT: Nil | AL: N | LV: 3 | XP: 25 | PAGE: X40 | They can change their color and surprise others on a 1 to 3. They can shoot their tongues 15` and drag dwarf sized creatures to the mouth and be bitten. On a hit roll of 20, they would be swallowed whole and take 1d6 damage per round while inside. ]
+Treant 	CF PF PS TF TS 	8 	3 	[AC: 2 | HD: 8 | MV: 60` (20`) | THAC0: 12 | ATK: 2 blows | DMG: 2d6/2d6 | #APP: 0 (1-8) | SV: Fighter 8 | ML: 9 | TT: C | AL: L | LV: 8 | XP: 650 | PAGE: X40 | These 18` tall tree-men speak and will surprise others on a 1 to 3. They can animate 2 trees within 60` to move at 30`. ]
+Triceratops 	TS TF TH TM LW 	11 	13 	[AC: 2 | HD: 11 | MV: 90` (30`) | THAC0: 11 | ATK: gore or trample | DMG: 3d6/3d6 | #APP: 0 (1-4) | SV: Fighter 6 | ML: 8 | TT: Nil | AL: N | LV: 11 | XP: 1,100 | PAGE: X41 | They do double damage on their first charging attack. ]
+Troglodyte 	DG LW 	2 	13 	[AC: 5 | HD: 2* | MV: 120` (40`) | THAC0: 18 | ATK: 2 claws/1 bite | DMG: 1d4/1d4/1d4 | #APP: 1-8 (5-40) | SV: Fighter 2 | ML: 9 | TT: A | AL: C | LV: 2 | XP: 25 | PAGE: B44 | They have a chameleon ability that lets them surprise others on a 1 to 4. They secrete oil that smells that nauseates unless a save versus poison is successful. Anyone nauseated will suffer -2 to attack. ]
+Troll 	PD PP PS PF PH PM CP CF CH CM TS TF TH TM DG 	7 	5 	[AC: 4 | HD: 6 + 3 | MV: 120` (40`) | THAC0: 13 | ATK: 2 claws/1 bite | DMG: 1d6/1d6/1d10 | #APP: 1-8 (1-8) | SV: Fighter 6 | ML: 10 (8) | TT: D | AL: C | LV: 7 | XP: 350 | PAGE: X41 | They will heal after 3 rounds after taking damage at the rate of 3 hit points per round, but not from fire or acid damage. If brought to 0 hit points, they will be ready to fight again in 2d6 rounds unless destroyed with fire or acid. Their morale is 8 when attacked with such methods. ]
+Tyrannosaurus Rex 	TF TH TM TS LW 	20 	5 	[AC: 3 | HD: 20 | MV: 120` (40`) | THAC0: 6 | ATK: 1 bite | DMG: 6d6 | #APP: 0 (1) | SV: Fighter 10 | ML: 11 | TT: Vx3 | AL: N | LV: 20 | XP: 2,000 | PAGE: X41 ]
+Unicorn 	PF PH 	4 	3 	[AC: 2 | HD: 4* | MV: 240` (80`) | THAC0: 16 | ATK: 2 hooves/1 horn | DMG: 1d8/1d8/1d8 | #APP: 1-6 (1-8) | SV: Fighter 8 | ML: 7 | TT: Nil | AL: L | LV: 4 | XP: 125 | PAGE: X41 | Only pure maidens can talk to one or ride it. They can teleport 360` once per day. ]
+Vampire 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS VG 	10 	3 	[AC: 2 | HD: 7 to 9** | MV: 120` (40`), Fly 180` (60`) | THAC0: 12 | ATK: 1 touch + special | DMG: 1d10 + energy drain | #APP: 1-4 (1-6) | SV: Fighter 7 to 9 | ML: 11 | TT: F | AL: C | LV: 10 | XP: 1,750 | PAGE: X41 | They are immune to sleep, charm, and hold spells and can only be hit with magic weapons. In human form they will drain 2 experience levels. Anyone slain from a vampire will become one in 3 days. If they make eye contact, they will charm them if the victim fails a save versus spells (-2 roll penalty). They regenerate 3 hit points per round and turn to gas and flee if reduced to 0. See rules for more information. ]
+Weasel, Giant 	PP PS PF PH PM CP CF CH CM LW 	5 	3 	[AC: 7 | HD: 4 + 4 | MV: 150` (50`) | THAC0: 15 | ATK: 1 bite + special | DMG: 2d4 | #APP: 1-4 (1-6) | SV: Fighter 3 | ML: 8 | TT: V | AL: N | LV: 5 | XP: 125 | PAGE: X42 | Once they bite they will attach and suck blood doing 2d4 damage per round. They can see in the dark up to 30` and track scent. ]
+Whale, Killer 	SW 	6 	13 	[AC: 6 | HD: 6 | MV: 240` (80`) | THAC0: 14 | ATK: 1 bite | DMG: 1d20 | #APP: 0 (1-6) | SV: Fighter 3 | ML: 10 | TT: V | AL: N | LV: 6 | XP: 275 | PAGE: X42 | If a roll for attack is 20, then the victim is swallowed suffering 1d6 damage per round and drowning in 10 rounds. ]
+Whale, Narwhal 	SW LW 	12 	13 	[AC: 7 | HD: 12 | MV: 180` (60`) | THAC0: 10 | ATK: 1 horn/1 bite | DMG: 2d6/1d8 | #APP: 0 (1-4) | SV: Fighter 12 | ML: 8 | TT: Special | AL: L | LV: 12 | XP: 1,100 | PAGE: X42 | Their horn vibrates when evil is near and that horn is worth 1d6x1,000gp. ]
+Whale, Sperm 	SW LW 	36 	13 	[AC: 6 | HD: 36 | MV: 180` (60`) | THAC0: 3 | ATK: 1 bite | DMG: 3d20 | #APP: 0 (1-3) | SV: Fighter 15 | ML: 7 | TT: V | AL: N | LV: 36 | XP: 6,250 | PAGE: X42 | They will swallow an opponent if they roll an attack with 4 or more needed to hit, causing the victim to take 3d6 damage per round. There is a 10% chance they will ram a ship doing 6d6 damage to the hull. ]
+Wight 	PS PM CF CM TS TM DG VG 	3 	5 	[AC: 5 | HD: 3* | MV: 90` (30`) | THAC0: 17 | ATK: 1 | DMG: Energy Drain | #APP: 1-6 (1-8) | SV: Fighter 3 | ML: 12 | TT: B | AL: C | LV: 3 | XP: 50 | PAGE: B44 | Can only be hit with silver or magic weapons. When they hit a level of experience is lost. ]
+Wolf 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	3 	13 	[AC: 7 | HD: 2 + 2 | MV: 180` (60`) | THAC0: 17 | ATK: 1 bite | DMG: 1d6 | #APP: 2-12 (3-18) | SV: Fighter 1 | ML: 8 | TT: Nil | AL: N | LV: 3 | XP: 25 | PAGE: B44 | If 3 or less wolves are encountered, or the pack is reduced to 50%, then their morale is 6. ]
+Wolf, Dire 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS LW 	5 	3 	[AC: 6 | HD: 4 + 1 | MV: 150` (50`) | THAC0: 15 | ATK: 1 bite | DMG: 2d4 | #APP: 1-4 (2-8) | SV: Fighter 2 | ML: 8 | TT: Nil | AL: N | LV: 5 | XP: 125 | PAGE: B44 ]
+Wraith 	CM DG PM PS TM TS 	4 	5 	[AC: 3 | HD: 4** | MV: 120` (40`) | THAC0: 16 | ATK: 1 touch + special | DMG: 1d6 + energy drain | #APP: 1-4 (1-6) | SV: Fighter 4 | ML: 12 | TT: E | AL: C | LV: 4 | XP: 175 | PAGE: X42 | They are immune to sleep, charm, and hold spells and can only be hit with magic weapons. They will drain 1 experience level if they hit someone along with the damage. Anyone killed by them will become a wraith after 1 day. ]
+Wyvern 	DG PD PF PM PP PS TF TM TS 	8 	5 	[AC: 3 | HD: 7* | MV: 90` (30`), Fly 240` (80`) | THAC0: 13 | ATK: 1 bite/1 sting | DMG: 2d8/1d6 + poison | #APP: 1-2 (1-6) | SV: Fighter 4 | ML: 9 | TT: E | AL: C | LV: 8 | XP: 850 | PAGE: X42 | Those hit with the tail must save versus poison or die. ]
+Yellow Mold 	DG 	2 	1 	[AC: Always Hit | HD: 2 | MV: Nil | THAC0: 18 | ATK: Spores | DMG: 1d6 + special | #APP: 1-8 (1-4) | SV: Fighter 2 | ML: Nil | TT: Nil | AL: N | LV: 2 | XP: 20 | PAGE: B44 | Covers a 10` square area and can be killed by fire where a torch does 1d4 damage. It will eat through wood and leather. If hit it will release spores that will choke others to death unless a save versus death ray is successful. ]
+Zombie 	CF CH CM CP DG PD PF PH PM PP PS TF TH TM TS 	2 	5 	[AC: 8 | HD: 2 | MV: 120` (40`) | THAC0: 18 | ATK: 1 weapon | DMG: 1d8 or weapon | #APP: 2-8 (4-24) | SV: Fighter 1 | ML: 12 | TT: Nil | AL: C | LV: 2 | XP: 20 | PAGE: B44 | Immune to sleep, charm, and mind reading magic. They always attack last each round. ]
+--END--
+acid spray
+bolt, crossbow
+bridge, collapsing
+bridge, illusory 
+caltrops drop from ceiling
+ceiling block drops behind players
+ceiling blocks drop in front of and behind players
+ceiling block drops in front of players
+ceiling block drops on players
+ceiling block seals players in room or area
+elevator room
+elevator room, deactivates for 24 hours
+elevator room, one way
+falling door
+flame jets
+flooding room
+gas, blinding
+gas, fear
+gas, flammable
+gas, sleep
+gas, slowing
+greased chute
+lightning bolt
+log trap, swinging
+obscuring fog
+oil-filled pit with dropping lit torch
+pit trap triggered by false door
+pit with dropping ceiling block
+pit with locking trap door
+pit, 10 ft
+poisoned bolt, crossbow
+poisoned caltrops
+poisoned spear, ballista
+poisoned spike pit
+portcullis drops behind players
+portcullises drop in front of and behind players
+portcullis drops in front of players
+rolling stone ball, height and width of corridor
+scything blade, ankle-high
+scything blade, neck-high
+sliding room changes facing or location
+spear, ballista
+spiked log trap
+spiked pit
+spring-loaded pile-driver disguised as a door
+stairs fold flat into a sliding chute
+stairs collapse
+teleporter
+trip wire
+wire, neck high
+--END--
+ashes
+badly dented helmet
+bent iron bar
+bits of hair or fur
+blunted javelin head
+bones
+broken arrow
+broken bottle
+corroded chain
+cobwebs
+bent copper coin
+cracks in ceiling
+cracks in floor
+cracks in wall
+cracked flask
+cracked hammer
+head
+dagger hilt
+dripping water
+dried blood
+dry leaves
+twigs 
+dung
+dust
+food
+fungi
+guano
+leather boot
+lantern
+mold
+pick handle
+rope
+pottery shards
+rags
+rats
+rubble
+sack
+scattered teeth or fang
+scratches on wall
+slime on ceiling
+slime on floor
+slime on wall
+spike
+sticks
+strap
+straw
+stones
+sword hilt
+torch stub
+water puddle
+wax drippings
+wax blob
+candle stub
+wood
+altar
+armchair
+armoire
+bag
+barrel
+bed
+bench
+blanket
+box
+brazier
+bucket
+buffet
+bunks
+barrel
+cabinet
+candelabrum
+carpet
+cask
+cauldron
+chandelier
+charcoal
+kettle
+loom
+mat
+mattress
+mural
+oven
+pail
+painting
+pallet
+pans
+pedestal
+pegs
+pillow
+pots
+quilt
+rug
+rushes
+sack
+sconce
+screen
+sheet
+shelf
+chair
+chest
+chest of drawers
+coal
+couch
+crate
+cupboard
+cushion
+desk
+fireplace with wood
+fountain
+grindstone
+hammock
+hamper
+hogshead
+idol
+shrine
+sideboard
+sofa
+spinning wheel
+staff
+stand
+statue
+stool
+table
+tapestry
+throne
+trunk
+tub
+utensil
+urn
+wall basin
+wardrobe
+wood billets
+workbench
+--END--
+Locked Chest
+Locked Huge Chest
+Locked Iron Trunk
+Loose
+Bag
+Sack
+Coffer
+Chest
+Huge Chest
+Hidden in Wall
+Hidden under Floor
+Hidden
+Iron Trunk
+--END--
+Valuables	20	1
+Sword	3	2
+Armor	2	3
+Weapon	2	4
+Potion	2	5
+Scroll	2	6
+Ring	2	7
+Magical	1	8
+Relic	1	9
+--END--
+1,222sp / 10,060cp   1   0
+136gp / 100sp / 2,400cp   1   0
+a splendid wine bottle of sea serpent salt worth 58gp to an alchemist   1   0
+a strange bundle of animal leather worth 525gp   1   0
+a small black cloth sack of nice coins from long ago that are made of pewter with a symbol of a unicorn on it (8 ea) worth a total of 34gp   1   0
+1pp / 2gp / 1ep / 1sp / 10cp   1   0
+JEWELRY: Silvery Gold Box (6gp)   1   0
+GEM: Moonstone (6gp)   1   0
+GEM: Peridot (19gp)   1   0
+1ep / 40cp   1   0
+GEM: Peridot (2gp)   1   0
+stein made of mithril with 2 gems (green spinel) set around the bottom and an etching of a bat on the side worth 43gp   1   0
+1gp / 2sp / 25cp   1   0
+GEM: Fiery Yellow Corundum (16gp)   1   0
+97pp / 10gp / 21ep / 97sp / 3,511cp   1   0
+2pp / 47gp / 19ep / 8sp / 1,440cp   1   0
+5gp / 4ep / 9sp / 260cp   1   0
+set of 10 silver bars worth 6gp   1   0
+41ep / 500cp   1   0
+3ep / 106sp / 40cp   1   0
+1pp / 3gp / 10ep / 5sp / 40cp   1   0
+67pp / 79gp / 175ep / 1,268sp / 2,490cp   1   0
+GEM: Black Pearl (100gp)   1   0
+16pp / 6gp / 2ep / 3sp / 15cp   1   0
+20sp / 95cp   1   0
+GEM: Azurite (4gp)   1   0
+1pp / 4gp / 5ep / 6sp / 230cp   1   0
+a pretty wine bottle of simian thalamus glands worth 8gp to an herbalist   1   0
+342gp / 383ep / 1,121sp / 2,230cp   1   0
+60ep / 298sp / 3,640cp   1   0
+3pp / 17gp / 12ep / 23sp / 240cp   1   0
+GEM: Smoky Quartz (8gp)   1   0
+a nice clay jug of perfume worth 50gp   1   0
+11pp / 3gp / 2ep / 3sp / 40cp   1   0
+32pp / 15gp / 6ep / 6sp / 80cp   1   0
+1pp / 1gp / 2ep / 1sp / 30cp   1   0
+JEWELRY: Silvery Gemmed Buckle (156gp)   1   0
+12gp   1   0
+5gp / 65sp / 4,950cp   1   0
+2pp / 39gp / 16ep   1   0
+190ep / 261sp / 505cp   1   0
+a magnificent, large book titled `The Magic of the Stone of Hallath` and is bound in brown lion skin, and is worth 39gp   1   0
+JEWELRY: Silvery Gemmed Coronet (420gp)   1   0
+a delightful, small omnibus titled `Mercenary in the Night` and is bound in yellow animal skin, and is worth 16gp   1   0
+mug made of iron with 7 gems (chrysoberyl) set around the bottom and an etching of a ram on the side worth 122gp   1   0
+214sp / 40cp   1   0
+5ep / 37sp   1   0
+GEM: Onyx (16gp)   1   0
+6gp / 345cp   1   0
+8pp / 3gp / 9ep / 4sp / 345cp   1   0
+56pp / 79gp / 40ep / 1sp / 330cp   1   0
+JEWELRY: Golden Choker (153gp)   1   0
+1,487sp / 8,060cp   1   0
+56ep / 103sp / 2,100cp   1   0
+JEWELRY: Silvery Gemmed Comb/brush (162gp)   1   0
+scroll case made of ivory with brass endcaps and decorated with 4 gems [silver pearl] worth 10gp   1   0
+a marvelous ceramic jug of troll essence worth 150gp to an herbalist   1   0
+16pp / 1gp / 30ep / 3sp / 316cp   1   0
+199ep / 880sp / 7,450cp   1   0
+8gp / 1,600cp   1   0
+8pp / 4gp / 13sp / 3,440cp   1   0
+32gp / 217sp / 1,460cp   1   0
+3pp / 137gp / 165ep / 10sp / 2,450cp   1   0
+334gp / 148ep / 309sp / 40,520cp   1   0
+JEWELRY: Silvery Gold Bracelet (135gp)   1   0
+53pp / 1gp / 3ep / 7sp / 610cp   1   0
+14gp / 4ep / 1sp / 271cp   1   0
+a lovely musical recorder worth 4gp   1   0
+26pp / 54gp / 9ep / 1sp / 30cp   1   0
+4gp / 16sp / 1,845cp   1   0
+6pp / 4gp / 113ep / 5sp / 225cp   1   0
+1gp / 2ep / 1sp / 5cp   1   0
+98ep / 1,940cp   1   0
+7pp / 15gp / 3ep / 82sp / 710cp   1   0
+1pp / 8sp / 465cp   1   0
+4pp / 15gp / 12ep / 15sp / 100cp   1   0
+GEM: Freshwater Pearl (2gp)   1   0
+JEWELRY: Exceptional Belt (440gp)   1   0
+86ep / 90sp / 2,825cp   1   0
+JEWELRY: Silvery Gold Chalice (104gp)   1   0
+26sp / 560cp   1   0
+GEM: Sardonyx Quartz (3gp)   1   0
+3pp / 82gp / 1ep   1   0
+7gp / 24ep / 103sp / 540cp   1   0
+JEWELRY: Silvery Gold Earring (33gp)   1   0
+8ep / 3,350cp   1   0
+GEM: Jasper (9gp)   1   0
+27pp / 519gp / 331ep / 204sp / 28,970cp   1   0
+GEM: Azurite (1gp)   1   0
+set of 6 steel bars worth 41gp   1   0
+97pp / 173gp / 9ep / 6sp / 130cp   1   0
+145pp / 33gp / 11ep / 5sp / 50cp   1   0
+JEWELRY: Silvery Gemmed Buckle (361gp)   1   0
+12pp / 5gp / 1ep / 2sp / 10cp   1   0
+7 inch tall jade statue of a angel worth 145gp   1   0
+scroll case made of silver with bronze endcaps and decorated with 7 gems [fire opal] worth 29gp   1   0
+13pp / 13gp / 29ep / 63sp / 2,490cp   1   0
+GEM: Iolite (2gp)   1   0
+8pp / 12gp / 22ep / 9sp / 360cp   1   0
+3pp / 2gp / 12ep / 1sp / 20cp   1   0
+JEWELRY: Silvery Gemmed 2 Inch Square Pyramid (379gp)   1   0
+JEWELRY: Silvery Gold 5 Inch Cylinder (40gp)   1   0
+mug made of gold with 4 gems (azurite) set around the top and bottom and an etching of a cross on the side worth 334gp   1   0
+65gp / 10ep   1   0
+108pp / 455gp / 1,099ep / 298sp / 14,590cp   1   0
+4pp / 76gp / 175ep / 16sp / 830cp   1   0
+an odd waterskin of wine worth 7gp   1   0
+an extraordinary medium-sized black carpet with a dark orange design on it worth 49gp   1   0
+12pp / 14gp / 12ep / 3sp / 40cp   1   0
+7 inch tall limestone carving of a sword worth 5gp   1   0
+1pp / 5gp / 2ep / 8sp / 1cp   1   0
+JEWELRY: Golden Gemmed Arm-ring (160gp)   1   0
+GEM: Golden Yellow Topaz (38gp)   1   0
+21,001cp   1   0
+6sp / 480cp   1   0
+1pp / 1gp / 5ep / 1sp / 120cp   1   0
+2pp / 26gp / 4ep / 10sp / 125cp   1   0
+3pp / 34ep / 43sp / 2,241cp   1   0
+an odd crystal bottle of ogre mage teeth worth 7gp to an alchemist   1   0
+GEM: Aquamarine (29gp)   1   0
+3pp / 153sp / 1,710cp   1   0
+set of 6 bronze bars worth 180gp   1   0
+93gp / 137ep / 34sp / 2,670cp   1   0
+staff sylvan formed of reaper wood with a alexandrite on the top worth 27gp   1   0
+63pp / 114ep / 713sp / 23,540cp   1   0
+99pp / 173gp / 61ep / 1sp / 130cp   1   0
+15pp / 27gp / 148ep / 79sp / 4,220cp   1   0
+31gp / 1ep / 5sp / 251cp   1   0
+2gp / 8ep / 1sp / 10cp   1   0
+205sp / 100cp   1   0
+82gp / 143ep / 881sp / 2,730cp   1   0
+20pp / 17gp   1   0
+25pp / 97gp / 55ep / 1,006sp / 7,430cp   1   0
+GEM: Turquoise (1gp)   1   0
+2ep / 5sp / 100cp   1   0
+6pp / 4gp / 5ep / 1sp / 125cp   1   0
+JEWELRY: Silvery Gemmed Clasp (396gp)   1   0
+JEWELRY: Silver Clasp (160gp)   1   0
+a unique pair of brown sandals made of animal skin worth 7gp   1   0
+29gp / 2ep / 375cp   1   0
+2,610cp   1   0
+8pp / 18gp / 3ep / 3sp / 290cp   1   0
+1pp / 7gp / 18ep   1   0
+scroll with information on a spell called *Emnden`s Spell of True Charm* worth 7gp to a mage   1   0
+a magnificent ornamental knife made of steel where the handle is decorated with 6 blue diamonds worth 8gp   1   0
+213gp / 1,173sp / 31,740cp   1   0
+10sp / 1,960cp   1   0
+106pp / 4gp / 7ep / 10sp / 50cp   1   0
+set of 2 candlesticks made of iron, each decorated with 3 gems (white pearl) worth 6gp each   1   0
+1pp / 13gp / 4ep / 5sp   1   0
+9pp / 123gp / 51ep / 111sp / 6,780cp   1   0
+11gp / 2sp / 120cp   1   0
+1sp / 160cp   1   0
+4gp / 1sp   1   0
+2pp / 1gp / 2sp   1   0
+a delightful, small diary titled `The Search of the Fire of Taleron` and is bound in brown animal skin with maroon colored symbols of a snake on the front and a dog on the back, and is worth 13gp   1   0
+a fine ceramic jug of perfume worth 3gp   1   0
+37pp / 4gp / 11ep / 5sp / 25cp   1   0
+set of 2 candlesticks made of steel, each decorated with 6 gems (golden yellow topaz) worth 12gp each   1   0
+1pp / 1gp / 1ep / 3sp / 40cp   1   0
+GEM: White Pearl (12gp)   1   0
+set of silverware (18 forks, 7 spoons, 8 knives) worth 198gp   1   0
+GEM: Golden Yellow Topaz (8gp)   1   0
+JEWELRY: Silvery Gemmed 5 Inch Square Pyramid (468gp)   1   0
+28,351cp   1   0
+flagon made of iron with 7 gems (star rose quartz) set around the bottom and an etching of a wolf on the side worth 91gp   1   0
+GEM: Eye Agate (1gp)   1   0
+GEM: Jasper (9gp)   1   0
+149pp / 76gp / 12sp / 160cp   1   0
+5,775cp   1   0
+285sp / 1,651cp   1   0
+140gp / 198ep / 98sp / 2,140cp   1   0
+JEWELRY: Silvery Gold Broach (84gp)   1   0
+5pp / 21gp / 49ep / 142sp / 1,610cp   1   0
+1gp / 1ep   1   0
+1,275cp   1   0
+28pp / 1gp / 46ep / 1sp / 155cp   1   0
+14pp / 69gp / 87ep / 62sp / 461cp   1   0
+flagon made of iron with 3 gems (chrysoprase) set around the bottom and an etching of a eagle on the side worth 145gp   1   0
+GEM: Banded Agate (3gp)   1   0
+27ep / 22sp / 160cp   1   0
+JEWELRY: Silver Belt (120gp)   1   0
+25pp / 3ep / 32sp / 1,710cp   1   0
+stein made of adamant with 2 gems (emerald) set around the bottom and an etching of a bat on the side worth 60gp   1   0
+JEWELRY: Silvery Gold Headband (70gp)   1   0
+2pp / 9gp / 1ep / 31sp / 130cp   1   0
+set of silverware (16 forks, 19 spoons, 2 knives) worth 25gp   1   0
+17pp / 5gp / 57ep / 14sp / 20cp   1   0
+6sp / 180cp   1   0
+JEWELRY: Silver Earring (99gp)   1   0
+69gp / 125ep / 61sp / 331cp   1   0
+59pp / 16gp / 27ep / 6sp / 430cp   1   0
+2,114sp / 125,721cp   1   0
+5pp / 1gp / 4ep / 3sp / 20cp   1   0
+4gp / 31ep / 88sp / 7,015cp   1   0
+GEM: Blue Quartz (4gp)   1   0
+GEM: Smoky Quartz (3gp)   1   0
+1pp / 20gp / 5ep / 27sp / 386cp   1   0
+28pp / 54gp / 68ep / 484sp / 13,520cp   1   0
+2pp / 18gp / 1ep / 31sp / 730cp   1   0
+set of 2 candlesticks made of mithril, each decorated with 5 gems (moss agate) worth 87gp each   1   0
+JEWELRY: Silvery Gold Arm-ring (110gp)   1   0
+1pp / 2gp / 10ep / 7sp / 10cp   1   0
+dagger hilt made of iron with 3 gems (aquamarine) decorating the handle worth 12gp   1   0
+126,001cp   1   0
+2gp / 2ep   1   0
+JEWELRY: Silvery Gold Chalice (27gp)   1   0
+9gp / 1,352sp / 4,461cp   1   0
+3pp / 1gp / 2ep / 10cp   1   0
+15pp / 15gp / 20ep / 62sp / 460cp   1   0
+8ep / 697sp / 1,260cp   1   0
+4pp / 7gp   1   0
+3,240cp   1   0
+23pp / 26gp / 1,356ep / 703sp / 3,040cp   1   0
+164ep / 276sp / 5,405cp   1   0
+a lovely, large lexicon titled `The Tome of Zazik the Monk` and is bound in white animal skin with a violet colored symbol of a snake on the front, and is worth 207gp   1   0
+13sp / 415cp   1   0
+2,815sp / 127,700cp   1   0
+1pp / 12ep / 35sp   1   0
+JEWELRY: Exceptional Goblet (1,980gp)   1   0
+664gp / 40ep / 68sp / 240cp   1   0
+98pp / 286gp / 1,257ep / 395sp / 13,650cp   1   0
+22sp / 610cp   1   0
+1pp / 940cp   1   0
+axe blade made of iron with 2 gems (green spinel) decorating the blade worth 14gp   1   0
+431sp / 41,380cp   1   0
+1,030sp / 9,100cp   1   0
+7,830cp   1   0
+104sp / 2,645cp   1   0
+3pp / 3gp / 1ep / 1sp / 5cp   1   0
+scroll with information on a spell called *Moin`s Spell of Telepathic Enfeeblement* worth 30gp to a mage   1   0
+a pretty clay jug of perfume worth 12gp   1   0
+14gp / 1ep / 4sp   1   0
+GEM: Emerald (384gp)   1   0
+GEM: Coral (14gp)   1   0
+1pp / 8gp / 1ep   1   0
+GEM: Hematite (3gp)   1   0
+36,000cp   1   0
+31gp / 118ep / 20sp / 725cp   1   0
+26pp / 331gp / 214ep / 1,252sp / 17,160cp   1   0
+30ep / 218sp / 1,940cp   1   0
+2,400cp   1   0
+2gp / 9sp / 190cp   1   0
+GEM: Hematite (4gp)   1   0
+3pp / 9gp / 15ep / 4sp / 10cp   1   0
+a strange musical lute worth 385gp   1   0
+JEWELRY: Silver Chalice (160gp)   1   0
+1pp / 16gp / 83ep / 2sp / 10cp   1   0
+GEM: Banded Agate (1gp)   1   0
+43pp / 13gp / 2ep / 7sp / 61cp   1   0
+set of 4 baked and glazed clay tiles with a spider painted on them worth 11gp   1   0
+8pp / 8ep / 5sp   1   0
+2gp / 2ep / 1sp / 40cp   1   0
+1pp / 24gp / 47ep / 31sp / 1,255cp   1   0
+22pp / 214sp / 4,520cp   1   0
+47sp / 7,610cp   1   0
+a unique gray-colored, decanter of bat whiskers worth 120gp to an alchemist   1   0
+27pp / 65gp   1   0
+flagon made of steel with 3 gems (star rose quartz) set around the bottom and an etching of a tower on the side worth 90gp   1   0
+18gp / 5ep / 15sp / 171cp   1   0
+GEM: Obsidian (2gp)   1   0
+bow stave ranger fashioned of oak with a animal leather grip worth 108gp   1   0
+2gp / 1sp / 5cp   1   0
+757sp / 25,110cp   1   0
+an elegant purple-colored, decanter of wine worth 4gp   1   0
+2pp / 1ep / 1sp / 10cp   1   0
+scroll case made of bone with wood endcaps and decorated with 6 gems [star rose quartz] worth 750gp   1   0
+32pp / 2gp / 12ep / 1sp / 55cp   1   0
+12pp / 21gp / 6ep / 39sp / 320cp   1   0
+1sp / 821cp   1   0
+1pp / 2gp / 15ep / 27sp / 6cp   1   0
+3pp / 16ep / 1sp / 20cp   1   0
+37pp / 37gp / 5ep / 2sp / 10cp   1   0
+72gp / 100sp / 2,950cp   1   0
+JEWELRY: Silver Goblet (140gp)   1   0
+60ep   1   0
+26pp / 196gp / 42ep / 4sp / 1,220cp   1   0
+13sp / 761cp   1   0
+GEM: Eye Agate (2gp)   1   0
+GEM: Violet Garnet (113gp)   1   0
+29pp / 208sp / 1,340cp   1   0
+55pp / 8sp / 27,591cp   1   0
+GEM: Pink Pearl (21gp)   1   0
+34gp / 1,430cp   1   0
+11pp / 1gp / 15ep / 10sp / 5cp   1   0
+4sp / 10cp   1   0
+JEWELRY: Silver Earring (91gp)   1   0
+4pp / 7gp / 32ep / 35sp / 775cp   1   0
+scroll with information on a spell called *Anl`s Spell of Storming Walk* worth 16gp to a wizard   1   0
+137gp / 46ep / 34sp / 1,320cp   1   0
+5gp / 4ep / 1sp   1   0
+dinner plate made of iron with 12 gems (deep blue spinel) decorating the edges worth 23gp   1   0
+1,840gp / 51ep / 7sp / 2,310cp   1   0
+1pp / 34gp / 7ep / 2,471cp   1   0
+JEWELRY: Silver Amulet (200gp)   1   0
+JEWELRY: Silver Earring (140gp)   1   0
+12pp / 3gp / 6ep / 126sp / 880cp   1   0
+7sp / 1,750cp   1   0
+4pp / 10gp / 4ep / 2sp   1   0
+a wonderful clay jug of powdered gem stones worth 3gp to an alchemist   1   0
+241ep / 1,227sp / 1,910cp   1   0
+9pp / 51gp / 2ep / 13sp / 390cp   1   0
+GEM: Turquoise (2gp)   1   0
+119ep / 98sp / 90cp   1   0
+1sp / 10cp   1   0
+14gp / 20ep / 240cp   1   0
+an odd ceremonial sword made of iron worth 700gp   1   0
+1pp / 4gp / 1ep / 12sp / 71cp   1   0
+10pp / 9ep / 8sp / 390cp   1   0
+GEM: Black Opal (4gp)   1   0
+121ep / 12,850cp   1   0
+2pp / 3gp / 1sp   1   0
+52gp / 345sp / 3,125cp   1   0
+9pp / 1ep / 1sp / 20cp   1   0
+an odd book titled `The Omnibus of Isnal the Heretic` and is bound in purple sabretooth skin, and is worth 325gp   1   0
+JEWELRY: Silvery Gold Broach (140gp)   1   0
+peg leg made of formed wood decorated with 6 gems (moonstone) worth 5gp   1   0
+39pp / 1,454sp / 6,420cp   1   0
+a lovely waterskin of perfume worth 680gp   1   0
+3gp / 1ep / 100cp   1   0
+6pp / 29gp / 1ep / 8sp / 10cp   1   0
+491ep / 5,450cp   1   0
+GEM: Freshwater Pearl (1gp)   1   0
+9pp / 96gp / 71ep / 76sp / 630cp   1   0
+53pp / 253gp / 129ep / 8sp / 1,590cp   1   0
+GEM: Blue Star Sapphire (96gp)   1   0
+1gp / 1ep   1   0
+115ep / 201sp / 5,531cp   1   0
+15ep / 38sp / 3,110cp   1   0
+JEWELRY: Silver Earring (95gp)   1   0
+JEWELRY: Golden 6 Inch Square Pyramid (55gp)   1   0
+a magnificent ceremonial dagger made of iron where the handle is decorated with 3 silver pearls and the name of `Tikckek` is engraved on the blade worth 5gp   1   0
+3pp / 3gp / 35ep / 1sp / 481cp   1   0
+31pp / 31gp / 106ep / 174sp / 1,120cp   1   0
+20pp / 335gp / 26ep / 68sp / 1,340cp   1   0
+28pp / 118gp / 1,504ep / 996sp / 5,080cp   1   0
+1pp / 82gp / 24ep   1   0
+172gp / 147ep / 9sp / 20cp   1   0
+JEWELRY: Silvery Gold Earring (44gp)   1   0
+scroll case made of bone with brass endcaps and decorated with 3 gems [sardonyx quartz] worth 6gp   1   0
+45ep / 106sp / 130cp   1   0
+3pp / 661sp / 5,280cp   1   0
+50sp / 1,100cp   1   0
+JEWELRY: Silvery Gold Goblet (22gp)   1   0
+57sp / 15cp   1   0
+3pp / 3gp / 1ep / 1sp / 5cp   1   0
+53sp / 1,085cp   1   0
+1gp / 1ep / 1sp / 10cp   1   0
+GEM: Chrysoberyl (18gp)   1   0
+a strange musical drum worth 215gp   1   0
+76gp / 41ep / 31sp / 1,730cp   1   0
+2pp / 1ep   1   0
+GEM: Tiger Eye (3gp)   1   0
+scroll case made of silver with platinum endcaps and decorated with 8 gems [rose quartz] worth 37gp   1   0
+1pp / 4ep / 33sp / 440cp   1   0
+GEM: Alexandrite (9gp)   1   0
+3ep / 4sp / 70cp   1   0
+GEM: Chrysoprase (12gp)   1   0
+2pp / 3gp / 7ep   1   0
+41ep / 7sp / 4,111cp   1   0
+6pp / 1gp / 1ep / 1cp   1   0
+1ep / 2sp   1   0
+5gp / 1ep / 2sp / 10cp   1   0
+2pp / 15gp / 10ep / 3sp / 60cp   1   0
+575ep / 58sp / 5,090cp   1   0
+165sp / 6,300cp   1   0
+a small tan leather backpack of delightful coins from long ago that are made of bronze with a symbol of a woman on it (19 ea) worth a total of 7gp   1   0
+GEM: Onyx (6gp)   1   0
+JEWELRY: Silvery Gemmed Coronet (28gp)   1   0
+166pp / 1,041gp / 1,306ep / 832sp / 6,460cp   1   0
+181pp / 278gp / 6sp / 1,580cp   1   0
+GEM: Hematite (1gp)   1   0
+105pp / 39gp / 479ep / 225sp / 3,150cp   1   0
+241ep / 227sp / 3,810cp   1   0
+GEM: Rhodochrosite (1gp)   1   0
+4gp / 10sp / 300cp   1   0
+1pp / 2gp / 22ep   1   0
+12ep / 202sp / 205cp   1   0
+5 inch tall quartz statue of a boar worth 9gp   1   0
+28pp / 1gp / 1ep / 1sp / 5cp   1   0
+4pp / 25gp / 17ep / 7sp / 135cp   1   0
+GEM: Jasper (5gp)   1   0
+set of 6 gold bars worth 60gp   1   0
+scroll with information on a spell called *Ackhine`s Spell of Limited Grace* worth 10gp to a wizard   1   0
+146ep / 23sp / 2,740cp   1   0
+dagger hilt made of silver with 5 gems (chalcedony) decorating the handle worth 63gp   1   0
+614sp / 19,220cp   1   0
+3pp / 6gp / 39ep / 10sp / 250cp   1   0
+JEWELRY: Exceptional Earring (2,320gp)   1   0
+1pp / 12gp / 3ep / 21sp / 480cp   1   0
+stein made of iron with 10 gems (banded agate) set around the bottom and an etching of a woman on the side worth 190gp   1   0
+34pp / 123gp / 4ep / 21sp / 80cp   1   0
+15cp   1   0
+GEM: Tiger Eye (3gp)   1   0
+JEWELRY: Silvery Gemmed Goblet (785gp)   1   0
+a marvelous, small manual titled `Sturdy Folio of the Wolverine` and is bound in brown animal skin, and is worth 100gp   1   0
+1pp / 18gp / 73ep / 12sp / 185cp   1   0
+5pp / 5gp / 6ep / 10sp / 100cp   1   0
+79pp / 477gp / 132ep / 183sp / 40cp   1   0
+scroll with information on a spell called *Nat`s Spell of Chain Endurance* worth 1,885gp to a wizard   1   0
+GEM: Zircon (2gp)   1   0
+21pp / 83gp / 16ep / 34sp / 4,920cp   1   0
+GEM: Golden Yellow Topaz (36gp)   1   0
+GEM: Blue Quartz (2gp)   1   0
+274ep / 5sp / 1,200cp   1   0
+53gp / 39ep / 7sp / 10,610cp   1   0
+281sp / 5,855cp   1   0
+JEWELRY: Exceptional Goblet (270gp)   1   0
+a delightful bundle of animal leather worth 12gp   1   0
+a purple cloth sack of delightful coins of a far off land that are made of iron with a symbol of a boar on it (42 ea) worth a total of 7gp   1   0
+4gp / 12ep / 6sp / 50cp   1   0
+6pp / 3gp / 3ep / 1sp / 31cp   1   0
+128pp / 286gp / 102ep / 236sp / 5,580cp   1   0
+130pp / 66gp / 3ep / 307sp / 110cp   1   0
+GEM: Black Pearl (130gp)   1   0
+2pp / 1gp / 1sp / 5cp   1   0
+102ep / 21,000cp   1   0
+1pp / 1gp   1   0
+33gp / 404ep / 10,100cp   1   0
+42sp   1   0
+a delightful pewter bowl worth 23gp   1   0
+48gp / 79ep / 52sp / 28,460cp   1   0
+JEWELRY: Silvery Gold 3 Inch Square Pyramid (130gp)   1   0
+1pp / 20gp / 1ep / 56sp / 605cp   1   0
+JEWELRY: Silver Bracelet (150gp)   1   0
+GEM: Rhodochrosite (2gp)   1   0
+GEM: Aquamarine (45gp)   1   0
+2gp / 7sp / 140cp   1   0
+1pp / 2gp / 1sp / 30cp   1   0
+GEM: Golden Yellow Topaz (30gp)   1   0
+JEWELRY: Silver Earring (203gp)   1   0
+GEM: Red Spinel (26gp)   1   0
+9pp / 6gp   1   0
+JEWELRY: Golden Buckle (487gp)   1   0
+1gp / 19sp / 1,770cp   1   0
+1pp / 3gp / 1ep / 5sp / 25cp   1   0
+3pp / 12gp / 8ep / 43sp / 30cp   1   0
+10pp / 15gp / 334ep / 26sp / 1,280cp   1   0
+5pp / 8gp / 3ep   1   0
+1pp / 2sp   1   0
+9pp / 53gp / 21ep / 232sp / 1,760cp   1   0
+9pp / 14gp / 3ep / 2sp   1   0
+3gp / 509sp / 6,020cp   1   0
+33pp / 29gp / 290ep / 15sp   1   0
+an unusual diary titled `The Cursed Dungeon of the Minstrel` and is bound in red basilisk skin with maroon colored symbols of a lion on the front and a axe on the back, and is worth 6gp   1   0
+scroll case made of platinum with silver endcaps and decorated with 2 gems [white opal] worth 39gp   1   0
+3pp / 1gp / 4ep / 25sp / 5,700cp   1   0
+405cp   1   0
+42gp / 5ep / 8sp / 340cp   1   0
+a unique clay jug of live bees worth 126gp to an herbalist   1   0
+28pp / 6gp / 12ep / 57sp / 160cp   1   0
+2pp / 12gp / 6ep / 13sp   1   0
+2pp / 17gp / 5ep / 6sp / 80cp   1   0
+JEWELRY: Silver Broach (35gp)   1   0
+12pp / 2,100cp   1   0
+6gp / 63ep / 2sp / 36cp   1   0
+1pp / 8gp / 3ep / 22sp / 390cp   1   0
+33pp / 15gp / 13ep / 156sp / 2,530cp   1   0
+2pp / 4gp / 14ep / 5sp / 50cp   1   0
+GEM: Chalcedony (8gp)   1   0
+52ep / 114sp / 820cp   1   0
+5pp / 1gp / 3ep / 5sp / 150cp   1   0
+GEM: Bloodstone (19gp)   1   0
+4pp / 5gp / 31ep / 8sp / 1,190cp   1   0
+GEM: Tiger Eye (5gp)   1   0
+8gp / 175sp / 4,700cp   1   0
+4sp / 745cp   1   0
+GEM: Turquoise (5gp)   1   0
+132gp / 2,861ep / 9sp / 8,570cp   1   0
+a green canvas sack of magnificent coins from an ancient race that are made of steel with a symbol of a spider on it (30 ea) worth a total of 14gp   1   0
+1pp / 44gp / 46ep   1   0
+245gp / 57ep / 127sp / 110cp   1   0
+6pp / 5gp / 5ep / 7sp / 161cp   1   0
+1pp / 164gp / 293ep / 160sp / 15,250cp   1   0
+GEM: Golden Pearl (13gp)   1   0
+1,107sp / 10,860cp   1   0
+4pp / 18gp / 2ep / 2sp / 110cp   1   0
+8pp / 1gp / 45ep / 21sp / 371cp   1   0
+a nice blue, stitched silk cloak worth 16gp   1   0
+GEM: Lapis Lazuli (2gp)   1   0
+600cp   1   0
+55gp / 18ep / 15sp / 591cp   1   0
+1,352gp / 43ep / 87sp / 910cp   1   0
+3gp / 1ep / 3sp / 40cp   1   0
+156gp / 199ep / 100sp / 451cp   1   0
+an unusual musical lute worth 390gp   1   0
+796ep / 143sp / 1,340cp   1   0
+25pp / 9ep / 68sp / 1,690cp   1   0
+JEWELRY: Silver Comb/brush (44gp)   1   0
+1pp / 3gp / 1ep / 1sp / 120cp   1   0
+scroll with information on a spell called *Verporm`s Spell of Incendiary Hand* worth 222gp to a mage   1   0
+2pp / 2gp / 1ep / 10cp   1   0
+1pp / 10gp / 3ep / 2sp / 310cp   1   0
+JEWELRY: Golden Gemmed Anklet (1,750gp)   1   0
+26ep / 38sp / 100cp   1   0
+GEM: Chalcedony (9gp)   1   0
+196gp / 131ep / 159sp / 3,820cp   1   0
+124gp / 116ep / 393sp / 3,865cp   1   0
+30pp / 42gp / 5ep / 3sp / 1,491cp   1   0
+JEWELRY: Silver Choker (96gp)   1   0
+scroll case made of silver with bronze endcaps and decorated with 7 gems [black pearl] worth 20gp   1   0
+a small leather satchel of odd coins from a mysterious land that are made of steel with a symbol of a ram on it (21 ea) worth a total of 7gp   1   0
+an odd ornamental dagger made of iron worth 37gp   1   0
+76gp / 3ep / 72sp / 260cp   1   0
+a unique ceremonial dagger made of steel worth 20gp   1   0
+4ep / 4sp / 35cp   1   0
+1ep / 25cp   1   0
+2pp / 4gp / 51sp / 2,980cp   1   0
+5pp / 11gp / 24ep / 6sp / 345cp   1   0
+GEM: Banded Agate (3gp)   1   0
+8pp / 11gp / 2ep / 16sp / 465cp   1   0
+4pp / 7gp / 4ep / 1sp / 21cp   1   0
+JEWELRY: Exceptional Goblet (1,170gp)   1   0
+1pp / 7ep / 24sp / 920cp   1   0
+6pp / 21gp / 22ep / 25sp / 1,401cp   1   0
+JEWELRY: Exceptional Goblet (330gp)   1   0
+47gp / 1ep / 1sp / 30cp   1   0
+GEM: Blue Star Sapphire (45gp)   1   0
+124gp / 190ep / 686sp / 22,380cp   1   0
+414sp / 27,720cp   1   0
+GEM: Chrysoprase (14gp)   1   0
+JEWELRY: Silver 6 Inch Cube (76gp)   1   0
+26gp / 46ep / 61sp / 180cp   1   0
+120cp   1   0
+5pp / 3sp / 65cp   1   0
+a magnificent, small tome titled `The Lexicon of Ezanelar the Cavalier` and is bound in green animal skin with indigo colored symbols of a bat on the front and a fist on the back, and is worth 4gp   1   0
+6pp / 7gp / 1ep / 32sp / 560cp   1   0
+259pp / 17ep / 57sp / 1,510cp   1   0
+5pp / 26gp / 6ep / 1sp / 41cp   1   0
+3pp / 1gp / 1sp   1   0
+1pp / 2gp / 1sp   1   0
+an unusual waterskin of gelatinous goo worth 30gp to an herbalist   1   0
+24pp / 15gp / 4ep / 1sp / 30cp   1   0
+15pp / 1gp / 12ep / 51sp / 230cp   1   0
+GEM: Rock Crystal (21gp)   1   0
+JEWELRY: Silver Earring (8gp)   1   0
+an unusual bundle of shirts finely stitched of cloth worth 5gp   1   0
+131pp / 71ep / 5,700cp   1   0
+5pp / 34gp / 109ep / 180sp / 1,850cp   1   0
+GEM: Blue Quartz (1gp)   1   0
+19pp / 64gp / 35ep / 9sp / 20cp   1   0
+GEM: Amber (6gp)   1   0
+JEWELRY: Silver Goblet (36gp)   1   0
+164pp / 35gp   1   0
+2gp / 20ep / 134sp / 17,120cp   1   0
+4,725cp   1   0
+GEM: Aquamarine (120gp)   1   0
+281gp / 274ep / 761sp / 1,480cp   1   0
+an elegant ceramic jug of perfume worth 855gp   1   0
+8pp / 1ep   1   0
+JEWELRY: Silver Coronet (225gp)   1   0
+1sp / 25cp   1   0
+86gp / 127ep / 29sp / 220cp   1   0
+1gp / 1ep / 3sp / 60cp   1   0
+152sp / 12,710cp   1   0
+27pp / 1gp / 3ep / 23sp / 40cp   1   0
+73ep / 69sp / 2,321cp   1   0
+1,488sp / 21,990cp   1   0
+52pp / 11ep / 3sp / 165cp   1   0
+1pp / 2gp / 2ep / 1sp / 50cp   1   0
+4pp / 4gp / 3ep / 4sp / 100cp   1   0
+116pp / 4gp / 1ep / 1sp / 30cp   1   0
+22sp / 10cp   1   0
+1gp / 1ep / 3sp / 60cp   1   0
+1pp / 1gp / 3ep / 5sp / 50cp   1   0
+5gp / 2ep / 8sp / 215cp   1   0
+10gp / 19ep / 6sp / 90cp   1   0
+210cp   1   0
+GEM: Turquoise (3gp)   1   0
+1gp / 474sp / 2,420cp   1   0
+21gp / 122ep / 124sp / 320cp   1   0
+JEWELRY: Silvery Gold 4 Inch Triangular Pyramid (168gp)   1   0
+set of silverware (7 forks, 2 spoons, 7 knives) worth 12gp   1   0
+20gp / 2sp / 60cp   1   0
+5,100cp   1   0
+441sp / 72,180cp   1   0
+1pp / 2gp / 2ep / 1sp / 21cp   1   0
+129sp / 2,700cp   1   0
+JEWELRY: Silvery Gold Earring (12gp)   1   0
+178ep / 2,500cp   1   0
+JEWELRY: Exceptional Crown (2,520gp)   1   0
+GEM: Jade (15gp)   1   0
+1gp / 1ep   1   0
+4,500cp   1   0
+273gp / 409ep / 672sp / 16,810cp   1   0
+11pp / 18gp / 49ep / 64sp / 2,170cp   1   0
+GEM: Green Spinel (18gp)   1   0
+122pp / 435gp / 54ep / 45sp / 6,651cp   1   0
+40pp / 155gp / 78ep / 348sp / 7,640cp   1   0
+3pp / 14gp / 124ep / 115sp / 4,275cp   1   0
+1pp / 95sp / 1,426cp   1   0
+GEM: Garnet (8gp)   1   0
+10pp / 27gp / 3ep / 83sp / 1,290cp   1   0
+7gp / 3ep / 2sp / 10cp   1   0
+554ep / 107sp / 10,160cp   1   0
+13 inch tall jade carving of a dragon worth 95gp   1   0
+8gp / 4sp / 20cp   1   0
+GEM: Onyx (10gp)   1   0
+30gp / 96ep / 49sp / 1,220cp   1   0
+GEM: Moss Agate (2gp)   1   0
+16gp / 8ep / 19sp / 230cp   1   0
+JEWELRY: Silvery Gold Broach (18gp)   1   0
+18pp / 149gp / 12ep / 51sp / 2,080cp   1   0
+35pp / 98ep / 62sp / 3,360cp   1   0
+85pp / 13gp / 20ep / 10sp   1   0
+scroll with information on a spell called *Issy`s Spell of Irresistible Pyrotechnics* worth 5gp to a mage   1   0
+1ep / 40cp   1   0
+39ep / 1,377sp / 42,510cp   1   0
+scroll with information on a spell called *Ineiti`s Spell of Arcane Confusion* worth 137gp to a wizard   1   0
+1pp / 12gp / 109sp / 965cp   1   0
+4pp / 3gp / 10ep / 52sp / 150cp   1   0
+2pp / 19gp / 3ep / 4sp / 110cp   1   0
+scroll case made of golden with silver endcaps and decorated with 8 gems [amber] worth 47gp   1   0
+65pp / 21gp / 540ep / 104sp / 3,820cp   1   0
+1pp / 1gp / 12ep / 11sp / 335cp   1   0
+GEM: Obsidian (1gp)   1   0
+1pp / 10sp / 65cp   1   0
+scroll case made of silver with bronze endcaps and decorated with 8 gems [alexandrite] worth 51gp   1   0
+12pp / 46gp / 92ep / 125sp / 2,550cp   1   0
+32gp / 20sp / 495cp   1   0
+256pp / 19gp / 230ep / 70sp / 1,200cp   1   0
+11gp / 1ep / 13sp / 120cp   1   0
+JEWELRY: Silver Goblet (130gp)   1   0
+mug made of adamant with 9 gems (blue quartz) set around the top and bottom and an etching of a tower on the side worth 5gp   1   0
+1pp / 3gp / 7ep / 1sp / 105cp   1   0
+5pp / 6gp / 1ep   1   0
+7pp / 58gp / 63ep / 15sp / 1,251cp   1   0
+15pp / 68gp / 30ep / 106sp / 1,205cp   1   0
+3pp / 10gp / 12ep / 1sp   1   0
+GEM: Sard Quartz (21gp)   1   0
+JEWELRY: Silvery Gold Box (140gp)   1   0
+JEWELRY: Golden Chalice (345gp)   1   0
+390gp / 733ep / 690sp / 8,551cp   1   0
+142gp / 1ep   1   0
+33ep / 510cp   1   0
+4gp / 6sp / 230cp   1   0
+GEM: Amethyst (2gp)   1   0
+an unusual musical mandolin worth 4gp   1   0
+JEWELRY: Silver 5 Inch Triangular Pyramid (225gp)   1   0
+GEM: Blue Quartz (1gp)   1   0
+GEM: Star Rose Quartz (14gp)   1   0
+GEM: Golden Pearl (18gp)   1   0
+323pp / 30gp / 79ep / 29sp / 970cp   1   0
+32gp / 98ep / 338sp / 140cp   1   0
+41ep / 79sp / 2,251cp   1   0
+3,646cp   1   0
+an odd glass jar of bear powder worth 9gp to an alchemist   1   0
+1pp / 1sp / 305cp   1   0
+GEM: Tiger Eye (1gp)   1   0
+12gp / 2ep / 42sp / 110cp   1   0
+GEM: Bloodstone (1gp)   1   0
+an extraordinary pair of brown shoes made of manticore skin worth 3gp   1   0
+9gp / 10ep / 2sp   1   0
+12pp / 7gp / 1ep   1   0
+3pp / 10gp / 2ep / 5sp   1   0
+GEM: Alexandrite (48gp)   1   0
+JEWELRY: Silvery Gemmed Headband (135gp)   1   0
+JEWELRY: Silver Broach (156gp)   1   0
+168pp / 3gp / 14ep   1   0
+23ep / 92sp / 1,760cp   1   0
+18 inch tall sandstone carving of a cross worth 765gp   1   0
+GEM: Sardonyx Quartz (2gp)   1   0
+69pp / 102gp / 695ep / 229sp / 9,470cp   1   0
+JEWELRY: Golden Buckle (162gp)   1   0
+JEWELRY: Silver Earring (290gp)   1   0
+1pp / 3gp / 5ep   1   0
+14pp / 32gp / 147ep / 49sp / 470cp   1   0
+5pp / 1gp / 26ep / 7sp / 1,360cp   1   0
+--END--
+Short Sword	3	10
+Long Sword	2	10
+Two-Handed Sword	1	10
+--END--
+Leather Armor	3	12
+Chain Mail Armor	2	12
+Plate Mail Armor	1	12
+--END--
+Arrows (1d6 each)	1	11
+Battle Axe	1	11
+Hand Axe	1	11
+Club	1	11
+Dagger	1	11
+War Hammer	1	11
+Javelin	1	11
+Lance	1	11
+Mace	1	11
+Pole Arm	1	11
+Quarrels (1d6 each)	1	11
+Sling Stones (1d6 each)	1	11
+Spear	1	11
+Staff	1	11
+--END--
+Bottle of Poison [B48]
+Potion of Clairaudience [X48]
+Potion of Clairvoyance [X48]
+Potion of Control Animal [X48]
+Potion of Control Dragon [X48]
+Potion of Control Giant [X48]
+Potion of Control Human [X48]
+Potion of Control Plant [X48]
+Potion of Control Undead [X48]
+Potion of Delusion [X48]
+Potion of Diminution [B48]
+Potion of ESP [B48]
+Potion of Fire Resistance [X48]
+Potion of Flying [X48]
+Potion of Gaseous Form [B48]
+Potion of Giant Strength [X48]
+Potion of Growth [B48]
+Potion of Healing [B48]
+Potion of Heroism [X48]
+Potion of Invisibility [B48]
+Potion of Invulnerability [X48]
+Potion of Levitation [B48]
+Potion of Longevity [X48]
+Potion of Polymorph Self [X48]
+Potion of Speed [X48]
+Potion of Treasure Finding [X48]
+--END--
+Animate Dead [X16]
+Anti-Magic Shell [X17]
+Bless* [X12]
+Charm Monster [X15]
+Charm Person [B16]
+Clairvoyance [X14]
+Cloudkill [X16]
+Commune [X13]
+Confusion [X15]
+Confusion, Greater [X15]
+Conjure Elemental [X16]
+Contact Higher Plane [X16]
+Continual Light* [B17(X14)]
+Continual Light* [X12]
+Control Weather [X17]
+Create Food [X13(X25)]
+Create Water [X13(X25)]
+Cure Disease* [X12]
+Cure Light Wounds* [B15(X11)]
+Cure Serious Wounds* [X13]
+Death Spell [X17]
+Detect Evil [B17]
+Detect Magic [B15]
+Detect Magic [B16]
+Dimension Door [X15]
+Disintegrate [X18]
+Dispel Evil [X13]
+Dispel Magic [X13]
+Dispel Magic [X14]
+ESP [B17]
+Feeblemind [X16]
+Find Traps [X12]
+Finger of Death [X14]
+Fire Ball [X14]
+Floating Disc [B16]
+Fly [X14]
+Geas* [X18]
+Growth of Animal [X12]
+Growth of Plants [X15]
+Hallucinatory Terrain [X15]
+Haste [X14]
+Hold Monster [X16]
+Hold Person [X12]
+Hold Person [X14]
+Hold Portal [B16]
+Infravision [X15]
+Insect Plague [X13]
+Invisibility [B17]
+Invisibility 10' Radius [X15]
+Invisibility, Greater [B17]
+Invisible Stalker [X18]
+Knock [B17]
+Know Alignment [X12]
+Levitate [B17]
+Light* [B15(X11)]
+Light* [B16(X14)]
+Lightning Bolt [X15]
+Locate Object [B17]
+Locate Object [X12]
+Lower Water [X18]
+Magic Jar [X17]
+Magic Missile [B16]
+Magic Mouth [R29]
+Mass Invisibility [B17]
+Massmorph [X15]
+Mirror Image [B17]
+Move Earth [X18]
+Neutralize Poison [X13]
+Part Water [X18]
+Pass-Wall [X17]
+Permanent Image [B17]
+Phantasmal Force [B17]
+Polymorph Others [X15]
+Polymorph Self [X15]
+Project Image [X18]
+Protection from Evil [B15]
+Protection from Evil [B16]
+Protection from Evil 10' Radius [X13]
+Protection from Evil 10' Radius [X15]
+Protection from Normal Missiles [X15]
+Purify Food and Water [B15]
+Quest* [X13]
+Raise Dead* [X14]
+Read Languages [B17]
+Read Magic [B17]
+Reincarnation [X18]
+Remove Curse* [X13]
+Remove Curse* [X15]
+Remove Fear* [B16(X12)]
+Resist Cold [B16]
+Resist Fire [X12]
+Shield [B17]
+Silence 15' Radius [X12]
+Sleep [B17]
+Snake Charm [X12]
+Speak with Animals [X12]
+Speak with Plants [X13]
+Sticks to Snakes [X13]
+Stinking Cloud [R29]
+Stone to Flesh* [X18]
+Striking [X13]
+Telekinesis [X17]
+Teleport [X17]
+Transmute Rock to Mud* [X17]
+Ventriloquism [B17]
+Wall of Fire [X16]
+Wall of Ice [X16]
+Wall of Stone [X17]
+Water Breathing [X15]
+Web [B18]
+Wizard Eye [X16]
+Wizard Lock [B18]
+Cursed Scroll [B49]
+Cursed Scroll [B49]
+Cursed Scroll [B49]
+Protection from Elementals Scroll [X48]
+Protection from Lycanthropes Scroll [B49]
+Protection from Magic Scroll [X48]
+Protection from Undead Scroll [B49]
+Protection from Elementals Scroll [X48]
+Protection from Lycanthropes Scroll [B49]
+Protection from Magic Scroll [X48]
+Protection from Undead Scroll [B49]
+Treasure Map [B49]
+--END--
+Ring of Animal Control [B49]
+Ring of Control Human [X49]
+Ring of Control Plant [X49]
+Ring of Delusion [X49]
+Ring of Djinni Summoning [X49]
+Ring of Fire Resistance [B49]
+Ring of Invisibility [B49]
+Ring of Protection +1 [B49]
+Ring of Protection +1 (5'r) [X49]
+Ring of Protection +2 [B49]
+Ring of Protection +2 (5'r) [X49]
+Ring of Protection +3 [B49]
+Ring of Protection +3 (5'r) [X49]
+Ring of Protection +4 [B49]
+Ring of Protection +4 (5'r) [X49]
+Ring of Protection +5 [B49]
+Ring of Protection +5 (5'r) [X49]
+Ring of Regeneration [X49]
+Ring of Spell Storing [X49]
+Ring of Spell Turning [X49]
+Ring of Telekinesis [X49]
+Ring of Water Walking [B49]
+Ring of Weakness [B49]
+Ring of Wishes [X49]
+Ring of X-ray Vision [X49]
+--END--
+Rod of Alertness 1d10 charges [R83]
+Rod of Cancellation 1d10 charges [B50]
+Rod of Repercussion 1d10 charges [C55]
+Rod of Resistance 1d10 charges [C55]
+Rod of Resurrection 1d3 charges [C55]
+Rod of Reverberation 1d10 charges [C55]
+Rod of Ruin 1d10 charges [C55]
+Rod of Rulership 1d10 charges [R83]
+Rod of Ruling 1d10 charges [C55]
+Rod of Security 1d10 charges [R83]
+Rod of Splendor 1d10 charges [R83]
+Rod of Wonder 1d10 charges [R84]
+Skull Staff 3d10 charges [C55]
+Snake Staff 3d10 charges [B50]
+Staff of Absorption 3d10 charges [R84]
+Staff of Acid 3d10 charges [R84]
+Staff of Air Elemental Power 3d10 charges [R84]
+Staff of Commanding 3d10 charges [X49]
+Staff of Curing 3d10 charges [R84]
+Staff of Earth Elemental Power 3d10 charges [R84]
+Staff of Fire Elemental Power 3d10 charges [R84]
+Staff of Harms 3d10 charges [R84]
+Staff of Healing 3d10 charges [B50]
+Staff of Illusions 3d10 charges [R84]
+Staff of Light 3d10 charges [R84]
+Staff of Passage 3d10 charges [R85]
+Staff of Power 3d10 charges [X49]
+Staff of Reincarnation 3d10 charges [R85]
+Staff of Resurrection 1d3 charges [R85]
+Staff of Shielding 3d10 charges [C55]
+Staff of Striking 3d10 charges [X49]
+Staff of Swarming Insects 3d10 charges [R85]
+Staff of the Woodlands 3d10 charges [R85]
+Staff of Thunder & Lightning 3d10 charges [R85]
+Staff of Water Elemental Power 3d10 charges [R84]
+Staff of Withering 3d10 charges [X49]
+Staff of Wizardry 3d10 charges [X49]
+Wand of Acid 2d10 charges [C55]
+Wand of Cold 2d10 charges [X49]
+Wand of Enemy Detection 2d10 charges [B49]
+Wand of Fear 2d10 charges [X49]
+Wand of Fire Balls 2d10 charges [X49]
+Wand of Illusion 2d10 charges [X49]
+Wand of Lightning Bolts 2d10 charges [X50]
+Wand of Magic Detection 2d10 charges [B50]
+Wand of Metal Detection 2d10 charges [X49]
+Wand of Negation 2d10 charges [X50]
+Wand of Paralyzation 2d10 charges [B50]
+Wand of Petrification 2d10 charges [R85]
+Wand of Polymorphing 2d10 charges [X50]
+Wand of Secret Door Detection 2d10 charges [X49]
+Wand of Trap Detection 2d10 charges [X49]
+--END--
+Amulet vs. Crystal Balls & ESP [X50]
+Bag of Devouring [B50]
+Bag of Holding [B50]
+Boots of Levitation [X50]
+Boots of Speed [X50]
+Boots of Traveling & Leaping [X50]
+Bowl of Commanding Water Elementals [X50]
+Brazier of Commanding Fire Elementals [X50]
+Broom of Flying [B50]
+Censer of Controlling Air Elementals [X50]
+Crystal Ball [B50]
+Crystal Ball with Clairaudience [X50]
+Crystal Ball with ESP [X50]
+Displacer Cloak [X50]
+Drums of Panic [X50]
+Efreeti Bottle [X50]
+Elven Boots [B50]
+Elven Cloak [B50]
+Flying Carpet [X50]
+Gauntlets of Ogre Power [B50]
+Girdle of Giant Strength [X50]
+Helm of Alignment Change [B50]
+Helm of Reading Lang & Magic [X50]
+Helm of Telepathy [B50]
+Helm of Teleportation [X50]
+Horn of Blasting [X50]
+Medallion of ESP (30 ft.) [B50]
+Medallion of ESP (90 ft.) [X50]
+Mirror of Life Trapping [X50]
+Rope of Climbing [B50]
+Scarab of Protection [X50]
+Stone of Controlling Earth Elementals [X50]
+--END--
++1 [B50]	80	0
++2 [B50]	60	0
++3 [B50]	40	0
++4 [B50]	20	0
++5 [B50]	10	0
+Intelligent Sword (See X46)	1	0
++1, Casts Light on Command (30') [B48]	15	0
++1, Draining Life Energy [X45]	10	0
++1, Flames on Command [X45]	25	0
++1, Locate Objects [X45]	25	0
++1, Wishes [X46]	1	0
++2, Charm Person [X46]	10	0
+Cursed -1 [B48]	20	0
+Cursed -2 [B48]	20	0
++1, +2 vs. creature type [B48]	30	13
+--END--
++1 [B50]	80	0
++2 [B50]	60	0
++3 [B50]	30	0
++4 [B50]	10	0
+Cursed -1 [B48]	10	0
+Cursed -2 [B48]	10	0
++1, +2 vs. creature type [B48]	30	13
+--END--
++1 [B48]	80	0
++2 [B48]	60	0
++3 [B48]	40	0
++4 [B48]	15	0
+Cursed -1 [B48]	10	0
+Cursed -2 [B48]	10	0
+--END--
+Animals
+Avian & Birds
+Demons & Planar Beings
+Dragons
+Elementals
+Fey
+Frogs & Toads
+Giants
+Golems
+Humanoids
+Lycanthropes
+Magical Beasts
+Ogres & Trolls
+Plants
+Reptiles
+Sea Creatures
+Spell Casters
+Spiders & Insects
+Undead & Spirits
+Worms & Slimes

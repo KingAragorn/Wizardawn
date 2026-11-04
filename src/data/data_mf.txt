@@ -1,0 +1,757 @@
+This is the data file for Mutant Future™.  This consists of creatures and treasure from that rulebook.
+You can use this with some of the tools here that allow for data files to be input. You may only want to use this file
+if you want to customize your creations. You may have no gold in your land or maybe you want to remove
+the chance of certain creatures from appearing. You may want to add custom monsters and items. Anything is possible.
+
+Mutant Future™ is copyright 2008-2012, Daniel Proctor and Ryan Denison.
+Mutant Future™ and Mutants & Mazes™ are trademarks of Daniel Proctor.
+These trademarks are used under the Mutant Future™ Trademark License (which can be found at http://www.wizardawn.com/rpg/lic_mf.pdf).
+
+This is published under the Open Game License Version 1.0a (which can be found at http://www.wizardawn.com/rpg/lic_ogl.html)
+
+Below are the codes used for the creatures' terrain types...
+
+DG = Ruins
+RD = Wasteland
+TW = Settlement
+PF = Forest
+PH = Hills
+PM = Mountains
+PP = Plains
+PS = Swamp
+PD = Desert
+FW = Freshwater
+SW = Sea
+CF = Snowy Forest
+CH = Snowy Hills
+CM = Snowy Mountains
+CP = Snowy Plains
+TF = Jungle/Tropics Forest
+TH = Jungle/Tropics Hills
+TM = Jungle/Tropics Mountains
+TS = Jungle/Tropics Swamp
+
+--BEGIN--
+Accipitoid	PM CM TM SW TW	5	1	ENC: 2d4 (2d4); AL: Neutral; MV: 120` (40`) Fly 180` (60`); AC: 5; HD: 5; AT: 3 (2 claws, bite); DMG: 1d6/1d6/1d10; SV: 5; ML: 10; IQ: Average; THAC0: 15; TRS: XX;
+Android, Clone Neutralizer	PD RD RD DG	7	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 4; HD: 50 hp; AT: 2; DMG: by weapon; SV: 5; ML: 10; IQ: High; THAC0: 13; TRS: None;
+Android, Medic	PD RD DG	7	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 5; HD: 50 hp; AT: 1; DMG: by weapon; SV: 5; ML: 10; IQ: High; THAC0: 13; TRS: XIX (100% drugs and medical devices);
+Ant, Giant	TF TH TM PD DG DG RD	4	1	ENC: 2d4 (4d6); AL: Neutral; MV: 180` (60`); AC: 3; HD: 4; AT: 1; DMG: 2d6; SV: 2; ML: 7; IQ: Animal; THAC0: 16; TRS: VI;
+Ant Horror	PD DG PH PP RD	6	1	ENC: 2d4 (4d6); AL: Neutral; MV: 150` (50`); AC: 3; HD: 6; AT: 2 or 1 (2 bites or tail); DMG: 2d8/2d8 or 1d10; SV: 4; ML: 7; IQ: Animal; THAC0: 14; TRS: None;
+Ape, Albino	CF CH CM CP DG PM CM TM	4	1	ENC: 1d6 (2d4); AL: Neutral; MV: 120` (40`); AC: 6; HD: 4; AT: 2 (claw, claw); DMG: 1d4/1d4; SV: 2; ML: 7; IQ: Low; THAC0: 16; TRS: None;
+Apeman	CF CH CM CP PF CF TF RD DG TW	7	1	ENC: 1d8 (5d8); AL: Neutral; MV: 120` (40`); AC: 6; HD: 7; AT: 1 (weapon); DMG: As weapon, +2; SV: 5; ML: 9; IQ: Average; THAC0: 13; TRS: XX;
+Baboon, Higher	PH PP TF TH TM	2	1	ENC: 2d6 (5d6); AL: Neutral; MV: 120` (40`); AC: 6; HD: 2; AT: 2 (bite, club); DMG: 1d3/1d6; SV: 2; ML: 8; IQ: Low; THAC0: 18; TRS: VI;
+Bat	DG	1	1	ENC: 1d00 (1d00); AL: Neutral; MV: 9` (3`) 30` Fly 120` (40`); AC: 6; HD: 1 hp; AT: confuse; DMG: None; SV: 0; ML: 6; IQ: Animal; THAC0: 19; TRS: None;
+Bat, Giant	DG	2	1	ENC: 1d10 (1d10); AL: Neutral; MV: 30` (10`) Fly 180` (60`); AC: 6; HD: 2; AT: 1 (bite); DMG: 1d4; SV: 1; ML: 8; IQ: Animal; THAC0: 18; TRS: None;
+Bear, Black	PF CF TF	4	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 6; HD: 4; AT: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: 2; ML: 7; IQ: Animal; THAC0: 16; TRS: VI;
+Bear, Grizzly	PF CF TF	5	1	ENC: 1 (1d4); AL: Neutral; MV: 120` (40`); AC: 6; HD: 5; AT: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: 2; ML: 8; IQ: Animal; THAC0: 15; TRS: VI;
+Bear, Polar	CF CH CM CP	6	1	ENC: 1 (1d2); AL: Neutral; MV: 120` (40`); AC: 6; HD: 6; AT: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: 3; ML: 8; IQ: Animal; THAC0: 14; TRS: VI;
+Bear, Cave	PF CF TF PM CM TM CF CH CM CP DG	7	1	ENC: 1d2 (1d2); AL: Neutral; MV: 120` (40`); AC: 5; HD: 7; AT: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: 3; ML: 9; IQ: Animal; THAC0: 13; TRS: VII;
+Bee, Giant Killer	PF CF TF FW DG	1	1	ENC: 1d6 (5d6); AL: Neutral; MV: 150` (50`); AC: 7; HD: 1d4 hit points; AT: 1 (sting); DMG: 1d3, see below; SV: 1; ML: 9; IQ: Animal; THAC0: 19; TRS: See below;
+Black Pudding	DG	10	1	ENC: 1 (0); AL: Neutral; MV: 60` (20`); AC: 6; HD: 10; AT: 1; DMG: 3d8; SV: 5; ML: 12; IQ: Animal; THAC0: 11; TRS: None;
+Boar	PF CF TF PS TS	3	1	ENC: 1d6 (1d6); AL: Neutral; MV: 150` (50`); AC: 7; HD: 3; AT: 1 (tusk); DMG: 2d4; SV: 2; ML: 9; IQ: Animal; THAC0: 17; TRS: None;
+Boar, Hideous	PF CF TF PS TS PH PP	7	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 5; HD: 7; AT: 3 (3 tusks or spittle); DMG: 2d8/2d8/2d8 or 2d10; SV: 2; ML: 9; IQ: Animal; THAC0: 13; TRS: None;
+Brain Lasher	DG	9	1	ENC: 1 (1d3); AL: Chaotic; MV: 120` (40`); AC: 5; HD: 9; AT: 1; DMG: special; SV: 9; ML: 9; IQ: Genius; THAC0: 12; TRS: III, IV, IX, XXI;
+Brain Plants	PD PF CF TF	3	1	ENC: 3d6; AL: Neutral; MV: as mutation; AC: 8; HD: 3; AT: as mutation; DMG: as mutation; SV: 10; ML: 12; IQ: Genius; THAC0: 17; TRS: XVI;
+Burn Leech	FW PS TS TF TH TM	1	1	ENC: 2d6; AL: Neutral; MV: 6` (2`); AC: 9; HD: 1; AT: 1; DMG: 1d6; SV: 1; ML: None; IQ: Animal; THAC0: 19; TRS: None;
+Burrow Tuber	PH PP	1	1	ENC: 2d6; AL: Neutral; MV: 10`; AC: None; HD: 1; AT: None; DMG: Special; SV: 1; ML: None; IQ: Animal; THAC0: 19; TRS: None;
+Camel	PD	2	1	ENC: 0 (2d4); AL: Neutral; MV: 150` (50`); AC: 7; HD: 2; AT: 2 (bite, hoof); DMG: 1/1d4; SV: 1; ML: 7; IQ: Animal; THAC0: 18; TRS: None;
+Canisoid	RD PM CM TM DG TW	5	1	ENC: 2d6 (3d6); AL: Neutral; MV: 120` (40`); AC: 6; HD: 5; AT: 3 (2 claws, bite); DMG: 1d4/1d4/2d4; SV: 6; ML: 10; IQ: Low; THAC0: 15; TRS: XIX;
+Castoroid	PF CF TF	2	1	ENC: 1d10; AL: Chaotic; MV: 75` (25`); AC: 7; HD: 2; AT: 3 (2 claws, bite); DMG: 1d6/1d6/1d20; SV: 3; ML: 10; IQ: Average; THAC0: 16; TRS: XV;
+Carcass Scavenger	DG	4	1	ENC: 1d3 (1d3); AL: Neutral; MV: 120` (40`); AC: 7; HD: 3 + 1; AT: 8 (stingers); DMG: Paralysis; SV: 2; ML: 9; IQ: Animal; THAC0: 18; TRS: XXI;
+Cat, Large, Mountain Lion	PM CM TM PF CF TF CF CH CM CP	4	1	ENC: 1d4 (1d4); AL: Neutral; MV: 150` (50`); AC: 6; HD: 3 + 2; AT: 3 (2 claws, bite); DMG: 1d3/1d3/1d6; SV: 2; ML: 8; IQ: Animal; THAC0: 16; TRS: VI;
+Cat, Large, Panther	TF TH TM	4	1	ENC: 1d2 (1d6); AL: Neutral; MV: 210` (70`); AC: 4; HD: 4; AT: 3 (2 claws, bite); DMG: 1d4/1d4/1d8; SV: 2; ML: 8; IQ: Animal; THAC0: 16; TRS: VI;
+Cat, Large, Lion	TF TH TM PF CF TF PM CM TM	5	1	ENC: 1d4 (1d8); AL: Neutral; MV: 150` (50`); AC: 6; HD: 5; AT: 3 (2 claws, bite); DMG: 1d4+1/1d4+1/1d10; SV: 3; ML: 9; IQ: Animal; THAC0: 15; TRS: VI;
+Cat, Large, Tiger	TF TH TM	6	1	ENC: 1 (1d3); AL: Neutral; MV: 150` (50`); AC: 6; HD: 6; AT: 3 (2 claws, bite); DMG: 1d6/1d6/2d6; SV: 3; ML: 9; IQ: Animal; THAC0: 14; TRS: VI;
+Cat, Large, Sabre-tooth Tiger	TF TH TM PF CF TF PM CM TM DG	8	1	ENC: 1d4 (1d4); AL: Neutral; MV: 150` (50`); AC: 6; HD: 8; AT: 3 (2 claws, bite); DMG: 1d8/1d8/2d8; SV: 4; ML: 10; IQ: Animal; THAC0: 12; TRS: VII;
+Centipede, Giant	DG DG	1	1	ENC: 2d4 (1d8); AL: Neutral; MV: 60` (20`); AC: 9; HD: 1d4 hp; AT: 1 (bite); DMG: Poison; SV: 0; ML: 7; IQ: Animal; THAC0: 19; TRS: None;
+Cephalopoid	FW SW	10	1	ENC: 2d6; AL: Neutral; MV: 120` (40`) Tentacles 150` (50`); AC: 7; HD: 10; AT: 5 or 2(4 tentacles, bite, or weapon); DMG: 1d4 or 1d6 per tentacle/2d6, or weapon; SV: 3; ML: 9; IQ: Average; THAC0: 11; TRS: VII;
+Charger	PH PP	14	1	ENC: 1d10 (2d20); AL: Neutral; MV: 210` (70`); AC: 5; HD: 14; AT: 1 (blast, trample, kick, or bite); DMG: 2d10, 1d20, 2d6, 1d10; SV: 5; ML: 11; IQ: Animal; THAC0: 9; TRS: None;
+Chicken Wolf	PF CF TF	3	1	ENC: 2d6 (3d6); AL: Neutral; MV: 360` (120`); AC: 6; HD: 3; AT: 2 (bite); DMG: 1d8/1d8; SV: 3; ML: 9; IQ: Animal; THAC0: 17; TRS: None;
+Chitterling	PM CM TM	2	1	ENC: 1d6; AL: Neutral; MV: 30` (10`); AC: 9; HD: 2; AT: 1 (bite); DMG: 1d4; SV: 1; ML: 5; IQ: Animal; THAC0: 18; TRS: XIX;
+Cockroachoid	PD DG RD DG TW	8	1	ENC: 1d4 males (1d10 males + 1 queen); AL: Chaotic; MV: 120` (40`); AC: 4; HD: 8; AT: 1 (claw, arm spikes, or hiss); DMG: 1d6, 1d8, special; SV: 15; ML: Males 8 (4), Females 12; IQ: Average; THAC0: 12; TRS: XVII;
+Coyote, Encephalized	PF CF TF DG DG	3	1	ENC: 2d6 (3d6); AL: Chaotic; MV: 150` (50`); AC: 6; HD: 3; AT: 1 (bite or weapon); DMG: 1d6 or weapon; SV: 3; ML: 9; IQ: Average; THAC0: 17; TRS: XX;
+Crab, Giant	FW SW	3	1	ENC: 1d2 (1d6); AL: Neutral; MV: 60` (20`); AC: 2; HD: 3; AT: 2 (pinchers); DMG: 2d6/2d6; SV: 2; ML: 7; IQ: Animal; THAC0: 17; TRS: None;
+Crocodile	FW	2	1	ENC: 0 (1d8); AL: Neutral; MV: 90` (30`) Swim 90` (30`); AC: 5; HD: 2; AT: 1; DMG: 1d8; SV: 1; ML: 7; IQ: Animal; THAC0: 18; TRS: None;
+Crocodile, Large	SW	6	1	ENC: 0 (1d4); AL: Neutral; MV: 90` (30`) Swim 90` (30`); AC: 3; HD: 6; AT: 1; DMG: 2d8; SV: 3; ML: 7; IQ: Animal; THAC0: 14; TRS: None;
+Crocodile, Giant	SW	15	1	ENC: 0 (1d3); AL: Neutral; MV: 90` (30`) Swim 90` (30`); AC: 1; HD: 15; AT: 1; DMG: 3d8; SV: 8; ML: 9; IQ: Animal; THAC0: 9; TRS: None;
+Cyborg, Commando	PD DG RD RD DG	8	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 4; HD: 8; AT: 2 (laser, electricity); DMG: 6d6/4d6; SV: 5; ML: 10; IQ: High; THAC0: 12; TRS: None;
+Death Bird	PD	2	1	ENC: 1d10; AL: Neutral; MV: 120` (40`); AC: 7; HD: 2; AT: 1 (bite); DMG: 1d6; SV: 2; ML: 8; IQ: Animal; THAC0: 18; TRS: None;
+Domer	PD PF CF TF FW RD	14	1	ENC: 1d6 (2d10); AL: Neutral; MV: 90` (30`); AC: 3; HD: 14; AT: 3 (claw, slice, bite); DMG: 2d6, 2d6, 2d10; SV: 10; ML: 11; IQ: Low; THAC0: 9; TRS: XIV;
+Electrophant	PF CF TF TF TH TM	9	1	ENC: 0 (1d20); AL: Lawful; MV: 120` (40`); AC: 4; HD: 9; AT: 2 or 1 (2 tusks or trample or electricity); DMG: 2d4/2d4 or 4d8 or 4d6; SV: 5; ML: 8; IQ: Animal; THAC0: 12; TRS: None;
+Elephant	PF CF TF TF TH TM	9	1	ENC: 0 (1d20); AL: Neutral; MV: 120` (40`); AC: 5; HD: 9; AT: 2 or 1 (2 tusks or trample); DMG: 2d4/2d4 or 4d8; SV: 5; ML: 8; IQ: Animal; THAC0: 12; TRS: None;
+Eloi	RD TW DG	3	1	ENC: 2d4 (3d6); AL: Neutral; MV: 120` (40`); AC: 9; HD: 3; AT: 1; DMG: by weapon; SV: 1; ML: 4; IQ: Average; THAC0: 17; TRS: None;
+Eye Dog	PF CF TF RD PM CM TM TW	5	1	ENC: 1d4; AL: Lawful; MV: 120` (40`); AC: 6; HD: 5; AT: 2 (bite, energy blast); DMG: 1d6/2d6; SV: 3; ML: 10; IQ: Animal; THAC0: 15; TRS: None;
+Eye, Insectoid	PD DG TF TH TM DG	7	1	ENC: 1d4 (2d4); AL: Chaotic; MV: see below; AC: 4; HD: 7; AT: 1; DMG: as mutation; SV: 7; ML: 9; IQ: High; THAC0: 13; TRS: None;
+Feeder	DG RD DG TW	3	1	ENC: 4d4 (5d10); AL: Chaotic; MV: 120` (40`); AC: 6; HD: 3; AT: 1 (weapon or bite); DMG: weapon or 1d6; SV: 3; ML: 8; IQ: Low; THAC0: 17; TRS: I (XIII);
+Ferret, Giant	CF CH CM CP PF CF TF	1	1	ENC: 1d8 (1d12); AL: Neutral; MV: 150` (50`); AC: 5; HD: 1 + 1; AT: 1 (bite); DMG: 1d8; SV: 1; ML: 8; IQ: Animal; THAC0: 18; TRS: None;
+Fish, Giant, Catfish	FW	9	1	ENC: 0 (1d2); AL: Neutral; MV: 90` (30`); AC: 4; HD: 8 + 3; AT: 5 (bite, 4 feelers); DMG: 2d8/1d4 (each feeler); SV: 4; ML: 8; IQ: Animal; THAC0: 11; TRS: None;
+Fish, Giant, Piranha	FW	4	1	ENC: 0 (2d4); AL: Neutral; MV: 150` (50`); AC: 6; HD: 3 + 3; AT: 1 (bite); DMG: 1d8; SV: 2; ML: 7; IQ: Animal; THAC0: 16; TRS: None;
+Fish, Giant, Rockfish	SW	6	1	ENC: 0 (2d4); AL: Neutral; MV: 180` (60`); AC: 7; HD: 5 + 5; AT: 4 (spines); DMG: 1d4x4 (each spine), poison; SV: 3; ML: 8; IQ: Animal; THAC0: 14; TRS: None;
+Fish, Giant, Sturgeon	FW	11	1	ENC: 0 (1); AL: Neutral; MV: 180` (60`); AC: 0; HD: 10 + 2; AT: 1 (bite); DMG: 2d10; SV: 5; ML: 9; IQ: Animal; THAC0: 11; TRS: None;
+Fishmen	FW SW PS TS	7	1	ENC: 3d6; AL: Chaotic; MV: 100` (30`); AC: 7; HD: 7; AT: 1 (bite or weapon); DMG: 2d6 or weapon; SV: 3; ML: 11; IQ: Low; THAC0: 13; TRS: XV;
+Flame Plant	PD RD	5	1	ENC: 0 (2d4); AL: Neutral; MV: None; AC: 5; HD: 5; AT: 1 (flame burst or flame jet); DMG: 2d10; SV: 4; ML: 12; IQ: Animal; THAC0: 15; TRS: None;
+Fly, Giant Carnivorous	FW PH PP TF TH TM SW	2	1	ENC: 1d6 (2d6); AL: Neutral; MV: 90` (30`) Fly 180` (60`); AC: 6; HD: 2; AT: 1 (bite); DMG: 1d8; SV: 1; ML: 8; IQ: Animal; THAC0: 18; TRS: VI;
+Fungal Grove	PF CF TF PS TS PD	1	1	ENC: 1 (1); AL: None; MV: None; AC: see below; HD: see below; AT: see below; DMG: by mutation; SV: None; ML: None; IQ: Animal; THAC0: see below; TRS: XIX (x3);
+Fungoid	PD DG PF CF TF RD PS TS	4	1	ENC: 2d6 (2d6); AL: Chaotic; MV: None; AC: 6; HD: 4; AT: 1; DMG: by mutation; SV: 3; ML: 8; IQ: High; THAC0: 16; TRS: None;
+Gamma Sloth	CF CH CM CP PD PF CF TF RD	9	1	ENC: 1d8 (2d6); AL: Neutral; MV: 45` (15`); AC: 4; HD: 9; AT: 2 (claw, radiation); DMG: 2d6, 3d6; SV: 4; ML: 8; IQ: Low; THAC0: 12; TRS: None;
+Gamma Wyrm	PD DG PM CM TM RD DG	15	1	ENC: 1d4 (1d4); AL: Chaotic; MV: 90` (30`); AC: -1; HD: 15; AT: 3 or 1 (2 claws, 1bite, or breath); DMG: 2d4/2d4/6d6 or 10d6; SV: 12; ML: 10; IQ: High; THAC0: 9; TRS: XV;
+Glue Flower	PF CF TF	2	1	ENC: 0 (1d10); AL: Neutral; MV: None; AC: 9; HD: 2; AT: 1 (glue); DMG: Special; SV: 1; ML: None; IQ: Animal; THAC0: 18; TRS: None;
+Goliath	RD TW	12	1	ENC: 1d6 (1d6); AL: Neutral; MV: 90` (30`); AC: 5; HD: 12; AT: 1 (hand or weapon); DMG: 1d10 or weapon; SV: 4; ML: 10; IQ: Average; THAC0: 10; TRS: VII;
+Gray Ooze	DG	3	1	ENC: 1 (1); AL: Neutral; MV: 10` (3`); AC: 8; HD: 3; AT: 1; DMG: 2d8; SV: 2; ML: 12; IQ: Animal; THAC0: 17; TRS: None;
+Gray Worm	DG TF TH TM	6	1	ENC: 1d3 (1d3); AL: Neutral; MV: 60` (20`); AC: 6; HD: 6; AT: 1 (bite); DMG: 1d8; SV: 3; ML: 9; IQ: Animal; THAC0: 14; TRS: XXI;
+Green Slime	DG	2	1	ENC: 1 (0); AL: Neutral; MV: 3` (1`); AC: NA, no roll needed; HD: 2; AT: 1; DMG: See below; SV: 1; ML: 12; IQ: Animal; THAC0: 18; TRS: None;
+Hawk	PD PM CM TM PF CF TF SW FW	1	1	ENC: 0 (1d6); AL: Neutral; MV: 480` (160`); AC: 8; HD: 1d4 hp; AT: 1; DMG: 1d2; SV: 0; ML: 7; IQ: Animal; THAC0: 19; TRS: None;
+Hawk, Giant	PD PM CM TM PF CF TF SW FW	4	1	ENC: 0 (1d3); AL: Neutral; MV: 450` (150`); AC: 6; HD: 3 + 3; AT: 1; DMG: 1d6; SV: 2; ML: 8; IQ: Animal; THAC0: 16; TRS: None;
+Hemofowl	PF CF TF&PM CM TM	5	1	ENC: 1d6 (1d10); AL: Neutral; MV: 90` (30`) Fly 180` (60`); AC: 6; HD: 5; AT: 2 (beak, special); DMG: 1d6; SV: 6; ML: 7; IQ: Animal; THAC0: 15; TRS: XIV;
+Herd Animals	RD TW	2	1	ENC: 0 (3d10); AL: Neutral; MV: 240` (80`); AC: 7; HD: 1 to 4; AT: 1 (butt); DMG: 1d4, 1d6, or 1d8; SV: 1 or L2; ML: 5; IQ: Animal; THAC0: 19/18/17/16; TRS: None;
+Homo erectus	TF TH TM PM CM TM DG PH PP	6	1	ENC: 1d10 (4d10); AL: Neutral; MV: 120` (40`); AC: 8; HD: 6; AT: 1 (weapon); DMG: 2d4 or weapon; SV: 2; ML: 7; IQ: Average; THAC0: 14; TRS: XX;
+Homo erectus Lord	TF TH TM PM CM TM DG PH PP	10	1	ENC: 1 (1d3); AL: Neutral; MV: 120` (40`); AC: 6; HD: 10; AT: 1 (weapon); DMG: 2d4 or weapon; SV: 8; ML: 9; IQ: High; THAC0: 11; TRS: XX;
+Horse, Riding	RD TW	2	1	ENC: 0 (1d10x10); AL: Neutral; MV: 240` (80`); AC: 7; HD: 2; AT: 2 (2 hooves); DMG: 1d4/1d4; SV: 1; ML: 7; IQ: Animal; THAC0: 18; TRS: None;
+Horse, War	RD TW	3	1	ENC: 0; AL: Neutral; MV: 120` (40`); AC: 7; HD: 3; AT: 2 (2 hooves); DMG: 1d6/1d6; SV: 2; ML: 9; IQ: Animal; THAC0: 17; TRS: None;
+Horse, Draft	RD TW	3	1	ENC: 0; AL: Neutral; MV: 90` (30`); AC: 7; HD: 3; AT: None; DMG: None; SV: 2; ML: 6; IQ: Animal; THAC0: 17; TRS: None;
+Humanoid Mass	DG	10	1	ENC: 0 (1); AL: Chaotic; MV: 15` (5`); AC: 8; HD: 10; AT: 1 (mutation); DMG: by mutation; SV: 8; ML: 9; IQ: Animal; THAC0: 11; TRS: XV;
+Insect Swarm	PS TS	3	1	ENC: 1 swarm (3 swarms); AL: Neutral; MV: 30` (10`) Fly 60` (20`); AC: 7; HD: 2 to 4; AT: 1; DMG: 2 hit points; SV: 0; ML: 11; IQ: Animal; THAC0: 18/17/16; TRS: None;
+The Irradiated	RD DG DG PD	7	1	ENC: 1d10; AL: Neutral; MV: 120` (40`); AC: 7; HD: 7; AT: 1; DMG: as weapon; SV: 3; ML: 7; IQ: Average; THAC0: 13; TRS: VII;
+Jellyfish Plants	PF CF TF	3	1	ENC: 2d6; AL: Neutral; MV: 20` Flying 50`; AC: 9; HD: 3; AT: 1 (stinging); DMG: 1d6; SV: 2; ML: 8; IQ: Animal; THAC0: 17; TRS: None;
+Kamata	PD RD DG	5	1	ENC: 2d4 (3d6); AL: Chaotic; MV: 180` (60`); AC: 5; HD: 5; AT: 3 (2 claws, bite); DMG: 1d8/1d8, 1d6; SV: 3; ML: 9; IQ: Animal; THAC0: 15; TRS: None;
+Kanga	PF CF TF PH PP	7	1	ENC: 1d4; AL: Neutral; MV: 150` (50`); AC: 6; HD: 7; AT: 2 or 1(2 claws, or bite, punch); DMG: 1d8/1d8, 1d6/1d6; SV: 3; ML: 9; IQ: Animal; THAC0: 13; TRS: XVII;
+Kelper	SW	3	1	ENC: 1d4; AL: Neutral; MV: None; AC: 7; HD: 3; AT: 1 (vines or feeding tube); DMG: None, 2d6; SV: 1; ML: 12; IQ: Animal; THAC0: 17; TRS: None;
+Kernel Plant	PH PP	2	1	ENC: 2d10; AL: Neutral; MV: 15` (5`); AC: 9; HD: 2; AT: 1; DMG: 2d6 (half blast), 2d6+12 (full blast); SV: 2; ML: 8; IQ: Animal; THAC0: 18; TRS: None;
+Land Squid, Giant	PH PP	15	1	ENC: 1; AL: Chaotic; MV: 180` (60`) Burrow 90` (30`) Climb 30` (10`); AC: 7; HD: 15; AT: 9 (8 tentacles, bite); DMG: Small Tentacles (1d6 swat, 1d10 crush) Large Tentacles (1d8 swat, 2d10 crush) Bite (3d6); SV: 4; ML: 9; IQ: Animal; THAC0: 9; TRS: VII;
+Leaper	CF CH CM CP PH PP	4	1	ENC: 2d6 (2d20); AL: Neutral; MV: 150` (50`); AC: 7; HD: 4; AT: 1 (weapon, or bite, or kick); DMG: weapon, 1d8, or 2d6; SV: 3; ML: 6 (11); IQ: Low; THAC0: 16; TRS: VII;
+Leech, Giant	FW PS TS	6	1	ENC: 0 (1d4); AL: Neutral; MV: 120` (40`); AC: 7; HD: 6; AT: 1 (drain blood); DMG: 1d6; SV: 3; ML: 10; IQ: Animal; THAC0: 14; TRS: None;
+Leech Rabbit	PH PP	2	1	ENC: 3d4 (3d8); AL: Neutral; MV: 150` (50`); AC: 7; HD: 2; AT: 1 (bite, drain fluid); DMG: 1d4 + dehydration; SV: 2; ML: 8; IQ: Animal; THAC0: 18; TRS: None;
+Lizard, Giant, Draco	PS TS	5	1	ENC: 1d4 (1d8); AL: Neutral; MV: 120` (40`) Fly 210` (70`); AC: 5; HD: 4 + 2; AT: 1 (bite); DMG: 1d10; SV: 3; ML: 7; IQ: Animal; THAC0: 15; TRS: VI;
+Lizard, Giant, Gecko	PD	4	1	ENC: 1d6 (1d10); AL: Neutral; MV: 120` (40`); AC: 5; HD: 3 + 1; AT: 1 (bite); DMG: 1d8; SV: 2; ML: 7; IQ: Animal; THAC0: 16; TRS: VI;
+Lizard, Giant, Horned Chameleon	PF CF TF TF TH TM	5	1	ENC: 1d3 (1d6); AL: Neutral; MV: 120` (40`); AC: 2; HD: 5; AT: 2 (bite, horn); DMG: 2d4/1d6; SV: 3; ML: 7; IQ: Animal; THAC0: 15; TRS: VI;
+Lizard, Giant, Tuatara	PD	6	1	ENC: 1d2 (1d4); AL: Neutral; MV: 90` (30`); AC: 4; HD: 6; AT: 3 (2 claws, bite); DMG: 1d4/1d4/2d6; SV: 4; ML: 6; IQ: Animal; THAC0: 14; TRS: VII;
+Lobstrosity	FW SW	5	1	ENC: 2d10; AL: None; MV: 21` (7`); AC: 8; HD: 5; AT: 3 (1 bite, 2 pincers); DMG: 1d6/1d8/1d8; SV: 9; ML: 12; IQ: Low; THAC0: 15; TRS: None;
+Magma Plants	PD	2	1	ENC: 1d6; AL: Neutral; MV: None; AC: 9; HD: 2; AT: 1; DMG: 1d10; SV: 1; ML: None; IQ: Animal; THAC0: 18; TRS: None;
+Man Beast	CF CH CM CP RD DG DG PD PF CF TF PH PP RD TF TH TM PM CM TM PS TS TW	7	1	ENC: 2d4 (2d8); AL: Chaotic; MV: 180` (60`); AC: 6; HD: 7; AT: 3 (2 claws, bite); DMG: 1d6/1d6/1d4; SV: 4; ML: 10; IQ: Low; THAC0: 13; TRS: None;
+Mansquito	FW TF TH TM PS TS	9	1	ENC: 1d4; AL: Chaotic; MV: 120` (40`) Glide 150` (50`); AC: 6; HD: 9; AT: 1 (weapon, proboscis, or blood sucking); DMG: weapon, 1d4, or 1d6; SV: 4; ML: 8; IQ: Low; THAC0: 12; TRS: VII;
+Mant	DG PM CM TM DG	7	1	ENC: 2d4 (3d6x10); AL: Chaotic; MV: 120` (40`); AC: 5; HD: 7; AT: 3 (2 claws, bite); DMG: 1d8/1d8/2d8; SV: 9; ML: 11; IQ: High; THAC0: 13; TRS: XVII;
+Medusoid	DG RD TF TH TM PS TS TW	7	1	ENC: 1d3 (1d4); AL: Chaotic; MV: 90` (30`); AC: 6; HD: 7; AT: 1 (snakebite or weapon); DMG: 1d6, poison/by weapon; SV: 7; ML: 8; IQ: Average; THAC0: 13; TRS: XVII;
+Man, Brigand	CF CH CM CP RD DG DG PD PF CF TF PH PP RD TF TH TM PM CM TM PS TS TW	10	1	ENC: 0 (1d4x10); AL: Chaotic; MV: 120` (40`); AC: 7; HD: as CON; AT: 1; DMG: 1d6 or weapon type; SV: 1; ML: None; IQ: Average; THAC0: as HD; TRS: I (XXI);
+Man, Pirate	CF CH CM CP RD DG DG PD PF CF TF PH PP RD TF TH TM PM CM TM PS TS TW SW FW	10	1	ENC: 0 (see below); AL: Neutral or Chaotic; MV: 120` (40`); AC: Armor type; HD: as CON; AT: 1; DMG: 1d6 or weapon type; SV: 1; ML: 6; IQ: Average; THAC0: as HD; TRS: XXII;
+Man, Merchant	CF CH CM CP RD DG DG PD PF CF TF PH PP RD TF TH TM PM CM TM PS TS TW	10	1	ENC: 0 (1d20); AL: Neutral; MV: 90` (30`); AC: 5; HD: as CON; AT: 1; DMG: 1d6 or weapon type; SV: 1; ML: Varies; IQ: Average; THAC0: as HD; TRS: XXII;
+Man, Nomad	CF CH CM CP RD DG DG PD PF CF TF PH PP RD TF TH TM PM CM TM PS TS TW	10	1	ENC: 0 (1d4x10); AL: Neutral; MV: 120` (40`); AC: Armor type; HD: as CON; AT: 1; DMG: 1d6 or weapon type; SV: 1; ML: 8; IQ: Average; THAC0: as HD; TRS: XXII;
+Meerkat	CF CH CM CP FW	2	1	ENC: 1d6 (2d10); AL: Neutral; MV: 150` (50`); AC: 9; HD: 2; AT: 2 (claw, bite, or radiation); DMG: 1d4-1/1d6-2, 2d6; SV: 2; ML: 4; IQ: Animal; THAC0: 18; TRS: XVII;
+Morlock	DG PM CM TM DG TW	9	1	ENC: 2d6 (5d10); AL: Chaotic; MV: 120` (40`); AC: 8; HD: 9; AT: 1 (weapon); DMG: As weapon; SV: 5; ML: 9; IQ: Average; THAC0: 12; TRS: XX;
+Morningstar Plants	PF CF TF	3	1	ENC: 1d6; AL: Neutral; MV: None; AC: 8; HD: 3; AT: 3; DMG: 1d6 (1d4); SV: 1; ML: 12; IQ: Animal; THAC0: 17; TRS: None;
+Mule	RD TW	2	1	ENC: 1d8 (2d6); AL: Neutral; MV: 120` (40`); AC: 7; HD: 2; AT: 1 (kick or bite); DMG: 1d4 or 1d3; SV: 0; ML: 8; IQ: Animal; THAC0: 18; TRS: None;
+Mummy Vines	TF TH TM	3	1	ENC: 1d6+4; AL: Chaotic; MV: 45` (15`); AC: 5; HD: 3; AT: 1 (thorns or leeching); DMG: (1d4, 1d4 per week); SV: 4; ML: 12; IQ: Animal; THAC0: 17; TRS: None;
+Narcolep	RD TW	7	1	ENC: 1d10; AL: Chaotic; MV: 120` (40`); AC: 7; HD: 7; AT: 1 (weapon or hypnosis); DMG: As weapon; SV: 6; ML: 6; IQ: High; THAC0: 13; TRS: XVII;
+Night Globe	FW TF TH TM PS TS	1	1	ENC: 2d4 (2d6); AL: Neutral; MV: 120` (40`); AC: 7; HD: 1; AT: 1; DMG: 1d4, special; SV: 1; ML: 8; IQ: Animal; THAC0: 19; TRS: None;
+Night Goat	PH PP	5	1	ENC: 1d4 (1d4); AL: Chaotic; MV: 120` (40`); AC: 6; HD: 5; AT: 1 (butt, or kick, or bite, or plane shift); DMG: 2d4, 2d6, 1d4 + poison, or special; SV: 2; ML: 8; IQ: Animal; THAC0: 15; TRS: XVII;
+Null Plant	PF CF TF	10	1	ENC: 1d10; AL: None; MV: None; AC: 8; HD: 10; AT: Special; DMG: None; SV: 4; ML: None; IQ: Animal; THAC0: 11; TRS: None;
+Ochre Jelly	DG	5	1	ENC: 1 (0); AL: Neutral; MV: 30` (10`); AC: 8; HD: 5; AT: 1; DMG: 2d6; SV: 3; ML: 12; IQ: Animal; THAC0: 15; TRS: None;
+Octopus, Giant	SW	8	1	ENC: 0 (1d2); AL: Neutral; MV: 90` (30`); AC: 7; HD: 8; AT: 8 (tentacles) or 1 (bite); DMG: 1d3 (per tentacle), 1d6; SV: 4; ML: 7; IQ: Animal; THAC0: 12; TRS: None;
+Pantheroid, Tigrisoid	CF CH CM CP	12	1	ENC: 1d4 (1d4); AL: Chaotic; MV: 150` (50`); AC: 5; HD: 12; AT: 3 (2 claws, bite); DMG: 1d6/1d6/2d6; SV: 9; ML: 10; IQ: Average; THAC0: 10; TRS: XIX;
+Pantheroid, Leoid	PD	9	1	ENC: 2d4 (3d4); AL: Lawful; MV: 120` (40`); AC: 6; HD: 9; AT: 3 (2 claws, bite); DMG: 1d4+1/1d4+1/1d8; SV: 7; ML: 9; IQ: High; THAC0: 12; TRS: XIX;
+Pigmen	DG PH PP RD DG TW	7	1	ENC: 2d4 (2d4); AL: Chaotic; MV: 120` (40`); AC: 6; HD: 7; AT: 1 (weapon or mutation); DMG: weapon or 4d6; SV: 6; ML: 9; IQ: Average; THAC0: 13; TRS: XIX;
+Piranha Butterfly	PF CF TF	1	1	ENC: 1d10+10 (2d6x10); AL: Neutral; MV: 30` (10`); AC: 9; HD: 1; AT: 1 (bite); DMG: 1d4; SV: 1; ML: 12; IQ: Animal; THAC0: 19; TRS: None;
+Pod Plant	TF TH TM PS TS	4	1	ENC: 0 (1d4); AL: Neutral; MV: 15` (5`); AC: 9; HD: 4; AT: 6 or 1 (vines, root); DMG: 1d6, 2d6; SV: 3; ML: 5; IQ: Animal; THAC0: 16; TRS: None;
+Porcine Devourer	CF CH CM CP RD PD PF CF TF PH PP TF TH TM PM CM TM PS TS	7	1	ENC: 2d4 (2d6); AL: Neutral; MV: 120` (40`); AC: 5; HD: 7; AT: 1 (bite and swallow); DMG: 1d10 and swallow; SV: 4; ML: 9; IQ: Animal; THAC0: 13; TRS: None;
+Puddle Worm	PD	10	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 5; HD: 10; AT: 1 (bite); DMG: 2d10; SV: 5; ML: 9; IQ: Animal; THAC0: 11; TRS: None;
+Puffball, Giant Killer	PD RD	3	1	ENC: 2d6 (0); AL: Neutral; MV: 60` (20`); AC: 7; HD: 3; AT: 1; DMG: 1d8 or poison; SV: 1; ML: None; IQ: Animal; THAC0: 17; TRS: None;
+Pufferoid	FW	8	1	ENC: 2d4 (2d8); AL: Neutral; MV: 120` (40`); AC: 7 (5 when puffed); HD: 8; AT: 1 (unarmed or weapon); DMG: As unarmed attack or weapon; SV: 4; ML: 9; IQ: High; THAC0: 12; TRS: XVII;
+Pumpkin Man	PH PP PF CF TF	7	1	ENC: 2d4 (2d6); AL: Chaotic; MV: 120` (40`); AC: 6; HD: 7; AT: 3 or 1 (2 claws, bite or weapon); DMG: 1d6/1d6/1d8 or weapon; SV: 4; ML: 9; IQ: High; THAC0: 13; TRS: XX;
+Purple Worm	DG RD PD PF CF TF PH PP	15	1	ENC: 1d2 (1d4); AL: Neutral; MV: 60` (20`); AC: 6; HD: 15; AT: 2 (bite, sting); DMG: 2d8/1d8, poison; SV: 8; ML: 10; IQ: Animal; THAC0: 9; TRS: XIX;
+Quench	PF CF TF PH PP	2	1	ENC: 2d10 (2d10); AL: Neutral; MV: 60` (20`); AC: 8; HD: 2; AT: 1 (bite or claw); DMG: 1d2, 1d4; SV: 1; ML: 4; IQ: Animal; THAC0: 18; TRS: None;
+Quicken	DG RD PD PF CF TF PH PP	4	1	ENC: 1d6 (3d6); AL: Neutral; MV: 210` (70`); AC: 7; HD: 4; AT: 2 or 1 (beak, claw, or head butt, or trample); DMG: 2d6/1d8, 1d8, 1d10; SV: 2; ML: 10; IQ: Animal; THAC0: 16; TRS: None;
+Quill Cat	CF CH CM CP PF CF TF PH PP	3	1	ENC: 1d4 (2d4); AL: Chaotic; MV: 150` (50`); AC: 7; HD: 3; AT: 3 or 1 (2 claws, bite, or barbs); DMG: 1d4/1d4/1d6, 1d4; SV: 9; ML: 10; IQ: Animal; THAC0: 17; TRS: None;
+Rabboxen	RD TW	3	1	ENC: 0 (3d6); AL: Neutral; MV: 240` (80`); AC: 7; HD: 3; AT: 1 (tusk or trample); DMG: 1d8, 2d6; SV: 2; ML: 5; IQ: Animal; THAC0: 17; TRS: None;
+Radiation Whale	SW	20	1	ENC: 0 (1); AL: Neutral; MV: 180` (60`); AC: 5; HD: 36; AT: 1 (bite or radiation); DMG: 3d20 or radiation; SV: 15; ML: 11; IQ: Animal; THAC0: 5; TRS: None;
+Rat	RD TF TH TM DG TW DG	1	1	ENC: 5d10 (2d10); AL: Neutral; MV: 60` (20`) Swim 30` (10`); AC: 9; HD: 1 hp; AT: 1 (bite/group); DMG: 1d6, disease; SV: 0; ML: 5; IQ: Animal; THAC0: 19; TRS: XI;
+Rat, Giant	RD TF TH TM DG TW DG	1	1	ENC: 3d6 (3d10); AL: Neutral; MV: 120` (40`) Swim 60` (20`); AC: 7; HD: 1d4 hp; AT: 1 (bite); DMG: 1d3, disease; SV: 1; ML: 8; IQ: Animal; THAC0: 19; TRS: XX;
+Rhagodessa, Giant	RD PS TS	5	1	ENC: 1d4 (1d6); AL: Neutral; MV: 150` (50`); AC: 5; HD: 4 + 2; AT: 1 (leg or bite); DMG: 0 or 2d8; SV: 2; ML: 9; IQ: Low; THAC0: 15; TRS: VI;
+Rhinoceros	PH PP	6	1	ENC: 0 (1d12); AL: Neutral; MV: 120` (40`); AC: 5; HD: 6; AT: 1 (butt or 1 trample); DMG: 2d4 or 2d8; SV: 3; ML: 6; IQ: Animal; THAC0: 14; TRS: None;
+Rhinoceros, Woolly	CF CH CM CP	8	1	ENC: 0 (1d8); AL: Neutral; MV: 120` (40`); AC: 4; HD: 8; AT: 1 (butt or 1 trample); DMG: 2d6 or 2d12; SV: 4; ML: 6; IQ: Animal; THAC0: 12; TRS: None;
+Rock Shell	FW SW	4	1	ENC: 1d20; AL: Neutral; MV: 75` (25`); AC: 3; HD: 4; AT: 2 or 1 (2 claws or crush); DMG: 2d6/2d6 or 2d10; SV: 2; ML: 5; IQ: Animal; THAC0: 16; TRS: None;
+Rot Dog	DG PH PP PM CM TM	4	1	ENC: 2d6 (2d8); AL: Neutral; MV: 120` (40`); AC: 7; HD: 4; AT: 1 (bite, rot); DMG: 2d6, 1d10 per week; SV: 3; ML: 12; IQ: Animal; THAC0: 16; TRS: None;
+Rot Grub	DG DG	1	1	ENC: 0 (5d4); AL: Neutral; MV: 10` (2`); AC: 9; HD: 1 hit point; AT: See below; DMG: See below; SV: 0; ML: None; IQ: Animal; THAC0: 19; TRS: None;
+Salamander, Flame	PD	8	1	ENC: 1d4+1 (2d4); AL: Neutral; MV: 120` (40`); AC: 2; HD: 8; AT: 3 (2 claws, bite); DMG: 1d4/1d4/1d8; SV: 8; ML: 8; IQ: Average; THAC0: 12; TRS: XVII;
+Salamander, Frost	CF CH CM CP	12	1	ENC: 1d3 (1d3); AL: Chaotic; MV: 120` (40`); AC: 3; HD: 12; AT: 5 (4 claws, bite); DMG: 1d6(each claw)/2d6; SV: 12; ML: 9; IQ: Average; THAC0: 10; TRS: XVIII;
+Scorpion, Giant	PD PH PP TF TH TM RD DG	4	1	ENC: 1d6 (1d6); AL: Chaotic; MV: 150` (50`); AC: 2; HD: 4; AT: 3 (2 claws, sting); DMG: 1d10/1d10/1d4, poison; SV: 2; ML: 11; IQ: Animal; THAC0: 16; TRS: VII;
+Screech Bush	TF TH TM	2	1	ENC: 0 (1d4); AL: Neutral; MV: None; AC: 9; HD: 2; AT: 1; DMG: 2d6; SV: 2; ML: None; IQ: Animal; THAC0: 18; TRS: None;
+Scuirinoid	PM CM TM	5	1	ENC: 2d6 (3d6); AL: Lawful; MV: 150` (50`); AC: 7; HD: 5; AT: 2 (claw, bite); DMG: 1d6 claw/1d8 bite; SV: 7; ML: 5; IQ: Low; THAC0: 15; TRS: VII;
+Serpentoid	PD PS TS	10	1	ENC: 2d4 (2d6); AL: Chaotic; MV: 120` (40`); AC: 4; HD: 10; AT: 3 or 1 (2 claws, bite, or tail); DMG: 1d8/1d8/1d10 or 2d6; SV: 8; ML: 10; IQ: Average; THAC0: 11; TRS: XIX;
+Shark, Bull	SW	2	1	ENC: 0 (3d6); AL: Neutral; MV: 180` (60`); AC: 4; HD: 2; AT: 1 (bite); DMG: 2d4; SV: 1; ML: 7; IQ: Animal; THAC0: 18; TRS: None;
+Shark, Mako	SW	4	1	ENC: 0 (2d6); AL: Neutral; MV: 180` (60`); AC: 4; HD: 4; AT: 1 (bite); DMG: 2d6; SV: 2; ML: 7; IQ: Animal; THAC0: 16; TRS: None;
+Shark, Great White	SW	8	1	ENC: 0 (1d4); AL: Neutral; MV: 180` (60`); AC: 4; HD: 8; AT: 1 (bite); DMG: 2d10; SV: 4; ML: 7; IQ: Animal; THAC0: 12; TRS: None;
+Sheep, Carnivorous	RD TW	3	1	ENC: 2d8 (3d8); AL: Chaotic; MV: 180` (60`); AC: 7; HD: 3; AT: 1 (bite); DMG: 1d6; SV: 3; ML: 9; IQ: Animal; THAC0: 17; TRS: None;
+Shrew, Giant	PF CF TF DG DG	1	1	ENC: 1d4 (1d8); AL: Neutral; MV: 180` (60`); AC: 4; HD: 1; AT: 2 (bite); DMG: 1d6/1d6; SV: 1; ML: 10; IQ: Animal; THAC0: 19; TRS: None;
+Skin Stealer	PD RD RD TW	5	1	ENC: 1d4 (1d8); AL: Chaotic; MV: 120` (40`); AC: 6; HD: 5; AT: 1 (sting or weapon); DMG: 1d4+poison or weapon; SV: 5; ML: 7; IQ: Average; THAC0: 15; TRS: XIX;
+Skinner Tree	PF CF TF TF TH TM	15	1	ENC: 0 (1d4); AL: Chaotic; MV: 60` (20`); AC: 4; HD: 15; AT: 1 (skinning vines); DMG: 2d8; SV: 5; ML: 10; IQ: Animal; THAC0: 9; TRS: X;
+Sky Ray	FW SW	14	1	ENC: 1d4 (1d4+2); AL: Neutral; MV: Fly 90` (30`) Swim 120` (40`); AC: 5; HD: 14; AT: 1 (bite); DMG: 3d6; SV: 5; ML: 10; IQ: Animal; THAC0: 9; TRS: XXII;
+Slunk	PM CM TM	3	1	ENC: 1d4 (2d6); AL: Neutral; MV: 75` (25`); AC: 5; HD: 3; AT: 3 (2 claws, bite); DMG: 1d4/1d4/1d6, 1d8 acid per round; SV: 2; ML: 6; IQ: Animal; THAC0: 17; TRS: None;
+Snake, Spitting Cobra	PD DG	1	1	ENC: 1d6 (1d6); AL: Neutral; MV: 90` (30`); AC: 7; HD: 1; AT: 1 (bite or spit); DMG: 1d3, poison; SV: 1; ML: 7; IQ: Animal; THAC0: 19; TRS: None;
+Snake, Pit Viper	PD DG	2	1	ENC: 1d8 (1d8); AL: Neutral; MV: 90` (30`); AC: 6; HD: 2; AT: 1 (bite); DMG: 1d4, poison; SV: 1; ML: 7; IQ: Animal; THAC0: 18; TRS: None;
+Snake, Sea Snake	FW SW	3	1	ENC: 1d8 (1d8); AL: Neutral; MV: 90` (30`); AC: 6; HD: 3; AT: 1 (bite); DMG: 1, poison; SV: 2; ML: 7; IQ: Animal; THAC0: 17; TRS: None;
+Snake, Giant Python	TF TH TM	5	1	ENC: 1d3 (1d3); AL: Neutral; MV: 90` (30`); AC: 6; HD: 5; AT: 2 (bite, constrict); DMG: 1d3/2d8; SV: 3; ML: 8; IQ: Animal; THAC0: 15; TRS: VI;
+Snake, Giant Rattler	PD	4	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 5; HD: 4; AT: 2 (bite); DMG: 1d4, poison; SV: 2; ML: 8; IQ: Animal; THAC0: 16; TRS: VI;
+Spider, Giant, Black Widow	PH PP DG DG PS TS	3	1	ENC: 1d3 (1d3); AL: Neutral; MV: 60` (20`) Web 120` (40`); AC: 6; HD: 3; AT: 1 (bite); DMG: 2d6, poison; SV: 2; ML: 8; IQ: Low; THAC0: 17; TRS: VI;
+Spider, Giant, Crab Spider	PF CF TF TF TH TM PS TS DG DG	2	1	ENC: 1d4 (1d4); AL: Neutral; MV: 120` (40`); AC: 7; HD: 2; AT: 1 (bite); DMG: 1d8, poison; SV: 1; ML: 7; IQ: Low; THAC0: 18; TRS: VI;
+Spider, Giant, Tarantula	PD DG RD DG	4	1	ENC: 1d3 (1d3); AL: Neutral; MV: 120` (40`); AC: 5; HD: 4; AT: 1 (bite); DMG: 1d8, poison; SV: 2; ML: 8; IQ: Low; THAC0: 16; TRS: VI;
+Spidergoat	PF CF TF PM CM TM DG	4	1	ENC: 1d4 (2d4); AL: Neutral; MV: 120` (40`); AC: 6; HD: 4; AT: 1 (gore, kick, or bite); DMG: 2d4, 2d6, or 1d4; SV: 3; ML: 8; IQ: Low; THAC0: 16; TRS: XVIII;
+Sporer	PS TS	8	1	ENC: 1d4; AL: Neutral; MV: 120` (40`); AC: 7; HD: 8; AT: 1 (claw, or weapon, or spores); DMG: 1d6, as weapon, special; SV: 5; ML: 8; IQ: Low; THAC0: 12; TRS: XVII;
+Squid, Giant	SW	6	1	ENC: 0 (1d4); AL: Neutral; MV: 120` (40`); AC: 7; HD: 6; AT: 9 (8 tentacles, bite); DMG: 1d4 (all tentacles)/1d10; SV: 3; ML: 7 (9); IQ: Animal; THAC0: 14; TRS: VII;
+Stalker Plant	PF CF TF TF TH TM	4	1	ENC: 0 (1d4); AL: Neutral; MV: 60` (20`); AC: 8; HD: 4; AT: 1; DMG: Special; SV: 3; ML: 5; IQ: Low; THAC0: 16; TRS: VII;
+Stink Beetle	PH PP	2	1	ENC: 1d10 (2d10); AL: Neutral; MV: 90` (30`); AC: 5; HD: 2; AT: 2 (2 pinchers, spray); DMG: 1d4/1d4, 1d6; SV: 1; ML: 5; IQ: Animal; THAC0: 18; TRS: None;
+Suidoid	PM CM TM TW	5	1	ENC: 2d4 (2d4x10); AL: Neutral; MV: 120` (40`); AC: 6; HD: 5; AT: 3 (2 weapons, tail); DMG: weapon/weapon/1d6; SV: 6; ML: 6; IQ: Animal; THAC0: 15; TRS: XIX;
+Toad, Giant	FW PS TS	3	1	ENC: 1d4 (1d4); AL: Neutral; MV: 90` (30`); AC: 7; HD: 2 + 2; AT: 1 (bite); DMG: 1d4 + 1; SV: 1; ML: 6; IQ: Animal; THAC0: 17; TRS: None;
+Tripod	CF CH CM CP PD RD	20	1	ENC: 1d3; AL: Unknown; MV: 210` (70`); AC: 3; HD: 30; AT: 4 (3 tentacles, stasis ray, or trample); DMG: 3d6/3d6/3d6/paralysis, 2d20; SV: 15; ML: 12; IQ: High; THAC0: 5; TRS: None;
+Vampire Star	PD	1	1	ENC: 2d10 (3d10); AL: Chaotic; MV: 20` (7`); AC: 8; HD: 1; AT: 1; DMG: 1d6; SV: 1; ML: 12; IQ: Animal; THAC0: 19; TRS: None;
+Ventrilovine	PH PP	1	1	ENC: 0 (1d3); AL: Neutral; MV: None; AC: 9; HD: 1; AT: None; DMG: None; SV: 1; ML: None; IQ: Animal; THAC0: 19; TRS: None;
+Vile Slasher	DG PM CM TM	12	1	ENC: 1d4+2 (1d4+2); AL: Chaotic; MV: 180` (60`); AC: 3; HD: 12; AT: 4 (2 claws, tail, bite); DMG: 1d8/1d8/1d6/2d6; SV: 9; ML: 12; IQ: Low; THAC0: 10; TRS: XXI;
+Vomit Fly	DG DG PS TS	4	1	ENC: 2d6 (3d6); AL: Neutral; MV: 150` (50`); AC: 5; HD: 4; AT: 1 (bite or vomit); DMG: 1d10 or 4d6 cold damage; SV: 3; ML: 8; IQ: Animal; THAC0: 16; TRS: None;
+Wailer	PF CF TF	6	1	ENC: 1 (1); AL: Neutral; MV: None; AC: 5; HD: 6; AT: 1; DMG: Special; SV: 4; ML: 12; IQ: Animal; THAC0: 14; TRS: X;
+Walking Dead	CF CH CM CP RD DG DG PD PF CF TF PH PP RD TF TH TM PM CM TM PS TS TW	5	1	ENC: 3d10 (2d00); AL: Chaotic; MV: As creature; AC: 8; HD: 5; AT: 2 (Rend/Bite); DMG: 1d6, 2d6; SV: 4; ML: 2; IQ: Animal; THAC0: 15; TRS: VII;
+Weasel, Giant	PH PP PF CF TF	5	1	ENC: 1d4 (1d6); AL: Neutral; MV: 150` (50`); AC: 7; HD: 4 + 4; AT: 1 (bite); DMG: 2d4; SV: 3; ML: 8; IQ: Animal; THAC0: 15; TRS: VII;
+Whale, Killer	SW	6	1	ENC: 0 (1d6); AL: Neutral; MV: 240` (80`); AC: 6; HD: 6; AT: 1 (bite); DMG: 1d20; SV: 3; ML: 10; IQ: Animal; THAC0: 14; TRS: VII;
+Whale, Narwhal	SW	12	1	ENC: 0 (1d4); AL: Lawful; MV: 180` (60`); AC: 7; HD: 12; AT: 2 (bite, horn); DMG: 2d6/1d8; SV: 12; ML: 8; IQ: Animal; THAC0: 10; TRS: None;
+Whale, Sperm	SW	20	1	ENC: 0 (1d3); AL: Neutral; MV: 180` (60`); AC: 6; HD: 36; AT: 1 (bite); DMG: 3d20; SV: 15; ML: 7; IQ: Animal; THAC0: 5; TRS: VII;
+Wolf	PF CF TF CF CH CM CP PM CM TM	3	1	ENC: 2d6 (3d6); AL: Neutral; MV: 180` (60`); AC: 7; HD: 2 + 2; AT: 1 (bite); DMG: 1d6; SV: 1; ML: 8; IQ: Animal; THAC0: 17; TRS: None;
+Wolf, Dire	PF CF TF CF CH CM CP PM CM TM	5	1	ENC: 1d4 (2d4); AL: Neutral; MV: 150` (50`); AC: 6; HD: 4 + 1; AT: 1 (bite); DMG: 2d4; SV: 2; ML: 8; IQ: Animal; THAC0: 15; TRS: None;
+Xeno Cattle	RD TW	10	1	ENC: 1d6; AL: Chaotic; MV: 120` (40`); AC: 5; HD: 10; AT: 2 or 1 (2 bites, or 2 head butts, or pseudopod, or; DMG: 1d6/1d6, 1d8/1d8, 2d6, special; SV: 5; ML: 10; IQ: Animal; THAC0: 11; TRS: None;
+Yellow Mold	DG	2	1	ENC: 1d8 (1d4); AL: Neutral; MV: 0; AC: Always hit; HD: 2; AT: Spores; DMG: 1d6, special; SV: 2; ML: None; IQ: Animal; THAC0: 18; TRS: None;
+Zap Vines	TF TH TM	2	1	ENC: 0 (1d10); AL: Neutral; MV: None; AC: 8; HD: 2; AT: 1; DMG: 1d6; SV: 1; ML: None; IQ: Animal; THAC0: 18; TRS: None;
+Zunicorn	PF CF TF	6	1	ENC: 1d8 (1d10); AL: Chaotic; MV: 240` (80`); AC: 2; HD: 6; AT: 3 (2 hooves, horn, and poison); DMG: 1d8/1d8/1d8, and poison; SV: 8; ML: 8; IQ: High; THAC0: 14; TRS: None;
+--END--
+basic arrow trap
+bricks from ceiling
+camouflaged pit trap
+poison dart trap
+poison needel trap
+portcullis trap
+rolling rock trap
+scything blade trap
+spiked pit trap
+anti-gravity trap
+cryo-freeze trap
+decompression pit
+electrocution trap
+gas trap
+laser gun trap
+plasma trap
+projectile trap
+radiation trap
+warp-field scything blade trap
+--END--
+action figure
+address book, leather
+adhesive bandages, fabric, box of 30
+air compressor, electric, portable
+air mattress
+air pump, manual
+air purifier
+answering machine
+antiseptic, bottle, 16 ounces
+audio cassette
+audio cd
+baby bottle
+baby monitor and receiver
+baking pan
+bandage, large
+baseball
+baseball glove
+basketball
+bathroom scale
+battery
+battery charger, solar powered
+bb gun
+bb gun ammo, 1,000 in a carton
+bed sheet
+bell, small, metal
+bicycle
+bicycle basket
+bicycle bell
+bicycle helmet
+binoculars
+blood pressure cuff
+board game
+book
+bowling ball
+bowling pin
+box cutter, folding
+box, fire/water proof, with key
+boxing gloves
+broom
+bug zapper
+cable cutting pliers
+cable ties, bag of 100
+calculator, solar
+camera, digital
+camera, IR, wireless
+camping tent, 8 person
+can opener, electric
+can opener, hand operated
+candle
+cane
+carbon monoxide detector
+cart, dolly
+cash box, metal, with key
+caution tape, 500 feet
+c-clamp
+cellular phone
+ceramic bowl
+chemical suit, encapsulated
+chisel
+circular saw
+claw hammer
+clip lamp
+clock, digital, radio
+clothes iron, electric
+coffee maker, 1 cup, electric
+comforter
+comic book
+computer mouse, wired
+computer mouse, wireless
+computer speakers
+controller, video game
+cooler, wheeled, 50 quart
+crayons, 15 colors
+crescent wrench
+crimping tool
+crowbar
+crutch, aluminum
+cuckoo clock
+cup cake pan, metal
+desk lamp
+desk stapler
+digital music player (8GB with cable)
+digital thermometer, cooking
+dog bowl
+dog collar, nylon
+dog collar, spiked
+drill bits, 20 bits
+drill, electric
+drill, hand crank
+duct tape, 100 feet
+dust pan
+DVD blank
+DVD movie
+electric kettle
+electric sander
+electrical extension cord, 10 feet
+electrical tape, 100 feet
+electronics cable, 5 feet
+etch-a-sketch
+fan, 18 inch
+fax machine
+fire escape ladder, portable
+fire extinguisher
+first aid kit
+first aid tape, 20 feet
+fish bowl
+fishfinder, electric
+fishing hooks, box of 20
+fishing pole
+flashlight
+floss, 20 foot roll
+flute
+folding shovel
+food blender
+frisbee
+frying pan
+funnel, metal
+garden hoe
+garden hose, 100 feet
+gas can, 1 gallon
+glasses
+globe
+golf ball
+golf club
+golf tees, bag of 400
+GPS navigator, handheld
+grill, portable
+grout, 1 gallon
+guitar, wooden
+gym bag
+hair brush
+hair curler
+hair dryer
+hair trimmer
+hammock
+hand mirror
+hand saw
+hand torch
+hard drive 500GB, external, with cable
+head phones
+headlight, LED
+hedge shears
+hedge trimmer, electric
+hockey stick
+holiday lights, 50 feet
+home stereo receiver
+humidifier, 1 gallon
+ice cream maker, 1.5 quart
+indoor grill
+inflatable tube, riding
+juice maker, 1 quart
+jump starter, portable
+kayak with paddle
+keyboard, wired
+keyboard, wireless
+kick scooter
+kitchen utensil
+lantern, electric
+lantern, propane
+laptop bag, nylon
+laptop computer
+laser pointer
+laundry soap (liquid, bottle)
+laundry soap (powder, box)
+leaf blower, electric
+leaf blower, gasoline
+level, i-beam, 48 inches
+light bulb
+lip stick
+luggage, wheeled with handle
+lunchbox
+magazine
+mallet, rubber
+map
+marker, permanent
+mason chisel
+mason trowel
+meatloaf pan, metal
+metal detector
+metal hangar
+metal pot with lid, 6 quart
+microwave bowl with lid
+microwave oven
+model airplane
+model car
+motion sensor, wall mounted
+multitool
+nail polish
+nails, box of 2,000
+nylon leash
+office chair
+padlock, combination
+paint brush
+paint scraper
+paper towel
+paper, pad, adhesive, 3x3 inch, 100 sheets
+pedometer, digital
+pen, ink
+pencil sharpener, electric
+pencil sharpener, plastic
+penlight
+pet crate/cage
+phone, wired
+phone, wireless
+picture frame
+pill organizer, plastic
+pipe thread tape, 100 feet
+pizza pan, metal
+plastic bowl, with lid
+plastic jug, 1 gallon
+plastic recycle bin
+pliers
+plunger, toilet
+pool cue
+popcorn maker, hot air
+portable heater
+power sprayer, 1 gallon
+printer, uses ink
+pump oilier, 1/4 pint
+raft, inflatable
+ratchet/socket set
+refrigerator/freezer, small
+revolving warning light, red
+roller skates
+sander, electric
+sandals
+saw blade, circular
+scale (10 lbs.)
+scissor jack
+scissors
+scope, rifle
+sewing machine
+sewing needle
+shock collar with remote
+shower curtain
+skis, snow
+sleeping bag
+slow cooker
+smoke detector
+sneakers
+snow board
+socket set
+spark plug
+spotlight, handheld
+spray cleaner
+spray paint
+sprayer, 1 gallon
+spring clamp, metal
+staple gun
+staples, box, 5,000
+stethoscope
+stop watch, digital
+storage chest
+stove, portable, gas
+strainer, metal
+strap, ratchet, 30 feet
+surge protector, 8 outlets
+surgical gloves
+surgical mask
+swimming goggles
+syringe with needle
+tackle box
+tape measure, 25 feet
+tea kettle
+television/monitor flat screen, 20 inch
+tennis ball
+tennis racket
+thermometer, oral
+thermometer, outdoor
+tin snips
+tire, 10x3 inches
+toaster
+toaster oven
+tool belt, leather
+tool box, metal, empty
+toothbrush
+toothbrush, electric
+towel
+toy car, remote control, 50mph
+toy train
+trash can, stainless steel, 1.3 gallon
+turpentine, 1 gallon
+umbrella
+universal remote
+vacuum cleaner, small
+valve, plumbing
+video game system
+video game disc/cartridge
+vise-grip
+wall clock, round
+welder, portable, electric
+welding mask
+wet/dry vacuum
+wheel chair
+wheel, 10x2 inches
+wood chisel
+wooden toy
+wrench, pipe
+wrist watch
+yarn, 3,000 feet
+--END--
+Cardboard Box
+Wooden Box
+Metal Box
+Locker
+Safe
+Cabinet
+Trunk
+--END--
+Primitive Firearm	5	1
+Advanced Melee Weapon	12	2
+Advanced Pistol	8	3
+Advanced Rifle	8	4
+Advanced Armor	8	5
+Power Source	9	6
+Grenade	9	7
+Bomb or Missile	9	8
+Gizmo	10	9
+Drug or Chemical	10	10
+Foodstuff or Junk	10	11
+Copper	150	12
+Silver	100	12
+Gold	50	12
+--END--
+Ammunition	7
+Pistol, automatic	10
+Pistol, black powder	3
+Pistol, revolver	10
+Sub machinegun	6
+Carbine	5
+Rifle, automatic	8
+Rifle, black powder	3
+Sport Rifle	7
+Shotgun	10
+Shotgun, automatic	9
+Cannon	3
+Grenade launcher	9
+Machinegun	10
+--END--
+Energy Baton	11
+Shock Gloves	12
+Shock-Field Glove	12
+Stun Baton	12
+Vibro Dagger	12
+Vibro Sword	12
+Warp-Field Dagger	10
+Warp-Field Mace	10
+Warp-Field Sword	9
+--END--
+Gauss Machine Pistol	15
+Gauss Pistol Mk 1	15
+Laser Pistol Mk 1	7
+Laser Pistol Mk 2	17
+Maser Pistol	15
+Plasma Pistol	15
+Stun Pistol	16
+--END--
+Blaster Rifle	5
+EMP Rifle	11
+Fusion Rifle	6
+Plasma Rifle	7
+Gauss Auto Rifle	13
+Gauss Rifle	15
+Laser Rifle	11
+Maser Rifle	11
+Radiation Rifle	5
+Stun Rifle	8
+X-Laser Rifle	8
+--END--
+Ballistic Nylon	11
+Metal Insert	12
+Plastic Plate	12
+Plastex	12
+Advanced Metal	12
+LazAb	11
+Environmental Armor	10
+Scout EMA	5
+Light EMA	5
+Medium EMA	5
+Heavy EMA	5
+--END--
+Power Cell	15
+Power Pack	15
+Power Clip	15
+Power Beltpack	15
+Power Backpack	15
+Minifusion Cell	15
+Plutonium Clip	8
+Radioactive Battery	2
+--END--
+Blood Agent Grenade	6
+Concussion Grenade	7
+Dynamite	6
+Energy Grenade	6
+Frag Grenade	6
+Inferno Grenade	6
+Irritant Gas Grenade	6
+Molotov Cocktail	6
+Mutation Grenade	6
+Nerve Gas Grenade	6
+Photon Grenade (Lethal)	6
+Photon Grenade (Nonlethal)	8
+Plasma Grenade	7
+Shock Grenade	6
+Smoke Grenade	12
+--END--
+Bio Toxin Bomb	8
+Concussion bomb	9
+Light Anti-Tank Weapon	4
+Mutation Bomb	10
+Negation Bomb	10
+Plasma Bomb	7
+Radiation Bomb (Dirty)	2
+Radiation Bomb	9
+Rocket-Propelled Grenade Launcher	10
+Satchel A	14
+Satchels B	4
+Micro-Missile Launcher (30% missiles only)	2
+Mini-Missile Launcher (30% missiles only)	2
+Missile Launcher (30% missiles only)	3
+--END--
+Advanced Breathing Apparatus	5
+Autograpnel	4
+Boron Solution Spray	4
+Cigarette Lighter	5
+Clones	5
+Communicator	4
+Electronically Responsive Notation Instrument	4
+Firestarter Cube	4
+Flashlight	3
+Force Screen Belt	4
+Gas Mask	6
+Gas Mask Filter	5
+Chemical Sensor	4
+Geiger Counter	4
+Rad Tab	5
+Infra-Red Goggles	5
+Motion Detector	5
+Optic Scanner	5
+Portable Detection Radar	5
+Power Fist	5
+UV Sterilizer	4
+Water Purifier	3
+X-Ray Goggles	2
+--END--
+Canned Foods	10
+Dehydrated Pills	7
+Goo Tube	7
+Salt Pills	6
+Soup Mixes	8
+Synthihol	7
+Hologram Projector	6
+Identity Card	5
+Ion Bonding Tape	11
+Light Rod	9
+Light Stick	6
+Magnesium Firestarter	5
+Portable Stove	7
+Survival Kit	6
+--END--
+Antitox	6
+Filter-Dose	6
+Hercurin	6
+K-O Shot	7
+Medi-Spray I	7
+Medi-Spray II	8
+Proton Energy Pill	6
+Rad-Purge Shot	6
+Stimshot A	6
+Stimshot B	5
+Superegen	6
+Truth Serum	6
+Diagnostic Scanner	8
+Healing Pack	8
+Ready Syringe	7
+Regeneration Tank	2
+--END--
+50 pieces	40
+100 pieces	39
+150 pieces	38
+200 pieces	37
+250 pieces	36
+300 pieces	35
+350 pieces	34
+400 pieces	33
+450 pieces	32
+500 pieces	31
+550 pieces	30
+600 pieces	29
+650 pieces	28
+700 pieces	27
+750 pieces	26
+800 pieces	25
+850 pieces	24
+900 pieces	23
+950 pieces	22
+1,000 pieces	21
+1,050 pieces	20
+1,100 pieces	19
+1,150 pieces	18
+1,200 pieces	17
+1,250 pieces	16
+1,300 pieces	15
+1,350 pieces	14
+1,400 pieces	13
+1,450 pieces	12
+1,500 pieces	11
+1,550 pieces	10
+1,600 pieces	9
+1,650 pieces	8
+1,700 pieces	7
+1,750 pieces	6
+1,800 pieces	5
+1,850 pieces	4
+1,900 pieces	3
+1,950 pieces	2
+2,000 pieces	1
