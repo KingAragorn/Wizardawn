@@ -41,7 +41,7 @@ try {
   const shot = async (n) => { if (shots) await page.screenshot({ path: join(shots, n), fullPage: false }); };
 
   await page.goto(base);
-  await page.waitForFunction(() => /Ready|failed|support/.test(document.getElementById('status').textContent), null, { timeout: 120000 });
+  await page.waitForFunction(() => /Ready|failed|support/.test(document.getElementById('status').textContent), null, { timeout: Number(process.env.READY_TIMEOUT || 120000) });
   const status = await page.textContent('#status');
   check(/Ready/.test(status), `launcher: ${status.trim()}`);
   const n = await page.locator('ul.grid a').count();
@@ -54,7 +54,7 @@ try {
 
   // Run generators with their default options and look for real output.
   for (const [tool, shotName, minText] of [['tool_brew.php', '03-brew.png', 2000], ['tool_door.php', null, 2000], ['tool_bmbs.php', '04-mundane-items.png', 2000], ['tool_ftown.php', '05-town.png', 2000]]) {
-    if (!existsSync(join(ROOT, 'src', tool))) continue;
+    if (server && !existsSync(join(ROOT, 'src', tool))) continue;
     await page.goto(base + tool);
     const before = (await page.textContent('body')).length;
     const btn = page.locator('form[action*="run=1"] input[type=submit], form[action*="run=1"] button').first();
