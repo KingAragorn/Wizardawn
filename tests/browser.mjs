@@ -40,17 +40,13 @@ try {
   if (shots) mkdirSync(shots, { recursive: true });
   const shot = async (n) => { if (shots) await page.screenshot({ path: join(shots, n), fullPage: false }); };
 
+  // The site root is only a loader: it starts the service worker and opens the original index.php.
   await page.goto(base);
-  await page.waitForFunction(() => /Ready|failed|support/.test(document.getElementById('status').textContent), null, { timeout: Number(process.env.READY_TIMEOUT || 120000) });
-  const status = await page.textContent('#status');
-  check(/Ready/.test(status), `launcher: ${status.trim()}`);
-  const n = await page.locator('ul.grid a').count();
-  check(n > 100, `launcher lists ${n} links`);
-  await shot('01-launcher.png');
-
-  await page.goto(base + 'index.php');
-  check(/Wizardawn/i.test(await page.title() + await page.textContent('body')), 'original portal index.php renders');
-  await shot('02-portal.png');
+  await page.waitForURL(/index\.php/, { timeout: Number(process.env.READY_TIMEOUT || 120000) }).catch(() => {});
+  const body = await page.textContent('body');
+  check(/index\.php/.test(page.url()) && /Wizardawn/i.test(await page.title() + body) && !/failed|does not support/.test(body), `site root opens the original portal (${page.url()})`);
+  check((await page.locator('a[href$=".php"]').count()) > 20, 'portal shows the original menu');
+  await shot('06-original-home.png');
 
   // Run generators with their default options and look for real output.
   for (const [tool, shotName, minText] of [['tool_brew.php', '03-brew.png', 2000], ['tool_door.php', null, 2000], ['tool_bmbs.php', '04-mundane-items.png', 2000], ['tool_ftown.php', '05-town.png', 2000]]) {

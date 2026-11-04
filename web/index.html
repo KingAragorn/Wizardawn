@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wizardawn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Loader only: starts the service worker that runs the original PHP pages, then opens the original portal. -->
+</head>
+<body>
+<noscript>Wizardawn needs JavaScript to run in this browser.</noscript>
+<script>
+(async () => {
+  const fail = (t) => { document.body.textContent = t; };
+  if (!('serviceWorker' in navigator)) return fail('This browser does not support service workers, so Wizardawn cannot run here. Try a current Chrome, Firefox, Safari or Edge (not a private window).');
+  try {
+    await navigator.serviceWorker.register('sw.js', { type: 'module', scope: './' });
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) await new Promise((ok) => navigator.serviceWorker.addEventListener('controllerchange', ok, { once: true }));
+    location.replace('index.php' + location.search + location.hash);
+  } catch (e) { fail('Wizardawn failed to start: ' + e.message); }
+})();
+</script>
+</body>
+</html>

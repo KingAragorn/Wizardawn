@@ -1,5 +1,5 @@
 // Builds the static site into dist/.
-//   dist/index.html, launcher.css, fonts/   launcher page (lists every generator)
+//   dist/index.html                       invisible loader -> original index.php
 //   dist/sw.js                              service worker: runs the PHP pages
 //   dist/7_4_33/php_7_4.wasm                PHP 7.4 (WebAssembly)
 //   dist/php-bundle.bin                     the original .php sources
@@ -25,7 +25,7 @@ const walk = (d) => {
     const f = join(d, n); const rel = relative(SRC, f);
     if (statSync(f).isDirectory()) { walk(f); continue; }
     if (n.endsWith('.php')) { php.push([rel, readFileSync(f)]); continue; }
-    if (rel === 'index.html') continue; // replaced by the launcher
+    if (rel === 'index.html') continue; // replaced by the loader
     mkdirSync(join(DIST, dirname(rel)), { recursive: true });
     copyFileSync(f, join(DIST, rel));
   }
@@ -63,30 +63,6 @@ await build({
 writeFileSync(join(DIST, 'sw.js'), readFileSync(join(DIST, 'sw.js'), 'utf8').replace(/__BUILD_ID__/g, buildId));
 // The PHP loader resolves the wasm relative to the script: sw.js lives at the root.
 
-// 4. Launcher.
-cpSync(join(ROOT, 'web/launcher'), DIST, { recursive: true });
-const menus = JSON.parse(readFileSync(join(ROOT, 'data/json/menus.json'), 'utf8'));
-const col = Object.fromEntries(menus.columns.map((c, i) => [c.name, i]));
-const groups = {};
-for (const r of menus.rows) {
-  if (r[col.mn_inactive]) continue;
-  (groups[r[col.mn_group]] ||= []).push({ name: r[col.mn_name], link: r[col.mn_link], misc: r[col.mn_misc], newwin: r[col.mn_newwindow] });
-}
-const order = ['Generators', 'Game Choice', 'Supplements', 'Data Files', 'Free Game', 'Genres', 'Non', 'Links'];
-const titles = { 'Game Choice': 'Game systems', 'Non': 'Other material', 'Links': 'Links', 'Free Game': 'Free games' };
-const esc = (s) => String(s).replace(/&(?!amp;|quot;|#\d+;|[a-z]+;)/g, '&amp;').replace(/</g, '&lt;');
-let lists = '';
-for (const g of order.concat(Object.keys(groups).filter((g) => !order.includes(g)))) {
-  if (!groups[g]) continue;
-  const items = groups[g].slice().sort((a, b) => a.name.replace(/&amp;/g, '&').localeCompare(b.name.replace(/&amp;/g, '&')));
-  lists += `<h2>${esc(titles[g] || g)} <small>(${items.length})</small></h2>\n<ul class="grid">\n` +
-    items.map((i, k) => {
-      const dup = items.some((o, j) => j !== k && o.name === i.name);
-      const label = dup ? `${i.name} <small>(${i.link.replace(/\.php$/, '')})</small>` : i.name;
-      const ext = /^https?:/i.test(i.link);
-      return `<li><a href="${esc(i.link)}"${ext || i.newwin ? ' target="_blank" rel="noopener"' : ''}>${esc(label).replace(/&lt;(\/?)small>/g, '<$1small>')}</a>${ext ? ' ↗' : ''}</li>`;
-    }).join('\n') + '\n</ul>\n';
-}
-const tpl = readFileSync(join(ROOT, 'web/index.template.html'), 'utf8');
-writeFileSync(join(DIST, 'index.html'), tpl.replace('<!--LISTS-->', lists).replace(/__BUILD_ID__/g, buildId));
+// 4. Loader: index.html starts the service worker and opens the original index.php.
+copyFileSync(join(ROOT, 'web/index.html'), join(DIST, 'index.html'));
 console.log(`dist/ built (${buildId}); ${php.length} PHP files bundled.`);

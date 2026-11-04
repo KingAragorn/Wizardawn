@@ -47,7 +47,7 @@ Known limits:
     src/            original Wizardawn site (PHP + assets), lightly patched
     data/json/      the database, one JSON file per table
     build/          tsv2json.py (export), json2sqlite.py, build.mjs, fetch-docs.sh
-    web/            service worker, PHP runner, launcher page
+    web/            service worker, PHP runner, index.html loader (opens the original index.php)
     tests/          node tests (PHP pages) and a headless-browser smoke test
     ops/deploy.sh   copy dist/ to a web directory
 
@@ -82,8 +82,7 @@ OSRIC and Swords & Wizardry trademark licences). Product names are trademarks of
 their owners.
 
 PHP WebAssembly runtime: WordPress Playground `@php-wasm` (GPL-2.0-or-later);
-PHP is under the PHP License. Launcher fonts: Cinzel and EB Garamond, SIL Open
-Font License (`web/launcher/fonts/`).
+PHP is under the PHP License.
 
-The build scripts, service worker and launcher in this repo are new work for
+The build scripts, service worker and loader page in this repo are new work for
 this conversion.
