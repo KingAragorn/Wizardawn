@@ -32,14 +32,14 @@
       () => `The ${pick(8)} of the ${pick(1)} ${pick(7)} of ${author}`,
       () => `The ${pick(8)} of the ${pick(7)} of ${author}`,
       () => `The ${pick(7)} and the ${pick(3)}`,
-      () => `The ${pick(2)} of ${author} the ${pick(3)}`,
+      () => `The ${pick(7)} and the ${pick(3)}`,
       () => `The ${pick(2)} of ${author} the ${pick(3)}`,
       () => `The ${pick(2)} of ${author} the ${pick(3)}`
     ];
     const title = W.pick(titles)();
     return W.d(100) > 70 ? title.slice(4) : title;
   };
-  W.register('books', 'Books &amp; Tomes', 'Create a random set of books for your fantasy role-playing game.', [W.gameField, W.countField('Books')], p => W.list(W.range(W.count(p, 'amount')).map(() => esc(W.bookTitle()))));
+  W.register('books', 'Books &amp; Tomes', 'Create a random set of books for your fantasy role-playing game.', [W.gameField, W.countField('Books'), f('unusual', 'Unusual books (%)', 'number', { value: 0, min: 0, max: 100 }), f('aec', 'Include AEC', 'checkbox')], p => W.list(W.range(W.count(p, 'amount')).map(() => W.d(100) <= W.number(p.unusual, 0, 0) ? W.unusualBook(p) : esc(W.bookTitle()))));
   W.potionAppearance = function () {
     const t = D.potionLooks.potionPretty, look = W.rng.int(0, 14);
     let text = (look === 12 ? 'This potion is ' : 'This liquid looks ') + t.pot_look[0][look];
@@ -49,12 +49,14 @@
     return `${text} in appearance. It also has a ${W.pick(t.pot_feel[0])} taste and smell to it. It seems to be ${W.pick(t.pot_color[0])} in color.`;
   };
   W.potionNames = function (p, brew = false) {
+    if (W.isTroll(p)) return (brew ? W.trollPotionRecipes(p) : W.trollPotions(p)).map(x => x.name);
     const game = W.game(p).slug;
     const index = { osric: 0, lablord: p.aec === '1' ? 1 : 2, bdd: 3, ssxs: brew ? 4 : 6, add: p.ua === '1' ? (brew ? 6 : 5) : (brew ? 5 : 4), bfrpg: brew ? 8 : 7, sandw: brew ? 7 : 8 }[game];
     if (index == null) return [];
     return (brew ? D.brewPotions : D.potionNames)[index];
   };
   W.register('potions', 'Potion Appearances', 'Create random tastes, smells and appearances for potions. Enter zero for a complete list of the selected game’s potions.', [W.gameField, f('n', 'Amount (0 = game list)', 'number', { value: 1, min: 0, max: 100 }), f('aec', 'Include AEC (Labyrinth Lord)', 'checkbox'), f('ua', 'Include Unearthed Arcana (AD&D)', 'checkbox')], p => {
+    if (W.isTroll(p)) return W.table(['Potion', 'Effect and appearance'], W.trollPotions(p).map(x => [esc(x.name), esc(x.effect + '. ' + W.potionAppearance())]));
     const count = W.number(p.n ?? p.amount, 1, 0);
     const names = count ? W.range(count).map(i => `Potion ${i}`) : W.potionNames(p);
     if (!names.length) return '<p>A complete potion list is not yet ported for this game. Choose an amount to generate generic appearances.</p>';

@@ -18,6 +18,7 @@
       const [val, label] = Array.isArray(option) ? option : [option, option];
       return `<option value="${W.escape(val)}"${String(val) === String(value) ? ' selected' : ''}>${W.escape(label)}</option>`;
     }).join('')}</select>`;
+    else if (f.type === 'textarea') input = `<textarea name="${f.name}" id="opt-${f.name}" rows="${f.rows || 5}">${W.escape(value)}</textarea>`;
     else if (f.type === 'checkbox') input = `<input type="checkbox" name="${f.name}" id="opt-${f.name}" value="1"${String(value) === '1' ? ' checked' : ''}>`;
     else input = `<input type="${f.type}" name="${f.name}" id="opt-${f.name}" value="${W.escape(value)}"${f.min != null ? ` min="${f.min}"` : ''}${f.max != null ? ` max="${f.max}"` : ''}>`;
     return `<div class="option"><label for="opt-${f.name}">${W.escape(f.label)}</label>${input}</div>`;

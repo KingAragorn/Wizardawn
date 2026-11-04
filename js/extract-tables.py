@@ -126,3 +126,117 @@ for part in parts:
     index = int(part.split(':', 1)[0])
     rows[index] = re.findall(r'\$title\s*=\s*"([^"$]*)"\s*;', part)
 write('holmesTitles', {'rows': rows, 'places': re.findall(r'\$stitle\s*=\s*"([^"]+)"', titles_text), 'gearColors': next(v for k, v in arrays(titles_text) if k == 'gicolor')})
+
+# Export literal string cells only. Decisions and string construction stay in JS.
+def literal_cells(file, function, variable):
+    text = (ROOT / 'src/functions' / (file + '.php')).read_text(encoding='cp1252')
+    text = re.split(r'(?m)^function\s+' + function + r'\(', text)[1]
+    text = re.split(r'(?m)^function\s+', text)[0]
+    cells = {}
+    parts = re.split(r'case\s+(\d+)\s*:', text)
+    for index, body in zip(parts[1::2], parts[2::2]):
+        match = re.match(r'\s*\$' + variable + r'\s*=\s*"([^"$]*)"\s*;', body)
+        if match:
+            cells.setdefault(int(index), match[1])
+    return cells
+
+write('equipment', {'pack': literal_cells('item_fantasy', 'packBuilder', 'm_stuff'),
+    'colors': function_tables('colors', ['candleColor', 'plainColor', 'leatherColor']),
+    'gems': function_tables('item_fantasy_gems_jewels', ['gemChooser'])})
+write('zombieTables', {name: literal_cells('zombies', 'makeZombie', name) for name in ['hat', 'shirt', 'pants']})
+write('customFiles', {p.stem: p.read_text(encoding='cp1252') for p in sorted((ROOT / 'src/data').glob('data_*.txt'))})
+
+# Scavenging tables are strings, quantity ranges and links to other item tables.
+# Encode their data schema explicitly; never export executable PHP expressions.
+ztext = (ROOT / 'src/functions/item_zombies.php').read_text(encoding='cp1252')
+zbranches = list(re.finditer(r'(?m)^\t(?:else )?if \(([^\n]+)\)\s*$', ztext))
+ztables = {}
+for i, branch in enumerate(zbranches):
+    kinds = re.findall(r'\$type == "([^"]+)"', branch[1])
+    if not kinds:
+        continue
+    body = ztext[branch.end():zbranches[i+1].start() if i + 1 < len(zbranches) else len(ztext)]
+    limit = int(re.search(r'switch \(mt_rand\(0,(\d+)\)\)', body)[1]) + 1
+    rows = [None] * limit
+    for match in re.finditer(r'case (\d+):\s*\$item = (.*?); break;', body):
+        index, expression = int(match[1]), match[2]
+        literal = re.fullmatch(r'"([^"$]*)"', expression)
+        reference = re.fullmatch(r'zombieItems\((\w+)\)', expression)
+        quantity = re.fullmatch(r'"([^"$]*)"\s*\.\s*(number_format\()?mt_rand\((\d+),(\d+)\)(?:\*(\d+))?\)?\s*\.\s*"([^"$]*)"', expression)
+        if literal:
+            rows[index] = literal[1]
+        elif reference:
+            rows[index] = {'table': reference[1]}
+        elif quantity:
+            before, formatted, lo, hi, multiplier, after = quantity.groups()
+            rows[index] = {'before': before, 'after': after, 'quantity': [int(lo), int(hi), int(multiplier or 1)], 'formatted': bool(formatted)}
+        else:
+            raise ValueError('Unsupported table cell: ' + expression)
+    assert all(row is not None for row in rows), (kinds, [i for i,r in enumerate(rows) if r is None])
+    for kind in kinds:
+        ztables[kind] = rows
+write('scavenging', ztables)
+# Modern first-name arrays are capitalized ARRAY in this source.
+modern = {}
+for name in ['todayManName', 'todayGirlName', 'todayLastName']:
+    part = re.split(r'(?m)^function\s+' + name + r'\(', (ROOT / 'src/functions/names.php').read_text(encoding='cp1252'))[1]
+    part = re.split(r'(?m)^function\s+', part)[0]
+    # Quoted one-name-per-line entries and the compact surname array.
+    modern[name] = next(v for k, v in arrays(re.sub(r'array\s*\(', 'array(', part, flags=re.I)) if k == 'name')
+write('modernNames', modern)
+hex_text = (ROOT / 'src/functions/hex_map.php').read_text(encoding='cp1252')
+write('worldDetails', {'excluded': sorted(set(int(n) for n in re.findall(r'\$hex_counting == (\d+)', hex_text))),
+    'legend': dict(re.findall(r'\$image == "([^"]+)"\)\{\$name = "([^"]+)";', hex_text))})
+
+# Weapon tables keep their source order (giant, small, demon adjective/damage,
+# normal). T&T has a simple and a classic group of those tables.
+weapon_data = {}
+for fn in ['getWeapon', 'getSXWeapon', 'TTgetWeapon']:
+    part = re.split(r'(?m)^function\s+' + fn + r'\(', (ROOT / 'src/functions/weapon_equipped.php').read_text())[1]
+    part = re.split(r'(?m)^function\s+', part)[0]
+    groups = []
+    for block in re.split(r'switch \(mt_rand\(', part)[1:]:
+        maximum = int(re.match(r'0,(\d+)\)', block)[1])
+        cells = [None] * (maximum+1)
+        for cell in re.finditer(r'case\s+(\d+)\s*:\s*\$(weapon|adj)\s*=\s*(.*?);', block):
+            i, variable, expr = int(cell[1]), cell[2], cell[3]
+            literal = re.fullmatch(r'"([^"$]*)"', expr)
+            arrows = re.fullmatch(r'"([^"$]*)"\s*\.\s*\(mt_rand\(10,30\)\)\s*\.\s*"([^"$]*)"',expr)
+            if literal: cells[i] = literal[1]
+            elif arrows: cells[i] = {'before':arrows[1], 'after':arrows[2], 'quantity':[10,30]}
+            # Demon weapon prefixes are assembled by the hand-written selector.
+        groups.append(cells)
+    weapon_data[fn] = groups
+write('weaponTables', weapon_data)
+retro_text = (ROOT / 'src/functions/retro_info.php').read_text(encoding='cp1252').split('function retroNotes')[1].split('function retroBot')[0]
+retro_blocks = re.split(r'\n\t(?:else )?if \(\$game == "Mutant Future"\)|\n\telse if \(\(\$game == "Millenniums[^\n]+|\n\telse if \(\$game == "Metamorphosis Alpha"\)|\n\telse if \(\$game == "Gamma World"\)', retro_text)[1:]
+assert len(retro_blocks) == 4, len(retro_blocks)
+retro = {}
+for game, block in zip(['mutfut', 'millen', 'meta', 'gamma'], retro_blocks):
+    pairs = []
+    for match in re.finditer(r'str_replace\("([^"$]*)",\s*(.*?),\s*\$word\);', block):
+        old, expr = match.groups()
+        tokens = re.findall(r'"([^"$]*)"|\$level', expr)
+        if re.sub(r'"[^"$]*"|\$level|\s|\.', '', expr):
+            raise ValueError(expr)
+        new = ''.join(m[1] if m[1] is not None else '{level}' for m in re.finditer(r'"([^"$]*)"|\$level',expr))
+        pairs.append([old,new])
+    retro[game] = pairs
+write('retroText', retro)
+pa_weapon = (ROOT / 'src/functions/weapon_equipped.php').read_text().split('function PAgetWeapon')[1].split('function getWeapon')[0]
+pa_groups = []
+for block in re.split(r'switch \(mt_rand\(', pa_weapon)[1:]:
+    maximum = int(re.match(r'(?:0|\$mt),(\d+)\)', block)[1])
+    cells = [None] * (maximum + 1)
+    for cell in re.finditer(r'case\s+(\d+)\s*:\s*\$weapon\s*=\s*(.*?);', block):
+        expr = cell[2]
+        parts = []
+        for token in re.finditer(r'"([^"$]*)"|mt_rand\((\d+),(\d+)\)|\$(mod[12])', expr):
+            if token[1] is not None: parts.append(token[1])
+            elif token[2] is not None: parts.append({'quantity':[int(token[2]),int(token[3])]})
+            else: parts.append({'modifier': token[4]})
+        assert not re.sub(r'"[^"$]*"|mt_rand\(\d+,\d+\)|\$mod[12]|\s|\.', '', expr), expr
+        cells[int(cell[1])] = parts
+    assert all(c is not None for c in cells)
+    pa_groups.append(cells)
+write('paWeapons', pa_groups)

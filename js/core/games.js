@@ -3,6 +3,7 @@
   const games = [
     ['fantasy', 'Fantasy', 36], ['add', 'AD&D', 1], ['bdd', 'BD&D', 2], ['bfrpg', 'BFRPG', 3], ['urthe', 'Broken Urthe', 4], ['gamma', 'Gamma World', 5], ['lablord', 'Labyrinth Lord', 6], ['meta', 'Metamorphosis Alpha', 7], ['millen', 'Millenniums & Mutations', 8], ['mutfut', 'Mutant Future', 9], ['necro', 'Necropalyx', 10], ['osric', 'OSRIC', 11], ['ryft', 'Space Ryft', 12], ['sandw', 'Swords & Wizardry', 13], ['tt5e', 'Tunnels & Trolls 5th Edition', 14], ['tt7e', 'Tunnels & Trolls 7th Edition', 15], ['ttde', 'Tunnels & Trolls Deluxe', 173], ['ssxs', 'Swords & Six-Siders', 165], ['ww', 'Wizardry & Warriors', 147], ['apoc', 'Post-Apocalyptic', 39], ['scifi', 'Sci-Fi', 38], ['horror', 'Horror', 37]
   ];
+  games.push(['data', 'Data', 'DATA']);
   W.games = Object.fromEntries(games.map(([slug, name, id]) => [slug, { slug, name, id }]));
   W.game = params => W.games[params.game] || games.map(([slug]) => W.games[slug]).find(g => g.name === (params.x_game || params.x_package || params.game)) || W.games.lablord;
   W.gameField = W.field('game', 'Game', 'select', { value: 'lablord', options: games.map(([slug, name]) => [slug, name]) });

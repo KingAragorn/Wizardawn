@@ -1,8 +1,9 @@
 (function (W, D) {
   'use strict';
   const f = W.field, esc = W.escape;
-  const colors = D.potionLooks.potionPretty.pot_culur[0];
+  const colors = D.equipment.colors.plainColor.color[0];
   const bottle = () => W.pick(['crystal bottle', 'ceramic bottle', 'glass bottle', 'glass jar', 'test tube', 'clay bottle', 'clay jar', 'crystal bottle', 'iron flask', 'glass decanter']);
+  W.bottle = () => W.pick(['crystal bottle', 'ceramic jug', 'glass bottle', 'glass jar', 'test tube', 'clay jug', 'waterskin', 'iron flask', 'spherical, glass bottle', 'wine bottle', W.pick(colors) + '-colored, glass bottle', W.pick(colors) + '-colored, decanter']);
   const animal = () => W.pick(D.animals).toLowerCase();
   W.reagent = function (game, maximum = 2) {
     const t = D.reagents.contentsChooser;
@@ -10,8 +11,8 @@
     if (category === 1) return W.pick(t.value[game.startsWith('Tunnels & Trolls') ? 0 : 1]) + ' ' + W.pick(t.stuff[0]);
     if (category === 2) {
       let item = W.pick(t.stuff[1]);
-      if (item === 'slime') item = W.pick(colors) + ' slime';
-      if (['bees', 'ants', 'wasps', 'leeches', 'mosquitoes', 'worms', 'maggots', 'spiders', 'ticks', 'beetles', 'flies'].includes(item)) item = (W.d(100) > 30 ? 'dead ' : 'live ') + item;
+      if (item === 'slime') item = W.pick(['dark', 'blue', 'gray', 'black', 'green', 'red', 'brown', 'orange', 'yellow', 'purple', 'clear', 'white']) + ' slime';
+      if (['bees', 'ants', 'wasps', 'leeches', 'mosquitoes', 'worms', 'bloodworms', 'centipedes'].includes(item)) item = (W.d(100) > 30 ? 'dead ' : 'live ') + item;
       return item;
     }
     return W.pick([...D.rareReagents, `glands from a ${animal()}`, `organs from a ${animal()}`, `brains of a ${W.pick(['cloud', 'fire', 'frost', 'hill', 'stone', 'storm'])} giant`, `brains of a ${W.pick(['black', 'blue', 'gold', 'green', 'red', 'white'])} dragon`]);
@@ -34,6 +35,8 @@
     const ingredients = [];
     // Sample without replacement, so even small tables cannot cause retry loops.
     const available = Array.from(new Set(W.range(20).map(() => W.reagent(game))));
+    // Deterministic fallback also guarantees three ingredients with a constant RNG.
+    for (const item of D.reagents.contentsChooser.stuff[1]) if (available.length < 3 && !available.includes(item)) available.push(item);
     while (ingredients.length < 3 && available.length) ingredients.push(available.splice(W.rng.int(0, available.length - 1), 1)[0]);
     const [a, b, c] = ingredients;
     let first;
@@ -66,13 +69,14 @@
   const expansions = [f('aec', 'Include AEC (Labyrinth Lord)', 'checkbox'), f('ua', 'Include Unearthed Arcana (AD&D)', 'checkbox')];
   W.register('brews', 'Alchemy Recipes', 'Generate alchemy recipes and an alphabetized reagent price list for your game.', [W.gameField, ...values, ...expansions], p => {
     const names = W.potionNames(p, true), game = W.game(p).name;
-    if (!names.length) return '<p>Recipes for this game are still being ported. Choose OSRIC, Labyrinth Lord, AD&amp;D, BD&amp;D, BFRPG, Swords &amp; Wizardry or Swords &amp; Six-Siders.</p>';
+    const troll = W.isTroll(p), effects = troll ? W.trollPotionRecipes(p) : [];
+    if (!names.length) return '<p>Choose a fantasy game to create its alchemy recipe list.</p>';
     const min = W.number(p.min ?? p.x_value1, 1, 0, 1000), max = Math.max(min, W.number(p.max ?? p.x_value2, 10, 0, 1000));
     const reagents = new Set();
-    const rows = names.map(name => {
+    const rows = names.map((name, i) => {
       const recipe = W.potionRecipe(game); recipe.ingredients.forEach(x => reagents.add(x));
-      const label = ['OSRIC', 'AD&D', 'BD&D'].includes(game) ? name : 'Potion of ' + name;
-      return [esc(label), esc(W.potionAppearance() + ' ' + recipe.text)];
+      const label = troll ? effects[i].name + ' — ' + effects[i].save + ' vs. INT' : ['OSRIC', 'AD&D', 'BD&D'].includes(game) ? name : 'Potion of ' + name;
+      return [esc(label), esc((troll ? effects[i].effect + '. ' : '') + W.potionAppearance() + ' ' + recipe.text)];
     });
     return '<h3>Recipes</h3>' + W.table(['Potion', 'Appearance and recipe'], rows) + '<h3>Alchemists sell the below items with the following prices...</h3>' + W.table(['Reagent', 'Container', 'Price'], [...reagents].sort().map(item => [esc(item), bottle(), `${W.rng.int(min, max)}gp`]));
   });
@@ -82,8 +86,10 @@
     const chance = W.number(p.potion ?? p.x_potion, 0, 0);
     return W.table(['Bottle', 'Contents', ...(min ? ['Value'] : [])], W.range(W.count(p, 'x_amount')).map(i => {
       const magic = potions.length && W.d(100) <= chance;
-      const item = magic ? W.pick(potions) : W.reagent(game, 3);
-      return [i, esc(`${bottle()} (${item})`), ...(min ? [magic ? 'Magic' : `${W.rng.int(Math.max(1, min), Math.max(1, max))}gp`] : [])];
+      let item;
+      if (magic && W.isTroll(p)) { const potion = W.pick(W.trollPotions(p)); item = `${potion.name} (${potion.effect})`; }
+      else item = magic ? W.pick(potions) : W.reagent(game, 3);
+      return [i, esc(`${W.bottle()} (${magic ? item : 'filled with ' + item})`), ...(min ? [magic ? 'Magic' : `${W.rng.int(Math.max(1, min), Math.max(1, max))}gp`] : [])];
     }));
   });
 })(window.WZ, window.WZ_DATA);
