@@ -1,6 +1,6 @@
 // Boots PHP 7.4 (WebAssembly, Node build) with the Wizardawn source and data.
-import { loadNodeRuntime } from '@php-wasm/node';
-import { PHP, setPhpIniEntries } from '@php-wasm/universal';
+import { getPHPLoaderModule } from '@php-wasm/node-7-4';
+import { PHP, loadPHPRuntime, setPhpIniEntries } from '@php-wasm/universal';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -16,7 +16,7 @@ export function phpFiles() {
 export async function boot() {
   const db = '/tmp/wz-test.sqlite';
   execFileSync('python3', [join(ROOT, 'build/json2sqlite.py'), db]);
-  const php = new PHP(await loadNodeRuntime('7.4', { emscriptenOptions: { processId: 1 } }));
+  const php = new PHP(await loadPHPRuntime(await getPHPLoaderModule(), { processId: 1, quit: (code, error) => { throw error; } }));
   await setPhpIniEntries(php, PHP_INI);
   installFiles(php, phpFiles(), readFileSync(db));
   const server = new WzServer(php, { debug: true });

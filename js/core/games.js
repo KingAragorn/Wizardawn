@@ -1,0 +1,16 @@
+(function (W) {
+  'use strict';
+  const games = [
+    ['fantasy', 'Fantasy', 36], ['add', 'AD&D', 1], ['bdd', 'BD&D', 2], ['bfrpg', 'BFRPG', 3], ['urthe', 'Broken Urthe', 4], ['gamma', 'Gamma World', 5], ['lablord', 'Labyrinth Lord', 6], ['meta', 'Metamorphosis Alpha', 7], ['millen', 'Millenniums & Mutations', 8], ['mutfut', 'Mutant Future', 9], ['necro', 'Necropalyx', 10], ['osric', 'OSRIC', 11], ['ryft', 'Space Ryft', 12], ['sandw', 'Swords & Wizardry', 13], ['tt5e', 'Tunnels & Trolls 5th Edition', 14], ['tt7e', 'Tunnels & Trolls 7th Edition', 15], ['ttde', 'Tunnels & Trolls Deluxe', 173], ['ssxs', 'Swords & Six-Siders', 165], ['ww', 'Wizardry & Warriors', 147], ['apoc', 'Post-Apocalyptic', 39], ['scifi', 'Sci-Fi', 38], ['horror', 'Horror', 37]
+  ];
+  W.games = Object.fromEntries(games.map(([slug, name, id]) => [slug, { slug, name, id }]));
+  W.game = params => W.games[params.game] || games.map(([slug]) => W.games[slug]).find(g => g.name === (params.x_game || params.x_package || params.game)) || W.games.lablord;
+  W.gameField = W.field('game', 'Game', 'select', { value: 'lablord', options: games.map(([slug, name]) => [slug, name]) });
+  W.seedField = W.field('seed', 'Seed (optional)', 'text');
+  W.countField = (label = 'Amount', value = 1) => W.field('n', label, 'number', { value, min: 1, max: 100 });
+  W.count = (p, ...aliases) => W.number(p.n ?? aliases.map(key => p[key]).find(v => v != null), 1);
+  W.toolGame = (tool, params) => tool.fields.some(field => field.name === 'game') ? W.game(params) : W.games[tool.defaultGame || 'fantasy'];
+  W.register = function (route, title, description, fields, generate) {
+    W.routes[route] = { title, description, fields: [...fields, W.seedField], generate, defaultGame: route === 'basic-spells' ? 'lablord' : route === 'spells' ? 'osric' : 'fantasy' };
+  };
+})(window.WZ);
