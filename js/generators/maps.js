@@ -77,6 +77,45 @@
     const html = `<div class="geomorph-map" role="img" aria-label="${W.escape(type)} map" style="position:relative;background:white;width:${fullWidth}px;height:${fullHeight}px">${tiles.map(t => `<img class="geomorph" src="maps/${W.escape(t.image)}" alt="${t.spot || 'central'} geomorph" style="position:absolute;left:${t.left}px;top:${t.top}px;width:${t.width}px;height:${t.height}px">`).join('')}${rooms.map(r => `<span class="map-number" style="position:absolute;left:${r.x}px;top:${r.y}px;font:12px Arial;color:red;background:white">${r.number}</span>`).join('')}</div>`;
     return { html, tiles, rooms, width: fullWidth, height: fullHeight };
   };
+  // geomorphs.php storeMap + map_window.php: maps are kept client-side by a 10 character code.
+  W.storeMap = function (map, kind) {
+    const letters = '0123456789abcdefghijklmnopqrstuvwxyz', stored = W.storage.get('maps-created', {});
+    let code;
+    do code = Array.from({ length: 10 }, () => letters[W.rng.int(0, letters.length - 1)]).join(''); while (stored[code]);
+    const kept = Object.fromEntries(Object.entries(stored).slice(-19));
+    kept[code] = { kind, tiles: map.tiles, rooms: map.rooms, width: map.width, height: map.height };
+    W.storage.set('maps-created', kept);
+    return code;
+  };
+  W.mapWindow = function (params) {
+    const map = W.storage.get('maps-created', {})[params.cd];
+    if (!map) return null;
+    const colorless = +params.cl > 0;
+    const tiles = map.tiles.map(t => `<div style="top:${t.top}px;left:${t.left}px;position:absolute;height:${t.height}px;width:${t.width}px"><img src="maps/${W.escape((colorless && !t.image.startsWith('bw_') ? 'bw_' : '') + t.image)}" alt=""></div>`).join('');
+    const rooms = map.rooms.filter(r => r.x != null).map(r => `<div style="top:${r.y}px;left:${r.x}px;background-image:url(maps/number_backing.png);z-index:100;font-size:12px;color:#FF0000;position:absolute">${r.number}</div>`).join('');
+    return `<div id="myMap" class="geomorph-map" style="position:relative;background-color:#FFFFFF;width:${map.width}px;height:${map.height}px">${tiles}${rooms}</div><br><button type="button" data-map-export="myMap">Save Map As Image</button>`;
+  };
+  // save_image.php replacement: draw the map's tiles and numbers onto a canvas and download a PNG.
+  W.exportMap = async function (element, filename = 'wizardawn-map.png') {
+    const canvas = document.createElement('canvas');
+    canvas.width = element.offsetWidth; canvas.height = element.offsetHeight;
+    const context = canvas.getContext('2d'), origin = element.getBoundingClientRect();
+    context.fillStyle = '#FFFFFF'; context.fillRect(0, 0, canvas.width, canvas.height);
+    for (const image of element.querySelectorAll('img')) {
+      if (!image.complete) await new Promise(done => { image.onload = image.onerror = done; });
+      const box = image.getBoundingClientRect();
+      try { context.drawImage(image, box.left - origin.left, box.top - origin.top, box.width, box.height); } catch { /* broken image */ }
+    }
+    context.font = '12px sans-serif'; context.textBaseline = 'top';
+    for (const label of element.querySelectorAll('div[style*="z-index"]')) {
+      const box = label.getBoundingClientRect(), x = box.left - origin.left, y = box.top - origin.top;
+      context.fillStyle = '#FFFFFF'; context.fillRect(x, y, context.measureText(label.textContent).width + 2, 14);
+      context.fillStyle = '#FF0000'; context.fillText(label.textContent, x + 1, y + 1);
+    }
+    const link = document.createElement('a');
+    link.download = filename; link.href = canvas.toDataURL('image/png'); link.click();
+  };
+  W.routes.map_window = { title: 'Map', render: params => W.mapWindow(params) || '<p>This map is no longer stored in this browser. Generate it again.</p>' };
   const tools = [
     ['dungeon-map', 'Dungeon Maps', 'dungeon', [f('type', 'Map type', 'select', { value: 'Cavernous Dungeon', options: ['Cavernous Dungeon', 'Dungeon', 'Cavernous', 'Side View'] }), ...authors.map(([slug, , name]) => f('cave_' + slug, name, 'checkbox', { value: 1 }))]],
     ['settlement-map', 'Settlement Maps', 'settlement', [f('type', 'Settlement type', 'select', { value: 'City', options: ['City', 'Keep', 'Village'] })]],
@@ -88,6 +127,6 @@
   for (const [route, title, kind, fields] of tools) W.register(route, title, 'Generate a random map from the original geomorphs. Artwork by Dyson Logos, Risus Monkey, Rorschachhamster, Stonewerks, Glenn Jupp, Stuart Robertson, Infinite Zer0, Shane Knysh and Wizardawn Entertainment, as credited in the original tools.', [...fields, ...dimensions, ...(kind === 'suburb' ? [] : numbering)], p => {
     const map = W.geomorphMap(p, kind);
     W.storage.set('last-map', { route, options: p, tiles: map.tiles, rooms: map.rooms });
-    return map.html;
+    return map.html + (map.tiles.length ? '<br><button type="button" data-map-export="' + route + '">Save Map As Image</button>' : '');
   });
 })(window.WZ, window.WZ_DATA);

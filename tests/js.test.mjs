@@ -1407,3 +1407,16 @@ test('Magestykc monster supplement follows data_magestykc_run.php layout', () =>
   assert.doesNotMatch(five, /Lvl: |WIZ:|SPD:/);
   assert.match(five, /page-break/);
 });
+test('Ultimate separate map is stored and shown by map_window', () => {
+  W.rng = W.random('sep-map');
+  const html = W.routes.ultimate.generate({ x_sep_map: '1', width: 1, height: 1, seed: 'sep-map' });
+  const code = html.match(/#\/map_window\?cd=([0-9a-z]{10})&amp;|#\/map_window\?cd=([0-9a-z]{10})&/);
+  assert.ok(code, 'map link');
+  assert.doesNotMatch(html.split('</h2>')[1].slice(0, 200), /geomorph-map/);
+  const view = W.routes.map_window.render({ cd: code[1] || code[2], cl: '0' });
+  assert.match(view, /id="myMap"/);
+  assert.match(view, /number_backing\.png/);
+  assert.match(view, /data-map-export="myMap"/);
+  assert.match(W.routes.map_window.render({ cd: 'missing0000' }), /no longer stored/);
+  assert.match(W.routes['dungeon-map'].generate({ keyed: '1', seed: 'x' }), /Save Map As Image/);
+});

@@ -193,7 +193,10 @@
     const floors = [], rooms = [];
     let careerLevel = W.number(p.x_level, 1, 1, 100), currentFloor = 0;
     const maximumLevel = Math.max(careerLevel, game === 'ssxs' ? 6 : 21), floorsPerLevel = Math.round(map.rooms.length / Math.max(1, maximumLevel - careerLevel));
-    let html = `<h2>${esc(p.x_area || ({ delve: 'Dungeon Delve', ultimate: 'Ultimate Dungeon', uexfl: 'Ultimate Sci-Fi Adventure', uruins: 'Ultimate Ruins' })[mode])}</h2>` + map.html;
+    // tool_ultimate.php x_sep_map: store the map and link map_window instead of drawing it inline.
+    const separate = mode === 'ultimate' && String(p.x_sep_map) === '1' && map.tiles.length;
+    const mapLink = separate ? `<a target="_blank" href="#/map_window?cd=${W.storeMap(map, 'dungeon')}&rm=${W.number(p.start ?? p.map_numbers, 1, 1, 100000)}&cl=0&mh=${W.number(p.height, 1, 1, 10)}&mw=${W.number(p.width, 1, 1, 10)}&tp=0"><img src="pics_tools/map.jpg" alt="Open map"></a>` : '';
+    let html = `<h2>${esc(p.x_area || ({ delve: 'Dungeon Delve', ultimate: 'Ultimate Dungeon', uexfl: 'Ultimate Sci-Fi Adventure', uruins: 'Ultimate Ruins' })[mode])}${mapLink ? ' ' + mapLink : ''}</h2>` + (separate ? '' : map.html);
     for (const [index, area] of map.rooms.entries()) {
       const remaining = map.rooms.length - index - 1;
       if (progressive && (++currentFloor >= floorsPerLevel && careerLevel < maximumLevel || remaining < 5 && careerLevel < 16 || remaining < 4 && careerLevel < 17 || remaining < 3 && careerLevel < 18 || remaining < 2 && careerLevel < 19 || remaining < 1 && careerLevel < 20)) { careerLevel++; currentFloor = 0; }
@@ -221,7 +224,7 @@
   for (const [route, title] of [['delve', 'Dungeon Delve'], ['ultimate', 'Ultimate Dungeon'], ['uexfl', 'Ultimate Sci-Fi Adventure'], ['uruins', 'Ultimate Ruins']]) {
     const fields = [...W.adventureFields];
     if (route === 'delve') fields.push(f('x_delve', 'Delve type', 'select', { value: 'Simple', options: ['Simple', 'Complex', 'Progressive'] }), f('x_floors', 'Omit floors (%)', 'number', { value: 0, min: 0, max: 100 }));
-    else if (route === 'ultimate') fields.push(f('type', 'Map type', 'select', { value: 'Cavernous Dungeon', options: ['Dungeon', 'Cavernous', 'Cavernous Dungeon'] }));
+    else if (route === 'ultimate') fields.push(f('x_sep_map', 'Map in a separate window', 'checkbox'), f('type', 'Map type', 'select', { value: 'Cavernous Dungeon', options: ['Dungeon', 'Cavernous', 'Cavernous Dungeon'] }));
     else if (route === 'uexfl') fields.push(f('type', 'Map type', 'select', { value: 'Building', options: ['Building', 'Spaceship', 'Exodus Spaceship'] }));
     W.register(route, title, 'Generate a map and keyed adventure with room contents, encounters, traps, treasure and wandering enemies. Results stay on this computer.', fields, p => W.adventure(p, route));
   }

@@ -47,7 +47,7 @@ are bundled. No deployment has been made.
 | `help_about.php` | ported | `#/help/about` |
 | `help_navigate.php` | ported | `#/help/navigate` |
 | `help_print.php` | ported | `#/help/print` |
-| `map_window.php` | remaining | `#/map_window` |
+| `map_window.php` | ported | `#/map_window` |
 | `rpg_add.php` | ported | `#/game/add` |
 | `rpg_apoc.php` | ported | `#/game/apoc` |
 | `rpg_bdd.php` | ported | `#/game/bdd` |
@@ -122,7 +122,11 @@ are bundled. No deployment has been made.
 Shared include-only files (`body.php`, `css.php`, `css_reports.php`, `db.php`,
 `vars.php`, `top.php`, `notices.php`, `game_defaults.php`, `game_options.php`)
 are represented by the client core/layout/data. `save_image.php` is a server
-endpoint; a browser export replacement is remaining. Menus under `src/menus/`
+endpoint; it is replaced by `W.exportMap`, which draws the map tiles and room
+numbers onto a canvas and downloads a PNG ("Save Map As Image" on map tools and
+`#/map_window`). Maps are stored by a 10-character code in localStorage
+(`W.storeMap`, last 20 kept) instead of the `maps_created` table; Ultimate
+Dungeon's "Map in a separate window" (x_sep_map) links to it as PHP did. Menus under `src/menus/`
 are represented by `data/menus.js` and the layout; no menu destination is omitted.
 
 Batch 1 validation: 5 Node tests pass. A direct file:// headless Chrome launch
@@ -293,7 +297,7 @@ None of the new generators has full PHP parity yet; they are **partial**.
   listed as partial. Weighted magic/technology selection, original treasure-map
   rules, exact reference tables and custom-data behavior need further work.
 - `items` is still the mundane-only report. `hex-crawl` is still a preview.
-  locale, scifim, Magestykc data pages and the map viewer/export remain absent.
+  locale, scifim, Magestykc data pages and the map viewer/export are now ported.
 
 Earlier batch notes describe their historical state and are not completion
 claims. The status table and latest run notes take precedence. No commit,

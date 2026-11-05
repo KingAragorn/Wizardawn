@@ -20,6 +20,8 @@
     const app = document.getElementById('app');
     app.innerHTML = result.html;
     app.onclick = event => {
+      const save = event.target.closest?.('[data-map-export]');
+      if (save) return W.exportMap(document.getElementById(save.dataset.mapExport) || save.previousElementSibling?.previousElementSibling || app.querySelector('.geomorph-map'));
       const link = event.target.closest?.('[data-scroll-site]');
       if (link) {
         event.preventDefault();
