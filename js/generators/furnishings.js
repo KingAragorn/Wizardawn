@@ -182,7 +182,8 @@
   W.furnishDetails = function (p, cave = false) {
     const decorations = [], hiding = [], fillings = [];
     if (String(p.x_furnish ?? 1) !== '1') return { text: '', hiding, fillings, decorations };
-    if (cave) return { text: 'This is a cavernous area' + pick(['.', '. Some fungi grows in various places.', ' with a few stalactites on the ceiling.', ' with a few stalagmites on the ground.', ' with a few stalactites and stalagmites.']), hiding, fillings, decorations };
+    // tool_delve.php: eight cavern descriptions, with dripping water on 1 in 6.
+    if (cave) return { text: pick(['This is a cavernous area.', 'This is a cavernous area where fungi grows in various places.', 'This is a cavernous area with a few stalactites on the ceiling.', 'This is a cavernous area with a few stalagmites on the ground.', 'This is a cavernous area with a few stalactites and stalagmites.', 'This is a cavernous area with a few stalactites on the ceiling. Some fungi grows in various places.', 'This is a cavernous area with a few stalagmites on the ground. Some fungi grows in various places.', 'This is a cavernous area with a few stalactites and stalagmites. Some fungi grows in various places.']) + (W.d(6) === 1 ? ' Water drips from up above in places.' : ''), hiding, fillings, decorations };
     const places = ['floor', 'ceiling', 'northfloor', 'southfloor', 'eastfloor', 'westfloor', 'northwall', 'southwall', 'eastwall', 'westwall', 'scatter'].filter(() => W.d(5) === 1);
     for (const place of W.shuffle(places)) {
       if (place === 'scatter') { decorations.push('There is ' + W.range(int(2, 10)).map(() => W.fantasyMundane(p)).join(', ') + '...scattered around the room.'); continue; }
@@ -191,7 +192,8 @@
       const position = kind === 'wall' ? 'on the ' + direction + ' wall' : kind === 'near' ? 'by the ' + direction + 'ern wall' : 'at the ' + pick(['north end', 'northeast end', 'northwest end', 'south end', 'southeast end', 'southwest end', 'east end', 'west end', 'center', 'center', 'center', 'center', 'center']) + ' of the ' + (kind === 'ceiling' ? 'ceiling' : 'room');
       decorations.push('There ' + item.text + ' ' + position + '.');
       if (item.size && item.place) hiding.push({ place: item.place, size: item.size });
-      if (item.fill) {
+      // The original only reveals furniture contents when mt_rand(1,100) > 60.
+      if (item.fill && W.d(100) > 60) {
         let content;
         if (item.fill === 1) content = W.townEquipment(p, 'generic', 'guard');
         else if (item.fill === 2) content = W.range(int(1, 5)).map(() => W.monsterWeapon({ weapons: 'giant' }, p)).join('; ');
@@ -202,7 +204,7 @@
         fillings.push({ place: item.fillPlace || item.place, content });
       }
     }
-    const text = decorations.length ? decorations.join(' ') + fillings.map(row => ' ' + row.place.charAt(0).toUpperCase() + row.place.slice(1) + ' is... ' + row.content + '.').join('') : pick(D.dungeonText.cells.furnishRoom);
+    const text = decorations.length ? decorations.join(' ') + fillings.map(row => ' ' + row.place.charAt(0).toUpperCase() + row.place.slice(1) + ' is...' + row.content + '.').join('') : pick(D.dungeonText.cells.furnishRoom);
     return { text, hiding, fillings, decorations };
   };
   W.furnish = (p, cave) => W.furnishDetails(p, cave).text;

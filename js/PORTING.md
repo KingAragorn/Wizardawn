@@ -418,3 +418,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   across the settlement with conditioned junk values and a money bag. 116 tests.
 - ttown: T&T wizard/rogue guild services now follow the guild leader with the original fantasy_stores_tt.php wording.
 - mtown: officials intro line, Governor/Mayor/Constable title, and law officers carry a PAgetWeapon duty weapon chosen by tech level (tool_mtown.php).
+- delve: cavern areas use all eight original descriptions plus the 1-in-6 dripping-water line; furniture contents only appear on the original 40% roll and use the "is..." wording (tool_delve.php).

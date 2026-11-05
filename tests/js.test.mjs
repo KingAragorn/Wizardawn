@@ -601,6 +601,14 @@ test('post-apocalyptic businesses use original owner titles and numbered vault c
   assert.deepEqual(numbers, numbers.map((_, i) => i + 1));
   assert.doesNotMatch(html, /undefined|NaN|<b>Owner:<\/b>/);
 });
+test('delve caverns use the original eight descriptions and dripping water', () => {
+  W.rng = W.random('caves');
+  const seen = new Set(); let drip = 0;
+  for (let i = 0; i < 400; i++) { const t = W.furnishDetails({ x_furnish: 1 }, true).text; if (t.endsWith(' Water drips from up above in places.')) drip++; seen.add(t.replace(' Water drips from up above in places.', '')); }
+  assert.equal(seen.size, 8);
+  assert.ok(drip > 30 && drip < 110);
+  assert.ok([...seen].every(t => t.startsWith('This is a cavernous area')));
+});
 test('T&T guild services follow leaders and post-apocalyptic officers carry duty weapons', () => {
   W.rng = W.random('tt-guild-text');
   const tt = W.routes.ttown.generate({ map_rooms: 40, rulers: '0', empty: '0', stores: '0', guilds: '1', police: '0', church: '0' });
