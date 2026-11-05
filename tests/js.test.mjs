@@ -624,6 +624,12 @@ test('OSRIC adventurers guild listing uses the original preamble and save legend
   assert.match(html, /<i>RSW<\/i> \(rod, staff, or wand\)/);
   assert.match(W.routes.oadvg.generate({ game: 'lablord', x_qty_f: 1 }), /<i>BA<\/i> \(breath attacks\)/);
 });
+test('ultimate dungeon atmosphere sounds use the original soundWhereRoom qualifiers', () => {
+  W.rng = W.random('sounds');
+  const sounds = W.range(600).map(() => W.atmosphere({ atmo: 50 })).filter(t => t.includes('You can make out'));
+  assert.ok(sounds.length > 20);
+  assert.ok(sounds.every(t => /You can make out (a faint|a loud|a quiet|an eerie|a strange|an odd|an echoey|a muffled|a distant|a close) \S/.test(t)));
+});
 test('delve caverns use the original eight descriptions and dripping water', () => {
   W.rng = W.random('caves');
   const seen = new Set(); let drip = 0;

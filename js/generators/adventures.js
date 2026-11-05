@@ -44,7 +44,7 @@
       const mood = int(50, 100);
       text = 'The area ' + (mood < 75 ? cell('smellMakerRoom') : mood < 85 ? cell('smellMakerRoom') + ' and ' + cell('airMakerRoom') : mood < 95 ? cell('airMakerRoom') : 'has ' + cell('fogMakerRoom'));
     }
-    if (W.d(100) > 90) text += '. You can make out a ' + cell('soundMakerRoom') + ' sound coming from somewhere';
+    if (W.d(100) > 90) text += '. You can make out ' + pick(['a faint', 'a loud', 'a quiet', 'an eerie', 'a strange', 'an odd', 'an echoey', 'a muffled', 'a distant', 'a close']) /* atmosphere.php soundWhereRoom */ + ' ' + cell('soundMakerRoom') + ' sound coming from somewhere';
     return text + '.';
   };
   W.unusualRoom = function (p, rooms = 20) {

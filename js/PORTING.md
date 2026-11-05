@@ -421,3 +421,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - delve: cavern areas use all eight original descriptions plus the 1-in-6 dripping-water line; furniture contents only appear on the original 40% roll and use the "is..." wording (tool_delve.php).
 - bxadvg/ladvg: character listings open with the original per-ruleset preamble (alignment/age clauses follow the options); basic AC is capped at 9 like the PHP.
 - oadvg: listing preamble from tool_oadvg.php, with the Labyrinth Lord vs OSRIC saving-throw legend.
+- ultimate/delve: atmosphere sound lines use the original soundWhereRoom qualifier list (a faint, an eerie, ...) instead of a fixed "a".
