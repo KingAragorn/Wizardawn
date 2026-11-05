@@ -1420,3 +1420,14 @@ test('Ultimate separate map is stored and shown by map_window', () => {
   assert.match(W.routes.map_window.render({ cd: 'missing0000' }), /no longer stored/);
   assert.match(W.routes['dungeon-map'].generate({ keyed: '1', seed: 'x' }), /Save Map As Image/);
 });
+test('makeMagicItem ports the PHP item generator for every non-T&T game, size and variant', () => {
+  assert.ok(W.WZ_DATA?.magicItemText || context.WZ_DATA.magicItemText);
+  for (const game of ['osric', 'add', 'bdd', 'bfrpg', 'lablord', 'sandw', 'ssxs', 'fantasy'])
+    for (const size of [1, 2, 3]) for (const varb of [0, 1]) for (let i = 0; i < 40; i++) {
+      const s = W.makeMagicItem({ game }, int20(), size, varb);
+      assert.ok(s.length > 3); assert.doesNotMatch(s, /undefined|NaN|\[object|\$[a-z]/);
+    }
+  const loot = W.magicItem({ game: 'osric' });
+  assert.doesNotMatch(loot, /<[a-z]/);
+});
+function int20() { return W.rng.int(0, 20); }
