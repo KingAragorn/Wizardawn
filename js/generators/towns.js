@@ -297,6 +297,7 @@
       html += '<section class="town-rulers"><img src="pics_tools/wtown_02.jpg" alt=""><h3>Rulers</h3>' + roles.map(([role, job, sex]) => `<div><b>${esc(role.toUpperCase())}:</b> ${officer(p, mode, job, sex)}</div>`).join('') + `<p><b>ROYAL VAULT:</b> ${esc(W.currency(p, realm, 3))}; ${vault.map(esc).join('; ')}</p></section>`;
     }
     let available = buildings.filter(b => b.owner);
+    const postPlaced = [];
     const assign = (label, types) => {
       const placed = [];
       for (const type of types) {
@@ -305,7 +306,11 @@
         b.type = type;
         placed.push(b);
       }
-      if (placed.length) html += `<section class="town-businesses"><h3>${label}</h3>${placed.sort((a, b) => a.number - b.number).map(b => `<article class="town-business" data-building="${b.number}" data-shop="${b.type}"><h4>Building ${b.number}</h4>${business(p, mode, b.type, b.owner)}</article>`).join('')}</section>`;
+      // tool_mtown.php re-selects every shop with shop>0 on each economy pass
+      // (no didit filter), so earlier passes' businesses print again with
+      // freshly generated names and stock.
+      if (mode === 'post') { postPlaced.push(...placed); placed.splice(0, placed.length, ...postPlaced); }
+      if (placed.length) html += `<section class="town-businesses"><h3>${label}</h3>${[...placed].sort((a, b) => a.number - b.number).map(b => `<article class="town-business" data-building="${b.number}" data-shop="${b.type}"><h4>Building ${b.number}</h4>${business(p, mode, b.type, b.owner)}</article>`).join('')}</section>`;
     };
     const economy = buildings.length > 800 ? 3 : buildings.length > 400 ? 2 : 1;
     const sections = [['stores', 'Merchants', W.range(mode === 'post' ? W.game(p).slug === 'urthe' ? 11 : 9 : 14)]];

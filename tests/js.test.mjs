@@ -1309,3 +1309,12 @@ test('hex crawl stranded robots and vehicles follow tool_hexcrawl.php placement'
   assert.doesNotMatch(ship, /STRANDED VEHICLE/);
   assert.match(ship, /DERELICT ROBOT IN THE ROOM/);
 });
+
+test('mtown economy passes reprint earlier businesses like tool_mtown.php', () => {
+  W.random(17);
+  const html = W.town({ game: 'gamma', map_rooms: 500, stores: '1', empty: '0' }, 'post');
+  const count = (html.match(/class="town-business"/g) || []).length;
+  assert.equal(count, 9 + 18);
+  const small = W.town({ game: 'urthe', map_rooms: 50, stores: '1', empty: '0' }, 'post');
+  assert.equal((small.match(/class="town-business"/g) || []).length, 11);
+});
