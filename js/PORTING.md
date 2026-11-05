@@ -369,7 +369,9 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   cageMaker (27/38 and hanging ceiling 19, PHP loot text) and cauldronMaker (30;
   PHP's `if ($make = "broken")` assignment makes every cauldron "broken cauldron"
   with no contents, kept as-is). eggMaker is not called by furnish.php.
-  Remaining: exact repeated hiding-place reuse and report presentation.
+  Hiding-place reuse follows tool_delve.php: after the first spot, each find has a
+  50% chance to reuse the previous spot (same location, trap text and size) while
+  the current spot is still consumed. Remaining: report presentation.
 - Custom loot now repeats nested treasure finds for the requested min/max count
   (including PHP's min>max clamp), and PA hoards use original currency amounts.
   Data listing covers every original category, including Deluxe treasure.

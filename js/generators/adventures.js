@@ -172,10 +172,18 @@
     const level = difficulty || W.number(p.level ?? p.x_level, 0, 0, 100) || int(1, 20);
     const chance = W.number(p.x_l_c, 20, 0, 100), adjusted = Math.min(100, chance + (difficulty ? difficulty * W.number(p.x_adjust, 2, 0, 100) : 0) + (chance ? hoard : 0));
     const lootOptions = { ...p, level }, treasureState = { coins: false };
+    // tool_delve.php: after the first hiding spot, each find has a 50% chance to go back into the previous
+    // spot ($secret_box/$secret_size, same trap text) while the current spot is still used up ($hide_it++).
+    let hideIt = 0, secret = null;
     attempts({ ...p, x_l_c: adjusted }, 'l', [20, 1, 5, 20], () => {
-      const hidden = !custom && hiding.length ? hiding.shift() : null;
-      const container = hidden ? 'Located ' + hidden.place : custom ? custom.containers.length ? pick(custom.containers) : '' : post && W.postContainer ? W.postContainer(p) : W.container();
-      const trapped = W.d(100) <= W.number(p.x_rigged_chance, 30, 0, 100), trap = trapped ? trapText(hidden ? 'item' : 'box') : '';
+      let hidden = !custom && hiding.length ? hiding.shift() : null, container, trap;
+      if (hidden && hideIt > 0 && secret && W.d(100) > 50) ({ hidden, container, trap } = secret);
+      else {
+        container = hidden ? 'Located ' + hidden.place : custom ? custom.containers.length ? pick(custom.containers) : '' : post && W.postContainer ? W.postContainer(p) : W.container();
+        trap = W.d(100) <= W.number(p.x_rigged_chance, 30, 0, 100) ? trapText(hidden ? 'item' : 'box') : '';
+        if (hidden) secret = { hidden, container, trap };
+      }
+      if (hidden) hideIt++;
       const treasure = custom ? W.dataTreasure(custom) : W.adventureFind(lootOptions, treasureState, hidden?.size || 3, post);
       if (!treasure) return;
       treasures.push({ container, trap, treasure, size: hidden?.size || 3 });

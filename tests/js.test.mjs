@@ -1442,3 +1442,19 @@ test('makeMagicItem ports the Tunnels & Trolls branch, TTArmsArmor and Magestykc
   assert.ok(kinds.has('arms') && !kinds.has('bad'));
   for (let i = 0; i < 40; i++) assert.match(W.makeMagicItem({ game: 'ttde' }, 5, 3, 1), /\{<i>/);
 });
+
+test('adventure treasure reuses the previous hiding place half the time, as tool_delve.php does', () => {
+  const furnishing = W.furnishDetails, seen = { reuse: 0, fresh: 0 };
+  try {
+    W.furnishDetails = () => ({ text: 'Furniture.', hiding: [{ place: 'in the desk', size: 1 }, { place: 'under the bed', size: 2 }] });
+    for (let i = 0; i < 80; i++) {
+      const room = W.adventureRoom({ game: 'lablord', x_c_c: 0, x_t_c: 0, x_l_c: 100, x_l_c_min: 2, x_l_c_max: 2 }, 1, 1);
+      const spots = room.treasures.filter(t => t.container.startsWith('Located'));
+      if (spots.length < 2) continue;
+      assert.equal(spots[0].container, 'Located in the desk');
+      if (spots[1].container === spots[0].container) { seen.reuse++; assert.equal(spots[1].size, 1); assert.equal(spots[1].trap, spots[0].trap); }
+      else { seen.fresh++; assert.equal(spots[1].container, 'Located under the bed'); assert.equal(spots[1].size, 2); }
+    }
+  } finally { W.furnishDetails = furnishing; }
+  assert.ok(seen.reuse > 0 && seen.fresh > 0, JSON.stringify(seen));
+});
