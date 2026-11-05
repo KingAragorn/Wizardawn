@@ -206,20 +206,28 @@
     const guild = !post && type >= (rules ? 18 : 17), church = !post && type === (rules ? 16 : 15), guards = !post && type === (rules ? 17 : 16), bank = type === (post ? 9 : rules ? 15 : 20);
     const name = guild ? 'The ' + pick(['Hidden', 'Grand', 'Glorious', 'Secret', 'Royal']) + ' ' + pick(['Guild', 'Order', 'Society', 'Circle']) + ' of ' + category.replace(/ Guild$/, '') : (W.d(100) > 30 ? 'The ' : '') + [word('hut3'), word('hut2'), word('hut1') || category].join(' ');
     const cash = post ? p.money || 'gp' : 'gp';
-    let html = `<h4>${esc(name)} <small>[${esc(category)}; ${int(50, 3000)}${esc(cash)}]</small></h4><p><b>Owner:</b> ${owner.html}</p>`;
+    // Original owner titles (fantasy_stores_*.php); non-merchants are caretakers
+    // and show the building type instead of stored gold.
+    const titles = [, 'Bartender', 'Inn Keeper', 'Merchant', 'Blacksmith', ['Fletcher', 'Bowyer'], ['Tanner', 'Leatherworker'], ['Tailor', 'Dressmaker'], ['Animal Trainer', 'Stable Master'], ['Woodworker', 'Carpenter'], ['Alchemist', 'Herbalist'], ['Cook', 'Baker'], 'Librarian', 'Jeweler', 'Musician', ...(rules ? ['Banker'] : [])];
+    const titled = post ? null : titles[type], ownerTitle = post ? 'Owner' : Array.isArray(titled) ? titled[W.d(2) === 1 ? 1 : 0] : titled || 'Caretaker';
+    const purse = ownerTitle === 'Caretaker' ? category : int(50, 3000).toLocaleString('en-US') + cash;
+    let html = `<h4>${esc(name)} <small>[${esc(post ? category + '; ' + purse : purse)}]</small></h4><p><b>${esc(ownerTitle)}:</b> ${owner.html}</p>`;
     if (!post && type === 2) html += `<p>Rooms: ${int(2, 7)}sp per night.</p>`;
     if (bank) {
       html += W.range(int(2, 10)).map(i => `<p><b>${post ? 'VAULT' : 'IRON CHEST'} #${i}:</b> ${post ? W.range(int(5, 15)).map(() => esc(W.junkItem(p))).join('; ') : W.range(int(2, 10)).map(() => esc(W.d(100) > 55 ? W.gem(int(10, 100)) : W.d(100) > 10 ? W.jewel(int(10, 100)) : W.magicItem(p))).join('; ')}; ${esc(post ? int(5, 5000) + cash : W.currency(p, int(1, 20), 3))}</p>`).join('');
       if (rules) html += W.range(int(1, 3)).map(() => '<div><b>BANK GUARD:</b> ' + officer(p, mode, 'guard') + '</div>').join('');
     } else if (guild || church || guards) {
       const job = church ? 'priest' : guards ? 'guard' : ({ 'Fighters Guild': 'warrior', 'Warriors Guild': 'warrior', 'Wizards Guild': 'wizard', 'Rangers Guild': 'ranger', 'Assassins Guild': 'assassin' })[category] || 'rogue';
-      html += W.range(int(2, 5)).map(i => `<div><b>${guards ? 'GUARD' : (church ? 'CHURCH' : category.toUpperCase()) + (i === 1 ? ' LEADER' : ' MEMBER')}:</b> ${officer(p, mode, i === 1 && !guards ? 'leader_' + job : job)}</div>`).join('');
-      if (church) {
+      // As in the original, church services follow the leader's entry.
+      const services = () => {
         if (rules) {
-          const services = D.storeItems.filter(row => row.game === 'DD' && row.store === 'Priest' && +row.era <= W.number(p.x_lvl2, 9, 1, 20));
-          html += W.table(['Divine service', 'Donation'], services.map(row => [esc(W.plainText(row.item)), row.cost + 'gp']));
-        } else html += mode === 'tt' ? '<p>The church casts Healing Feeling for 50gp, Too-Bad Toxin for 100gp, Pygmalion for 600gp, or Born Again for 1,000gp.</p>' : '<p>The church casts Healing for 50gp, Cure for 100gp, Remove Curse for 600gp, or Resurrection for 1,000gp.</p>';
-      }
+          const rows = D.storeItems.filter(row => row.game === 'DD' && row.store === 'Priest' && +row.era <= W.number(p.x_lvl2, 9, 1, 20));
+          return '<p><b><u>The Church Leader Provides These Services</u></b></p>' + W.table(['Divine service', 'Donation'], rows.map(row => [esc(W.plainText(row.item)), row.cost + 'gp']));
+        }
+        return mode === 'tt' ? '<p>The church will cast spells if a donation is made to the church. They will cast <i>Healing Feeling</i> for 50gp, <i>Too-Bad Toxin</i> for 100gp, <i>Pygmalion</i> for 600gp, or <i>Born Again</i> for 1,000gp.</p>' : '<p>The church will cast spells if a donation is made to the church. They will cast <i>Healing</i> for 50gp, <i>Cure</i> for 100gp, <i>Remove Curse</i> for 600gp, or <i>Resurrection</i> for 1,000gp.</p>';
+      };
+      const member = church && !rules ? ' PRIEST' : ' MEMBER';
+      html += W.range(int(2, 5)).map(i => `<div><b>${guards ? 'GUARD' : (church ? 'CHURCH' : category.toUpperCase()) + (i === 1 ? ' LEADER' : member)}:</b> ${officer(p, mode, i === 1 && !guards ? 'leader_' + job : job)}</div>` + (church && i === 1 ? services() : '')).join('');
       if (mode === 'tt' && job === 'wizard') html += '<p>The guild teaches spells to wizards for 1,000gp per spell level. Detect Magic: 100gp; Omnipotent Eye: 200gp; For What It\'s Worth: 300gp. Ordinary magic staff: 100gp; deluxe magic staff: 5,000gp.</p>';
       if (mode === 'tt' && job === 'rogue') html += '<p>The guild secretly teaches spells for 2,000gp per spell level and appraises an item for 400gp.</p>';
     } else {

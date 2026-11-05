@@ -577,6 +577,17 @@ test('OSRIC settlements retain five guilds, bank, guards and church in original 
   assert.ok(html.indexOf('<h3>Guilds') < html.indexOf('<h3>Banks'));
   assert.doesNotMatch(html, /undefined|NaN/);
 });
+test('fantasy and T&T settlements use original owner titles, caretakers and church text', () => {
+  for (const [route, spell] of [['town', '<i>Remove Curse</i> for 600gp'], ['ttown', '<i>Pygmalion</i> for 600gp']]) {
+    W.rng = W.random('owner-titles-' + route);
+    const html = W.routes[route].generate({ map_rooms: 40, rulers: '0', empty: '0', stores: '1', guilds: '1', police: '1', church: '1' });
+    for (const title of ['<b>Bartender:</b>', '<b>Inn Keeper:</b>', '<b>Merchant:</b>', '<b>Caretaker:</b>', 'CHURCH LEADER:', 'CHURCH PRIEST:', '[Church]', '[Guardhouse]']) assert.ok(html.includes(title), route + ' ' + title);
+    assert.match(html, /\[\d{1,3}(,\d{3})?gp\]/);
+    assert.ok(html.indexOf(spell) > html.indexOf('CHURCH LEADER:'));
+    assert.ok(html.indexOf(spell) < html.indexOf('CHURCH PRIEST:'), route);
+    assert.doesNotMatch(html, /<b>Owner:<\/b>|CHURCH MEMBER|undefined|NaN/);
+  }
+});
 test('post-apocalyptic citizens use age-based hit dice and robot households do not have children', () => {
   const ranges = { child: [3, 9], young: [5, 12], mature: [7, 18], 'middle-aged': [6, 17], old: [4, 10] };
   for (const [age, [min, max]] of Object.entries(ranges)) for (const game of ['mutfut', 'gamma', 'meta']) {

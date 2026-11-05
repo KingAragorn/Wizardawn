@@ -400,3 +400,12 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   weighted arcane/divine class choice, caster-level conversion and AEC/UA pools.
   Six-Siders' duplicate case 38 / missing 39 is repaired so Wall of Fire and
   Wall of Ice are both reachable. This improves scrolls and unusual books.
+
+## Run 5 (Grok Bot, no Codex)
+
+- Towns: merchant headers now follow `fantasy_stores_gn/tt/osric.php`: original
+  owner titles (Bartender, Inn Keeper, Fletcher/Bowyer, … OSRIC Banker), stored
+  gold formatted `[1,234gp]`, and guilds/guards/churches shown as Caretaker with
+  `[type]`. Fantasy/T&T church members are CHURCH PRIEST; church services follow
+  the leader entry with the original wording. Towns remain partial (economy,
+  special services, post-apocalyptic details). 115 tests pass.
