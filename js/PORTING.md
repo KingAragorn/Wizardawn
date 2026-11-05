@@ -99,7 +99,7 @@ are bundled. No deployment has been made.
 | `tool_packs.php` | ported | `#/packs` |
 | `tool_potions.php` | ported | `#/potions` |
 | `tool_scavenge.php` | partial | `#/scavenge` |
-| `tool_scifim.php` | remaining | `#/scifim` |
+| `tool_scifim.php` | partial | `#/scifim` |
 | `tool_smap.php` | ported | `#/sci-fi-map` |
 | `tool_suburb.php` | ported | `#/suburb-map` |
 | `tool_swmp.php` | ported | `#/sewer-map` |
@@ -431,3 +431,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - mapMood: Ruined City / Building / Spaceship room descriptions (atmosphere.php mapMood, PAgrowthMaker) used by uruins and uexfl when an atmosphere chance is set.
 - tmap: original 'Treasure Map [ Type N ]' header, '<owner> was known to have had:' line, capitalised job, and the PHP's always-Merchant human victim (classMaleName exploded at index 1). The magic-item roll still uses the game list; the 1,800-line makeMagicItem port is still pending.
 - Locale fantasy sites now port every tool_locale.php icon branch (lair, dungeon, boat wreck, castle, cave, fort, camp, totem, mine, ruins, temple, tower): names, tomb floors, extra floors, size, contents/weird/mood flags, m_fort owners and the sunken-ship sentence.
+- Sci-Fi Enemies (`#/scifim`): the Mutant Future branch (lines 2298-3748) is ported faithfully: robots (fuel, metal, extras, sensors, programming, animal frames, alien/serial names, weapons by tech, value) and mutated animals from the 127-row mutants table, keeping PHP loop variables that leak between creatures. Tables live in js/data/scifim.js. The Broken Urthe / Gamma World / Space Ryft branch (lines 87-2297) remains.

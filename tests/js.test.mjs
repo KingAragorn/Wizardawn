@@ -1243,3 +1243,21 @@ test('random spell choices use original game, class, level and expansion tables'
     assert.match(W.gameSpell({ game: slug }, casterLevel, className), /^level \d+ \w+ spell\.\.\./);
   }
 });
+test('scifim ports Mutant Future robots and mutated animals with persistent PHP loop state', () => {
+  for (let seed = 0; seed < 40; seed++) {
+    W.rng = W.random('scifim-' + seed);
+    const output = W.routes.scifim.generate({ game: 'mutfut', r_amount: 4, m_amount: 4 });
+    assert.equal(occurrences(output, /class="scifi-creature scifi-robot"/g), 4);
+    assert.equal(occurrences(output, /class="scifi-creature scifi-mutant"/g), 4);
+    assert.match(output, /<h2>Robots<\/h2>[\s\S]*<h2>Mutants<\/h2>/);
+    assert.match(output, /Value:<\/td><td>\$[\d,]+</);
+    assert.match(output, /seem to be (a|an) [a-z ]+ of a [a-z -]+ and a [a-z -]+\./);
+    assert.match(output, /THAC0:<\/td><td>\d+</);
+    assert.doesNotMatch(output, /undefined|NaN/);
+  }
+  W.rng = W.random('scifim-none');
+  assert.doesNotMatch(W.routes.scifim.generate({ game: 'mutfut', r_amount: 0, m_amount: 0 }), /Robots|Mutants/);
+  const rows = context.WZ_DATA.scifim;
+  assert.equal(rows.mutants.length, 127);
+  assert.equal(rows.guns.map(list => list.length).join(), "10,34,34,43");
+});
