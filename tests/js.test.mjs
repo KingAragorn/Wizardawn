@@ -637,6 +637,15 @@ test('uruins stranded vehicles follow VehicleRobotMaker wording', () => {
   assert.ok(all.some(v => / Camouflage Military /.test(v)) && all.some(v => /Anti-grav Car/.test(v)));
   assert.ok(W.range(50).map(() => W.strandedVehicle({ game: 'meta' })).every(v => !/Military/.test(v)));
 });
+test('uexfl unusual rooms and uruins robots use the original headings', () => {
+  W.rng = W.random('headings');
+  const sci = W.routes.uexfl.generate({ map_rooms: 12, x_weird: 100 });
+  assert.match(sci, /SOMETHING UNUSUAL IN THE ROOM\.\.\./);
+  assert.doesNotMatch(sci, /UNUSUAL IN THE AREA/);
+  const ruins = W.routes.uruins.generate({ map_rooms: 12, x_frob: 100, x_fveh: 100 });
+  assert.match(ruins, /STRANDED VEHICLE NEXT TO THE BUILDING\.\.\./);
+  if (/stranded-robot/.test(ruins)) assert.match(ruins, /STRANDED ROBOT (INSIDE|NEXT TO) THE BUILDING\.\.\./);
+});
 test('delve caverns use the original eight descriptions and dripping water', () => {
   W.rng = W.random('caves');
   const seen = new Set(); let drip = 0;
