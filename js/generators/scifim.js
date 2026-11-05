@@ -209,10 +209,124 @@
     const text = 'The ' + name + alienBuilt + ' is ' + withText + ' that runs on ' + fuel + ' and is made mostly of ' + metal + '. ' + shape + travel + ' It has ' + eyes + '.';
     return html + `<p>${esc(text.replace(/\s+/g, ' ').trim())}</p></section>`;
   };
+  W.scifiRetroRobot = function (s, liveinr) {
+    const T = D.scifim;
+    for (;;) {
+      const level = int(1, 20), salvage = Math.round(100 - (level - 1) * 5);
+      let dwell = 'Anywhere but Water', weapons = 0;
+      let fuel = ['steam', 'clockworks', 'alien technology', 'petroleum', 'electricity', 'radiation', 'plutonium', 'uranium', 'nuclear', 'xormite', 'xormite', 'xormite', 'xormite'][int(0, 12)], tech, stage;
+      if (fuel === 'steam' || fuel === 'clockworks') { tech = 1; stage = 'Industrial'; }
+      else if (fuel === 'alien technology') { tech = 4; stage = 'Advanced'; }
+      else if (fuel === 'petroleum') { tech = 2; stage = 'Industrial'; }
+      else if (fuel === 'electricity') { tech = int(2, 3); stage = 'Modern'; }
+      else { stage = 'Modern'; tech = 3; fuel += ' ' + ['batteries', 'cells', 'clips', 'liquid', 'generators'][int(0, 4)]; }
+      const im = fuel === 'steam' || fuel === 'clockworks' ? int(0, 2) : fuel === 'alien technology' ? int(5, 9) : int(0, 9);
+      const metal = ['iron', 'aluminium', 'steel', 'plastoid', 'durasteel', 'crystal alloy', 'adamant', 'promethium', 'unobtainium', 'unknown metal'][im];
+      const armor = im < 3 ? int(im + 1, im + 2) : im < 9 ? int(im + 2, im + 3) : int(5, 15);
+      let move = ['hover', 'legs', 'legs', 'legs', 'legs', 'legs', 'propeller', 'water propulsion', 'rotor', 'stationary', 'tracks', 'treads', 'wheels', 'rockets', 'anti-gravity'][int(0, 14)];
+      const iq = ['programmed', 'programmed', 'programmed', 'artificial intelligence'][int(0, 3)];
+      let software = 0;
+      if (iq === 'programmed') { s.job = ['combat', 'combat', 'combat', 'combat', 'combat', 'retrieval', 'spying', 'guarding', 'escorting', 'exploration'][int(0, 9)]; if (move === 'stationary') s.job = 'guarding'; software = 1; }
+      const size = int(3, 12);
+      let shape = ' It is a standard robot build and is about ' + size + ' feet in size. ';
+      const hands = ['claw', 'jaw', 'pincer', 'fist'][int(0, 3)];
+      let attacks = int(1, 2), hitters = attacks > 1 ? attacks + ' ' + hands + 's' : attacks + ' ' + hands;
+      const hurt = ['1d4', '1d4', '1d4', '1d4', '1d4', '1d6', '1d6', '1d6', '1d6', '1d8', '1d8', '1d8', '1d10', '1d10', '1d12'], hurto = hurt[int(0, 14)];
+      let hitting = attacks > 1 ? hurto + ' ' + hands + ' / ' + hurto + ' ' + hands : hurto + ' ' + hands;
+      const animal = int(1, 100) > 30 ? 'a humanoid' : ['a bear', 'a beetle', 'a lizard', 'a crab', 'a rat', 'a scorpion', 'a snake', 'a spider', 'a tiger', 'a wolf', 'a worm', 'an ant', 'an ape', 'a dragon', 'a wasp', 'a bird', 'a bat', 'a fly', 'an eel', 'a fish', 'a dolphin', 'a shark', 'a squid', 'a sea serpent', 'a lobster'][int(0, 24)];
+      if (animal !== 'a humanoid') {
+        const p1 = hurt[int(0, 14)], p2 = hurt[int(0, 14)];
+        const water = () => { s.walkers = 0; move = int(1, 100) > 60 ? 'propeller' : 'water propulsion'; };
+        if (animal === 'a beetle' || animal === 'an ant') { attacks = 1; hitters = '1 pincer'; hitting = p1 + ' pincer'; s.walkers = 6; }
+        else if (animal === 'a wasp') { attacks = 1; hitters = '1 stinger'; hitting = p1 + ' stinger'; s.walkers = 0; move = 'wings'; }
+        else if (animal === 'a lobster' || animal === 'a crab') { attacks = 2; hitters = '1 pincer'; hitting = p1 + ' pincer'; if (int(1, 100) > 60) { s.walkers = 0; move = 'propeller'; } else if (int(1, 100) > 80) { s.walkers = 0; move = 'water propulsion'; } else { s.walkers = 10; move = 'legs'; } }
+        else if (animal === 'a scorpion') { attacks = 3; hitters = '1 pincer / 1 tail'; hitting = p1 + ' pincer / ' + p2 + ' tail'; s.walkers = 8; move = 'legs'; }
+        else if (animal === 'a spider') { attacks = 1; hitters = '1 bite '; hitting = p1 + ' bite'; s.walkers = 8; move = 'legs'; }
+        else if (animal === 'a bat' || animal === 'a fly') { hitters = '1 bite'; hitting = p1 + ' bite'; s.walkers = 0; move = 'wings'; }
+        else if (animal === 'a bird') { hitters = '1 talon / 1 beak'; attacks = 3; hitting = p1 + ' talon / ' + p2 + ' beak'; s.walkers = 0; move = 'wings'; }
+        else if (animal === 'an ape') { attacks = 2; hitters = '1 claw'; hitting = p1 + ' claw'; s.walkers = 2; move = 'legs'; }
+        else if (animal === 'a squid') { attacks = 8; hitters = '2 tentacles '; hitting = p1 + ' tentacles'; water(); }
+        else if (['a sea serpent', 'a shark', 'a dolphin', 'a fish', 'an eel'].includes(animal)) { hitters = '1 jaw '; attacks = 1; hitting = p1 + ' jaw'; water(); }
+        else if (animal === 'a worm' || animal === 'a snake') { hitters = '1 jaw '; attacks = 1; hitting = p1 + ' jaw'; s.walkers = 0; move = 'legs'; }
+        else { hitters = '1 claw / 1 jaw'; attacks = 3; hitting = p1 + ' claw / ' + p2 + ' jaw'; s.walkers = 4; move = 'legs'; }
+        shape = ' It is built in the form of ' + animal + ' and is about ' + size + ' feet in size. ';
+      } else { shape = ' It is built in standard robotic form and is about ' + size + ' feet in size. '; s.walkers = 2; }
+      const walkers = s.walkers, ground = ['legs', 'tracks', 'treads', 'wheels', 'rockets'].includes(move);
+      let travel;
+      if (walkers === 0 && move === 'legs') travel = 'It has no legs so it mechanically slithers around.';
+      else if (ground && walkers > 1) travel = 'It can move around on ' + walkers + ' ' + move + '.';
+      else if (ground) travel = 'It can move around on 2 ' + move + '.';
+      else if (['hover', 'propeller', 'anti-gravity'].includes(move)) travel = 'It can hover around with an installed ' + move + ' device.';
+      else if (move === 'water propulsion' || move === 'rotor') { travel = 'It moves only in water with an installed ' + move + ' device.'; dwell = 'Water Only'; }
+      else if (move === 'wings') { travel = 'It can fly around with a set of wings.'; dwell = 'Outdoors Only'; }
+      else travel = 'It is stationary and cannot move around.';
+      travel = ' ' + travel + ' ';
+      let moving = moveFeet(int(1, 16)); if (move === 'stationary') moving = 0;
+      let alienBuilt = '', name = '';
+      if (fuel === 'alien technology') {
+        if (int(1, 100) > 25) { s.aldash = int(1, 100) > 75 ? '-' : ''; s.aliensub = at(T.alienName); }
+        name = ucfirst(at(T.alienName) + (s.aldash ?? '') + (s.aliensub ?? ''));
+        const b = int(1, 6);
+        alienBuilt = [' (built by an ancient alien race known as the ', ' (constructed by an alien race known as the ', ' (from a crashed spaceship of an alien race known as the ', ' (from an ancient war with aliens known as the ', ' (used by a group of aliens known as the ', ' (left behind by race of aliens known as the '][b - 1] + name + ')';
+      } else {
+        let dashit = 0, perc = 100;
+        for (let spaces = int(4, 6); spaces > 0; spaces--) {
+          perc -= 20;
+          if (int(1, 100) > perc && name !== '' && dashit !== 1) { dashit = 1; s.entf = '-'; }
+          name = (int(1, 100) > 60 ? String.fromCharCode(97 + int(0, 25)) : String(int(0, 9))) + (s.entf ?? '') + name;
+          s.entf = '';
+        }
+        name = name.toUpperCase();
+      }
+      if (iq === 'artificial intelligence') {
+        const u = int(1, 3);
+        [s.ending, s.with] = u === 1 ? [' Robot', 'a robot with advanced AI'] : u === 2 ? [' Cyborg', 'a cybernetic machine with human-like intellect'] : [' Android', 'an android built with artificial intelligence'];
+        s.softwares = '2 Skills';
+      } else if (software === 1) {
+        const ender = [' Robot', ' Bot', ' Droid', ' Mech'][int(1, 4) - 1];
+        const job = {
+          combat: ['a combat', () => { weapons++; return 20; }, ['Battle', 'War', 'Combat', 'Military', 'Fighting', 'Assassin', 'Hunter', 'Assault', 'Attack'], '2 Military Skills'],
+          retrieval: ['a retrieval', () => { if (int(1, 100) > 75) weapons++; return 90; }, ['Retrieval', 'Recovery', 'Recall', 'Search', 'Capture'], '1 Technical Skill and 1 Military Skill'],
+          spying: ['a spy', () => { if (int(1, 100) > 65) weapons++; return 80; }, ['Spy', 'Tactical Surveillance', 'Surveillance', 'Recon', 'Scout', 'Observation', 'Examination', 'Scanner', 'Discovery'], '2 Spying Skills'],
+          guarding: ['a guard', () => { weapons++; return 20; }, ['Guard', 'Protection', 'Defender', 'Guardian', 'Lookout', 'Sentinel', 'Sentry', 'Defense', 'Security'], '2 Military Skills'],
+          escorting: ['an escort', () => { if (int(1, 100) > 25) weapons++; return 50; }, ['Escort', 'Attendant', 'Convoy', 'Company', 'Guide', 'Travel'], '1 Technical Skill and 1 Academic Skill'],
+          exploration: ['an exploration', () => { if (int(1, 100) > 80) weapons++; return 95; }, ['Exploration', 'Investigation', 'Survey', 'Inspection', 'punch', 'Research', 'Excavation', 'Pioneer'], '2 Academic Skills']
+        }[s.job];
+        s.with = job[0] + ender.toLowerCase(); s.weaponBonus = job[1](); s.ending = ' ' + job[2][int(1, job[2].length) - 1] + ' ' + ender; s.softwares = job[3];
+      }
+      name += s.ending ?? '';
+      if (int(1, 100) > (s.weaponBonus ?? 0)) weapons++;
+      let botWeapon = '', botHurt = '';
+      if (weapons > 0) [botWeapon, botHurt] = at(T.retroWeapons[tech - 1]);
+      const color = ['black', 'blue', 'gray', 'green', 'red', 'rust', 'orange', 'gold', 'bronze', 'silver', 'white'][int(0, 10)];
+      const dut = ['metallic', 'dull', 'shiny', 'smooth', 'rough', 'light', 'dark', 'metallic'][int(0, 7)];
+      const hue = ['colored', 'tinted', 'shaded', 'hued', 'painted', 'coated', 'looking'][int(0, 6)];
+      const r = T.retroRobotLevels[Math.min(level, 20) - 1].map(([a, b]) => int(a, b));
+      let [stamina, hit, energy, , radiation] = r;
+      stamina = level < 5 ? stamina : Math.round(stamina * (level < 9 ? 1.25 : level < 13 ? 1.5 : level < 17 ? 1.75 : 2));
+      if (botWeapon) { hitters += ' or 1 ' + botWeapon.toLowerCase(); hitting += ' or ' + botHurt.toLowerCase(); }
+      const cost = Math.round(level / 2), tier = Math.min(Math.max(cost, 1), 10) - 1;
+      const value = [200, 600, 1000, 1600, 2600, 4200, 6800, 11000, 17800, 28800][tier] + cost * 200 + 500, grade = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'][tier];
+      const run = liveinr === 1 ? dwell === 'Water Only' || dwell === 'Outdoors Only' : liveinr === 2 ? dwell === 'Anywhere but Water' : liveinr === 3 ? dwell === 'Anywhere but Water' || dwell === 'Outdoors Only' : true;
+      if (!run) continue;
+      let html = `<section class="scifi-creature scifi-robot"><h3>${esc(name)}</h3><table class="scifi-stats">`;
+      html += row('Condition:', stamina) + row('Protection:', armor) + row('Hit:', hit) + row('Attacks:', esc(hitters)) + row('Damage:', esc(hitting)) + row('Speed:', moving === 0 ? 'None' : moving + "'") + row('Stage:', stage) + row('Size:', size + "'") + row('Defenses:', `E:${energy}/R:${radiation}`) + row('Found In:', dwell) + row('Level:', level) + row('Software:', grade + ' in ' + esc(s.softwares ?? '')) + row('Salvage:', salvage + '%') + row('Value:', value.toLocaleString('en-US') + 'xm') + '</table>';
+      const text = 'The ' + name + alienBuilt + ' is ' + (s.with ?? '') + ' that runs on ' + fuel + ' and is made mostly of a ' + dut + ', ' + color + ' ' + hue + ', ' + metal + '. ' + shape + travel;
+      return html + `<p>${esc(text.replace(/\s+/g, ' ').trim())}</p></section>`;
+    }
+  };
   const amount = v => W.number(v, 0, 0, 100);
-  W.register('scifim', 'Sci-Fi Enemies', 'A random set of mutants and robots for science-fiction or post-apocalyptic games (Mutant Future rules).', [{ ...W.gameField, value: 'mutfut' }, f('r_amount', 'Robots', 'number', { value: 1, min: 0, max: 100 }), f('m_amount', 'Mutants', 'number', { value: 1, min: 0, max: 100 })], p => {
+  W.register('scifim', 'Sci-Fi Enemies', 'A random set of mutants and robots for science-fiction or post-apocalyptic games.', [{ ...W.gameField, value: 'mutfut' }, f('r_amount', 'Robots', 'number', { value: 1, min: 0, max: 100 }), f('m_amount', 'Mutants', 'number', { value: 1, min: 0, max: 100 }), f('x_terrain', 'Terrain (other games)', 'select', { value: '', options: ['', 'deserts', 'forests', 'hills', 'jungles', 'mountains', 'plains & grasslands', 'snow & icy regions', 'swamps & marshes', 'rivers & lakes', 'oceans', 'underground areas', 'wastelands'] })], p => {
     const game = W.game(p);
-    if (game.slug !== 'mutfut') return `<section class="scifi-enemies"><p>The ${esc(game.name)} sci-fi enemy rules are not ported yet; choose Mutant Future.</p></section>`;
+    if (game.slug !== 'mutfut') {
+      const livein = String(p.x_terrain ?? ''), liveinr = livein === 'oceans' || livein === 'rivers & lakes' ? 1 : livein === 'underground areas' ? 2 : livein === '' ? 0 : 3;
+      const s = {}, robots = amount(p.r_amount);
+      let html = '<section class="scifi-enemies">';
+      if (robots > 0) html += '<h2>Robots</h2>';
+      for (let i = 0; i < robots; i++) html += W.scifiRetroRobot(s, liveinr) + '<hr>';
+      if (amount(p.m_amount) > 0) html += `<p>The ${esc(game.name)} alien creature tables are not ported yet.</p>`;
+      return html + '</section>';
+    }
     const s = {};
     let html = '<section class="scifi-enemies">';
     const robots = amount(p.r_amount), mutants = amount(p.m_amount);

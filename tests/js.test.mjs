@@ -1261,3 +1261,22 @@ test('scifim ports Mutant Future robots and mutated animals with persistent PHP 
   assert.equal(rows.mutants.length, 127);
   assert.equal(rows.guns.map(list => list.length).join(), "10,34,34,43");
 });
+test('scifim ports the other-game robots with terrain filtering and level tables', () => {
+  const slug = 'urthe';
+  for (let seed = 0; seed < 40; seed++) {
+    W.rng = W.random('scifir-' + seed);
+    const output = W.routes.scifim.generate({ game: slug, r_amount: 3, m_amount: 0 });
+    assert.equal(occurrences(output, /class="scifi-creature scifi-robot"/g), 3);
+    assert.match(output, /Value:<\/td><td>[\d,]+xm</);
+    assert.match(output, /Software:<\/td><td>[IVX]+ in \d/);
+    assert.match(output, /Salvage:<\/td><td>\d+%</);
+    assert.doesNotMatch(output, /undefined|NaN/);
+    W.rng = W.random('scifiw-' + seed);
+    const water = W.routes.scifim.generate({ game: slug, r_amount: 2, m_amount: 0, x_terrain: 'oceans' });
+    assert.doesNotMatch(water, /Anywhere but Water/);
+    assert.equal(occurrences(water, /Found In:<\/td><td>(Water|Outdoors) Only</g), 2);
+  }
+  const rows = context.WZ_DATA.scifim;
+  assert.equal(rows.retroWeapons.map(list => list.length).join(), '17,16,15,11');
+  assert.equal(rows.retroRobotLevels.length, 20);
+});
