@@ -1469,3 +1469,10 @@ test('Save as PDF: every generator gets the button; print.css and OSRIC sheet ar
   const pics = fs.readdirSync(new URL('../js/pics_tools/', import.meta.url)).filter(f => f.startsWith('ocsht_'));
   assert.ok(pics.length >= 27);
 });
+
+test('portal columns clear the floated header so they sit inside the page (refs #4)', async () => {
+  const fs = await import('node:fs');
+  const css = fs.readFileSync(new URL('../js/layout.css', import.meta.url), 'utf8');
+  const rule = css.match(/#div_area\s*\{[^}]*display:\s*grid[^}]*\}/)?.[0] || '';
+  assert.match(rule, /clear:\s*both/);
+});
