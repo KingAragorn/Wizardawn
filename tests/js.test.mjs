@@ -601,6 +601,22 @@ test('post-apocalyptic businesses use original owner titles and numbered vault c
   assert.deepEqual(numbers, numbers.map((_, i) => i + 1));
   assert.doesNotMatch(html, /undefined|NaN|<b>Owner:<\/b>/);
 });
+test('B/X adventurers guild listing has the original preamble and AC never exceeds 9', () => {
+  W.rng = W.random('bx-intro');
+  const html = W.routes.bxadvg.generate({ x_qty_f: 3, x_show_al: 1 });
+  assert.match(html, /^<p class="adventurer-intro">Each adventurer is listed below with their strength \(ST\), intelligence \(IN\)/);
+  assert.match(html, /armor class \(AC\), alignment \(AL\), gender \(GD\)/);
+  assert.match(html, /magic wand \(MW\), turn to stone or paralysis \(TP\)/);
+  assert.doesNotMatch(W.routes.bxadvg.generate({ x_output: 'Character Sheets', x_qty_f: 1 }), /adventurer-intro/);
+  for (let i = 0; i < 40; i++) assert.ok(W.character({ x_show_eq: 1 }, 'bx', 'Fighter').ac <= 9);
+});
+test('Labyrinth Lord adventurers guild listing uses its own preamble', () => {
+  W.rng = W.random('ll-intro');
+  const html = W.routes.ladvg.generate({ x_qty_f: 1, x_show_age: 1 });
+  assert.match(html, /strength \(ST\), dexterity \(DX\), constitution \(CN\)/);
+  assert.match(html, /gender \(GD\), age, and experience/);
+  assert.match(html, /breath attacks \(BA\), poison or death \(PD\), petrify or paralyze \(PP\), wands \(WN\)/);
+});
 test('delve caverns use the original eight descriptions and dripping water', () => {
   W.rng = W.random('caves');
   const seen = new Set(); let drip = 0;

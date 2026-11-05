@@ -102,7 +102,7 @@
     if (W.d(3) !== 1 && !['Magic-User', 'Thief'].includes(className)) armor += ', helmet';
     // Match the original equipment helper's treatment of DEX 17.
     const dexBonus = dexterity === 17 ? 0 : bonus(dexterity);
-    return { weapon, armor, arms: parts.join(', '), ac: 9 - protection - dexBonus };
+    return { weapon, armor, arms: parts.join(', '), ac: Math.min(9, 9 - protection - dexBonus) }; // tool_bxadvg/ladvg cap AC at 9
   };
   W.character = function (p = {}, rules = 'll', className = 'Fighter', race) {
     const osric = rules === 'osric', game = rules === 'bx' ? 'bdd' : osric ? 'osric' : 'lablord';
@@ -220,6 +220,14 @@
     if (named && enabled(p, 'x_show_me')) html += '<p><b>Description:</b> ' + W.citizen({ ...p, game: c.game, possessions: '0', dress: '1' }, 'rules', { race: c.race, sex: c.sex }).html.replace(/^.*?\] /, '') + '</p>';
     return html + '</article>';
   };
+  // Listing preambles from tool_bxadvg.php / tool_ladvg.php.
+  W.adventurerIntro = function (rules, p) {
+    const al = enabled(p, 'x_show_al') ? ' alignment (AL),' : '', age = enabled(p, 'x_show_age') ? ' age,' : '';
+    const tail = ' Thier attack table is displayed from armor classes 0 through 9. Their bonuses are listed for hit/damage and forcing doors (SB), armor class modifiers (AB), missile attack modifiers (MA), initiative bonus (IB), hit point modifiers (CB), additional languages (LG), saving throw modifiers for magical effects (SM), reaction adjustments (RA), retainers allowed (RT), and retainer morale (RM). Other than magical armors listed, any other magical devices are not incorporated into the values presented, such as armor class bonus rings of protection.';
+    if (rules === 'bx') return '<p class="adventurer-intro">Each adventurer is listed below with their strength (ST), intelligence (IN), wisdom (WS), dexterity (DX), constitution (CN), charisma (CH), level (LV), hit points (HP), armor class (AC),' + al + ' gender (GD),' + age + ' and experience reward modifier (XM). Their saving throws are listed for poison or death (PD), magic wand (MW), turn to stone or paralysis (TP), dragon breath (DB), and spells or magic staff (SP).' + tail + '</p>';
+    if (rules === 'll') return '<p class="adventurer-intro">Each adventurer is listed below with their strength (ST), dexterity (DX), constitution (CN), intelligence (IN), wisdom (WS), charisma (CH), level (LV), hit points (HP), armor class (AC),' + al + ' gender (GD),' + age + ' and experience reward modifier (XM). Their saving throws are listed for breath attacks (BA), poison or death (PD), petrify or paralyze (PP), wands (WN), and spells or spell-like devices (SD).' + tail + '</p>';
+    return '';
+  };
   for (const [route, rules, title] of [['bxadvg', 'bx', 'Adventurers Guild — BD&D'], ['ladvg', 'll', 'Adventurers Guild — Labyrinth Lord'], ['oadvg', 'osric', 'Adventurers Guild — OSRIC']]) {
     const classes = rules === 'osric' ? advanced : basics;
     const fields = [f('x_output', 'Output', 'select', { value: 'Character Listing', options: ['Character Listing', 'Character Sheets'] }), f('x_lvl1', 'Minimum level', 'number', { value: 1, min: 1, max: rules === 'bx' ? 14 : 20 }), f('x_lvl2', 'Maximum level', 'number', { value: rules === 'bx' ? 14 : 20, min: 1, max: rules === 'bx' ? 14 : 24 }), f('x_sex', 'Gender', 'select', { value: 'Any', options: ['Any', 'Male', 'Female'] }), ...(rules === 'osric' ? [f('x_race', 'Race', 'select', { value: 'Any', options: ['Any', ...Object.keys(allowed)] })] : []), ...Object.entries(classes).map(([key, label]) => f('x_qty_' + key, label, 'number', { value: 0, min: 0, max: 20 })), ...[['x_name', 'Name characters', 1], ['x_show_al', 'Alignment', 1], ['x_show_eq', 'Equipment', 1], ['x_show_sk', 'Skills and abilities', 1], ['x_show_ss', 'Spell books', 0], ['x_lang_set', 'Choose languages', 1], ['x_show_me', 'Descriptions', 1], ['x_show_age', 'Age', 0], ['x_maxhp', 'Maximum hit points', 0], ['x_rand_xp', 'Random experience', 0], ['x_relics', 'Magic items', 0], ['x_var_dmg', 'Variable weapon damage (BD&D)', 0]].map(([key, label, value]) => f(key, label, 'checkbox', { value }))];
@@ -228,7 +236,8 @@
       if (!requests.length) requests = W.range(W.count(p)).map(() => 'Fighter');
       const characters = requests.map(className => W.character(p, rules, className));
       W.storage.set('last-characters', { options: p, rules, characters });
-      return characters.map(c => W.renderCharacter(c, p)).join('');
+      const listing = String(p.x_output || 'Character Listing') !== 'Character Sheets';
+      return (listing ? W.adventurerIntro(rules, p) : '') + characters.map(c => W.renderCharacter(c, p)).join('');
     });
     W.routes[route].defaultGame = rules === 'bx' ? 'bdd' : rules === 'll' ? 'lablord' : 'osric';
   }
