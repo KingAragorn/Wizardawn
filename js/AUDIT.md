@@ -4,6 +4,7 @@ Living checklist so work can continue in any session. Evidence paths are relativ
 Regenerate the option table with: `python3` form scan of `src/tool_*.php` (see "How to regenerate") and compare with `W.routes[route].fields`.
 
 ## Done
+- coins, packs, alchemist: verified name drift only — JS already reads x_pile/x_value1/x_value2, x_packs/x_eat, x_amount/x_potion/x_value1/x_value2 as aliases (no missing logic).
 - loot (tool_loot.php): added x_cond, x_oldway, ua, aec, x_whichmagic (game-table vs Wizardawn magic split via makeRPGmagic names), x_type renamed to PHP name with original labels; `type`/`min`/`max` kept as aliases.
 - [x] Per-game option filtering (refs #5): `js/export-field-games.py` → `js/data/fieldGames.js`; `W.formFields` hides options the PHP wraps in `$x_game` conditions. Fields may also carry `games: [...]` for routes the PHP map does not cover.
 - [x] Hex crawl / delve / locale / ultimate: added Unearthed Arcana (`ua`, AD&D, `tool_hexcrawl.php` 250-253 → `gameSpellChooser` in `functions/spells.php` 611+), S&W Hit Dice (`x_hit_dice`, 269-274, used by `calculateLife`), T&T Dice + Adds / Vary Amount / Difficulty (`tt_dice`, `tt_adds`, `tt_vary`, `x_ttlvl`, 184-199) and Weapons/Armor (`x_oldway`, 325-330). T&T Vary Amount now follows `functions/encounters.php` 88 (was always random).
@@ -71,7 +72,7 @@ Priority truly-missing items (from reading the forms):
 - [ ] ultimate / uruins / uexfl / dmap: cave map sets (`use_cave`, `cave_*`), `geomorph_colored`, `map_numbers`.
 - [ ] locale / uruins / uexfl: second enemy group (`x_enemy_1`, `x_main_chance_1`, `x_enemy_2`, `x_main_chance_2`), `x_mixup`.
 - [ ] hex-crawl / locale: `x_tu_c` (third encounter row?) ; delve/ultimate: `x_mm`.
-- [ ] world: `map_genre`, `map_climate`. wtown: `ruler`, `columns`. packs: `x_packs`, `x_eat`. coins: `x_pile`, value range. alchemist: `x_potion`, value range. bxadvg/oadvg/ladvg: `x_img` (character portrait), `x_book_sp`.
+- [ ] world: `map_genre`, `map_climate`. wtown: `ruler`, `columns`. bxadvg/oadvg/ladvg: `x_img` (character portrait), `x_book_sp`.
 - [x] Defaults: bxadvg `x_var_dmg` and ladvg `x_show_age` now checked like the PHP.
 - [ ] Default: uexfl `x_money` (PHP "gold"; JS blank = game default, check output matches).
 - [ ] oadvg shows Alignment / Choose languages checkboxes the OSRIC form doesn't have (kept: extra feature, not a loss).
