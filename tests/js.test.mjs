@@ -1297,3 +1297,15 @@ test('scifim ports the other-game alien creatures with habitats, housing and ter
   const names = W.scifiAlienNames(6);
   assert.equal(names.join(), [...names].sort().join());
 });
+
+test('hex crawl stranded robots and vehicles follow tool_hexcrawl.php placement', () => {
+  W.random(91);
+  const base = { game: 'gamma', x_frob: 100, x_fveh: 100, x_u_c: 0, x_weird: 0 };
+  const cave = W.adventureRoom({ ...base, hexCave: true }, 1, 1, true, true).html;
+  assert.match(cave, /STRANDED VEHICLE IN THE CAVE/);
+  assert.match(W.adventureRoom({ ...base, hexCave: true, hexMappack: 'Spaceship' }, 1, 1, true, true).html, /DERELICT ROBOT IN THE CAVE/);
+  assert.match(W.adventureRoom({ ...base, hexMappack: 'Ruined City' }, 1, 1, false, true).html, /STRANDED ROBOT (INSIDE|NEXT TO) THE BUILDING/);
+  const ship = W.adventureRoom({ ...base, hexMappack: 'Spaceship', hexNoVehicle: true }, 1, 1, false, true).html;
+  assert.doesNotMatch(ship, /STRANDED VEHICLE/);
+  assert.match(ship, /DERELICT ROBOT IN THE ROOM/);
+});

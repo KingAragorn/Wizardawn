@@ -149,8 +149,9 @@
     else if (atmosphere || furnish) content.push('<p>' + esc([atmosphere, furnish].filter(Boolean).join(' ')) + '</p>');
     // tool_uexfl.php always uses a fixed 2% unusual-room chance.
     if (W.d(100) <= (p.adventureMode === 'uexfl' ? 2 : W.number(p.x_weird, post ? 0 : 1, 0, 100))) content.push('<p><b>SOMETHING UNUSUAL IN THE ' + (p.adventureMode === 'uexfl' ? 'ROOM' : 'AREA') + '...</b> ' + esc(post && W.postFeature ? W.postFeature(p, total) : W.unusualRoom(p, total)) + '</p>');
-    if (post && W.d(100) <= W.number(p.x_fveh, 0, 0, 100)) content.push('<p class="stranded-vehicle"><b>STRANDED VEHICLE NEXT TO THE BUILDING...</b><br>' + esc(W.strandedVehicle(p)) + '</p>');
-    if (post && W.d(100) <= W.number(p.x_frob, 0, 0, 100)) content.push('<div class="stranded-robot"><b>' + (p.adventureMode === 'uruins' ? 'STRANDED ROBOT ' + (W.d(2) === 1 ? 'INSIDE' : 'NEXT TO') + ' THE BUILDING...' : 'DERELICT ROBOT IN THE ROOM...') + '</b><br>' + esc(W.vehicleRobot(p, 0)) + '</div>');
+    // tool_hexcrawl.php: scifi buildings/spaceships set $do_some_vehicles = 0; cave sites read IN THE CAVE.
+    if (post && !p.hexNoVehicle && W.d(100) <= W.number(p.x_fveh, 0, 0, 100)) content.push('<p class="stranded-vehicle"><b>STRANDED VEHICLE ' + (p.hexCave ? 'IN THE CAVE' : 'NEXT TO THE BUILDING') + '...</b><br>' + esc(W.strandedVehicle(p)) + '</p>');
+    if (post && W.d(100) <= W.number(p.x_frob, 0, 0, 100)) content.push('<div class="stranded-robot"><b>' + (p.adventureMode === 'uruins' || p.hexMappack === 'Ruined City' ? 'STRANDED ROBOT ' + (W.d(2) === 1 ? 'INSIDE' : 'NEXT TO') + ' THE BUILDING...' : p.hexCave ? 'DERELICT ROBOT IN THE CAVE...' : 'DERELICT ROBOT IN THE ROOM...') + '</b><br>' + esc(W.vehicleRobot(p, 0)) + '</div>');
     let difficulty = 0, hoard = 0;
     attempts(p, 'c', [35, 1, 1, 0], () => {
       const options = { ...p, level: p.level ?? p.x_level ?? 0, terrain: p.terrain || 'DG', dungeonOnly: '1' };

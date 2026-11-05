@@ -116,6 +116,8 @@
     const occupants = owner ? W.monsterLife(owner, select) : [];
     html += `<section class="site-inhabitants"><h3>Inhabitants</h3>${owner ? W.monsterStats(owner, yes(p, 'x_describe'), select) + (owner.custom ? '' : `<p>${occupants.length} inhabitants. <b>${W.isTroll(p) ? 'MR' : W.game(p).slug === 'urthe' ? 'STAMINA' : 'HIT POINTS'}:</b> ${occupants.join(', ')}</p>`) : '<p>No enemies found for this terrain and difficulty.</p>'}</section>`;
     let floorCount = 0;
+    // tool_hexcrawl.php: post games use $x_mappack "Ruined City" (spaceships switch to "Spaceship"); scifi building/ship sites disable stranded vehicles.
+    const hexStranded = cave => ({ hexCave: cave, hexMappack: kind === 'spaceship' ? 'Spaceship' : 'Ruined City', hexNoVehicle: kind === 'spaceship' || kind === 'building' && post });
     const mapKind = kind === 'cave' || kind === 'lair' ? 'dungeon' : kind === 'ruins' ? post ? 'ruins' : 'dungeon' : kind === 'spaceship' || kind === 'building' && post ? 'scifi' : 'dungeon';
     const own = W.number(p.map_rooms, 0, 0, 1000);
     if (profile ? profile.map : !['camp', 'wreck', 'lair'].includes(kind) || own) {
@@ -126,14 +128,14 @@
         const floorKind = post && floorNumber > 1 && /military|ruins/.test(icon) ? 'sewer' : mapKind;
         const type = floorKind === 'scifi' ? kind === 'spaceship' ? 'Spaceship' : 'Building' : (profile ? profile.kind === 'cave' : kind === 'cave') ? 'Cavernous' : 'Dungeon';
         const map = own ? { html: '', tiles: [], rooms: W.range(own).map(number => ({ number })) } : W.geomorphMap({ ...p, type, width: size, height: size, interior: '1', keyed: '1', start: 1, geomorph_colored: '1' }, floorKind);
-        const options = { ...p, terrain: submerged ? waterTerrain : 'DG', x_terrain: terrain, type, ...(submerged ? { swimmer: 1 } : {}), floorType: (profile ? profile.tomb : /tomb|crypt|temple|skull/.test(icon)) ? 'T' : 'D', ...(profile && !profile.contents ? { x_u_c: 0 } : {}), ...(profile && !profile.weird ? { x_weird: 0 } : {}), ...(profile && !profile.moods ? { atmo: 999, x_atmo: 999 } : {}) };
+        const options = { ...p, ...hexStranded(type === 'Cavernous'), terrain: submerged ? waterTerrain : 'DG', x_terrain: terrain, type, ...(submerged ? { swimmer: 1 } : {}), floorType: (profile ? profile.tomb : /tomb|crypt|temple|skull/.test(icon)) ? 'T' : 'D', ...(profile && !profile.contents ? { x_u_c: 0 } : {}), ...(profile && !profile.weird ? { x_weird: 0 } : {}), ...(profile && !profile.moods ? { atmo: 999, x_atmo: 999 } : {}) };
         const results = map.rooms.map(room => W.adventureRoom(options, room.number, map.rooms.length, type === 'Cavernous', post));
         floors.push({ number: floorNumber, type, kind: floorKind, tiles: map.tiles, rooms: results });
         rooms.push(...results.map(room => ({ floor: floorNumber, ...room })));
         html += `<section class="site-floor" data-floor="${floorNumber}"><h3>Level ${floorNumber}</h3>${map.html}${results.map(room => room.html).join('')}</section>`;
       }
     } else {
-      const outdoor = W.adventureRoom({ ...p, terrain: submerged ? waterTerrain : terrain, x_furnish: '0', ...(submerged ? { swimmer: 1 } : {}) }, 1, 1, false, post);
+      const outdoor = W.adventureRoom({ ...p, ...hexStranded(kind === 'cave' || kind === 'lair'), terrain: submerged ? waterTerrain : terrain, x_furnish: '0', ...(submerged ? { swimmer: 1 } : {}) }, 1, 1, false, post);
       rooms.push(outdoor);
       html += (profile?.wreck ? "" : `<p>${kind === 'wreck' ? 'This ship ' + pick(['vanished', 'disappeared', 'sank', 'was lost']) + ' about ' + int(5, 90) * 10 + ' years ago.' : kind === 'camp' ? 'The inhabitants have made a camp around ' + pick(['a fire pit', 'a wooden totem', 'a ring of stones', 'a crude shrine']) + '.' : 'The creature has made its lair here.'}</p>`) + outdoor.html;
     }
