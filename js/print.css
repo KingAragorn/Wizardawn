@@ -22,6 +22,8 @@
   body.pdf-mode .geomorph-map { break-inside: avoid; margin: 0 auto; }
   /* OSRIC adventurers: one adventurer per page. */
   body.pdf-oadvg .character + .character { break-before: page; }
+  /* A full OSRIC sheet does not fit below the page heading, which left page 1 holding only the heading. */
+  body.pdf-oadvg #results > h2:has(+ .character-sheet) { display: none; }
   body.pdf-oadvg .results-table th, body.pdf-oadvg .results-table td { font-size: 9.5pt; padding: 3px 5px; }
   /* Settlements: each building section starts with its heading kept together. */
   body.pdf-town #results h3 { break-before: auto; }

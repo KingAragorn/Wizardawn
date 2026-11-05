@@ -461,8 +461,10 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - Approximations: castingName's alienName+mutantName branch; gemCreator → `W.gem`; idolMaker and TTSaves fallbacks; researchSpell fallback when `W.researchSpell` is absent; mapMaker(998) → `W.treasureClue`; 'equip' curses use `W.curse`; wolf/cat names via `W.name`.
 - Tunnels & Trolls branch (PHP lines 771–1797) ported: its 31 switch cells export as `makeMagicItemTT`, and `TTArmsArmor()` (tt_arms_and_armor.php) exports as `ttArms` rows per game family and list. The Magestykc easy-items option is `x_oldway=1` (the PHP's `$_SESSION['tt_easy_items']`). `W.magicItem` routes T&T loot through it. PHP quirks kept: normal armour tests the never-set `$ttm_mat` (always the colour description), the staff smite roll uses the undefined `$turn` (no die suffix), easy weapons read the undefined `$ttw_range` (no range shown), and the normal-weapon DEX shows `dex1/1` only when the second DEX drops below 1. `polymorphType` added.
 
-## PDF output prototype (town, oadvg, dungeon-map only)
-- "Save as PDF" button next to Print on those three routes (`W.pdfRoutes` in core/router.js); it toggles `body.pdf-mode pdf-<route>`, sets the document title as the file name and calls `window.print()`. No server and no vendored PDF library.
+## PDF output (every generator)
+- "Save as PDF" button next to Print on every generator that has results (core/router.js); it toggles `body.pdf-mode pdf-<route>`, sets the document title as the file name and calls `window.print()`. No server and no vendored PDF library.
 - `js/print.css` hides everything except `#results`, uses a letter page, Georgia body text with Wizardawn heading fonts, and avoids breaks inside rows and paragraphs. Each OSRIC sheet starts on a new page, and dungeon maps are zoomed to fit one page.
 - `#...&pdf=1` in the hash starts in pdf mode so headless Chrome `--print-to-pdf` can make samples.
 - The OSRIC sheet art (`pics_tools/ocsht_*.jpg`) was copied from src so the sheets don't show broken images.
+- When OSRIC sheets are printed, the page heading is hidden. A full sheet doesn't fit below it, so page 1 used to hold only the heading.
+- All 44 generator routes were checked with headless Chrome (seed 42). scifim prints only its title with default options.

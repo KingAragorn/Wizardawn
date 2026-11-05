@@ -14,17 +14,16 @@
     const page = window.WZ_DATA.pages[tool.generate ? `rpg_${game}.php` : file];
     const stylesheet = page?.stylesheet || 'portal.css';
     let html = tool.generate ? W.generatorLayout(tool, params, result) : tool.render(params);
-    // PDF prototype: only the routes in W.pdfRoutes get a Save as PDF button and the print.css page layout.
-    const pdf = result && W.pdfRoutes.includes(route);
+    // Every generator with results gets a Save as PDF button and the print.css page layout.
+    const pdf = Boolean(result && tool.generate);
     if (pdf) html = html.replace('<button type="button" id="print-results">Print</button>', '$&<button type="button" id="save-pdf">Save as PDF</button>');
     return { html, title: tool.title, stylesheet, pdf: pdf ? { route, now: params.pdf === '1', name: tool.title + (params.seed ? ' ' + params.seed : '') } : null };
   };
-  W.pdfRoutes = ['town', 'oadvg', 'dungeon-map'];
   W.pdfMode = function (pdf, on) {
     if (typeof document === 'undefined') return;
     const body = document.body;
     if (!body || !body.classList) return;
-    body.classList.remove('pdf-mode', ...W.pdfRoutes.map(route => 'pdf-' + route));
+    body.classList.remove(...[...body.classList].filter(name => name.startsWith('pdf-') || name === 'pdf-mode'));
     if (pdf && on) body.classList.add('pdf-mode', 'pdf-' + pdf.route);
     // Absolutely positioned geomorph maps are scaled to fill a letter page (7.4in x 9.6in at 96px/in).
     for (const map of document.querySelectorAll('#results .geomorph-map')) {
