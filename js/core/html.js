@@ -20,7 +20,7 @@
   W.formFields = (tool, params) => {
     const only = W.fieldGames(tool);
     const slug = tool.fields.some(f => f.name === 'game') ? W.toolGame(tool, params).slug : null;
-    return tool.fields.filter(f => !slug || !only[f.name] || only[f.name].includes(slug));
+    return tool.fields.filter(f => { const games = only[f.name] || f.games; return !slug || !games || games.includes(slug); });
   };
   W.form = (tool, params) => `<form id="generator-form"><div class="options">${W.formFields(tool, params).map(f => {
     const value = params[f.name] ?? f.value ?? '';

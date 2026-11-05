@@ -1497,3 +1497,24 @@ test('generator forms only offer the options the original shows for the chosen g
   assert.equal(Object.keys(map(W.routes.coins)).length, 0);
   assert.ok(names('hex-crawl', 'lablord').includes('x_area'));
 });
+
+test('adventure forms gain the original UA, S&W hit dice and T&T party options for their games (refs #6)', () => {
+  const names = (route, game) => [...W.form(W.routes[route], { game }).matchAll(/name="([^"]+)"/g)].map(m => m[1]);
+  for (const route of ['hex-crawl', 'delve', 'locale', 'ultimate']) {
+    assert.ok(names(route, 'add').includes('ua'), route);
+    assert.ok(names(route, 'sandw').includes('x_hit_dice') && !names(route, 'osric').includes('x_hit_dice'), route);
+    const tt = names(route, 'tt5e');
+    for (const name of ['tt_dice', 'tt_adds', 'tt_vary', 'x_ttlvl', 'x_oldway']) assert.ok(tt.includes(name), route + ' ' + name);
+    assert.ok(!tt.includes('x_characters') && !names(route, 'lablord').includes('tt_dice'));
+  }
+  assert.ok(!names('uruins', 'add').includes('ua'));
+  assert.match(W.routes['hex-crawl'].generate({ game: 'tt5e', tt_dice: '3', tt_adds: '12', tt_vary: '1', x_ttlvl: '2', run: '1', seed: '7' }), /MR/);
+  assert.match(W.routes.delve.generate({ game: 'sandw', x_hit_dice: '6', run: '1', seed: '7' }), /HIT POINTS/);
+});
+
+test('character forms keep the original checked defaults (refs #6)', () => {
+  const value = (route, name) => String(W.routes[route].fields.find(f => f.name === name).value);
+  assert.equal(value('ladvg', 'x_show_age'), '1');
+  assert.equal(value('bxadvg', 'x_var_dmg'), '1');
+  assert.equal(value('oadvg', 'x_show_age'), '0');
+});

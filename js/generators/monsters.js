@@ -35,7 +35,9 @@
         cumulative += W.roll(Math.max(1, Math.floor(stats.rating * maximum / 10) + 1) + 'd6');
         if (cumulative > target) break;
       }
-      amount = int(1, Math.max(1, maximum - 1));
+      // calculateLife(): the most the party can face; Vary Amount (tt_vary) rolls 1..that.
+      amount = Math.max(1, maximum - 1);
+      if (String(p.tt_vary ?? '') === '1') amount = int(1, amount);
       return W.range(amount).map(() => Math.max(1, stats.rating));
     }
     if (post) {
