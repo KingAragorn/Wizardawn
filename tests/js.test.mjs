@@ -1431,3 +1431,14 @@ test('makeMagicItem ports the PHP item generator for every non-T&T game, size an
   assert.doesNotMatch(loot, /<[a-z]/);
 });
 function int20() { return W.rng.int(0, 20); }
+
+test('makeMagicItem ports the Tunnels & Trolls branch, TTArmsArmor and Magestykc easy items', () => {
+  const kinds = new Set();
+  for (const game of ['tt5e', 'tt7e', 'ttde']) for (const x_oldway of ['0', '1']) for (const size of [1, 2, 3]) for (let i = 0; i < 120; i++) {
+    const s = W.makeMagicItem({ game, x_oldway }, 0, size, 0);
+    assert.ok(s.trim() && !/undefined|NaN|\[object|\bnull\b|\$[a-z_]/.test(s), s);
+    if (/\[magical /.test(s)) kinds.add((game === 'ttde' ? 'DMG' : 'DICE') === (s.match(/(DMG|DICE):/) || [])[1] || /HITS:/.test(s) ? 'arms' : 'bad');
+  }
+  assert.ok(kinds.has('arms') && !kinds.has('bad'));
+  for (let i = 0; i < 40; i++) assert.match(W.makeMagicItem({ game: 'ttde' }, 5, 3, 1), /\{<i>/);
+});

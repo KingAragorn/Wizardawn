@@ -231,6 +231,7 @@
       case 'carpetMaker': return M.carpetMaker(a()[0]);
       case 'researchSpell': return M.researchSpell();
       case 'protectionType': return M.protectionType();
+      case 'polymorphType': return M.polymorphType(p);
       case 'lycanthrope': return W.lycanthrope();
       case 'bottlePicker': return one('bottlePicker', p, 'bottle');
       case 'bardType': case 'woodenType': case 'tomeType': case 'animalType': case 'birdType': case 'humanType': case 'undeadType': case 'searchList': return one(name, p, 'value');
@@ -256,18 +257,235 @@
   }
   M.call = call;
   // Fantasy treasure now uses the ported generator (tool_loot/encounter/delve call makeMagicItem in the PHP);
-  // BD&D keeps its basic table, T&T and the post-apocalyptic games keep their own lists.
+  // BD&D keeps its basic table and the post-apocalyptic games keep their own lists.
   const previousMagic = W.magicItem;
   W.magicItem = function (p) {
     const game = W.game(p);
-    if (!DND.includes(game.name) && !['fantasy', 'ww'].includes(game.slug) || game.slug === 'bdd') return previousMagic(p);
+    if (!DND.includes(game.name) && !TROLLS.includes(game.name) && !['fantasy', 'ww'].includes(game.slug) || game.slug === 'bdd') return previousMagic(p);
     return W.plainText(W.makeMagicItem(p, W.number(p.level ?? p.x_level, 0, 0, 20), int(1, 3)));
   };
+
+  // ---- makeMagicItem(), Tunnels & Trolls branch (magic_item_fantasy.php lines 771-1797) ----
+  M.polymorphType = p => one('polymorphType', p, 'value');
+  // TTArmsArmor($list, $x, $y, $game): one literal row, missing fields read as PHP nulls.
+  M.ttArmsArmor = (p, list, a, b) => {
+    const rows = T().ttArms[W.game(p).name === 'Tunnels & Trolls Deluxe' ? 'deluxe' : 'other'][list];
+    const r = rows[int(a, b)] || {};
+    return { nt_type: '', nt_category: '', nt_name: '', nt_dice: 0, nt_adds: 0, nt_str: 0, nt_dex1: 0, nt_dex2: 0, nt_val: '', nt_hands: 0, nt_range: 0, nt_hits: 0, nt_material: '', bow: 0, quiver: '', pole: 0, smith2: '', smith1: '', user: '', ...r };
+  };
+  function makeTT(p, level, size, varb) {
+    const g = W.game(p).name, deluxe = g === 'Tunnels & Trolls Deluxe', fifth = g === 'Tunnels & Trolls 5th Edition';
+    const cut = W.number(p.x_cut, 100, 0, 1000), easy = String(p.x_oldway ?? '') === '1';
+    const term = deluxe ? 'DMG' : 'DICE', turm = deluxe ? 'd6' : '';
+    const lang = () => W.language(p), gem = () => W.gem(cut), lower = s => String(s ?? '').toLowerCase();
+    const art = (n, c, career) => career === 2 ? W.artifactName(n, !!c, true) : W.artifactName(ucwords(String(n)), !!c);
+    const tt = (i, a, b) => sw('makeMagicItemTT', i, x, a, b);
+    const x = ctx(p, { cut, size, varb, term, turm, book_spell: '' }), v = x.v;
+    tt(0);
+    level = level > 0 ? int(1, level) : int(1, 20); v.level = level;
+    tt(1); let the = v.the_item;
+    if (varb == 1) the = 'potion';
+    let item = '';
+    if (the === 'potion') {
+      const bottle = one('bottlePicker', p, 'bottle');
+      v.poisonuse = 'this poison can be put on weapons';
+      v.effective = 'but is only effective for ' + int(2, 17) + ' hits with the weapon before it loses effectiveness';
+      tt(2, 0, deluxe ? 16 : 12); tt(3); tt(4);
+      const pretty = W.potionAppearance();
+      item = varb != 1 ? bottle + ' ' + v.item + '. ' + pretty : v.item + ' {<i>' + pretty + '</i>}';
+    } else if (the === 'scroll') {
+      tt(5);
+      if (v.magitm === 'powder') {
+        tt(6); tt(7);
+        v.paper = 'a small ' + v.m_dustc + ' with ' + M.candleColor(0) + ' ' + v.m_dustt;
+        v.effec = 'can be sprinkled on ' + int(2, 12) + ' individuals'; v.effeh = 'whatever it is sprinkled on';
+      } else if (v.magitm === 'oil') {
+        v.paper = 'a small ' + one('bottlePicker', p, 'bottle') + ' with ' + M.candleColor(0) + ' oil';
+        v.effec = 'can be poured on ' + int(2, 12) + ' individuals'; v.effeh = 'whatever it is poured on';
+      } else {
+        tt(8); tt(9);
+        v.paper = v.rollo + ' scroll (written in ' + lang() + ')';
+        v.effec = 'can be read only once...where it then ' + v.rollu + '...to affect ' + int(2, 12) + ' individuals'; v.effeh = 'whoever it is read to';
+      }
+      tt(10); item = v.item;
+    } else if (the === 'ring') {
+      Object.assign(v, { curses: 0, no_words: 0, use_charges: 0 });
+      v.charges = int(10, 50);
+      tt(11, 0, fifth ? 41 : 43);
+      let decorate = '[a ' + M.preciousChooser() + ' ring with a ' + gem() + ' set in it', words = '';
+      if (d100() > 50) decorate = '[a ' + M.preciousChooser() + ' ring';
+      if (d100() > 70 && v.curses != 1 && v.no_words != 1) words = '...there is a command word engraved on the inside written in ' + lang() + ' that says `' + M.castingName(p) + '`';
+      if (d100() > 90 && v.curses != 1 && v.no_words != 1) words = '...the command word to use this is `' + M.castingName(p) + '`, which can be learned by identifying the item';
+      decorate += words;
+      item = d100() > 70 && v.curses != 1 && v.use_charges != 1 ? v.item + ' ' + decorate + ' - it has ' + v.charges + ' charges]' : v.item + ' ' + decorate + ']';
+      if (d100() > 50) item = '<u>' + art('ring', v.curses, 0) + '</u> - ' + item;
+    } else if (the === 'wand') {
+      const rmin = size == 1 || size == 2 ? 20 : 0;
+      const dash = '&nbsp;/&nbsp;';
+      v.staff_hurt = '{' + term + ':' + int(2, 6) + turm + '+' + int(1, 10) + dash + 'STR:' + int(3, 10) + dash + 'DEX:' + int(2, 8) + dash + 'Wizards&nbsp;Ignore&nbsp;2&nbsp;Dice&nbsp;Penalty}';
+      // the PHP uses the undefined $turn here, so no die suffix appears
+      v.staff_smit = '{' + term + ':' + int(4, 10) + '+' + int(3, 12) + dash + 'STR:' + int(3, 10) + dash + 'DEX:' + int(2, 8) + dash + 'Wizards&nbsp;Ignore&nbsp;2&nbsp;Dice&nbsp;Penalty}';
+      v.smy_mr_is = level * 10 + 30;
+      v.smy_dc_is = (Math.floor(v.smy_mr_is / 10) + 1) + '&nbsp;+&nbsp;' + Math.ceil(v.smy_mr_is / 2);
+      tt(12, rmin, 48);
+      const first = String(v.item).split(' ')[0];
+      let charges, extradj = '';
+      if (String(v.item).slice(0, 3) === 'wan') { charges = int(20, 100); tt(13); if (d100() > 50) extradj = ' and has a ' + gem() + ' at the end of it'; }
+      else { charges = int(5, 25); tt(14); if (d100() > 50) extradj = ' and has a ' + gem() + ' at the top'; }
+      let words = '';
+      if (d100() > 70) words = '. There is a command word carved on it in ' + lang() + ' that says `' + M.castingName(p) + '`';
+      if (d100() > 90) words = '. The command word to use this is `' + M.castingName(p) + '`, which can be learned by identifying the item';
+      item = v.item + ' [this has ' + charges + ' charges and is made of ' + v.material + extradj + words + ']';
+      if (d100() > 50) item = '<u>' + art(first, 0, 1) + '</u> - ' + item;
+    } else if (the === 'armor') {
+      let wearer = 'wearer', r, mystic, style;
+      if (easy) {
+        r = M.ttArmsArmor(p, 2, 0, deluxe ? 42 : 32);
+        const c = r.nt_category;
+        style = c === 'Shield' ? 'shield' : c === 'Suit' ? 'full suit of armor' : deluxe ? 'piece of armor' : 'armor for ' + lower(c);
+        mystic = r.nt_name;
+      } else {
+        const rmax = deluxe ? (size == 1 ? 14 : size == 2 ? 36 : 42) : (size == 1 ? 13 : size == 2 ? 23 : 41);
+        r = M.ttArmsArmor(p, 3, 0, rmax);
+        mystic = r.nt_category; style = r.nt_type; wearer = r.user;
+      }
+      let hits = Number(r.nt_hits) || 0, str = Number(r.nt_str) || 0, cursing = 0;
+      v.bonus = '';
+      const forge = d100(), temper = (m, s) => { hits *= m; str = Math.ceil(str - s); if (str < 1) str = 1; };
+      if (forge < 50) temper(int(2, 4), int(1, 2));
+      else if (forge < 75) temper(int(5, 7), int(3, 4));
+      else if (forge < 85) temper(int(8, 10), int(5, 6));
+      else if (forge < 90) temper(int(11, 13), int(7, 8));
+      else if (forge < 95) { temper(int(2, 4), int(1, 2)); v.bonus = "BONUS&nbsp;+" + int(1, 3) + " for any SR's made from attacks"; }
+      else if (forge < 99) { temper(int(2, 4), int(1, 2)); v.bonus = "BONUS&nbsp;+" + int(3, 6) + " for any SR's made from attacks"; }
+      else { cursing = 1; v.curs = lower(mystic); v.wearer = wearer; tt(15); }
+      const shield = style === 'Armor/Shield' || style === 'Shield';
+      if (cursing != 1 && d100() > 95 && !shield) tt(16);
+      if (cursing != 1 && d100() > 95 && shield) tt(17);
+      const bonus = v.bonus !== '' ? '&nbsp;--&nbsp[' + v.bonus + ']' : '';
+      const ttmBonus = 'HITS:' + hits + '&nbsp;--&nbspSTR:' + str + bonus;
+      let logo = '', decorate;
+      if (easy) {
+        const c = r.nt_category;
+        if (c === 'Shield' && d100() > 60) logo = '...with a ' + M.designType(p, 0) + ' symbol on the front that is ' + M.designColor() + ' in color';
+        if ((c === 'Suit' || c === 'Chest') && d100() > 60) {
+          const sew = d100() > 50 ? 'back' : d100() > 50 ? 'front' : 'front and back';
+          logo = '...with a ' + M.designType(p, 0) + ' symbol on the ' + sew + ' that is ' + M.designColor() + ' in color';
+        }
+        const m = r.nt_material;
+        decorate = m === 'L' ? '[made of ' + M.materialType(p, 'leather') + ' hide and is ' + M.leatherColor() + ' in color' + logo + ']'
+          : m === 'C' ? '[made of ' + M.materialType(p, 'cloth') + ' and is ' + M.leatherColor() + ' in color' + logo + ']'
+          : m === 'W' ? '[made of ' + M.materialType(p, 'wood') + ' and is ' + M.leatherColor() + ' in color' + logo + ']'
+          : '[made of ' + M.materialType(p, 'iron') + logo + ']';
+      } else {
+        if (d100() > 60) logo = '...with a ' + M.designType(p, 0) + ' symbol on it that is ' + M.designColor() + ' in color';
+        // the PHP tests the never-set $ttm_mat here, so normal T&T armor always takes the colour branch
+        decorate = '[it is ' + M.candleColor(0) + ' in color' + logo + ']';
+      }
+      item = lower(r.nt_name) + ' [magical ' + lower(style) + '] (' + ttmBonus + ') ' + decorate;
+      if (d100() > 50) item = '<u>' + art(mystic, cursing, 0) + '</u> - ' + item;
+    } else if (the === 'weapon') {
+      const wearer = 'wielder';
+      let r, type, name, mystic;
+      if (easy) {
+        const rmax = deluxe ? (size == 1 ? 25 : size == 2 ? 44 : 89) : (size == 1 ? 21 : size == 2 ? 43 : 94);
+        r = M.ttArmsArmor(p, 1, 0, rmax);
+        type = lower(r.nt_category); name = lower(r.nt_name); mystic = name;
+      } else {
+        const which = d100();
+        const [list, rmax] = which > 40 ? [4, deluxe ? (size == 1 ? 23 : size == 2 ? 83 : 164) : (size == 1 ? 17 : size == 2 ? 47 : 121)]
+          : which > 10 ? [5, deluxe ? (size == 1 ? 6 : size == 2 ? 8 : 17) : (size == 1 ? 4 : size == 2 ? 10 : 26)]
+          : [6, deluxe ? (size == 1 ? 15 : 16) : (size == 1 ? 6 : size == 2 ? 13 : 14)];
+        r = M.ttArmsArmor(p, list, 0, rmax);
+        type = r.nt_type; name = r.nt_name; mystic = r.nt_category;
+      }
+      let dice = Number(r.nt_dice) || 0, adds = Number(r.nt_adds) || 0, str = Number(r.nt_str) || 0, dex1 = Number(r.nt_dex1) || 0, dext = 0, cursing = 0;
+      const dex2 = Number(r.nt_dex2) || 0;
+      v.bonus = '';
+      const forge = d100(), curse = i => { cursing = 1; v.curs = lower(mystic); v.wearer = wearer; tt(i); };
+      const temper = (dd, a, s) => { dice += dd; adds += a; str -= int(0, s); dex1 -= int(0, s); if (dex2 > 0) dext = dex2 - int(0, s); };
+      if (int(1, 10) === 1) {
+        const steps = [[50, 2, 5, 1], [75, 4, 7, 2], [85, 6, 9, 3], [90, 8, 11, 4], [95, 10, 13, 5], [99, 12, 16, 6]].find(s => forge < s[0]);
+        if (steps) temper(0, int(steps[1], steps[2]), steps[3]); else curse(18);
+      } else {
+        const steps = [[50, 1, 2, 2, 4, 1], [75, 1, 3, 4, 6, 2], [85, 2, 3, 6, 8, 3], [90, 2, 4, 8, 10, 4], [95, 3, 4, 10, 12, 5], [99, 3, 5, 12, 14, 6]].find(s => forge < s[0]);
+        if (steps) temper(int(steps[1], steps[2]), int(steps[3], steps[4]), steps[5]); else curse(19);
+      }
+      if (cursing != 1 && d100() > 90) tt(20);
+      if (easy) {
+        const owner = W.manyName(p), smith1 = r.smith1, smith2 = r.smith2;
+        let decorate = '', belongs = '', etch;
+        if (smith2 === 'hilt' || smith1 !== '') {
+          const smith3 = d100() > 80 ? M.materialType(p, 'leather') + ' leather' : 'leather';
+          decorate = smith2 === 'hilt' ? '[the ' + smith1 + ' is made of ' + M.materialType(p, 'iron') + ' with a ' + smith3 + ' grip'
+            : '[the ' + smith1 + ' is made of ' + M.materialType(p, 'iron') + ' and has a ' + M.materialType(p, 'handle') + ' ' + smith2 + ' with a ' + smith3 + ' grip';
+          if (smith2 !== 'hilt' && r.pole == 1) decorate = '[the ' + smith1 + ' is made of ' + M.materialType(p, 'iron') + ' and has a ' + M.materialType(p, 'handle') + ' ' + smith2;
+          etch = d100() > 50 ? smith1 : smith2;
+          if (d100() > 80) belongs = '...the name of <i>' + owner + '</i> is engraved on the ' + etch;
+          decorate += d100() > 80 ? '...the ' + etch + ' is decorated with ' + int(3, 12) + ' gems {' + gem() + '}]' : belongs + ']';
+        } else if (r.bow == 1) {
+          decorate = '[' + M.materialType(p, 'bow');
+          if (d100() > 80) belongs = '...the name of <i>' + owner + '</i> is carved on it';
+          decorate += belongs + ']';
+        } else if (r.bow == 2) {
+          decorate = '[made of ' + M.materialType(p, 'leather') + ' hide';
+          etch = d100() > 50 ? 'burned' : 'stitched';
+          if (d100() > 80) belongs = '...the name of <i>' + owner + '</i> is ' + etch + ' on it';
+          if (d100() > 80) belongs += '...the cradle is decorated with a ' + gem();
+          decorate += belongs + ']';
+        } else if (r.nt_material === 'M') decorate = '[made of ' + M.materialType(p, 'iron') + ']';
+        else if (r.nt_material === 'W') decorate = '[made of ' + M.materialType(p, 'wood') + ']';
+        item = name + ' ' + decorate;
+        const bonus = v.bonus !== '' ? '&nbsp[' + v.bonus + ']' : '';
+        const roll = (d, a) => a > 0 ? d + turm + '+' + a : a < 0 ? d + turm + a : d + turm;
+        if (cursing == 1) {
+          const dex = Number(r.nt_dex2) > 0 ? r.nt_dex1 + '/' + r.nt_dex2 : r.nt_dex1, haul = Number(r.nt_range) > 0 ? '&nbsp;/&nbsp;RNG:' + r.nt_range : '';
+          item += ' (cursed ' + lower(type) + '&nbsp;/&nbsp;' + term + ':' + roll(r.nt_dice, Number(r.nt_adds) || 0) + '&nbsp;/&nbsp;STR:' + r.nt_str + '&nbsp;/&nbsp;DEX:' + dex + '&nbsp;/&nbsp;HND:' + r.nt_hands + haul + ')' + bonus;
+        } else {
+          if (str < 1) str = 1; if (dex1 < 1) dex1 = 1;
+          const dex = dex2 > 0 ? dex1 + '/' + dex2 : dex1; // the PHP reads the never-set $ttw_range, so no range is shown
+          item += ' (magical ' + lower(type) + '&nbsp;/&nbsp;' + term + ':' + roll(dice, adds) + '&nbsp;/&nbsp;STR:' + str + '&nbsp;/&nbsp;DEX:' + dex + '&nbsp;/&nbsp;HND:' + r.nt_hands + ')' + bonus;
+        }
+        if (d100() > 30) item = '<u>' + art(mystic, cursing, 0) + '</u> - ' + item;
+      } else {
+        v.material = '';
+        if (d100() > 80) tt(21);
+        if (str < 1) str = 1;
+        if (name === 'Athame') str = 0;
+        if (dex1 < 1) dex1 = 1;
+        let dex = dex1;
+        if (dex2 > 0 && dext < 1) { dext = 1; dex = dex1 + '/' + dext; }
+        const bonus = v.bonus !== '' ? '&nbsp;--&nbsp[' + v.bonus + ']' : '';
+        item = v.material + lower(name) + ' [magical ' + lower(type) + '] (' + term + ':' + dice + turm + '+' + adds + '&nbsp;--&nbspSTR:' + str + '&nbsp;--&nbspDEX:' + dex + bonus + ')';
+        if (d100() > 30) item = '<u>' + art(mystic, cursing, 0) + '</u> - ' + item;
+      }
+    } else {
+      const [sz1, sz2, sz3] = size == 1 ? [0, 52, 1] : size == 2 ? [53, 73, 4] : [74, 95, 6];
+      Object.assign(v, { use_other: 0, m_misc: '', toy: '', rock: '' });
+      v.curse_me = d100() > 97 ? 1 : 0;
+      v.written = 'shown somewhere on it'; if (d100() > 50) v.written = 'learned by identifying the item';
+      tt(22, sz1, sz2);
+      if (v.use_other == 1) { v.curse_me = 0; tt(23); }
+      if (v.use_other == 2) { tt(24); tt(25); tt(26); if (v.curse_me > 0) v.m_misc = ttDustCurse(p, v, x); }
+      if (v.use_other == 3) { tt(27); tt(28); if (v.curse_me > 0) tt(29); }
+      if (int(1, 2) === 2) tt(30, 0, sz3);
+      if (!v.m_misc) return makeTT(p, level, size, varb); // safety retry, as in the PHP
+      if (!(v.use_other > 0)) v.curse_me = 0;
+      const [head, tail = ''] = String(v.m_misc).split('___');
+      const nm = ucwords(head).replace(/ Of /g, ' of ').replace(/ And /g, ' and ').replace(/ The /g, ' the ');
+      item = art(nm, v.curse_me > 0, 2) + ' ' + tail;
+    }
+    return ucfirst(item);
+  }
+  function ttDustCurse(p, v, x) {
+    const save = call('TTSaves', '', x);
+    return v.m_dustt + '___{this small ' + v.m_dustc + ' of ' + M.candleColor(0) + ' ' + v.m_dustt + ' can be thrown into the air where everyone within 20 feet will be incapacitated by choking and sneezing for ' + int(5, 20) + ' rounds...everyone must make an ' + save + ' vs. ' + M.abilityTranslate(p, 'STR') + ' or ' + M.abilityTranslate(p, 'CON') + ' or suffer ' + int(1, 2) + 'd6 damage...this same SR must be made each round they are in the dust}';
+  }
 
   // ---- makeMagicItem() ----
   W.makeMagicItem = function (p, level = 0, size = 3, varb = 0) {
     const g = W.game(p).name, six = g === 'Swords & Six-Siders', cut = W.number(p.x_cut, 100, 0, 1000);
-    if (TROLLS.includes(g)) return W.magicItem(p); // T&T branch not ported
+    if (TROLLS.includes(g)) return makeTT(p, level, size, varb);
     level = level > 0 ? int(1, level) : int(1, 20); if (level > 20) level = 20;
     const x = ctx(p, { level, cut, size, varb }), v = x.v, lang = () => W.language(p), art = (n, c, career) => career === 2 ? W.artifactName(n, !!c, true) : W.artifactName(ucwords(n), !!c);
     const which = d100();

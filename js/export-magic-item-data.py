@@ -166,20 +166,31 @@ def switches(body):
 
 main = read('magic_item_fantasy')
 fantasy = main.split('else /// THIS STUFF BELOW IS SPECIFICALLY FOR THE TUNNELS')[0]
-data = {'makeMagicItem': switches(fantasy)}
+data = {'makeMagicItem': switches(fantasy), 'makeMagicItemTT': switches('else /// THIS STUFF BELOW IS SPECIFICALLY FOR THE TUNNELS' + main.split('else /// THIS STUFF BELOW IS SPECIFICALLY FOR THE TUNNELS')[1])}
 props = functions(read('magic_item_properties'))
 for name, body in props.items():
     data[name] = switches(body)
 HELPERS = {
-    'descriptions': 'bardType woodenType tomeType abilityType rareCoins materialType designType animalType birdType dragonType giantType humanType undeadType elementalType'.split(),
+    'descriptions': 'bardType woodenType tomeType abilityType rareCoins materialType designType animalType birdType dragonType giantType polymorphType humanType undeadType elementalType'.split(),
     'rooms_fantasy': ['timesMaker', 'headMount'], 'containers': ['bagCreator'], 'names': ['castingName'],
     'item_fantasy': ['coinMaker', 'bottlePicker'],
 }
 for source, names in HELPERS.items():
     found = functions(read(source))
     for name in names: data[name] = switches(found[name])
+# TTArmsArmor(): literal rows per game family and list number (1-6).
+arms = read('tt_arms_and_armor').split('function TTArmsArmor')[1]
+deluxe, other = arms.split('\n\telse\n', 1)
+def rows(part):
+    out = {}
+    for m in re.finditer(r'if \(\$list == (\d)\)', part):
+        start = part.index('switch', m.end()); end = close(part, part.index('{', start))
+        out[m[1]] = [{k: (v[1:-1] if v.startswith('"') else int(v)) for k, v in re.findall(r'\$(\w+)\s*=\s*("[^"]*"|-?\d+)', line)}
+                     for line in part[start:end].split('\n') if re.match(r'\s*case \d+:', line)]
+    return out
+data['ttArms'] = {'deluxe': rows(deluxe), 'other': rows(other)}
 data['headMountList'] = re.search(r"\$mount = array\(([^)]*)\)", functions(read('rooms_fantasy'))['headMount'])[1].replace("'", '').split(', ')
 (ROOT / 'js/data/magicItemText.js').write_text('// Original Wizardawn literal tables; see export-magic-item-data.py.\nwindow.WZ_DATA = window.WZ_DATA || {};\nwindow.WZ_DATA.magicItemText = ' + json.dumps(data, ensure_ascii=False) + ';\n')
 for name, rows in data.items():
-    if name.endswith('List'): continue
+    if name.endswith('List') or name == 'ttArms': continue
     print(name, [(s['from'], s['to'], len(s['cases'])) for s in rows])
