@@ -23,6 +23,7 @@
   W.pdfMode = function (pdf, on) {
     if (typeof document === 'undefined') return;
     const body = document.body;
+    if (!body || !body.classList) return;
     body.classList.remove('pdf-mode', ...W.pdfRoutes.map(route => 'pdf-' + route));
     if (pdf && on) body.classList.add('pdf-mode', 'pdf-' + pdf.route);
     // Absolutely positioned geomorph maps are scaled to fill a letter page (7.4in x 9.6in at 96px/in).
