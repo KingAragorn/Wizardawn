@@ -1395,3 +1395,15 @@ test('furnishings use furnish.php painting, torture, cage and cauldron helpers',
     assert.equal(pot.place, 'inside the cauldron');
   }
 });
+test('Magestykc monster supplement follows data_magestykc_run.php layout', () => {
+  const deluxe = W.routes.data_magestykc_run.generate({ id: 'mon', ttvs: '9', lvl: 4 });
+  assert.match(deluxe, /determined for a heroic adventure/);
+  assert.match(deluxe, /Lvl: <i>\d+<\/i>/);
+  assert.match(deluxe, /Dice: <i>\d+&nbsp;\+&nbsp;\d+<\/i>/);
+  assert.match(deluxe, /The areas they dwell are the [^.]+\./);
+  assert.match(deluxe, /WIZ:\d+/);
+  const five = W.routes.data_magestykc_run.generate({ id: 'mon', ttvs: '5', lvl: 9 });
+  assert.match(five, /determined for a simple adventure/);
+  assert.doesNotMatch(five, /Lvl: |WIZ:|SPD:/);
+  assert.match(five, /page-break/);
+});

@@ -36,7 +36,7 @@ are bundled. No deployment has been made.
 | `index.php` | ported | `#/` |
 | `data_help.php` | ported | `#/data_help` |
 | `data_magestykc.php` | ported | `#/data_magestykc` |
-| `data_magestykc_run.php` | partial | `#/data_magestykc_run?id=lang` / `id=kin` / `id=mon` |
+| `data_magestykc_run.php` | ported | `#/data_magestykc_run?id=lang` / `id=kin` / `id=mon` |
 | `game_mm.php` | ported | `#/rules/mm` |
 | `game_necro.php` | ported | `#/rules/necro` |
 | `game_ruins.php` | ported | `#/rules/ruins` |
@@ -390,6 +390,11 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   and kindred narratives/modifier table from the original monster data. Monster
   supplements support all three editions and six difficulties but retain the
   shared monster-report limitations, so data_magestykc_run remains partial.
+  Update: the Tome of Monsters page now follows data_magestykc_run.php exactly:
+  difficulty sentence, name-ordered TT monsters, Type/MR/(Deluxe Lvl)/Dice/#App/
+  Size/Move line, monsters_tt.php description with the attribute appendix,
+  PHP's dwell/speak list wording and the 8-then-7 page breaks. data_magestykc_run
+  is now ported.
   Menu links now preserve original query options while mapping PHP filenames to
   clean hash routes. Latest full verification before these supplements: 108 tests.
 - OSRIC officials/adventurers now use the original ability effects (exceptional
