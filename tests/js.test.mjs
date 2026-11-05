@@ -1318,3 +1318,10 @@ test('mtown economy passes reprint earlier businesses like tool_mtown.php', () =
   const small = W.town({ game: 'urthe', map_rooms: 50, stores: '1', empty: '0' }, 'post');
   assert.equal((small.match(/class="town-business"/g) || []).length, 11);
 });
+
+test('mtown junk shops use ucwords names and no shelf count', () => {
+  W.random(5);
+  const rows = W.townStock({ game: 'gamma', stock: 100, shelf: '1' }, 'post', 8);
+  assert.equal(rows.length, 50);
+  assert.ok(rows.every(r => r.qty === '' && !/(^|\s)[a-z]/.test(r.item)));
+});

@@ -156,7 +156,7 @@
     const cash = post ? p.money || 'gp' : 'gp', stock = W.number(p.stock, 70, 0, 100);
     const line = (item, cost, qty = 1, source = null) => ({ item: W.plainText(item), cost, qty, source });
     if (!post && type === 13) return W.range(int(10, 40)).map(() => line(W.d(2) === 1 ? W.gem(int(10, 100)) : W.jewel(int(10, 100)), '', 1));
-    if (post && type === 8) return W.range(50).filter(() => W.d(100) <= stock).map(() => { const row = pick(D.junk); return line(row[0], Math.max(1, row[6]) + cash, 1); });
+    if (post && type === 8) return W.range(50).filter(() => W.d(100) <= stock).map(() => { const row = pick(D.junk); return line(String(row[0]).replace(/(^|\s)\S/g, c => c.toUpperCase()), (Math.max(1, +row[6] || 0)).toLocaleString('en-US') + cash, ''); }); // PABusiness junk: ucwords, number_format, never a shelf count.
     const tag = post ? game === 'urthe' ? 'BU' : game === 'mutfut' ? 'MF' : 'PA' : mode === 'tt' ? 'TT' : 'DD';
     const era = mode === 'tt' ? game === 'ttde' ? on(p, 'x_oldway', 0) ? 'Deluxe' : 'Deluxes' : on(p, 'x_oldway', 0) ? 'Simple' : 'Complex' : '';
     const storeNames = [category];
