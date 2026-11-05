@@ -1458,3 +1458,13 @@ test('adventure treasure reuses the previous hiding place half the time, as tool
   } finally { W.furnishDetails = furnishing; }
   assert.ok(seen.reuse > 0 && seen.fresh > 0, JSON.stringify(seen));
 });
+
+test('PDF prototype: only town, oadvg and dungeon-map are PDF routes; print.css and OSRIC sheet art ship with the app', async () => {
+  const fs = await import('node:fs');
+  const router = fs.readFileSync(new URL('../js/core/router.js', import.meta.url), 'utf8');
+  assert.match(router, /pdfRoutes\s*=\s*\['town',\s*'oadvg',\s*'dungeon-map'\]/);
+  assert.ok(fs.existsSync(new URL('../js/print.css', import.meta.url)));
+  assert.match(fs.readFileSync(new URL('../js/index.html', import.meta.url), 'utf8'), /print\.css/);
+  const pics = fs.readdirSync(new URL('../js/pics_tools/', import.meta.url)).filter(f => f.startsWith('ocsht_'));
+  assert.ok(pics.length >= 27);
+});

@@ -1,0 +1,31 @@
+/* PDF prototype (town, oadvg OSRIC sheets, dungeon-map only): applied when body has .pdf-mode. */
+@media print {
+  @page { size: letter; margin: 0.5in 0.55in 0.6in; }
+  body.pdf-mode { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #fff !important; }
+  body.pdf-mode * { visibility: visible !important; }
+  /* Keep only the report: hide every branch that does not lead to #results. */
+  body.pdf-mode :has(#results) > :not(:has(#results)):not(#results) { display: none !important; }
+  body.pdf-mode :has(#results) { display: block !important; position: static !important; width: auto !important; margin: 0 !important; padding: 0 !important; background: none !important; border: 0 !important; float: none !important; height: auto !important; min-height: 0 !important; overflow: visible !important; }
+  body.pdf-mode #results { position: static !important; overflow: visible !important; margin: 0 !important; padding: 0 !important; font: 10.5pt/1.4 Georgia, 'Times New Roman', serif; color: #000; }
+  body.pdf-mode #results > h2 { font: 20pt WizardawnBold, Georgia, serif; margin: 0 0 0.15in; border-bottom: 2px solid #000; }
+  body.pdf-mode #results h3, body.pdf-mode #results h4, body.pdf-mode #results b { break-after: avoid; }
+  body.pdf-mode #results h3 { font-size: 13pt; margin: 0.18in 0 0.05in; }
+  body.pdf-mode #print-results, body.pdf-mode #save-pdf, body.pdf-mode [data-map-export] { display: none !important; }
+  body.pdf-mode #results img { max-width: 100%; height: auto; }
+  body.pdf-mode #results p, body.pdf-mode #results li, body.pdf-mode #results tr { break-inside: avoid; orphans: 3; widows: 3; }
+  body.pdf-mode #results table { break-inside: auto; }
+  body.pdf-mode #results a { color: #000; text-decoration: none; }
+}
+@media print {
+  html:has(body.pdf-mode), body.pdf-mode { height: auto !important; min-height: 0 !important; overflow: visible !important; }
+  body.pdf-mode #results br:last-of-type { display: none; }
+  body.pdf-mode .geomorph-map { break-inside: avoid; margin: 0 auto; }
+  /* OSRIC adventurers: one adventurer per page. */
+  body.pdf-oadvg .character + .character { break-before: page; }
+  body.pdf-oadvg .results-table th, body.pdf-oadvg .results-table td { font-size: 9.5pt; padding: 3px 5px; }
+  /* Settlements: each building section starts with its heading kept together. */
+  body.pdf-town #results h3 { break-before: auto; }
+}
+@media print {
+  body.pdf-mode .geomorph-map ~ br { display: none !important; }
+}

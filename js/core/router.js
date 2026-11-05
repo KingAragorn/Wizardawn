@@ -13,7 +13,23 @@
     const game = tool.generate ? W.toolGame(tool, params).slug : 'fantasy';
     const page = window.WZ_DATA.pages[tool.generate ? `rpg_${game}.php` : file];
     const stylesheet = page?.stylesheet || 'portal.css';
-    return { html: tool.generate ? W.generatorLayout(tool, params, result) : tool.render(params), title: tool.title, stylesheet };
+    let html = tool.generate ? W.generatorLayout(tool, params, result) : tool.render(params);
+    // PDF prototype: only the routes in W.pdfRoutes get a Save as PDF button and the print.css page layout.
+    const pdf = result && W.pdfRoutes.includes(route);
+    if (pdf) html = html.replace('<button type="button" id="print-results">Print</button>', '$&<button type="button" id="save-pdf">Save as PDF</button>');
+    return { html, title: tool.title, stylesheet, pdf: pdf ? { route, now: params.pdf === '1', name: tool.title + (params.seed ? ' ' + params.seed : '') } : null };
+  };
+  W.pdfRoutes = ['town', 'oadvg', 'dungeon-map'];
+  W.pdfMode = function (pdf, on) {
+    if (typeof document === 'undefined') return;
+    const body = document.body;
+    body.classList.remove('pdf-mode', ...W.pdfRoutes.map(route => 'pdf-' + route));
+    if (pdf && on) body.classList.add('pdf-mode', 'pdf-' + pdf.route);
+    // Absolutely positioned geomorph maps are scaled to fill a letter page (7.4in x 9.6in at 96px/in).
+    for (const map of document.querySelectorAll('#results .geomorph-map')) {
+      const width = parseFloat(map.style.width) || map.offsetWidth, height = parseFloat(map.style.height) || map.offsetHeight;
+      map.style.zoom = pdf && on && width && height ? String(Math.min(700 / width, 880 / height)) : '';
+    }
   };
   W.navigate = function () {
     const result = W.renderRoute(location.hash);
@@ -42,6 +58,15 @@
       if (location.hash === hash) W.navigate(); else location.hash = hash;
     });
     document.getElementById('print-results')?.addEventListener('click', () => window.print());
+    // Save as PDF uses the browser's own print-to-PDF; the document title becomes the suggested file name.
+    W.pdfMode(result.pdf, result.pdf?.now);
+    document.getElementById('save-pdf')?.addEventListener('click', () => {
+      const title = document.title;
+      W.pdfMode(result.pdf, true);
+      document.title = result.pdf.name.replace(/[^\w &-]+/g, '');
+      window.addEventListener('afterprint', () => { document.title = title; W.pdfMode(result.pdf, result.pdf.now); }, { once: true });
+      window.print();
+    });
   };
   if (typeof document !== 'undefined') {
     window.addEventListener('hashchange', W.navigate);
