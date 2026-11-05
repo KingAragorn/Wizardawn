@@ -94,6 +94,25 @@
     return W.descriptionText(variants[variant], slots);
   };
   W.fantasyItem = p => W.d(100) <= W.number(p.unusual, 0, 0, 100) ? W.unusualRoom(p) : W.fantasyMundane(p);
+  // item_fantasy.php paintingMaker($condition = 1, $type): 1 painting, 0 tapestry.
+  const painting = type => {
+    const noun = type === 1 ? 'painting' : 'tapestry';
+    const pfx = W.d(100) > 50 ? (W.d(100) > 50 ? 'torn ' : 'ruined ') + noun + ' of ' : noun + ' of ';
+    const i = int(0, 11);
+    if (i === 10) return pfx + 'a ' + vocab('designType');
+    if (i === 11) { const who = W.name('genericName'), job = W.name('jobName'); return pfx + who + ' the ' + job.charAt(0).toUpperCase() + job.slice(1); }
+    return pfx + ['a scenic forest view', 'a scenic ocean view', 'a scenic desert view', 'a scenic jungle view', 'a keep', 'a house', 'some ruins', 'a castle', 'a city', 'a mountain'][i];
+  };
+  // rooms_fantasy.php tortureMaker($game, $cut, 1): the corpse/blood extras are only for other types.
+  const torture = () => [
+    () => 'a torture rack made mostly of ' + condition('wood') + wood(),
+    () => 'an iron maiden made mostly of ' + condition('iron') + metal(),
+    () => 'a spiked torture chair made mostly of ' + condition('wood') + wood() + ' with ' + metal() + ' spikes on it',
+    () => 'a pillory made mostly of ' + condition('wood') + wood()
+  ][int(0, 3)]();
+  // rooms_fantasy.php cauldronMaker(): `if ($make = "broken")` assigns, so every
+  // cauldron reads "broken cauldron" with no contents; the rolls are still made.
+  const cauldron = () => { metal(); int(0, 6); int(0, 14); return 'broken cauldron'; };
   W.furnishing = function (p, kind, selected) {
     const index = selected ?? int(0, { wall: 27, near: 31, floor: 48, ceiling: 22 }[kind]);
     const result = { text: '', place: '', size: 0, fill: 0, fillPlace: '' };
@@ -115,7 +134,8 @@
     const body = suffix => { const name = corpse(); result.text = 'are ' + condition('iron') + metal() + ' manacles with a ' + name + suffix; result.place = 'on the ' + name; result.size = 3; result.fill = 3; };
     const chain = suffix => { result.text = 'is ' + int(2, 5) + ' feet of ' + condition('iron') + 'iron chain ' + suffix; };
     const rope = suffix => { result.text = 'is ' + int(10, 50) + ' feet of ' + condition('cloth') + 'rope ' + suffix; };
-    const cage = hanging => { object(condition('iron') + metal() + ' cage' + (hanging ? ' hanging' : ''), 'inside', 3); };
+    // rooms_fantasy.php cageMaker(); furnish.php keeps its leading "a".
+    const caged = hanging => { const made = cage(); result.text = 'is ' + made + (hanging ? ' hanging' : ''); result.place = hanging ? 'inside the cage' : 'inside the ' + made; result.size = 3; };
     if (kind === 'ceiling') {
       switch (index) {
         case 0: chain('hanging'); break;
@@ -136,7 +156,7 @@
         case 16: drawings(false); break;
         case 17: drawings(true); break;
         case 18: object(condition('iron') + metal() + ' bell with a ' + int(1, 3) + ' foot iron chain hanging'); break;
-        case 19: cage(true); break;
+        case 19: caged(true); break;
         case 20: result.text = 'are ' + int(2, 10) + ' ' + condition('iron') + metal() + ' hooks'; break;
         case 21: result.text = 'are ' + condition('iron') + metal() + ' manacles hanging'; break;
         case 22: body(' hanging'); break;
@@ -159,7 +179,7 @@
         case 13: object(condition('iron') + metal() + ' shield hanging'); break;
         case 14: object(furniture() + ' wall basin', 'inside', 1); if (W.d(3) > 1) result.text += ', filled with ' + condition('water') + 'water'; break;
         case 15: object(vocab('sizeMakeWall') + ' ' + condition('iron') + metal() + ' mirror', 'behind', 3); result.text += ' hanging'; break;
-        case 16: case 17: object((index === 16 ? 'framed painting' : 'tapestry') + ' of a ' + vocab('designType'), 'behind', 3); break;
+        case 16: case 17: object(painting(index === 16 ? 1 : 0), 'behind', 3); break;
         case 18: body(''); break;
         case 19: object(wood() + ' weapon rack', 'on', 0, 2); result.text += ' hanging'; break;
         case 20: result.text = 'is ' + int(2, 10) * 10 + ' feet of twine hanging'; break;
@@ -197,11 +217,11 @@
         case 23: result.text = 'is a ' + keg(); break;
         case 24: if (kind === 'floor') stain('traces of ' + pick(['moss', 'mold'])); else object(wood() + ' cupboard', 'inside', 1, 4); break;
         case 25: if (kind === 'floor') stain('fungi growing'); else object(wood() + ' desk', 'inside', 1, 6, W.d(2) === 1 ? 'on' : ''); break;
-        case 26: object(pick(['rack', 'iron maiden', 'torture wheel', 'wooden stocks'])); if (W.d(10) > 6) result.text += ' with areas of dried blood'; if (W.d(10) > 7) { const dead = corpse(); result.text += ' and has a ' + dead; result.place = 'on the ' + dead; result.size = 3; result.fill = 3; } break;
-        case 27: case 38: cage(false); break;
+        case 26: result.text = 'is ' + torture(); if (W.d(10) > 6) result.text += ' with areas of dried blood'; if (W.d(10) > 7) { const dead = corpse(); result.text += ' and has a ' + dead; result.place = 'on the ' + dead; result.size = 3; result.fill = 3; } break;
+        case 27: case 38: caged(false); break;
         case 28: object(wood() + ' barrel', 'inside', 2); break;
         case 29: object(wood() + ' ' + pick(['box', 'cabinet', 'footlocker', 'chest', 'crate', 'casket', 'trunk']), 'inside', 2, 7); if (W.d(4) === 1) result.text += pick([' that is locked with a padlock', ' that has a locked keyhole']); break;
-        case 30: object(condition('iron') + metal() + ' cauldron', 'inside', 2); break;
+        case 30: result.text = 'is a ' + cauldron(); result.place = 'inside the cauldron'; result.size = 2; break;
         case 31: if (kind === 'floor') stain('areas of mold'); else object(wood() + ' armor rack', 'on', 0, 1); break;
         case 32: rope('fastened'); break;
         case 33: stain('scratches and claw marks'); break;

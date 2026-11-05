@@ -361,8 +361,11 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   All 192 floor-item cells and 174 shelf-item cells render; each item's numeric
   descriptions come from literal template data. Adventures place treasure in
   those hiding spots and respect the room's original one-coin-allocation rule.
-  Remaining: full nested painting, cage, cauldron, torture, egg and exceptional
-  item helpers, exact repeated hiding-place reuse and report presentation.
+  Furnishings now use paintingMaker (wall 16/17), tortureMaker type 1 (26),
+  cageMaker (27/38 and hanging ceiling 19, PHP loot text) and cauldronMaker (30;
+  PHP's `if ($make = "broken")` assignment makes every cauldron "broken cauldron"
+  with no contents, kept as-is). eggMaker is not called by furnish.php.
+  Remaining: exact repeated hiding-place reuse and report presentation.
 - Custom loot now repeats nested treasure finds for the requested min/max count
   (including PHP's min>max clamp), and PA hoards use original currency amounts.
   Data listing covers every original category, including Deluxe treasure.

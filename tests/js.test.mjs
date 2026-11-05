@@ -1380,3 +1380,18 @@ test('hex crawl ground items and underwater encounters follow tool_hexcrawl.php'
   assert.match(W.fantasyGroundItem({ game: 'osric' }, 82), /CONTAINS:/);
   for (let i = 0; i < 206; i++) { const t = W.fantasyGroundItem({ game: 'lablord' }, i); assert.ok(t && !/undefined|NaN|\$/.test(t), i + ': ' + t); }
 });
+test('furnishings use furnish.php painting, torture, cage and cauldron helpers', () => {
+  W.random('furnish-helpers');
+  for (let i = 0; i < 30; i++) {
+    assert.match(W.furnishing({}, 'wall', 16).text, /^is a ((torn|ruined) )?painting of /);
+    assert.match(W.furnishing({}, 'wall', 17).text, /^is a ((torn|ruined) )?tapestry of /);
+    assert.match(W.furnishing({}, 'near', 26).text, /^is (a torture rack|an iron maiden|a spiked torture chair|a pillory) made mostly of /);
+    const cage = W.furnishing({}, 'near', 27);
+    assert.match(cage.text, /^is a (small|medium-short|medium-sized|large) .*cage/);
+    assert.equal(cage.place, 'inside the ' + cage.text.slice(3));
+    assert.match(W.furnishing({}, 'ceiling', 19).text, /cage.* hanging$/);
+    const pot = W.furnishing({}, 'near', 30);
+    assert.equal(pot.text, 'is a broken cauldron');
+    assert.equal(pot.place, 'inside the cauldron');
+  }
+});
