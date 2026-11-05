@@ -429,3 +429,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - uruins: full VehicleRobotMaker port (W.vehicleRobot): robots now use the original text for Metamorphosis Alpha, Gamma World, generic and Broken Urthe (serial/alien names, software level, metal, fuel) instead of monster stat blocks; vehicle prints before robot as in the PHP.
 - tests: the encounter-hoard PHP comparison test now sets its own seed.
 - mapMood: Ruined City / Building / Spaceship room descriptions (atmosphere.php mapMood, PAgrowthMaker) used by uruins and uexfl when an atmosphere chance is set.
+- tmap: original 'Treasure Map [ Type N ]' header, '<owner> was known to have had:' line, capitalised job, and the PHP's always-Merchant human victim (classMaleName exploded at index 1). The magic-item roll still uses the game list; the 1,800-line makeMagicItem port is still pending.

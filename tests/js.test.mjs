@@ -659,6 +659,14 @@ test('VehicleRobotMaker robot text matches the original per-game lists', () => {
   assert.match(html, /STRANDED ROBOT (INSIDE|NEXT TO) THE BUILDING\.\.\.<\/b><br>[A-Z]/);
   assert.ok(html.indexOf('STRANDED VEHICLE') < html.indexOf('STRANDED ROBOT'));
 });
+test('treasure maps follow the original header, Merchant victim and owner lines', () => {
+  W.rng = W.random('tmap-format');
+  const html = W.range(40).map(() => W.routes.tmap.generate({ amount: 1, level: 3 })).join('');
+  assert.match(html, /<b>Treasure Map<\/b> \[ Type III \] (\[[^\]]+\] )?- The map is /);
+  assert.match(html, / was known to have had:/);
+  assert.match(html, /stealing this treasure from a (Merchant|Demon|Dragon) known as /);
+  assert.doesNotMatch(html, /from a (?!Merchant|Demon|Dragon)\w+ known as/);
+});
 test('Ruined City, Building and Spaceship rooms use mapMood descriptions', () => {
   W.rng = W.random('map-mood');
   const ruins = W.range(300).map(() => W.mapMood('Ruined City', 50));

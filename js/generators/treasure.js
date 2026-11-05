@@ -73,12 +73,13 @@
       if (roll < 98) return 'JEWELRY: ' + W.jewel(cut);
       return W.magicItem({ ...p, x_cut: cut });
     }).filter(Boolean);
-    return { level, container, trap, treasure, clue: W.treasureClue(p, level) };
+    const clue = W.treasureClue(p, level);
+    return { level, container, trap, treasure, clue, owner: clue.match(/treasure of (.+?) the /)?.[1] || '' };
   };
   W.register('tmap', 'Random Treasure Maps', 'Generate descriptions of treasure maps, their legends, hiding places, protections and hoards.', [W.gameField, W.countField('Maps'), f('level', 'Map level (0 = random)', 'number', { value: 0, min: 0, max: 20 }), f('x_cut', 'Treasure value (%)', 'number', { value: 35, min: 0, max: 1000 }), f('x_whichmagic', 'Original game magic items (%)', 'number', { value: 50, min: 0, max: 100 }), f('x_oldway', 'Use Magestykc weapons and armor', 'checkbox'), f('aec', 'Include AEC', 'checkbox'), f('ua', 'Include Unearthed Arcana', 'checkbox'), ...W.dataFields], p => {
     const maps = W.range(W.count(p, 'amount')).map(() => W.treasureMap(p, W.number(p.level, 0, 0, 20) || int(1, 20)));
     W.storage.set('last-treasure-maps', { options: p, maps });
-    return maps.map((map, i) => `<article class="treasure-map"><h3>Map ${i + 1} — Type ${roman(map.level)}</h3><p>${esc(map.clue)}</p><p><b>TREASURE:</b> [${esc(map.container)}${map.trap ? ' — TRAPPED: ' + esc(map.trap) : ''}]: ${esc(map.treasure.join(' ----- ')) || 'Unknown Treasure'}</p></article>`).join('');
+    return maps.map((map, i) => `<article class="treasure-map"><h3>Map ${i + 1}</h3><p><b>Treasure Map</b> [ Type ${roman(map.level)} ] ${esc(map.clue.replace(/^(\[[^\]]+\] )?/, '$1- '))} ${esc(map.owner)} was known to have had:</p><p><b>TREASURE:</b> [${esc(map.container)}${map.trap ? ' — TRAPPED: ' + esc(map.trap) : ''}]: ${esc(map.treasure.join(' ----- ')) || 'Unknown Treasure'}</p></article>`).join('');
   });
   const doorSections = [['mi', 'Mundane Items', 100], ['ui', 'Unusual Items', 20], ['rt', 'Room Traps', 20], ['c', 'Containers', 20], ['ct', 'Container Traps', 20], ['cs', 'Curses', 20], ['ggj', 'Coins, Gems, Jewels', 100], ['ei', 'Exceptional Items', 20], ['th', 'Treasure Hoards', 20], ['en', 'Encounters', 100]];
   W.register('doors', 'Dungeon Door', 'Create the original collection of dungeon reference tables, choosing which sections to include.', [W.gameField, f('x_level', 'Dungeon level (0 = random)', 'number', { value: 0, min: 0, max: 100 }), ...doorSections.map(([key, title]) => f('x_show_' + key, title, 'checkbox', { value: 1 })), f('x_describe', 'Creature descriptions', 'checkbox', { value: 1 })], p => {
