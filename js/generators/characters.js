@@ -195,7 +195,7 @@
   };
   W.renderCharacter = function (c, p = {}) {
     const named = enabled(p, 'x_name'), sheet = p.x_output === 'Character Sheets';
-    if (sheet && c.rules !== 'osric') return W.renderBasicSheet(c, p);
+    if (sheet) return c.rules === 'osric' ? W.renderOsricSheet(c, p) : W.renderBasicSheet(c, p);
     const title = (named ? c.name + ' — ' : '') + `${c.sex} ${c.className}, Level ${c.level}`;
     const saveLabels = c.rules === 'bx' ? ['Death/Poison', 'Wands', 'Paralysis/Stone', 'Breath', 'Spells/Rods/Staves'] : c.rules === 'll' ? ['Breath', 'Poison/Death', 'Petrify/Paralyze', 'Wands', 'Spells'] : ['Poison/Death', 'Breath', 'Wands', 'Petrify/Paralyze', 'Spells'];
     let html = `<article class="character${sheet ? ' character-sheet' : ''}"><h3>${esc(title)}</h3><p>${c.rules === 'osric' ? esc(c.race) + '; ' : ''}${enabled(p, 'x_show_al') ? 'Alignment: ' + esc(c.alignment) + '; ' : ''}${enabled(p, 'x_show_age', false) ? 'Age: ' + c.age + '; ' : ''}<b>AC:</b> ${c.ac}; <b>HP:</b> ${c.hitPoints}; <b>XP:</b> ${c.xp.toLocaleString('en-US')}</p>`;

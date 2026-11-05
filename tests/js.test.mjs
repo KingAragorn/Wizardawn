@@ -1338,3 +1338,16 @@ test('wander draws without replacement from the freq_code-weighted pool per pass
   for (const m of new Set(first)) assert.ok(first.filter(x => x === m).length <= Math.max(1, +m.freq_code || 0));
   assert.equal(seen.length, 30);
 });
+
+test('oadvg character sheets render the tool_oadvg.php OSRIC table sheet', () => {
+  W.random(4242);
+  const html = W.routes.oadvg.generate({ x_qty_f: 2, x_output: 'Character Sheets', x_show_eq: '1', x_name: '1' });
+  assert.ok((html.match(/osric-sheet/g) || []).length >= 1);
+  assert.equal((html.match(/osric-sheet/g) || []).length, (html.match(/ocsht_26\.jpg/g) || []).length);
+  assert.match(html, /ocsht_26\.jpg/);
+  assert.match(html, /ocsht_25\.jpg/);
+  assert.match(html, /Res: \d+% \/ Sys Shk: \d+%/);
+  assert.match(html, /Hench: \d+/);
+  assert.match(html, /page-break-after:always/);
+  assert.doesNotMatch(html, /undefined|NaN/);
+});
