@@ -1,7 +1,7 @@
 # Wizardawn (static)
 
 The Wizardawn random generators for old-school RPGs, as a static site that runs
-entirely in the browser. Live copy: https://truculent.org/wizardawn/
+entirely in the browser.
 
 ## How it works
 
