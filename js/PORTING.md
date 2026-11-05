@@ -426,3 +426,5 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - uexfl/uruins: uexfl prints "SOMETHING UNUSUAL IN THE ROOM..."; uruins robots use "STRANDED ROBOT INSIDE/NEXT TO THE BUILDING..." (other post maps: "DERELICT ROBOT IN THE ROOM...").
 - uruins: Broken Urthe stranded vehicles use the 24-entry Urthe list from VehicleRobotMaker.
 - uexfl: fixed 2% unusual-room chance; post rooms without atmosphere read "This area contains..." or "Empty of mundane items." (uexfl/uruins).
+- uruins: full VehicleRobotMaker port (W.vehicleRobot): robots now use the original text for Metamorphosis Alpha, Gamma World, generic and Broken Urthe (serial/alien names, software level, metal, fuel) instead of monster stat blocks; vehicle prints before robot as in the PHP.
+- tests: the encounter-hoard PHP comparison test now sets its own seed.

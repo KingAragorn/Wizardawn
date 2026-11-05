@@ -643,6 +643,22 @@ test('Broken Urthe stranded vehicles use the Urthe vehicle list', () => {
   assert.ok(all.some(v => /Semi Truck With Trailer|Dune Buggy|Moped|Hovercraft/.test(v)));
   assert.ok(all.every(v => !/Turbine Car|Bubble Car|Military/.test(v)));
 });
+test('VehicleRobotMaker robot text matches the original per-game lists', () => {
+  W.rng = W.random('robots');
+  const cond = '\\((totally ruined|poor condition|fair condition|good condition|excellent condition|perfect condition)\\)';
+  const power = '( totally drained of power| with (10|20|30|40|50|60|70|80|90|100)% power)\\.$';
+  const gw = W.range(100).map(() => W.vehicleRobot({ game: 'gamma' }, 0));
+  assert.ok(gw.every(t => new RegExp(cond + power).test(t)) && gw.some(t => /Robotoid|Borg|Bot/.test(t)));
+  assert.ok(W.range(60).map(() => W.vehicleRobot({ game: 'meta' }, 0)).some(t => /^Android /.test(t)));
+  assert.ok(W.range(60).map(() => W.vehicleRobot({ game: 'mutfut' }, 0)).some(t => /Think Tank|Cargo Litter|Warbot/.test(t)));
+  const bu = W.range(100).map(() => W.vehicleRobot({ game: 'urthe', x_level: 4 }, 0));
+  assert.ok(bu.every(t => / (Droid|Bot|Mech) \(/.test(t) && / made mostly of .* and runs on .* for fuel\. It has Software (I|II) in [A-Z]\w+ installed and is/.test(t)), bu[0]);
+  assert.ok(bu.some(t => /^[0-9A-Z]+(-[0-9A-Z]+)? /.test(t)));
+  W.rng = W.random('ruin-robot');
+  const html = W.routes.uruins.generate({ map_rooms: 8, x_frob: 100, x_fveh: 100 });
+  assert.match(html, /STRANDED ROBOT (INSIDE|NEXT TO) THE BUILDING\.\.\.<\/b><br>[A-Z]/);
+  assert.ok(html.indexOf('STRANDED VEHICLE') < html.indexOf('STRANDED ROBOT'));
+});
 test('uexfl unusual rooms and uruins robots use the original headings', () => {
   W.rng = W.random('headings');
   const sci = W.routes.uexfl.generate({ map_rooms: 300, x_weird: 100 });
@@ -1054,6 +1070,7 @@ test('science-fiction unusual features use all six original branches and valid r
 });
 
 test('optional encounter hoards preserve PHP treasure sections and local encounter records', async () => {
+  W.rng = W.random('encounter-hoards'); // own seed so earlier tests cannot change its draws
   for (const [game, phpGame] of [['lablord', 'Labyrinth Lord'], ['mutfut', 'Mutant Future'], ['tt7e', 'Tunnels & Trolls 7th Edition']]) {
     const monster = W.monsters({ game, level: 3 })[0];
     const options = { game, enemy: monster.id, n: 3, x_loot: '1', x_cut: 100, characters: 4, level: 2, tt_dice: 0 };
