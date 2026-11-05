@@ -16,6 +16,86 @@
     if (/castle|fort|dungeon|temple/.test(icon) && !/^sf_/.test(icon)) return 'dungeon';
     return 'building';
   }
+  // tool_locale.php / tool_hexcrawl.php "MAKE THE LOCALE": fantasy site names and per-icon flags.
+  const extraFloors = () => { const r = W.d(100); return r > 95 ? 4 : r > 85 ? 3 : r > 70 ? 2 : 1; };
+  W.fantasySiteProfile = function (p, icon, underwater, candidates, everyone = candidates) {
+    const word = W.name(['demonName', 'dragonName', 'mageName', 'orcName', 'elfName', 'genericName', 'dwarfName', 'gnomeName', 'genericName', 'authorName', 'goblinName', 'orcName', 'impName'][int(0, 12)]);
+    const own = word.endsWith('s') ? word + '`' : word + '`s';
+    let tomb = 0, scary = '';
+    if (W.d(4) === 1) { tomb = 1; scary = pick(['Haunted ', 'Cursed ', 'Accursed ', 'Blighted ', 'Infernal ', 'Unholy ', 'Forsaken ']); }
+    const skull = icon === 'skull' ? (W.d(3) === 1 ? 1 : 2) : 0;
+    const r = { name: '', kind: 'dungeon', tomb, floors: 1, size: 1, contents: true, weird: true, moods: true, map: true, keep: false, fort: false, owner: null, word };
+    const small = () => { if (W.d(3) === 1) r.size = 0; };
+    const fortPick = () => { const forts = everyone.filter(m => +m.m_fort === 1); r.owner = forts.length ? pick(forts) : null; r.fort = true; return r.owner?.m_fort_name || ''; };
+    if (skull === 1) {
+      if (underwater) { r.tomb = 0; scary = ''; }
+      const lairs = candidates.filter(m => +m.m_lair > 0), lair = lairs.length ? pick(lairs) : null;
+      r.owner = lair; const fort = lair?.m_fort_name || '';
+      if (lair && +lair.m_lair === 1) { r.weird = false; r.contents = false; r.kind = 'cave'; r.name = pick(['Cave', 'Den', 'Lair', 'Cavern']) + ' of the ' + fort; }
+      else { r.floors = extraFloors(); r.name = scary + pick(['Castle', 'Citadel', 'Donjon', 'Fort', 'Hold', 'Palace', 'Stronghold']) + ' of the ' + fort; }
+      // The PHP tests $ary['turn'] here, a stale row, so this keeps the earlier haunted roll.
+    } else if (skull === 2) {
+      small(); r.floors = extraFloors();
+      const c = int(0, 13);
+      r.name = [scary + 'Crypt of ' + word, scary + 'Tomb of ' + word, own + ' ' + scary + 'Tomb', own + ' ' + scary + 'Crypt', scary + 'Dungeon of ' + word, scary + 'Chamber of ' + word, scary + 'Vault of ' + word, own + ' ' + scary + 'Dungeon', own + ' ' + scary + 'Chamber', own + ' ' + scary + 'Vault', own + ' Dungeon', 'Dungeon of ' + word, own + ' Dungeon', 'Dungeon of ' + word][c];
+      if (c < 4) r.tomb = 1; else if (c > 9) r.tomb = 0;
+    } else if (icon === 'boat') {
+      const job = [() => cap(W.name('jobName')), () => W.name('classMaleName'), () => W.name('classFemaleName'), () => cap(design()), () => cap(W.name('jobName')) + 's', () => W.name('classMaleName') + 's', () => W.name('classFemaleName') + 's', () => cap(design()) + 's'][int(0, 7)]();
+      const type = pick(['Weeping', 'Sailing', 'Sunken', 'Drifting', 'Floating', 'Anchored', 'Sea', 'Voyaging', 'Journeying', 'Cursed', 'Fearful', 'Angry', 'Howling', 'Shameful', 'Screaming', 'Plundering', 'Bloody', 'Damned', 'Hateful', 'Courageous', 'Peaceful']);
+      r.name = [() => 'The ' + W.name('adjName') + ' Ship of ' + word, () => 'The ' + W.name('adjName') + ' Ship of the ' + job, () => 'The ' + type + ' Ship of ' + word, () => 'The ' + type + ' Ship of the ' + job, () => own + ' Ship of the ' + W.name('adjName') + ' ' + job, () => 'The ' + type + ' ' + job][int(0, 5)]();
+      r.wreck = pick(['vanished', 'disappeared', 'sank', 'was sunk', 'went missing', 'was lost']);
+      const swimmers = candidates.filter(m => +m.difficulty > 4); r.owner = swimmers.length ? pick(swimmers) : candidates[0] || null;
+      r.map = false; r.kind = 'wreck';
+    } else if (['dungeon', 'castle', 'castle_evil'].includes(icon)) {
+      r.floors = extraFloors(); if (underwater) { r.tomb = 0; scary = ''; }
+      r.name = icon === 'dungeon' ? [scary + 'Dungeon of ' + word, scary + 'Labyrinth of ' + word, scary + 'Dungeon of ' + word, scary + 'Maze of ' + word, own + ' ' + scary + 'Dungeon', own + ' ' + scary + 'Labyrinth', own + ' ' + scary + 'Dungeon', own + ' ' + scary + 'Maze'][int(0, 7)]
+        : (W.d(2) === 1 ? scary + pick(['Castle', 'Citadel', 'Donjon', 'Fortress', 'Hold', 'Palace', 'Stronghold']) + ' of ' + word : own + ' ' + scary + pick(['Castle', 'Citadel', 'Donjon', 'Fortress', 'Hold', 'Palace', 'Stronghold']));
+    } else if (icon === 'cave') {
+      small(); r.name = [ 'Cave of ' + word, 'Grotto of ' + word, 'Cavern of ' + word, own + ' Cave', own + ' Grotto', own + ' Cavern'][int(0, 5)];
+      Object.assign(r, { kind: 'cave', tomb: 0, contents: false, weird: false });
+    } else if (icon === 'fort' && W.d(3) === 1) {
+      small(); const suffix = pick([' Fort', ' Outpost']);
+      Object.assign(r, { kind: 'city', tomb: 0, weird: false, moods: false, keep: true }); r.name = fortPick() + suffix;
+    } else if (icon === 'fort') {
+      small(); r.floors = extraFloors(); const is = pick(['Deserted ', 'Abandoned ', 'Forgotten ']);
+      if (scary) r.name = [own + ' ' + scary + 'Fort', own + ' ' + scary + 'Outpost', is + ' ' + scary + 'Fort', is + ' ' + scary + 'Outpost'][int(0, 3)];
+      else { r.name = [own + ' ' + is + 'Fort', own + ' ' + is + 'Outpost', is + 'Fort of ' + word, is + 'Outpost of ' + word][int(0, 3)]; r.tomb = 0; }
+      Object.assign(r, { kind: 'city', weird: false, moods: false, keep: true });
+      r.name = (fortPick() || '') + r.name; r.fort = false; r.owner = null;
+    } else if (['camp', 'u_primitive', 'sf_primitive'].includes(icon) && W.d(2) === 1) {
+      small(); Object.assign(r, { kind: 'village', tomb: 0, weird: false, moods: false }); r.name = fortPick() + ' Camp';
+    } else if (['camp', 'u_primitive', 'sf_primitive'].includes(icon)) {
+      small(); const is = pick(['Deserted ', 'Abandoned ', 'Forgotten ']);
+      if (scary) r.name = W.d(2) === 1 ? own + ' ' + scary + 'Camp' : is + ' ' + scary + 'Camp';
+      else { r.name = W.d(2) === 1 ? own + ' ' + is + 'Camp' : is + 'Camp of ' + word; r.tomb = 0; }
+      Object.assign(r, { kind: 'village', weird: false, moods: false });
+      r.name = (fortPick() || '') + r.name; r.fort = false; r.owner = null;
+    } else if (icon === 'totem') {
+      small(); const suffix = pick([' Temple', ' Shrine']);
+      Object.assign(r, { tomb: 0, weird: false, moods: false }); r.name = fortPick() + suffix;
+    } else if (icon === 'mine') {
+      small(); const mines = pick([' Dangerous', ' Ruined', ' Forgotten', ' Abandoned', ' Deserted']), mineral = pick([' Silver', ' Gold', ' Diamond', ' Iron', ' Ore']);
+      const kind = pick([' Excavation', ' Mines', ' Pit', ' Quarry']);
+      r.name = W.d(2) === 1 ? 'The' + mines + mineral + kind + ' of ' + word : own + mines + mineral + kind;
+      Object.assign(r, { kind: 'cave', tomb: 0, contents: false, weird: false });
+    } else if (['ruins', 'sf_ruins', 'stones'].includes(icon)) {
+      small(); r.floors = extraFloors(); if (underwater) { r.tomb = 0; scary = ''; }
+      r.name = W.d(2) === 1 ? scary + 'Ruins of ' + word : own + ' ' + scary + 'Ruins';
+    } else if (['temple', 'temple2'].includes(icon)) {
+      small(); r.floors = extraFloors(); if (underwater) scary = '';
+      const c = int(0, 9);
+      r.name = [scary + 'Crypt of ' + word, scary + 'Tomb of ' + word, scary + 'Temple of ' + word, scary + 'Monastery of ' + word, scary + 'Cathedral of ' + word, own + ' ' + scary + 'Tomb', own + ' ' + scary + 'Crypt', own + ' ' + scary + 'Temple', own + ' ' + scary + 'Monastery', own + ' ' + scary + 'Cathedral'][c];
+      if ([0, 1, 5, 6].includes(c)) r.tomb = 1;
+      if (underwater) r.tomb = 0;
+    } else if (icon === 'tower') {
+      r.size = 0; const t = W.d(100); r.floors = t > 90 ? 6 : t > 70 ? 5 : t > 40 ? 4 : 3;
+      if (underwater) { r.tomb = 0; scary = ''; }
+      r.name = W.d(2) === 1 ? scary + 'Tower of ' + word : own + ' ' + scary + 'Tower';
+    } else return null;
+    return r;
+  };
+  const cap = text => text.charAt(0).toUpperCase() + text.slice(1);
+  const design = () => pick(['tower', 'griffin', 'crown', 'sword', 'axe', 'lion', 'bear', 'bat', 'boar', 'buffalo', 'chimera', 'snake', 'demon', 'devil', 'angel', 'dragon', 'dog', 'eagle', 'hawk', 'hippogriff', 'horse', 'wolf', 'pegasus', 'ram', 'skull', 'spider', 'unicorn', 'scorpion']);
   W.site = function (p, site) {
     const post = postGame(p), icon = site.icon.replace(/\.png$/, ''), kind = siteKind(icon), submerged = site.sunken || site.symbol === 'U' || /boat/.test(icon);
     const terrain = p.terrain || terrains[p.climate ?? p.x_terrain ?? 101]?.[0] || 'PF';
@@ -24,28 +104,30 @@
     let candidates = W.monsters(select).filter(m => +m.m_no_dungeon !== 1);
     if (!candidates.length && !submerged) candidates = W.monsters({ ...p, terrain: 'DG', dungeonOnly: '1' });
     // Empty selections terminate here. No retry/SQL insertion loop is needed.
-    const owner = candidates.length ? W.weighted(candidates.map(m => ({ value: m, weight: Math.max(1, +m.freq_code) }))) : null;
+    const profile = post ? null : W.fantasySiteProfile(p, icon, submerged && !/boat/.test(icon), candidates, W.monsters(select));
+    const owner = profile?.fort || profile?.owner ? profile.owner : candidates.length ? W.weighted(candidates.map(m => ({ value: m, weight: Math.max(1, +m.freq_code) }))) : null;
     const label = legend.get(site.icon) || icon.replaceAll('_', ' '), person = W.manyName(), scary = pick(['Ancient', 'Forgotten', 'Haunted', 'Lost', 'Crumbling', 'Cursed', 'Hidden']);
-    const name = p.siteName || (kind === 'wreck' ? 'The ' + scary + ' Ship of ' + person : kind === 'camp' ? (owner?.m_fort_name || person) + ' Camp' : scary + ' ' + label + ' of ' + person);
+    const name = p.siteName || profile?.name || (kind === 'wreck' ? 'The ' + scary + ' Ship of ' + person : kind === 'camp' ? (owner?.m_fort_name || person) + ' Camp' : scary + ' ' + label + ' of ' + person);
     const depth = submerged ? int(2, 20) * 100 : 0, sealed = submerged && kind === 'spaceship' && W.d(2) === 1;
     const floors = [], rooms = [];
     let html = `<article class="hex-site" id="site-${site.number}" data-site="${site.number}"><h2><img src="land/${esc(site.icon)}" alt=""> ${site.number}. ${esc(name)}</h2>`;
-    if (submerged) html += `<p><i>${depth.toLocaleString('en-US')} feet below the surface${sealed ? ', sealed air tight' : ''}.</i></p>`;
+    if (profile?.wreck) { const found = W.d(3) === 1; html += `<p>The \`${esc(name)}\` ${profile.wreck} about ${found ? int(2, 40) : int(1, 70) * 10} years ago and now rests ${depth.toLocaleString('en-US')} feet below the water\`s surface. Lurking nearby the ship is...</p>`; }
+    else if (submerged) html += `<p><i>${depth.toLocaleString('en-US')} feet below the surface${sealed ? ', sealed air tight' : ''}.</i></p>`;
     const occupants = owner ? W.monsterLife(owner, select) : [];
     html += `<section class="site-inhabitants"><h3>Inhabitants</h3>${owner ? W.monsterStats(owner, yes(p, 'x_describe'), select) + (owner.custom ? '' : `<p>${occupants.length} inhabitants. <b>${W.isTroll(p) ? 'MR' : W.game(p).slug === 'urthe' ? 'STAMINA' : 'HIT POINTS'}:</b> ${occupants.join(', ')}</p>`) : '<p>No enemies found for this terrain and difficulty.</p>'}</section>`;
     let floorCount = 0;
     const mapKind = kind === 'cave' || kind === 'lair' ? 'dungeon' : kind === 'ruins' ? post ? 'ruins' : 'dungeon' : kind === 'spaceship' || kind === 'building' && post ? 'scifi' : 'dungeon';
     const own = W.number(p.map_rooms, 0, 0, 1000);
-    if (!['camp', 'wreck', 'lair'].includes(kind) || own) {
+    if (profile ? profile.map : !['camp', 'wreck', 'lair'].includes(kind) || own) {
       const roll = W.d(100);
-      floorCount = kind === 'tower' ? roll > 90 ? 6 : roll > 70 ? 5 : roll > 40 ? 4 : 3 : roll > 95 ? 4 : roll > 85 ? 3 : roll > 70 ? 2 : 1;
+      floorCount = profile ? profile.floors : kind === 'tower' ? roll > 90 ? 6 : roll > 70 ? 5 : roll > 40 ? 4 : 3 : roll > 95 ? 4 : roll > 85 ? 3 : roll > 70 ? 2 : 1;
       for (let floorNumber = 1; floorNumber <= floorCount; floorNumber++) {
-        const size = kind === 'tower' || W.d(3) === 1 ? 0 : 1;
+        const size = profile ? profile.size : kind === 'tower' || W.d(3) === 1 ? 0 : 1;
         const floorKind = post && floorNumber > 1 && /military|ruins/.test(icon) ? 'sewer' : mapKind;
-        const type = floorKind === 'scifi' ? kind === 'spaceship' ? 'Spaceship' : 'Building' : kind === 'cave' ? 'Cavernous' : 'Dungeon';
+        const type = floorKind === 'scifi' ? kind === 'spaceship' ? 'Spaceship' : 'Building' : (profile ? profile.kind === 'cave' : kind === 'cave') ? 'Cavernous' : 'Dungeon';
         const map = own ? { html: '', tiles: [], rooms: W.range(own).map(number => ({ number })) } : W.geomorphMap({ ...p, type, width: size, height: size, interior: '1', keyed: '1', start: 1, geomorph_colored: '1' }, floorKind);
-        const options = { ...p, terrain: submerged ? waterTerrain : 'DG', x_terrain: terrain, type, ...(submerged ? { swimmer: 1 } : {}), floorType: /tomb|crypt|temple|skull/.test(icon) ? 'T' : 'D' };
-        const results = map.rooms.map(room => W.adventureRoom(options, room.number, map.rooms.length, kind === 'cave', post));
+        const options = { ...p, terrain: submerged ? waterTerrain : 'DG', x_terrain: terrain, type, ...(submerged ? { swimmer: 1 } : {}), floorType: (profile ? profile.tomb : /tomb|crypt|temple|skull/.test(icon)) ? 'T' : 'D', ...(profile && !profile.contents ? { x_u_c: 0 } : {}), ...(profile && !profile.weird ? { x_weird: 0 } : {}), ...(profile && !profile.moods ? { atmo: 999, x_atmo: 999 } : {}) };
+        const results = map.rooms.map(room => W.adventureRoom(options, room.number, map.rooms.length, type === 'Cavernous', post));
         floors.push({ number: floorNumber, type, kind: floorKind, tiles: map.tiles, rooms: results });
         rooms.push(...results.map(room => ({ floor: floorNumber, ...room })));
         html += `<section class="site-floor" data-floor="${floorNumber}"><h3>Level ${floorNumber}</h3>${map.html}${results.map(room => room.html).join('')}</section>`;
@@ -53,7 +135,7 @@
     } else {
       const outdoor = W.adventureRoom({ ...p, terrain: submerged ? waterTerrain : terrain, x_furnish: '0', ...(submerged ? { swimmer: 1 } : {}) }, 1, 1, false, post);
       rooms.push(outdoor);
-      html += `<p>${kind === 'wreck' ? 'This ship ' + pick(['vanished', 'disappeared', 'sank', 'was lost']) + ' about ' + int(5, 90) * 10 + ' years ago.' : kind === 'camp' ? 'The inhabitants have made a camp around ' + pick(['a fire pit', 'a wooden totem', 'a ring of stones', 'a crude shrine']) + '.' : 'The creature has made its lair here.'}</p>` + outdoor.html;
+      html += (profile?.wreck ? "" : `<p>${kind === 'wreck' ? 'This ship ' + pick(['vanished', 'disappeared', 'sank', 'was lost']) + ' about ' + int(5, 90) * 10 + ' years ago.' : kind === 'camp' ? 'The inhabitants have made a camp around ' + pick(['a fire pit', 'a wooden totem', 'a ring of stones', 'a crude shrine']) + '.' : 'The creature has made its lair here.'}</p>`) + outdoor.html;
     }
     return { number: site.number, icon: site.icon, kind, name, submerged, depth, sealed, ownerId: owner?.id || null, occupants, floors, rooms, html: html + '</article>' };
   };

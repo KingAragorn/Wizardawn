@@ -659,6 +659,22 @@ test('VehicleRobotMaker robot text matches the original per-game lists', () => {
   assert.match(html, /STRANDED ROBOT (INSIDE|NEXT TO) THE BUILDING\.\.\.<\/b><br>[A-Z]/);
   assert.ok(html.indexOf('STRANDED VEHICLE') < html.indexOf('STRANDED ROBOT'));
 });
+test('fantasy locales use the original per-icon names and flags', () => {
+  W.rng = W.random('locale-profiles');
+  const names = icon => W.range(60).map(() => W.fantasySiteProfile({ game: 'lablord' }, icon, false, []));
+  assert.ok(names('tower').every(r => /Tower$|^(\w+ )?Tower of /.test(r.name) && r.size === 0 && r.floors >= 3));
+  assert.ok(names('cave').every(r => /(Cave|Grotto|Cavern)/.test(r.name) && !r.contents && r.kind === 'cave'));
+  assert.ok(names('mine').every(r => /(Excavation|Mines|Pit|Quarry)/.test(r.name) && /(Silver|Gold|Diamond|Iron|Ore)/.test(r.name)));
+  const boats = names('boat');
+  assert.ok(boats.every(r => /Ship|The \w+ \w+/.test(r.name) && !r.map && r.wreck));
+  assert.ok(names('temple').some(r => r.tomb === 1 && /(Crypt|Tomb)/.test(r.name)));
+  assert.equal(W.fantasySiteProfile({}, 'pa_factory', false, []), null);
+  W.rng = W.random('locale-route');
+  const html = W.range(4).map(() => W.routes.locale.generate({ game: 'lablord', x_locale: 8, map_rooms: 2 })).join('');
+  assert.match(html, /Tower/);
+  W.rng = W.random('locale-boat');
+  assert.match(W.routes.locale.generate({ game: 'lablord', x_locale: 6 }), /years ago and now rests [\d,]+ feet below the water`s surface/);
+});
 test('treasure maps follow the original header, Merchant victim and owner lines', () => {
   W.rng = W.random('tmap-format');
   const html = W.range(40).map(() => W.routes.tmap.generate({ amount: 1, level: 3 })).join('');
@@ -826,7 +842,7 @@ test('all locale choices render inhabitants, underwater depth, floors and matchi
     assert.equal(occurrences(output, /class="adventure-room"/g), site.rooms.length);
     assert.ok(existsSync(`${root}/js/land/${site.icon}`), site.icon);
     assert.ok(site.floors.every(floor => floor.rooms.length === 2));
-    if (site.submerged) assert.match(output, /feet below the surface/);
+    if (site.submerged) assert.match(output, /feet below the (water`s )?surface/);
     assert.doesNotMatch(output, /undefined|NaN/);
   }
 });

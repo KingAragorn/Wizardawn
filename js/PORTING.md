@@ -430,3 +430,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - tests: the encounter-hoard PHP comparison test now sets its own seed.
 - mapMood: Ruined City / Building / Spaceship room descriptions (atmosphere.php mapMood, PAgrowthMaker) used by uruins and uexfl when an atmosphere chance is set.
 - tmap: original 'Treasure Map [ Type N ]' header, '<owner> was known to have had:' line, capitalised job, and the PHP's always-Merchant human victim (classMaleName exploded at index 1). The magic-item roll still uses the game list; the 1,800-line makeMagicItem port is still pending.
+- Locale fantasy sites now port every tool_locale.php icon branch (lair, dungeon, boat wreck, castle, cave, fort, camp, totem, mine, ruins, temple, tower): names, tomb floors, extra floors, size, contents/weird/mood flags, m_fort owners and the sunken-ship sentence.
