@@ -617,6 +617,13 @@ test('Labyrinth Lord adventurers guild listing uses its own preamble', () => {
   assert.match(html, /gender \(GD\), age, and experience/);
   assert.match(html, /breath attacks \(BA\), poison or death \(PD\), petrify or paralyze \(PP\), wands \(WN\)/);
 });
+test('OSRIC adventurers guild listing uses the original preamble and save legend', () => {
+  W.rng = W.random('osric-intro');
+  const html = W.routes.oadvg.generate({ x_qty_f: 1 });
+  assert.match(html, /^<p class="adventurer-intro">Each adventurer is listed below with their alignment \(<i>AL<\/i>\)/);
+  assert.match(html, /<i>RSW<\/i> \(rod, staff, or wand\)/);
+  assert.match(W.routes.oadvg.generate({ game: 'lablord', x_qty_f: 1 }), /<i>BA<\/i> \(breath attacks\)/);
+});
 test('delve caverns use the original eight descriptions and dripping water', () => {
   W.rng = W.random('caves');
   const seen = new Set(); let drip = 0;
