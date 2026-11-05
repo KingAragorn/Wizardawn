@@ -6,8 +6,8 @@ comparison; it is never shipped to or evaluated by this client.
 
 ## Batches
 
-Run 1 notes below are historical. The user committed them as `1919e68`;
-the run 2 section at the end records the current resume state.
+Earlier run notes below are historical. The status table and the latest
+Run 4 progress entries record the current resume state.
 
 1. Core/portal: seeded dice, HTML helpers, hash router, original portal, menus,
    original editorial help/game pages, notices and licences. Complete.
@@ -35,8 +35,8 @@ are bundled. No deployment has been made.
 | --- | --- | --- |
 | `index.php` | ported | `#/` |
 | `data_help.php` | ported | `#/data_help` |
-| `data_magestykc.php` | remaining | `#/data_magestykc` |
-| `data_magestykc_run.php` | remaining | `#/data_magestykc_run` |
+| `data_magestykc.php` | ported | `#/data_magestykc` |
+| `data_magestykc_run.php` | partial | `#/data_magestykc_run?id=lang` / `id=kin` / `id=mon` |
 | `game_mm.php` | ported | `#/rules/mm` |
 | `game_necro.php` | ported | `#/rules/necro` |
 | `game_ruins.php` | ported | `#/rules/ruins` |
@@ -383,3 +383,20 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   (vending machine, teleporter, fruit, cloning, escape pod, computer) rather than
   fantasy unusual rooms. Encounter Creation now supports optional hoards with
   original level-based find counts, container choices and coin allocation.
+- Added the Magestykc supplement page, complete language/learning-SR listing
+  and kindred narratives/modifier table from the original monster data. Monster
+  supplements support all three editions and six difficulties but retain the
+  shared monster-report limitations, so data_magestykc_run remains partial.
+  Menu links now preserve original query options while mapping PHP filenames to
+  clean hash routes. Latest full verification before these supplements: 108 tests.
+- OSRIC officials/adventurers now use the original ability effects (exceptional
+  strength, minor/major tests, DEX AC/surprise/ranged modifiers, Constitution
+  survival/shock, mental saves, racial saves and Charisma henchmen/reactions).
+  Independent PHP checks cover every score 3–19 across classes/races and all
+  exceptional-strength bands. Class/racial languages and notes, normal class-
+  legal gear, armor AC, shields, ranged equipment and camp packs are expanded.
+  Original enchantment/loose-magic equipment logic still remains. 113 tests pass.
+- Random spells now use the original seven games' literal class/level tables,
+  weighted arcane/divine class choice, caster-level conversion and AEC/UA pools.
+  Six-Siders' duplicate case 38 / missing 39 is repaired so Wall of Fire and
+  Wall of Ice are both reachable. This improves scrolls and unusual books.

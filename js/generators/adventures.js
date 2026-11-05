@@ -47,17 +47,6 @@
     if (W.d(100) > 90) text += '. You can make out a ' + cell('soundMakerRoom') + ' sound coming from somewhere';
     return text + '.';
   };
-  W.furnish = function (p, cave = false) {
-    if (!yes(p, 'x_furnish')) return '';
-    if (cave) return 'This is a cavernous area' + pick(['.', '. Some fungi grows in various places.', ' with a few stalactites on the ceiling.', ' with a few stalagmites on the ground.', ' with a few stalactites and stalagmites.']) + (W.d(6) === 1 ? ' Water drips from up above in places.' : '');
-    const parts = [];
-    for (const place of ['floor', 'ceiling', 'north floor', 'south floor', 'east floor', 'west floor', 'north wall', 'south wall', 'east wall', 'west wall', 'scattered about']) {
-      if (W.d(5) !== 1) continue;
-      const items = place === 'ceiling' ? ['cobwebs', 'a hanging lantern', 'cracks', 'a chandelier', 'a hanging cage'] : place.endsWith('wall') ? ['a fireplace', 'a tapestry', 'scratches and claw marks', 'a hanging shield', 'a wooden shelf', 'a painting', 'blood smears', 'iron chains'] : ['a wooden table', 'a chair', 'a bench', 'a bed', 'a chest', 'a pile of bones', 'a torn carpet', 'a barrel', 'a cupboard', 'a clay pot'];
-      parts.push(`${place === 'scattered about' ? 'Scattered about are' : 'On the ' + place + ' is'} ${pick(items)}.`);
-    }
-    return parts.length ? parts.join(' ') : cell('furnishRoom');
-  };
   W.unusualRoom = function (p, rooms = 20) {
     const level = W.number(p.x_level, 1, 1, 100), value = int(1, 6);
     if (value === 1) return `An altar of ${cell('statueMake')} dedicated to ${W.name('demon')}. Offerings ${W.d(2) === 1 ? 'heal 1d6 damage' : 'trigger a curse: ' + W.curse(p, level, 'the worshipper')}.`;

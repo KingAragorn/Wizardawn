@@ -2,10 +2,14 @@
   'use strict';
   W.routes = {};
   W.aliases = { 'index.php': '', 'tool_coins.php': 'coins', 'tool_names.php': 'names', 'tool_brew.php': 'brews', 'tool_alchemist.php': 'alchemist', 'tool_door.php': 'doors', 'tool_bmbs.php': 'items', 'tool_loot.php': 'loot', 'tool_wander.php': 'wander', 'tool_encounter.php': 'encounters', 'tool_llb_spells.php': 'basic-spells', 'tool_osric_spells.php': 'spells', 'tool_ftown.php': 'town', 'tool_hexcrawl.php': 'hex-crawl', 'tool_world.php': 'world', 'tool_dmap.php': 'dungeon-map', 'tool_villg.php': 'settlement-map', 'tool_smap.php': 'sci-fi-map', 'tool_swmp.php': 'sewer-map', 'tool_suburb.php': 'suburb-map', 'tool_acity.php': 'ruined-city-map' };
-  W.routeFor = file => W.aliases[file] ?? file.replace(/^(tool_|rpg_|game_|help_)/, (prefix) => ({ 'tool_': '', 'rpg_': 'game/', 'game_': 'rules/', 'help_': 'help/' }[prefix])).replace(/\.php$/, '').replace(/^lic\/lic_(.*)\.(?:html|pdf)$/, 'licence/$1');
+  W.routeFor = file => {
+    const path = file.split('?')[0];
+    return W.aliases[path] ?? path.replace(/^(tool_|rpg_|game_|help_)/, (prefix) => ({ 'tool_': '', 'rpg_': 'game/', 'game_': 'rules/', 'help_': 'help/' }[prefix])).replace(/\.php$/, '').replace(/^lic\/lic_(.*)\.(?:html|pdf)$/, 'licence/$1');
+  };
   W.link = function (file, params = {}) {
-    const path = W.routeFor(file.replaceAll('\\', '/'));
-    const query = new URLSearchParams(params).toString();
+    const [source, existing = ''] = file.replaceAll('\\', '/').replaceAll('&amp;', '&').split('?');
+    const path = W.routeFor(source);
+    const query = new URLSearchParams({ ...Object.fromEntries(new URLSearchParams(existing)), ...params }).toString();
     return `#/${path}${query ? '?' + query : ''}`;
   };
   W.rewriteLinks = (html, game = '') => html.replace(/href\s*=\s*(["'])(.*?)\1/gi, (whole, quote, href) => {

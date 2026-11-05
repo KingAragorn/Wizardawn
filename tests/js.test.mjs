@@ -954,3 +954,141 @@ test('science-fiction unusual features use all six original branches and valid r
     if (destination) assert.ok(+destination[1] >= 1 && +destination[1] <= 8);
   }
 });
+
+test('optional encounter hoards preserve PHP treasure sections and local encounter records', async () => {
+  for (const [game, phpGame] of [['lablord', 'Labyrinth Lord'], ['mutfut', 'Mutant Future'], ['tt7e', 'Tunnels & Trolls 7th Edition']]) {
+    const monster = W.monsters({ game, level: 3 })[0];
+    const options = { game, enemy: monster.id, n: 3, x_loot: '1', x_cut: 100, characters: 4, level: 2, tt_dice: 0 };
+    const html = W.routes.encounters.generate(options);
+    const record = W.storage.get('last-encounters');
+    assert.equal(record.encounters.length, 3);
+    assert.equal(occurrences(html, /class="encounter-treasure"/g), 3);
+    assert.ok(record.encounters.every(encounter => encounter.treasure.length >= 1 && encounter.treasure.length <= 10));
+    const php = await phpResult('tool_encounter.php', { x_package: phpGame, x_enemy: monster.id, x_amount: 3, x_loot: 1, x_cut: 100, x_level: 2, x_characters: 4, x_ttlvl: 1 });
+    assert.equal(occurrences(php, /LYING ABOUT IN THE AREA IS|LOCATED IN A/g), 3);
+    assert.doesNotMatch(html, /undefined|NaN/);
+  }
+  assert.equal(occurrences(W.routes.encounters.generate({ game: 'lablord', n: 2, x_loot: '0' }), /class="encounter-treasure"/g), 0);
+});
+
+test('settlement race descriptions, clothing and default game themes match their forms', () => {
+  for (const [route, expected] of [['mtown', 'mutfut'], ['ttown', 'tt5e'], ['wtown', 'osric'], ['town', 'fantasy'], ['items', 'mutfut']]) {
+    assert.equal(W.toolGame(W.routes[route], {}).slug, expected);
+    assert.match(W.renderRoute('#/' + route).stylesheet, new RegExp('rpg_' + expected));
+  }
+  for (const mode of ['generic', 'tt']) {
+    for (const race of ['elf', 'minotaur', 'centaur', 'slitheran', 'falcoran', 'human']) for (let i = 0; i < 20; i++) {
+      const citizen = W.citizen({ game: 'tt7e', possessions: '0' }, mode, { race, sex: 'Male' });
+      assert.doesNotMatch(citizen.html, /plain dress|gilded dress|fancy dress|bonnet/);
+      if (['falcoran', 'slitheran', 'minotaur'].includes(race)) assert.doesNotMatch(citizen.html, / hair| is bald/);
+      if (['minotaur', 'centaur', 'slitheran'].includes(race)) assert.doesNotMatch(citizen.html, / boots| shoes|sandals/);
+    }
+  }
+});
+
+test('original menu query options survive clean hash route conversion', () => {
+  assert.equal(W.link('data_magestykc_run.php?id=mon&lvl=3&ttvs=7'), '#/data_magestykc_run?id=mon&lvl=3&ttvs=7');
+  assert.equal(W.link('tool_loot.php?x_type=1', { game: 'lablord' }), '#/loot?x_type=1&game=lablord');
+  assert.equal(W.routeFor('data_magestykc_run.php?id=kin&ttvs=5'), 'data_magestykc_run');
+  assert.match(W.renderRoute('#/data_magestykc').html, /alternate world of Magestykc/);
+});
+
+test('Magestykc kindred and language supplements retain original names, counts and learning rules', async () => {
+  for (const ttvs of [5, 7, 9]) {
+    const response = await oracle.server.handle({ path: 'data_magestykc_run.php', search: '?id=kin&ttvs=' + ttvs });
+    assert.equal(oracle.logs().fatal, '');
+    const php = new TextDecoder().decode(response.bytes);
+    const rows = W.magestykcKindred({ ttvs });
+    const js = W.routes.data_magestykc_run.generate({ id: 'kin', ttvs });
+    assert.equal(rows.length, occurrences(php, /<font size="4">/g));
+    assert.equal(rows.length, occurrences(js, /class="kindred"/g));
+    assert.equal(Object.keys(rows[0].modifiers).length, ttvs === 7 ? 9 : 8);
+    assert.doesNotMatch(js, /undefined|NaN/);
+  }
+  const languages = W.magestykcLanguages();
+  assert.equal(languages[0].name, 'Common');
+  assert.equal(languages.find(row => row.name === 'Common').skill, 'L1SR');
+  assert.equal(languages.find(row => row.name === 'Wizard Speech').skill, 'L18SR');
+  assert.ok(languages.every(row => row.count > 0 && /^L\d+SR$/.test(row.skill)));
+  assert.match(W.routes.data_magestykc_run.generate({ id: 'lang' }), /1d6 roll determines/);
+  assert.ok(languages.length > 40);
+  for (const ttvs of [5, 7, 9]) for (const lvl of [9, 1, 2, 3, 4, 5]) {
+    const html = W.routes.data_magestykc_run.generate({ id: 'mon', ttvs, lvl });
+    assert.equal(occurrences(html, /class="supplement-monster"/g), context.WZ_DATA.monsters_rpgs.filter(row => row.creator === 'TT').length);
+    assert.doesNotMatch(html, /undefined|NaN/);
+  }
+});
+
+test('OSRIC ability modifiers agree with independent PHP across scores, races and exceptional strength', async () => {
+  const source = readFileSync(`${root}/src/functions/characters_osric.php`, 'utf8');
+  const block = source.split('///// GET ABILITY BONUSES')[1].split('///// WHAT LEVEL ARE THEY')[0];
+  oracle.php.writeFile('/var/www/html/js-osric-modifier-oracle.php', `<?php
+    error_reporting(0); ini_set('display_errors','0');
+    $rows=array();
+    foreach (array('Fighter','Magic-User','Cleric','Assassin') as $p_class) foreach (array('Human','Dwarf','Gnome','Halfling','Elf') as $p_race) {
+      for ($score=3;$score<=19;$score++) foreach (array(0,1,50,51,75,76,90,91,99) as $p_ab_str_xtra) {
+        $p_ab_str=$p_ab_dex=$p_ab_con=$p_ab_int=$p_ab_wis=$p_ab_cha=$score; $p_sufn='They'; $p_sufx='them'; $p_notes='';
+        ${block}
+        $rows[]=array($p_class,$p_race,$score,$p_ab_str_xtra,$p_bhit+0,$p_bdmg+0,$p_minor_test,$p_major_test,-$x_my_acb,$p_bsrp+0,$p_brng+0,$x_bhps,$p_consv,$p_consh,$b_rcsb,$p_msvt+0);
+      }
+    }
+    echo json_encode($rows);
+  `);
+  const response = await oracle.server.handle({ path: '/js-osric-modifier-oracle.php' });
+  assert.equal(oracle.logs().fatal, '');
+  const rows = JSON.parse(new TextDecoder().decode(response.bytes));
+  for (const [className, race, score, exceptional, ...expected] of rows) {
+    const m = W.osricModifiers({ STR: score, DEX: score, CON: score, INT: score, WIS: score, CHA: score }, className, race, exceptional);
+    assert.deepEqual([m.hit, m.damage, m.minor, m.major, m.acAdjustment || 0, m.surprise, m.range, m.hp, m.resurrection + '%', m.systemShock + '%', m.racialSave, m.mentalSave], expected.map((value, i) => i === 4 ? value || 0 : value), `${className}/${race}/${score}/${exceptional}`);
+  }
+});
+
+test('OSRIC equipment, racial defenses and class abilities flow into officials and character reports', () => {
+  for (const className of ['Fighter', 'Cleric', 'Thief', 'Assassin', 'Magic-User', 'Illusionist', 'Druid', 'Paladin', 'Ranger']) {
+    const c = W.character({ x_race: 'Human', x_lvl1: 14, x_lvl2: 14, x_maxhp: '1', x_relics: '0' }, 'osric', className);
+    assert.ok(c.equipment.split(', ').length >= 7);
+    assert.ok(c.ac >= -10 && c.ac <= 10);
+    const html = W.renderCharacter(c, { x_show_me: '0' });
+    assert.match(html, /Ability Modifiers/);
+    assert.doesNotMatch(html, /undefined|NaN/);
+    if (className === 'Druid') assert.match(c.armor, /leather/);
+    if (className === 'Cleric') assert.doesNotMatch(c.weapon, /sword|axe|spear/);
+    if (['Magic-User', 'Illusionist'].includes(className)) assert.equal(c.armor, 'robes');
+    if (className === 'Paladin') assert.match(c.skills.join('; '), /heal 28 hit points/);
+    if (className === 'Ranger') assert.match(c.skills.join('; '), /\+14 melee damage/);
+  }
+  const dwarf = W.character({ x_race: 'Dwarf', x_lvl1: 1, x_lvl2: 1 }, 'osric', 'Fighter');
+  assert.ok(dwarf.languages.includes('Orc'));
+  assert.match(dwarf.skills.join('; '), /magic and poison/);
+});
+
+test('random spell choices use original game, class, level and expansion tables', async () => {
+  // Correct the duplicate Six-Siders case only in the in-memory PHP oracle,
+  // matching the documented JS fix without modifying the original source.
+  oracle.php.writeFile('/var/www/html/functions/spells.php', readFileSync(`${root}/src/functions/spells.php`, 'utf8').replace('case 38 : $spell = "Wall of Ice"', 'case 39 : $spell = "Wall of Ice"'));
+  oracle.php.writeFile('/var/www/html/js-spell-choice-oracle.php', `<?php
+    error_reporting(0); ini_set('display_errors','0'); require 'functions/spells.php';
+    $rows=array();
+    foreach (array('OSRIC','AD&D','BD&D','BFRPG','Labyrinth Lord','Swords & Wizardry','Swords & Six-Siders') as $game) {
+      foreach (array('Cleric','Magic-User') as $class) foreach (array(1,4,7,10,13,16,19) as $level) foreach (array(0,1) as $expanded) {
+        $_SESSION['SESSION_ADD_AEC']=$expanded; $_SESSION['SESSION_ADD_UA']=$expanded;
+        $rows[]=array($game,$class,$level,$expanded,gameSpellChooser($game,$level,$class));
+      }
+    }
+    echo json_encode($rows);
+  `);
+  const response = await oracle.server.handle({ path: '/js-spell-choice-oracle.php' });
+  assert.equal(oracle.logs().fatal, '');
+  const rows = JSON.parse(new TextDecoder().decode(response.bytes));
+  for (const [game, className, casterLevel, expanded, text] of rows) {
+    const slug = W.game({ game }).slug, match = /^level (\d+) (\w+) spell\.\.\.(.*)$/.exec(text);
+    assert.ok(match, text);
+    const table = context.WZ_DATA.spellChoices[slug][match[2]][match[1]];
+    assert.ok((expanded && table.expanded || table.base).includes(match[3]), text);
+    const spell = W.gameSpellRecord({ game: slug, aec: String(expanded), ua: String(expanded) }, casterLevel, className);
+    assert.equal(spell.magic, match[2]);
+    if (casterLevel < 16 || match[2] !== 'mage') assert.equal(spell.level, +match[1]);
+    assert.ok(spell.name.length > 0);
+    assert.match(W.gameSpell({ game: slug }, casterLevel, className), /^level \d+ \w+ spell\.\.\./);
+  }
+});

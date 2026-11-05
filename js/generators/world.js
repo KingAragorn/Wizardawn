@@ -63,19 +63,4 @@
     W.storage.set('last-world', { options: p, cells: map.cells });
     return map.html + (String(p.info ?? '1') === '1' ? `${p.map_name ? '<h3>' + esc(p.map_name) + '</h3>' : ''}<p>1 Hex = ${W.number(p.map_equals, 6, 1, 1000)} Miles <img src="land/compass.png" alt="North" style="vertical-align:middle"></p>${String(p.legend ?? '1') === '1' ? '<h3>Legend</h3>' + map.legend : ''}` : '');
   });
-  W.register('hex-crawl', 'World Adventure', 'Generate a hex crawl map with numbered landmarks and a keyed encounter table.', [W.gameField, f('climate', 'Terrain', 'select', { value: 101, options: Object.entries(terrainClimate).map(([n, name]) => [n, name]) }), f('level', 'Maximum enemy difficulty', 'number', { value: 3, min: 1, max: 20 }), f('map_name', 'Adventure name', 'text'), W.countField('Maximum keyed sites', 20)], p => {
-    // A known game is always selected before building candidates. Every loop has
-    // a finite bound; an empty monster pool produces text, never a retry loop.
-    const game = W.game(p), options = { ...p, game: game.slug };
-    const map = W.worldMap({ ...options, width: 2, height: 2 }, true);
-    const terrain = { 100: 'PD', 101: 'PF', 102: 'PH', 103: 'TF', 104: 'PM', 105: 'PP', 106: 'SW', 107: 'CF', 108: 'PS', 111: 'PD', 112: 'DG' }[p.climate ?? 101];
-    const sites = map.sites.slice(0, W.count(p));
-    const rows = sites.map(site => {
-      const monster = W.monsterPick({ ...options, terrain });
-      const name = site.icon.includes('city') ? W.name('village') : names.get(site.icon) || site.icon.replace(/\.png$/, '').replaceAll('_', ' ');
-      return [site.number, esc(name), monster ? W.monsterStats(monster, true) : 'No enemies found for this terrain and difficulty.'];
-    });
-    W.storage.set('last-hex-crawl', { options, sites, rows });
-    return `<h3>${esc(p.map_name || 'World Adventure')}</h3><p>${esc(game.name)}</p>${map.html}<h3>Keyed Areas</h3>${rows.length ? W.table(['Area', 'Landmark', 'Encounter'], rows) : '<p>No landmarks on this map.</p>'}<h3>Legend</h3>${map.legend}`;
-  });
 })(window.WZ, window.WZ_DATA);

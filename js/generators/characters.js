@@ -142,21 +142,27 @@
     }
     const progression = osric ? D.characterRules.osric[className] : D.characterRules[rules].progression[className][level];
     const hitDie = osric ? progression.hitDie : ({ Dwarf: 8, Fighter: 8, Thief: 4, 'Magic-User': 4 })[className] || 6;
-    const endDice = osric ? ({ Cleric: 9, Fighter: 9, Paladin: 9, Ranger: 11, Thief: 10, Assassin: 10, Illusionist: 10, 'Magic-User': 11, Druid: 14 })[className] : className === 'Halfling' ? 8 : 9;
+    const endDice = osric ? ({ Cleric: 9, Fighter: 9, Paladin: 9, Ranger: 11, Thief: 10, Assassin: 24, Illusionist: 10, 'Magic-User': 11, Druid: 24 })[className] : className === 'Halfling' ? 8 : 9;
     const extra = osric ? ['Fighter', 'Paladin'].includes(className) ? 3 : ['Ranger', 'Cleric', 'Thief'].includes(className) ? 2 : 1 : ['Dwarf'].includes(className) ? 3 : ['Fighter', 'Elf', 'Thief'].includes(className) ? 2 : 1;
-    const conBonus = osric ? stats.CON < 4 ? -2 : stats.CON < 7 ? -1 : stats.CON < 15 ? 0 : stats.CON === 15 ? 1 : ['Fighter', 'Paladin', 'Ranger'].includes(className) ? Math.min(5, stats.CON - 14) : 2 : stats.CON === 17 ? 0 : bonus(stats.CON);
-    const hitPoints = W.range(level).reduce((hp, i) => hp + (i > endDice ? extra : Math.max(1, (enabled(p, 'x_maxhp', false) ? hitDie : W.d(hitDie)) + conBonus)), 0);
+    const modifiers = osric ? W.osricModifiers(stats, className, race, exceptionalStrength) : null;
+    const conBonus = osric ? modifiers.hp : stats.CON === 17 ? 0 : bonus(stats.CON);
+    const hitPoints = W.range(level).reduce((hp, i) => {
+      if (i > endDice) return hp + extra;
+      const rolled = (enabled(p, 'x_maxhp', false) ? hitDie : W.d(hitDie)) + conBonus;
+      return hp + (osric ? rolled : Math.max(1, rolled));
+    }, 0);
     const spellGroups = osric ? W.osricSpellSlots(className, level, stats.WIS) : [{ className, slots: progression.spells || [] }];
     const slots = spellGroups[0]?.slots || [];
     const saves = osric ? progression.saves.find(row => level >= row.min)?.values || [14, 16, 13, 12, 15] : D.characterRules[rules].saves.find(row => row.class === className && level >= row.min && level <= row.max).values;
     const xpMin = osric ? progression.xp[level] || 0 : progression.xp1, xpMax = osric ? progression.xp[level + 1] || xpMin : progression.xp2;
     const xp = enabled(p, 'x_rand_xp', false) && xpMax > xpMin ? int(xpMin, xpMax - 1) : xpMin;
     const name = W.name(race === 'Dwarf' ? 'dwarf' : race === 'Elf' || race === 'Half-Elf' ? sex === 'Female' ? 'elf_f' : 'elf_m' : ['Halfling', 'Gnome'].includes(race) ? 'gnome' : /Magic|Illusion/.test(className) && W.d(2) === 1 ? 'wizard' : sex === 'Female' ? 'female' : 'male');
-    const alignment = osric ? className === 'Paladin' ? 'LG' : className === 'Druid' ? 'N' : className === 'Assassin' ? pick(['LE', 'NE', 'CE']) : className === 'Ranger' ? pick(['LG', 'NG', 'CG']) : pick(['LG', 'LN', 'LE', 'NG', 'N', 'NE', 'CG', 'CN', 'CE']) : pick(['Lawful', 'Neutral', 'Chaotic']);
+    const alignment = osric ? className === 'Paladin' ? 'LG' : className === 'Druid' ? 'N' : className === 'Assassin' ? pick(['LE', 'NE', 'CE']) : className === 'Ranger' ? pick(['LG', 'NG', 'CG']) : className === 'Thief' ? pick(['N', 'LN', 'LE', 'NG', 'N', 'NE', 'N', 'CN', 'CE']) : pick(['LG', 'LN', 'LE', 'NG', 'N', 'NE', 'CG', 'CN', 'CE']) : pick(['Lawful', 'Neutral', 'Chaotic']);
     const basicGear = osric ? null : W.basicGear(p, rules, className, level, stats.DEX);
-    const armored = !['Magic-User', 'Illusionist', 'Thief', 'Assassin'].includes(className), armor = basicGear ? basicGear.armor : armored ? pick(['leather armor', 'chain mail', 'plate mail']) : /Thief|Assassin/.test(className) ? 'leather armor' : 'robes';
-    const ac = basicGear ? basicGear.ac : (rules === 'bx' || rules === 'll' ? 9 : 10) - ({ 'leather armor': 2, 'chain mail': 4, 'plate mail': 6, robes: 0 })[armor] - bonus(stats.DEX);
-    const weapon = basicGear ? basicGear.arms : /Magic|Illusion/.test(className) ? pick(['dagger', 'quarterstaff']) : className === 'Cleric' ? pick(['mace', 'war hammer', 'flail']) : className === 'Halfling' ? 'short sword' : pick(['long sword', 'short sword', 'battle axe', 'spear']);
+    const osricGear = osric ? W.osricGear(p, className, level, modifiers.acAdjustment) : null;
+    const armor = basicGear ? basicGear.armor : osricGear.armor;
+    const ac = basicGear ? basicGear.ac : enabled(p, 'x_show_eq') ? osricGear.ac : Math.max(-10, Math.min(10, 10 + modifiers.acAdjustment));
+    const weapon = basicGear ? basicGear.arms : osricGear.weapon;
     const skills = [];
     if (className === 'Thief' || className === 'Assassin') {
       const adjustment = rules === 'll' && enabled(p, 'x_used_sh', false) ? stats.DEX < 4 ? -60 : stats.DEX < 6 ? -30 : stats.DEX < 9 ? -15 : stats.DEX > 18 ? 15 : stats.DEX > 17 ? 10 : stats.DEX > 15 ? 5 : 0 : 0;
@@ -164,9 +170,10 @@
       const labels = osric ? ['Climb Walls', 'Find Traps', 'Hear Noise', 'Hide in Shadows', 'Move Quietly', 'Open Locks', 'Pick Pockets', 'Read Languages'] : ['Pick Locks', 'Find/Remove Traps', 'Pick Pockets', 'Move Silently', 'Climb Walls', 'Hide in Shadows', 'Hear Noise'];
       skills.push(...values.map((value, i) => labels[i] + ': ' + value + (i === 6 && !osric ? ' on 1d6' : '%')), 'Backstab: +4 to hit, ' + (osric ? Math.min(5, Math.floor((level - 1) / 4) + 2) : 2) + '× damage');
     }
-    if (race === 'Dwarf') skills.push('Infravision 60 feet; detect stone traps, new construction and sloping passages');
-    if (race === 'Elf') skills.push('Infravision 60 feet; detect secret doors; immunity to ghoul paralysis');
-    if (race === 'Halfling') skills.push('Hide outdoors: 90%; hide indoors: 2 in 6; +1 to missile attacks; +1 initiative when alone or with other halflings; -2 AC against creatures larger than human size');
+    if (!osric && race === 'Dwarf') skills.push('Infravision 60 feet; detect stone traps, new construction and sloping passages');
+    if (!osric && race === 'Elf') skills.push('Infravision 60 feet; detect secret doors; immunity to ghoul paralysis');
+    if (!osric && race === 'Halfling') skills.push('Hide outdoors: 90%; hide indoors: 2 in 6; +1 to missile attacks; +1 initiative when alone or with other halflings; -2 AC against creatures larger than human size');
+    if (osric) skills.push(...W.osricAbilities(className, race, level, modifiers));
     if (className === 'Cleric') {
       if (osric) skills.push('Turn undead');
       else {
@@ -177,13 +184,14 @@
     }
     if (!osric && className === 'Fighter' && level > 14) skills.push(level > 19 ? 'Three attacks per round' : 'Two attacks per round');
     if (className === 'Thief' && !osric) { if (level > 3) skills.push('Read Languages: 80%'); if (level > 9) skills.push('Use Scrolls: 90%'); }
-    const languages = osric ? ['Common', ...(race !== 'Human' ? [race] : [])] : ({ Dwarf: ['Common', 'Dwarf', 'Goblin', 'Gnome', 'Kobold'], Elf: ['Common', 'Elf', 'Gnoll', 'Hobgoblin', 'Orc'], Halfling: ['Common', 'Halfling'] })[race] || ['Common'];
+    const osricLanguages = { Dwarf: ['Dwarf', 'Gnome', 'Goblin', 'Kobold', 'Orc'], Elf: ['Elf', 'Gnoll', 'Gnome', 'Goblin', 'Halfling', 'Hobgoblin', 'Orc'], 'Half-Elf': ['Elf', 'Gnoll', 'Gnome', 'Goblin', 'Halfling', 'Hobgoblin', 'Orc'], Gnome: ['Dwarf', 'Gnome', 'Goblin', 'Halfling', 'Kobold'], Halfling: ['Dwarf', 'Gnome', 'Goblin', 'Halfling', 'Orc'], 'Half-Orc': ['Orc'] };
+    const languages = osric ? ['Common', ...(osricLanguages[race] || [])] : ({ Dwarf: ['Common', 'Dwarf', 'Goblin', 'Gnome', 'Kobold'], Elf: ['Common', 'Elf', 'Gnoll', 'Hobgoblin', 'Orc'], Halfling: ['Common', 'Halfling'] })[race] || ['Common'];
     const languagePool = osric ? D.characterDetails.languages.ll : rules === 'll' && !enabled(p, 'x_lang_aec', false) ? D.characterDetails.languages.ll.slice(0, 33) : D.characterDetails.languages[rules];
     const extraLanguages = osric ? stats.INT < 8 ? 0 : stats.INT < 10 ? 1 : stats.INT < 12 ? 2 : stats.INT < 14 ? 3 : stats.INT < 16 ? 4 : stats.INT - 11 : Math.max(0, bonus(stats.INT));
     if (enabled(p, 'x_lang_set')) for (let i = 0; i < extraLanguages; i++) { const options = languagePool.filter(x => !languages.includes(x)); if (options.length) languages.push(pick(options)); }
     const relics = [];
     if (enabled(p, 'x_relics', false)) for (let i = 3; i <= level; i++) if (W.d(100) > 90) relics.push(rules === 'bx' ? W.basicMagic({ ...p, game }, W.d(4) === 1 ? 'potion' : undefined) : W.magicItem({ ...p, game }));
-    return { game, rules, name, className, race, level, sex, stats, hitDie, hitPoints, saves, xp, nextXP: xpMax > xpMin ? xpMax : 0, xpBonus: osric ? 0 : W.experienceBonus(rules, className, stats), slots, spellGroups, spells: spellGroups.flatMap(group => characterSpells(group.className, level, group.slots, rules, stats.INT, enabled(p, 'x_used_sh', false)).map(row => ({ ...row, className: group.className }))), skills, languages, ac, armor, weapon, relics, alignment, age, exceptionalStrength, thaco: osric ? W.osricThaco(className, level) : null, attacks: osric ? W.range(11, -1).map(ac => W.osricThaco(className, level) - ac) : W.basicAttacks(className, level, rules), equipment: enabled(p, 'x_show_eq') ? W.pack({ ...p, game }) : '', coins: W.coinPile(level * 10 + int(0, 10), W.game({ game }).name, true) };
+    return { game, rules, name, className, race, level, sex, stats, hitDie, hitPoints, saves, xp, nextXP: xpMax > xpMin ? xpMax : 0, xpBonus: osric ? 0 : W.experienceBonus(rules, className, stats), slots, spellGroups, spells: spellGroups.flatMap(group => characterSpells(group.className, level, group.slots, rules, stats.INT, enabled(p, 'x_used_sh', false)).map(row => ({ ...row, className: group.className }))), skills, languages, ac, armor, weapon, relics, modifiers, alignment, age, exceptionalStrength, thaco: osric ? W.osricThaco(className, level) : null, attacks: osric ? W.range(11, -1).map(ac => W.osricThaco(className, level) - ac) : W.basicAttacks(className, level, rules), equipment: enabled(p, 'x_show_eq') ? osricGear ? osricGear.equipment : W.pack({ ...p, game }) : '', coins: W.coinPile(level * 10 + int(0, 10), W.game({ game }).name, true) };
   };
   W.renderCharacter = function (c, p = {}) {
     const named = enabled(p, 'x_name'), sheet = p.x_output === 'Character Sheets';
@@ -193,6 +201,16 @@
     let html = `<article class="character${sheet ? ' character-sheet' : ''}"><h3>${esc(title)}</h3><p>${c.rules === 'osric' ? esc(c.race) + '; ' : ''}${enabled(p, 'x_show_al') ? 'Alignment: ' + esc(c.alignment) + '; ' : ''}${enabled(p, 'x_show_age', false) ? 'Age: ' + c.age + '; ' : ''}<b>AC:</b> ${c.ac}; <b>HP:</b> ${c.hitPoints}; <b>XP:</b> ${c.xp.toLocaleString('en-US')}</p>`;
     html += W.table(Object.keys(c.stats), [Object.entries(c.stats).map(([key, value]) => key === 'STR' && c.exceptionalStrength ? value + '/' + c.exceptionalStrength : value), ...(c.rules === 'osric' ? [] : [Object.entries(c.stats).map(([key, value]) => esc(W.basicAttribute(c.rules, key, value, c.className, enabled(p, 'x_used_sh', false))))])]) + '<h4>Saving Throws</h4>' + W.table(saveLabels, [c.saves]);
     if (c.rules !== 'osric') html += '<p><b>XP adjustment:</b> ' + signed(c.xpBonus) + '%; <b>Next level:</b> ' + (c.nextXP ? c.nextXP.toLocaleString('en-US') : 'Max Level') + '</p>';
+    else {
+      const m = c.modifiers;
+      html += '<h4>Ability Modifiers</h4>' + W.table(['Ability', 'Effects'], [
+        ['Strength', esc('Hit: ' + signed(m.hit) + '; Damage: ' + signed(m.damage) + '; Minor test: ' + m.minor + '; Major test: ' + m.major)],
+        ['Dexterity', esc('Surprise: ' + signed(m.surprise) + '; Range: ' + signed(m.range) + '; AC: ' + signed(m.acAdjustment))],
+        ['Constitution', esc('HP per die: ' + signed(m.hp) + '; Resurrection: ' + m.resurrection + '%; System shock: ' + m.systemShock + '%')],
+        ['Intelligence', m.languages + ' extra languages'], ['Wisdom', esc(signed(m.mentalSave) + ' to mental saves')],
+        ['Charisma', esc('Henchmen: ' + m.henchmen + '; Loyalty: ' + signed(m.loyalty) + '%; Reaction: ' + signed(m.reaction) + '%')]
+      ]);
+    }
     html += '<h4>Attack Rolls</h4>' + W.table(c.attacks.map((_, i) => 'AC ' + (c.rules === 'bx' ? 9 - i : c.rules === 'll' ? i - 3 : i - 1)), [c.attacks]) + (c.thaco != null ? '<p><b>THAC0:</b> ' + c.thaco + '</p>' : '');
     if (enabled(p, 'x_lang_set')) html += '<p><b>Languages:</b> ' + esc(c.languages.join(', ')) + '</p>';
     if (enabled(p, 'x_show_sk') && c.skills.length) html += '<p><b>Skills &amp; Abilities:</b> ' + esc(c.skills.join('; ')) + '</p>';

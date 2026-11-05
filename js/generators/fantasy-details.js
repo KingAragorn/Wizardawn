@@ -105,12 +105,6 @@
     ])();
     return esc(title) + ' {' + esc(effect) + '}';
   };
-  W.gameSpell = p => {
-    const spells = W.game(p).slug === 'osric' || W.game(p).slug === 'add' ? D.osric_spells : D.lablord_spells;
-    const spell = pick(spells);
-    return spell.ls_name || spell.os_name || spell.name || 'Light';
-  };
-
   W.pack = function (p) {
     const color = () => W.color(), leather = () => W.color('leatherColor');
     const parts = [], used = new Set(), pile = int(5, 15), bottle = () => pick(['ceramic jug', 'glass bottle', 'glass jar', 'clay jug', 'waterskin']);

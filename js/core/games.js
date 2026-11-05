@@ -10,7 +10,11 @@
   W.seedField = W.field('seed', 'Seed (optional)', 'text');
   W.countField = (label = 'Amount', value = 1) => W.field('n', label, 'number', { value, min: 1, max: 100 });
   W.count = (p, ...aliases) => W.number(p.n ?? aliases.map(key => p[key]).find(v => v != null), 1);
-  W.toolGame = (tool, params) => tool.fields.some(field => field.name === 'game') ? W.game(params) : W.games[tool.defaultGame || 'fantasy'];
+  W.toolGame = (tool, params) => {
+    const field = tool.fields.find(field => field.name === 'game');
+    if (!field) return W.games[tool.defaultGame || 'fantasy'];
+    return W.game(params.game || params.x_game || params.x_package ? params : { game: field.value || tool.defaultGame || 'lablord' });
+  };
   W.register = function (route, title, description, fields, generate) {
     W.routes[route] = { title, description, fields: [...fields, W.seedField], generate, defaultGame: route === 'basic-spells' ? 'lablord' : route === 'spells' ? 'osric' : 'fantasy' };
   };

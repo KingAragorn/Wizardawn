@@ -6,6 +6,7 @@
   const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
   const kindred = ['human', ...Object.keys(D.townTables.city_tt.multipliers)];
   const species = { human: 'Human', mhuman: 'Mutant Human', insect: 'Humanoid Insect', animal: 'Humanoid Animal', plant: 'Humanoid Plant', robot: 'Robot' };
+  const genericRaces = { daklafar: 'daklafar (dark elf)', dwurman: 'dwurman (dark dwarf)', falcoran: 'falcoran (bird man)', fruglum: 'fruglum (frog man)', greyling: 'greyling (gray brownie)', mantaran: 'mantaran (insect man)', rattanu: 'rattanu (rat man)', sauriman: 'sauriman (lizard man)', slitheran: 'slitheran (snake man)', suvart: 'suvart (deep gnome)', tigran: 'tigran (cat man)', wulfan: 'wulfan (wolf man)' };
   const shops = ['', 'Tavern', 'Inn', 'Provisioner', 'Blacksmith', 'Bowyer', 'Leatherworker', 'Tailor', 'Stables', 'Carpenter', 'Alchemist', 'Baker', 'Library', 'Jeweler', 'Music', 'Church', 'Guardhouse', 'Warriors Guild', 'Wizards Guild', 'Rogues Guild', 'Bank'];
   const ruleShops = [...shops.slice(0, 15), 'Bank', 'Church', 'Guardhouse', 'Fighters Guild', 'Wizards Guild', 'Thieves Guild', 'Rangers Guild', 'Assassins Guild'];
   const postShops = ['', 'Military', 'Bar', 'Tailor', 'Medical', 'Stable', 'Vehicle', 'Supplies', 'Junk', 'Bank', 'Mechanic', 'Robot'];
@@ -20,17 +21,17 @@
     if (mode === 'rules') return ['Dwarf', 'Elf', 'Gnome', 'Halfling', 'Human'];
     const aliases = mode === 'generic' ? { hobling: 'hobbit', orke: 'orc', fruglum: 'fruglum' } : {};
     const selected = kindred.filter(k => on(p, 'x_race_' + k, 0) || on(p, 'x_race_' + (aliases[k] || k), 0) || k === 'fruglum' && on(p, 'x_race_fruglum', 0));
-    return [...new Set(selected.length ? selected : kindred)].map(k => aliases[k] || k);
+    return [...new Set(selected.length ? selected : kindred)].map(k => mode === 'generic' ? genericRaces[k] || aliases[k] || k : k);
   }
   function citizenName(race, sex) {
-    const base = race.toLowerCase();
+    const base = race.toLowerCase().split(' (')[0];
     const types = { dwarf: 'dwarf', dwurman: 'dwarf', elf: sex === 'Female' ? 'elf_f' : 'elf_m', daklafar: sex === 'Female' ? 'delf_f' : 'delf_m', gnome: 'gnome', hobling: 'gnome', halfling: 'gnome', goblin: 'goblin', orke: 'orc', troll: 'orc', cyclops: 'orc', ogre: 'orc', rattanu: 'ratman', tigran: 'catm', wulfan: 'wolf', sauriman: 'lizardman', slitheran: 'lizardman', imp: 'imp' };
     return W.name(W.d(100) > 75 ? 'genericName' : types[base] || (sex === 'Female' ? 'female' : 'male'));
   }
   W.citizenStats = function (p, race, age = 'adult', job = 'citizen', mode = 'generic') {
     const family = mode === 'tt' ? D.townTables.city_tt : D.townTables.city_gn;
     const raceKey = race.toLowerCase().split(' (')[0];
-    const multiplier = family.multipliers[raceKey] || family.multipliers[{ hobbit: 'hobling', orc: 'orke' }[raceKey]] || {};
+    const multiplier = family.multipliers[raceKey] || family.multipliers[genericRaces[raceKey]] || family.multipliers[{ hobbit: 'hobling', orc: 'orke' }[raceKey]] || {};
     const stats = {};
     if (mode === 'tt') {
       for (const key of ['str', 'con', 'dex', 'int', 'lck', 'chr', 'spd', 'wiz']) stats[key.toUpperCase()] = Math.ceil(int(3, 18) * (multiplier[key] ?? 1));
@@ -82,10 +83,20 @@
     const stats = W.citizenStats(p, race, age, job, mode);
     const statHtml = '[' + Object.entries(stats).map(([key, value]) => `<b>${key}:</b> ${esc(value)}`).join('; ') + ']';
     const personality = W.d(8), trait = key => pick(table(source, key, key === 'trait3' ? personality < 6 ? 0 : personality < 8 ? 1 : 2 : 0));
-    const hair = pick(sex === 'Male' ? ['bald', 'long', 'short', 'curly'] : ['braided', 'long', 'short', 'curly']);
+    const baseRace = race.toLowerCase().split(' (')[0];
+    const ordinaryHair = ['human', 'centaur', 'cyclops', 'dwarf', 'gnome', 'hobbit', 'hobling', 'halfling', 'leprechaun', 'ogre'].includes(baseRace);
+    const elvenHair = ['elf', 'brownie', 'fairy', 'pixie', 'satyr', 'sprite'].includes(baseRace);
+    const darkHair = ['daklafar', 'dwurman', 'greyling', 'suvart'].includes(baseRace);
+    const goblinHair = ['orke', 'orc', 'goblin', 'hobgoblin', 'troll'].includes(baseRace);
+    const hair = pick(sex === 'Male' ? ['bald', 'long', 'short', 'curly'] : ['long', 'short', 'curly']);
     if (mode === 'post' && race === 'Robot') { form ||= pick(['android', 'synthetic', 'replicant']); age = ''; }
     let description = `${pronoun} is a ${age} ${sex.toLowerCase()} ${race.toLowerCase()}${form ? ' (' + form + ')' : ''} that is ${trait('trait1')} in appearance. `;
-    if (mode !== 'post' || ['Human', 'Mutant Human', 'Robot'].includes(race)) description += `${hair === 'bald' ? pronoun + ' is bald' : pronoun + ' has ' + hair + ', ' + pick(table(source, 'haircolor', race === 'Mutant Human' ? 2 : 0)) + ' hair'}${sex === 'Male' && age !== 'child' && W.d(100) > 70 ? ' with a ' + pick(['thick', 'long', 'short']) + ' beard and moustache' : ''}. `;
+    if (mode === 'post' ? ['Human', 'Mutant Human', 'Robot'].includes(race) : ordinaryHair || elvenHair || darkHair || goblinHair || mode === 'rules') {
+      const colors = mode === 'post' ? table(source, 'haircolor', race === 'Mutant Human' ? 2 : 0) : goblinHair ? ['black', 'white'] : darkHair ? baseRace === 'greyling' ? ['black', 'white', 'grey'] : ['white'] : elvenHair ? ['black', 'brown', 'red', 'auburn', 'blonde'] : ['black', 'brown', 'red', 'auburn', 'gray', 'white', 'blonde'];
+      const hairColor = pick(colors), beard = sex === 'Male' && age !== 'child' && !elvenHair && baseRace !== 'daklafar' && baseRace !== 'greyling' && W.d(100) > 70;
+      const moustache = sex === 'Male' && age !== 'child' && W.d(100) > 70;
+      description += (hair === 'bald' ? pronoun + ' is bald' : pronoun + ' has ' + hair + ', ' + hairColor + ' hair') + (beard ? ' with a ' + pick(['thick', 'long', 'short']) + ' beard and moustache' : moustache ? ' with a ' + pick(['thick', 'long', 'short']) + ' moustache' : hair === 'bald' ? ' with no facial hair at all' : '') + '. ';
+    }
     description += `${pronoun} is generally ${trait('trait2')}, but also ${trait('trait3')}. ${possessive} disposition is ${trait('trait4')} but ${pronoun.toLowerCase()} is ${trait('trait5')} by nature. `;
     const brave = W.d(8), energy = W.d(8);
     if (brave > 3) description += `${pronoun} is quite ${['foolhardy', 'brave', 'fearless', 'cowardly', 'timid'][brave - 4]} in the face of danger. `;
@@ -96,12 +107,12 @@
     let extra = '';
     if (on(p, 'dress')) {
       const clothing = [], choose = key => pick(table(source, key));
-      const shirtPool = table(source, 'shirt').filter(item => sex === 'Female' || item !== 'dress');
+      const shirtPool = table(source, 'shirt').filter(item => sex === 'Female' || !/dress$/.test(item));
       const shirt = pick(shirtPool), pants = table(source, 'pants').filter(item => sex === 'Female' || item !== 'skirt');
-      if (table(source, 'feet').length) clothing.push(choose('bcolor') + ' ' + choose('feet'));
+      if (table(source, 'feet').length && !['minotaur', 'slitheran', 'satyr', 'centaur'].includes(baseRace)) clothing.push(choose('bcolor') + ' ' + choose('feet'));
       if (W.d(100) > 60) clothing.push(choose('bcolor') + ' belt' + (W.d(100) > 60 ? ' with a ' + choose('scolor') + ' buckle' : ''));
-      if (shirt !== 'dress') clothing.push(choose('hcolor') + ' ' + pick(pants));
-      if (W.d(100) > 60) clothing.push(choose('hcolor') + ' ' + choose('head'));
+      if (!/dress$/.test(shirt) && !['slitheran', 'satyr', 'centaur'].includes(baseRace)) clothing.push(choose('hcolor') + ' ' + pick(pants));
+      if (W.d(100) > 60) clothing.push(choose('hcolor') + ' ' + pick(table(source, 'head').filter(item => sex === 'Female' || item !== 'bonnet')));
       if (W.d(100) > 80) clothing.push(choose('hcolor') + ' ' + choose('robe'));
       clothing.push(choose('hcolor') + ' ' + shirt);
       extra += '<b>DRESSED IN:</b> ' + esc(clothing.join(', ')) + '. ';
@@ -116,7 +127,13 @@
       if (things.length && W.d(100) > 40) items.push(item(things));
       if (junk.length && W.d(100) > 30) items.push(item(junk));
       if (W.d(100) > 80 && table(source, 'weapon').length) items.push(item(table(source, 'weapon')));
-      if (W.d(100) > 60) items.push(`${int(2, 10)}${mode === 'post' ? p.money || 'gp' : pick(['cp', 'sp'])}`);
+      const packs = table(source, 'packs');
+      if (W.d(100) > 60) items.push((packs.length ? pick(packs) + ' with ' : '') + `${int(2, 10)}${mode === 'post' ? p.money || 'gp' : pick(['cp', 'sp'])}` + (mode !== 'post' && W.d(100) > 70 ? ' and ' + int(2, 10) + 'gp' : ''));
+      if (mode !== 'post' && W.d(100) > 80) {
+        const gems = [table(source, 'gem1'), table(source, 'gem2')];
+        const stone = pool => pick(pool) + ' - ' + int(1, 5) + 'ea worth ' + int(100, 500) + 'gp';
+        if (gems[0].length) items.push((packs.length ? pick(packs) : 'small pouch') + ' with precious stones (' + stone(gems[0]) + ')' + (gems[1].length && W.d(100) > 80 ? ' and (' + stone(gems[1]) + ')' : ''));
+      }
       if (items.length) extra += '<b>POSSESSIONS:</b> ' + esc(items.join(', ')) + '. ';
     }
     if (mode === 'post' && race !== 'Human' && race !== 'Robot') {

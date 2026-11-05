@@ -26,3 +26,6 @@ button { background: #000; border: 1px solid #8998b5; color: #d4dce4; font: 28px
  #results { position: absolute; left: 0; top: 0; width: 100%; margin: 0; padding: 0; overflow: visible; }
  #print-results { display: none; }
 }
+.supplement-heading { display: flex; justify-content: space-between; align-items: center; max-width: 700px; }
+.supplement-heading > span { text-align: right; }
+.kindred, .supplement-monster { border-bottom: 1px solid black; padding: 0.5em 0; break-inside: avoid; }

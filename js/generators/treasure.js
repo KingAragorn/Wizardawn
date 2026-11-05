@@ -16,7 +16,6 @@
     const game = W.game(p).slug, pool = (D.magicItems.names[game] || D.magicItems.names.lablord).filter(name => !/^Potion|^Oil |^Philter|^Elixir/.test(name));
     return W.plainText(pick(pool));
   };
-  W.fantasyItem = p => W.d(100) <= W.number(p.unusual, 0, 0, 100) ? W.unusualRoom(p) : pick(D.dungeonText.cells.fantasyRoomItem.length ? D.dungeonText.cells.fantasyRoomItem : D.equipment.pack ? Object.values(D.equipment.pack) : ['torch']);
   W.jewel = function (cut = 100) {
     return pick(['gold', 'silver', 'platinum', 'bronze', 'ivory']) + ' ' + pick(['ring', 'necklace', 'bracelet', 'earrings', 'brooch', 'medallion', 'tiara', 'circlet']) + (W.d(2) === 1 ? ' set with ' + W.gem(cut) : ' (' + Math.max(1, Math.ceil(int(10, 1000) * cut / 100)) + 'gp)');
   };
