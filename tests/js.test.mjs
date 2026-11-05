@@ -603,26 +603,26 @@ test('post-apocalyptic businesses use original owner titles and numbered vault c
 });
 test('B/X adventurers guild listing has the original preamble and AC never exceeds 9', () => {
   W.rng = W.random('bx-intro');
-  const html = W.routes.bxadvg.generate({ x_qty_f: 3, x_show_al: 1 });
+  const html = W.routes.bxadvg.generate({ x_qty_fighter: 3, x_show_al: 1 });
   assert.match(html, /^<p class="adventurer-intro">Each adventurer is listed below with their strength \(ST\), intelligence \(IN\)/);
   assert.match(html, /armor class \(AC\), alignment \(AL\), gender \(GD\)/);
   assert.match(html, /magic wand \(MW\), turn to stone or paralysis \(TP\)/);
-  assert.doesNotMatch(W.routes.bxadvg.generate({ x_output: 'Character Sheets', x_qty_f: 1 }), /adventurer-intro/);
+  assert.doesNotMatch(W.routes.bxadvg.generate({ x_output: 'Character Sheets', x_qty_fighter: 1 }), /adventurer-intro/);
   for (let i = 0; i < 40; i++) assert.ok(W.character({ x_show_eq: 1 }, 'bx', 'Fighter').ac <= 9);
 });
 test('Labyrinth Lord adventurers guild listing uses its own preamble', () => {
   W.rng = W.random('ll-intro');
-  const html = W.routes.ladvg.generate({ x_qty_f: 1, x_show_age: 1 });
+  const html = W.routes.ladvg.generate({ x_qty_fighter: 1, x_show_age: 1 });
   assert.match(html, /strength \(ST\), dexterity \(DX\), constitution \(CN\)/);
   assert.match(html, /gender \(GD\), age, and experience/);
   assert.match(html, /breath attacks \(BA\), poison or death \(PD\), petrify or paralyze \(PP\), wands \(WN\)/);
 });
 test('OSRIC adventurers guild listing uses the original preamble and save legend', () => {
   W.rng = W.random('osric-intro');
-  const html = W.routes.oadvg.generate({ x_qty_f: 1 });
+  const html = W.routes.oadvg.generate({ x_qty_fighter: 1 });
   assert.match(html, /^<p class="adventurer-intro">Each adventurer is listed below with their alignment \(<i>AL<\/i>\)/);
   assert.match(html, /<i>RSW<\/i> \(rod, staff, or wand\)/);
-  assert.match(W.routes.oadvg.generate({ game: 'lablord', x_qty_f: 1 }), /<i>BA<\/i> \(breath attacks\)/);
+  assert.match(W.routes.oadvg.generate({ game: 'lablord', x_qty_fighter: 1 }), /<i>BA<\/i> \(breath attacks\)/);
 });
 test('ultimate dungeon atmosphere sounds use the original soundWhereRoom qualifiers', () => {
   W.rng = W.random('sounds');
@@ -1341,9 +1341,9 @@ test('wander draws without replacement from the freq_code-weighted pool per pass
 
 test('oadvg character sheets render the tool_oadvg.php OSRIC table sheet', () => {
   W.random(4242);
-  const html = W.routes.oadvg.generate({ x_qty_f: 2, x_output: 'Character Sheets', x_show_eq: '1', x_name: '1' });
-  assert.ok((html.match(/osric-sheet/g) || []).length >= 1);
-  assert.equal((html.match(/osric-sheet/g) || []).length, (html.match(/ocsht_26\.jpg/g) || []).length);
+  const html = W.routes.oadvg.generate({ x_qty_fighter: 2, x_output: 'Character Sheets', x_show_eq: '1', x_name: '1' });
+  assert.equal((html.match(/osric-sheet/g) || []).length, 2);
+  assert.equal((html.match(/ocsht_26\.jpg/g) || []).length, 2);
   assert.match(html, /ocsht_26\.jpg/);
   assert.match(html, /ocsht_25\.jpg/);
   assert.match(html, /Res: \d+% \/ Sys Shk: \d+%/);
