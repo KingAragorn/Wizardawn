@@ -7,6 +7,8 @@ Regenerate the option table with: `python3` form scan of `src/tool_*.php` (see "
 - [x] Per-game option filtering (refs #5): `js/export-field-games.py` → `js/data/fieldGames.js`; `W.formFields` hides options the PHP wraps in `$x_game` conditions. Fields may also carry `games: [...]` for routes the PHP map does not cover.
 - [x] Hex crawl / delve / locale / ultimate: added Unearthed Arcana (`ua`, AD&D, `tool_hexcrawl.php` 250-253 → `gameSpellChooser` in `functions/spells.php` 611+), S&W Hit Dice (`x_hit_dice`, 269-274, used by `calculateLife`), T&T Dice + Adds / Vary Amount / Difficulty (`tt_dice`, `tt_adds`, `tt_vary`, `x_ttlvl`, 184-199) and Weapons/Armor (`x_oldway`, 325-330). T&T Vary Amount now follows `functions/encounters.php` 88 (was always random).
 
+- [x] `$pagame` (post-apocalyptic) gating exported too: hex-crawl/locale money, low-tech, robots, vehicles only for MF/Broken Urthe/Gamma World; furnish, weird, rich, low-magic only for the others.
+
 ## Consolidation plan
 - Already shared: one `W.adventureFields` list drives hex-crawl, locale, delve, ultimate, uexfl, uruins; one route per generator with a game select (the PHP per-game menu entries `rpg_*.php` → `tool_*.php?...` all alias to the same route via `W.routeFor`). Keep that; do not add per-game routes.
 - To do: the PHP-name ↔ JS-name drift (e.g. `map_wide`/`width`, `amount`/`n`) — prefer accepting the PHP names as aliases in the generators rather than renaming, so old bookmarks/POST names keep working.

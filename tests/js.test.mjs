@@ -1518,3 +1518,14 @@ test('character forms keep the original checked defaults (refs #6)', () => {
   assert.equal(value('bxadvg', 'x_var_dmg'), '1');
   assert.equal(value('oadvg', 'x_show_age'), '0');
 });
+
+test('post-apocalyptic site options only show for the games that set $pagame (refs #6)', () => {
+  const names = (route, game) => [...W.form(W.routes[route], { game }).matchAll(/name="([^"]+)"/g)].map(m => m[1]);
+  // tool_hexcrawl.php 77/89/99 set $pagame for Mutant Future, Broken Urthe and Gamma World; the money, tech and vehicle rows sit in if ($pagame == 1).
+  for (const route of ['hex-crawl', 'locale']) {
+    assert.ok(!names(route, 'tt5e').includes('x_low_tech') && !names(route, 'tt5e').includes('x_money'), route);
+    assert.ok(names(route, 'mutfut').includes('x_low_tech') && !names(route, 'mutfut').includes('x_weird'), route);
+    assert.ok(names(route, 'lablord').includes('x_weird'), route);
+  }
+});
+

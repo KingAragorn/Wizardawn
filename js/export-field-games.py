@@ -6,17 +6,25 @@ os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 SLUGS={'AD&D':'add','BD&D':'bdd','BFRPG':'bfrpg','Broken Urthe':'urthe','Gamma World':'gamma','Labyrinth Lord':'lablord','Metamorphosis Alpha':'meta','Millenniums & Mutations':'millen','Mutant Future':'mutfut','Necropalyx':'necro','OSRIC':'osric','Space Ryft':'ryft','Swords & Wizardry':'sandw','Tunnels & Trolls 5th Edition':'tt5e','Tunnels & Trolls 7th Edition':'tt7e','Fantasy':'fantasy','Survival Horror':'horror','Science-Fiction':'scifi','Post-Apocalyptic':'apoc','Wizardry & Warriors':'ww','Swords & Six-Siders':'ssxs','Tunnels & Trolls Deluxe':'ttde','Data':'data'}
 GAMES=list(SLUGS)
 def pre(c): return re.sub(r'\(?\$run_program\s*!=\s*1\)?|\(?\$menu_section\s*==\s*\d+\)?','True',c)
+PAGAME=set()
+def pa(c,g): return re.sub(r'\$pagame\s*(==|!=)\s*1',lambda m:repr((g in PAGAME)==(m.group(1)=='==')),c)
 def gameonly(c): 
-    c=pre(c)
+    c=pa(pre(c),'')
     r=re.sub(r'\$x_game\s*(==|!=)\s*"([^"]*)"','X',c); return not re.search(r'\$',r)
 def ev(c,g):
-    c=pre(c)
+    c=pa(pre(c),g)
     e=re.sub(r'\$x_game\s*(==|!=)\s*"([^"]*)"',lambda m:repr((g==m.group(2))==(m.group(1)=='==')),c)
     e=e.replace('||',' or ').replace('&&',' and ').replace('!',' not ')
     return eval(e)
 out={}
 for fn in sorted(glob.glob('src/tool_*.php')):
     s=open(fn,encoding='latin-1').read()
+    # $pagame = 1 is set inside the post-apocalyptic games' settings branches.
+    PAGAME.clear(); last=None
+    for line in s.split('\n'):
+        m=re.search(r'\$x_game\s*==\s*"([^"]+)"',line)
+        if m: last=m.group(1)
+        if re.search(r'\$pagame\s*=\s*1;',line) and last: PAGAME.add(last)
     end=s.find('SubmitButton'); 
     if end<0: continue
     s=s[:end]
