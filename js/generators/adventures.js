@@ -69,14 +69,15 @@
     }
   }
 
-  // vehicle_and_robots.php VehicleRobotMaker($game, 1, $level) for non-Broken Urthe games.
+  // vehicle_and_robots.php VehicleRobotMaker($game, 1, $level) including the Broken Urthe vehicle list.
   W.strandedVehicle = function (p) {
     const working = int(2, 12), work = working < 6 ? ' (totally ruined)' : working < 8 ? ' (poor condition)' : working < 10 ? ' (fair condition)' : working < 11 ? ' (good condition)' : working < 12 ? ' (excellent condition)' : ' (perfect condition)';
     const fuel = W.d(3) === 1 ? ' totally drained of fuel.' : ' with ' + int(1, 10) + '0% fuel.';
     const candle = () => pick(['black', 'blue', 'gray', 'green', 'red', 'brown', 'orange', 'yellow', 'purple', 'white']);
     const military = () => pick(['black', 'green camouflage', 'desert camouflage', 'snow camouflage', 'gray camouflage', 'green']);
-    const ma = W.game(p).slug === 'meta';
-    const item = ma ? candle() + ' ' + pick(['hover car', 'anti-grav car', 'environmental car', 'bubble car', 'hover bike', 'hover bus', 'hover truck', 'anti-grav cart'])
+    const slug = W.game(p).slug, ma = slug === 'meta';
+    const urthe = [[0, 'motorcycle'], [0, 'anti-grav cycle'], [0, 'jeep'], [0, 'anti-grav car'], [0, 'explorer'], [0, 'anti-grav explorer'], [0, 'helicopter'], [0, 'jet'], [0, 'semi truck'], [0, 'semi truck with trailer'], [0, 'ATV'], [0, 'bus'], [0, 'mini bus'], [0, 'car'], [0, 'dune buggy'], [0, 'hovercraft'], [0, 'moped'], [1, 'robotic tank'], [1, 'tank'], [1, 'anti-grav tank'], [1, 'cargo truck'], [1, 'jeep'], [0, 'pickup truck'], [0, 'van']];
+    const item = slug === 'urthe' ? (([kind, name]) => (kind ? military() : candle()) + ' ' + name)(pick(urthe)) : ma ? candle() + ' ' + pick(['hover car', 'anti-grav car', 'environmental car', 'bubble car', 'hover bike', 'hover bus', 'hover truck', 'anti-grav cart'])
       : (([kind, name]) => (kind ? military() : candle()) + ' ' + name)(pick([[1, 'military jeep'], [1, 'military truck'], [1, 'military tank'], [0, 'turbine car'], [0, 'hover car'], [0, 'anti-grav car'], [0, 'environmental car'], [0, 'bubble car'], [0, 'motorcycle'], [0, 'bus'], [0, 'car'], [0, 'truck'], [0, 'helicopter'], [0, 'hover bike'], [0, 'hover bus'], [0, 'hover truck']]));
     return item.replace(/(^|\s)\S/g, c => c.toUpperCase()) + work + fuel;
   };

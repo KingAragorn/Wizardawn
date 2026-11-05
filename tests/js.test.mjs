@@ -637,6 +637,12 @@ test('uruins stranded vehicles follow VehicleRobotMaker wording', () => {
   assert.ok(all.some(v => / Camouflage Military /.test(v)) && all.some(v => /Anti-grav Car/.test(v)));
   assert.ok(W.range(50).map(() => W.strandedVehicle({ game: 'meta' })).every(v => !/Military/.test(v)));
 });
+test('Broken Urthe stranded vehicles use the Urthe vehicle list', () => {
+  W.rng = W.random('urthe-vehicles');
+  const all = W.range(300).map(() => W.strandedVehicle({ game: 'urthe' }));
+  assert.ok(all.some(v => /Semi Truck With Trailer|Dune Buggy|Moped|Hovercraft/.test(v)));
+  assert.ok(all.every(v => !/Turbine Car|Bubble Car|Military/.test(v)));
+});
 test('uexfl unusual rooms and uruins robots use the original headings', () => {
   W.rng = W.random('headings');
   const sci = W.routes.uexfl.generate({ map_rooms: 12, x_weird: 100 });
