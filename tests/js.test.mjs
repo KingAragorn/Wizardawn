@@ -1476,3 +1476,24 @@ test('portal columns clear the floated header so they sit inside the page (refs 
   const rule = css.match(/#div_area\s*\{[^}]*display:\s*grid[^}]*\}/)?.[0] || '';
   assert.match(rule, /clear:\s*both/);
 });
+
+test('generator forms only offer the options the original shows for the chosen game (refs #5)', () => {
+  const names = (route, game) => [...W.form(W.routes[route], { game }).matchAll(/name="([^"]+)"/g)].map(m => m[1]);
+  // tool_hexcrawl.php: Fiend Folio, MM2 and UA only inside if ($x_game == "AD&D"); AEC only for Labyrinth Lord; Monsters of Myth only for OSRIC.
+  const ll = names('hex-crawl', 'lablord');
+  for (const gone of ['dd_ff', 'dd_mm2', 'x_extra', 'x_describe']) assert.ok(!ll.includes(gone), gone);
+  assert.ok(ll.includes('aec') && ll.includes('x_whichmagic'));
+  const add = names('hex-crawl', 'add');
+  assert.ok(add.includes('dd_ff') && add.includes('dd_mm2') && !add.includes('aec'));
+  assert.ok(names('hex-crawl', 'osric').includes('x_extra'));
+  assert.ok(names('hex-crawl', 'bdd').includes('x_describe'));
+  assert.ok(!names('hex-crawl', 'fantasy').includes('x_whichmagic'));
+  assert.ok(names('hex-crawl', 'urthe').includes('x_might1') && !names('hex-crawl', 'gamma').includes('x_might1'));
+  assert.ok(!names('items', 'mutfut').includes('x_mutants') && names('items', 'gamma').includes('x_mutants'));
+  assert.ok(names('mtown', 'gamma').includes('species_plant') && !names('mtown', 'urthe').includes('species_plant'));
+  // The exported table covers each tool form with a JS route, and options with no game condition stay.
+  const map = W.fieldGames;
+  for (const file of Object.keys(context.WZ_DATA.fieldGames)) assert.ok(W.routes[W.routeFor(file)], file);
+  assert.equal(Object.keys(map(W.routes.coins)).length, 0);
+  assert.ok(names('hex-crawl', 'lablord').includes('x_area'));
+});

@@ -11,7 +11,18 @@
   W.field = function (name, label, type = 'number', options = {}) {
     return { name, label, type, ...options };
   };
-  W.form = (tool, params) => `<form id="generator-form"><div class="options">${tool.fields.map(f => {
+  // Options the original form only offers for some games (js/data/fieldGames.js, exported from the $x_game conditions in src/tool_*.php).
+  W.fieldGames = tool => {
+    const map = window.WZ_DATA?.fieldGames || {};
+    const file = tool.route != null && Object.keys(map).find(file => W.routeFor(file) === tool.route);
+    return file ? map[file] : {};
+  };
+  W.formFields = (tool, params) => {
+    const only = W.fieldGames(tool);
+    const slug = tool.fields.some(f => f.name === 'game') ? W.toolGame(tool, params).slug : null;
+    return tool.fields.filter(f => !slug || !only[f.name] || only[f.name].includes(slug));
+  };
+  W.form = (tool, params) => `<form id="generator-form"><div class="options">${W.formFields(tool, params).map(f => {
     const value = params[f.name] ?? f.value ?? '';
     let input;
     if (f.type === 'select') input = `<select name="${f.name}" id="opt-${f.name}">${f.options.map(option => {

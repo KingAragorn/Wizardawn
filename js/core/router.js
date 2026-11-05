@@ -57,6 +57,12 @@
       const hash = `#/${W.parseHash(location.hash).route}?${query}`;
       if (location.hash === hash) W.navigate(); else location.hash = hash;
     });
+    // Changing the game redraws the form, since some options only exist for some games.
+    form?.querySelector?.('select[name="game"]')?.addEventListener('change', () => {
+      const query = new URLSearchParams(new FormData(form));
+      for (const input of form.querySelectorAll('input[type="checkbox"]')) if (!input.checked) query.set(input.name, '0');
+      location.hash = `#/${W.parseHash(location.hash).route}?${query}`;
+    });
     document.getElementById('print-results')?.addEventListener('click', () => window.print());
     // Save as PDF uses the browser's own print-to-PDF; the document title becomes the suggested file name.
     W.pdfMode(result.pdf, result.pdf?.now);

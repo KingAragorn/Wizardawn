@@ -16,6 +16,6 @@
     return W.game(params.game || params.x_game || params.x_package ? params : { game: field.value || tool.defaultGame || 'lablord' });
   };
   W.register = function (route, title, description, fields, generate) {
-    W.routes[route] = { title, description, fields: [...fields, W.seedField], generate, defaultGame: route === 'basic-spells' ? 'lablord' : route === 'spells' ? 'osric' : 'fantasy' };
+    W.routes[route] = { route, title, description, fields: [...fields, W.seedField], generate, defaultGame: route === 'basic-spells' ? 'lablord' : route === 'spells' ? 'osric' : 'fantasy' };
   };
 })(window.WZ);
