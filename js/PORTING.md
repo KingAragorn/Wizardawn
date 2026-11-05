@@ -409,3 +409,7 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   `[type]`. Fantasy/T&T church members are CHURCH PRIEST; church services follow
   the leader entry with the original wording. Towns remain partial (economy,
   special services, post-apocalyptic details). 115 tests pass.
+- Towns: business names now follow the original builders: churches
+  "[The ]Holy Temple of the Gods", guardhouses "[The ]Watchful <monster>
+  Barracks", guilds "[The ]<members> <adjective> <lodge>" (original word lists,
+  incl. OSRIC Thieves/Rangers/Assassins), inn price inside the name line.

@@ -204,15 +204,30 @@
     const word = key => pick(table(custom, key).length && (key === 'hut1' || W.d(100) > 30) ? table(custom, key) : table(common, key));
     const category = (post ? postShops : rules ? ruleShops : shops)[type];
     const guild = !post && type >= (rules ? 18 : 17), church = !post && type === (rules ? 16 : 15), guards = !post && type === (rules ? 17 : 16), bank = type === (post ? 9 : rules ? 15 : 20);
-    const name = guild ? 'The ' + pick(['Hidden', 'Grand', 'Glorious', 'Secret', 'Royal']) + ' ' + pick(['Guild', 'Order', 'Society', 'Circle']) + ' of ' + category.replace(/ Guild$/, '') : (W.d(100) > 30 ? 'The ' : '') + [word('hut3'), word('hut2'), word('hut1') || category].join(' ');
+    // Names follow GFTBusiness/TTBusiness/wizardBusiness: "[The ]hut3 hut2 hut1".
+    // Churches, guardhouses and guilds always use their own words; guilds put
+    // the member word first ("The Wizards Secret Lodge"), as the original does.
+    let name;
+    if (guild) {
+      const members = { warrior: ['Fighters', 'Warriors', 'Champions', 'Soldiers', 'Gladiators', 'Defenders', 'Mercenaries', 'Legionnaires'], wizard: ['Wizards', 'Mages', 'Sorcerers', 'Magicians', 'Magic-Users', 'Occultists', 'Enchanters', 'Conjurers'], rogue: [rules ? 'Thieves' : 'Rogues', 'Bandits', 'Burglars', 'Sneaks', 'Prowlers', 'Highwaymen', 'Muggers', 'Swindlers'], ranger: ['Rangers', 'Hunters', 'Woodsmen', 'Travelers', 'Adventurers', 'Rangers', 'Hunters', 'Woodsmen'], assassin: ['Assassins', 'Murderers', 'Killers', 'Slayers', 'Executioners', 'Cut-Throats', 'Assassins', 'Cut-Throats'] };
+      const kind = ({ 'Fighters Guild': 'warrior', 'Warriors Guild': 'warrior', 'Wizards Guild': 'wizard', 'Rangers Guild': 'ranger', 'Assassins Guild': 'assassin' })[category] || 'rogue';
+      const adjective = pick(['Dark', '', 'Hidden', 'Grand', 'Glorious', 'Mysterious', 'Secret', 'Great', 'Marvelous', 'Amazing', 'Mystical', 'Legendary', 'Eternal', 'Exalted', 'Ultimate', 'Royal', 'Almighty', 'Supreme', 'Dominant', 'Fallen', 'Mighty', 'Unknown', 'Forgotten']);
+      const lodge = pick(['Guild', 'Guild', 'Lodge', 'League', 'Order', 'Society', 'Clan', 'Fraternity', 'Circle', 'Ring', 'Union']);
+      name = (W.d(100) > 30 ? 'The ' : '') + [pick(members[kind]), adjective, lodge].join(' ');
+    } else if (church) {
+      name = (W.d(100) > 30 ? 'The ' : '') + [pick(table(custom, 'hut3')), pick(table(custom, 'hut2')), 'of ' + pick(table(custom, 'hut1'))].join(' ');
+    } else if (guards) {
+      name = (W.d(100) > 30 ? 'The ' : '') + [pick(table(custom, 'hut3')), pick(table(common, 'hut2')), pick(table(custom, 'hut1'))].join(' ');
+    } else name = (W.d(100) > 30 ? 'The ' : '') + [word('hut3'), word('hut2'), word('hut1') || category].join(' ');
+    name = name.replace(/\s+/g, ' ');
     const cash = post ? p.money || 'gp' : 'gp';
     // Original owner titles (fantasy_stores_*.php); non-merchants are caretakers
     // and show the building type instead of stored gold.
     const titles = [, 'Bartender', 'Inn Keeper', 'Merchant', 'Blacksmith', ['Fletcher', 'Bowyer'], ['Tanner', 'Leatherworker'], ['Tailor', 'Dressmaker'], ['Animal Trainer', 'Stable Master'], ['Woodworker', 'Carpenter'], ['Alchemist', 'Herbalist'], ['Cook', 'Baker'], 'Librarian', 'Jeweler', 'Musician', ...(rules ? ['Banker'] : [])];
     const titled = post ? null : titles[type], ownerTitle = post ? 'Owner' : Array.isArray(titled) ? titled[W.d(2) === 1 ? 1 : 0] : titled || 'Caretaker';
     const purse = ownerTitle === 'Caretaker' ? category : int(50, 3000).toLocaleString('en-US') + cash;
-    let html = `<h4>${esc(name)} <small>[${esc(post ? category + '; ' + purse : purse)}]</small></h4><p><b>${esc(ownerTitle)}:</b> ${owner.html}</p>`;
-    if (!post && type === 2) html += `<p>Rooms: ${int(2, 7)}sp per night.</p>`;
+    let html = `<h4>${esc(name)}${!post && type === 2 ? ` <i>(${int(2, 7)}sp per night)</i>` : ''} <small>[${esc(post ? category + '; ' + purse : purse)}]</small></h4><p><b>${esc(ownerTitle)}:</b> ${owner.html}</p>`;
+
     if (bank) {
       html += W.range(int(2, 10)).map(i => `<p><b>${post ? 'VAULT' : 'IRON CHEST'} #${i}:</b> ${post ? W.range(int(5, 15)).map(() => esc(W.junkItem(p))).join('; ') : W.range(int(2, 10)).map(() => esc(W.d(100) > 55 ? W.gem(int(10, 100)) : W.d(100) > 10 ? W.jewel(int(10, 100)) : W.magicItem(p))).join('; ')}; ${esc(post ? int(5, 5000) + cash : W.currency(p, int(1, 20), 3))}</p>`).join('');
       if (rules) html += W.range(int(1, 3)).map(() => '<div><b>BANK GUARD:</b> ' + officer(p, mode, 'guard') + '</div>').join('');

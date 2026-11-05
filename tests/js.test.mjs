@@ -586,6 +586,9 @@ test('fantasy and T&T settlements use original owner titles, caretakers and chur
     assert.ok(html.indexOf(spell) > html.indexOf('CHURCH LEADER:'));
     assert.ok(html.indexOf(spell) < html.indexOf('CHURCH PRIEST:'), route);
     assert.doesNotMatch(html, /<b>Owner:<\/b>|CHURCH MEMBER|undefined|NaN/);
+    assert.match(html, /data-shop="15"><h4>Building \d+<\/h4><h4>(The )?\w+ \w+ of [\w ]+ <small>/);
+    assert.match(html, /<h4>(The )?(Fighters|Warriors|Champions|Soldiers|Gladiators|Defenders|Mercenaries|Legionnaires) (\w+ )?(Guild|Lodge|League|Order|Society|Clan|Fraternity|Circle|Ring|Union) <small>/);
+    assert.match(html, /<i>\([2-7]sp per night\)<\/i>/);
   }
 });
 test('post-apocalyptic citizens use age-based hit dice and robot households do not have children', () => {
