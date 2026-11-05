@@ -1351,3 +1351,15 @@ test('oadvg character sheets render the tool_oadvg.php OSRIC table sheet', () =>
   assert.match(html, /page-break-after:always/);
   assert.doesNotMatch(html, /undefined|NaN/);
 });
+
+test('hex crawl prints the atmosphere.php weather table except underground', () => {
+  W.random(77);
+  const html = W.routes['hex-crawl'].generate({ game: 'osric', climate: 107, n: 3 });
+  const block = html.match(/RANDOM WEATHER \(ROLL ONCE EACH DAY\)[\s\S]*?<\/section>/)[0];
+  assert.equal((block.match(/The temperature feels (chilly|cold|frigid|freezing) and the sky /g) || []).length, 20);
+  assert.match(block, />1d20</);
+  assert.doesNotMatch(block, /drizzle|downpour|thunderstorm|undefined/);
+  assert.doesNotMatch(W.routes['hex-crawl'].generate({ game: 'osric', climate: 112, n: 2 }), /RANDOM WEATHER/);
+  W.random(5);
+  for (let i = 0; i < 300; i++) assert.match(W.weather('desert'), /^The temperature feels (hot|mild|sweltering) and the sky is (sunny|clear|cloudy)\. The air (is breezy|is windy|has gusting winds|is quite calm), with (no precipitation for the day|slight rain falling .+|a sandstorm .+)\.$/);
+});

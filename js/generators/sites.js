@@ -143,6 +143,46 @@
   };
   const siteFields = [f('x_u_c', 'Loose contents chance (%)', 'number', { value: 30, min: 0, max: 100 }), f('x_u_c_min', 'Minimum loose contents', 'number', { value: 1, min: 0, max: 100 }), f('x_u_c_max', 'Maximum loose contents', 'number', { value: 3, min: 0, max: 100 }), f('x_u_c_low', 'Loose contents reduction (%)', 'number', { value: 0, min: 0, max: 100 }), f('x_mutants', 'Mutants only', 'checkbox'), f('x_money', 'Post-apocalyptic currency', 'text'), f('x_low_tech', 'Exceptional technology chance (%)', 'number', { value: 100, min: 0, max: 100 }), f('x_frob', 'Stranded robot (%)', 'number', { value: 0, min: 0, max: 100 }), f('x_fveh', 'Stranded vehicle (%)', 'number', { value: 0, min: 0, max: 100 }), f('x_might1', 'Minimum hit point roll', 'number', { value: 1, min: 1, max: 20 }), f('x_might2', 'Hit point die size', 'number', { value: 8, min: 1, max: 20 })];
   for (const route of ['uexfl', 'uruins']) W.routes[route].fields.push(...siteFields);
+  // atmosphere.php weather($climate): one day's weather line. Roll order
+  // follows the PHP (time, sky d100, feel, air, precipitation); $rain starts
+  // unset, so only the cloudy/storm sky bands allow precipitation.
+  const weatherZones = { 100: 'desert', 101: 'normal', 102: 'normal', 103: 'tropics', 104: 'mountains', 105: 'normal', 106: 'sea', 107: 'cold', 108: 'tropics', 109: 'tropics', 110: 'sea', 111: 'desert', 112: 'none' };
+  W.weather = function (climate) {
+    const r = (a, b) => W.rng.int(a, b), opt = (n, list, fallback) => { const i = r(0, n); return i < list.length ? list[i] : fallback; };
+    const time = ['most of the day', 'during the morning', 'during the night', 'during the middle of the day', 'all day', 'all day and night'][r(0, 5)];
+    const looks = r(1, 100), band = (cuts) => { for (const [min, text, wet] of cuts) if (looks > min) return [text, wet]; };
+    const std = [[85, 'is sunny'], [75, 'is clear'], [30, 'is cloudy', 1], [20, 'is hazy'], [10, 'has an overcast'], [-1, 'is filled with storm clouds', 1]];
+    const mild = [[75, 'is sunny'], [50, 'is clear'], [25, 'is cloudy', 1], [15, 'is hazy'], [5, 'has an overcast'], [-1, 'is filled with storm clouds', 1]];
+    const wet4 = ['some slight drizzle', 'rain falling', 'a downpour', 'a thunderstorm'];
+    let feel, look, rain, air, drops = ', with no precipitation for the day';
+    const fall = (n, list) => { const i = r(0, n); if (i < list.length) drops = ', with ' + list[i] + ' ' + time; };
+    if (climate === 'cold') {
+      feel = ['chilly', 'cold', 'frigid', 'freezing'][r(0, 3)]; [look, rain] = band(std);
+      air = opt(7, ['is breezy', 'is windy', 'is foggy', 'has gusting winds'], 'is quite calm');
+      if (rain) fall(7, ['snow falling', 'hail falling', 'freezing rain falling', 'a blizzard']);
+    } else if (climate === 'mountains') {
+      feel = ['chilly', 'cold', 'frigid', 'mild'][r(0, 3)]; [look, rain] = band(std);
+      air = ['is breezy', 'is windy', 'is foggy', 'has gusting winds', 'is quite calm'][r(0, 4)];
+      if (rain) fall(10, ['snow falling', 'hail falling', 'freezing rain falling', 'some slight drizzle', 'rain falling', 'a downpour', 'a thunderstorm']);
+    } else if (climate === 'desert') {
+      feel = ['hot', 'mild', 'sweltering'][r(0, 2)]; [look, rain] = band([[40, 'is sunny'], [10, 'is clear'], [-1, 'is cloudy', 1]]);
+      air = opt(5, ['is breezy', 'is windy', 'has gusting winds'], 'is quite calm');
+      if (rain) { const sky = r(1, 100); if (sky > 90) drops = ', with slight rain falling ' + time; else if (sky > 80) drops = ', with a sandstorm ' + time; }
+    } else if (climate === 'tropics') {
+      feel = ['hot', 'mild', 'warm'][r(0, 2)]; [look, rain] = band([[80, 'is sunny'], [60, 'is clear'], [20, 'is cloudy', 1], [15, 'is hazy'], [10, 'has an overcast'], [-1, 'is filled with storm clouds', 1]]);
+      air = opt(5, ['is breezy', 'is windy', 'is humid'], 'is quite calm');
+      if (rain) fall(5, wet4);
+    } else if (climate === 'sea') {
+      feel = ['chilly', 'cold', 'hot', 'mild', 'warm'][r(0, 4)]; [look, rain] = band(mild);
+      air = ['is breezy', 'is windy', 'is windy', 'is foggy', 'is humid', 'has gusting winds', 'has gusting winds', 'is quite calm'][r(0, 7)];
+      if (rain) fall(7, wet4);
+    } else {
+      feel = ['chilly', 'cold', 'hot', 'mild', 'warm'][r(0, 4)]; [look, rain] = band(mild);
+      air = opt(9, ['is breezy', 'is windy', 'is foggy', 'is humid', 'has gusting winds'], 'is quite calm');
+      if (rain) fall(7, wet4);
+    }
+    return 'The temperature feels ' + feel + ' and the sky ' + look + '. The air ' + air + drops + '.';
+  };
   W.register('hex-crawl', 'World Adventure', 'Generate a world adventure with a numbered map, terrain encounters, site inhabitants, interior maps and keyed rooms.', [...W.adventureFields.filter(field => !['width', 'height', 'x_terrain', 'x_outside'].includes(field.name)), f('climate', 'Terrain', 'select', { value: 101, options: Object.entries(terrains).map(([key, row]) => [key, row[1]]) }), f('n', 'Maximum keyed sites', 'number', { value: 320, min: 1, max: 320 }), f('map_name', 'Map name', 'text'), f('map_equals', 'Miles per hex', 'number', { value: 6, min: 1, max: 1000 }), f('info', 'Map information', 'checkbox', { value: 1 }), f('color', 'Color map', 'checkbox'), ...siteFields], p => {
     const game = W.game(p), climate = p.climate ?? p.x_terrain ?? p.map_climate ?? 101;
     const options = { ...p, game: game.slug, climate, level: p.level ?? p.x_level ?? 0, terrain: terrains[climate]?.[0] || 'PF', genre: p.genre || (postGame(p) ? 'Post-Apocalyptic' : 'Fantasy'), mutate: p.mutate ?? p.x_mutants };
@@ -157,6 +197,11 @@
       html += '<section class="crawl-wandering"><h3>' + (sea ? 'RANDOM ENCOUNTERS ON THE SURFACE' : 'RANDOM ENCOUNTERS') + '</h3>' + W.routes.wander.generate({ ...options, n: sea ? troll ? 21 : 20 : troll ? 19 : 18 }) + (!sea ? '<p>19: ROLL ON THE RANDOM ITEM I TABLE<br>20: ROLL ON THE RANDOM ITEM II TABLE</p>' : '') + '</section>';
       if (climate != 112 && (sea || map.sites.some(site => site.sunken))) html += '<section class="crawl-water"><h3>RANDOM FRESHWATER ENCOUNTERS</h3>' + W.routes.wander.generate({ ...options, terrain: sea ? 'SW' : 'FW', n: troll ? 11 : 12 }) + '</section>';
       if (!sea) for (const label of ['I', 'II']) html += '<section class="crawl-items"><h3>RANDOM ITEM ' + label + '</h3>' + W.table(['Roll', 'Find'], W.range(20).map(i => [i, esc(postGame(options) ? W.postRoomItem(options).text : W.fantasyItem(options))])) + '</section>';
+    }
+    const zone = weatherZones[climate] || 'normal';
+    if (zone !== 'none') {
+      const troll = W.isTroll(options) || game.slug === 'ssxs';
+      html += '<section class="crawl-weather"><h3>RANDOM WEATHER (ROLL ONCE EACH DAY)</h3>' + W.table([troll ? '4d6' : '1d20', 'WEATHER'], W.range(troll ? 21 : 20, troll ? 4 : 1).map(i => [i, esc(W.weather(zone))])) + '</section>';
     }
     html += sites.map(site => site.html).join('') + '<h3>Legend</h3>' + map.legend;
     W.storage.set('last-hex-crawl', { options, sites, rows, cells: map.cells });
