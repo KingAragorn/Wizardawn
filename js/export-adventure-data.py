@@ -45,7 +45,7 @@ for file, prefix in [('bx_rules', 'bx'), ('ll_rules', 'll')]:
     for m in re.finditer(r'\$class == "([^"]+)" && \$level == (\d+)\)\{([^}]+)\}', fun[prefix + '_basic_level']):
         row = {}
         for key, value in re.findall(r'\$(xp1|xp2|spells|steal) = "([^"]*)"', m[3]):
-            row[key] = ([int(n) for n in value.split('|')] if key == 'spells' else value.split('_')) if key in ['spells', 'steal'] else int(value.replace(',', ''))
+            row[key] = ([int(n) for n in value.split('|')] if key == 'spells' else re.split(r'[|_]', value)) if key in ['spells', 'steal'] else int(value.replace(',', ''))
         progression.setdefault(m[1], {})[m[2]] = row
     saves = {}
     for m in re.finditer(r'\$save = "([^"$]+)"', fun[prefix + '_basic_saves']):
@@ -90,7 +90,7 @@ for i,m in enumerate(branches):
 rules['osric'] = osric
 write('characterRules', rules)
 # Description templates: text cells with named slots. No expressions/code ship.
-def template(expr):
+def template(expr, extra_calls=None):
     calls = {
         '(ceil($level/2)+1)': 'damageScale', '(floor($level/2)+1)': 'damageScale',
         'TTSaves($level,$game)': 'savingRoll', 'ucfirst(fogColor())': 'fogColor',
@@ -99,6 +99,7 @@ def template(expr):
         'abilityTranslate($game,LCK)': 'luck', 'abilityTranslate($game,SPD)': 'speed',
         'abilityTranslate($game,INT)': 'intelligence', 'abilityTranslate($game,STR)': 'strength', 'abilityTranslate($game,CON)': 'constitution',
     }
+    calls.update(extra_calls or {})
     result = []
     while expr.strip(' .\t'):
         expr = expr.lstrip(' .\t')

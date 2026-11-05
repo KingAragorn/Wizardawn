@@ -72,46 +72,46 @@ are bundled. No deployment has been made.
 | `rpg_urthe.php` | ported | `#/game/urthe` |
 | `rpg_ww.php` | ported | `#/game/ww` |
 | `tool_acity.php` | ported | `#/ruined-city-map` |
-| `tool_alchemist.php` | remaining (partial) | `#/alchemist` |
+| `tool_alchemist.php` | partial | `#/alchemist` |
 | `tool_area.php` | ported | `#/area` |
-| `tool_bmbs.php` | remaining (partial) | `#/items` |
-| `tool_books.php` | remaining (partial) | `#/books` |
+| `tool_bmbs.php` | partial | `#/items` |
+| `tool_books.php` | partial | `#/books` |
 | `tool_brew.php` | ported | `#/brews` |
-| `tool_bxadvg.php` | remaining | `#/bxadvg` |
+| `tool_bxadvg.php` | partial | `#/bxadvg` |
 | `tool_coins.php` | ported | `#/coins` |
-| `tool_data.php` | remaining | `#/data` |
-| `tool_delve.php` | remaining | `#/delve` |
+| `tool_data.php` | partial | `#/data` |
+| `tool_delve.php` | partial | `#/delve` |
 | `tool_dice.php` | ported | `#/dice` |
 | `tool_dmap.php` | ported | `#/dungeon-map` |
-| `tool_door.php` | remaining | `#/doors` |
-| `tool_encounter.php` | remaining (partial) | `#/encounters` |
-| `tool_ftown.php` | remaining | `#/town` |
-| `tool_hexcrawl.php` | remaining (partial) | `#/hex-crawl` |
-| `tool_ladvg.php` | remaining | `#/ladvg` |
-| `tool_lists.php` | remaining (partial) | `#/lists` |
+| `tool_door.php` | partial | `#/doors` |
+| `tool_encounter.php` | partial | `#/encounters` |
+| `tool_ftown.php` | partial | `#/town` |
+| `tool_hexcrawl.php` | partial | `#/hex-crawl` |
+| `tool_ladvg.php` | partial | `#/ladvg` |
+| `tool_lists.php` | partial | `#/lists` |
 | `tool_llb_spells.php` | ported | `#/basic-spells` |
-| `tool_locale.php` | remaining | `#/locale` |
-| `tool_loot.php` | remaining | `#/loot` |
-| `tool_mtown.php` | remaining | `#/mtown` |
+| `tool_locale.php` | partial | `#/locale` |
+| `tool_loot.php` | partial | `#/loot` |
+| `tool_mtown.php` | partial | `#/mtown` |
 | `tool_names.php` | ported | `#/names` |
-| `tool_oadvg.php` | remaining | `#/oadvg` |
+| `tool_oadvg.php` | partial | `#/oadvg` |
 | `tool_osric_spells.php` | ported | `#/spells` |
 | `tool_packs.php` | ported | `#/packs` |
 | `tool_potions.php` | ported | `#/potions` |
-| `tool_scavenge.php` | remaining (partial) | `#/scavenge` |
+| `tool_scavenge.php` | partial | `#/scavenge` |
 | `tool_scifim.php` | remaining | `#/scifim` |
 | `tool_smap.php` | ported | `#/sci-fi-map` |
 | `tool_suburb.php` | ported | `#/suburb-map` |
 | `tool_swmp.php` | ported | `#/sewer-map` |
-| `tool_tmap.php` | remaining | `#/tmap` |
-| `tool_ttown.php` | remaining | `#/ttown` |
-| `tool_uexfl.php` | remaining | `#/uexfl` |
-| `tool_ultimate.php` | remaining | `#/ultimate` |
-| `tool_uruins.php` | remaining | `#/uruins` |
+| `tool_tmap.php` | partial | `#/tmap` |
+| `tool_ttown.php` | partial | `#/ttown` |
+| `tool_uexfl.php` | partial | `#/uexfl` |
+| `tool_ultimate.php` | partial | `#/ultimate` |
+| `tool_uruins.php` | partial | `#/uruins` |
 | `tool_villg.php` | ported | `#/settlement-map` |
-| `tool_wander.php` | remaining (partial) | `#/wander` |
-| `tool_world.php` | remaining (partial) | `#/world` |
-| `tool_wtown.php` | remaining | `#/wtown` |
+| `tool_wander.php` | partial | `#/wander` |
+| `tool_world.php` | partial | `#/world` |
+| `tool_wtown.php` | partial | `#/wtown` |
 | `tool_zombies.php` | ported | `#/zombies` |
 | `lic/lic_ll.pdf` | ported | `#/licence/ll` (original local PDF) |
 | `lic/lic_mf.pdf` | ported | `#/licence/mf` (original local PDF) |
@@ -271,3 +271,115 @@ in this sandbox; the user handles commits and browser testing.
 
 Run 2 verification: `node --test tests/js.test.mjs` — 57 tests passed. Git status
 shows changes only in `js/` and `tests/js.test.mjs`. Chrome was not launched.
+
+## Run 3 audit (run 4 starting point, 5d0289b)
+
+The run 3 commit added 23 passing tests (80 total) and four generator files,
+but did not update this checklist. The table above now reflects those files.
+None of the new generators has full PHP parity yet; they are **partial**.
+
+- `towns.js`: all four settlement routes generate maps, numbered homes,
+  families, rulers, shops, institutions and local records. Remaining: exact
+  shop assignment/economy, inventory pricing/quantities/special services,
+  citizen equipment and rule-specific leaders, post-apocalyptic details.
+- `characters.js`: bxadvg/ladvg/oadvg produce class counts, attributes, levels,
+  XP, saves, attacks, equipment, skills and spell lists. Remaining: precise
+  OSRIC combat/thief/race rules, original sheets, option semantics and gear.
+- `adventures.js`: delve/ultimate/uexfl/uruins produce keys, encounters, traps,
+  treasure and wandering tables; complex/progressive delves have subfloors.
+  Remaining: custom encounter data integration, original floor progression,
+  complete room furnishing/features, post-apocalyptic contents and options.
+- `treasure.js`: doors, loot, tmap and data are working approximations, now
+  listed as partial. Weighted magic/technology selection, original treasure-map
+  rules, exact reference tables and custom-data behavior need further work.
+- `items` is still the mundane-only report. `hex-crawl` is still a preview.
+  locale, scifim, Magestykc data pages and the map viewer/export remain absent.
+
+Earlier batch notes describe their historical state and are not completion
+claims. The status table and latest run notes take precedence. No commit,
+Chrome launch, push, deployment or server will be attempted in run 4.
+
+## Run 4 progress
+
+- Audit completed first: every run 3 implementation is now recorded as partial
+  in the status table, with specific missing behavior above. Baseline: 80 tests.
+- Settlements expanded: original OSRIC shop IDs and all five guilds, section
+  allocation order across economy tiers, correct T&T Simple/Complex/Deluxe
+  inventory filters, PA low/hi/both technology and game filters, boat quantity
+  flags, stock-zero semantics, monthly stock, banks with chest contents/guards,
+  church/guild services, clothing/possessions tables, leader equipment, original
+  royal guard counts, OSRIC character officials, and age-based PA HD/HP/resists.
+  Robot households no longer generate spouses/children; official fallback uses
+  two existing residents. Original ruler/guards and PHP game option aliases work.
+  Still partial: exact T&T complex armor generation, full robot/mutant body
+  descriptions, full character parity (also affects OSRIC officials), hidden
+  furnishing/loot interactions and presentation differences. 83 tests pass.
+- Delve/adventures expanded: original 0×0 corner-only small floors, 1×1 medium
+  and 2×1/1×2 large floors, correct interior water/exit filters, floor omission,
+  original progressive level schedule, tomb/undead selection, custom room data
+  integration, encounter/treasure records, loot adjustment and hoarding flags.
+  Progressive wandering table sizes now match the original. Still partial:
+  complete furnishing/hidden loot and unusual-room branches, magic generation,
+  exact wandering ordering/roll labels and report layouts.
+- Apocalypse now has all eight reference sections (100 mundane, 20 room traps,
+  20 paired containers, 20 container traps, 100 money, 100 exceptional items,
+  20 hoards, 100 encounters), optional original solitaire rules and local art.
+  Mundane generation mixes the original 144 room-clutter cells with junk;
+  spaceship variants, container types, PA currency, 55 trap branches and original
+  technological artifact descriptions are shared with sci-fi/ruins adventures.
+  The missing-game/Mutant Future path stays safe. Still partial: several nested
+  clutter helpers and exceptional-item size/condition details are approximated;
+  not yet a full-equivalence claim. Exhaustive cell/branch tests added.
+- Treasure maps now generate level+2..10 individual finds, one coin allocation,
+  original coin/gem/jewelry thresholds, custom nested treasure on each find,
+  optional trapped containers and game-specific clue languages. Shared magic
+  generation still limits parity, so tmap remains partial.
+- Hex crawl now generates site inhabitants, underwater depth/air seals, interior
+  maps and keyed rooms across floors, camp/lair/wreck contents, wandering/freshwater
+  and item tables. Terrain, party, room-content and treasure controls feed those
+  interiors; no-game and empty candidate pools remain bounded. Locale now uses
+  the same site engine for every original fantasy and PA location selection.
+  Both remain partial: site-specific narratives, exact inhabitant and map rules,
+  stranded vehicles/robots, rare landmark branches and individual furnishing
+  behavior still differ. The map/site work must not be labelled full parity.
+- Character rules expanded: all 36 original OSRIC race/class combinations now
+  use their original attribute ranges, age and attribute-dependent level caps;
+  thief skills use original level rows plus racial/DEX modifiers, exceptional
+  strength and THAC0 progression. Basic characters use the original class-legal
+  weapon tables, armor/shield rules, racial languages and age ranges. Independent
+  PHP function comparison now verifies every valid B/X and LL attack/save row.
+  Character routes remain partial: original character-sheet artwork overlays,
+  detailed XP/attribute reports, AEC variants, full magic gear and some OSRIC
+  class/racial abilities still need work. 95 tests currently pass.
+- Further settlement checks cover the original new-city/ruined-city/new-village
+  artwork choices, inherited mutant anatomy, physical mutation descriptions and
+  robot forms. Scavenging now uses original mutant surnames/corpse descriptions
+  and the 10% game-specific artifact branch. These remain partial where their
+  shared equipment/artifact helpers differ from PHP.
+- Dungeon furnishings now cover every wall, ceiling, floor and near-wall
+  selection, with shelf/food/clothing/rack contents and hiding-place metadata.
+  All 192 floor-item cells and 174 shelf-item cells render; each item's numeric
+  descriptions come from literal template data. Adventures place treasure in
+  those hiding spots and respect the room's original one-coin-allocation rule.
+  Remaining: full nested painting, cage, cauldron, torture, egg and exceptional
+  item helpers, exact repeated hiding-place reuse and report presentation.
+- Custom loot now repeats nested treasure finds for the requested min/max count
+  (including PHP's min>max clamp), and PA hoards use original currency amounts.
+  Data listing covers every original category, including Deluxe treasure.
+  Technology-chance controls are exposed on both post-apocalyptic adventures.
+  Latest verification: 101 Node tests pass; no browser launch was attempted.
+- Character detail pass added original B/X and LL two-page sheet artwork and
+  positioned fields (including age/AEC variants), full basic attribute modifier
+  rows checked against PHP, XP adjustments, pocket money and cleric turning
+  tables. Corrected the LL thief table's delimiter, AEC thief modifiers, basic
+  spell-book count/cap rules, OSRIC divine Wisdom bonuses and ranger dual spell
+  classes. BD&D magic now uses all eight original weighted percentile tables,
+  including charges, quantities, scroll spells and treasure-map outcomes.
+  Full parity still needs OSRIC sheet/report details, all games' magic rules,
+  intelligent swords and some class/racial/equipment details. Sheet placement
+  needs the user's browser review; Chrome remains unlaunched. 104 tests passed
+  before the additional magic/feature/encounter checks below.
+- Post-apocalyptic unusual rooms now use the original six technology branches
+  (vending machine, teleporter, fruit, cloning, escape pod, computer) rather than
+  fantasy unusual rooms. Encounter Creation now supports optional hoards with
+  original level-based find counts, container choices and coin allocation.

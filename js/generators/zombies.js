@@ -79,7 +79,12 @@
   const buildings = [['random', 'Random'], ['book_store', 'Book Store'], ['cloth_store', 'Clothing Store'], ['dept_store', 'Department Store'], ['electric_store', 'Electronics Store'], ['fire_station', 'Fire Station'], ['gas_store', 'Gas Station/Convenient Store'], ['generic', 'Building'], ['food_store', 'Grocery Store'], ['tool_store', 'Hardware Store'], ['home', 'Home'], ['hospital', 'Hospital/Pharmacy'], ['army_base', 'Military Base/Army Surplus Store'], ['police_station', 'Police Station'], ['restaurant', 'Restaurant'], ['sport_store', 'Sporting Goods Store'], ['toy_store', 'Toy Store']];
   W.register('scavenge', 'Scavenging Lists', 'Generate scavenging finds in buildings and on corpses. Choose the number of sets and the amount of items in each set.', [W.gameField, f('building', 'Building', 'select', { value: 'random', options: buildings }), f('sets', 'Building sets', 'number', { value: 1, min: 0, max: 100 }), f('amount1', 'Minimum items per building', 'number', { value: 1, min: 1, max: 100 }), f('amount2', 'Maximum items per building', 'number', { value: 1, min: 1, max: 100 }), f('csets', 'Corpses', 'number', { value: 0, min: 0, max: 100 }), f('camount1', 'Minimum items per corpse', 'number', { value: 1, min: 1, max: 20 }), f('camount2', 'Maximum items per corpse', 'number', { value: 1, min: 1, max: 20 }), f('condition', 'Condition items', 'checkbox')], p => {
     const sets = W.number(p.sets ?? p.n, 1, 0), corpses = W.number(p.csets, 0, 0);
-    const items = (type, min, max) => W.table(['Item', 'Find'], W.range(int(Math.min(min, max), max)).map(i => [i, esc(W.scavengeItem(type)) + (p.condition === '1' ? ' <i>(' + W.itemCondition() + ')</i>' : '')]));
+    const genre = p.genre || ({ urthe: 'urthe', gamma: 'gammaworld', meta: 'metalpha', mutfut: 'wasteland', millen: 'wasteland', apoc: 'wasteland' })[W.game(p).slug] || 'zombies';
+    const game = ({ urthe: 'urthe', gammaworld: 'gamma', metalpha: 'meta', wasteland: 'mutfut' })[genre] || W.game(p).slug;
+    const items = (type, min, max, corpse = false) => W.table(['Item', 'Find'], W.range(int(Math.min(min, max), max)).map(i => {
+      const item = corpse && genre !== 'zombies' && W.d(10) === 1 ? W.postArtifact({ ...p, game, condition: '1' }).split(' [')[0] : W.scavengeItem(type);
+      return [i, esc(item) + (p.condition === '1' ? ' <i>(' + W.itemCondition() + ')</i>' : '')];
+    }));
     const sections = W.range(sets).map(() => {
       const building = buildings.find(([key]) => key === p.building) || buildings[0];
       const [type, title] = building[0] === 'random' ? pick(buildings.slice(1)) : building;
@@ -87,7 +92,9 @@
     });
     W.range(corpses).forEach(() => {
       const zombie = W.zombie(true);
-      sections.push(`<section class="scavenge-corpse"><h3>${esc(zombie.first + ' ' + zombie.last)}</h3><p>${esc(zombie.description)} Found on or near the corpse is...</p>${items(W.d(4) === 1 ? 'corpse' : 'zombie', W.number(p.camount1, 1, 1, 20), W.number(p.camount2, 1, 1, 20))}</section>`);
+      const name = genre === 'zombies' ? zombie.first + ' ' + zombie.last : W.manyName() + ' ' + W.mutantSurname();
+      const description = genre === 'zombies' ? zombie.description : name + ' ' + pick(['seems to have left behind the', 'seems to have been reduced to the', 'is now nothing more than the', 'is now reduced to a simple', 'has died here, leaving behind the', 'has perished here, leaving this']) + ' ' + W.postCorpse() + '.';
+      sections.push(`<section class="scavenge-corpse"><h3>${esc(name)}</h3><p>${esc(description)} Found on or near the corpse is...</p>${items(genre !== 'zombies' || W.d(4) === 1 ? 'corpse' : 'zombie', W.number(p.camount1, 1, 1, 20), W.number(p.camount2, 1, 1, 20), true)}</section>`);
     });
     return sections.join('') || '<p>Choose at least one building or corpse.</p>';
   });

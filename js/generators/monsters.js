@@ -11,7 +11,9 @@
     const terrain = params.terrain ?? params.x_terrain ?? '';
     return D.monsters_rpgs.filter(m => {
       const source = game === 'add' ? /^SRC: MM /.test(m.creator) || m.creator === 'ADDDD' || (params.dd_ff === '1' && m.creator.startsWith('SRC: FF ')) || (params.dd_mm2 === '1' && m.creator.startsWith('SRC: MM2 ')) : m.creator === creator || (creator === 'LL' && params.aec === '1' && m.creator.startsWith('AEC')) || (creator === 'OSRIC' && (params.x_mom ?? params.mom ?? params.x_extra) === '1' && m.creator === 'MoM');
-      return source && +m.difficulty <= level && (!terrain || m.location.split(' ').includes(terrain)) && (params.swimmer == null || +m.swimmer === +params.swimmer);
+      return source && +m.difficulty <= level && (!terrain || m.location.split(' ').includes(terrain)) && (params.swimmer == null || +m.swimmer === +params.swimmer)
+        && (String(params.x_undead) !== '1' || +m.turn > 0)
+        && (String(params.dungeonOnly) !== '1' || +m.m_no_dungeon !== 1);
     });
   };
   W.monsterPick = params => {
@@ -79,15 +81,29 @@
     W.storage.set('wandering-enemies', { options: p, rows });
     return W.table(['Roll', 'Enemy'], rows);
   });
-  W.register('encounters', 'Encounter Creation', 'Generate encounters with a selected creature, each with its own group size and hit points.', [...common, f('enemy', 'Enemy name or original ID (optional)', 'text'), W.countField('Encounters'), f('characters', 'Characters and followers (0 = random)', 'number', { value: 0, min: 0, max: 100 }), f('hitDie', 'Hit die size', 'select', { value: 8, options: [6, 8] }), f('tt_dice', 'T&T group dice', 'number', { value: 0, min: 0, max: 1000 }), f('tt_adds', 'T&T group adds', 'number', { value: 0, min: 0, max: 10000 })], p => {
+  const encounterFields = [...common, f('enemy', 'Enemy name or original ID (optional)', 'text'), W.countField('Encounters'), f('characters', 'Characters and followers (0 = random)', 'number', { value: 0, min: 0, max: 100 }), f('hitDie', 'Hit die size', 'select', { value: 8, options: [6, 8] }), f('tt_dice', 'T&T group dice', 'number', { value: 0, min: 0, max: 1000 }), f('tt_adds', 'T&T group adds', 'number', { value: 0, min: 0, max: 10000 }), f('x_loot', 'Add treasure', 'checkbox'), f('x_cut', 'Treasure value (%)', 'number', { value: 100, min: 0, max: 1000 }), f('x_whichmagic', 'Original game magic items (%)', 'number', { value: 50, min: 0, max: 100 }), f('x_oldway', 'Use Magestykc weapons and armor', 'checkbox'), f('x_money', 'Post-apocalyptic currency', 'text'), f('x_might1', 'Minimum hit point roll', 'number', { value: 1, min: 1, max: 20 }), f('x_might2', 'Hit point die size', 'number', { value: 8, min: 1, max: 20 }), f('ua', 'Include Unearthed Arcana', 'checkbox')];
+  W.register('encounters', 'Encounter Creation', 'Generate encounters with a selected creature, each with its own group size and hit points.', encounterFields, p => {
     const options = { ...p, game: W.monsterGame(p) }, query = String(p.enemy ?? p.x_enemy ?? '').trim();
     const candidates = W.monsters({ ...options, level: 0, terrain: '' });
     const monster = query ? candidates.find(m => String(m.id) === query || W.monsterName(m).toLowerCase() === query.toLowerCase()) : W.monsterPick(options);
     if (!monster) return '<p>No matching enemy found for this game.</p>';
-    return W.table(['Encounter', 'Creatures and statistics'], W.range(W.count(p, 'x_amount')).map(i => {
+    const encounters = [];
+    const rows = W.range(W.count(p, 'x_amount')).map(i => {
       const life = W.monsterLife(monster, options), troll = W.isTroll(options), rating = life.reduce((sum, n) => sum + n, 0);
-      return [i, `<section class="encounter">${W.monsterStats(monster, (p.describe ?? '1') === '1', options)}<p>There ${life.length === 1 ? 'is' : 'are'} ${life.length} in this area. ${troll ? 'MR: ' + rating + '; DICE: ' + (Math.floor(rating / 10) + 1) + ' + ' + Math.ceil(rating / 2) + '; ' : ''}<b>${options.game === 'urthe' ? 'STAMINA' : troll ? 'MR' : 'HIT POINTS'}:</b> ${life.join(', ')}</p></section>`];
-    }));
+      let loot = '', treasure = [], container = '';
+      if (String(p.x_loot) === '1') {
+        const post = ['mutfut', 'urthe', 'meta', 'gamma'].includes(options.game), state = { coins: false };
+        const maximum = Math.min(10, Math.ceil(+monster.difficulty / 2) < 3 ? 2 : Math.ceil(+monster.difficulty / 2));
+        const settings = { ...options, level: +monster.difficulty || 1, tech: options.game === 'meta' ? '1' : String(int(0, 1)) };
+        container = W.d(100) > 70 ? 'LYING ABOUT IN THE AREA IS...' : 'LOCATED IN A ' + (post ? W.postContainer({ ...settings, tech: '1' }) : W.container()).toUpperCase() + ' IS...';
+        treasure = W.range(int(1, maximum)).map(() => W.adventureFind(settings, state, 3, post));
+        loot = '<div class="encounter-treasure"><b>' + esc(container) + '</b>' + W.list(treasure.map(esc)) + '</div>';
+      }
+      encounters.push({ monsterId: monster.id, life, treasure, container });
+      return [i, `<section class="encounter">${W.monsterStats(monster, (p.describe ?? p.x_describe ?? '1') === '1', options)}<p>There ${life.length === 1 ? 'is' : 'are'} ${life.length} in this area. ${troll ? 'MR: ' + rating + '; DICE: ' + (Math.floor(rating / 10) + 1) + ' + ' + Math.ceil(rating / 2) + '; ' : ''}<b>${options.game === 'urthe' ? 'STAMINA' : troll ? 'MR' : 'HIT POINTS'}:</b> ${life.join(', ')}</p>${loot}</section>`];
+    });
+    W.storage.set('last-encounters', { options, encounters });
+    return W.table(['Encounter', 'Creatures and statistics'], rows);
   });
   W.register('lists', 'Monster Listing', 'List creatures in columns or stat blocks, sorted by name or difficulty, optionally grouped by terrain.', [...common, f('sorting', 'Sort by', 'select', { value: 1, options: [[1, 'Name'], [2, 'Level']] }), f('type', 'Report type', 'select', { value: 1, options: [[1, 'List'], [2, 'Terrain']] }), f('statb', 'Appearance', 'select', { value: 2, options: [[1, 'Columns'], [2, 'Stat blocks']] }), f('show_terrain', 'Include terrain codes', 'checkbox'), ...W.dataFields], p => {
     const options = { ...p, game: W.monsterGame(p), noNames: '1' }, monsters = W.monsters(options).slice();

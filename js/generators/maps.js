@@ -5,7 +5,9 @@
   const dimensions = [f('width', 'Width (geomorphs)', 'number', { value: 1, min: 1, max: 10 }), f('height', 'Height (geomorphs)', 'number', { value: 1, min: 1, max: 10 })];
   const numbering = [f('keyed', 'Number areas', 'checkbox'), f('start', 'Start numbering at', 'number', { value: 1, min: 1, max: 100000 })];
   W.geomorphMap = function (params, kind) {
-    const width = W.number(params.width ?? params.map_wide, 1, 1, 10), height = W.number(params.height ?? params.map_high, 1, 1, 10);
+    // A small delve floor consists of four corner geomorphs, with no center.
+    const minimum = params.interior === '1' ? 0 : 1;
+    const width = W.number(params.width ?? params.map_wide, 1, minimum, 10), height = W.number(params.height ?? params.map_high, 1, minimum, 10);
     const type = String(params.type || (kind === 'dungeon' ? 'Cavernous Dungeon' : kind === 'settlement' ? 'City' : kind === 'scifi' ? 'Building' : kind));
     const side = type.toLowerCase() === 'side view', suburb = kind === 'suburb';
     const border = suburb ? 75 : 150, topHeight = side ? 300 : border;
@@ -30,7 +32,7 @@
       const terrains = type === 'Building' ? ['scifi-building'] : type === 'Spaceship' ? ['scifi-ship'] : ['scifi-ship', climate];
       available = available.filter(t => terrains.includes(t.terrain));
     } else available = available.filter(t => t.terrain === ({ sewer: 'sewers', ruins: 'ruins', suburb: 'suburb' }[kind] || kind));
-    if (params.interior === '1') available = available.filter(t => t.wayout !== 1 && t.delve !== 'X' && (type === 'Water Cavern' ? t.delve === 'W' : t.delve !== 'W'));
+    if (params.interior === '1') available = available.filter(t => t.delve !== 'X');
     const tiles = [], rooms = [], gates = new Set();
     const dock = W.d(4);
     for (let y = 0; y < height + 2; y++) for (let x = 0; x < width + 2; x++) {
@@ -38,6 +40,7 @@
       const horizontal = x === 0 ? 'l' : x === width + 1 ? 'r' : '';
       const spot = vertical + horizontal;
       let choices = available.filter(t => t.spot === spot);
+      if (params.interior === '1' && !spot) choices = choices.filter(t => +t.wayout !== 1 && (type === 'Water Cavern' ? t.delve === 'W' : t.delve !== 'W'));
       if (kind === 'settlement') {
         if (!spot) {
           const centerIndex = (y - 1) * width + x - 1;
@@ -65,6 +68,7 @@
       tiles.push({ image, left, top, width: tileWidth, height: tileHeight, spot });
       const levels = side && params.complex === '1' ? chosen.more.split('_').filter(Boolean).map(cell => { const [coordinate, type, size] = cell.split('^'); return { coordinate: +coordinate, type, size }; }) : chosen.rooms.map(coordinate => ({ coordinate, type: chosen.terrain === 'cave' ? 'C' : 'D' }));
       if (keyed) for (const area of levels) {
+        if (side && params.complex === '1' && W.d(100) < W.number(params.x_floors, 0, 0, 100)) continue;
         const coordinate = area.coordinate;
         const columns = tileWidth === 150 ? 5 : 10;
         rooms.push({ number: ++key, type: area.type, size: area.size, x: left + (((coordinate - 1) % columns) * 10 + 5) * 3 - 2, y: top + (Math.floor((coordinate - 1) / columns) * 10 + 5) * 3 - 3 });

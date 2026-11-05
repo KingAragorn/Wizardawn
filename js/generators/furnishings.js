@@ -1,0 +1,209 @@
+(function (W, D) {
+  'use strict';
+  const pick = a => W.pick(a), int = (a, b) => W.rng.int(a, b), color = () => W.color();
+  const vocab = (name, key = 'value') => {
+    const row = D.fantasyTables.vocab[name];
+    return pick(row.arrays.length ? row.arrays[0][1] : row.cells[key]);
+  };
+  const wood = () => pick(['maple', 'cedar', 'oak', 'rosewood', 'walnut', 'mahogany', 'birch']);
+  const metal = () => pick(['iron', 'iron', 'metal', 'bronze', 'brass']);
+  const condition = kind => kind === 'wood' ? '' : W.postCondition(kind);
+  const furniture = () => vocab('furnitureMake'), size = () => vocab('sizeMake');
+  const alot = () => pick(['are some', 'is alot of', 'are many', 'are faint', 'is a few', 'is a bunch of']);
+  const bag = () => pick([W.color('leatherColor') + ' leather', 'leather', color() + ' cloth', W.color('leatherColor') + ' canvas']) + ' ' + pick(['bag', 'sack', 'satchel', 'backpack', 'rucksack', 'knapsack', 'pouch']);
+  const corpse = () => vocab('corpseMaker', 'look') + ' ' + pick(['body', 'corpse', 'remains', 'bones']) + ' of ' + vocab('corpseMaker', 'race');
+  const head = skull => (skull || W.d(100) > 80 ? 'skull' : vocab('headoffMaker', 'look') + ' head') + ' of ' + vocab('headoffMaker', 'race');
+  const tracks = () => vocab('footprintMaker', 'look') + vocab('footprintMaker', 'race');
+  const coin = p => W.isTroll(p) ? 'gold' : 'gp';
+  const clothes = (p, small = false) => {
+    const i = int(0, small ? 37 : 34), noun = D.fantasyTables.vocab.closetFiller.cells.cloth[i];
+    const leather = [1, 36, 37].includes(i) || [11, 23].includes(i) && W.d(2) === 1;
+    let text = (leather ? W.color('leatherColor') + ' leather ' : color() + ([11, 22, 23].includes(i) ? ' cloth ' : ' ')) + noun;
+    if (i === 22) text += ' (contains ' + int(3, 30) + ' ' + coin(p) + ')';
+    if (noun !== 'pouch' && W.d(100) > 30) text = pick(['torn', 'ripped', 'ruined', 'moldy', 'dirty']) + ' ' + text;
+    return text;
+  };
+  const keg = () => wood() + ' keg containing ' + pick(['ale', 'beer', 'brandy', 'cider', 'grog', 'mead', 'rum', 'wine', 'water']);
+  W.fantasyMundane = function (p = {}, shelf = false, selected) {
+    const index = selected ?? int(0, shelf ? 173 : 191), variants = D.fantasyTables.items[shelf ? 'fantasyShelfItem' : 'fantasyRoomItem'][index];
+    if (!shelf && index === 144) return `grappling hook & ${pick(['hemp', 'silk'])} rope (${int(5, 10) * 10}')`;
+    if (index === 168) { const n = int(0, 3); return ['bullseye lantern', 'hooded lantern', 'broken bullseye lantern', 'broken hooded lantern'][n] + (n < 2 && W.d(5) === 1 ? ' with oil' : ''); }
+    const fine = W.d(4) === 1, casting = fine ? vocab('goodmetalChooser') : metal();
+    const slots = {
+      color, plainColor: () => W.color('plainColor'), leather: () => W.color('leatherColor'), metal, wood, casting, bag, bottle: W.bottle,
+      figure: () => vocab('figureMaker'), tracks, head: () => head(false), skull: () => head(true), coin: coin(p),
+      value: () => fine ? ' worth ' + int(...pick([[2, 10], [10, 50], [20, 100]])) + ' ' + coin(p) : '',
+      gem: () => W.gem(W.number(p.x_cut, 100)), jewel: () => W.jewel(W.number(p.x_cut, 100)),
+      music: () => condition('item') + vocab('musicChooser'), clothing: () => clothes(p, true),
+      books: () => W.range(int(1, int(2, 7))).map(() => W.bookTitle()).join('; '),
+      weapon: () => W.monsterWeapon({ weapons: 'giant' }, p), armor: () => W.townEquipment(p, 'generic', 'guard'),
+      material: () => pick(['bone', 'wood', 'brass', 'iron', 'silver']), design: () => vocab('designType'),
+      contents: () => pick(['water', 'wine', 'oil', 'sand', 'powder', 'poison']), cask: keg, keg,
+      ashes: () => 'a pile of ashes', eggs: () => pick(['bird eggs', 'snake eggs', 'lizard eggs', 'insect eggs']), luck: '+1 to attack rolls but only one good luck charm at any time'
+    };
+    for (const kind of ['iron', 'wood', 'cloth', 'jar', 'item', 'water', 'paper']) slots['condition_' + kind] = () => condition(kind);
+    let variant = 0;
+    if (variants.length > 1) {
+      // Most alternatives are a second 50% roll. These cells have other odds.
+      const odds = shelf ? { 15: 3, 18: 5, 72: 3, 75: 6, 109: 2, 154: 10 } : { 7: 4, 15: 3, 54: 3, 75: 6, 109: 2, 180: 3, 190: 5 };
+      if ((!shelf && [181, 183].includes(index)) || (shelf && [73, 74].includes(index))) variant = Math.min(int(0, 5), variants.length - 1);
+      else if (W.d(odds[index] || 2) === 1) variant = variants.length - 1;
+    }
+    return W.descriptionText(variants[variant], slots);
+  };
+  W.fantasyItem = p => W.d(100) <= W.number(p.unusual, 0, 0, 100) ? W.unusualRoom(p) : W.fantasyMundane(p);
+  W.furnishing = function (p, kind, selected) {
+    const index = selected ?? int(0, { wall: 27, near: 31, floor: 48, ceiling: 22 }[kind]);
+    const result = { text: '', place: '', size: 0, fill: 0, fillPlace: '' };
+    const object = (name, place = '', capacity = 0, fill = 0, fillPlace = '') => {
+      result.text = 'is a ' + name; result.place = place ? place + ' the ' + name : ''; result.size = capacity; result.fill = fill; result.fillPlace = fillPlace ? fillPlace + ' the ' + name : result.place;
+    };
+    const stain = noun => { result.text = alot() + ' ' + noun; };
+    const drawings = writing => { result.text = 'are ' + vocab('drawWith') + (writing ? ' writings that are written in ' + W.language(p) : ' drawings of ' + vocab('drawingTypes')); };
+    const liquid = noun => {
+      stain(noun);
+      if (W.d(10) === 1) stain('areas of ' + color() + ' liquid');
+      if (W.d(10) === 1) stain('areas of ' + color() + ' slime');
+    };
+    const light = ceiling => {
+      object((ceiling ? '' : int(2, 5) + ' foot tall ') + (W.d(2) === 1 ? condition('iron') + metal() : wood()) + (ceiling ? ' chandelier' : ' candelabrum'));
+      if (W.d(3) === 1) result.text += ' with ' + (ceiling ? int(2, 6) * 2 : int(1, 5)) + ' ' + color() + ' candles in it';
+      if (W.d(5) === 1) result.text += ' with ' + (ceiling ? int(2, 6) * 2 : int(1, 5)) + ' burned down ' + color() + ' candles in it';
+    };
+    const body = suffix => { const name = corpse(); result.text = 'are ' + condition('iron') + metal() + ' manacles with a ' + name + suffix; result.place = 'on the ' + name; result.size = 3; result.fill = 3; };
+    const chain = suffix => { result.text = 'is ' + int(2, 5) + ' feet of ' + condition('iron') + 'iron chain ' + suffix; };
+    const rope = suffix => { result.text = 'is ' + int(10, 50) + ' feet of ' + condition('cloth') + 'rope ' + suffix; };
+    const cage = hanging => { object(condition('iron') + metal() + ' cage' + (hanging ? ' hanging' : ''), 'inside', 3); };
+    if (kind === 'ceiling') {
+      switch (index) {
+        case 0: chain('hanging'); break;
+        case 1: stain('cobwebs'); break;
+        case 2: stain('cracks'); break;
+        case 3: stain('blood smears'); break;
+        case 4: stain('areas of dried blood'); break;
+        case 5: stain('areas of moisture'); break;
+        case 6: liquid('areas of water dripping'); break;
+        case 7: stain('traces of ' + pick(['moss', 'mold'])); break;
+        case 8: stain('fungi growing'); break;
+        case 9: stain('areas of mold'); break;
+        case 10: rope('hanging'); break;
+        case 11: stain('scratches and claw marks'); break;
+        case 12: object(condition('iron') + 'brazier with a ' + int(1, 3) + ' foot iron chain hanging'); break;
+        case 13: case 14: light(true); break;
+        case 15: object(int(1, 4) + ' foot wide hole that goes ' + int(1, 4) + ' feet up'); break;
+        case 16: drawings(false); break;
+        case 17: drawings(true); break;
+        case 18: object(condition('iron') + metal() + ' bell with a ' + int(1, 3) + ' foot iron chain hanging'); break;
+        case 19: cage(true); break;
+        case 20: result.text = 'are ' + int(2, 10) + ' ' + condition('iron') + metal() + ' hooks'; break;
+        case 21: result.text = 'are ' + condition('iron') + metal() + ' manacles hanging'; break;
+        case 22: body(' hanging'); break;
+      }
+    } else if (kind === 'wall') {
+      switch (index) {
+        case 0: chain('hanging'); break;
+        case 1: stain('cobwebs'); break;
+        case 2: stain('cracks'); break;
+        case 3: stain('blood smears'); break;
+        case 4: stain('areas of dried blood'); break;
+        case 5: rope('hanging'); break;
+        case 6: object(condition('item') + bag(), 'inside', 1, 8); result.text += ' hanging'; break;
+        case 7: object(wood() + ' armor rack', 'on', 0, 1); result.text += ' hanging'; break;
+        case 8: stain('scratches and claw marks'); break;
+        case 9: object('fireplace' + (W.d(2) === 1 ? ' with wood inside' : ''), 'inside', 3, 10, 'on the mantle of'); break;
+        case 10: object('mounted ' + vocab('headMount') + ' head', 'inside', 1); break;
+        case 11: result.text = 'are ' + int(2, 10) + ' ' + condition('iron') + metal() + ' wall sconces' + (W.d(2) === 1 ? ' with ' + color() + ' candles' : W.d(2) === 1 ? ' with ' + color() + ', burned down candles' : ''); break;
+        case 12: object(furniture() + ' shelf', 'on top of', 3, 9); result.text += ' hanging'; break;
+        case 13: object(condition('iron') + metal() + ' shield hanging'); break;
+        case 14: object(furniture() + ' wall basin', 'inside', 1); if (W.d(3) > 1) result.text += ', filled with ' + condition('water') + 'water'; break;
+        case 15: object(vocab('sizeMakeWall') + ' ' + condition('iron') + metal() + ' mirror', 'behind', 3); result.text += ' hanging'; break;
+        case 16: case 17: object((index === 16 ? 'framed painting' : 'tapestry') + ' of a ' + vocab('designType'), 'behind', 3); break;
+        case 18: body(''); break;
+        case 19: object(wood() + ' weapon rack', 'on', 0, 2); result.text += ' hanging'; break;
+        case 20: result.text = 'is ' + int(2, 10) * 10 + ' feet of twine hanging'; break;
+        case 21: drawings(false); break;
+        case 22: drawings(true); break;
+        case 23: object(wood() + ' cupboard', 'inside', 1, 4); result.text += ' hanging'; break;
+        case 24: result.text = 'are ' + int(2, 10) + ' ' + condition('iron') + metal() + ' hooks'; break;
+        case 25: { const n = int(5, 10); result.text = 'are ' + n + ' torches held in ' + metal() + ' wall sconces [only ' + Math.ceil(n / int(2, 4)) + ' are useable]'; break; }
+        case 26: result.text = 'are ' + condition('iron') + metal() + ' manacles'; break;
+        case 27: liquid('areas of moisture'); break;
+      }
+    } else {
+      // Floor and near-wall furnishings share the original indices 0–31.
+      switch (index) {
+        case 0: object(furniture() + ' armchair', 'under', 1, 10, 'on'); break;
+        case 1: if (kind === 'floor') object(int(1, 4) + ' foot wide hole that is ' + int(2, 8) + ' feet deep'); else object(wood() + ' bed', 'under', 3, 11, 'on'); break;
+        case 2: object(furniture() + ' bench', 'under', 3, 10, 'on'); break;
+        case 3: case 34: object(condition('iron') + 'brazier'); break;
+        case 4: if (kind === 'floor') chain('fastened'); else object(wood() + ' bunk bed', 'under', 3, 11, 'on'); break;
+        case 5: case 6: object((index === 6 ? 'padded ' : '') + furniture() + ' chair', 'under', 1, 10, 'on'); break;
+        case 7: if (kind === 'floor') stain('cracks'); else object(condition('cloth') + color() + ' couch', 'under', 1, 11, 'on'); break;
+        case 8: object(pick(['', '', 'broken ', 'worn down ']) + 'grindstone'); break;
+        case 9: object('loom'); break;
+        case 10: object(condition('cloth') + 'mattress', 'under', 2, 11, 'on'); break;
+        case 11: object('pallet', 'under', 3, 11, 'on'); break;
+        case 12: object(furniture() + ' shelf', 'on top of', 1, 9); break;
+        case 13: case 14: object((index === 13 ? 'high ' : '') + wood() + ' stool'); break;
+        case 15: object(size() + ' ' + furniture() + ' table', 'under', 3, 11, 'on'); break;
+        case 16: object(furniture() + ' throne', 'behind', 3, 10, 'on'); break;
+        case 17: object(furniture() + ' tub', 'inside', 3); break;
+        case 18: if (kind === 'floor') stain('blood smears'); else object(furniture() + ' workbench', 'under', 3, 11, 'on'); break;
+        case 19: case 20: if (kind === 'floor') stain(index === 19 ? 'areas of dried blood' : 'areas of moisture'); else object(wood() + (index === 19 ? ' chest of drawers' : ' armoire'), 'inside', index === 19 ? 2 : 3, 5); break;
+        case 21: if (kind === 'floor') liquid('areas of water'); else object(wood() + ' weapon rack', 'on', 0, 2); break;
+        case 22: object(condition('iron') + metal() + ' standing mirror'); break;
+        case 23: result.text = 'is a ' + keg(); break;
+        case 24: if (kind === 'floor') stain('traces of ' + pick(['moss', 'mold'])); else object(wood() + ' cupboard', 'inside', 1, 4); break;
+        case 25: if (kind === 'floor') stain('fungi growing'); else object(wood() + ' desk', 'inside', 1, 6, W.d(2) === 1 ? 'on' : ''); break;
+        case 26: object(pick(['rack', 'iron maiden', 'torture wheel', 'wooden stocks'])); if (W.d(10) > 6) result.text += ' with areas of dried blood'; if (W.d(10) > 7) { const dead = corpse(); result.text += ' and has a ' + dead; result.place = 'on the ' + dead; result.size = 3; result.fill = 3; } break;
+        case 27: case 38: cage(false); break;
+        case 28: object(wood() + ' barrel', 'inside', 2); break;
+        case 29: object(wood() + ' ' + pick(['box', 'cabinet', 'footlocker', 'chest', 'crate', 'casket', 'trunk']), 'inside', 2, 7); if (W.d(4) === 1) result.text += pick([' that is locked with a padlock', ' that has a locked keyhole']); break;
+        case 30: object(condition('iron') + metal() + ' cauldron', 'inside', 2); break;
+        case 31: if (kind === 'floor') stain('areas of mold'); else object(wood() + ' armor rack', 'on', 0, 1); break;
+        case 32: rope('fastened'); break;
+        case 33: stain('scratches and claw marks'); break;
+        case 35: light(false); break;
+        case 36: drawings(false); break;
+        case 37: drawings(true); break;
+        case 39: result.text = 'are ' + condition('iron') + metal() + ' manacles fastened'; break;
+        case 40: body(' fastened'); break;
+        case 41: case 42: { const water = condition('water') + 'water'; result.text = 'is a ' + (index === 41 ? 'small' : 'large') + ' puddle of ' + water; result.place = 'in the puddle of ' + water; result.size = index === 41 ? 1 : 2; break; }
+        case 43: object(condition('cloth') + 'mat', 'under', 3); break;
+        case 44: object(furniture() + ' pedestal', 'on top of', 1); break;
+        case 45: result.text = 'are some ' + tracks() + ' in various spots'; break;
+        case 46: object('fire pit' + (W.d(4) === 1 ? ' with wood' : W.d(2) === 1 ? ' with ashes' : '')); break;
+        case 47: object(corpse(), 'on', 3, 3); break;
+        case 48: object(condition('cloth') + color() + ' carpet', 'under', 3); break;
+      }
+    }
+    return result;
+  };
+  W.furnishDetails = function (p, cave = false) {
+    const decorations = [], hiding = [], fillings = [];
+    if (String(p.x_furnish ?? 1) !== '1') return { text: '', hiding, fillings, decorations };
+    if (cave) return { text: 'This is a cavernous area' + pick(['.', '. Some fungi grows in various places.', ' with a few stalactites on the ceiling.', ' with a few stalagmites on the ground.', ' with a few stalactites and stalagmites.']), hiding, fillings, decorations };
+    const places = ['floor', 'ceiling', 'northfloor', 'southfloor', 'eastfloor', 'westfloor', 'northwall', 'southwall', 'eastwall', 'westwall', 'scatter'].filter(() => W.d(5) === 1);
+    for (const place of W.shuffle(places)) {
+      if (place === 'scatter') { decorations.push('There is ' + W.range(int(2, 10)).map(() => W.fantasyMundane(p)).join(', ') + '...scattered around the room.'); continue; }
+      const kind = place === 'floor' || place === 'ceiling' ? place : place.endsWith('wall') ? 'wall' : 'near';
+      const item = W.furnishing(p, kind), direction = place.replace(/floor|wall/, '');
+      const position = kind === 'wall' ? 'on the ' + direction + ' wall' : kind === 'near' ? 'by the ' + direction + 'ern wall' : 'at the ' + pick(['north end', 'northeast end', 'northwest end', 'south end', 'southeast end', 'southwest end', 'east end', 'west end', 'center', 'center', 'center', 'center', 'center']) + ' of the ' + (kind === 'ceiling' ? 'ceiling' : 'room');
+      decorations.push('There ' + item.text + ' ' + position + '.');
+      if (item.size && item.place) hiding.push({ place: item.place, size: item.size });
+      if (item.fill) {
+        let content;
+        if (item.fill === 1) content = W.townEquipment(p, 'generic', 'guard');
+        else if (item.fill === 2) content = W.range(int(1, 5)).map(() => W.monsterWeapon({ weapons: 'giant' }, p)).join('; ');
+        else if (item.fill === 4) content = 'spoiled foods of ' + W.range(int(1, 10)).map(() => vocab('foodFiller', 'food')).join('; ');
+        else if (item.fill === 5) content = W.range(int(1, 10)).map(() => clothes(p)).join('; ');
+        else if (item.fill === 9 && W.d(4) === 1) content = W.range(int(1, int(2, 7))).map(() => W.bookTitle()).join('; ');
+        else content = W.range(int(1, ({ 3: 5, 6: 10, 7: 5, 8: 2, 9: 2, 10: 1, 11: 3, 12: 6 })[item.fill])).map(() => W.fantasyMundane(p, true)).join('; ');
+        fillings.push({ place: item.fillPlace || item.place, content });
+      }
+    }
+    const text = decorations.length ? decorations.join(' ') + fillings.map(row => ' ' + row.place.charAt(0).toUpperCase() + row.place.slice(1) + ' is... ' + row.content + '.').join('') : pick(D.dungeonText.cells.furnishRoom);
+    return { text, hiding, fillings, decorations };
+  };
+  W.furnish = (p, cave) => W.furnishDetails(p, cave).text;
+})(window.WZ, window.WZ_DATA);

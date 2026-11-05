@@ -17,7 +17,15 @@
   };
   W.navigate = function () {
     const result = W.renderRoute(location.hash);
-    document.getElementById('app').innerHTML = result.html;
+    const app = document.getElementById('app');
+    app.innerHTML = result.html;
+    app.onclick = event => {
+      const link = event.target.closest?.('[data-scroll-site]');
+      if (link) {
+        event.preventDefault();
+        document.getElementById('site-' + link.dataset.scrollSite)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
     document.title = `${result.title.replaceAll('&amp;', '&')} — Wizardawn`;
     document.getElementById('portal-style')?.setAttribute('href', result.stylesheet);
     const form = document.getElementById('generator-form');

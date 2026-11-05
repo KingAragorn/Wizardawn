@@ -32,6 +32,14 @@
   W.d = n => W.rng.d(n);
   W.roll = expression => W.rng.roll(expression);
   W.pick = values => W.rng.pick(values);
+  W.shuffle = values => {
+    const result = values.slice();
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = W.rng.int(0, i);
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  };
   W.weighted = rows => {
     const total = rows.reduce((sum, row) => sum + row.weight, 0);
     let pick = W.rng.next() * total;

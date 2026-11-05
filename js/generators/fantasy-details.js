@@ -27,19 +27,25 @@
       return n ? n.toLocaleString('en-US') + unit : '';
     }).filter(Boolean).join(' / ');
   };
+  W.language = function (p) {
+    const six = W.game(p).slug === 'ssxs';
+    const languages = W.isTroll(p) || six ? ['balrog', 'brownie', 'centaur', 'devlish', 'dragon', 'dwarvish', 'elven', 'fey', 'gargoyle', 'giant', 'gnoll', 'goblin', 'gremlin', six ? 'halfling' : 'hobling', 'mermen', 'minotaur', 'naga', 'ogrish', six ? 'orcish' : 'orkish', 'sphinx', 'treekin', 'trollish', 'undead', 'vampire'] : ['elvish', 'dwarvish', 'human', 'orcish', 'goblinoid', 'gnomish', 'demonic', 'draconic'];
+    return pick(['a', 'an odd', 'an ancient', 'a long dead', 'a cryptic', 'a']) + ' ' + pick(languages) + ' language';
+  };
   W.treasureClue = function (p, level = int(5, 15), parchment = false) {
     const troll = W.isTroll(p), six = W.game(p).slug === 'ssxs';
     const owner = W.name('genericName'), adjective = W.name('adjName').toLowerCase(), job = W.name('jobName');
     const falseMap = W.d(20) < 5 ? pick(['[False Map] ', '[Treasure Was Already Looted] ']) : '';
     const paper = parchment ? 10 : W.d(20);
     const medium = paper === 1 ? `a metal ${pick(['shield', 'helm', 'axe', 'breastplate', 'sword'])}, with etchings` : [null, null, 'made of leather, with burned markings', 'a stone tablet, with carvings', 'an amulet, with etchings', 'a book with notes and sketches', 'inside a clay bowl, with paintings', 'made of cloth, with stitching', 'made of tree bark, with carvings'][paper] || 'made of parchment, with drawings';
-    const write = W.d(15), language = pick(['Common', 'Dwarvish', 'Elvish', 'Goblin', 'Orcish', 'Draconic', 'Gnomish', 'Halfling']);
+    const write = W.d(15), language = W.language(p);
     const writings = [null, `It is written in the thieves' code, so only a ${troll ? 'rogue' : six ? 'thief' : 'thief or assassin'} will be able to read the map.`, `It is written with magical symbols, so only a ${troll || six ? 'wizard' : 'mage or illusionist (or maybe those with a Read Languages skill)'} will be able to read the map.`, troll || six ? `The words only appear magically scattered every few seconds, requiring ${troll ? 'an L' + (level + 4) + 'SR vs. INT' : 'a ' + int(3, 6) + ' intelligence'} to read the map.` : 'It is written with druidic symbols so only a druid or ranger (or maybe those with a Read Languages skill) will be able to read the map.', `It is written with religious symbols, so only a ${troll ? 'priest' : six ? 'wizard or myrmidon' : 'cleric or paladin (or maybe those with a Read Languages skill)'} will be able to read the map.`, `It is written in ${language}, and only those that speak the language will be able to read the map.`, 'It is written backwards, requiring a mirror to read the map.', `It is written in some strange code, requiring ${troll ? 'an L' + level + 'SR vs. INT' : six ? 'a ' + int(3, 6) + ' intelligence' : 'an intelligence of at least 17'} to read the map.`, `It is written in the form of a riddle, requiring ${troll ? 'an L' + (level + 5) + 'SR vs. INT' : six ? 'a ' + int(3, 6) + ' wisdom' : 'a wisdom of at least 17'} to read the map.`];
     const story = `This is a map to the ${adjective} treasure of ${owner} the ${job}. Known to have ${pick(['died', 'disappeared', 'lived', 'vanished'])} about ${int(5, 90) * 10} years ago, their treasure is shown to be in an area just ${W.d(100) * 5} miles from here.`;
     let legend = '';
     if (W.d(100) > 30) {
       const opening = pick(['Legends', 'Stories', 'Rumors', 'Tales', 'Myths', 'Fables']) + ' tell of ' + owner;
-      legend = W.d(100) > 50 ? `${opening} stealing this treasure from a ${W.name('jobName')} known as ${W.manyName()}.` : `${opening} and their ${pick(['riches', 'deeds', 'adventures', 'exploits', 'treasure'])}.`;
+      const victim = W.d(100), monster = victim < 10 ? ['Demon', 'demon'] : victim < 20 ? ['Dragon', 'dragon'] : null;
+      legend = W.d(100) > 50 ? `${opening} stealing this treasure from a ${monster ? monster[0] : W.name('jobName')} known as ${monster ? W.name(monster[1]) : W.manyName()}.` : `${opening} and their ${pick(['riches', 'deeds', 'adventures', 'exploits', 'treasure'])}.`;
     }
     const haunt = pick(['an ancient', 'a haunted', 'a crumbling', 'a mysterious', 'a cursed', 'an abandoned']);
     const domain = pick(['an outdoor area', 'a dungeon', 'a cave', haunt + ' ruins', haunt + ' temple', haunt + ' castle', 'a graveyard', 'a crypt', 'a tomb', 'a chest at the bottom of the nearest lake', 'a chest at the bottom of the widest part of the nearest river', `sunken ship about ${W.d(9) * 100} feet off of the nearest sea shore`]);

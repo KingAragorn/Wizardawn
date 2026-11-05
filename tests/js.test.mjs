@@ -156,7 +156,7 @@ test('encounters retain creature counts and game source; wandering tables stay l
 });
 test('Apocalypse mundane items terminate for Mutant Future and no selected game', () => {
   for (const game of ['', 'mutfut', 'gamma', 'meta']) {
-    const html = W.routes.items.generate({ game, n: 100 });
+    const html = W.routes.items.generate({ game, n: 100, x_show_rt: '0', x_show_c: '0', x_show_ct: '0', x_show_ggj: '0', x_show_ei: '0', x_show_th: '0', x_show_en: '0' });
     assert.match(html, /Mundane Items/);
     assert.equal(occurrences(html, /<tbody><tr>|<\/tr><tr>/g), 100);
     assert.doesNotMatch(html, /undefined|NaN/);
@@ -538,5 +538,419 @@ test('adventure contents honor forced counts and every fantasy trap table entry 
     assert.equal(occurrences(html, /class="room-encounter"/g), 4, game);
     assert.equal(occurrences(html, /class="room-trap"/g), 6, game);
     assert.equal(occurrences(html, /class="room-treasure"/g), 4, game);
+  }
+});
+
+test('settlement stock uses original technology, edition, stock and boat filters', () => {
+  const D = context.WZ_DATA;
+  for (const game of ['tt5e', 'tt7e', 'ttde']) for (const simple of ['0', '1']) {
+    const era = game === 'ttde' ? simple === '1' ? 'Deluxe' : 'Deluxes' : simple === '1' ? 'Simple' : 'Complex';
+    for (let type = 1; type <= 14; type++) {
+      const stock = W.townStock({ game, x_oldway: simple, stock: 100, water: '0' }, 'tt', type);
+      for (const row of stock.filter(row => row.source)) {
+        assert.ok(row.source.era === '' || row.source.era === era, game + ': ' + row.item);
+        assert.notEqual(+row.source.qty, 2, row.item);
+        assert.ok(D.storeItems.includes(row.source));
+      }
+    }
+  }
+  for (const game of ['mutfut', 'urthe', 'gamma', 'meta']) for (const techy of ['1', '2', '3']) {
+    const stock = W.townStock({ game, stock: 100, techy }, 'post', 1);
+    const tag = game === 'mutfut' ? 'MF' : game === 'urthe' ? 'BU' : 'PA';
+    assert.ok(stock.length > 0);
+    for (const row of stock) {
+      assert.ok(row.source.game.split('x').includes(tag));
+      if (techy !== '3') assert.ok(row.source.era === 'both' || row.source.era === (techy === '1' ? 'low' : 'hi'));
+    }
+  }
+  assert.equal(W.townStock({ game: 'osric', stock: 0 }, 'rules', 4).length, 0);
+  assert.equal(W.townStock({ game: 'fantasy', stock: 0 }, 'generic', 4).length, 1);
+  assert.equal(W.townStock({ game: 'tt7e', stock: 0 }, 'tt', 4).length, 1);
+});
+test('OSRIC settlements retain five guilds, bank, guards and church in original order', () => {
+  W.rng = W.random('osric-institutions');
+  const html = W.routes.wtown.generate({ map_rooms: 40, rulers: '0', empty: '0', stores: '1', guilds: '1', banks: '1', guards: '1', church: '1', x_lvl1: 3, x_lvl2: 3 });
+  const town = W.storage.get('last-town');
+  assert.equal(town.buildings.filter(b => b.type).length, 22);
+  for (const shop of [15, 16, 17, 18, 19, 20, 21, 22]) assert.equal(town.buildings.filter(b => b.type === shop).length, 1);
+  for (const title of ['FIGHTERS GUILD LEADER', 'WIZARDS GUILD LEADER', 'THIEVES GUILD LEADER', 'RANGERS GUILD LEADER', 'ASSASSINS GUILD LEADER', 'BANK GUARD:', 'CHURCH LEADER:', 'Divine service', 'IRON CHEST #']) assert.ok(html.includes(title), title);
+  assert.ok(html.indexOf('<h3>Guilds') < html.indexOf('<h3>Banks'));
+  assert.doesNotMatch(html, /undefined|NaN/);
+});
+test('post-apocalyptic citizens use age-based hit dice and robot households do not have children', () => {
+  const ranges = { child: [3, 9], young: [5, 12], mature: [7, 18], 'middle-aged': [6, 17], old: [4, 10] };
+  for (const [age, [min, max]] of Object.entries(ranges)) for (const game of ['mutfut', 'gamma', 'meta']) {
+    const stats = W.citizenStats({ game, might1: 8, might2: 8 }, 'Human', age, 'citizen', 'post');
+    assert.ok(stats.HD >= min && stats.HD <= max);
+    assert.equal(stats.HP, stats.HD * 8);
+    if (game !== 'mutfut') assert.ok(stats['RAD RESIST'] >= min && stats['RAD RESIST'] <= max);
+  }
+  W.routes.mtown.generate({ map_rooms: 20, empty: '1', law: '0', stores: '0', species_human: '0', species_mhuman: '0', species_animal: '0', species_insect: '0', species_plant: '0', species_robot: '1' });
+  for (const building of W.storage.get('last-town').buildings.filter(b => b.owner)) {
+    assert.equal(building.owner.race, 'Robot');
+    assert.equal(building.family.length, 0);
+  }
+});
+
+test('delve interiors preserve small, medium, large and water-floor dimensions', () => {
+  for (const [width, height, count] of [[0, 0, 4], [1, 1, 9], [2, 1, 12], [1, 2, 12]]) {
+    const map = W.geomorphMap({ width, height, interior: '1', keyed: '1', type: 'Dungeon' }, 'dungeon');
+    assert.equal(map.tiles.length, count);
+    assert.ok(map.rooms.length > 0);
+    assert.equal(map.width, width * 300 + 320);
+  }
+  const normal = W.geomorphMap({ width: 1, height: 1, type: 'Side View', complex: '1', x_floors: 0, keyed: '1' }, 'dungeon');
+  assert.ok(normal.rooms.length > 0);
+  // PHP compares roll >= threshold; 100 still permits a 1% floor chance.
+  const roll = W.d;
+  try {
+    W.d = () => 1;
+    const omitted = W.geomorphMap({ width: 1, height: 1, type: 'Side View', complex: '1', x_floors: 100, keyed: '1' }, 'dungeon');
+    assert.equal(omitted.rooms.length, 0);
+    assert.doesNotMatch(omitted.html, /class="map-number"/);
+  } finally { W.d = roll; }
+});
+test('adventures use custom encounters, decorations, traps, containers and loot consistently', () => {
+  for (const route of ['delve', 'ultimate', 'uexfl', 'uruins']) {
+    W.rng = W.random('custom-adventure-' + route);
+    const output = W.routes[route].generate({ game: 'data', data: customFixture, map_rooms: 3, x_level: 2, x_terrain: 'DG', x_c_c: 100, x_c_c_min: 1, x_c_c_max: 1, x_t_c: 100, x_t_c_min: 1, x_t_c_max: 1, x_l_c: 100, x_l_c_min: 1, x_l_c_max: 1, x_l_c_low: 0, x_rigged_chance: 100, wandering: '0', x_weird: 0 });
+    assert.equal(occurrences(output, /class="adventure-room"/g), 3);
+    for (const text of ['Goblin', 'old chair', 'needle trap', 'wood chest', '10gp']) assert.ok(output.includes(text), route + ': ' + text);
+    assert.doesNotMatch(output, /Dragon|There are 0|undefined|NaN/);
+    for (const room of W.storage.get('last-adventure').rooms) {
+      assert.equal(room.encounters.length, 1);
+      assert.equal(room.traps.length, 1);
+      assert.equal(room.treasures.length, 1);
+      assert.equal(room.treasures[0].trap, 'needle trap');
+    }
+  }
+});
+test('post-apocalyptic clutter renders every original room and spaceship table cell', () => {
+  for (const game of ['mutfut', 'urthe', 'gamma', 'meta']) for (const type of ['Building', 'Spaceship']) {
+    for (let i = 0; i < 144; i++) {
+      const row = W.postRoomItem({ game, type }, i);
+      assert.equal(typeof row.text, 'string');
+      assert.ok(row.text.length > 0, game + ' ' + type + ' ' + i);
+      assert.doesNotMatch(row.text, /undefined|NaN|\[object Object\]|mt_rand|conditionType/);
+      assert.ok(row.size >= 0 && row.size <= 3);
+    }
+    for (let i = 0; i < 55; i++) {
+      const trap = W.postTrap({ game, type, level: 20 }, 'room', i);
+      assert.ok(trap.length > 15, game + ': trap ' + i);
+      assert.doesNotMatch(trap, /undefined|NaN|\[object Object\]|mt_rand|save[1-5]/);
+    }
+  }
+});
+test('Apocalypse includes all original report sections, counts, rules and local assets', () => {
+  for (const game of ['', 'mutfut', 'urthe', 'gamma', 'meta']) {
+    W.rng = W.random('apocalypse-' + game);
+    const output = W.routes.items.generate({ game, x_show_ru: '1' });
+    const report = W.storage.get('last-apocalypse');
+    assert.equal(occurrences(output, /class="apocalypse-section"/g), 8);
+    assert.equal(Array.from(report.reports, part => part.rows.length).join(','), '100,20,20,20,100,100,20,100');
+    assert.match(output, /solitaire game/);
+    assert.doesNotMatch(output, /undefined|NaN|\[object Object\]|\{\{[^}]+\}\}|<\?php/);
+    for (const m of output.matchAll(/src="([^"]+)"/g)) assert.ok(existsSync(`${root}/js/${m[1]}`), m[1]);
+    const empty = W.routes.items.generate(Object.fromEntries(['mi', 'rt', 'c', 'ct', 'ggj', 'ei', 'th', 'en'].map(key => ['x_show_' + key, '0'])));
+    assert.doesNotMatch(empty, /class="apocalypse-section"/);
+  }
+});
+test('all exported technological artifact descriptions render in their game categories', () => {
+  for (const [game, key] of [['mutfut', 'makePAItem'], ['urthe', 'makeBUItem'], ['gamma', 'makeGWItem'], ['meta', 'makeMAItem']]) {
+    for (const [category, rows] of Object.entries(context.WZ_DATA.postTables.artifacts[key])) for (const row of rows) {
+      const output = W.postArtifact({ game }, 3, category, row.index);
+      assert.ok(output.length > 2);
+      assert.doesNotMatch(output, /undefined|NaN|\[object Object\]|mt_rand|<i>/);
+    }
+  }
+});
+
+test('treasure maps preserve PHP map counts and rank labels with custom hoards', async () => {
+  for (const amount of [1, 3]) {
+    const php = await phpResult('tool_tmap.php', { x_game: 'Data', amount, level: 4, x_data: customFixture });
+    const js = W.routes.tmap.generate({ game: 'data', amount, level: 4, data: customFixture });
+    assert.equal(occurrences(php, /Type IV/g), amount);
+    assert.equal(occurrences(js, /Type IV/g), amount);
+    const maps = W.storage.get('last-treasure-maps').maps;
+    for (const map of maps) {
+      assert.ok(map.treasure.length >= 6 && map.treasure.length <= 14);
+      assert.ok(map.treasure.every(item => item === 'coins, 10gp'));
+      assert.equal(map.container, 'wood chest');
+      assert.ok(!map.trap || map.trap === 'needle trap');
+    }
+    assert.doesNotMatch(js, /undefined|NaN/);
+  }
+});
+test('all locale choices render inhabitants, underwater depth, floors and matching room keys', () => {
+  for (const [game, count] of [['lablord', 16], ['mutfut', 36]]) for (let location = 1; location <= count; location++) {
+    W.rng = W.random('locale-' + game + '-' + location);
+    const output = W.routes.locale.generate({ game, x_locale: location, map_rooms: 2, x_c_c: 0, x_t_c: 0, x_l_c: 0, x_furnish: '0', x_weird: 0 });
+    const site = W.storage.get('last-locale').site;
+    assert.equal(occurrences(output, /class="hex-site"/g), 1);
+    assert.equal(occurrences(output, /class="site-inhabitants"/g), 1);
+    assert.equal(occurrences(output, /class="site-floor"/g), site.floors.length);
+    assert.equal(occurrences(output, /class="adventure-room"/g), site.rooms.length);
+    assert.ok(existsSync(`${root}/js/land/${site.icon}`), site.icon);
+    assert.ok(site.floors.every(floor => floor.rooms.length === 2));
+    if (site.submerged) assert.match(output, /feet below the surface/);
+    assert.doesNotMatch(output, /undefined|NaN/);
+  }
+});
+test('hex crawl keys expand to local site records and preserve every room option', () => {
+  for (const game of ['lablord', 'tt5e', 'mutfut', 'gamma', 'meta']) {
+    W.rng = W.random('crawl-site-' + game);
+    const output = W.routes['hex-crawl'].generate({ game, n: 3, climate: 101, map_rooms: 2, x_level: 3, x_c_c: 100, x_c_c_min: 1, x_c_c_max: 1, x_t_c: 100, x_t_c_min: 1, x_t_c_max: 1, x_l_c: 100, x_l_c_min: 1, x_l_c_max: 1, x_l_c_low: 0, x_u_c: 0, x_furnish: '0', x_weird: 0, wandering: '0' });
+    const saved = W.storage.get('last-hex-crawl');
+    assert.equal(occurrences(output, /class="hex-site"/g), saved.sites.length);
+    assert.equal(occurrences(output, /class="site-number"/g), saved.sites.length);
+    assert.ok(saved.sites.length > 0);
+    assert.equal(saved.cells.length, 320);
+    for (const site of saved.sites) for (const room of site.rooms) {
+      assert.equal(room.traps.length, 1);
+      assert.equal(room.treasures.length, 1);
+    }
+    assert.doesNotMatch(output, /undefined|NaN|class="crawl-wandering"/);
+  }
+  const empty = W.routes['hex-crawl'].generate({ game: 'data', data: 'Empty\n--BEGIN--\n--END--', n: 2, climate: 112 });
+  assert.match(empty, /No enemies found|No Enemies Found/);
+});
+test('OSRIC classes use the original legal race ranges, level limits, THAC0 and thief tables', () => {
+  for (const [race, details] of Object.entries(context.WZ_DATA.characterDetails.races)) for (const className of Object.keys(details.classes)) {
+    const c = W.character({ x_lvl1: 20, x_lvl2: 20, x_maxhp: '1' }, 'osric', className, race);
+    const ranges = { ...details.ranges, ...details.classes[className].ranges };
+    assert.equal(c.race, race);
+    for (const [ability, [min, max]] of Object.entries(ranges)) {
+      assert.ok(c.stats[ability] >= min && c.stats[ability] <= max + (ability === 'STR' ? 1 : 0), `${race} ${className} ${ability}`);
+    }
+    assert.ok(c.level <= Math.max(...details.classes[className].caps));
+    assert.equal(c.attacks[1], W.osricThaco(className, c.level));
+    assert.ok(c.age > 15);
+    assert.doesNotMatch(W.renderCharacter(c, { x_show_ss: '1' }), /undefined|NaN/);
+  }
+  assert.equal(W.osricThaco('Fighter', 1), 20);
+  assert.equal(W.osricThaco('Fighter', 20), 1);
+  assert.equal(W.osricThaco('Magic-User', 10), 19);
+  assert.equal(W.osricThaco('Cleric', 7), 16);
+  assert.equal(Array.from(W.thiefSkills('Human', 13, 1)).join(','), '85,25,10,20,20,35,35,1');
+  assert.equal(W.character({ x_lvl1: 20, x_lvl2: 20 }, 'osric', 'Druid', 'Human').level, 14);
+});
+test('basic adventurers retain original age, racial languages and class-legal gear', () => {
+  for (const rules of ['bx', 'll']) for (const className of ['Cleric', 'Dwarf', 'Elf', 'Fighter', 'Halfling', 'Magic-User', 'Thief']) {
+    const c = W.character({ x_lvl1: 1, x_lvl2: 1, x_var_dmg: '1' }, rules, className);
+    const age = ({ Cleric: [20, 25], Dwarf: [46, 66], Elf: [133, 168], Fighter: [18, 21], Halfling: [43, 48], 'Magic-User': [29, 36], Thief: [20, 23] })[className];
+    assert.ok(c.age >= age[0] && c.age <= age[1]);
+    if (className === 'Dwarf') assert.ok(c.languages.includes('Kobold'));
+    if (className === 'Elf') assert.ok(c.languages.includes('Hobgoblin'));
+    if (className === 'Magic-User') { assert.equal(c.armor, 'robes'); assert.match(c.weapon, /dagger|dart|sling/); }
+    if (className === 'Thief') assert.doesNotMatch(c.armor, /chain|plate|shield/);
+    assert.doesNotMatch(c.weapon + c.armor, /undefined|NaN/);
+  }
+});
+
+test('basic character attack/save progression agrees with PHP functions', async () => {
+  oracle.php.writeFile('/var/www/html/js-rule-oracle.php', `<?php
+    require 'functions/bx_rules.php'; require 'functions/ll_rules.php';
+    $rows = array();
+    foreach (array('bx','ll') as $rules) {
+      foreach (array('Cleric','Dwarf','Elf','Fighter','Halfling','Magic-User','Thief') as $class) {
+        for ($level=1; $level<=($rules=='bx' ? 14 : 20); $level++) {
+          if (($class=='Dwarf' && $level>12) || ($class=='Elf' && $level>10) || ($class=='Halfling' && $level>8)) continue;
+          $attack=$rules.'_basic_attacks'; $save=$rules.'_basic_saves';
+          $rows[]=array($rules,$class,$level,$attack($class,$level),$save($class,$level));
+        }
+      }
+    }
+    echo json_encode($rows);
+  `);
+  const result = await oracle.server.handle({ path: '/js-rule-oracle.php' });
+  assert.equal(oracle.logs().fatal, '');
+  const rows = JSON.parse(new TextDecoder().decode(result.bytes));
+  assert.ok(rows.length > 150);
+  for (const [rules, className, level, attacks, saves] of rows) {
+    const c = W.character({ x_lvl1: level, x_lvl2: level, x_maxhp: '1' }, rules, className);
+    assert.equal(Array.from(c.attacks).join('_'), Array.isArray(attacks) ? attacks.join('_') : attacks, `${rules} ${className} ${level} attacks`);
+    assert.equal(Array.from(c.saves).join('_'), Array.isArray(saves) ? saves.join('_') : saves, `${rules} ${className} ${level} saves`);
+  }
+});
+
+test('Apocalypse money and paired-container section counts agree with PHP', async () => {
+  const p = { x_package: 'Mutant Future', x_level: 3, x_money: 'credits', x_show_c: 1, x_show_ggj: 1, x_show_mi: 0, x_show_rt: 0, x_show_ct: 0, x_show_ei: 0, x_show_th: 0, x_show_en: 0 };
+  const php = await phpResult('tool_bmbs.php', p);
+  const js = W.routes.items.generate(p);
+  const containerPart = php.split('apoc_cont.jpg')[1].split('apoc_money.jpg')[0];
+  const moneyPart = php.split('apoc_money.jpg')[1].split('</body>')[0];
+  assert.equal(occurrences(containerPart, /<font size="2">\d+<\/font>/g), 40);
+  assert.equal(occurrences(moneyPart, /<font size="2">\d+<\/font>/g), 100);
+  const reports = W.storage.get('last-apocalypse').reports;
+  assert.equal(reports[0].rows.length, 20);
+  assert.ok(reports[0].rows.every(row => row.length === 3));
+  assert.equal(reports[1].rows.length, 100);
+  assert.ok(reports[1].rows.every(row => /credits/.test(row[1])));
+  assert.doesNotMatch(js, /Mundane Items|Exceptional Items|undefined|NaN/);
+});
+test('settlement artwork choices and mutant family appearances follow original controls', () => {
+  for (const use_maps of ['0', '1', '2']) {
+    W.rng = W.random('post-town-' + use_maps);
+    const output = W.routes.mtown.generate({ use_maps, width: 1, height: 1, empty: '0', law: '0', stores: '0' });
+    const town = W.storage.get('last-town');
+    assert.ok(town.tiles.length > 0);
+    const center = town.tiles.find(tile => !tile.spot);
+    assert.match(center.image, use_maps === '1' ? /ruin|acity/i : use_maps === '2' ? /villg|village/i : /cit|city/i);
+    assert.doesNotMatch(output, /undefined|NaN/);
+  }
+  const parent = W.citizen({ game: 'mutfut', dose: '1' }, 'post', { race: 'Humanoid Animal' });
+  const child = W.citizen({ game: 'mutfut', dose: '1' }, 'post', { race: parent.race, form: parent.form, body: parent.body, age: 'child' });
+  assert.equal(child.form, parent.form);
+  assert.equal(child.body, parent.body);
+  assert.match(child.html, /arms|legs/);
+  assert.doesNotMatch(child.html, /MUTATIONS:/);
+  for (let i = 0; i < 50; i++) {
+    const robot = W.citizen({ game: 'mutfut', might1: 8, might2: 8 }, 'post', { race: 'Robot' });
+    assert.ok(robot.stats.HD >= 9 && robot.stats.HD <= 18);
+    assert.equal(robot.stats.HP, robot.stats.HD * 8);
+    assert.ok(['android', 'synthetic', 'replicant'].includes(robot.form));
+  }
+});
+test('data listings provide every original category and correct nested-list metadata', () => {
+  const choices = W.routes.data.fields.find(field => field.name === 'data_lists').options;
+  assert.ok(choices.includes('T&T Deluxe Treasure'));
+  for (const type of choices) {
+    const html = W.routes.data.generate({ data_lists: type, data_amount: 12 });
+    const text = W.storage.get('generated-data').text;
+    assert.doesNotMatch(html, /undefined|NaN|\[object Object\]/);
+    if (/Treasure|Simple/.test(type)) {
+      const lists = text.split('--END--');
+      assert.equal(lists.length, 3);
+      assert.equal(lists[1].trim().split('\n').length, 4);
+      assert.equal(lists[2].trim().split('\n').length, 8);
+      assert.match(lists[0], /\t1\nItem\t1\t2/);
+      if (/^T&T/.test(type)) assert.match(lists[0], /Riches\t5\t1/);
+      if (/Post-Apocalyptic|Sci-Fi/.test(type)) assert.match(lists[0], /Money\t20\t1/);
+    } else assert.equal(text.split('\n').length, 12);
+  }
+});
+test('post-apocalyptic scavenging makes mutant corpses and game-specific exceptional finds', () => {
+  for (const [genre, game] of [['urthe', 'urthe'], ['gammaworld', 'gamma'], ['metalpha', 'meta'], ['wasteland', 'mutfut']]) {
+    W.rng = W.random('corpse-' + genre);
+    const html = W.routes.scavenge.generate({ genre, game, sets: 0, csets: 2, camount1: 20, camount2: 20, condition: '1' });
+    assert.equal(occurrences(html, /class="scavenge-corpse"/g), 2);
+    assert.equal(occurrences(html, /condition\)|totally ruined\)/g), 40);
+    assert.match(html, /bloody|decayed|rotted|half-eaten|mutilated/);
+    assert.doesNotMatch(html, /undefined|NaN|\[object Object\]/);
+  }
+});
+
+test('all original fantasy room, shelf and furnishing cells render with hiding metadata', () => {
+  for (const game of ['lablord', 'osric', 'tt5e', 'ttde', 'ssxs']) {
+    for (const shelf of [false, true]) for (let index = 0; index < (shelf ? 174 : 192); index++) {
+      const text = W.fantasyMundane({ game }, shelf, index);
+      assert.ok(text.length > 0, `${game}/${shelf}/${index}`);
+      assert.doesNotMatch(text, /undefined|NaN|\[object Object\]|<\?php|\$\w+/);
+    }
+    for (const [kind, max] of [['wall', 27], ['near', 31], ['floor', 48], ['ceiling', 22]]) for (let index = 0; index <= max; index++) {
+      const item = W.furnishing({ game }, kind, index);
+      assert.ok(item.text.length > 0, `${game}/${kind}/${index}`);
+      assert.doesNotMatch(item.text, /undefined|NaN/);
+      if (item.size) assert.ok(item.place);
+      assert.ok(item.size >= 0 && item.size <= 3);
+    }
+  }
+  assert.equal(W.furnishing({}, 'wall', 6).fill, 8);
+  assert.equal(W.furnishing({}, 'near', 29).fill, 7);
+  assert.equal(W.furnishing({}, 'wall', 7).size, 0);
+  assert.equal(W.furnishDetails({ x_furnish: '0' }).text, '');
+});
+
+test('adventure treasure can use furniture hiding places and hoards repeat custom finds', async () => {
+  const x_data = customFixture.replace('coins\t1\t1', 'Root\t1\t1').replace('10gp\t1\t0', 'Emerald\t1\t0');
+  const text = W.loot({ x_data, x_min: 4, x_max: 4 });
+  assert.equal(text.split('; ').length, 4);
+  assert.equal(W.loot({ x_data, x_min: 10, x_max: 2 }).split('; ').length, 2);
+  const original = await phpResult('tool_loot.php', { x_package: 'Data', x_data, x_amount: 2, x_min: 4, x_max: 4 });
+  assert.equal(occurrences(original, /Emerald/g), 8);
+  const furnishing = W.furnishDetails;
+  try {
+    W.furnishDetails = () => ({ text: 'There is a chest.', hiding: [{ place: 'inside the chest', size: 2 }] });
+    const room = W.adventureRoom({ game: 'lablord', x_c_c: 0, x_t_c: 0, x_l_c: 100, x_l_c_min: 1, x_l_c_max: 1 }, 1, 1);
+    assert.equal(room.treasures[0].container, 'Located inside the chest');
+    assert.equal(room.treasures[0].size, 2);
+  } finally { W.furnishDetails = furnishing; }
+});
+
+test('basic attribute modifiers agree with PHP at every ability score and sheet variant', async () => {
+  oracle.php.writeFile('/var/www/html/js-attribute-oracle.php', `<?php
+    require 'functions/bx_rules.php'; require 'functions/ll_rules.php';
+    $rows=array();
+    foreach (array('bx','ll') as $rules) foreach (array('Cleric','Magic-User','Fighter') as $class) {
+      foreach (array(0,1) as $sheet) for ($score=3; $score<=18; $score++) {
+        foreach (array('Strength','Dexterity','Constitution','Intelligence','Wisdom','Charisma') as $type) {
+          $fn=$rules.'_basic_stat'; $row=$fn($type,$score,$score,$class,$class,$sheet);
+          $rows[]=array($rules,$class,$sheet,$score,$type,$row[1]);
+        }
+      }
+    }
+    echo json_encode($rows);
+  `);
+  const response = await oracle.server.handle({ path: '/js-attribute-oracle.php' });
+  assert.equal(oracle.logs().fatal, '');
+  const rows = JSON.parse(new TextDecoder().decode(response.bytes));
+  const keys = { Strength: 'STR', Dexterity: 'DEX', Constitution: 'CON', Intelligence: 'INT', Wisdom: 'WIS', Charisma: 'CHA' };
+  for (const [rules, className, advanced, score, type, expected] of rows) {
+    assert.equal(W.basicAttribute(rules, keys[type], score, className, advanced === 1), W.plainText(expected), `${rules}/${className}/${advanced}/${score}/${type}`);
+  }
+});
+
+test('basic sheets use original local artwork and preserve two pages per adventurer', async () => {
+  for (const [route, page, gamePage, prefix] of [['bxadvg', 'tool_bxadvg.php', 'rpg_bdd.php', 'bx'], ['ladvg', 'tool_ladvg.php', 'rpg_lablord.php', 'll']]) {
+    const p = { x_output: 'Character Sheets', x_qty_fighter: 1, x_qty_mage: 1, x_lvl1: 3, x_lvl2: 3, x_maxhp: 1, x_name: 1, x_show_sk: 1, x_show_eq: 1, x_show_age: 1, x_sex: 'Any', x_lang_set: 1 };
+    const php = await phpResult(page, p, gamePage);
+    const js = W.routes[route].generate(p);
+    assert.equal(occurrences(js, /class="original-character-sheet"/g), occurrences(php, new RegExp('src="pics_tools/' + prefix + '_char_sheet', 'g')));
+    for (const match of js.matchAll(/src="([^"]+)"/g)) assert.ok(existsSync(`${root}/js/${match[1]}`));
+    assert.doesNotMatch(js, /undefined|NaN/);
+  }
+  const advanced = W.routes.ladvg.generate({ x_output: 'Character Sheets', x_qty_thief: 1, x_used_sh: 1, x_lvl1: 1, x_lvl2: 1 });
+  assert.match(advanced, /ll_char_sheet_basic_aec.jpg/);
+  assert.match(advanced, /Find\/Remove Traps/);
+});
+
+test('character spell slots include divine wisdom bonuses and both ranger spell classes', () => {
+  assert.deepEqual(Array.from(W.osricSpellSlots('Cleric', 1, 18)[0].slots), [3, 2, 1, 1, 0, 0, 0]);
+  assert.deepEqual(Array.from(W.osricSpellSlots('Druid', 14, 12)[0].slots), [6, 6, 6, 6, 5, 4, 3]);
+  assert.deepEqual(Array.from(W.osricSpellSlots('Cleric', 24, 12)[0].slots), [9, 9, 9, 9, 9, 8, 3]);
+  const ranger = W.character({ x_race: 'Human', x_lvl1: 14, x_lvl2: 14 }, 'osric', 'Ranger');
+  assert.deepEqual(Array.from(ranger.spellGroups, group => group.className), ['Druid', 'Magic-User']);
+  assert.ok(ranger.spells.some(row => row.className === 'Druid'));
+  assert.ok(ranger.spells.some(row => row.className === 'Magic-User'));
+  for (const rules of ['bx', 'll']) {
+    const thief = W.character({ x_lvl1: 1, x_lvl2: 1 }, rules, 'Thief');
+    assert.equal(thief.skills.filter(skill => /%|on 1d6/.test(skill)).length, 7);
+    assert.doesNotMatch(thief.skills.join('; '), /\|/);
+    assert.match(W.character({ x_lvl1: 3, x_lvl2: 3 }, rules, 'Cleric').skills.join('; '), /Turn undead:.*\[/);
+  }
+});
+
+test('basic magic tables cover all original percentile outcomes, including charged and scroll items', () => {
+  for (const category of ['sword', 'armor', 'weapon', 'potion', 'scroll', 'ring', 'wand', 'misc']) {
+    for (let roll = 1; roll <= 100; roll++) {
+      const item = W.basicMagic({ game: 'bdd' }, category, roll);
+      assert.ok(item.length > 3, `${category}/${roll}`);
+      assert.doesNotMatch(item, /undefined|NaN|\$\w+|mt_rand|\[object Object\]/);
+    }
+  }
+  assert.match(W.basicMagic({ game: 'bdd' }, 'sword', 100), /Sword -2 cursed/);
+  assert.match(W.basicMagic({ game: 'bdd' }, 'wand', 100), /Wand of Polymorph \{\d+ charges\}/);
+  assert.match(W.basicMagic({ game: 'bdd' }, 'scroll', 35), /Spell Scrolls 7 \(.+\)/);
+  assert.equal(W.loot({ game: 'bdd', min: 100, max: 100, type: 1 }).split('; ').length, 100);
+});
+
+test('science-fiction unusual features use all six original branches and valid room destinations', () => {
+  const headings = [/food vending machine/, /teleports/, /plant/, /cloning tube/, /escape pod/, /computer terminal/];
+  for (const game of ['mutfut', 'meta', 'urthe', 'gamma']) for (let i = 0; i < 6; i++) {
+    const feature = W.postFeature({ game }, 8, i);
+    assert.match(feature, headings[i]);
+    assert.doesNotMatch(feature, /undefined|NaN/);
+    const destination = feature.match(/room #(\d+)/);
+    if (destination) assert.ok(+destination[1] >= 1 && +destination[1] <= 8);
   }
 });

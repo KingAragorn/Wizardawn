@@ -46,7 +46,7 @@
           cells.push(cell);
           if (cell.icon) legends.add(cell.icon);
           if (cell.overlay) legends.add(cell.sunken ? +p.color ? 'color_sunken_c.png' : 'color_sunken.png' : cell.overlay);
-          if (crawl && !excluded.has(number) && 'XWSU'.includes(cell.symbol) && sites.length < W.count(p)) { cell.number = sites.length + 1; sites.push(cell); }
+          if (crawl && !excluded.has(number) && 'XWSU'.includes(cell.symbol) && sites.length < W.number(p.n, 320, 1, 320)) { cell.number = sites.length + 1; sites.push(cell); }
         }
       }
     }

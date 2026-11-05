@@ -81,48 +81,84 @@
   }
 
   W.adventureRoom = function (p, number, total, cave = false, post = false) {
-    const content = [], atmosphere = W.atmosphere(p), furnish = post ? W.scavengeItem ? W.scavengeItem('junk') : 'Debris and broken furniture.' : W.furnish(p, cave);
+    const content = [], encounters = [], treasures = [], traps = [];
+    const customText = W.dataText(p), custom = customText ? W.parseData(customText, { ...p, terrain: p.terrain || p.x_terrain || 'DG' }) : null;
+    const atmosphere = W.atmosphere(p);
+    const contents = [], hiding = [];
+    if (yes(p, 'x_furnish')) {
+      if (custom) { if (custom.decorations.length) contents.push(pick(custom.decorations)); }
+      else if (post) attempts(p, 'u', [30, 1, 3, 0], () => {
+        const item = W.postRoomItem(p);
+        contents.push(item.text);
+        if (item.place && item.size) hiding.push({ place: item.place, size: item.size });
+      });
+      else {
+        const furniture = W.furnishDetails(p, cave);
+        contents.push(furniture.text);
+        hiding.push(...furniture.hiding);
+      }
+    }
+    const furnish = contents.join('; ');
     if (atmosphere || furnish) content.push('<p>' + esc([atmosphere, furnish].filter(Boolean).join(' ')) + '</p>');
-    if (W.d(100) <= W.number(p.x_weird, post ? 0 : 1, 0, 100)) content.push('<p><b>SOMETHING UNUSUAL IN THE AREA...</b> ' + esc(W.unusualRoom(p, total)) + '</p>');
-    let difficulty = W.number(p.level ?? p.x_level, 0, 0, 100), encountered = false;
+    if (W.d(100) <= W.number(p.x_weird, post ? 0 : 1, 0, 100)) content.push('<p><b>SOMETHING UNUSUAL IN THE AREA...</b> ' + esc(post && W.postFeature ? W.postFeature(p, total) : W.unusualRoom(p, total)) + '</p>');
+    if (post && W.d(100) <= W.number(p.x_frob, 0, 0, 100)) {
+      const robots = W.monsters({ ...p, terrain: '', level: 0 }).filter(m => /robot|android|cyborg/i.test(m.name));
+      if (robots.length) content.push('<div class="stranded-robot"><b>STRANDED ROBOT:</b> ' + W.monsterStats(pick(robots), true, p) + '</div>');
+    }
+    if (post && W.d(100) <= W.number(p.x_fveh, 0, 0, 100)) content.push('<p class="stranded-vehicle"><b>STRANDED VEHICLE:</b> ' + esc(pick(['automobile', 'truck', 'motorcycle', 'bus', 'van', 'all-terrain vehicle']) + ' (' + pick(['ruined', 'poor', 'fair', 'good', 'excellent', 'perfect']) + '); ' + int(0, 100) + '% fuel remaining') + '.</p>');
+    let difficulty = 0, hoard = 0;
     attempts(p, 'c', [35, 1, 1, 0], () => {
-      const options = { ...p, level: difficulty, terrain: p.terrain || (yes(p, 'x_outside', 0) ? p.x_terrain || 'DG' : 'DG') };
+      const options = { ...p, level: p.level ?? p.x_level ?? 0, terrain: p.terrain || 'DG', dungeonOnly: '1' };
       let monster;
       for (let i = 1; i <= 2; i++) if (!monster && p['x_enemy_' + i] && W.d(100) <= W.number(p['x_main_chance_' + i], 0, 0, 100)) monster = W.monsters({ ...options, level: 0, terrain: '' }).find(m => String(m.id) === String(p['x_enemy_' + i]) || W.monsterName(m) === p['x_enemy_' + i]);
+      if (!monster && p.floorType === 'T' && W.d(100) > 20) monster = W.monsterPick({ ...options, x_undead: '1' });
       monster ||= W.monsterPick(options);
+      if (!monster && yes(p, 'x_outside', 0)) monster = W.monsterPick({ ...options, terrain: p.x_terrain || 'DG', dungeonOnly: '0' });
       if (!monster) { content.push('<p class="empty-encounter">No Enemies Found for this terrain and level.</p>'); return; }
-      encountered = true;
-      difficulty = Math.max(difficulty, +monster.difficulty || 1);
+      difficulty = Math.max(difficulty, +monster.difficulty || 0);
+      if (yes(p, 'x_rich', 0)) hoard = Math.max(hoard, ({ 1: 70, 2: 90, 3: 50 })[+monster.m_hoard] || 0);
       const life = W.monsterLife(monster, options);
-      content.push(`<div class="room-encounter"><b>ENCOUNTER:</b> ${W.monsterStats(monster, yes(p, 'x_describe'), options)}<p>There ${life.length === 1 ? 'is' : 'are'} ${life.length} in this area. <b>${W.isTroll(p) ? 'MR' : W.game(p).slug === 'urthe' ? 'STAMINA' : 'HIT POINTS'}:</b> ${life.join(', ')}</p></div>`);
+      encounters.push({ id: monster.id, name: W.monsterName(monster), life, difficulty: +monster.difficulty || 0 });
+      content.push(`<div class="room-encounter"><b>ENCOUNTER:</b> ${W.monsterStats(monster, yes(p, 'x_describe'), options)}${monster.custom ? '' : `<p>There ${life.length === 1 ? 'is' : 'are'} ${life.length} in this area. <b>${W.isTroll(p) ? 'MR' : W.game(p).slug === 'urthe' ? 'STAMINA' : 'HIT POINTS'}:</b> ${life.join(', ')}</p>`}</div>`);
     });
-    attempts(p, 't', [10, 1, 1, 0], () => content.push('<p class="room-trap"><b>TRAP:</b> ' + esc(W.trap(p)) + '</p>'));
-    const lootOptions = { ...p, level: difficulty || int(1, 20) };
-    attempts(p, 'l', [20, 1, 5, 20], () => {
-      const container = W.container(post), trapped = W.d(100) <= W.number(p.x_rigged_chance, 30, 0, 100);
-      const treasure = W.loot ? W.loot(lootOptions) : W.currency(lootOptions, difficulty || 1, int(1, 3), W.number(p.x_cut, 100, 0, 1000)) + '; ' + W.gem();
-      content.push(`<p class="room-treasure"><b>TREASURE:</b> ${esc(container)}${trapped ? ' [TRAPPED: ' + esc(W.trap(p, 'box')) + ']' : ''}: ${esc(treasure)}</p>`);
+    const trapText = type => custom ? custom.traps.length ? pick(custom.traps) : '' : post && W.postTrap ? W.postTrap(p, type) : W.trap(p, type);
+    attempts(p, 't', [10, 1, 1, 0], () => { const text = trapText('room'); if (text) { traps.push(text); content.push('<p class="room-trap"><b>TRAP:</b> ' + esc(text) + '</p>'); } });
+    const level = difficulty || W.number(p.level ?? p.x_level, 0, 0, 100) || int(1, 20);
+    const chance = W.number(p.x_l_c, 20, 0, 100), adjusted = Math.min(100, chance + (difficulty ? difficulty * W.number(p.x_adjust, 2, 0, 100) : 0) + (chance ? hoard : 0));
+    const lootOptions = { ...p, level }, treasureState = { coins: false };
+    attempts({ ...p, x_l_c: adjusted }, 'l', [20, 1, 5, 20], () => {
+      const hidden = !custom && hiding.length ? hiding.shift() : null;
+      const container = hidden ? 'Located ' + hidden.place : custom ? custom.containers.length ? pick(custom.containers) : '' : post && W.postContainer ? W.postContainer(p) : W.container();
+      const trapped = W.d(100) <= W.number(p.x_rigged_chance, 30, 0, 100), trap = trapped ? trapText(hidden ? 'item' : 'box') : '';
+      const treasure = custom ? W.dataTreasure(custom) : W.adventureFind(lootOptions, treasureState, hidden?.size || 3, post);
+      if (!treasure) return;
+      treasures.push({ container, trap, treasure, size: hidden?.size || 3 });
+      content.push(`<p class="room-treasure"><b>TREASURE:</b> ${esc(container)}${trap ? ' [TRAPPED: ' + esc(trap) + ']' : ''}: ${esc(treasure)}</p>`);
     });
-    if (encountered && yes(p, 'x_rich', 0) && !content.some(c => c.includes('room-treasure'))) content.push('<p class="room-treasure"><b>TREASURE:</b> ' + esc(W.currency(p, difficulty || 1, 3)) + '</p>');
-    return { number, html: `<section class="adventure-room" data-room="${number}"><h3>${number}.</h3>${content.length ? content.join('') : '<p>This area is empty.</p>'}</section>` };
+    return { number, encounters, traps, treasures, html: `<section class="adventure-room" data-room="${number}"><h3>${number}.</h3>${content.length ? content.join('') : '<p>This area is empty.</p>'}</section>` };
   };
   W.adventureFields = [W.gameField, f('x_area', 'Adventure name', 'text'), f('width', 'Map width', 'number', { value: 1, min: 1, max: 10 }), f('height', 'Map height', 'number', { value: 1, min: 1, max: 10 }), f('map_rooms', 'Rooms on your own map (0 = generate map)', 'number', { value: 0, min: 0, max: 1000 }), f('x_level', 'Party level (0 = any)', 'number', { value: 0, min: 0, max: 100 }), f('x_characters', 'Party size (0 = random)', 'number', { value: 0, min: 0, max: 100 }), f('x_terrain', 'Outdoor terrain', 'select', { value: 'DG', options: W.terrains }), f('x_outside', 'Use outdoor creatures', 'checkbox'), f('atmo', 'Atmosphere (999 = none)', 'number', { value: 999, min: 0, max: 999 }), f('x_furnish', 'Furnish rooms', 'checkbox', { value: 1 }), f('x_describe', 'Describe creatures', 'checkbox', { value: 1 }), f('x_weird', 'Unusual features (%)', 'number', { value: 1, min: 0, max: 100 }), f('x_cut', 'Treasure value (%)', 'number', { value: 100, min: 0, max: 1000 }), f('x_rigged_chance', 'Trapped containers (%)', 'number', { value: 30, min: 0, max: 100 }), f('wandering', 'Wandering encounter tables', 'checkbox', { value: 1 }), ...[['c', 'Encounters', 35, 1, 0], ['t', 'Traps', 10, 1, 0], ['l', 'Treasure', 20, 5, 20]].flatMap(([code, label, chance, max, reduction]) => [f('x_' + code + '_c', label + ' (%)', 'number', { value: chance, min: 0, max: 100 }), f('x_' + code + '_c_min', label + ' minimum', 'number', { value: 1, min: 0, max: 100 }), f('x_' + code + '_c_max', label + ' maximum', 'number', { value: max, min: 0, max: 100 }), f('x_' + code + '_c_low', label + ' chance reduction', 'number', { value: reduction, min: 0, max: 100 })]), ...W.dataFields];
+  W.adventureFields.push(f('x_undead', 'Undead only', 'checkbox'), f('x_adjust', 'Extra loot chance per enemy level (%)', 'number', { value: 2, min: 0, max: 100 }), f('x_rich', 'Hoarding creatures have treasure', 'checkbox'), f('x_low_magic', 'Magic item chance (%)', 'number', { value: 100, min: 0, max: 100 }), f('x_whichmagic', 'Original game magic items (%)', 'number', { value: 50, min: 0, max: 100 }), f('aec', 'Include AEC', 'checkbox'), f('dd_ff', 'Include Fiend Folio', 'checkbox'), f('dd_mm2', 'Include Monster Manual II', 'checkbox'), f('x_extra', 'Include Monsters of Myth', 'checkbox'));
   W.adventure = function (p, mode) {
-    const post = ['uexfl', 'uruins'].includes(mode), game = p.game || (post ? 'mutfut' : W.game(p).slug), options = { ...p, game };
+    const post = ['uexfl', 'uruins'].includes(mode), game = p.game || (p.x_game || p.x_package ? W.game(p).slug : post ? 'mutfut' : W.game(p).slug), options = { ...p, game };
     const complex = mode === 'delve' && ['Complex', 'Progressive'].includes(p.x_delve), progressive = p.x_delve === 'Progressive';
     const own = W.number(p.map_rooms, 0, 0, 1000), type = mode === 'delve' ? 'Side View' : p.type || p.map_type || (mode === 'uexfl' ? 'Building' : 'Cavernous Dungeon');
     const map = own ? { html: '', tiles: [], rooms: W.range(own, W.number(p.start ?? p.map_numbers, 1, 1, 100000)).map(number => ({ number, type: 'D', size: 'S' })) } : W.geomorphMap({ ...p, type, complex: complex ? '1' : '0', keyed: '1' }, mode === 'uruins' ? 'ruins' : mode === 'uexfl' ? 'scifi' : 'dungeon');
     const floors = [], rooms = [];
+    let careerLevel = W.number(p.x_level, 1, 1, 100), currentFloor = 0;
+    const maximumLevel = Math.max(careerLevel, game === 'ssxs' ? 6 : 21), floorsPerLevel = Math.round(map.rooms.length / Math.max(1, maximumLevel - careerLevel));
     let html = `<h2>${esc(p.x_area || ({ delve: 'Dungeon Delve', ultimate: 'Ultimate Dungeon', uexfl: 'Ultimate Sci-Fi Adventure', uruins: 'Ultimate Ruins' })[mode])}</h2>` + map.html;
     for (const [index, area] of map.rooms.entries()) {
-      const level = progressive ? Math.min(20, W.number(p.x_level, 1, 1, 20) + Math.floor(index * (20 - W.number(p.x_level, 1, 1, 20)) / Math.max(1, map.rooms.length - 1))) : options.x_level;
-      const floorOptions = { ...options, x_level: level };
+      const remaining = map.rooms.length - index - 1;
+      if (progressive && (++currentFloor >= floorsPerLevel && careerLevel < maximumLevel || remaining < 5 && careerLevel < 16 || remaining < 4 && careerLevel < 17 || remaining < 3 && careerLevel < 18 || remaining < 2 && careerLevel < 19 || remaining < 1 && careerLevel < 20)) { careerLevel++; currentFloor = 0; }
+      const level = progressive ? careerLevel : options.x_level;
+      const floorOptions = { ...options, x_level: level, floorType: area.type };
       if (complex) {
-        const size = area.size === 'L' ? int(3, 4) : area.size === 'M' ? 2 : 1;
-        const floor = W.geomorphMap({ ...p, width: size, height: size, type: area.type === 'W' ? 'Water Cavern' : area.type === 'C' ? 'Cavernous' : 'Dungeon', interior: '1', keyed: '1', start: 1 }, 'dungeon');
+        const size = area.type === 'W' ? [1, 1] : area.size === 'L' ? W.d(2) === 1 ? [2, 1] : [1, 2] : area.size === 'M' ? [1, 1] : [0, 0];
+        const floor = W.geomorphMap({ ...p, width: size[0], height: size[1], type: area.type === 'W' ? 'Water Cavern' : area.type === 'C' ? 'Cavernous' : 'Dungeon', interior: '1', keyed: '1', start: 1 }, 'dungeon');
         floors.push({ number: area.number, level, tiles: floor.tiles, rooms: floor.rooms });
         html += `<section class="delve-floor"><h2>Floor ${area.number}${progressive ? ' — Level ' + level : ''}</h2>${floor.html}`;
-        for (const room of floor.rooms) { const result = W.adventureRoom(floorOptions, room.number, floor.rooms.length, area.type !== 'D'); rooms.push({ floor: area.number, ...result }); html += result.html; }
+        for (const room of floor.rooms) { const result = W.adventureRoom(floorOptions, room.number, floor.rooms.length, ['C', 'W'].includes(area.type)); rooms.push({ floor: area.number, ...result }); html += result.html; }
         html += '</section>';
       } else {
         const result = W.adventureRoom(floorOptions, area.number, map.rooms.length, /cavern/i.test(type), post);
@@ -130,7 +166,7 @@
       }
     }
     if (yes(p, 'wandering')) {
-      const count = W.isTroll(options) || game === 'ssxs' ? 11 : 12;
+      const count = progressive ? W.isTroll(options) || game === 'ssxs' ? 35 : 39 : W.isTroll(options) || game === 'ssxs' ? 11 : 12;
       for (const [terrain, label] of [['DG', 'RANDOM ENCOUNTERS IN THIS DUNGEON'], ...(p.x_terrain && p.x_terrain !== 'DG' ? [[p.x_terrain, 'RANDOM ENCOUNTERS OUTDOORS']] : [])]) html += `<section class="adventure-wandering"><h3>${label}</h3>` + W.routes.wander.generate({ ...options, terrain, n: count }) + '</section>';
     }
     W.storage.set('last-adventure', { mode, options: p, tiles: map.tiles, floors, rooms });
@@ -138,7 +174,7 @@
   };
   for (const [route, title] of [['delve', 'Dungeon Delve'], ['ultimate', 'Ultimate Dungeon'], ['uexfl', 'Ultimate Sci-Fi Adventure'], ['uruins', 'Ultimate Ruins']]) {
     const fields = [...W.adventureFields];
-    if (route === 'delve') fields.push(f('x_delve', 'Delve type', 'select', { value: 'Simple', options: ['Simple', 'Complex', 'Progressive'] }));
+    if (route === 'delve') fields.push(f('x_delve', 'Delve type', 'select', { value: 'Simple', options: ['Simple', 'Complex', 'Progressive'] }), f('x_floors', 'Omit floors (%)', 'number', { value: 0, min: 0, max: 100 }));
     else if (route === 'ultimate') fields.push(f('type', 'Map type', 'select', { value: 'Cavernous Dungeon', options: ['Dungeon', 'Cavernous', 'Cavernous Dungeon'] }));
     else if (route === 'uexfl') fields.push(f('type', 'Map type', 'select', { value: 'Building', options: ['Building', 'Spaceship', 'Exodus Spaceship'] }));
     W.register(route, title, 'Generate a map and keyed adventure with room contents, encounters, traps, treasure and wandering enemies. Results stay on this computer.', fields, p => W.adventure(p, route));
