@@ -88,3 +88,8 @@ Priority truly-missing items (from reading the forms):
 
 ## How to regenerate
 The scan used: for each `src/tool_*.php`, the form part before `SubmitButton`, first `<input|select|textarea name=...>` per name, default from `checked`/`value`. Compare names with `W.routes[W.routeFor(file)].fields`.
+
+## Navigation (started)
+- Done: a tool page with a chosen game shows that game's own Generators list (from rpg_<game>.php), not the all-games list with duplicate "Adventurers Guild" entries.
+- Open: per-game supplements left menu on tool pages; help page and full visual pass still to do.
+- Open banners: door, scifim, scavenge, aguild headers. Open forms: x_mm, x_book_sp (needs ll_cs_spell_*.jpg deployed), x_img, cave sets, xls, wtown columns, uexfl x_money default.

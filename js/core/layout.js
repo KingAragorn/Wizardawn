@@ -37,7 +37,8 @@
     return W.rewriteLinks(D.portal.shell.replace(/\{\{(.*?)\}\}/g, (_, key) => parts[key]), game);
   };
   W.generatorLayout = (tool, params, result = '') => W.layout(`<h1>${tool.title}</h1><p>${tool.description}</p>${W.form(tool, params)}${result ? `<section id="results" class="report"><h2>${tool.title}</h2>${result}<button type="button" id="print-results">Print</button></section>` : ''}`, {
-    left: W.menu('Generators', r => r.mn_group === 'Generators' && W.routes[W.routeFor(r.mn_link)]?.generate, params.game),
+    // Like the original, a chosen game's tool pages list only that game's generators.
+    left: (params.game && D.pages['rpg_' + params.game + '.php']?.right) || W.menu('Generators', r => r.mn_group === 'Generators' && W.routes[W.routeFor(r.mn_link)]?.generate, params.game),
     right: W.menu('Choose A Game', r => r.mn_group === 'Game Choice'),
     game: W.toolGame(tool, params).slug,
     credits: (D.pages['rpg_' + W.toolGame(tool, params).slug + '.php']?.credits || D.portal.credits) + '<p style="text-align:center"><a href="#/licence/ogl">Open Game License v1.0a</a> · <a href="#/licence/osric">OSRIC Open License</a> · <a href="#/licence/ll">Labyrinth Lord</a> · <a href="#/licence/mf">Mutant Future</a> · <a href="#/licence/sw">Swords &amp; Wizardry</a></p>'

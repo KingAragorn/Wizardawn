@@ -1555,3 +1555,15 @@ test('uexfl Mix Monsters adds Labyrinth Lord and AEC monsters to the Mutant Futu
   assert.ok(mixed.length > base.length && mixed.some(m => m.creator === 'LL') && !base.some(m => m.creator === 'LL'));
   assert.ok(W.form(W.routes.uexfl, { game: 'mutfut' }).includes('name="x_mixup"'));
 });
+
+test('generator results carry the original banner image from the PHP tool (refs #6)', () => {
+  assert.ok(W.bannerFor(W.routeFor('tool_loot.php'), 'osric').includes('tools_loot.jpg'));
+  assert.ok(W.bannerFor(W.routeFor('tool_loot.php'), 'gamma').includes('tools_bomb_shelter_treasure_hoards.jpg'));
+  for (const file of Object.keys(W.banners)) assert.ok(W.routes[W.routeFor(file)], file);
+});
+
+test('tool sidebar lists the chosen game\'s own generators', () => {
+  const html = W.generatorLayout(W.routes.loot, { game: 'osric' });
+  assert.match(html, /tool_oadvg\.php|oadvg/);
+  assert.doesNotMatch(html, /ladvg/);
+});
