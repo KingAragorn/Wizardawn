@@ -47,6 +47,25 @@
     if (W.d(100) > 90) text += '. You can make out ' + pick(['a faint', 'a loud', 'a quiet', 'an eerie', 'a strange', 'an odd', 'an echoey', 'a muffled', 'a distant', 'a close']) /* atmosphere.php soundWhereRoom */ + ' ' + cell('soundMakerRoom') + ' sound coming from somewhere';
     return text + '.';
   };
+  // atmosphere.php mapMood($map, $atmo) for Ruined City, Building and Spaceship maps.
+  // $x_terrain is not global inside mapMood, so the PHP always takes the temperate branch.
+  W.mapMood = function (map, atmo) {
+    const mood = atmo > W.d(100) ? int(1, 59) : int(60, 100);
+    const sound = () => W.d(100) > 90 ? '. You can make out ' + pick(['a faint', 'a loud', 'a quiet', 'an eerie', 'a strange', 'an odd', 'an echoey', 'a muffled', 'a distant', 'a close']) + ' ' + cell('soundMakerRoom') + ' sound coming from somewhere' : '';
+    const ruined = map === 'Ruined City', ship = !ruined && map !== 'Building';
+    const place = ruined ? 'building' : 'room', whole = ruined ? 'city' : ship ? 'ship' : 'building';
+    const seer = int(0, ruined ? 19 : 17);
+    const growth = () => 'There are ' + pick(['small', 'thin', 'large', 'thick', 'tall', 'rotten']) + ' ' + W.color() + ' ' + pick(['vines', 'weeds', 'mushrooms', 'flowers', 'bushes', 'thorny vines', 'thorny bushes']) + ' growing ' + pick(['on the ceiling', 'on the walls', 'on the floor', 'on the floor and walls', 'on the walls and ceiling', 'all over']);
+    const seen = ruined ? ['Most of the ceiling seems to be caved in', 'The entire structure seems to creak and moan from age', 'Most of the walls are crumbling in certain areas', 'The floor is warped and cracked in places', 'Most of the windows seem oddly intact', null, 'Tall grasses seem to cover most of the floor', 'It appears an explosion may have happened here in the past', 'There are chunks of the wall and ceiling on the floor', 'The walls seem covered in bullet holes', 'The walls seem scorched in places from laser fire', 'There are scorch marks on the wall', 'Parts of the floor are sunken in', 'There are large holes in the ceiling']
+      : ship ? ['Most of the ceiling seems to be rusted and corroded', 'The entire room seems to have some lights that flicker', 'Some of the walls have various computer panels', 'The floor is covered in dried chemicals of varying colors', 'Most of the walls seem oddly untouched', 'It appears an explosion may have occurred in here', 'There are chunks of the wall and ceiling on the floor', 'The walls seem dented inward in certain spots', 'The walls seem scorched in places from weapons fire', 'There are scorch marks on the wall', 'Parts of the floor have small holes melted into it', 'There are many smashed computer consoles on the wall']
+      : ['Most of the ceiling seems to be caved in', 'The entire room seems to creak and moan from age', 'Some of the walls are crumbling in certain areas', 'The floor is warped and cracked in places', 'Most of the walls seem oddly intact', 'It appears an explosion may have happened here in the past', 'There are chunks of the wall and ceiling on the floor', 'The walls seem covered in bullet holes', 'The walls seem scorched in places from laser fire', 'There are scorch marks on the wall', 'Parts of the floor are sunken in', 'There are large holes in the ceiling'];
+    const seeing = seer < seen.length ? '. ' + (seen[seer] ?? growth()) : '';
+    const plain = ruined ? ['This building seems normal for this type of place', 'This building appears similar to the rest of the city', 'This building looks average compared with other sections of this city', 'This building is pretty unextraordinary at first glance', 'This building seems plain when you first look upon it']
+      : ['This room seems normal for this type of ' + whole, 'This room appears similar to the rest of the ' + whole, 'This room looks average compared with other sections of this ' + whole, 'This room is pretty unextraordinary at first glance', 'This room seems plain when you first look upon it'];
+    const inside = 'The inside of this ' + place + ' ';
+    const feeling = (mood < 60 ? pick(plain) : mood < 85 ? inside + cell('smellMakerRoom') : mood < 95 ? inside + cell('smellMakerRoom') + ' and has a ' + cell('fogMakerRoom') : inside + 'has ' + cell('fogMakerRoom')) + sound();
+    return feeling + seeing;
+  };
   W.unusualRoom = function (p, rooms = 20) {
     const level = W.number(p.x_level, 1, 1, 100), value = int(1, 6);
     if (value === 1) return `An altar of ${cell('statueMake')} dedicated to ${W.name('demon')}. Offerings ${W.d(2) === 1 ? 'heal 1d6 damage' : 'trigger a curse: ' + W.curse(p, level, 'the worshipper')}.`;
@@ -109,7 +128,7 @@
   W.adventureRoom = function (p, number, total, cave = false, post = false) {
     const content = [], encounters = [], treasures = [], traps = [];
     const customText = W.dataText(p), custom = customText ? W.parseData(customText, { ...p, terrain: p.terrain || p.x_terrain || 'DG' }) : null;
-    const atmosphere = W.atmosphere(p);
+    const atmosphere = post && p.adventureMode && W.number(p.atmo ?? p.x_atmo, 999, 0, 999) !== 999 ? W.mapMood(p.adventureMode === 'uruins' ? 'Ruined City' : p.type || p.map_type || 'Building', W.number(p.atmo ?? p.x_atmo, 999, 0, 999)) + '.' : W.atmosphere(p);
     const contents = [], hiding = [];
     if (yes(p, 'x_furnish')) {
       if (custom) { if (custom.decorations.length) contents.push(pick(custom.decorations)); }

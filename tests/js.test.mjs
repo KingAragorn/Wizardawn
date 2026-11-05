@@ -659,6 +659,18 @@ test('VehicleRobotMaker robot text matches the original per-game lists', () => {
   assert.match(html, /STRANDED ROBOT (INSIDE|NEXT TO) THE BUILDING\.\.\.<\/b><br>[A-Z]/);
   assert.ok(html.indexOf('STRANDED VEHICLE') < html.indexOf('STRANDED ROBOT'));
 });
+test('Ruined City, Building and Spaceship rooms use mapMood descriptions', () => {
+  W.rng = W.random('map-mood');
+  const ruins = W.range(300).map(() => W.mapMood('Ruined City', 50));
+  assert.ok(ruins.some(t => /^This building (seems|appears|looks|is)/.test(t)) && ruins.some(t => /^The inside of this building /.test(t)));
+  assert.ok(ruins.some(t => /\. There are \w+ \w+ [a-z ]+ growing /.test(t)) && ruins.some(t => /Tall grasses/.test(t)));
+  const ship = W.range(300).map(() => W.mapMood('Spaceship', 50));
+  assert.ok(ship.some(t => /type of ship|rest of the ship/.test(t)) && ship.some(t => /computer (panels|consoles)/.test(t)));
+  const building = W.range(300).map(() => W.mapMood('Building', 50));
+  assert.ok(building.some(t => /rest of the building/.test(t)) && building.every(t => !/computer/.test(t)));
+  W.rng = W.random('map-mood-route');
+  assert.match(W.routes.uruins.generate({ map_rooms: 6, atmo: 100 }), /This building (seems|appears|looks|is)/);
+});
 test('uexfl unusual rooms and uruins robots use the original headings', () => {
   W.rng = W.random('headings');
   const sci = W.routes.uexfl.generate({ map_rooms: 300, x_weird: 100 });

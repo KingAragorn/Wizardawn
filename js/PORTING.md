@@ -428,3 +428,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - uexfl: fixed 2% unusual-room chance; post rooms without atmosphere read "This area contains..." or "Empty of mundane items." (uexfl/uruins).
 - uruins: full VehicleRobotMaker port (W.vehicleRobot): robots now use the original text for Metamorphosis Alpha, Gamma World, generic and Broken Urthe (serial/alien names, software level, metal, fuel) instead of monster stat blocks; vehicle prints before robot as in the PHP.
 - tests: the encounter-hoard PHP comparison test now sets its own seed.
+- mapMood: Ruined City / Building / Spaceship room descriptions (atmosphere.php mapMood, PAgrowthMaker) used by uruins and uexfl when an atmosphere chance is set.
