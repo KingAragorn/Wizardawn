@@ -24,10 +24,7 @@
     return text;
   };
   const keg = () => wood() + ' keg containing ' + pick(['ale', 'beer', 'brandy', 'cider', 'grog', 'mead', 'rum', 'wine', 'water']);
-  W.fantasyMundane = function (p = {}, shelf = false, selected) {
-    const index = selected ?? int(0, shelf ? 173 : 191), variants = D.fantasyTables.items[shelf ? 'fantasyShelfItem' : 'fantasyRoomItem'][index];
-    if (!shelf && index === 144) return `grappling hook & ${pick(['hemp', 'silk'])} rope (${int(5, 10) * 10}')`;
-    if (index === 168) { const n = int(0, 3); return ['bullseye lantern', 'hooded lantern', 'broken bullseye lantern', 'broken hooded lantern'][n] + (n < 2 && W.d(5) === 1 ? ' with oil' : ''); }
+  const mundaneSlots = p => {
     const fine = W.d(4) === 1, casting = fine ? vocab('goodmetalChooser') : metal();
     const slots = {
       color, plainColor: () => W.color('plainColor'), leather: () => W.color('leatherColor'), metal, wood, casting, bag, bottle: W.bottle,
@@ -42,6 +39,13 @@
       ashes: () => 'a pile of ashes', eggs: () => pick(['bird eggs', 'snake eggs', 'lizard eggs', 'insect eggs']), luck: '+1 to attack rolls but only one good luck charm at any time'
     };
     for (const kind of ['iron', 'wood', 'cloth', 'jar', 'item', 'water', 'paper']) slots['condition_' + kind] = () => condition(kind);
+    return slots;
+  };
+  W.fantasyMundane = function (p = {}, shelf = false, selected) {
+    const index = selected ?? int(0, shelf ? 173 : 191), variants = D.fantasyTables.items[shelf ? 'fantasyShelfItem' : 'fantasyRoomItem'][index];
+    if (!shelf && index === 144) return `grappling hook & ${pick(['hemp', 'silk'])} rope (${int(5, 10) * 10}')`;
+    if (index === 168) { const n = int(0, 3); return ['bullseye lantern', 'hooded lantern', 'broken bullseye lantern', 'broken hooded lantern'][n] + (n < 2 && W.d(5) === 1 ? ' with oil' : ''); }
+    const slots = mundaneSlots(p);
     let variant = 0;
     if (variants.length > 1) {
       // Most alternatives are a second 50% roll. These cells have other odds.
@@ -49,6 +53,44 @@
       if ((!shelf && [181, 183].includes(index)) || (shelf && [73, 74].includes(index))) variant = Math.min(int(0, 5), variants.length - 1);
       else if (W.d(odds[index] || 2) === 1) variant = variants.length - 1;
     }
+    return W.descriptionText(variants[variant], slots);
+  };
+  // rooms_fantasy.php cageMaker().
+  const cage = () => 'a ' + pick(['small', 'medium-short', 'medium-sized', 'large']) + ' ' + pick(['rusty', 'iron', 'metal', 'broken', 'locked rusty', 'locked iron', 'locked metal']) + ' cage' + ([' with straw on the bottom', ' with humanoid bones on the bottom', ' with animal bones on the bottom', ' with ashes on the bottom', ' with rotten food on the bottom', ' with a rotted mat on the bottom', ' with an empty wooden bowl on the bottom'][int(0, 13)] || '');
+  // item_fantasy.php scrollContents().
+  const scrollContents = () => {
+    const paper = pick(['parchment', 'scroll', 'note']), dirc = pick(['north', 'south', 'east', 'west']), locc = pick(['island', 'dungeon', 'crypt', 'castle', 'temple', 'ruins', 'graveyard', 'cave']);
+    const who = W.name(pick(['mageName', 'elfName', 'female', 'male', 'humanFemaleName', 'humanMaleName', 'genericName', 'gnomeName', 'dwarfName'])), mine = pick(['gold', 'silver', 'gem', 'iron']);
+    const code = pick(['a nearby thieves guild', 'a nearby assassins guild', "a local lord's spy network", "an evil lord's spy network", 'a nearby bandit group', 'a nearby smuggling operation', 'a well known group of pirates', 'a little known rebel group', 'an unusual cult']);
+    const notes = ['a map to some unknown ' + locc + ' to the ' + dirc + ' of here', 'a recipe of some type of meal', 'lyrics to a song', 'a poem written by someone named ' + who, 'musical notes', 'a prayer for some unknown religion', 'a list of food items', 'a map of a nearby area showing where ' + int(2, 4) + ' ' + mine + ' mines may be located', 'a map of a nearby royal home showing secret doors and treasure vaults', 'a ransom demand from a group of bandits holding a captive', "a map of a nearby city's sewer system", 'a plain letter written to ' + who, 'a translation of coded letters from ' + code, 'the last will and testament of someone named ' + who, 'a list of alchemy reagents and some are checked off', 'a suicide note'];
+    return 'a ' + paper + ' containing ' + pick(notes);
+  };
+  // spells.php spellSchool() and powerUp(); Labyrinth Lord assumes the AEC option is off.
+  W.spellSchool = function (p) {
+    const name = W.game(p).name, roll = int(1, 100);
+    if (['OSRIC', 'AD&D'].includes(name)) return roll < 71 ? (int(1, 100) > 89 ? 'illusionist' : 'magic-user') : (int(1, 100) > 74 ? 'druid' : 'cleric');
+    if (name === 'Swords & Six-Siders') return 'wizard';
+    return roll < 71 ? 'magic-user' : 'cleric';
+  };
+  W.powerUp = (level = 0) => { level = level > 0 ? level : int(1, 20); return level < 4 ? 'the lowest' : level < 7 ? 'a lower' : level < 10 ? 'a low' : level < 13 ? 'a medium' : level < 16 ? 'a high' : level < 19 ? 'a higher' : 'the highest'; };
+  // item_fantasy.php fantasyGroundItem(): hex crawl items found on the ground.
+  W.fantasyGroundItem = function (p = {}, selected) {
+    const index = selected ?? int(0, 205), name = W.game(p).name, troll = W.isTroll(p);
+    if (index === 82) return corpse() + ' [<i>CONTAINS:&nbsp;' + W.range(int(1, 5)).map(() => W.fantasyMundane(p, true)).join('&nbsp;--- ') + '</i>]';
+    if (index === 144) {
+      if (troll) return 'scroll with smudged writing';
+      // The PHP list says "BFRGP", so BFRPG falls through to the school text.
+      if (['OSRIC', 'AD&D', 'BD&D', 'Swords & Six-Siders', 'Labyrinth Lord', 'Swords & Wizardry'].includes(name)) { W.powerUp(); W.spellSchool(p); return 'scroll with a ' + W.gameSpell(p); }
+      return 'scroll with ' + W.powerUp() + ' level ' + W.spellSchool(p) + ' spell';
+    }
+    if (index === 157) return 'book {<u>' + W.bookTitle() + '</u>}';
+    if (index === 176) return 'blank ' + (troll ? '' : 'spell ') + 'book bound in ' + W.color('leatherColor') + ' leather with a symbol of a ' + vocab('designType') + ' on the cover';
+    if (index === 184) return 'a small diary of ' + W.name('authorName') + ' the adventurer...that explored this area long ago...but this book will give one a ' + (troll || name === 'Swords & Six-Siders' ? int(1, 5) + ' in 6' : int(1, 6) * 5 + '%') + ' chance to know the location of a nearby landmark';
+    const variants = D.fantasyTables.items.fantasyGroundItem[index];
+    const slots = { ...mundaneSlots(p), cage, scroll: scrollContents, corpse, wall: () => pick(['wall', 'ceiling', 'floor']) };
+    // Alternatives are sequential overrides; the fire pit's last one is a d4.
+    let variant = 0;
+    for (let i = 1; i < variants.length; i++) if (W.d(index === 77 && i === 2 ? 4 : 2) === 1) variant = i;
     return W.descriptionText(variants[variant], slots);
   };
   W.fantasyItem = p => W.d(100) <= W.number(p.unusual, 0, 0, 100) ? W.unusualRoom(p) : W.fantasyMundane(p);

@@ -37,6 +37,18 @@ for name in ['fantasyRoomItem', 'fantasyShelfItem']:
             if parts is not None: variants.append(parts)
         out[row[1]] = variants
     items[name] = out
+# fantasyGroundItem (item_fantasy.php): hex crawl "items found on the ground".
+# Cases 82, 144, 176 and 184 depend on the game or unported helpers and are
+# built in JS; their cells may be empty here.
+ground_calls = {**calls, 'candleColor(0)': 'color', 'cageMaker()': 'cage', 'dungeonWall()': 'wall', 'corpseMaker()': 'corpse', 'scrollContents($game)': 'scroll'}
+body = fun('item_fantasy')['fantasyGroundItem'].split('switch (mt_rand(0,205))')[1]
+rows = list(re.finditer(r'case\s+(\d+)\s*:', body))
+ground = {}
+for i, row in enumerate(rows):
+    block = body[row.end():rows[i+1].start() if i+1 < len(rows) else len(body)]
+    cells = [scope['template'](cell[1], ground_calls) for cell in re.finditer(r'\$item\s*=\s*((?:"(?:[^"\\]|\\.)*"|[^;])*);', block)]
+    ground[row[1]] = [c for c in cells if c is not None] if row[1] not in ('82', '144', '176', '184') else []
+items['fantasyGroundItem'] = ground
 vocab = {}
 for file, names in {
     'rooms_fantasy': ['corpseMaker','headMount','headoffMaker','footprintMaker','furnitureMake','drawWith','drawingTypes','eggMaker','figureMaker'],

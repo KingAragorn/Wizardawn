@@ -859,7 +859,7 @@ test('hex crawl keys expand to local site records and preserve every room option
       assert.equal(room.traps.length, 1);
       assert.equal(room.treasures.length, 1);
     }
-    assert.doesNotMatch(output, /undefined|NaN|class="crawl-wandering"/);
+    assert.doesNotMatch(output, /undefined|NaN/);
   }
   const empty = W.routes['hex-crawl'].generate({ game: 'data', data: 'Empty\n--BEGIN--\n--END--', n: 2, climate: 112 });
   assert.match(empty, /No enemies found|No Enemies Found/);
@@ -1362,4 +1362,21 @@ test('hex crawl prints the atmosphere.php weather table except underground', () 
   assert.doesNotMatch(W.routes['hex-crawl'].generate({ game: 'osric', climate: 112, n: 2 }), /RANDOM WEATHER/);
   W.random(5);
   for (let i = 0; i < 300; i++) assert.match(W.weather('desert'), /^The temperature feels (hot|mild|sweltering) and the sky is (sunny|clear|cloudy)\. The air (is breezy|is windy|has gusting winds|is quite calm), with (no precipitation for the day|slight rain falling .+|a sandstorm .+)\.$/);
+});
+test('hex crawl ground items and underwater encounters follow tool_hexcrawl.php', () => {
+  W.random('ground');
+  const land = W.routes['hex-crawl'].generate({ game: 'osric', climate: 101, n: 3 });
+  assert.match(land, /RANDOM ITEMS FOUND ON THE GROUND/);
+  assert.match(land, /RANDOM ITEM I<\/th>/);
+  assert.match(land, /RANDOM ENCOUNTERS/);
+  assert.doesNotMatch(land, /RANDOM UNDERWATER/);
+  const sea = W.routes['hex-crawl'].generate({ game: 'osric', climate: 106, n: 3 });
+  assert.match(sea, /RANDOM UNDERWATER ENCOUNTERS/);
+  assert.doesNotMatch(sea, /FOUND ON THE GROUND/);
+  assert.match(W.routes['hex-crawl'].generate({ game: 'tt5e', climate: 101, n: 2 }), /4d6/);
+  assert.equal(W.fantasyGroundItem({ game: 'tt5e' }, 144), 'scroll with smudged writing');
+  assert.match(W.fantasyGroundItem({ game: 'osric' }, 184), /\d+% chance/);
+  assert.match(W.fantasyGroundItem({ game: 'ssxs' }, 184), /\d in 6 chance/);
+  assert.match(W.fantasyGroundItem({ game: 'osric' }, 82), /CONTAINS:/);
+  for (let i = 0; i < 206; i++) { const t = W.fantasyGroundItem({ game: 'lablord' }, i); assert.ok(t && !/undefined|NaN|\$/.test(t), i + ': ' + t); }
 });

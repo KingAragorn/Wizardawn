@@ -192,11 +192,16 @@
     if (yes(p, 'info')) html += `<p>1 Hex = ${W.number(p.map_equals, 6, 1, 1000)} Miles. ${sites.length} unique areas.</p>`;
     const rows = sites.map(site => [site.number, `<a href="#site-${site.number}" data-scroll-site="${site.number}">${esc(site.name)}</a>`, esc(site.kind)]);
     html += '<h3>Keyed Areas</h3>' + (rows.length ? W.table(['Area', 'Landmark', 'Type'], rows) : '<p>No landmarks on this map.</p>');
-    if (yes(p, 'wandering')) {
+    // tool_hexcrawl.php always prints the encounter, underwater and ground item tables.
+    {
       const troll = W.isTroll(options) || game.slug === 'ssxs', sea = options.terrain === 'SW';
       html += '<section class="crawl-wandering"><h3>' + (sea ? 'RANDOM ENCOUNTERS ON THE SURFACE' : 'RANDOM ENCOUNTERS') + '</h3>' + W.routes.wander.generate({ ...options, n: sea ? troll ? 21 : 20 : troll ? 19 : 18 }) + (!sea ? '<p>19: ROLL ON THE RANDOM ITEM I TABLE<br>20: ROLL ON THE RANDOM ITEM II TABLE</p>' : '') + '</section>';
       if (climate != 112 && (sea || map.sites.some(site => site.sunken))) html += '<section class="crawl-water"><h3>RANDOM FRESHWATER ENCOUNTERS</h3>' + W.routes.wander.generate({ ...options, terrain: sea ? 'SW' : 'FW', n: troll ? 11 : 12 }) + '</section>';
-      if (!sea) for (const label of ['I', 'II']) html += '<section class="crawl-items"><h3>RANDOM ITEM ' + label + '</h3>' + W.table(['Roll', 'Find'], W.range(20).map(i => [i, esc(postGame(options) ? W.postRoomItem(options).text : W.fantasyItem(options))])) + '</section>';
+      if (climate == 106 || climate == 112) html += '<section class="crawl-underwater"><h3>RANDOM UNDERWATER ENCOUNTERS</h3>' + W.routes.wander.generate({ ...options, terrain: climate == 106 ? options.terrain : 'SW|FW', swimmer: 1, n: troll ? 11 : 12 }) + '</section>';
+      if (climate != 106) {
+        const dice = troll ? '4d6' : '1d20', item = () => esc(postGame(options) ? W.postRoomItem(options).text : W.fantasyGroundItem(options));
+        html += '<section class="crawl-items"><h3>RANDOM ITEMS FOUND ON THE GROUND</h3>' + W.table([dice, 'RANDOM ITEM I', dice, 'RANDOM ITEM II'], W.range(troll ? 21 : 20, troll ? 4 : 1).map(n => { const a = item(), b = item(); return [n, a, n, b]; })) + '</section>';
+      }
     }
     const zone = weatherZones[climate] || 'normal';
     if (zone !== 'none') {

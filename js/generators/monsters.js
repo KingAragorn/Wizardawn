@@ -11,7 +11,7 @@
     const terrain = params.terrain ?? params.x_terrain ?? '';
     return D.monsters_rpgs.filter(m => {
       const source = game === 'add' ? /^SRC: MM /.test(m.creator) || m.creator === 'ADDDD' || (params.dd_ff === '1' && m.creator.startsWith('SRC: FF ')) || (params.dd_mm2 === '1' && m.creator.startsWith('SRC: MM2 ')) : m.creator === creator || (creator === 'LL' && params.aec === '1' && m.creator.startsWith('AEC')) || (creator === 'OSRIC' && (params.x_mom ?? params.mom ?? params.x_extra) === '1' && m.creator === 'MoM');
-      return source && +m.difficulty <= level && (!terrain || m.location.split(' ').includes(terrain)) && (params.swimmer == null || +m.swimmer === +params.swimmer)
+      return source && +m.difficulty <= level && (!terrain || String(terrain).split('|').some(code => m.location.split(' ').includes(code))) && (params.swimmer == null || +m.swimmer === +params.swimmer)
         && (String(params.x_undead) !== '1' || +m.turn > 0)
         && (String(params.dungeonOnly) !== '1' || +m.m_no_dungeon !== 1);
     });
