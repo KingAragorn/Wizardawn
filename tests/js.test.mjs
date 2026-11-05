@@ -1325,3 +1325,16 @@ test('mtown junk shops use ucwords names and no shelf count', () => {
   assert.equal(rows.length, 50);
   assert.ok(rows.every(r => r.qty === '' && !/(^|\s)[a-z]/.test(r.item)));
 });
+
+test('wander draws without replacement from the freq_code-weighted pool per pass', () => {
+  W.random(3);
+  const p = { game: 'labyrinth', terrain: 'DG', level: 1, x_amount: 30 };
+  const candidates = W.monsters({ ...p, game: W.monsterGame(p) });
+  const pool = candidates.reduce((n, m) => n + Math.max(1, +m.freq_code || 0), 0);
+  const seen = [], stats = W.monsterStats;
+  W.monsterStats = m => { seen.push(m); return ''; };
+  try { W.routes.wander.generate(p); } finally { W.monsterStats = stats; }
+  const first = seen.slice(0, Math.min(seen.length, pool));
+  for (const m of new Set(first)) assert.ok(first.filter(x => x === m).length <= Math.max(1, +m.freq_code || 0));
+  assert.equal(seen.length, 30);
+});

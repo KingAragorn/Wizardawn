@@ -70,12 +70,14 @@
     const options = { ...p, game: W.monsterGame(p) }, candidates = W.monsters(options);
     if (!candidates.length) return '<p>No Enemies Found! Try a different terrain or difficulty.</p>';
     let available = [];
+    // tool_wander.php: a temporary table holds every candidate once plus
+    // freq_code-1 extra copies; each pass is ORDER BY RAND() LIMIT remaining,
+    // so a pass never repeats a row and passes repeat while entries remain.
+    const pool = candidates[0].custom ? [] : candidates.flatMap(m => W.range(Math.max(1, +m.freq_code || 0)).map(() => m));
     const rows = W.range(W.count(p, 'x_amount')).map(i => {
       let monster;
-      if (candidates[0].custom) {
-        if (!available.length) available = candidates.slice();
-        monster = available.splice(int(0, available.length - 1), 1)[0];
-      } else monster = W.monsterPick(options);
+      if (!available.length) available = (candidates[0].custom ? candidates : pool).slice();
+      monster = available.splice(int(0, available.length - 1), 1)[0];
       return [i, W.monsterStats(monster, (p.describe ?? p.x_describe ?? '1') === '1', options)];
     });
     W.storage.set('wandering-enemies', { options: p, rows });
