@@ -247,9 +247,9 @@
         return mode === 'tt' ? '<p>The church will cast spells if a donation is made to the church. They will cast <i>Healing Feeling</i> for 50gp, <i>Too-Bad Toxin</i> for 100gp, <i>Pygmalion</i> for 600gp, or <i>Born Again</i> for 1,000gp.</p>' : '<p>The church will cast spells if a donation is made to the church. They will cast <i>Healing</i> for 50gp, <i>Cure</i> for 100gp, <i>Remove Curse</i> for 600gp, or <i>Resurrection</i> for 1,000gp.</p>';
       };
       const member = church && !rules ? ' PRIEST' : ' MEMBER';
-      html += W.range(int(2, 5)).map(i => `<div><b>${guards ? 'GUARD' : (church ? 'CHURCH' : category.toUpperCase()) + (i === 1 ? ' LEADER' : member)}:</b> ${officer(p, mode, i === 1 && !guards ? 'leader_' + job : job)}</div>` + (church && i === 1 ? services() : '')).join('');
-      if (mode === 'tt' && job === 'wizard') html += '<p>The guild teaches spells to wizards for 1,000gp per spell level. Detect Magic: 100gp; Omnipotent Eye: 200gp; For What It\'s Worth: 300gp. Ordinary magic staff: 100gp; deluxe magic staff: 5,000gp.</p>';
-      if (mode === 'tt' && job === 'rogue') html += '<p>The guild secretly teaches spells for 2,000gp per spell level and appraises an item for 400gp.</p>';
+      // fantasy_stores_tt.php prints the T&T wizard/rogue guild services after the leader.
+      const guildText = mode !== 'tt' ? '' : job === 'wizard' ? '<p>The guild will teach spells at the cost of 1,000gp per spell level to other wizards only.&nbsp; They will also cast <i>Detect Magic</i> on an item for 100gp, <i>Omnipotent Eye</i> on an item for 200gp, or <i>For What It\'s Worth</i> on an item for 300gp. They also sell an ordinary magic staff for 100 gold, or a deluxe magic staff for 5,000 gold.</p>' : job === 'rogue' && guild ? '<p>The guild will secretly teach spells at the cost of 2,000gp per spell level to those the wizard guild will not teach.&nbsp; They will also appraise an item for 400gp.</p>' : '';
+      html += W.range(int(2, 5)).map(i => `<div><b>${guards ? 'GUARD' : (church ? 'CHURCH' : category.toUpperCase()) + (i === 1 ? ' LEADER' : member)}:</b> ${officer(p, mode, i === 1 && !guards ? 'leader_' + job : job)}</div>` + (i === 1 ? church ? services() : guildText : '')).join('');
     } else {
       const stock = W.townStock(p, mode, type), shelf = on(p, 'shelf');
       if (stock.length) html += W.table(['Item', 'Cost', ...(shelf ? ['In Stock'] : [])], stock.map(row => [esc(row.item) + (mode === 'tt' && on(p, 'showcase1', 0) && row.source?.note1 ? '<br>' + esc(row.source.note1) : '') + (mode === 'tt' && on(p, 'showcase2', 0) && row.source?.note2 ? '<br>' + esc(row.source.note2) : ''), esc(row.cost), ...(shelf ? [row.qty] : [])]));
@@ -314,7 +314,10 @@
     for (const [key, label, types] of sections) if (on(p, key)) for (let i = 0; i < economy; i++) assign(label, types);
     if (mode === 'post' && on(p, 'law')) {
       const officials = available.length >= 3 ? shuffle(available).slice(0, Math.ceil(width * height / 3) + int(2, 5)) : shuffle(buildings.filter(b => b.owner)).slice(0, 2);
-      html += '<section class="town-officials"><h3>' + esc(title) + ' Officials</h3>' + officials.map((b, i) => `<p><b>${i === 0 ? buildings.length > 800 ? 'GOVERNOR' : buildings.length > 400 ? 'MAYOR' : 'CONSTABLE' : 'LAW ENFORCEMENT'}:</b> ${b.owner.html} (Lives in #${b.number}).</p>`).join('') + '</section>';
+      // tool_mtown.php: officers carry a technology-level weapon while on duty.
+      const official = buildings.length > 800 ? 'Governor' : buildings.length > 400 ? 'Mayor' : 'Constable', techy = String(p.techy);
+      const dutyWeapon = () => W.monsterWeapon({ weapons: String(techy === '1' ? int(1, 3) : techy === '2' ? int(4, 5) : int(2, 5)) }, p).toLowerCase();
+      html += '<section class="town-officials"><h3>' + esc(title) + ' Officials</h3><p>These are the ' + esc(title.toLowerCase()) + ' officials from the ' + official + ' to the Law Enforcement officers.</p>' + officials.map((b, i) => `<p><b>${i === 0 ? official.toUpperCase() : 'LAW ENFORCEMENT'}:</b> ${b.owner.html} (Lives in #${b.number}${i === 0 ? '' : ' and carries a ' + esc(dutyWeapon()) + ' while on duty'}).</p>`).join('') + '</section>';
     }
     W.storage.set('last-town', { options: p, mode, title, buildings, tiles: map.tiles });
     return html;

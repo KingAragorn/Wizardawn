@@ -601,6 +601,19 @@ test('post-apocalyptic businesses use original owner titles and numbered vault c
   assert.deepEqual(numbers, numbers.map((_, i) => i + 1));
   assert.doesNotMatch(html, /undefined|NaN|<b>Owner:<\/b>/);
 });
+test('T&T guild services follow leaders and post-apocalyptic officers carry duty weapons', () => {
+  W.rng = W.random('tt-guild-text');
+  const tt = W.routes.ttown.generate({ map_rooms: 40, rulers: '0', empty: '0', stores: '0', guilds: '1', police: '0', church: '0' });
+  const wiz = tt.indexOf('WIZARDS GUILD LEADER'), text = tt.indexOf('to other wizards only');
+  assert.ok(wiz >= 0 && text > wiz);
+  assert.ok(tt.indexOf('appraise an item for 400gp') > tt.indexOf('ROGUES GUILD LEADER'));
+  W.rng = W.random('mtown-law');
+  const pa = W.routes.mtown.generate({ game: 'gamma', map_rooms: 30, empty: '1', stores: '0', law: '1', techy: 1 });
+  assert.match(pa, /officials from the Constable to the Law Enforcement officers/);
+  assert.match(pa, /<b>CONSTABLE:<\/b>/);
+  assert.match(pa, /and carries a [a-z][^<]* while on duty\)/);
+  assert.doesNotMatch(pa, /undefined|NaN/);
+});
 test('post-apocalyptic citizens use age-based hit dice and robot households do not have children', () => {
   const ranges = { child: [3, 9], young: [5, 12], mature: [7, 18], 'middle-aged': [6, 17], old: [4, 10] };
   for (const [age, [min, max]] of Object.entries(ranges)) for (const game of ['mutfut', 'gamma', 'meta']) {

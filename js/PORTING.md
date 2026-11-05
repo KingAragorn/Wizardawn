@@ -416,3 +416,5 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - mtown: owner titles per tool_mtown.php (Banker, Bartender, Doctor, Pawn
   Broker, "Owner (Army Surplus)" …), stored money always shown; vaults numbered
   across the settlement with conditioned junk values and a money bag. 116 tests.
+- ttown: T&T wizard/rogue guild services now follow the guild leader with the original fantasy_stores_tt.php wording.
+- mtown: officials intro line, Governor/Mayor/Constable title, and law officers carry a PAgetWeapon duty weapon chosen by tech level (tool_mtown.php).
