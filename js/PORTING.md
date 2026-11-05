@@ -425,3 +425,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - uruins: stranded vehicles use VehicleRobotMaker (vehicle_and_robots.php): 2d6 condition bands, 1-in-3 drained fuel, candle/military colors, Metamorphosis Alpha list, ucwords casing, and the "STRANDED VEHICLE NEXT TO THE BUILDING..." heading. Broken Urthe vehicles and robot text remain partial.
 - uexfl/uruins: uexfl prints "SOMETHING UNUSUAL IN THE ROOM..."; uruins robots use "STRANDED ROBOT INSIDE/NEXT TO THE BUILDING..." (other post maps: "DERELICT ROBOT IN THE ROOM...").
 - uruins: Broken Urthe stranded vehicles use the 24-entry Urthe list from VehicleRobotMaker.
+- uexfl: fixed 2% unusual-room chance; post rooms without atmosphere read "This area contains..." or "Empty of mundane items." (uexfl/uruins).

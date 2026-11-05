@@ -100,8 +100,11 @@
       }
     }
     const furnish = contents.join('; ');
-    if (atmosphere || furnish) content.push('<p>' + esc([atmosphere, furnish].filter(Boolean).join(' ')) + '</p>');
-    if (W.d(100) <= W.number(p.x_weird, post ? 0 : 1, 0, 100)) content.push('<p><b>SOMETHING UNUSUAL IN THE ' + (p.adventureMode === 'uexfl' ? 'ROOM' : 'AREA') + '...</b> ' + esc(post && W.postFeature ? W.postFeature(p, total) : W.unusualRoom(p, total)) + '</p>');
+    // tool_uexfl.php/tool_uruins.php: with no atmosphere a post room reads "This area contains..." or "Empty of mundane items."
+    if (post && !atmosphere && yes(p, 'x_furnish') && !custom) content.push('<p>' + esc(furnish ? 'This area contains...' + furnish.replace(/\.$/, '') + '.' : 'Empty of mundane items.') + '</p>');
+    else if (atmosphere || furnish) content.push('<p>' + esc([atmosphere, furnish].filter(Boolean).join(' ')) + '</p>');
+    // tool_uexfl.php always uses a fixed 2% unusual-room chance.
+    if (W.d(100) <= (p.adventureMode === 'uexfl' ? 2 : W.number(p.x_weird, post ? 0 : 1, 0, 100))) content.push('<p><b>SOMETHING UNUSUAL IN THE ' + (p.adventureMode === 'uexfl' ? 'ROOM' : 'AREA') + '...</b> ' + esc(post && W.postFeature ? W.postFeature(p, total) : W.unusualRoom(p, total)) + '</p>');
     if (post && W.d(100) <= W.number(p.x_frob, 0, 0, 100)) {
       const robots = W.monsters({ ...p, terrain: '', level: 0 }).filter(m => /robot|android|cyborg/i.test(m.name));
       if (robots.length) content.push('<div class="stranded-robot"><b>' + (p.adventureMode === 'uruins' ? 'STRANDED ROBOT ' + (W.d(2) === 1 ? 'INSIDE' : 'NEXT TO') + ' THE BUILDING...' : 'DERELICT ROBOT IN THE ROOM...') + '</b><br>' + W.monsterStats(pick(robots), true, p) + '</div>');

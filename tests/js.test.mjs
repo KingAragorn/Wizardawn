@@ -645,8 +645,10 @@ test('Broken Urthe stranded vehicles use the Urthe vehicle list', () => {
 });
 test('uexfl unusual rooms and uruins robots use the original headings', () => {
   W.rng = W.random('headings');
-  const sci = W.routes.uexfl.generate({ map_rooms: 12, x_weird: 100 });
-  assert.match(sci, /SOMETHING UNUSUAL IN THE ROOM\.\.\./);
+  const sci = W.routes.uexfl.generate({ map_rooms: 300, x_weird: 100 });
+  const unusual = (sci.match(/SOMETHING UNUSUAL IN THE ROOM\.\.\./g) || []).length;
+  assert.ok(unusual >= 1 && unusual < 25, 'uexfl uses a fixed 2% chance');
+  assert.match(sci, /This area contains\.\.\.|Empty of mundane items\./);
   assert.doesNotMatch(sci, /UNUSUAL IN THE AREA/);
   const ruins = W.routes.uruins.generate({ map_rooms: 12, x_frob: 100, x_fveh: 100 });
   assert.match(ruins, /STRANDED VEHICLE NEXT TO THE BUILDING\.\.\./);
