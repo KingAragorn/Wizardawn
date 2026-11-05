@@ -1280,3 +1280,20 @@ test('scifim ports the other-game robots with terrain filtering and level tables
   assert.equal(rows.retroWeapons.map(list => list.length).join(), '17,16,15,11');
   assert.equal(rows.retroRobotLevels.length, 20);
 });
+
+test('scifim ports the other-game alien creatures with habitats, housing and terrain filtering', () => {
+  for (const slug of ['urthe', 'gamma']) for (let seed = 0; seed < 40; seed++) {
+    W.rng = W.random('scifia-' + slug + seed);
+    const output = W.routes.scifim.generate({ game: slug, r_amount: 0, m_amount: 4 });
+    assert.equal(occurrences(output, /class="scifi-creature scifi-alien"/g), 4);
+    assert.match(output, /Defenses:<\/td><td>E:-?\d+&nbsp;\/&nbsp;M:/);
+    assert.match(output, /is some type of /);
+    assert.doesNotMatch(output, /undefined|NaN|not ported/);
+    W.rng = W.random('scifiat-' + seed);
+    const swamp = W.routes.scifim.generate({ game: slug, r_amount: 0, m_amount: 2, x_terrain: 'swamps & marshes' });
+    assert.equal(occurrences(swamp, /Habitat:<\/td><td>Swamps & Marshes</g), 2);
+  }
+  W.rng = W.random('names');
+  const names = W.scifiAlienNames(6);
+  assert.equal(names.join(), [...names].sort().join());
+});

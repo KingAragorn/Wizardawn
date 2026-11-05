@@ -315,6 +315,363 @@
       return html + `<p>${esc(text.replace(/\s+/g, ' ').trim())}</p></section>`;
     }
   };
+  const plainColor = () => ['black', 'blue', 'gray', 'green', 'red', 'brown', 'orange', 'yellow', 'tan', 'purple', 'white', 'gold', 'silver', 'bronze', 'copper', 'platinum'][int(0, 15)];
+  const leatherColor = () => ['black', 'blue', 'gray', 'green', 'red', 'brown', 'brown', 'brown', 'brown', 'brown', 'brown', 'brown', 'brown', 'brown', 'orange', 'yellow', 'tan', 'purple', 'white'][int(0, 18)];
+  const designColor = () => ['gold', 'silver', 'scarlet', 'amber', 'azure', 'emerald', 'indigo', 'ivory', 'jade', 'maroon', 'royal blue', 'violet'][int(0, 11)];
+  // PAgetWeapon($type, "Broken Urthe") from functions/weapon_equipped.php; the scifim aliens always pass Broken Urthe, so the (x2)/(x3) modifiers are blank.
+  const paWeapon = type => at(D.paWeapons[[8, 0, 1, 3, 5, 7][type] ?? 8]).map(part => typeof part === 'string' ? part : part.quantity ? int(...part.quantity) : '').join('');
+  // Housing tables (tool_scifim.php lines 1838-2160): [primitive, how_primitive 1, how_primitive 2, industrial, modern, advanced, texts].
+  // Text kinds: g/k/i = "They live in {size}{group|knight|industry} ...", m/a = modern/advanced industry towns, M3/A3 = shore, floating or sky; `$` is the size word again.
+  const cityTables = {
+    forest: [[0, 4], [4, 5], [5, 8], [9, 10], 11, 12, ['g|within the large tree roots', 'g|high in the trees', 'g|within burrows in the ground', 'g|within tents made of leaves and branches', 'g|within tents made of furs and skins', 'g|within houses built from trees', 'g|within wood and stone houses', 'k|within wood and stone houses', 'k|within stone houses', 'i|built with wood and stone', 'i|built with wood, stone, and metal', 'm', 'a']],
+    hills: [[0, 2], [2, 4], [5, 7], [5, 9], 10, 11, ['g|within tents made of leaves and grasses', 'g|within burrows in the ground', 'g|within tents made of leaves and grasses', 'g|within tents made of furs and skins', 'g|within wood and mud houses', 'k|within wood and plaster houses', 'k|within stone houses', 'k|within stone houses and buildings', 'i|built with concrete', 'i|built with concrete and metal', 'm', 'a']],
+    mountains: [[0, 2], [2, 3], [3, 6], [6, 8], 9, 10, ['g|within mountain caves', 'g|within tents made of furs and skins', 'g|within tents made of furs and skins', 'g|within wood and mud houses', 'k|within wood and plaster houses', 'k|within stone houses', 'k|within stone houses and buildings', 'i|built with concrete', 'i|built with concrete and metal', 'm', 'a']],
+    swamps: [[0, 1], [1, 3], [4, 6], [5, 8], 9, 10, ['g|within tents made of leaves and branches', 'g|within tents made of furs and skins', 'g|within houses built from trees', 'g|within wood and stone houses', 'k|within wood and stone houses', 'k|within stone houses', 'k|within stone houses and buildings', 'i|built with wood and stone', 'i|built with wood, stone, and metal', 'm', 'a']],
+    deserts: [[0, 2], [2, 4], [5, 7], [7, 9], 10, 11, ['g|under the sand dunes', 'g|within tents made of furs and skins', 'g|within tents made of furs and skins', 'g|within houses built from mud and sticks', 'g|within mud and stone houses', 'k|within plaster and stone houses', 'k|within stone houses', 'k|within stone houses and buildings', 'i|built with wood and stone', 'i|built with wood, stone, and metal', 'm', 'a']],
+    snow: [[0, 3], [2, 5], [5, 9], [9, 11], 12, 13, ['g|within small caves', 'g|within burrows under the ice and snow', 'g|within ice stacked homes', 'g|within tents made of furs and skins', 'g|within tents made of furs and skins', 'g|within houses built from trees', 'g|within wood and stone houses', 'k|within wood and stone houses', 'k|within stone houses', 'k|within stone houses and buildings', 'i|built with wood and stone', 'i|built with wood, stone, and metal', 'm', 'a']],
+    underground: [[0, 1], [1, 3], [2, 3], [3, 4], 5, 6, ['g|within $ caves', 'g|within $ caverns with tents made of furs and skins', 'g|within $ caverns with tents made of furs and skins', 'g|within $ caverns with homes carved into the stone', 'g|within $ caverns with stone structures', 'm| in gigantic caverns below the surface', 'a| in gigantic caverns below the surface']],
+    both: [[0, 3], [3, 6], [5, 9], [9, 12], [13, 14], [15, 16], ['g|within $ underwater caves', 'g|within $ underwater caverns', 'g|within tents on the shore made of leaves and branches', 'g|within tents on the shore made of furs and skins', 'g|within houses built from trees on the shore', 'g|within $ underwater caverns with homes carved into the stone', 'g|within $ underwater caverns with stone structures', 'g|within wood and stone houses on the shore', 'k|within stone houses on the shore', 'k|within stone houses and buildings on the shore', 'i|built with wood and stone on the shore', 'g|within $ underwater caverns with stone structures', 'i|built with wood, stone, and metal on the shore', 'M3', 'm| under the water', 'A3', 'a| under the water']],
+    swim: [[0, 1], [0, 2], [0, 3], 3, 4, 5, ['g|within $ underwater caves', 'g|within $ underwater caverns', 'g|within $ underwater caverns with homes carved into the stone', 'g|within $ underwater caverns with stone structures', 'm| under the water', 'a| under the water']],
+    shore: [[0, 1], [1, 2], [3, 5], [6, 7], 8, 9, ['g|within tents on the shore made of leaves and branches', 'g|within tents on the shore made of furs and skins', 'g|within houses built from trees on the shore', 'g|within wood and stone houses on the shore', 'k|within stone houses on the shore', 'k|within stone houses and buildings on the shore', 'i|built with wood and stone on the shore', 'i|built with wood, stone, and metal on the shore', 'M3', 'A3']]
+  };
+  // Name list from tool_scifim.php lines 939-975: speciesName() with random vowel/consonant padding, then sorted.
+  W.scifiAlienNames = function (count) {
+    const cons = 'bcdfghjklmnprstvwxyz', vow = 'aeiou', isV = c => vow.includes(c) && c !== '';
+    const pad = name => {
+      const top = name.charAt(0), end = name.slice(-1);
+      if (isV(end) && int(1, 4) !== 1) name += cons[int(0, 19)];
+      else if (!isV(end) && int(1, 4) !== 1) name += vow[int(0, 4)];
+      if (isV(top) && int(1, 3) !== 1) name = cons[int(0, 19)] + name;
+      else if (!isV(top) && int(1, 3) !== 1) name = vow[int(0, 4)] + name;
+      return name;
+    };
+    const names = [];
+    for (let i = 0; i < count; i++) {
+      let name = pad(String(at(D.postTables.helpers.speciesName[0][1])).toLowerCase());
+      if (int(1, 2) === 1) name = pad(name);
+      names.push(name);
+    }
+    return names.sort();
+  };
+  const slimeColor = () => ['dark', 'blue', 'gray', 'black', 'green', 'red', 'brown', 'orange', 'yellow', 'purple', 'clear', 'white'][int(0, 11)];
+  const beamColor = () => ['red', 'blue', 'green', 'orange', 'yellow', 'purple', 'white'][int(0, 6)];
+  const fogColor = () => ['dark', 'blue', 'gray', 'gray', 'gray', 'gray', 'green', 'red', 'brown', 'orange', 'yellow', 'purple', 'white', 'white', 'white', 'white'][int(0, 15)];
+  // specialAbility() from tool_scifim.php, including its fixed RNG call order.
+  W.scifiSpecialAbility = function (level, game, eyes, swims) {
+    if (level < 1) level = int(1, 20);
+    const half = Math.ceil(level / 2 + 1), fifth = Math.ceil(level / 5), feet = () => int(1, 4) * 5;
+    const w1 = ['by bending light around them', 'by chemically changing their color'][int(0, 1)];
+    const w2 = ['hit with energy based weapons', 'hit with blunt objects', 'they feel threatened'][int(0, 2)];
+    const w3 = ['they want to escape a dangerous situation', 'they are preparing for a stealthy attack'][int(0, 1)];
+    let w4 = ['powder substance on themselves', 'slimy substance on themselves'][int(0, 1)];
+    if (swims > 0) w4 = 'slimy substance on themselves';
+    const w5 = ['die', 'suffer 1d4 damage', 'suffer 1d6 damage', 'suffer 1d8 damage', 'suffer 2d4 damage', 'suffer 2d6 damage', 'suffer 2d8 damage', 'suffer 3d6 damage', 'suffer 2d10 damage', 'suffer 2d12 damage', 'suffer 3d8 damage'][int(0, Math.round(level / 2))] ?? 'suffer 1d4 damage';
+    const [w6, w6save] = [['electrical', 'energy'], ['freezing', 'energy'], ['scorching', 'energy'], ['irradiated', 'radiation']][int(0, 3)];
+    let w7 = ['1d4', '1d4', '1d6', '1d8', '2d4'][int(0, Math.round(level / 5))] ?? '1d4';
+    if (int(1, 3) === 1) w7 += '+' + int(1, 4);
+    const w8 = ['suffer a -' + fifth + ' to attack rolls', 'fall down gagging for ' + fifth + ' rounds.', 'forced to retreat.', 'be put into a trance for ' + fifth + ' rounds.', 'fall unconscious for ' + fifth + ' rounds.'][int(0, 4)];
+    const w9 = eyes === 1 ? 'eye' : eyes > 1 ? 'eyes' : 'mouth';
+    const w10 = ['spikes', 'quills', 'bristles', 'needles'][int(0, 3)];
+    const w11 = eyes > 0 && int(1, 2) === 1 ? eyes === 1 ? 'eye' : 'eyes' : 'body';
+    const k12 = int(0, 9);
+    const w12 = k12 === 0 ? 'mercury' : 'a ' + slimeColor() + ' ' + ['', 'acid', 'bile', 'poison', 'flammable liquid', 'liquid, that can cause a euphoric effect if ingested, ', 'liquid, that can cure many illnesses if ingested, ', null, 'liquid, that has healing properties if rubbed on wounds, ', 'liquid, that has a numbing effect if rubbed on skin, '][k12];
+    const w12f = k12 === 7 ? w12.replace(/null$/, 'liquid, that can slowly kill one over a period of ' + int(2, 15) + ' days if ingested, ') : w12;
+    const w13 = [() => 'become electrified for ' + half + ' rounds, where anyone touching it must make an energy defense test or ' + w5 + '.', () => 'emit an electrical field for ' + half + ' rounds, where anyone within ' + (level + 4) + ' feet of it must make an energy defense test or ' + w5 + '.', () => 'emit an electro-magnetic field for ' + half + ' rounds, where any electronic device within ' + (level + 4) + ' feet will be deactivated.'][int(0, 2)]();
+    const w14 = ['an acidic substance that will corrode items or cause ' + w7 + ' damage if touched.', 'a slippery substance that will allow it to fit through smaller openings or escape one`s grasp.', 'an hallucinogenic substance that will cause one to hallucinate for ' + half + ' rounds unless the can make a mind defense test.', 'a numbing substance that will cause one to drop their items, unable to pick them up for about ' + half + ' rounds unless they can make a defense test for toxin.', 'a paralytic substance that will cause one to fall over, unable to move for about ' + half + ' rounds unless they can make a defense test for toxin.', 'a sticky substance that will cause melee weapons or others to stick to it for about ' + half + ' rounds.', 'a toxic substance that will cause ' + w7 + ' damage if touched, unless one makes a defense test for toxins.', 'a smelly substance that will cause anyone that touches it to smell horrible for about ' + half + ' days unless they chemically clean themselves.', 'an irradiates substance that will cause ' + w7 + ' damage if touched, unless one can make a defense test against radiation.'][int(0, 8)];
+    const w15 = [() => 'is acidic and will corrode items or cause ' + w7 + ' damage to those within the ' + feet() + ' foot cloud.', () => 'will cause blindness to those within the ' + feet() + ' foot cloud unless they can make a defense test for toxin.', () => 'will cause one to hallucinate for ' + half + ' rounds unless the can make a mind defense test.', () => 'will cause eye irritation to those within the ' + feet() + ' foot cloud, suffering a -' + fifth + ' to attack rolls unless they can make a defense test for toxin.', () => 'will cause paralysis, unable to move for about ' + (level / 2 + 1) + ' rounds unless they can make a defense test for toxin.', () => 'is toxic and will cause ' + w7 + ' damage to those within the ' + feet() + ' foot cloud, unless one makes a defense test for toxins.', () => 'smells horrible and will cause anyone within the ' + feet() + ' foot cloud to stink for about ' + half + ' days unless they chemically clean themselves.', () => 'is irradiated and will cause ' + w7 + ' damage to anyone within the ' + feet() + ' foot cloud, unless one can make a defense test against radiation.', () => 'will cause those to fall asleep for ' + half + ' rounds if within the ' + feet() + ' foot cloud, and only if they fail to make a defense test for toxin.'][int(0, 8)]();
+    const w16 = ['has an ability to control the minds of opponents for ' + half + ' rounds unless they can make a mind defense test.', 'has an ability to reflect any energy based projectiles (lasers and plasma weapons) back at the attacker, allowing them to make a range attack back at the attacker.', 'has an ability to track prey that has been in the area recently and no more than ' + (level * 100 + 100).toLocaleString('en-US') + ' feet away.', 'has a long sticky tongue that can grab nearby objects, disarm enemies, or grab prey.', 'has the ability to stretch their limbs up to ' + level * 5 + ' feet, allowing them to get to objects or opponents from a greater distance.'][int(0, 4)];
+    const w17 = ['another humanoid', 'a rock', 'a plant', 'a harmless creature'][int(0, 3)];
+    const range = half * 5;
+    const w18 = ['an electrical breath weapon that has a range of ' + range + ' feet, where anyone hit by it, that fails to make a defense test for energy, will ' + w5 + '.', 'a frost breath weapon that has a range of ' + range + ' feet, where anyone hit by it will suffer ' + w7 + ' damage.', 'a flaming breath weapon that has a range of ' + range + ' feet, where anyone hit by it will suffer ' + w7 + ' damage.', 'a plasma breath weapon that has a range of ' + range + ' feet, where anyone hit by it, that fails to make a defense test for energy, will ' + w5 + '.', 'a poison breath weapon that has a range of ' + range + ' feet, where anyone hit by it, that fails to make a defense test for toxins, will ' + w5 + '.', 'a sonic breath weapon that has a range of ' + range + ' feet, where anyone hit by it will suffer ' + w7 + ' damage.', 'a radiation breath weapon that has a range of ' + range + ' feet, where anyone hit by it, that fails to make a defense test for radiation, will ' + w5 + '.'][int(0, 6)];
+    const effect = w6 === 'electrical' ? 'turn into a pile of dust' : w6 === 'freezing' ? 'turn into a solid block of ice' : w6 === 'scorching' ? 'turn into a pile of melted goo' : 'turn into a scorched corpse';
+    const w19 = ['causes ' + w7 + ' damage unless one can make a defense test against ' + w6save, 'causes ' + w7 + ' damage, but will do double damage unless one can make a defense test against ' + w6save, 'causes one to ' + effect + ' unless one can make a defense test against ' + w6save][int(0, 2)];
+    const two = (a, b) => int(1, 2) === 1 ? a() : b();
+    const cases = [
+      () => 'can change their color to match the surrounding area, with a ' + int(1, 5) + '0% chance to be noticed by others. They do this ' + w1 + '.',
+      () => 'can grow ' + int(5, 10) + '0% larger when ' + w2 + '.',
+      () => 'can shrink ' + int(5, 10) + '0% smaller when ' + w3 + '.',
+      () => 'has a poisonous ' + w4 + ' where, if one touches them, must make a defense test for toxin or ' + w5 + '.',
+      () => 'can turn almost invisible, with a ' + int(1, 5) * 5 + '% chance to be noticed by others. They do this ' + w1 + '.',
+      () => 'can emit a beam of ' + beamColor() + ' ' + w6 + ' energy from their ' + w9 + ' that ' + w19 + '.',
+      () => 'can heal up to ' + w7 + ' damage when hit with energy-based weapons.',
+      () => 'can change their appearance to look like a ' + w17 + ' for ' + half + ' turns unless they are attacked.',
+      () => two(() => 'can have their body protrude ' + w10 + ' that are poisonous to the touch where one must make a defense test for toxin or ' + w5 + '.', () => 'can have their body protrude ' + w10 + ' that can cause ' + w7 + ' damage if touched.'),
+      () => two(() => 'can launch a sticky ' + slimeColor() + ' substance from their mouth as a separate ranged attack...which will immobilize the victim for ' + half + ' rounds.', () => 'can launch a sticky ' + slimeColor() + ' substance from their mouth as a separate ranged attack...which will immobilize the victim until ' + level * 5 + ' points of damage can be done to the substance to free the victim.'),
+      () => 'can emit a ' + beamColor() + ' light from their ' + w11 + ' that will light up a ' + int(2, 20) * 5 + ' foot area for ' + half + ' turns.',
+      () => 'has ' + w12f + ' in their system instead of normal blood.',
+      () => two(() => 'can cause an illness if physically touched that will cause ' + w7 + ' damage per day if not treated.', () => 'can cause an illness if physically touched that will cause ' + w7 + ' damage per day, and death occurs after ' + int(4, 10) + ' days, if not treated.'),
+      () => 'can ' + w13,
+      () => 'can excrete ' + w14,
+      () => two(() => 'can super heat their external temperature for ' + half + ' rounds where anyone within ' + feet() + ' feet will suffer ' + w7 + ' damage per round.', () => 'can super cool their external temperature for ' + half + ' rounds where anyone within ' + feet() + ' feet will suffer ' + w7 + ' damage per round.'),
+      () => w16,
+      () => 'can regenerate themselves at the rate of ' + level * 2 + ' points per turn',
+      () => 'can change the molecular structure of their bodies and pass through objects up to ' + half + ' feet at a single time.',
+      () => { const t = int(1, 3); return t === 1 ? 'can teleport up to ' + level * 10 + ' feet at a single time.' : t === 2 ? 'can turn into a ' + fogColor() + ' colored gas for up to ' + half + ' rounds before having to turn back to normal.' : 'can turn into a ' + slimeColor() + ' colored liquid for up to ' + half + ' rounds before having to turn back to normal.'; },
+      () => 'can produce a force field around themselves for ' + half + ' rounds and can absorb up to ' + level * 4 + ' damage.',
+      () => two(() => 'can mimic any sound they hear, often confusing others and luring them toward them.', () => 'can throw any sound they make, often confusing others and distracting them.'),
+      () => eyes > 0 && int(1, 2) === 1 ? 'can see perfectly in total darkness, without the need for a light source.' : eyes > 0 ? 'can see through objects that are no more than ' + half + ' feet thick.' : swims > 0 ? 'can release a ' + slimeColor() + ' ink that will consume a ' + level * 10 + ' foot area, causing others to be unable to see while in it.' : 'will explode if they are killed, leaving quite a mess.',
+      () => two(() => 'can emit an odor for ' + half + ' rounds, where anyone breathing it in must make a defense test for toxin or ' + w8 + '.', () => 'can emit a fragrance for ' + half + ' rounds, where anyone nearbry breathing it in must make a defense test for toxin or be lured in by it.'),
+      () => 'can breath a ' + fogColor() + ' colored gas that ' + w15,
+      // PHP case 25 echoes the bare constant `word18` (a typo for $word18); the intended breath weapon text is used.
+      () => 'has ' + w18,
+      () => 'can move around without making a single sound.'
+    ];
+    return W.retroText(cases[int(0, swims > 0 ? 22 : 26)](), { game }, 0);
+  };
+  const xcolors2 = ['bright ', '', 'dark ', 'light ', 'dull ', 'vibrant ', 'thick ', 'faded ', 'deep ', 'rich ', 'shiny '];
+  const tint = () => xcolors2[int(0, 10)] + colors[int(0, 16)];
+  // One alien creature from the non-Mutant Future branch (tool_scifim.php lines 980-2297).
+  W.scifiAlien = function (s, callme, game) {
+    let flies = 0, swims = 0, legs = 0, arms = 0, skinSpec = 0, mySimilar = '';
+    const xsmart = int(1, 100);
+    let stage = xsmart > 25 ? 'Animal' : xsmart > 16 ? 'Primitive' : xsmart > 9 ? 'Industrial' : xsmart > 5 ? 'Modern' : 'Advanced';
+    const specluk = ['almost similar to', 'somewhat similar to', 'almost like', 'somewhat like', 'close to', 'roughly like', 'relatively like', 'like a mutated version of', 'like a deformed'][int(0, 8)];
+    let species = ['amphibian', 'bird', 'fish', 'invertebrate', 'mammal', 'reptile'][int(0, 5)];
+    if (species === 'amphibian') { swims = 1; legs = 1; s.skinPicker = int(4, 7); }
+    else if (species === 'bird') { if (int(1, 10) > 1) flies = 1; legs = 1; s.skinPicker = int(12, 15); }
+    else if (species === 'mammal') { legs = 1; s.skinPicker = int(4, 11); }
+    // PHP compares the stage name with 25 (`$stage > 25`), which is false for every stage under PHP 7, so reptiles never gain swimming.
+    else if (species === 'reptile') { int(1, 10); s.skinPicker = int(0, 3); }
+    if (species === 'invertebrate') {
+      const k = int(0, 5);
+      if (k === 0) species = 'insect';
+      else if (k === 1 || k === 2) { species = k === 1 ? 'worm' : 'slug'; legs = 98; s.skinPicker = int(4, 7); if (int(1, 4) !== 1) stage = 'Instinctual'; }
+      else if (k === 3) { species = 'squid'; swims = 1; if (int(1, 2) === 1) legs = 1; s.skinPicker = int(4, 7); }
+      else if (k === 4) { species = 'crab'; if (int(1, 2) === 1) species = 'lobster'; swims = 1; legs = 1; }
+      else { species = 'arachnid'; if (int(1, 2) === 1) species = 'spider'; legs = 8; if (int(1, 3) === 1) legs = 6; }
+    }
+    if (species === 'reptile') { if (int(1, 6) === 1) { species = 'snake'; legs = 99; } else { species = 'lizard'; legs = 1; } }
+    if (species === 'insect') {
+      const k = int(0, 7);
+      if (k === 0) { species = 'moth'; if (int(1, 2) === 1) species = 'butterfly'; flies = 1; legs = 1; s.skinPicker = 16; }
+      else if (k === 1) { species = 'grasshopper'; if (int(1, 2) === 1) species = 'cricket'; if (int(1, 2) === 1) flies = 1; legs = 1; s.skinPicker = 16; }
+      else if (k === 2 || k === 3) { species = k === 2 ? 'dragonfly' : 'fly'; flies = 1; legs = 1; s.skinPicker = 16; }
+      else if (k === 4) { species = 'bee'; if (int(1, 2) === 1) species = 'wasp'; flies = 1; legs = 1; s.skinPicker = 16; }
+      else if (k === 5) { species = 'ant'; legs = 1; s.skinPicker = 16; }
+      else if (k === 6) { species = 'beetle'; if (int(1, 3) === 1) flies = 1; legs = 1; s.skinPicker = 16; }
+      else { species = 'catepillar'; legs = 6; s.skinPicker = int(4, 7); if (int(1, 2) === 1) { species = 'centipede'; legs = int(2, 10) * 10; s.skinPicker = 16; } }
+    }
+    if (species === 'fish') {
+      swims = 1; s.skinPicker = int(0, 3);
+      if (int(1, 4) === 1) {
+        const k = int(0, 6);
+        species = ['shark', 'whale', 'hippocampus', 'seal', 'eel', 'turtle', 'ray'][k];
+        s.skinPicker = k === 0 ? int(0, 3) : int(4, 7);
+        if (k === 2) skinSpec = 1; else if (k === 5) skinSpec = 2; else if (k === 6) s.skinPicker = 16;
+      }
+      if (xsmart < 26 && int(1, 5) === 1) legs = 1;
+    }
+    if (species === 'mammal') {
+      const k = int(0, 11);
+      let similar = ['cat', 'dog', 'bear', 'horse', 'cow', 'monkey', 'deer', 'armadillo', 'elephant', 'hippo', 'rhino', 'pig'][k];
+      const alt = { cat: ['tiger', 'lion'], dog: ['wolf'], cow: ['bull'], monkey: ['gorilla'], deer: ['moose', 'elk'], armadillo: ['badger', 'beaver'], pig: ['boar'] }[similar];
+      if (alt) { if (int(1, 2) === 1) similar = alt[0]; if (alt[1] && int(1, 4) === 1) similar = alt[1]; }
+      if (int(1, 3) === 1) mySimilar = 'They look ' + specluk + ' a ' + similar + '.';
+    }
+    if (species === 'amphibian') { const similar = ['frog', 'salamander'][int(0, 1)]; if (int(1, 3) === 1) mySimilar = 'They look ' + specluk + ' a ' + similar + '.'; }
+    if (int(1, 10) === 1) s.skinPicker = int(0, 16);
+    const picker = s.skinPicker ?? 0;
+    let skin = ['scales', 'small scales', 'thick scales', 'large scales', 'squishy skin', 'fleshy skin', 'leathery skin', 'tough skin', 'fur', 'thick fur', 'short fur', 'long fur', 'feathers', 'long feathers', 'short feathers', 'thick feathers', 'exoskeleton'][picker];
+    if (skinSpec === 1) skin += ' over bony plates'; else if (skinSpec === 2) skin += ' with a ' + tint() + ' shell';
+    const colorA = xcolors2[int(0, 10)], colorB = colors[int(0, 16)], skinColor = colorA + colorB;
+    const mySkin = picker === 16 ? 'They are covered in a ' + skinColor + ' ' + skin : 'They are covered in ' + skinColor + ' ' + skin;
+    let fingers = int(2, 10), myWings, myHands;
+    const wingTable = (tiers) => { const fl = int(1, 100); for (const [min, make] of tiers) if (fl > min) return make(); return tiers[tiers.length - 1][1](); };
+    const sameB = t => () => xcolors2[int(0, 10)] + colorB + ' ' + t, anyC = t => () => tint() + ' ' + t, plain = t => () => t;
+    if (picker <= 3) { myWings = wingTable([[50, plain('leathery')], [30, sameB('leathery')], [20, anyC('leathery')], [10, plain('feathery')], [5, anyC('feathery')], [-1, sameB('feathery')]]); myHands = ['scaly claws', 'scaly hands'][int(0, 1)]; }
+    else if (picker <= 7) { myWings = wingTable([[50, plain('leathery')], [30, sameB('leathery')], [-1, anyC('leathery')]]); myHands = ['claws', 'hands'][int(0, 1)]; }
+    else if (picker <= 11) { const wung = ['furry', 'hairy', 'fuzzy'][int(0, 2)]; myWings = wingTable([[50, plain('leathery')], [30, sameB('leathery')], [20, anyC('leathery')], [10, plain(wung + ' skinned')], [5, anyC(wung + ' skinned')], [-1, sameB(wung + ' skinned')]]); myHands = ['furry claws', 'furry hands', 'claws', 'hands'][int(0, 3)]; }
+    else if (picker <= 15) { myWings = wingTable([[50, plain('feathery')], [30, sameB('feathery')], [20, anyC('feathery')], [10, plain('leathery')], [5, anyC('leathery')], [-1, sameB('leathery')]]); myHands = ['talons', 'talons', 'claws', 'hands'][int(0, 3)]; }
+    else { myWings = wingTable([[50, plain('leathery')], [30, sameB('leathery')], [-1, anyC('leathery')]]); myHands = ['claws', 'hands'][int(0, 1)]; }
+    if (stage === 'Animal') {
+      const sharpHand = ['sharp ', 'huge ', 'small ', 'blunt ', 'crushing ', 'razor sharp ', 'monstrous ', '', ''][int(0, 8)];
+      const sharpClaw = ['sharp ', 'huge ', 'small ', 'razor sharp ', 'monstrous ', '', ''][int(0, 6)];
+      const webbed = () => { myHands = sharpClaw + 'claws'; if (int(1, 2) === 1) myHands = sharpClaw + 'webbed claws'; };
+      const bug = () => { myHands = sharpClaw + 'claws'; if (int(1, 3) === 1) { fingers = 0; myHands = sharpHand + 'pincers'; } };
+      if (['amphibian', 'squid', 'fish', 'shark', 'hippocampus', 'eel', 'turtle', 'ray'].includes(species)) webbed();
+      else if (species === 'bird') { myHands = sharpClaw + 'talons'; if (int(1, 4) === 1) myHands = sharpClaw + 'claws'; }
+      else if (['mammal', 'reptile', 'snake', 'lizard', 'whale', 'seal'].includes(species)) myHands = sharpClaw + 'claws';
+      else if (['crab', 'lobster', 'arachnid', 'spider'].includes(species)) { fingers = 0; myHands = sharpHand + 'pincers'; }
+      else if (['moth', 'butterfly', 'grasshopper', 'cricket', 'dragonfly', 'fly', 'bee', 'wasp', 'ant', 'beetle', 'catepillar', 'centipede'].includes(species)) bug();
+    }
+    const lastFoot = myHands.split(' ').pop();
+    const swiper = lastFoot === 'talons' ? 'talon' : lastFoot === 'hands' ? 'fist' : lastFoot === 'pincers' ? 'pincer' : 'claw';
+    if ((legs === 1 && int(1, 100) > 75) || species === 'bird') legs = [2, 2, 2, 2, 2, 4, 4, 6, 8][int(0, 8)];
+    else if (legs === 1) legs = [2, 4, 4, 4, 4, 4, 6, 6, 8][int(0, 8)];
+    const legSize = ['', '', '', 'short ', 'long ', 'large ', 'small '];
+    const movement = (legs === 2 ? int(4, 10) : legs === 4 ? int(6, 12) : legs === 6 ? int(8, 14) : legs === 8 ? int(10, 16) : int(4, 16)) * 10;
+    const moveSwim = int(6, 16) * 10, moveFly = int(6, 16) * 10;
+    let mover = 0;
+    // PHP sets the slither text for 99 legs, then its `else if ($legs > 0)` (paired with the 98 test) overwrites it.
+    if (legs === 99) { s.myLegs = "They slither around, moving " + movement + "' per turn."; mover = 1; }
+    if (legs === 98) { s.myLegs = "They use their muscles to push themselves along, moving " + movement + "' per turn."; mover = 1; }
+    else if (legs > 0) {
+      s.myLegs = "They move about " + movement + "' per turn on " + legs + ' ' + legSize[int(0, 6)] + 'legs'; mover = 1;
+      s.myLegs += stage === 'Animal' && swiper !== 'pincer' ? ' with ' + myHands + ' for feet.' : '.';
+    }
+    if (swims > 0 && mover > 0) s.myLegs += " They can also swim at about " + moveSwim + "' per turn.";
+    else if (swims > 0) { s.myLegs = "They can swim at about " + moveSwim + "' per turn."; mover = 1; }
+    if (int(1, 100) > 96) flies = 1;
+    if (flies > 0 && mover > 0) s.myLegs += ' They have ' + myWings + " wings that allow them to fly at about " + moveFly + "' per turn.";
+    else if (flies > 0) s.myLegs = "They can fly at about " + moveFly + "' per turn with their " + myWings + ' wings.';
+    const myDwell = swims > 0 ? int(10, 11) : game === 'urthe' ? int(0, 9) : int(1, 9);
+    let dwell = ['wastelands', 'forests', 'hills', 'mountains', 'plains & grasslands', 'swamps & marshes', 'deserts', 'jungles', 'snow & icy regions', 'underground areas', 'rivers & lakes', 'oceans'][myDwell];
+    if (myDwell === 6 && int(1, 4) === 1) dwell = 'deserts & tropics';
+    if (myDwell === 7 && int(1, 4) === 1) dwell = 'jungles & tropics';
+    if (myDwell >= 10 && flies === 0) swims = 1;
+    if (int(1, 100) <= 50) int(0, 2);
+    let myDaily = ['They inhabit the ' + dwell + ' and are more active during the day.', 'They inhabit the ' + dwell + ' and are more active during the night.', 'They inhabit the ' + dwell + ' and are only active during the day.', 'They inhabit the ' + dwell + ' and are only active during the night.'][int(0, 8)] ?? 'They inhabit the ' + dwell + ' and are active during varying times of day or night.';
+    if (dwell === 'underground areas') myDaily = 'They inhabit the ' + dwell + ' like caves and tunnels.';
+    let pFood = ['leafy plants', 'plant roots', 'fruits', 'vegetables', 'shrubs and bushes', 'tree bark', 'succulent plants', 'grasses'][int(0, 7)];
+    let mFood = ['meat', 'smaller creatures', 'live creatures', 'creature carcasses', 'insects', 'reptiles', 'birds', 'any meat'][int(0, 7)];
+    if ((swims > 0 && legs === 0) || (swims > 0 && legs > 0 && int(1, 3) === 1)) { pFood = ['seaweed', 'algae'][int(0, 1)]; mFood = ['meat', 'smaller creatures', 'shellfish', 'fish', 'reptiles', 'any meat'][int(0, 5)]; }
+    let myDiet = ['They are carnivores, eating ' + mFood + ' as their main diet.', 'They are herbivores, eating ' + pFood + ' as their main diet.', 'They are omnivores, eating ' + mFood + ' or ' + pFood + '.'][int(0, 2)];
+    if (['Primitive', 'Industrial', 'Modern', 'Advanced'].includes(stage)) myDiet = ['They are mainly carnivores, eating various meats.', 'They are mainly herbivores, eating various fruits and vegetables.', 'They are mainly omnivores, eating various fruits, vegetables, and meat.', 'They are mainly omnivores, eating various fruits, vegetables, and meat.'][int(0, 3)];
+    const beast = stage === 'Animal' || stage === 'Instinctual';
+    if (['slug', 'worm', 'snake'].includes(species) && beast) arms = 0;
+    else if (beast && int(1, 10) !== 1) arms = 0;
+    else if (int(1, 100) > 25) arms = 2;
+    else arms = 2 * int(1, 3);
+    const armSize = ['', 'short ', 'long ', 'muscular ', 'thin ', 'large ', 'small '];
+    const myArms = arms === 0 ? '' : fingers === 0 ? 'They have ' + arms + ' ' + armSize[int(0, 6)] + 'arms with ' + myHands + '.' : 'They have ' + arms + ' ' + armSize[int(0, 6)] + 'arms with ' + fingers + ' digit ' + myHands + '.';
+    let high = 0, wide = 0, long = 0, humanoid = 0;
+    const xsize = int(1, 100), dolphin = () => { if (species === 'whale') species = 'dolphin'; };
+    if (beast) {
+      if (xsize > 40) { high = int(1, 5); dolphin(); } else if (xsize > 20) { high = int(3, 8); dolphin(); } else if (xsize > 10) { high = int(5, 12); dolphin(); } else if (xsize > 5) high = int(15, 30); else high = int(20, 60);
+    } else if (xsize > 80) { high = int(1, 5); dolphin(); } else if (xsize > 30) { high = int(3, 8); dolphin(); } else if (xsize > 2) { high = int(5, 12); dolphin(); } else high = int(15, 30);
+    const longOnes = ['squid', 'catepillar', 'centipede', 'eel', 'snake', 'slug', 'worm'];
+    const stretch = div => { long = high; high = long / div; if (high < 1) high = 1; if (high === long) long = high * int(3, 12); wide = high; if (species === 'centipede') wide = high / 3; else if (species === 'squid') wide = high + int(-2, 2); };
+    const flat = (a, b) => { long = high; high = long / int(a, b); if (high < 1) high = 1; wide = high / int(2, 3); };
+    if (beast) {
+      if (longOnes.includes(species)) stretch(int(8, 12));
+      else if (['hippocampus', 'seal', 'shark', 'dolphin', 'whale', 'fish', 'lobster', 'lizard'].includes(species)) flat(5, 10);
+      else if (['turtle', 'amphibian', 'crab', 'spider', 'arachnid'].includes(species)) flat(2, 3);
+      else if (species === 'bird') { wide = high / 5; long = high * int(2, 3); }
+      else if (species === 'mammal') { wide = high / 2; long = high * int(3, 5); }
+      else if (['moth', 'butterfly', 'grasshopper', 'cricket', 'dragonfly', 'wasp', 'ant'].includes(species)) { long = high; high = long / int(3, 6); if (high < 1) high = 1; wide = high; }
+      else if (['fly', 'bee', 'beetle'].includes(species)) { long = high; high = long / int(2, 4); if (high < 1) high = 1; wide = high * int(1, 2); }
+      else if (species === 'ray') { wide = high; long = high * int(1, 3); high = high / 10; }
+    } else if (longOnes.includes(species)) stretch(2);
+    else humanoid = 1;
+    high = Math.floor(high); wide = Math.floor(wide); long = Math.floor(long);
+    const wing = high + long + int(1, 5);
+    const unit = v => v < 1 ? int(4, 11) + '"' : v + "'";
+    const sHigh = unit(high), sWide = unit(wide), sLong = unit(long);
+    const mes = ['roughly ', 'usually ', 'normally ', '', 'about '];
+    let mySize, myBig;
+    if (humanoid > 0) { mySize = 'that is ' + mes[int(0, 4)] + sHigh + ' tall'; myBig = sHigh + ' tall'; }
+    else if (sHigh === sWide) { mySize = 'that is ' + mes[int(0, 4)] + sWide + ' wide, and ' + sLong + ' long'; myBig = sWide + ' wide&nbsp;/&nbsp;' + sLong + ' long'; }
+    else { mySize = 'that is ' + mes[int(0, 4)] + sHigh + ' tall, ' + sWide + ' wide, and ' + sLong + ' long'; myBig = sHigh + ' tall&nbsp;/&nbsp;' + sWide + ' wide&nbsp;/&nbsp;' + sLong + ' long'; }
+    if (flies > 0) mySize += ", with a wingspan of " + wing + "'";
+    const xeyes = [0, 1, 2, 2, 2, 2, 3, 4, 6, 8];
+    let eyes = xeyes[int(0, 9)];
+    const eyeColor = (() => { const c = colors[int(0, 16)]; return xcolors2[int(0, 10)] + c; })();
+    const eyeSize = ['', 'small ', 'large ', 'bulbous ', 'small ', 'large ', 'small ', 'large '];
+    if (flies > 0 || swims > 0) eyes = xeyes[int(1, 9)];
+    const myEyes = eyes === 1 ? 'and they can see with a single ' + eyeSize[int(0, 7)] + eyeColor + ' eye.' : eyes > 0 ? 'and they see with ' + eyes + ' ' + eyeSize[int(0, 7)] + eyeColor + ' eyes.' : ['and they cannot see but sense heat patterns in the area.', 'and they cannot see but feel vibrations in the area.', 'and they cannot see but emit a sonar sound to detect objects in the area.', 'and they cannot see but listen to their surroundings.', 'and they cannot see but touch and feel everything around them instead.'][int(0, 4)];
+    const level = int(1, 20);
+    const pmin = [-2, -1, 0, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 10][level - 1];
+    const protection = int(pmin, pmin + 8);
+    const hit = 10 - Math.floor((level - 1) / 2) - int(-2, 2);
+    const stamina = level * 8 + int(0, level);
+    const saves = [[5, 3, 4, 5, 4, 1], [6, 4, 5, 6, 5, 1], [6, 5, 5, 7, 6, 2], [7, 6, 6, 8, 7, 2], [7, 7, 6, 8, 8, 3], [8, 8, 6, 9, 9, 3], [8, 9, 7, 9, 9, 4], [9, 10, 7, 10, 10, 4], [9, 10, 7, 10, 10, 5], [9, 10, 8, 11, 11, 5], [10, 11, 8, 11, 11, 6], [10, 11, 8, 12, 12, 6], [10, 11, 9, 12, 12, 7], [11, 12, 9, 13, 13, 8], [11, 12, 9, 13, 13, 9], [11, 12, 10, 14, 13, 10], [12, 13, 10, 14, 14, 11], [12, 13, 11, 15, 14, 12], [12, 13, 11, 15, 14, 13], [13, 14, 12, 16, 15, 14]][level - 1];
+    let [saveE, saveM, saveR, saveS, saveT] = saves.slice(0, 5).map(v => v + int(-1, 1));
+    const dmgMax = saves[5];
+    if (stage === 'Instinctual') saveM = '-'; else if (stage === 'Animal') saveM -= 3; else if (stage === 'Primitive') saveM -= 2; else if (stage === 'Industrial') saveM -= 1; else if (stage !== 'Modern') saveM += 2;
+    if (dwell === 'wastelands') saveR = int(16, 19);
+    const sep = '&nbsp;/&nbsp;';
+    const defenses = 'E:' + saveE + sep + 'M:' + saveM + sep + 'R:' + saveR + sep + 'S:' + saveS + sep + 'T:' + saveT;
+    let myAttack = '', myDamage = '', myWeapon = '';
+    const dice = ['1d4', '1d6', '1d8', '2d4', '1d10', '1d12', '2d6', '2d8', '1d20', '2d10', '2d12', '3d6', '3d8', '3d10', '3d12'];
+    const mods = ['+1', '+1', '+1', '+1', '+1', '+1', '+1', '+1', '+2', '+2', '+2', '+2', '+2', '+2', '+2', '+2', '+2', '+2', '+3', '+3', '+3', '+3', '+4'];
+    const roll = () => { let d = dice[int(0, dmgMax)]; if (int(1, 10) === 1) d += mods[int(0, 22)]; return d; };
+    const damageDone = roll();
+    if (stage === 'Instinctual') { myAttack = '1 bite'; myDamage = damageDone; }
+    else if (stage === 'Animal') {
+      if (int(1, 4) !== 1 || (legs === 0 && myArms === '') || swiper === 'fist' || swiper === 'pincer') { myAttack = '1 bite'; myDamage = damageDone; }
+      if ((int(1, 4) === 1 || myAttack === '') && ((legs > 0 && legs < 9) || myArms !== '') && swiper !== 'fist' && swiper !== 'pincer') {
+        const swipe = roll();
+        if (myAttack !== '') { myAttack += sep + '1 ' + swiper; myDamage += sep + swipe; }
+        else if (int(1, 4) === 1) { myAttack = '2 ' + swiper + 's'; myDamage = swipe + ' each'; }
+        else { myAttack = '1 ' + swiper; myDamage = swipe; }
+      }
+    } else {
+      if (int(1, 2) === 1 && (swiper === 'talon' || swiper === 'claw')) { myAttack = '1 ' + swiper; myDamage = damageDone; }
+      if (myAttack === '' || int(1, 4) !== 1 || stage !== 'Primitive') {
+        if (myAttack !== '') { myAttack += sep + '1 weapon'; myDamage += sep + 'weapon'; } else { myAttack = '1 weapon'; myDamage = 'weapon'; }
+        let guns;
+        // PHP keeps $how_primitive from earlier creatures; it only changes for Primitive weapon users.
+        if (stage === 'Primitive') { s.howPrimitive = int(0, 2); guns = paWeapon(s.howPrimitive); }
+        else if (stage === 'Industrial') guns = paWeapon(3);
+        else if (stage === 'Modern') guns = paWeapon(int(3, 4));
+        else guns = paWeapon(int(4, 5));
+        const reason = [' as their combat weapon.', ' for the battles they fight.', ' as their favored weapon.', ' for any attacks.', ' for attacking enemies.', ' as their primary weapon.'][int(0, 5)];
+        myWeapon = 'They often carry a ' + guns.toLowerCase() + reason;
+      }
+      if (myAttack === '') { myAttack = '1 ' + swiper; myDamage = damageDone; }
+    }
+    const garbColor = [plainColor, leatherColor, designColor][int(0, 2)]();
+    const hp = s.howPrimitive;
+    let myGarb = '';
+    if (stage === 'Primitive') {
+      if (hp === 1) myGarb = [() => ' and often wear leathery type armor made from nearby animals.', () => ' and often wear animal furs they collected from nearby animals.', () => ' and often wear ' + leatherColor() + ' colored leathery type armor.', () => ' and often wear ' + leatherColor() + ' colored animal furs.'][int(0, 3)]();
+      else if (hp === 2) myGarb = [() => ' and often wear hand-stitched clothing.', () => ' and often wear medieval looking armors.', () => ' and often wear ragged clothing.', () => ' and often wear leathery type armor made from nearby animals.', () => ' and often wear ' + leatherColor() + ' colored leathery type armor.'][int(0, 4)]();
+      else myGarb = [' and often wear leafy plants over some of their bodies.', ' and often wear animal furs they collected from nearby animals.', ' and often paint parts of their bodies in some type of ' + garbColor + ' color.', '.', '.'][int(0, 4)];
+      if (swims > 0) myGarb = '';
+    } else if (stage === 'Industrial') {
+      myGarb = [' and often wear finely-stitched clothing.', ' and often wear rugged clothing.', ' and often wear steel plated military type armors that are mostly ' + garbColor + ' in color.', ' and often wear colorfully designed clothing.', ' and often wear a similar cloth uniform that is mostly ' + garbColor + ' in color.'][int(0, 4)];
+      if (swims > 0) myGarb = [' and often wear skin tight, water resistant, clothing of varying colors.', '.', '.', '.', '.', ' and often wear a skin tight uniform that is mainly ' + garbColor + ' in color.'][int(0, 5)];
+    } else if (stage === 'Modern' || stage === 'Advanced') {
+      myGarb = [' and often wear finely-stitched clothing.', ' and often wear average clothing.', ' and often wear modern military type armor that is mostly ' + garbColor + ' in color.', ' and often wear colorfully designed clothing.', ' and often wear a similar cloth uniform that is mostly ' + garbColor + ' in color.'][int(0, 4)];
+      if (swims > 0) myGarb = [' and often wear skin tight, water resistant, clothing of varying colors.', ' and often wear a plastoid type armor that is mostly ' + garbColor + ' in color.', ' and often wear a silicoid type armor that is mostly ' + garbColor + ' in color.', '.', ' and often wear a skin tight uniform that is mainly ' + garbColor + ' in color.'][int(0, 4)];
+    }
+    let myCity = '';
+    if (!beast) {
+      const G = ['tribes', 'communities', 'groups', 'settlements', 'villages'][int(0, 4)];
+      const K = ['towns', 'communities', 'groups', 'settlements', 'villages'][int(0, 4)];
+      const I = ['towns', 'cities', 'forts', 'villages'][int(0, 3)];
+      int(0, 2); // $my_city_tech is rolled but never shown.
+      const Z = ['large ', 'small ', '', ''][int(0, 3)];
+      const water = dwell === 'rivers & lakes' || dwell === 'oceans';
+      const key = ['forests', 'jungles', 'jungles & tropics', 'deserts & tropics'].includes(dwell) ? 'forest' : ['hills', 'plains & grasslands'].includes(dwell) ? 'hills' : water ? (flies > 0 && swims > 0 ? 'both' : swims > 0 ? 'swim' : 'shore') : ({ mountains: 'mountains', 'swamps & marshes': 'swamps', deserts: 'deserts', 'snow & icy regions': 'snow', 'underground areas': 'underground' })[dwell];
+      const table = key && cityTables[key];
+      if (table) {
+        const [prim, h1, h2, ind, mod, adv, texts] = table, r = v => Array.isArray(v) ? int(...v) : v;
+        let city;
+        if (stage === 'Primitive') { city = int(...prim); if (hp === 1) city = int(...h1); else if (hp === 2) city = int(...h2); }
+        else city = r(stage === 'Industrial' ? ind : stage === 'Modern' ? mod : adv);
+        const t = texts[city];
+        const [kind, rest = ''] = t.split('|');
+        const tail = rest.replace('$', Z);
+        if (kind === 'M3' || kind === 'A3') myCity = 'They live in ' + (kind === 'M3' ? 'modern looking ' : 'technologically advanced ') + Z + I + [' on the shore', ' floating on the water', ' floating in the sky above'][int(0, 2)];
+        else if (kind === 'm') myCity = 'They live in modern looking ' + Z + I + tail;
+        else if (kind === 'a') myCity = 'They live in technologically advanced ' + Z + I + tail;
+        else myCity = 'They live in ' + Z + ({ g: G, k: K, i: I })[kind] + ' ' + tail;
+      }
+    }
+    const birth = int(1, 100), births = birth < 20 ? 0 : birth < 40 ? 1 : birth < 60 ? 2 : birth < 80 ? 3 : birth < 96 ? 4 : birth < 97 ? 5 : birth < 98 ? 6 : birth < 99 ? 7 : birth < 100 ? 8 : 9;
+    const lower = callme.toLowerCase(), candle = () => ['black', 'blue', 'gray', 'green', 'red', 'brown', 'orange', 'yellow', 'purple', 'white'][int(0, 9)];
+    const contact = 'They reproduce by making some form of physical contact with another biological species, ';
+    const myLiveOn = [
+      () => 'They reproduce by laying up to ' + int(2, 10) + ' ' + candle() + ' eggs that have a ' + int(1, 12) + ' month incubation period before they hatch.',
+      () => 'They reproduce by laying a single ' + candle() + ' egg that has a ' + int(1, 12) + ' month incubation period before it hatches.',
+      () => 'They reproduce by giving birth to a single baby ' + lower + ', which the female would have carried up to ' + int(2, 12) + ' months before giving birth.',
+      () => 'They reproduce by giving birth to about ' + int(2, 10) + ' ' + lower + ' babies, which the female would have carried up to ' + int(2, 12) + ' months before giving birth.',
+      () => contact + 'where the victim would slowly become a ' + lower + ' after about ' + int(1, 12) * 10 + ' days.',
+      () => contact + 'which puts an egg into the new host. After about ' + int(1, 12) * 10 + ' days of incubation, the egg will hatch and burst through the body of the host where a new ' + lower + ' is born.',
+      () => contact + 'which puts an egg into the new host. After about ' + int(1, 12) * 10 + ' days of incubation, the egg will hatch and the baby ' + lower + ' will eat the host from the inside out.',
+      () => contact + 'which puts eggs into the new host. After about ' + int(1, 12) * 10 + ' days of incubation, the eggs will hatch and burst through the body of the host where the new ' + lower + ' babies are born.',
+      () => contact + 'which puts eggs into the new host. After about ' + int(1, 12) * 10 + ' days of incubation, the eggs will hatch and the ' + lower + ' babies will eat the host from the inside out.',
+      () => 'They reproduce when there is swelling begins on various parts of themselves that will pop off after about ' + int(1, 12) * 10 + ' days, giving birth up to ' + int(2, 10) + ' ' + lower + ' babies.'][births]();
+    const mySpecial = int(1, 3) === 1 ? 'The ' + lower + ' ' + W.scifiSpecialAbility(level, game, eyes, swims) : '';
+    const myStyle = 'The ' + lower + ' is some type of ' + (beast ? '' : 'humanoid ') + species + ' ' + mySize + '.';
+    let speed = '';
+    if (legs > 0) speed += movement + "'&nbsp;&nbsp;";
+    if (swims > 0) speed += 'Swim: ' + moveSwim + "'&nbsp;&nbsp;";
+    if (flies > 0) speed += 'Fly: ' + moveFly + "'";
+    const text = [myStyle, mySimilar, mySkin, myEyes, s.myLegs ?? '', myArms, myDaily, myDiet, myLiveOn, mySpecial, myCity + myGarb, myWeapon].join(' ');
+    return { dwell, stats: [['Stamina:', stamina], ['Protection:', protection], ['Hit:', hit], ['Attacks:', myAttack], ['Damage:', myDamage], ['Speed:', speed], ['Stage:', stage], ['Size:', myBig], ['Defenses:', defenses], ['Habitat:', ucwords(dwell)], ['Level:', level]], text };
+  };
   const amount = v => W.number(v, 0, 0, 100);
   W.register('scifim', 'Sci-Fi Enemies', 'A random set of mutants and robots for science-fiction or post-apocalyptic games.', [{ ...W.gameField, value: 'mutfut' }, f('r_amount', 'Robots', 'number', { value: 1, min: 0, max: 100 }), f('m_amount', 'Mutants', 'number', { value: 1, min: 0, max: 100 }), f('x_terrain', 'Terrain (other games)', 'select', { value: '', options: ['', 'deserts', 'forests', 'hills', 'jungles', 'mountains', 'plains & grasslands', 'snow & icy regions', 'swamps & marshes', 'rivers & lakes', 'oceans', 'underground areas', 'wastelands'] })], p => {
     const game = W.game(p);
@@ -324,7 +681,20 @@
       let html = '<section class="scifi-enemies">';
       if (robots > 0) html += '<h2>Robots</h2>';
       for (let i = 0; i < robots; i++) html += W.scifiRetroRobot(s, liveinr) + '<hr>';
-      if (amount(p.m_amount) > 0) html += `<p>The ${esc(game.name)} alien creature tables are not ported yet.</p>`;
+      const aliens = amount(p.m_amount);
+      if (aliens > 0) {
+        // PHP repeats until `amount` creatures match the chosen terrain, taking the next sorted name each time.
+        const names = W.scifiAlienNames(aliens);
+        html += '<h2>Creatures</h2>';
+        let n = 0, left = aliens;
+        while (left > 0) {
+          const callme = ucwords(names[n] ?? '');
+          const beast = W.scifiAlien(s, callme, game.slug);
+          if (livein !== '' && livein !== beast.dwell) continue;
+          n++; left--;
+          html += `<section class="scifi-creature scifi-alien"><h3>${esc(ucfirst(callme))}</h3><table class="scifi-stats">` + beast.stats.map(([k, v]) => row(k, v)).join("") + `</table><p>${esc(beast.text.replace(/\s+/g, ' ').trim())}</p></section><hr>`;
+        }
+      }
       return html + '</section>';
     }
     const s = {};
