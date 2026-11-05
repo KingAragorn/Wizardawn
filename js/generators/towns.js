@@ -224,12 +224,17 @@
     // Original owner titles (fantasy_stores_*.php); non-merchants are caretakers
     // and show the building type instead of stored gold.
     const titles = [, 'Bartender', 'Inn Keeper', 'Merchant', 'Blacksmith', ['Fletcher', 'Bowyer'], ['Tanner', 'Leatherworker'], ['Tailor', 'Dressmaker'], ['Animal Trainer', 'Stable Master'], ['Woodworker', 'Carpenter'], ['Alchemist', 'Herbalist'], ['Cook', 'Baker'], 'Librarian', 'Jeweler', 'Musician', ...(rules ? ['Banker'] : [])];
-    const titled = post ? null : titles[type], ownerTitle = post ? 'Owner' : Array.isArray(titled) ? titled[W.d(2) === 1 ? 1 : 0] : titled || 'Caretaker';
+    const postTypes = [, 'Army Surplus', 'Tavern', 'Tailor', 'Doctor', 'Stables', 'Vehicles', 'Supplies', 'Junk', 'Vault', 'Mechanic', 'Robotics'];
+    const titled = post ? null : titles[type], ownerTitle = post ? ({ 9: 'Banker', 2: 'Bartender', 4: 'Doctor', 7: 'Pawn Broker' })[type] || 'Owner (' + postTypes[type] + ')' : Array.isArray(titled) ? titled[W.d(2) === 1 ? 1 : 0] : titled || 'Caretaker';
     const purse = ownerTitle === 'Caretaker' ? category : int(50, 3000).toLocaleString('en-US') + cash;
-    let html = `<h4>${esc(name)}${!post && type === 2 ? ` <i>(${int(2, 7)}sp per night)</i>` : ''} <small>[${esc(post ? category + '; ' + purse : purse)}]</small></h4><p><b>${esc(ownerTitle)}:</b> ${owner.html}</p>`;
+    let html = `<h4>${esc(name)}${!post && type === 2 ? ` <i>(${int(2, 7)}sp per night)</i>` : ''} <small>[${esc(purse)}]</small></h4><p><b>${esc(ownerTitle)}:</b> ${owner.html}</p>`;
 
     if (bank) {
-      html += W.range(int(2, 10)).map(i => `<p><b>${post ? 'VAULT' : 'IRON CHEST'} #${i}:</b> ${post ? W.range(int(5, 15)).map(() => esc(W.junkItem(p))).join('; ') : W.range(int(2, 10)).map(() => esc(W.d(100) > 55 ? W.gem(int(10, 100)) : W.d(100) > 10 ? W.jewel(int(10, 100)) : W.magicItem(p))).join('; ')}; ${esc(post ? int(5, 5000) + cash : W.currency(p, int(1, 20), 3))}</p>`).join('');
+      // tool_mtown.php: vault numbers run on through the whole settlement and
+      // each lists conditioned junk with its value, then a bag of money.
+      const conditions = ['ruined', 'rough', 'average', 'good', 'perfect'];
+      if (post) html += W.range(int(2, 10)).map(() => `<p><b>VAULT #${++vaultLine}:</b> ${W.range(int(5, 15)).map(() => { const row = pick(D.junk), c = int(1, 5); return esc(conditions[c - 1] + ' ' + row[0] + ' [' + (+row[c + 1] || 0).toLocaleString('en-US') + cash + ']'); }).join(' --- ')} --- ${esc(W.postBag(p) + ' filled with [' + int(5, 5000).toLocaleString('en-US') + cash + ']')}</p>`).join('');
+      else html += W.range(int(2, 10)).map(i => `<p><b>IRON CHEST #${i}:</b> ${post ? '' : W.range(int(2, 10)).map(() => esc(W.d(100) > 55 ? W.gem(int(10, 100)) : W.d(100) > 10 ? W.jewel(int(10, 100)) : W.magicItem(p))).join('; ')}; ${esc(post ? int(5, 5000) + cash : W.currency(p, int(1, 20), 3))}</p>`).join('');
       if (rules) html += W.range(int(1, 3)).map(() => '<div><b>BANK GUARD:</b> ' + officer(p, mode, 'guard') + '</div>').join('');
     } else if (guild || church || guards) {
       const job = church ? 'priest' : guards ? 'guard' : ({ 'Fighters Guild': 'warrior', 'Warriors Guild': 'warrior', 'Wizards Guild': 'wizard', 'Rangers Guild': 'ranger', 'Assassins Guild': 'assassin' })[category] || 'rogue';
@@ -251,7 +256,9 @@
     }
     return html;
   }
+  let vaultLine = 0;
   W.town = function (p, mode) {
+    vaultLine = 0;
     p = { ...p, rulers: p.rulers ?? p.ruler, police: p.police ?? p.guards };
     if (!p.game && (p.x_game || p.x_package)) p.game = W.game(p).slug;
     const width = W.number(p.width ?? p.map_wide, 1, 1, 10), height = W.number(p.height ?? p.map_high, 1, 1, 10), own = W.number(p.map_rooms, 0, 0, 1000);

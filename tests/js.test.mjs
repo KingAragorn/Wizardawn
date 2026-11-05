@@ -591,6 +591,16 @@ test('fantasy and T&T settlements use original owner titles, caretakers and chur
     assert.match(html, /<i>\([2-7]sp per night\)<\/i>/);
   }
 });
+test('post-apocalyptic businesses use original owner titles and numbered vault contents', () => {
+  W.rng = W.random('mtown-owners');
+  const html = W.routes.mtown.generate({ game: 'gamma', map_rooms: 40, empty: '0', stores: '1', law: '0', money: 'dm' });
+  for (const title of ['<b>Banker:</b>', '<b>Bartender:</b>', '<b>Doctor:</b>', '<b>Pawn Broker:</b>', '<b>Owner (Army Surplus):</b>', '<b>Owner (Vehicles):</b>']) assert.ok(html.includes(title), title);
+  assert.match(html, /<b>VAULT #1:<\/b> (ruined|rough|average|good|perfect) /);
+  assert.match(html, /filled with \[[\d,]+dm\]/);
+  const numbers = [...html.matchAll(/VAULT #(\d+):/g)].map(m => +m[1]);
+  assert.deepEqual(numbers, numbers.map((_, i) => i + 1));
+  assert.doesNotMatch(html, /undefined|NaN|<b>Owner:<\/b>/);
+});
 test('post-apocalyptic citizens use age-based hit dice and robot households do not have children', () => {
   const ranges = { child: [3, 9], young: [5, 12], mature: [7, 18], 'middle-aged': [6, 17], old: [4, 10] };
   for (const [age, [min, max]] of Object.entries(ranges)) for (const game of ['mutfut', 'gamma', 'meta']) {

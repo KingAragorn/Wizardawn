@@ -413,3 +413,6 @@ Chrome launch, push, deployment or server will be attempted in run 4.
   "[The ]Holy Temple of the Gods", guardhouses "[The ]Watchful <monster>
   Barracks", guilds "[The ]<members> <adjective> <lodge>" (original word lists,
   incl. OSRIC Thieves/Rangers/Assassins), inn price inside the name line.
+- mtown: owner titles per tool_mtown.php (Banker, Bartender, Doctor, Pawn
+  Broker, "Owner (Army Surplus)" …), stored money always shown; vaults numbered
+  across the settlement with conditioned junk values and a money bag. 116 tests.
