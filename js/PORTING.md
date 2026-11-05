@@ -422,3 +422,4 @@ Chrome launch, push, deployment or server will be attempted in run 4.
 - bxadvg/ladvg: character listings open with the original per-ruleset preamble (alignment/age clauses follow the options); basic AC is capped at 9 like the PHP.
 - oadvg: listing preamble from tool_oadvg.php, with the Labyrinth Lord vs OSRIC saving-throw legend.
 - ultimate/delve: atmosphere sound lines use the original soundWhereRoom qualifier list (a faint, an eerie, ...) instead of a fixed "a".
+- uruins: stranded vehicles use VehicleRobotMaker (vehicle_and_robots.php): 2d6 condition bands, 1-in-3 drained fuel, candle/military colors, Metamorphosis Alpha list, ucwords casing, and the "STRANDED VEHICLE NEXT TO THE BUILDING..." heading. Broken Urthe vehicles and robot text remain partial.

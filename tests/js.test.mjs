@@ -630,6 +630,13 @@ test('ultimate dungeon atmosphere sounds use the original soundWhereRoom qualifi
   assert.ok(sounds.length > 20);
   assert.ok(sounds.every(t => /You can make out (a faint|a loud|a quiet|an eerie|a strange|an odd|an echoey|a muffled|a distant|a close) \S/.test(t)));
 });
+test('uruins stranded vehicles follow VehicleRobotMaker wording', () => {
+  W.rng = W.random('vehicles');
+  const all = W.range(300).map(() => W.strandedVehicle({ game: 'gamma' }));
+  assert.ok(all.every(v => /^[A-Z][^.]* \((totally ruined|poor condition|fair condition|good condition|excellent condition|perfect condition)\)( totally drained of fuel| with (10|20|30|40|50|60|70|80|90|100)% fuel)\.$/.test(v)));
+  assert.ok(all.some(v => / Camouflage Military /.test(v)) && all.some(v => /Anti-grav Car/.test(v)));
+  assert.ok(W.range(50).map(() => W.strandedVehicle({ game: 'meta' })).every(v => !/Military/.test(v)));
+});
 test('delve caverns use the original eight descriptions and dripping water', () => {
   W.rng = W.random('caves');
   const seen = new Set(); let drip = 0;
