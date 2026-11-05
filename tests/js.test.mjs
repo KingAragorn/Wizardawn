@@ -1529,3 +1529,15 @@ test('post-apocalyptic site options only show for the games that set $pagame (re
   }
 });
 
+
+test('treasure hoards gain the original condition, T&T, UA, AEC and game-magic options (refs #6)', () => {
+  const names = game => [...W.form(W.routes.loot, { game }).matchAll(/name="([^"]+)"/g)].map(m => m[1]);
+  assert.ok(names('add').includes('ua') && names('add').includes('x_whichmagic') && !names('add').includes('x_cond'));
+  assert.ok(names('lablord').includes('aec') && names('gamma').includes('x_cond') && names('tt5e').includes('x_oldway'));
+  assert.ok(!names('gamma').includes('x_whichmagic'));
+  // x_whichmagic 100 always rolls makeRPGmagic (the game's own item names), 0 never does.
+  const own = new Set(context.WZ_DATA.magicItems.names.osric.map(n => W.plainText(n)));
+  const items = W.range(40).map(() => W.loot({ game: 'osric', x_type: '1', min: 1, max: 1, x_whichmagic: '100' }));
+  assert.ok(items.every(item => own.has(item) || /^(Potion|Oil|Philter|Elixir)/.test(item)), items.find(i => !own.has(i)));
+  assert.equal(W.loot({ game: 'osric', type: '2', min: 3, max: 3 }).split('; ').length, 3);
+});

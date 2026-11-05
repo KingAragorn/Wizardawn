@@ -4,6 +4,7 @@ Living checklist so work can continue in any session. Evidence paths are relativ
 Regenerate the option table with: `python3` form scan of `src/tool_*.php` (see "How to regenerate") and compare with `W.routes[route].fields`.
 
 ## Done
+- loot (tool_loot.php): added x_cond, x_oldway, ua, aec, x_whichmagic (game-table vs Wizardawn magic split via makeRPGmagic names), x_type renamed to PHP name with original labels; `type`/`min`/`max` kept as aliases.
 - [x] Per-game option filtering (refs #5): `js/export-field-games.py` → `js/data/fieldGames.js`; `W.formFields` hides options the PHP wraps in `$x_game` conditions. Fields may also carry `games: [...]` for routes the PHP map does not cover.
 - [x] Hex crawl / delve / locale / ultimate: added Unearthed Arcana (`ua`, AD&D, `tool_hexcrawl.php` 250-253 → `gameSpellChooser` in `functions/spells.php` 611+), S&W Hit Dice (`x_hit_dice`, 269-274, used by `calculateLife`), T&T Dice + Adds / Vary Amount / Difficulty (`tt_dice`, `tt_adds`, `tt_vary`, `x_ttlvl`, 184-199) and Weapons/Armor (`x_oldway`, 325-330). T&T Vary Amount now follows `functions/encounters.php` 88 (was always random).
 

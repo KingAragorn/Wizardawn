@@ -16,6 +16,7 @@
     const game = W.game(p).slug, pool = (D.magicItems.names[game] || D.magicItems.names.lablord).filter(name => !/^Potion|^Oil |^Philter|^Elixir/.test(name));
     return W.plainText(pick(pool));
   };
+  W.rpgMagicItem = W.magicItem; // makeRPGmagic(): the game's own items (magic-items.js later wraps W.magicItem).
   W.jewel = function (cut = 100) {
     return pick(['gold', 'silver', 'platinum', 'bronze', 'ivory']) + ' ' + pick(['ring', 'necklace', 'bracelet', 'earrings', 'brooch', 'medallion', 'tiara', 'circlet']) + (W.d(2) === 1 ? ' set with ' + W.gem(cut) : ' (' + Math.max(1, Math.ceil(int(10, 1000) * cut / 100)) + 'gp)');
   };
@@ -38,7 +39,10 @@
       if (reward < 86) return W.jewel(cut);
       if (reward < 90) return 'GEMS [' + int(1, 3) + ' each]: ' + W.gem(cut);
       if (reward < 92) return 'JEWELRY: ' + W.jewel(cut);
-      return W.d(100) <= W.number(p.x_low_magic, 100, 0, 100) ? W.magicItem(p) : W.jewel(cut);
+      if (W.d(100) > W.number(p.x_low_magic, 100, 0, 100)) return W.jewel(cut);
+      // tool_loot.php: x_whichmagic % from the game's own tables, the rest from Wizardawn's generator.
+      if (p.x_whichmagic !== undefined && p.x_whichmagic !== '' && D.magicItems.names[game] && W.number(p.x_whichmagic, 50, 0, 100) >= int(1, 100)) return W.plainText(W.rpgMagicItem(p));
+      return W.magicItem(p);
     }).join('; ');
   };
   W.adventureFind = function (p, state, size = 3, post = false) {
@@ -51,9 +55,12 @@
     if (post) return W.d(100) <= W.number(p.x_low_tech, 100, 0, 100) ? W.postArtifact(p, size) : W.junkItem(p);
     if (reward < 96) return 'GEMS [' + int(1, 3) + ' each]: ' + W.gem(cut);
     if (reward < 98) return 'JEWELRY: ' + W.jewel(cut);
-    return W.d(100) <= W.number(p.x_low_magic, 100, 0, 100) ? W.magicItem(p) : W.jewel(cut);
+    if (W.d(100) > W.number(p.x_low_magic, 100, 0, 100)) return W.jewel(cut);
+      // tool_loot.php: x_whichmagic % from the game's own tables, the rest from Wizardawn's generator.
+      if (p.x_whichmagic !== undefined && p.x_whichmagic !== '' && D.magicItems.names[game] && W.number(p.x_whichmagic, 50, 0, 100) >= int(1, 100)) return W.plainText(W.rpgMagicItem(p));
+      return W.magicItem(p);
   };
-  W.register('loot', 'Treasure Hoards', 'Generate treasure hoards, or roll weighted treasure lists from a custom Wizardawn data file.', [W.gameField, W.countField('Hoards'), f('min', 'Minimum finds', 'number', { value: 1, min: 1, max: 100 }), f('max', 'Maximum finds', 'number', { value: 10, min: 1, max: 100 }), f('type', 'Treasure type', 'select', { value: 0, options: [[0, 'All treasure'], [1, 'Magic / technology'], [2, 'Mundane valuables']] }), f('x_list', 'One item per line', 'checkbox'), ...W.dataFields], p => W.table(['Hoard', 'Treasure'], W.range(W.count(p, 'x_amount')).map(i => {
+  W.register('loot', 'Treasure Hoards', 'Generate treasure hoards, or roll weighted treasure lists from a custom Wizardawn data file.', [W.gameField, W.countField('Hoards'), f('min', 'Minimum finds', 'number', { value: 1, min: 1, max: 100 }), f('max', 'Maximum finds', 'number', { value: 10, min: 1, max: 100 }), f('x_type', 'Treasure type', 'select', { value: 0, options: [[0, 'Valuables & Relics'], [2, 'Valuables'], [1, 'Relics']] }), f('x_list', 'One item per line', 'checkbox'), f('x_cond', 'Condition items', 'checkbox'), f('x_oldway', 'T&T items', 'select', { value: 0, options: [[0, 'Use T&T Items'], [1, 'Use Magestykc Items']] }), f('ua', 'Include Unearthed Arcana', 'checkbox'), f('aec', 'Include AEC', 'checkbox'), f('x_whichmagic', '% from the Game & the remaining created by Wizardawn', 'number', { value: 50, min: 0, max: 100 }), ...W.dataFields], p => W.table(['Hoard', 'Treasure'], W.range(W.count(p, 'x_amount')).map(i => {
     const parts = W.loot(p).split('; ');
     return [i, yes(p, 'x_list', 0) ? W.list(parts.map(esc)) : parts.map(esc).join('; ')];
   })));
