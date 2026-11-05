@@ -64,15 +64,17 @@ Columns: PHP file | JS route | PHP names missing in JS | default differences.
 JS generators with no tool_*.php form: ftown, data_magestykc_run
 
 Priority truly-missing items (from reading the forms):
-- [ ] loot (`tool_loot.php`): `x_cond` (post-apoc item condition), `x_type`, `x_min`/`x_max` value range, `x_oldway`, `ua`/`aec`, `x_whichmagic`, `x_data`.
+- [x] loot (`tool_loot.php`): `x_cond` (post-apoc item condition), `x_type`, `x_min`/`x_max` value range, `x_oldway`, `ua`/`aec`, `x_whichmagic`, `x_data`.
 - [ ] doors (`tool_door.php`): monster supplements `x_extra`/`dd_ff`/`dd_mm2`/`ua`/`aec`, T&T `x_ttlvl`/`x_oldway`, `x_whichmagic`, `x_show_ru`.
 - [ ] encounters (`tool_encounter.php`): `x_level`, `x_characters`, `x_ttlvl`, `x_hit_dice`, `x_mutants`, `x_enemy`, `x_amount` (check names first — JS uses `level`/`characters`/`enemy`).
 - [ ] wander: `x_mutate`, `x_ttlvl`, `x_terrain`, `x_describe`, `x_code`.
 - [ ] lists: `mom`, `wwlvl`, `mmttlvl`, `mmtt_vs`, `x_mutants`, `x_describe`, `xls`.
 - [ ] ultimate / uruins / uexfl / dmap: cave map sets (`use_cave`, `cave_*`), `geomorph_colored`, `map_numbers`.
-- [ ] locale / uruins / uexfl: second enemy group (`x_enemy_1`, `x_main_chance_1`, `x_enemy_2`, `x_main_chance_2`), `x_mixup`.
+- [x] locale / uruins / uexfl: second enemy group (`x_enemy_1`, `x_main_chance_1`, `x_enemy_2`, `x_main_chance_2`), `x_mixup`.
 - [ ] hex-crawl / locale: `x_tu_c` (third encounter row?) ; delve/ultimate: `x_mm`.
-- [ ] world: `map_genre`, `map_climate`. wtown: `ruler`, `columns`. bxadvg/oadvg/ladvg: `x_img` (character portrait), `x_book_sp`.
+- [x] world `map_genre`/`map_climate`, wtown `ruler`: already aliased (genre/climate/rulers).
+- [ ] wtown/ftown/ttown `columns` (3-across vs single-column store lists, city_fantasy.php wizardBusiness): JS always lists one item per row — visual.
+- [ ] bxadvg/oadvg/ladvg: `x_img` (character portrait), `x_book_sp`.
 - [x] Defaults: bxadvg `x_var_dmg` and ladvg `x_show_age` now checked like the PHP.
 - [ ] Default: uexfl `x_money` (PHP "gold"; JS blank = game default, check output matches).
 - [ ] oadvg shows Alignment / Choose languages checkboxes the OSRIC form doesn't have (kept: extra feature, not a loss).

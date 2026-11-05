@@ -234,9 +234,13 @@
     W.storage.set('last-adventure', { mode, options: p, tiles: map.tiles, floors, rooms });
     return html;
   };
+  // tool_locale.php / tool_uexfl.php / tool_uruins.php: 1st and 2nd Main Encounter (monster id or name, % chance per encounter).
+  W.mainEnemyFields = [1, 2].flatMap(i => [f('x_enemy_' + i, (i === 1 ? '1st' : '2nd') + ' Main Encounter (monster name or original ID)', 'text'), f('x_main_chance_' + i, (i === 1 ? '1st' : '2nd') + ' Main Encounter chance (%)', 'number', { value: 0, min: 0, max: 100 })]);
   for (const [route, title] of [['delve', 'Dungeon Delve'], ['ultimate', 'Ultimate Dungeon'], ['uexfl', 'Ultimate Sci-Fi Adventure'], ['uruins', 'Ultimate Ruins']]) {
     // tool_uexfl.php / tool_uruins.php have no fantasy-only options (UA, hit dice, T&T party).
     const fields = W.adventureFields.filter(field => !['uexfl', 'uruins'].includes(route) || !field.games);
+    if (['uexfl', 'uruins'].includes(route)) fields.push(...W.mainEnemyFields);
+    if (route === 'uexfl') fields.push(f('x_mixup', 'Mix Monsters', 'checkbox'));
     if (route === 'delve') fields.push(f('x_delve', 'Delve type', 'select', { value: 'Simple', options: ['Simple', 'Complex', 'Progressive'] }), f('x_floors', 'Omit floors (%)', 'number', { value: 0, min: 0, max: 100 }));
     else if (route === 'ultimate') fields.push(f('x_sep_map', 'Map in a separate window', 'checkbox'), f('type', 'Map type', 'select', { value: 'Cavernous Dungeon', options: ['Dungeon', 'Cavernous', 'Cavernous Dungeon'] }));
     else if (route === 'uexfl') fields.push(f('type', 'Map type', 'select', { value: 'Building', options: ['Building', 'Spaceship', 'Exodus Spaceship'] }));

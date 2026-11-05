@@ -1541,3 +1541,17 @@ test('treasure hoards gain the original condition, T&T, UA, AEC and game-magic o
   assert.ok(items.every(item => own.has(item) || /^(Potion|Oil|Philter|Elixir)/.test(item)), items.find(i => !own.has(i)));
   assert.equal(W.loot({ game: 'osric', type: '2', min: 3, max: 3 }).split('; ').length, 3);
 });
+
+test('locale, uexfl and uruins forms offer the original 1st/2nd Main Encounter (refs #6)', () => {
+  for (const [route, game] of [['locale', 'osric'], ['uexfl', 'mutfut'], ['uruins', 'mutfut']]) {
+    const html = W.form(W.routes[route], { game });
+    for (const n of ['x_enemy_1', 'x_main_chance_1', 'x_enemy_2', 'x_main_chance_2']) assert.ok(html.includes(`name="${n}"`), route + ' ' + n);
+  }
+  assert.ok(!W.form(W.routes.delve, { game: 'osric' }).includes('name="x_enemy_1"'));
+});
+
+test('uexfl Mix Monsters adds Labyrinth Lord and AEC monsters to the Mutant Future pool (refs #6)', () => {
+  const base = W.monsters({ game: 'mutfut', adventureMode: 'uexfl' }), mixed = W.monsters({ game: 'mutfut', adventureMode: 'uexfl', x_mixup: '1' });
+  assert.ok(mixed.length > base.length && mixed.some(m => m.creator === 'LL') && !base.some(m => m.creator === 'LL'));
+  assert.ok(W.form(W.routes.uexfl, { game: 'mutfut' }).includes('name="x_mixup"'));
+});
