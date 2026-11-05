@@ -18,4 +18,20 @@
   W.register = function (route, title, description, fields, generate) {
     W.routes[route] = { route, title, description, fields: [...fields, W.seedField], generate, defaultGame: route === 'basic-spells' ? 'lablord' : route === 'spells' ? 'osric' : 'fantasy' };
   };
+  // Banner images the PHP tools print above their results (src/tool_*.php <img src="pics_tools/...">).
+  const PA = ['mutfut', 'urthe', 'gamma', 'meta'];
+  W.banners = {
+    'tool_loot.php': g => PA.includes(g) ? 'tools_bomb_shelter_treasure_hoards.jpg' : 'tools_loot.jpg',
+    'tool_encounter.php': g => PA.includes(g) ? 'tools_encounters_pa.jpg' : 'tools_encounters.jpg',
+    'tool_wander.php': g => PA.includes(g) ? 'tools_wander_apoc.jpg' : 'tools_wander.jpg',
+    'tool_coins.php': 'tools_coins.jpg', 'tool_books.php': 'tools_random_books.jpg', 'tool_alchemist.php': 'alchemy_shelf.jpg',
+    'tool_brew.php': 'alchemy_potions.jpg', 'tool_names.php': 'tools_random_names.jpg', 'tool_llb_spells.php': 'tools_spell_book.jpg',
+    'tool_packs.php': 'tools_gear.jpg', 'tool_potions.php': 'tools_potions.jpg', 'tool_tmap.php': 'tools_tmaps.jpg', 'tool_zombies.php': 'tools_zombies.jpg'
+  };
+  W.bannerFor = function (route, game) {
+    const file = Object.keys(W.banners).find(name => W.routeFor?.(name) === route);
+    const banner = file && W.banners[file];
+    const image = typeof banner === 'function' ? banner(game) : banner;
+    return image ? `<p class="tool-banner" align="center"><img border="0" src="pics_tools/${image}" alt=""></p>` : '';
+  };
 })(window.WZ);

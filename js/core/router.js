@@ -13,7 +13,7 @@
     const game = tool.generate ? W.toolGame(tool, params).slug : 'fantasy';
     const page = window.WZ_DATA.pages[tool.generate ? `rpg_${game}.php` : file];
     const stylesheet = page?.stylesheet || 'portal.css';
-    let html = tool.generate ? W.generatorLayout(tool, params, result) : tool.render(params);
+    let html = tool.generate ? W.generatorLayout(tool, params, result ? W.bannerFor(route, game) + result : result) : tool.render(params);
     // Every generator with results gets a Save as PDF button and the print.css page layout.
     const pdf = Boolean(result && tool.generate);
     if (pdf) html = html.replace('<button type="button" id="print-results">Print</button>', '$&<button type="button" id="save-pdf">Save as PDF</button>');
