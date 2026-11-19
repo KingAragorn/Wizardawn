@@ -1,0 +1,1001 @@
+This is the data file for the Ruins & Riches™ Role-Playing Game.
+
+This consists of creatures and treasure from that game.
+
+"Ruins & Riches" is a trademark of Wizardawn Entertainment
+
+--BEGIN--
+Alligator, Giant	0	7	1	TYPE: Reptile; STR: 19; SPD: 11; SOR: 7; LIFE: 104; AP: 21; INFO: Damage 1d10 bite.; TRS: NONE
+Ant, Giant	0	2	1	TYPE: Insect; STR: 5; SPD: 3; SOR: 1; LIFE: 21; AP: 6; INFO: Damage 1d4 bite.; TRS: NONE
+Balruk, Lower Demon	0	4	1	TYPE: Planar; STR: 10; SPD: 3; SOR: 7; LIFE: 50; AP: 12; INFO: Damage 2d8 fire column spell (Magical Attack - Sorcery).; TRS: 15(G), 2(I)
+Bandit	0	2	1	STR: 5; SPD: 2; SOR: 2; LIFE: 21; AP: 6; INFO: Damage 1d6 dagger.; TRS: 14(G)
+Banshee	0	2	1	TYPE: Undead; STR: 3; SPD: 2; SOR: 5; LIFE: 19; AP: 6; INFO: Damage 1d6.  Ability Check with Sorcery or cower in the corner from fear for 1d4 turns.; TRS: 8(G)
+Basilisk	0	5	1	TYPE: Beast; STR: 12; SPD: 4; SOR: 4; LIFE: 62; AP: 15; INFO: Damage 1d8 bite.  This eight legged lizard has a magical gaze.  Ability Check with Sorcery or be turned to stone.; TRS: 23(G)
+Bat, Fire	0	1	1	TYPE: Elemental; STR: 5; SPD: 3; SOR: 3; LIFE: 13; AP: 3; INFO: Damage 2d4 fire breathing spell (Magical Attack - Sorcery).; TRS: 5(G)
+Bat, Giant	0	1	1	TYPE: Animal; STR: 4; SPD: 3; SOR: 1; LIFE: 12; AP: 3; INFO: Damage 1d4 melee bite.; TRS: NONE
+Bear	0	4	1	TYPE: Animal; STR: 10; SPD: 3; SOR: 2; LIFE: 50; AP: 12; INFO: 2 attacks.  Damage 1d6 bite.  Damage 1d6 claw.; TRS: NONE
+Bee, Giant	0	4	1	TYPE: Insect; STR: 9; SPD: 4; SOR: 2; LIFE: 49; AP: 12; INFO: Damage 1d6 stinger.  Ability Check with Strength or be poisoned.; TRS: NONE
+Beetle, Fire, Giant	0	8	1	TYPE: Insect; STR: 18; SPD: 12; SOR: 18; LIFE: 113; AP: 24; INFO: Damage 1d10 flame spit.  Ability Check with Strength or suffer double damage.; TRS: NONE
+Beetle, Giant	0	6	1	TYPE: Insect; STR: 16; SPD: 5; SOR: 6; LIFE: 79; AP: 18; INFO: Damage 1d8 bite.; TRS: NONE
+Betrayer of Eyes	0	9	1	STR: 17; SPD: 13; SOR: 20; LIFE: 122; AP: 27; INFO: 11 attacks.  10 of the attacks are magical beams from the eyestalks that do 1 damage each.  The other is a magical energy attack that does 1d10 damage.  If one is able to Ability Check with Sorcery, then they avoid all the attacks that turn.; TRS: 90(G), 3(I)
+Boar	0	1	1	TYPE: Animal; STR: 3; SPD: 2; SOR: 1; LIFE: 11; AP: 3; INFO: Damage 1d6 melee tusks.; TRS: NONE
+Brownie	0	1	1	STR: 3; SPD: 3; SOR: 6; LIFE: 11; AP: 3; INFO: Damage 1d4 push spell.  Ability Check with Strength or be dazed (immobile) for 1d4 turns.; TRS: 9(G), 1(I)
+Bugbear	0	4	1	STR: 8; SPD: 3; SOR: 4; LIFE: 48; AP: 12; INFO: Damage 1d8 short sword.; TRS: 12(G)
+Cave Man	0	3	1	STR: 7; SPD: 5; SOR: 3; LIFE: 39; AP: 9; INFO: Damage 1d6 club.; TRS: 3(G)
+Centaur	0	5	1	STR: 10; SPD: 4; SOR: 6; LIFE: 60; AP: 15; INFO: Melee damage 1d8 short sword or range damage 1d6 bow.  They will always shoot at people further back if they can.  They carry 20 arrows.; TRS: 25(G), 1(I)
+Centipede, Giant	0	3	1	TYPE: Insect; STR: 7; SPD: 2; SOR: 3; LIFE: 39; AP: 9; INFO: Damage 1d6 bite.  Ability Check with Strength or suffer from poison.; TRS: NONE
+Chimera	0	6	1	TYPE: Beast; STR: 13; SPD: 7; SOR: 12; LIFE: 76; AP: 18; INFO: 3 attacks.  The goat head bites for 1d6 damage.  The lion head bites for 1d8 damage.  The dragon head breathes fire for 1d8 damage, unless a Ability Check for Sorcery can be made, then the damage is avoided.  The tail stinger does 1d4 damage.  Ability Check with Strength or be poisoned from stinger.; TRS: 28(G), 2(I)
+Crab, Giant	0	5	1	TYPE: Beast; STR: 11; SPD: 5; SOR: 3; LIFE: 61; AP: 15; INFO: Damage 1d10 pincer.; TRS: NONE
+Crayfish, Giant	0	6	1	TYPE: Beast; STR: 17; SPD: 5; SOR: 6; LIFE: 80; AP: 18; INFO: Damage 1d12 pincer.; TRS: NONE
+Crocodile	0	2	1	TYPE: Reptile; STR: 6; SPD: 2; SOR: 1; LIFE: 22; AP: 6; INFO: Damage 1d6 bite.; TRS: NONE
+Cyclops	0	6	1	TYPE: Giant; STR: 17; SPD: 6; SOR: 10; LIFE: 80; AP: 18; INFO: Damage 1d12 war hammer.; TRS: 32(G), 3(I)
+Demon	0	9	1	TYPE: Planar; STR: 23; SPD: 14; SOR: 23; LIFE: 128; AP: 27; INFO: Damage 2d8 destructive spell.  Ability Check with Sorcery or suffer double damage.; TRS: 126(G), 4(I)
+Demon, Greater	0	11	1	TYPE: Planar; STR: 27; SPD: 18; SOR: 27; LIFE: 152; AP: 33; INFO: Damage 3d6 oblivion spell.  Ability Check with Sorcery or suffer double damage.; TRS: 183(G), 5(I)
+Demon, Lesser	0	7	1	TYPE: Planar; STR: 19; SPD: 9; SOR: 19; LIFE: 104; AP: 21; INFO: Damage 2d6 wrath spell.  Ability Check with Sorcery or suffer double damage.; TRS: 50(G), 4(I)
+Devil	0	10	1	TYPE: Planar; STR: 25; SPD: 16; SOR: 25; LIFE: 140; AP: 30; INFO: Damage 3d6 trident.  Ability Check with Sorcery lose 3d6 AP.; TRS: 158(G), 4(I)
+Devil, Higher	0	12	1	TYPE: Planar; STR: 29; SPD: 21; SOR: 29; LIFE: 164; AP: 36; INFO: Damage 4d6 trident.  Ability Check with Sorcery lose 4d6 AP.; TRS: 200(G), 5(I)
+Devil, Lower	0	8	1	TYPE: Planar; STR: 21; SPD: 14; SOR: 21; LIFE: 116; AP: 24; INFO: Damage 2d6 trident.  Ability Check with Sorcery lose 3d6 AP.; TRS: 78(G), 4(I)
+Dragon Bones	0	12	1	TYPE: Undead; STR: 28; SPD: 17; SOR: 28; LIFE: 163; AP: 36; INFO: 3 attacks.  Damage 1d8 claw.  Damage 1d10 bite.  Damage 1d10 life drain spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 210(G), 6(I)
+Dragon	0	11	1	TYPE: Dragon; STR: 26; SPD: 16; SOR: 25; LIFE: 151; AP: 33; INFO: 3 attacks.  Damage 1d6 claw.  Damage 1d8 bite.  Damage 1d8 fire breathing spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 200(G), 5(I)
+Dragon, Ancient	0	14	1	TYPE: Dragon; STR: 32; SPD: 17; SOR: 30; LIFE: 187; AP: 42; INFO: 3 attacks.  Damage 1d8 claw.  Damage 1d10 bite.  Damage 1d10 fire breathing spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 300(G), 6(I)
+Dragon, Old	0	13	1	TYPE: Dragon; STR: 30; SPD: 14; SOR: 26; LIFE: 175; AP: 39; INFO: 3 attacks.  Damage 1d8 claw.  Damage 1d10 bite.  Damage 1d10 fire breathing spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 270(G), 5(I)
+Drake	0	9	1	TYPE: Dragon; STR: 23; SPD: 13; SOR: 20; LIFE: 128; AP: 27; INFO: 3 attacks.  Damage 1d6 claw.  Damage 1d8 bite.  Damage 1d8 fire breathing spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 135(G), 4(I)
+Dwarf	0	3	1	STR: 7; SPD: 3; SOR: 3; LIFE: 39; AP: 9; INFO: Damage 1d8 hammer.; TRS: 10(G), 1(I)
+Eel, Giant	0	4	1	STR: 9; SPD: 6; SOR: 2; LIFE: 49; AP: 12; INFO: Damage 1d6 electric shock.  Ability Check with Strength or be shocked (immobile) for 1d4 turns.; TRS: NONE
+Elemental, Air	0	5	1	TYPE: Elemental; STR: 8; SPD: 5; SOR: 10; LIFE: 58; AP: 15; INFO: Damage 1d8 wind.  Ability Check with Strength or be knocked over for 1 turn.; TRS: 28(G)
+Elemental, Blood	0	10	1	TYPE: Elemental; STR: 23; SPD: 14; SOR: 24; LIFE: 138; AP: 30; INFO: Damage 1d10.  Ability Check with Sorcery or be diseased with Dark Fever, Cave Rot and Brain Worm.; TRS: 150(G), 3(I)
+Elemental, Earth	0	2	1	TYPE: Elemental; STR: 7; SPD: 1; SOR: 3; LIFE: 23; AP: 6; INFO: Damage 1d8 slam.; TRS: 10(G), 1(I)
+Elemental, Fire	0	6	1	TYPE: Elemental; STR: 12; SPD: 8; SOR: 17; LIFE: 75; AP: 18; INFO: Damage 1d8 magical fire.  Ability Check with Sorcery or suffer double damage.; TRS: 23(G), 1(I)
+Elemental, Lightning	0	7	1	TYPE: Elemental; STR: 16; SPD: 15; SOR: 17; LIFE: 101; AP: 21; INFO: Damage 1d10 electrical damage.  Ability Check with Strength or become shocked (immobile) for 2d4 turns.; TRS: 48(G)
+Elemental, Mud	0	4	1	TYPE: Elemental; STR: 10; SPD: 2; SOR: 4; LIFE: 50; AP: 12; INFO: Damage 1d8 slam.  Ability Check with Strength when one hits this creature with a melee weapon.  If failed, then their weapon is pulled from their hands and into the mud.  It can be recovered if the Mud Elemental is slain.; TRS: 12(G), 1(I)
+Elemental, Shadow	0	9	1	TYPE: Elemental; STR: 22; SPD: 15; SOR: 19; LIFE: 127; AP: 27; INFO: Damage 1d10 shadow force spell.  Ability Check with Sorcery or suffer double damage.; TRS: 3(I)
+Elemental, Water	0	3	1	TYPE: Elemental; STR: 8; SPD: 3; SOR: 5; LIFE: 40; AP: 9; INFO: Damage 1d6.  Ability Check with Sorcery or suffer from drowning (lose breathe for 1d4 turns then die).; TRS: 12(G), 1(I)
+Elf	0	2	1	STR: 5; SPD: 2; SOR: 4; LIFE: 21; AP: 6; INFO: Damage 1d6 short sword.; TRS: 7(G)
+Ettin	0	7	1	TYPE: Giant; STR: 18; SPD: 8; SOR: 10; LIFE: 103; AP: 21; INFO: Damage 1d12 club.; TRS: 45(G), 2(I)
+Fiend	0	6	1	TYPE: Planar; STR: 17; SPD: 8; SOR: 17; LIFE: 80; AP: 18; INFO: Damage 1d10 dark bolt spell.  Ability Check with Sorcery or suffer double damage.; TRS: 36(G), 3(I)
+Fly, Giant	0	1	1	TYPE: Insect; STR: 4; SPD: 4; SOR: 1; LIFE: 12; AP: 3; INFO: Damage 1d4 melee bite.; TRS: NONE
+Frog, Giant	0	2	1	TYPE: Beast; STR: 5; SPD: 3; SOR: 1; LIFE: 21; AP: 6; INFO: Damage 1d6 bite.; TRS: NONE
+Froglok	0	3	1	STR: 7; SPD: 3; SOR: 3; LIFE: 39; AP: 9; INFO: Damage 1d6 spear.  An amphibious race of frog men.; TRS: 9(G)
+Gargoyle	0	7	1	TYPE: Beast; STR: 17; SPD: 9; SOR: 10; LIFE: 102; AP: 21; INFO: Damage 1d10 fire breathing spell.  Ability Check with Sorcery or suffer double damage.; TRS: 40(G), 2(I)
+Ghast	0	4	1	TYPE: Undead; STR: 9; SPD: 3; SOR: 4; LIFE: 49; AP: 12; INFO: Damage 1d8 bite.  Ability Check with Strength or suffer paralysis for 1d4 turns.  This flesh eater is immune to sleep and charm spells.; TRS: 15(G)
+Ghost	0	5	1	TYPE: Undead; STR: 4; SPD: 5; SOR: 10; LIFE: 54; AP: 15; INFO: Damage 1d8.  Ability Check with Sorcery or suffer from fear for 1d6 turns.  They are immune to sleep and charm spells.; TRS: 25(G), 1(I)
+Ghoul	0	2	1	TYPE: Undead; STR: 5; SPD: 2; SOR: 3; LIFE: 21; AP: 6; INFO: Damage 1d6 bite.  Ability Check with Strength or suffer paralysis for 1d4 turns.  This flesh eater is immune to sleep and charm spells.; TRS: 6(G)
+Giant, Cloud	0	13	1	TYPE: Giant; STR: 31; SPD: 18; SOR: 22; LIFE: 176; AP: 39; INFO: 3 attacks.  Damage 1d12 fist.  The other 2 are summoned magical tornadoes that will do a ranged attack of 2d6 damage.  If one fails a Ability Check with Speed, then they suffer double damage from the tornadoes.; TRS: 265(G), 4(I)
+Giant, Fire	0	11	1	TYPE: Giant; STR: 27; SPD: 15; SOR: 18; LIFE: 152; AP: 33; INFO: Damage 1d12 battle axe.  Ability Check with Sorcery or take double damage from the fiery axe.; TRS: 183(G), 3(I)
+Giant, Frost	0	10	1	TYPE: Giant; STR: 25; SPD: 13; SOR: 17; LIFE: 140; AP: 30; INFO: Damage 1d12 war hammer.  Ability Check with Strength or be frozen in ice (immobile) for 1d4 turns.; TRS: 148(G), 2(I)
+Giant, Hill	0	8	1	TYPE: Giant; STR: 21; SPD: 10; SOR: 10; LIFE: 116; AP: 24; INFO: Damage 1d10 club.; TRS: 80(G), 2(I)
+Giant, Mountain	0	9	1	TYPE: Giant; STR: 23; SPD: 9; SOR: 12; LIFE: 128; AP: 27; INFO: Damage 1d12 club.; TRS: 120(G), 2(I)
+Giant, Stone	0	12	1	TYPE: Giant; STR: 29; SPD: 15; SOR: 19; LIFE: 164; AP: 36; INFO: 3 attacks.  Damage 1d12 fist.  The other 2 are thrown boulders that will do a ranged attack of 1d10 damage.; TRS: 209(G), 4(I)
+Giant, Storm	0	14	1	TYPE: Giant; STR: 33; SPD: 18; SOR: 24; LIFE: 188; AP: 42; INFO: 3 attacks.  Damage 1d12 fist.  The other 2 are thrown bolts of lightning that will do a ranged attack of 2d6 damage.  If one fails a Ability Check with Sorcery, then they suffer double damage from the lightning.; TRS: 285(G), 4(I)
+Gnoll	0	4	1	STR: 9; SPD: 4; SOR: 3; LIFE: 49; AP: 12; INFO: Damage 1d8 axe.; TRS: 18(G)
+Gnome	0	1	1	STR: 3; SPD: 5; SOR: 2; LIFE: 11; AP: 3; INFO: Damage 1d6 melee weapon.; TRS: 10(G)
+Goblin	0	1	1	STR: 3; SPD: 5; SOR: 2; LIFE: 11; AP: 3; INFO: Damage 1d6 melee weapon.; TRS: 8(G)
+Golem, Bone	0	4	1	TYPE: Construct; STR: 10; SPD: 3; SOR: 3; LIFE: 50; AP: 12; INFO: Damage 1d10 slam.; TRS: 2(I)
+Golem, Clay	0	1	1	TYPE: Construct; STR: 8; SPD: 3; SOR: 1; LIFE: 16; AP: 3; INFO: Damage 1d6 slam.; TRS: NONE
+Golem, Flesh	0	3	1	TYPE: Construct; STR: 9; SPD: 2; SOR: 3; LIFE: 41; AP: 9; INFO: Damage 1d10 slam.; TRS: 10(G)
+Golem, Gem	0	10	1	TYPE: Construct; STR: 26; SPD: 12; SOR: 18; LIFE: 141; AP: 30; INFO: Damage 1d12 slam.  Can only be harmed with spells and magic weapons.; TRS: 240(G)
+Golem, Iron	0	7	1	TYPE: Construct; STR: 19; SPD: 6; SOR: 7; LIFE: 104; AP: 21; INFO: Damage 1d12 slam.  Ability Check with Strength or be knocked over for a turn.; TRS: 42(G), 1(I)
+Golem, Stone	0	6	1	TYPE: Construct; STR: 17; SPD: 5; SOR: 8; LIFE: 80; AP: 18; INFO: Damage 1d12 slam.; TRS: 40(G)
+Gorilla	0	2	1	TYPE: Animal; STR: 6; SPD: 3; SOR: 1; LIFE: 22; AP: 6; INFO: Damage 1d6 club.; TRS: NONE
+Griffon	0	5	1	TYPE: Beast; STR: 11; SPD: 6; SOR: 5; LIFE: 61; AP: 15; INFO: 2 attacks.  Damage 1d8 bite.  Damage 1d6 claw.; TRS: 20(G), 2(I)
+Hag	0	6	1	STR: 5; SPD: 7; SOR: 17; LIFE: 68; AP: 18; INFO: Damage 1d10 sickness spell.  Ability Check with Sorcery or suffer from Dark Fever and Brain Worm.; TRS: 26(G), 1(I)
+Harpy	0	2	1	TYPE: Beast; STR: 5; SPD: 3; SOR: 3; LIFE: 21; AP: 6; INFO: Damage 1d6.  Ability Check with Sorcery or be charmed from their song for 1d4 turns.; TRS: 10(G)
+Hell Hound	0	2	1	TYPE: Planar; STR: 5; SPD: 4; SOR: 3; LIFE: 21; AP: 6; INFO: Damage 1d6 fire breathing spell.  Ability Check with Sorcery or suffer double damage.; TRS: 6(G), 1(I)
+Hippogriff	0	6	1	TYPE: Beast; STR: 16; SPD: 8; SOR: 9; LIFE: 79; AP: 18; INFO: 2 attacks.  Damage 1d8 bite.  Damage 1d8 claw.; TRS: 35(G), 1(I)
+Hobgoblin	0	4	1	STR: 8; SPD: 5; SOR: 3; LIFE: 48; AP: 12; INFO: Damage 1d8 short sword.; TRS: 13(G)
+Horse	0	1	1	TYPE: Animal; STR: 3; SPD: 3; SOR: 1; LIFE: 11; AP: 3; INFO: Damage 1d2 bite.; TRS: NONE
+Hydra	0	10	1	TYPE: Dragon; STR: 24; SPD: 15; SOR: 20; LIFE: 139; AP: 30; INFO: 8 attacks.  Each head is a 1d6 damage bite.  There will always be at least 1 head, but one may be disabled from an attack.  A roll of 1 on 1d6 determines if this happens.; TRS: 150(G), 4(I)
+Imp	0	1	1	TYPE: Planar; STR: 3; SPD: 3; SOR: 6; LIFE: 11; AP: 3; INFO: Damage 1d6 fire spell.  Ability Check with Sorcery or suffer double damage.; TRS: 1(I)
+Insecture	0	5	1	TYPE: Insect; STR: 12; SPD: 7; SOR: 6; LIFE: 62; AP: 15; INFO: Damage 1d8 spear.; TRS: 20(G), 1(I)
+Leech, Giant	0	3	1	STR: 7; SPD: 3; SOR: 1; LIFE: 39; AP: 9; INFO: Damage 1d6.  Ability Check with Strength or be diseased with Cave Rot.; TRS: NONE
+Leprechaun	0	3	1	STR: 3; SPD: 5; SOR: 7; LIFE: 35; AP: 9; INFO: Damage 0.  Ability Check with Sorcery or fall asleep for 1d4 turns.  These little creatures will not do any harm, but they will attempt to make their enemies fall asleep so they can escape with their gold.; TRS: 100(G)
+Lich	0	9	1	TYPE: Undead; STR: 16; SPD: 9; SOR: 23; LIFE: 121; AP: 27; INFO: Damage 1d12 spell.  The spell cast may be Flames, Shock, Ice Spike or Hurling Stone.  Ability Check with Sorcery to be unaffected.  Liches are unaffected by sleep and charm spells.; TRS: 140(G), 3(I)
+Lion	0	3	1	TYPE: Animal; STR: 8; SPD: 5; SOR: 1; LIFE: 40; AP: 9; INFO: 2 attacks.  Damage 1d6 bite.  Damage 1d4 claw.; TRS: NONE
+Lizard, Fire	0	8	1	TYPE: Reptile; STR: 20; SPD: 9; SOR: 17; LIFE: 115; AP: 24; INFO: Damage 1d10 fire breathing spell.  Ability Check with Sorcery or suffer double damage.; TRS: NONE
+Lizard, Giant	0	6	1	TYPE: Reptile; STR: 16; SPD: 8; SOR: 6; LIFE: 79; AP: 18; INFO: Damage 1d10 bite.; TRS: NONE
+Lizardman	0	1	1	TYPE: Reptile; STR: 6; SPD: 4; SOR: 2; LIFE: 14; AP: 3; INFO: Damage 1d8 melee weapon.; TRS: 6(G)
+Manticore	0	4	1	TYPE: Beast; STR: 8; SPD: 4; SOR: 4; LIFE: 48; AP: 12; INFO: 2 attacks.  Melee Damage 1d8 bite.  Ranged Damage 1d4 stinger.; TRS: 14(G), 1(I)
+Medusa	0	7	1	STR: 10; SPD: 12; SOR: 16; LIFE: 95; AP: 21; INFO: Damage 1d8 bow.  This creature has a magical gaze.  Ability Check with Sorcery or be turned to stone.; TRS: 50(G), 3(I)
+Minotaur	0	5	1	STR: 15; SPD: 6; SOR: 5; LIFE: 65; AP: 15; INFO: Damage 1d10 battle axe.; TRS: 30(G)
+Mosquito, Giant	0	3	1	TYPE: Insect; STR: 6; SPD: 5; SOR: 1; LIFE: 38; AP: 9; INFO: Damage 1d6 bite.  Ability Check with Strength or be diseased with Dark Fever.; TRS: NONE
+Mule	0	1	1	TYPE: Animal; STR: 3; SPD: 2; SOR: 1; LIFE: 11; AP: 3; INFO: Damage 1d2 bite.; TRS: NONE
+Mummy	0	7	1	TYPE: Undead; STR: 18; SPD: 7; SOR: 12; LIFE: 103; AP: 21; INFO: Damage 1d10.  Ability Check with Strength or be diseased with Dark Fever.; TRS: 50(G), 2(I)
+Naga	0	9	1	TYPE: Reptile; STR: 21; SPD: 14; SOR: 20; LIFE: 126; AP: 27; INFO: Damage 1d8 bite or damage 1d8 drain spell.  Ability Check with Sorcery to be unaffected by the drain spell.  Ability Check with Strength to resist the poison bite.; TRS: 132(G), 4(I)
+Necromental	0	8	1	TYPE: Elemental; STR: 21; SPD: 13; SOR: 16; LIFE: 116; AP: 24; INFO: Damage 1d12 slam.; TRS: 63(G), 5(I)
+Neptar	0	6	1	STR: 15; SPD: 8; SOR: 11; LIFE: 78; AP: 18; INFO: Damage 1d10 trident.  Aquatic race of fish men that live underwater.; TRS: 24(G), 1(I)
+Nightmare	0	5	1	TYPE: Planar; STR: 9; SPD: 7; SOR: 15; LIFE: 59; AP: 15; INFO: Damage 1d8 fire breathing spell.  Ability Check with Sorcery or suffer double damage.; TRS: 3(I)
+Octopus, Giant	0	7	1	TYPE: Beast; STR: 19; SPD: 8; SOR: 7; LIFE: 104; AP: 21; INFO: 8 attacks.  Each one is a 1d4 damage tentacle.  There will always be at least 1 tentacle, but one may be disabled from an attack.  A roll of 1 on 1d6 determines if this happens.; TRS: NONE
+Ogre	0	7	1	STR: 18; SPD: 9; SOR: 9; LIFE: 103; AP: 21; INFO: Damage 1d10 club.; TRS: 52(G), 1(I)
+Ooze	0	4	1	STR: 9; SPD: 3; SOR: 2; LIFE: 49; AP: 12; INFO: Damage 1d6.  This ooze will rot away non-magical weapons and armor.  A roll of 1 on 1d4 will destroy one item from a character hit by this slime (Story Teller chooses).; TRS: NONE
+Orc	0	2	1	STR: 7; SPD: 3; SOR: 2; LIFE: 23; AP: 6; INFO: Damage 1d6 axe.; TRS: 8(G)
+Owl, Giant	0	3	1	TYPE: Beast; STR: 8; SPD: 3; SOR: 3; LIFE: 40; AP: 9; INFO: 2 attacks.  Damage 1d6 bite.  Damage 1d6 claw.; TRS: 5(G)
+Panther	0	2	1	TYPE: Animal; STR: 5; SPD: 4; SOR: 1; LIFE: 21; AP: 6; INFO: 2 attacks.  Damage 1d4 bite.  Damage 1d4 claw.; TRS: NONE
+Pegasus	0	7	1	TYPE: Beast; STR: 17; SPD: 11; SOR: 19; LIFE: 102; AP: 21; INFO: 2 attacks.  Each one is a 1d6 hoof.; TRS: 2(I)
+Pixie	0	4	1	STR: 4; SPD: 6; SOR: 9; LIFE: 44; AP: 12; INFO: Damage 1d6.  Ability Check with Sorcery or be charmed for 1d6 turns.  When charmed, the pixie will have you attack a comrade, unless there are none, then the pixie will escape.; TRS: 10(G), 2(I)
+Rat, Giant	0	1	1	TYPE: Animal; STR: 3; SPD: 2; SOR: 1; LIFE: 11; AP: 3; INFO: Damage 1d4 melee bite.  Ability Check with Strength or be diseased with Dark Fever.; TRS: NONE
+Sakleth	0	3	1	TYPE: Reptile; STR: 7; SPD: 4; SOR: 3; LIFE: 39; AP: 9; INFO: Damage 1d8 spear.  A barbaric lizardman race with brownish scales and red eyes.; TRS: 12(G)
+Satyr	0	5	1	STR: 8; SPD: 7; SOR: 13; LIFE: 58; AP: 15; INFO: Damage 1d6.  Ability Check with Sorcery or become charmed, from the song they play on their pipes,  for 1d6 turns.; TRS: 20(G), 2(I)
+Scorpion, Giant	0	3	1	TYPE: Beast; STR: 8; SPD: 3; SOR: 2; LIFE: 40; AP: 9; INFO: Damage 1d8 stinger.  Ability Check with Strength or be poisoned.; TRS: NONE
+Sea Serpent	0	10	1	TYPE: Reptile; STR: 25; SPD: 14; SOR: 17; LIFE: 140; AP: 30; INFO: Damage 1d12 bite.; TRS: 162(G), 3(I)
+Shadow	0	6	1	TYPE: Undead; STR: 14; SPD: 10; SOR: 15; LIFE: 77; AP: 18; INFO: Damage 1d8 shadow magic.  Ability Check with Sorcery or suffer double damage.  They are immune to sleep and charm spells.; TRS: 2(I)
+Shark	0	4	1	STR: 9; SPD: 6; SOR: 1; LIFE: 49; AP: 12; INFO: Damage 1d8 bite.; TRS: NONE
+Skeleton	0	1	1	TYPE: Undead; STR: 3; SPD: 2; SOR: 1; LIFE: 11; AP: 3; INFO: Damage 1d6 melee weapon.; TRS: 4(G)
+Slime	0	2	1	STR: 5; SPD: 2; SOR: 3; LIFE: 21; AP: 6; INFO: Damage 1d4.  This slime will rot away non-magical weapons and armor.  A roll of 1 on 1d6 will destroy one item from a character hit by this slime (Story Teller chooses).; TRS: NONE
+Snake, Giant	0	5	1	TYPE: Reptile; STR: 15; SPD: 9; SOR: 5; LIFE: 65; AP: 15; INFO: Damage 1d8.  Ability Check with Strength or be poisoned.; TRS: NONE
+Spectre	0	3	1	TYPE: Undead; STR: 2; SPD: 3; SOR: 8; LIFE: 34; AP: 9; INFO: Damage 1d6.  Ability Check with Sorcery or lost 1d10 AP.  Immune to sleep and charm spells.; TRS: 1(I)
+Spider, Giant	0	5	1	TYPE: Insect; STR: 13; SPD: 10; SOR: 5; LIFE: 63; AP: 15; INFO: Damage 1d8.  Ability Check with Speed or be wrapped in a web (immobile).  Make an Ability Check with Strength every turn to try and break free.; TRS: NONE
+Sprite	0	4	1	STR: 4; SPD: 5; SOR: 9; LIFE: 44; AP: 12; INFO: Damage 1d8.  Ability Check with Sorcery or be dazed (immobile) for 1d6 turns.  When dazed, the sprite will steal something from their attacker.; TRS: 10(G), 2(I)
+Squid, Giant	0	8	1	TYPE: Beast; STR: 21; SPD: 12; SOR: 8; LIFE: 116; AP: 24; INFO: 8 attacks.  Each one is a 1d4 damage tentacle.  There will always be at least 1 tentacle, but one may be disabled from an attack.  A roll of 1 on 1d6 determines if this happens.; TRS: NONE
+Statue, Bronze	0	8	1	TYPE: Construct; STR: 20; SPD: 8; SOR: 11; LIFE: 115; AP: 24; INFO: Damage 1d12 slam.; TRS: 84(G)
+Statue, Golden	0	9	1	TYPE: Construct; STR: 23; SPD: 9; SOR: 14; LIFE: 128; AP: 27; INFO: Damage 1d12 slam.  Can only be harmed with spells and magic weapons.; TRS: 200(G)
+Statue, Iron	0	5	1	TYPE: Construct; STR: 15; SPD: 3; SOR: 5; LIFE: 65; AP: 15; INFO: Damage 1d12 slam.; TRS: 25(G)
+Statue, Stone	0	2	1	TYPE: Construct; STR: 7; SPD: 1; SOR: 1; LIFE: 23; AP: 6; INFO: Damage 1d8 slam.; TRS: 12(G)
+Tick, Giant	0	3	1	TYPE: Insect; STR: 6; SPD: 4; SOR: 1; LIFE: 38; AP: 9; INFO: Damage 1d6 bite.  Ability Check with Strength or be diseased with Brain Worm.; TRS: NONE
+Titan	0	15	1	TYPE: Giant; STR: 35; SPD: 25; SOR: 29; LIFE: 200; AP: 45; INFO: 3 attacks.  Damage 1d12 fist.  There are 2 damage 1d12 spells.  The spell cast may be Flames, Shock, Ice Spike or Hurling Stone.  Ability Check with Sorcery or suffer double damage.; TRS: 300(G), 4(I)
+Toad, Giant	0	1	1	TYPE: Beast; STR: 4; SPD: 2; SOR: 1; LIFE: 12; AP: 3; INFO: Damage 1d6 bite; TRS: NONE
+Troglodyte	0	4	1	TYPE: Reptile; STR: 10; SPD: 4; SOR: 2; LIFE: 50; AP: 12; INFO: Damage 1d8 spear.; TRS: 12(G)
+Troll	0	6	1	STR: 17; SPD: 9; SOR: 8; LIFE: 80; AP: 18; INFO: Damage 1d10 axe.; TRS: 42(G)
+Turtle, Giant	0	9	1	TYPE: Beast; STR: 24; SPD: 9; SOR: 9; LIFE: 129; AP: 27; INFO: Damage 1d12 bite.; TRS: NONE
+Unicorn	0	7	1	TYPE: Beast; STR: 17; SPD: 10; SOR: 19; LIFE: 102; AP: 21; INFO: 3 attacks.  2 of them are a 1d6 hoof.  The other is a 1d12 horn.; TRS: 2(I)
+Vampire	0	8	1	TYPE: Undead; STR: 20; SPD: 15; SOR: 20; LIFE: 115; AP: 24; INFO: Damage 1d8 bite.  Ability Check with Sorcery or be cursed.  The curse will cause the victim to turn into a Vampire the next time they rest, attacking others around them.  They are immune to sleep and charm spells.; TRS: 85(G), 3(I)
+Warlock	0	4	1	STR: 3; SPD: 3; SOR: 13; LIFE: 43; AP: 12; INFO: Damage 1d8 spell.  The spell cast may be Flames, Shock, Ice Spike or Hurling Stone.  Ability Check with Sorcery to be unaffected.; TRS: 20(G), 2(I)
+Wasp, Giant	0	7	1	TYPE: Insect; STR: 15; SPD: 12; SOR: 7; LIFE: 100; AP: 21; INFO: Damage 1d10 stinger.  Ability Check with Strength or be poisoned.; TRS: NONE
+Werewolf	0	4	1	TYPE: Beast; STR: 10; SPD: 6; SOR: 4; LIFE: 50; AP: 12; INFO: 2 attacks.  Damage 1d8 bite.  Damage 1d4 claw.  Ability Check with Sorcery or be cursed.  The curse will cause the victim to turn into a Werewolf the next time they rest, attacking others around them.; TRS: 15(G), 1(I)
+Wight	0	4	1	TYPE: Undead; STR: 3; SPD: 5; SOR: 11; LIFE: 43; AP: 12; INFO: Damage 1d8.  Ability Check with Sorcery or lost 2d8 AP.  Immune to sleep and charm spells.; TRS: 14(G), 1(I)
+Witch	0	8	1	STR: 9; SPD: 14; SOR: 21; LIFE: 104; AP: 24; INFO: Damage 1d10 spell.  Ability Check with Sorcery or be turned into a toad for 1d4 turns.  A toad has 1 Strength, Speed, Sorcery, Armor and Life.  The witch will then move on to the next attacker.; TRS: 80(G), 3(I)
+Wolf	0	2	1	TYPE: Animal; STR: 5; SPD: 4; SOR: 1; LIFE: 21; AP: 6; INFO: 2 attacks.  Damage 1d4 bite.  Damage 1d4 claw.; TRS: NONE
+Worm, Giant	0	10	1	TYPE: Beast; STR: 26; SPD: 12; SOR: 10; LIFE: 141; AP: 30; INFO: Damage 1d12 bite.; TRS: NONE
+Wraith	0	3	1	TYPE: Undead; STR: 3; SPD: 2; SOR: 7; LIFE: 35; AP: 9; INFO: Damage 1d8.  Ability Check with Sorcery or lost 1d12 AP.  Immune to sleep and charm spells.; TRS: 10(G), 1(I)
+Wyrm	0	12	1	TYPE: Dragon; STR: 28; SPD: 13; SOR: 25; LIFE: 163; AP: 36; INFO: 3 attacks.  Damage 1d8 claw.  Damage 1d10 bite.  Damage 1d10 fire breathing spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 250(G), 5(I)
+Wyrm, Ancient	0	15	1	TYPE: Dragon; STR: 35; SPD: 28; SOR: 32; LIFE: 200; AP: 45; INFO: 3 attacks.  Damage 1d10 claw.  Damage 1d12 bite.  Damage 1d12 fire breathing spell.  Ability Check with Sorcery or suffer double damage from the flames.; TRS: 500(G), 6(I)
+Wyvern	0	8	1	TYPE: Dragon; STR: 20; SPD: 13; SOR: 10; LIFE: 115; AP: 24; INFO: 2 attacks.  Damage 1d10 bite.  Damage 1d8 stinger tail.  Ability Check with Strength or be poisoned from stinger.; TRS: 100(G), 4(I)
+Zombie	0	1	1	TYPE: Undead; STR: 4; SPD: 2; SOR: 1; LIFE: 12; AP: 3; INFO: Damage 1d6 melee bite.  Ability Check with Strength or be diseased with Dark Fever.; TRS: 6(G)
+--END--
+Poison Dart - Poisonous darts fly out from a nearby location; ABILITY: Speed; EFFECT: Death Unless Cured
+Poison Gas - Poisonous gas fills the area; ABILITY: Strength; EFFECT: Death Unless Cured
+Falling Rocks - Heavy rocks fall from the ceiling; ABILITY: Strength; EFFECT: 1d12
+Arrow - Arrows fly out from a nearby location; ABILITY: Speed; EFFECT: 1d6
+Fire Ball - Magical fire consumes the area; ABILITY: Sorcery; EFFECT: 1d8
+Lightning Bolt* - Magical lightning shocks everyone in the area; ABILITY: Sorcery; EFFECT: 1d10
+Pit - A trapdoor opens to a 10 foot pit below; ABILITY: Speed; EFFECT: 1d6
+Pit with Spikes - A trapdoor opens to a 10 foot pit below, with spikes; ABILITY: Speed; EFFECT: 1d12
+Bottomless Pit - A trapdoor opens to a bottomless pit below; ABILITY: Speed; EFFECT: Gone Forever
+Wall - A wall, or bars, fall from the ceiling...maybe blocking the way; ABILITY: Strength; EFFECT: Blocked
+Nullify - A blast of magical energy makes magical items disappear.  A 1d6 is rolled for each magical item.  A roll of 1 means the magical item is gone forever.; ABILITY: -; EFFECT: Magical Items Gone
+--END--
+iron sifter
+iron hand saw
+iron pan
+10 foot wood pole
+bits of fur and hair
+pottery shards scattered around
+loom
+11 burnt scrolls
+dust throughout
+dust throughout
+tinderbox
+a medium-sized locked iron cage with ashes on the bottom
+oak bed
+scattered bits of bones and teeth
+cedar plate
+ruined iron dented plate armor
+small bronze mirror
+5 bloody bandages
+shredded and torn clothing
+straw scattered around
+ruined red sheet
+ripped rags
+bronze candle snuffer
+scattered leaves and twigs
+bronze manacles on the ceiling
+grindstone
+straw scattered around
+grindstone
+rosewood armor rack {HOLDS: rusted small shield --- large shield [made of adamant] --- torn studded leather armor}
+decayed head of a dwarf
+ruined wood armchair
+walnut armor rack {HOLDS: ruined buckler --- leather armor [made of animal hide and is brown in color]}
+ruined metal sewing needle
+walnut stool
+wooden tray
+cobwebs
+rusty bronze spoon
+steel armchair
+wooden dish
+brass bowl
+iron bucket
+maple cupboard [SPOILED CONTENTS: biscuits --- apples]
+bent brass kettle
+small bronze mirror
+copper music box worth 33 copper
+corroded bronze pan
+a pile of dung
+rusty sword blade
+8 torches on the walls held in bronze wall sconces...but only 2 of them are still useable
+ruined iron tankard
+large puddle of stagnant water
+moisture on the wall
+dried blood drawings of alchemic symbols on the floor
+ruined orange towel
+iron knife
+platinum music box worth 10 copper
+ruined bronze candle snuffer
+bronze branding iron
+ruined shield
+3 metal spikes
+maple armor rack {HOLDS: leather armor [made of rhinoceros hide and is white in color...with a woman symbol on the back that is emerald in color] --- broken shield --- broken large shield}
+skull of an elf
+charcoal
+walnut plate
+iron shelf
+charcoal
+a pillory made mostly of cedar...it has some areas of dried blood
+maple cupboard [SPOILED CONTENTS: pudding --- eggs --- fish]
+mounted deer head
+scattered bits of bones and teeth
+a huge pile of various bones
+bronze pot
+bent iron candle snuffer
+mounted polar bear head
+wooden flagon
+3 hardened blobs of once melted iron
+2 rusty bronze hooks on the wall
+7 sticks scattered around
+mattress
+maple weapon rack {HOLDS: broken scimitar --- long sword [the blade is made of steel with a leather grip] --- ruined light flail --- broken short sword --- rusty short sword --- ruined spear}
+broken cauldron
+ruined torch
+bottle (filled with nightmare bone dust)
+shredded and torn clothing
+wooden club
+8 hardened blobs of once melted bronze
+wooden pitcher
+a pile of dung
+patches of moss
+brass manacles on the ceiling with a bloody corpse of a goblin [CONTAINS: vial of mild poison --- red silk handkerchief --- leather scrollcase]
+cedar coffer
+walnut desk [CONTAINS: deck of playing cards --- small slip of parchment --- glass inkpot --- golden bracelet (99gp) --- iron medallion --- small iron carving knife --- iron metal file --- thimble --- blank spell book bound in blue leather with a symbol of a boar on the cover]
+steel workbench
+fire pit with ashes
+crumbling stone chair
+scattered leaves and twigs
+oak armor rack {HOLDS: ruined buckler --- rusted shield --- tower shield [made of iron]}
+3 bronze spikes
+pick handle
+red candle
+granite workbench
+straw scattered around
+corroded brass pliers
+fireplace with wood inside
+liquid dripping from the ceiling
+wooden tub
+dust throughout
+charcoal
+basket with a skull of a bugbear inside it
+birch bunk bed
+100 feet of black yarn
+gray cushion
+dried blood on the wall
+rusty dagger hilt
+iron dented plate armor
+bottle (filled with fire giant ash)
+4 pieces of wood
+18 hardened blobs of once melted brass
+dust throughout
+leather boot
+brass candle snuffer
+mounted tiger head
+wooden club
+black thread (30 feet)
+rusty brass goblet
+small rusty iron hanging mirror
+2 arrows
+mounted antelope head
+useless torch
+liquid dripping from the ceiling
+corroded bronze hand saw
+food scraps
+steel chair
+wooden tray
+chandelier
+5 foot long iron bar
+a large pile of rocks
+60 feet of twine
+ruined metal dented shield
+a large pile of rocks
+maple bunk bed
+ruined iron manacles on the wall with a half-eaten corpse of a lizard man [CONTAINS: vial of perfume --- box of matches (76 each) --- gold spoon worth 19 platinum --- blue candle]
+ruined mattress
+ruined painting of Aralcail the Thief
+dagger hilt
+broken stone chair
+patches of moss
+rusty sword blade
+charcoal
+iron tankard
+cedar stool
+torn purple blanket
+rusty bronze dented plate armor
+rubble and dirt scattered around
+scattered bits of bones and teeth
+patches of moss
+a 1 foot wide hole that is about 2 feet deep
+rusty metal pan
+oak bench
+cobwebs
+cracked granite throne
+half-eaten head of a bugbear
+large puddle of stagnant water
+corroded iron manacles on the wall with a bloody remains of a goblin [CONTAINS: 4 wolfsbane flowers --- 17 feet of black yarn --- 4 gold nuggets worth 1 gold each]
+jar of lantern oil
+blunt spear head
+bronze kettle
+useless blacksmith hammer
+iron ladle
+metal hand saw
+ruined wood workbench
+36 foot ripped rope
+a large pile of stone blocks
+corroded metal sifter
+bent bronze tankard
+rusty bronze dented plate armor
+jar (filled with wererat serum)
+a quarter full keg of water
+metal goblet
+maple chest of drawers [CONTAINS: gray cape --- gray scarf --- ruined orange hose --- moldy green smock --- yellow tunic]
+maple stool
+rosewood armoire [CONTAINS: blue leggings --- dirty orange cap]
+high walnut stool
+shredded and torn clothing
+black sheet
+a large pile of rocks
+useless smoking pipe
+green thread (60 feet)
+high oak stool
+3 small stones scattered around
+blood smears on the ceiling
+blue candle
+useless torch
+pick handle
+ripped purple pillow
+a large pile of ashes with a broken battle staff next to it
+2 pieces of wood
+a large pile of ashes with a tall straw hat lying on top of it
+4 large broken and rotten eggshells
+crumbling stone bench
+scattered bits of bones and teeth
+oak casket [CONTAINS: whetstone --- black flower]
+ruined iron dented helm with a half-eaten head of a dwarf still in it
+granite throne
+bent iron bucket
+chiseled writings on the floor that tells the location of a nearby secret room...but written in a long dead orcish language
+4 wet scrolls
+19 pieces of ruined parchment
+silver music box worth 93 copper
+fire pit with ashes
+19 wax blobs from blue candles
+bent bronze dented helm with a bloody head of an orc still in it
+ripped mattress
+platinum candle stick worth 38 platinum
+corroded metal spoon
+pottery shards scattered around
+rosewood armor rack {HOLDS: dented splint mail armor --- rusted splint mail armor --- broken splint mail armor --- plate mail armor [made of mithril...with a wolf symbol on the front that is azure in color]}
+loom
+cedar chest of drawers [CONTAINS: ruined brown coat --- gray cloth pouch (contains 7 silver) --- ripped gray dress --- dirty yellow doublet --- ruined red hat --- ruined green mantle --- moldy red apron --- dirty orange leggings]
+whetstone
+wooden armchair
+fire pit with wood
+a huge pile of various bones
+dagger hilt
+black washcloth
+mahogany cupboard [SPOILED CONTENTS: grapes --- bottle of honey --- cheese --- cookies --- beans --- muffins]
+hourglass
+bent brass dented helm with a skull of an orc still in it
+a large pile of stone blocks
+corroded bronze pot
+rotted remains of a hobgoblin [CONTAINS: ornate platinum key (20% chance to unlock one container in this place) --- 5 bandages]
+rusty metal sifter
+8 pieces of wood
+5 torches on the walls held in bronze wall sconces...but only 3 of them are still useable
+metal dented helm
+leather boot
+ruined iron goblet
+gold music box worth 61 gold
+oak bed
+grindstone
+dried blood on the ceiling
+corroded iron sifter
+ruined iron spoon
+yellow thread (60 feet)
+bent metal dented plate armor
+bent metal sewing needle
+carved drawings of the map to a treasure {located about 180 miles away from here} on the ceiling
+broken test tube
+iron pail
+6 metal spikes
+warped wood throne
+grindstone
+brass kettle
+corroded brass tankard
+pallet
+bent brass bucket
+ruined yellow washcloth
+8 bent bronze wall sconces
+iron manacles on the floor with a rotted corpse of an elf [CONTAINS: small wooden flute --- metal crowbar --- brass padlock with key --- bronze hair brush]
+walnut stool
+small iron mirror
+10 wax blobs from orange candles
+rusty iron mug
+iron dipper
+broken wood bench
+liquid dripping from the ceiling
+marble tub
+rusty bronze dipper
+useless quill
+blue towel
+grindstone
+smoking pipe
+mahogany weapon rack {HOLDS: arrow {8 each}  --- broken bastard sword}
+low rusty iron table
+rosewood stool
+ruined wood wall basin
+charcoal
+cedar plate
+mattress
+corroded bronze pliers
+maple armoire [CONTAINS: moldy blue coat --- moldy green coat]
+oak cupboard [SPOILED CONTENTS: apples --- cheese --- greens --- pudding]
+2 sticks scattered around
+iron dented helm with a decayed head of a goblin still in it
+axe [the blade is made of steel and has a gold handle with a leather grip]
+scattered ashes
+wooden pitcher
+hourglass
+60 feet of blue yarn
+bronze rusty razor
+8 metal hooks on the wall
+rosewood armor rack {HOLDS: broken chain mail armor --- dented tower shield}
+a three quarters full keg of wine
+corroded iron ladle
+pottery shards scattered around
+brazier
+chandelier
+blue couch
+blacksmith hammer
+corroded bronze mug
+areas with mold
+bloody bones of a lizard man [CONTAINS: page torn from a spell book --- 4 sling stones --- platinum goblet worth 72 gold]
+a pile of dung
+torn blue cushion
+pick handle
+walnut bed
+metal ladle
+cedar brush
+patches of moss
+pick handle
+9 ruined bronze hooks on the wall
+padded iron chair
+moisture on the ceiling
+a large pile of rocks
+bronze hand saw
+rusty iron hand saw
+rusty iron shelf
+rusty brass goblet
+rusted buckler
+blood smears on the ceiling
+pottery shards scattered around
+7 torches on the walls held in metal wall sconces...but only 2 of them are still useable
+a small rusty cage
+5 foot long rusty iron bar
+sword blade
+a pillory made mostly of mahogany...locked in it is a half-eaten remains of a hobbit [CONTAINS: hacksaw --- rawhide necklace --- set of wooden teeth --- 3 inch straight pin]
+bent iron dented helm with a half-eaten head of a dwarf still in it
+maple workbench
+bits of fur and hair
+cracks in the floor
+mounted tiger head
+maple weapon rack {HOLDS: broken bastard sword --- broken knife --- broken bastard sword --- broken pole arm}
+cracks in the floor
+rusty iron pot
+corroded iron knife
+broken hourglass
+iron bench
+whetstone
+maple desk [CONTAINS: cloth bag of crushed herbs --- iron spoon worth --- iron goblet --- pair of purple cloth gloves --- 17 foot ball of yellow string]
+ruined purple pillow
+charcoal
+8 ingots of bronze
+basket with a rotted head of a human inside it
+ruined hourglass
+corroded dagger hilt
+rusty iron armchair
+a 4 foot wide hole that is about 5 feet deep
+torn green sheet
+padded oak chair
+pottery shards scattered around
+grindstone
+shredded and torn clothing
+fireplace with wood inside
+wooden pedestal
+a large pile of stone blocks
+5 broken crossbow bolts
+torn tapestry of a scenic desert view
+40 feet of twine
+cracked granite armchair
+6 sticks scattered around
+cobwebs
+birch bunk bed
+red towel
+broken gong
+15 blank scrolls
+scattered ashes
+rosewood coffer
+useless blacksmith hammer
+purple washcloth
+20 wax blobs from white candles
+rotted corpse of a gnome [CONTAINS: 14 bronze tacks --- set of wooden teeth]
+4 arrows
+4 small stones scattered around
+charcoal
+ceramic jug
+sword blade
+ruined leather armor
+padded stone chair
+silver music box worth 67 electrum
+wooden flagon
+9 pieces of wood
+pottery shards scattered around
+small bottle of ink
+torn white pillow
+wooden dish
+a three quarters full cask of water
+mat
+a large pile of ashes
+fireplace with wood inside
+tapestry of a dog
+high cedar stool
+areas with mold
+dried blood on the wall
+brazier
+wooden shelf
+5 small stones scattered around
+bronze dented plate armor
+scratches and claw marks on the wall
+leather bag
+ruined spherical, glass bottle
+grindstone
+9 iron hooks on the wall
+leather bag
+a large locked metal cage
+iron tankard
+iron ladle
+humanoid bones
+a huge pile of various bones
+dagger hilt
+large puddle of stagnant water
+ruined brown towel
+iron goblet
+red thread (50 feet)
+blue canvas sack
+bronze tankard
+white wax drippings
+patches of moss
+broken cauldron
+a huge pile of various bones
+7 iron hooks on the wall
+11 hardened blobs of once melted iron
+5 iron wall sconces
+bent brass hammer head
+oak bench
+chalk writings on the floor that tells the location of a nearby secret room...but written in a long dead dwarvish language
+metal tankard
+large puddle of oily water
+brown wax drippings
+smoking pipe
+tinderbox
+food scraps
+rusty iron fork
+brass pail
+blunt rusty spear head
+cedar weapon rack {HOLDS: broken arrow --- rusty knife --- morning star [the star is made of bronze and has a silver handle with a animal leather grip] --- broken bastard sword --- ruined light pick}
+ruined metal dented shield
+gray thread (40 feet)
+tinderbox
+scattered leaves and twigs
+white candle
+metal pail
+corroded iron dented shield
+scattered leaves and twigs
+dagger hilt
+a spiked torture chair made mostly of cedar with metal spikes on it...sitting in it is a bloody bones of a dwarf [CONTAINS: brass flask of alcohol --- small toy doll]
+leather boot
+bent iron small bell
+purple blanket
+brown canvas rucksack
+6 broken and fresh eggshells
+6 iron wall sconces
+brazier
+2 foot long iron chain
+whetstone
+skull of a human
+maple workbench
+2 ingots of gold...worth 19 gold each
+iron sifter
+ripped red towel
+a pile of ashes with a broken great sword next to it
+corroded brazier
+maple armchair
+straw scattered around
+brazier
+broken cauldron
+mahogany cupboard [SPOILED CONTENTS: pudding --- mushrooms --- cookies --- jar of jam --- peaches]
+dust throughout
+ruined bronze knife
+walnut coffer
+wooden club
+iron pot
+6 corroded iron hooks on the wall
+empty spherical, glass bottle
+brass sewing needle
+tinderbox
+wooden tray
+broken wood throne
+brass dented helm
+chandelier
+areas with mold
+a small moldy yellow rug with a dark blue design on it
+stone tub
+19 pieces of wet parchment
+15 pieces of ruined parchment
+bent brass branding iron
+walnut plate
+wooden flagon
+blood smears on the wall
+yellow slime on the ceiling
+pick handle
+6 torches on the walls held in iron wall sconces...but only 3 of them are still useable
+a pile of dung
+jar (filled with yellow slime)
+corroded iron manacles on the wall with a half-eaten remains of a hobgoblin [CONTAINS: vial of insect repellent --- three-leaf clover --- scroll with the lowest level wizard spell]
+gray thread (70 feet)
+birch footlocker [CONTAINS: metal scissors --- gold spoon worth 27 gold --- paint brush --- fish hook --- iron scissors]
+walnut coffer
+basket
+10 pieces of wood
+red thread (80 feet)
+--END--
+brown leather rucksack
+blue canvas rucksack
+blue canvas pouch
+leather pouch
+leather bag
+iron strongbox with a locked keyhole
+white canvas rucksack
+iron coffer with a locked keyhole
+iron coffer
+iron footlocker
+oak coffer
+walnut trunk
+gray cloth satchel
+blue canvas bag
+iron footlocker
+cedar strongbox with a locked keyhole
+oak trunk with a locked keyhole
+oak chest
+walnut casket
+iron box with a locked keyhole
+maple coffer
+iron coffer with a locked padlock
+cedar case
+oak coffer
+iron coffer
+birch strongbox
+walnut casket
+orange canvas knapsack
+cedar trunk
+iron box
+iron case
+iron box with a locked keyhole
+birch chest
+yellow cloth satchel
+iron trunk with a locked keyhole
+leather bag
+iron box
+white canvas bag
+brown canvas sack
+maple footlocker
+green leather satchel
+gray cloth bag
+mahogany chest with a locked padlock
+iron chest
+iron coffer with a locked keyhole
+cedar trunk
+black leather sack
+iron coffer
+leather sack
+brown canvas backpack
+iron box with a locked keyhole
+iron box with a locked padlock
+brown cloth sack
+iron box with a locked padlock
+iron box with a locked keyhole
+birch casket
+leather pouch
+green cloth pouch
+rosewood trunk
+blue leather satchel
+iron case
+rosewood strongbox
+rosewood casket with a locked padlock
+leather satchel
+leather backpack
+leather sack
+cedar chest with a locked keyhole
+mahogany trunk
+iron coffer with a locked padlock
+iron case with a locked keyhole
+iron trunk
+rosewood footlocker with a locked keyhole
+leather rucksack
+leather backpack
+walnut box
+leather satchel
+gray cloth pouch
+iron footlocker
+brown leather bag
+leather knapsack
+rosewood coffer
+iron strongbox with a locked keyhole
+iron strongbox
+gray cloth rucksack
+iron strongbox with a locked keyhole
+leather backpack
+walnut case
+brown leather pouch
+iron casket
+orange cloth bag
+iron footlocker with a locked padlock
+gray cloth rucksack
+mahogany chest with a locked padlock
+leather bag
+iron casket with a locked padlock
+iron coffer
+purple cloth knapsack
+rosewood strongbox with a locked keyhole
+blue cloth knapsack
+leather backpack
+--END--
+Gem	30	1
+Potion	30	2
+Scroll	30	3
+Jewelry	20	4
+Artifact	10	5
+Plate Armor	2	6
+Splint Armor	2	6
+Chain Armor	2	6
+Studded Armor	4	6
+Leather Armor	4	6
+Padded Armor	2	6
+Helmet	2	6
+Shield	2	6
+Battle Axe	1	7
+Axe	1	7
+Club	1	7
+Dagger	1	7
+Hammer	1	7
+War Hammer	1	7
+Mace	1	7
+War Mace	1	7
+Morningstar	1	7
+Short Sword	1	7
+Long Sword	1	7
+Great Sword	1	7
+Spear	1	7
+Staff	1	7
+Bow	1	7
+Crossbow	1	7
+Sling	1	7
+--END--
+Amber-300 Gold	12
+Opal-350 Gold	11
+Citrine-400 Gold	10
+Topaz-450 Gold	9
+Amethyst-500 Gold	8
+Quartz-550 Gold	7
+Ruby-600 Gold	6
+Sapphire-650 Gold	5
+Emerald-700 Gold	4
+Turquoise-750 Gold	3
+Pearl-800 Gold	2
+Diamond-850 Gold	1
+--END--
+Healing Potion	1
+Cure Potion	1
+Air Potion	1
+Neptune Potion	1
+Speed Potion	1
+Strength Potion	1
+Sorcery Potion	1
+Armor Potion	1
+Protection Potion	1
+Invisibility Potion	1
+Flying Potion	1
+Fighting Potion	1
+Seeing Potion	1
+--END--
+Scroll of Appraise	1
+Scroll of Blind	1
+Scroll of Charm	1
+Scroll of Cloud	1
+Scroll of Fire Ball	1
+Scroll of Frost	1
+Scroll of Hold	1
+Scroll of Invisible	1
+Scroll of Levitate	1
+Scroll of Lightning	1
+Scroll of Lock	1
+Scroll of Magic Arrow	1
+Scroll of Noise	1
+Scroll of Poison Gas	1
+Scroll of Sense Magic	1
+Scroll of Shield	1
+Scroll of Sight	1
+Scroll of Sleep	1
+Scroll of Slow	1
+Scroll of Stupidity	1
+Scroll of Toad	1
+Scroll of Torch Light	1
+Scroll of Trap Zap	1
+Scroll of Wall	1
+Scroll of Weakness	1
+Scroll of Bless	1
+Scroll of Breathe	1
+Scroll of Calm	1
+Scroll of Cure	1
+Scroll of Exorcism	1
+Scroll of Feast	1
+Scroll of Fleshed	1
+Scroll of Freedom	1
+Scroll of Guidance	1
+Scroll of Heal	1
+Scroll of Resurrect	1
+Scroll of Sense Evil	1
+Scroll of Undeath	1
+--END--
+Amulet of Armor	3
+Amulet of Battle	3
+Amulet of Protection	3
+Bracelet of Armor	3
+Bracelet of Battle	3
+Bracelet of Protection	3
+Ring of Armor	3
+Ring of Battle	3
+Ring of Protection	3
+Amulet of Life	3
+Amulet of Sorcery	3
+Amulet of Speed	3
+Amulet of Strength	3
+Bracelet of Life	3
+Bracelet of Sorcery	3
+Bracelet of Speed	3
+Bracelet of Strength	3
+Ring of Life	3
+Ring of Sorcery	3
+Ring of Speed	3
+Ring of Strength	1
+Amulet of Great Armor	1
+Amulet of Great Protection	1
+Amulet of Great Sorcery	1
+Amulet of Great Speed	1
+Amulet of Great Strength	1
+Amulet of Greater Battle	1
+Amulet of Greater Life	1
+Bracelet of Great Armor	1
+Bracelet of Great Protection	1
+Bracelet of Great Sorcery	1
+Bracelet of Great Speed	1
+Bracelet of Great Strength	1
+Bracelet of Greater Battle	1
+Bracelet of Greater Life	1
+Ring of Great Armor	1
+Ring of Great Protection	1
+Ring of Great Sorcery	1
+Ring of Great Speed	1
+Ring of Great Strength	1
+Ring of Greater Battle	1
+Ring of Greater Life	1
+Amulet of the Cursed	2
+Bracelet of the Cursed	2
+Ring of the Cursed	2
+Amulet of the Greatest Curse	1
+Bracelet of the Greatest Curse	1
+Ring of the Greatest Curse	1
+--END--
+Belt of Hercules	1
+Book of Knowledge	1
+Boots of Flying	1
+Boots of Speed	1
+Boots of the Elf	1
+Bottle of Clouds	1
+Cloak of Invisibility	1
+Cloak of Protection	1
+Crown of Command	1
+Crystal Ball	1
+Crystal of Light	1
+Dragon Teeth	1
+Element Crystal	1
+Genie Lamp	1
+Gloves of Giants	1
+Gloves of Speed	1
+Gloves of the Gladiator	1
+Gloves of Thieves	1
+Holy Symbol	1
+Horn of Fear	1
+Iron Cape	1
+Magic Crystal	1
+Magic Lantern	1
+Magic Mirror	1
+Magical Broom	1
+Magical Carpet	1
+Magical Hat of Illusion	1
+Magical Hourglass	1
+Magical Rabbit's Foot	1
+Magical Rope	1
+Mystical Shiny Crystal	1
+Pandora's Box	1
+Pouch of Hiding	1
+Robe of Power	1
+Robe of the Sea	1
+Rope of Binding	1
+Sand of Deconstruction	1
+Sand of Vanishing	1
+Spider Boots	1
+Staff of Healing	1
+Staff of Power	1
+Staff of Resurrection	1
+Staff of Wizardry	1
+Thief Mask	1
+Wand of Appraisal	1
+Wand of Detect Traps	1
+Wand of Fire	1
+Wand of Ice	1
+Wizard Hat	1
+Wizard Robe	1
+--END--
+of Defense	10
+of Great Defense	5
+of Ultimate Defense	3
+of the Cursed	1
+of the Ultimate Curse	1
+--END--
+of Skill	35
+of Battle	25
+of War	15
+of Strength	15
+of Might	11
+of Vanquishing	7
+of the Nimble	15
+of the Swift	11
+of Speed	7
+of the Cursed	4
+of the Ultimate Curse	2
+of Hunting	1
+of Beast Mastery	1
+of Construct Destruction	1
+of Dragon Slaying	1
+of Elemental Banishment	1
+of Giant Killing	1
+of Insect Eradication	1
+of Exorcism	1
+of Reptile Extinction	1
+of Undeadly Death	1
+of Ultimate Hunting	1
+of Ultimate Beast Mastery	1
+of Ultimate Construct Destruction	1
+of Ultimate Dragon Slaying	1
+of Ultimate Elemental Banishment	1
+of Ultimate Giant Killing	1
+of Ultimate Insect Eradication	1
+of Ultimate Exorcism	1
+of Ultimate Reptile Extinction	1
+of Ultimate Undeadly Death	1

@@ -1,0 +1,1905 @@
+This is the data file for OSRIC™.  This consists of creatures and treasure from the core rulebook.
+You can use this with some of the tools here that allow for data files to be input. You may only want to use 
+this file if you want to customize your creations. You may have no electrum in your land or maybe you want to 
+remove the chance of dinosaurs from appearing. You may want to add custom monsters and items. Anything is possible.
+
+This is published under the Open Game License Version 1.0a (which can be found at http://www.wizardawn.com/rpg/lic_ogl.html)
+and is in compliance with the OSRIC™ Open License (which can be found at http://www.wizardawn.com/rpg/lic_osric.html).
+
+"OSRIC", "Osric" and "O.S.R.I.C." are trademarks of Matthew Finch and Stuart Marshall
+
+Below are the codes used for the creatures' terrain types...
+
+DG = Dungeon
+PF = Forest
+PH = Hills
+PM = Mountains
+PP = Plains
+PS = Swamp
+PD = Desert
+FW = Freshwater
+SW = Sea
+CF = Snowy Forest
+CH = Snowy Hills
+CM = Snowy Mountains
+CP = Snowy Plains
+TF = Jungle/Tropics Forest
+TH = Jungle/Tropics Hills
+TM = Jungle/Tropics Mountains
+TS = Jungle/Tropics Swamp
+
+--BEGIN--
+ACHAIERAI	PFXPHXPMXPSXTFXTHXTMXTS	14	1	Freq: Very Rare; #ENC: 1d8; SIZE: Large (16 ft tall); MOVE: 180 ft; AC: 8 or -1 (see page); HD: 40 hp (body), 15 hp (each leg); ATK: 3; DMG: 1d8/1d8/1d10; SA: None; SD: Poison cloud; MR: 35%; LAIR: None; INT: Average; AL: CE; XP: 2,750; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems (15%), 1d8 jewelry (10%) and 3 magic items and 1 scroll (25%).; BOOK: OSRIC-259
+AERIAL SERVANT	X	17	1	Freq: Very Rare; #ENC: 1; SIZE: Large (8 ft tall); MOVE: 240 ft flying (AA: level VI); AC: 3; HD: 16; ATK: 1; DMG: 8d4; SA: 66% chance of surprise; SD: +1 or better weapon to hit; MR: Standard; LAIR: None; INT: Semi-; AL: N; XP: 5,250+20/hp; TRS: None; BOOK: OSRIC-259
+AFREET	DG	11	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 90 ft, 240 ft flying (AA: level V); AC: 2; HD: 10; ATK: 1; DMG: 3d8; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Very; AL: LE; XP: 7,000+12/hp; TRS: None; BOOK: OSRIC-259
+AL-MI`RAJ	DGXPFXPP	2	1	Freq: Very Rare; #ENC: 2d10; SIZE: Small; MOVE: 180 ft; AC: 7; HD: 1; ATK: 1; DMG: 1d4; SA: None; SD: None; MR: See Page; LAIR: 5%; INT: Animal; AL: N; XP: 5+1/hp; TRS: None; BOOK: OSRIC-260
+ALBERTOSAURUS	TMXTHXTFXTS	9	13	Freq: Common; #ENC: 1 or 4d6; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 8; ATK: 1; DMG: 2d6; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 500+8/hp; TRS: None; BOOK: OSRIC-227
+ALLOSAURUS	TMXTHXTFXTS	16	5	Freq: Uncommon; #ENC: 1 or 2d8; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 15; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 1,750+18/hp; TRS: None; BOOK: OSRIC-227
+AMBER CREEPING VINE	DG	4	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: None; AC: 7; HD: 3; ATK: See Page; DMG: Special; SA: None; SD: None; MR: Standard; LAIR: 100%; INT: Non-; AL: N; XP: 75+3/hp; TRS: Gear from victims, buried under the soil; BOOK: OSRIC-260
+AMBER CREEPING VINE ZOMBIE	DG	3	3	Freq: Rare; #ENC: 1d2; SIZE: Medium; MOVE: See Page; AC: See Page; HD: 2; ATK: 1; DMG: By weapon type; SA: None; SD: None; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: 40+2/hp; TRS: Any gear on body; BOOK: OSRIC-260
+ANKHEG	DG	8	3	Freq: Rare; #ENC: 1d6; SIZE: Large (10 ft+); MOVE: 120 ft, 60 ft burrowing; AC: 2; HD: 3 to 8; ATK: 1; DMG: 3d6; SA: Squirt acid; SD: None; MR: Standard; LAIR: 15%; INT: Non-; AL: N; XP: Varies; TRS: None; BOOK: OSRIC-261
+ANKLYOSAURUS	TMXTHXTFXTS	10	5	Freq: Uncommon; #ENC: 1d4+1; SIZE: Large; MOVE: 60 ft; AC: 0; HD: 9; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 750+12/hp; TRS: None; BOOK: OSRIC-229
+ANNIS	CFXCMXDGXPFXPMXPS	10	1	Freq: Very Rare; #ENC: 1d3; SIZE: Large (8 ft approx); MOVE: 150 ft; AC: 0; HD: 9; ATK: 3; DMG: 1d8+8/1d8+8/1d8+1; SA: See Page; SD: Immune to illusions; MR: Standard; LAIR: 20%; INT: Average to exceptional; AL: CE; XP: 1,200+10/hp; TRS: (in lair) 1d20x1,000 cp (25%), 1d8x1,000 sp (35%), 1d6x1,000 ep (10%), 1d6x1,000 gp (40%), 1d8 gems (30%), 1d6 jewelry (25%), any 2 magic items and one potion (15%).; BOOK: OSRIC-261
+ANT, GIANT QUEEN	DG	11	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: None; AC: 4; HD: 10; ATK: None; DMG: None; SA: None; SD: None; MR: Standard; LAIR: 100%; INT: Animal; AL: N; XP: 700+13/hp; TRS: (In lair only) 3d4 gems (50%); 2d4 potions (40%).; BOOK: OSRIC-261
+ANT, GIANT SOLDIER	DGXPFXPHXPPXTFXTH	4	1	Freq: Very Rare; #ENC: Varies; SIZE: Small; MOVE: 180 ft; AC: 3; HD: 3; ATK: 2; DMG: 2d4/3d4; SA: Poison; SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 50+2/hp; TRS: (In lair only) 3d4 gems (50%); 2d4 potions (40%).; BOOK: OSRIC-261
+ANT, GIANT WORKER	DGXPFXPHXPPXTFXTH	3	3	Freq: Rare; #ENC: 1d100; SIZE: Small; MOVE: 180 ft; AC: 3; HD: 2; ATK: 1; DMG: 1d6; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 30+1/hp; TRS: (In lair only) 3d4 gems (50%); 2d4 potions (40%).; BOOK: OSRIC-261
+APATOSAURUS	TMXTHXTFXTS	21	13	Freq: Common; #ENC: 4d10; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 30; ATK: 1; DMG: 1d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,500+35/hp; TRS: None; BOOK: OSRIC-228
+APE, CARNIVOROUS	DGXTFXTHXTS	6	1	Freq: Very Rare; #ENC: 2d4; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 5; ATK: 3; DMG: 1d4/1d4/1d8; SA: Mangle; SD: None; MR: Standard; LAIR: 10%; INT: Low; AL: N; XP: 125+4/hp; TRS: None; BOOK: OSRIC-245
+APE, NORMAL	TF	6	3	Freq: Rare; #ENC: 1d4; SIZE: Medium; MOVE: 120 ft; AC: 6; HD: 4+1; ATK: 3; DMG: 1d3/1d3/1d6; SA: Mangle; SD: None; MR: Standard; LAIR: None; INT: Low; AL: N; XP: 110+4/hp; TRS: None; BOOK: OSRIC-245
+ARCHAEOPTERYX	TMXTHXTFXTS	0	5	Freq: Uncommon; #ENC: 4d12; SIZE: Small; MOVE: 300 ft flying, (AA: lvl IV); AC: 10; HD: 1d2 hp; ATK: 1; DMG: 1d2; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 5+1/hp; TRS: None; BOOK: OSRIC-231
+ARCHELON	FWXSW	8	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 150 ft swimming; AC: 3; HD: 7; ATK: 1; DMG: 3d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 475+10/hp; TRS: None; BOOK: OSRIC-230
+ARGENTINOSAURUS	TMXTHXTFXTS	21	5	Freq: Uncommon; #ENC: 4d6; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 38; ATK: 1; DMG: 1d12; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,500+35/hp; TRS: None; BOOK: OSRIC-228
+ASSAGIM (LEAST DEVIL; NIPHERIBU, ASHASHIMU, NISHERSHIMU)	DG	2	13	Freq: Common; #ENC: 10d10; SIZE: Medium; MOVE: 60 ft; AC: 9; HD: 1; ATK: 2 claws or 1 weapon; DMG: 1d2/1d2 or by weapon type; SA: None; SD: Regenerate 1hp/round; MR: Standard; LAIR: None; INT: Semi-; AL: LE; XP: 18+1/hp; TRS: None; BOOK: OSRIC-221
+AURUMVORAX	CFXCPXDGXPF	13	1	Freq: Very Rare; #ENC: 1; SIZE: Small; MOVE: 90 ft, 30 ft burrowing; AC: 0; HD: 12; ATK: 1; DMG: 2d4; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: Animal; AL: N; XP: 2,250+16/hp; TRS: The aurumvorax does not hoard treasure and places no value on it. However, its lair might contain treasure assigned by the GM; BOOK: OSRIC-261
+AXE BEAK (PHORUSRHACID)	PFXPHXPPXPSXTFXTH	4	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large; MOVE: 180 ft; AC: 6; HD: 3; ATK: 3; DMG: 1d3/1d3/2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-245
+BABAU	DG	9	5	Freq: Uncommon; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Medium (7 ft tall); MOVE: 150 ft; AC: -3; HD: 7+14; ATK: 2 claws/1 bite or 1 weapon; DMG: 1d4+1/1d4+1/2d4 or by weapon +7; SA: See Page; SD: See Page; MR: 50%; LAIR: 20%; INT: Very; AL: CE; XP: 2,000+12/hp; TRS: If encountered in their lair, babau will have amassed a hoard made up of 1d12x1000 cp (20%), 1d6x1000 sp (30%), 1d4x1000 ep (10%), 1d6 gems (25%) and 1d3 jewelry (20%). In addition, they may (10%) have 1d2 magical items.; BOOK: OSRIC-213
+BABBLER	DGXTFXTS	6	1	Freq: Very Rare; #ENC: 1d4; SIZE: Large (8 ft tall); MOVE: 60 ft bipedal, 120 ft quadrupedal gait; AC: 6; HD: 5; ATK: 3; DMG: 1d6/1d6/1d8; SA: See Page; SD: None; MR: Standard; LAIR: 15%; INT: Average; AL: CE; XP: 100+5/hp; TRS: (in lair) 1d12x1,000 cp (20%), 1d6x1,000 sp (35%), 1d6x1,000 ep (10%), 1d6x1,000 gp (40%), 1d4 gems (30%), 1d3 jewelry (25%), one magic item and one potion (10%).; BOOK: OSRIC-262
+BABOON	TFXTHXTS	3	13	Freq: Common; #ENC: 10d4; SIZE: Small; MOVE: 120 ft; AC: 7; HD: 1+1; ATK: 1; DMG: 1d4; SA: None; SD: Climbing; MR: Standard; LAIR: 10%; INT: Low; AL: N; XP: 30+1/hp; TRS: None; BOOK: OSRIC-246
+BADGER, GIANT	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPS	4	1	Freq: Very Rare; #ENC: 1d4+1; SIZE: Medium; MOVE: 60 ft, 30 ft swimming; AC: 4; HD: 3; ATK: 3; DMG: 1d3/1d3/1d6; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-246
+BADGER, ORDINARY	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPS	3	5	Freq: Uncommon; #ENC: 1d4+1; SIZE: Small; MOVE: 60 ft, 30 ft swimming; AC: 4; HD: 1+2; ATK: 3; DMG: 1d2/1d2/1d3; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 30+1/hp; TRS: None; BOOK: OSRIC-246
+BANDIT (BRIGAND)	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	13	Freq: Common; #ENC: 20d10; SIZE: Medium; MOVE: 120 ft; AC: By armor; HD: 1d6 hp; ATK: 1; DMG: By weapon; SA: Leader types may have spells; SD: None; MR: Standard; LAIR: 20%; INT: Mean (average to very); AL: N; XP: Variable; TRS: Individual 2d4 gp; Lair 1d6x1,000 cp (25%), 1d6x1,000 sp (30%), 1d6x1,000 ep (35%), 1d10x1,000 gp (40%), 1d4x100 pp (25%), 4d10 gems (60%), 3d10 jewelry (50%), 3 magic items (30%).; BOOK: OSRIC-191
+BANSHEE (GROANING SPIRIT)	CFXCHXCPXDGXPDXPFXPHXPPXTF	8	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 150 ft; AC: 0; HD: 7; ATK: 1; DMG: 1d8; SA: See Page; SD: +1 weapon or better to hit; MR: 50%; LAIR: 10%; INT: Exceptional; AL: CE; XP: 665+8/hp; TRS: None; BOOK: OSRIC-239
+BARBED DEVIL (LESSER DEVIL; HAMATULA, BARBICALE)	DG	9	5	Freq: Uncommon; #ENC: 1d2 or 3d4; SIZE: Medium; MOVE: 120 ft; AC: 0; HD: 8; ATK: 2 claws/1 tail; DMG: 2d4/2d4/3d4; SA: See Page; SD: See Page; MR: 35%; LAIR: 50%; INT: Very; AL: LE; XP: 1,425+10/hp; TRS: Barbed devils do not carry treasure of any sort, nor can they be dissuaded from their tasks through bribery of any kind.; BOOK: OSRIC-221
+BARGHEST	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	1	Freq: Very Rare; #ENC: 1d2; SIZE: Medium; MOVE: 150 ft; AC: 2 and lower; HD: 6+6 and higher; ATK: 2; DMG: 2d4 + a variable amount; SA: See Page; SD: See Page; MR: 30% and higher; LAIR: None; INT: High and higher; AL: LE; XP: 1,250+10/hp and higher; TRS: None on the Prime Material Plane.; BOOK: OSRIC-262
+BARRACUDA	FWXSW	3	5	Freq: Uncommon; #ENC: 2d6; SIZE: Small to Large; MOVE: 30 ft swimming; AC: 6; HD: 1 to 3; ATK: 1; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 10+1/hp to 50+2/hp; TRS: None; BOOK: OSRIC-247
+BASILISK	DGXPFXPHXPMXPPXPSXTFXTHXTM	7	3	Freq: Rare; #ENC: 1d4; SIZE: Medium (6 ft+); MOVE: 60 ft; AC: 4; HD: 6; ATK: 1 (antlers + weapon); DMG: 1d10; SA: Petrifying gaze; SD: None; MR: Standard; LAIR: 40%; INT: Animal; AL: N; XP: 1,000+8/hp; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems (15%), 1d8 jewelry (15%), 3 magic items and 1 scroll (10%).; BOOK: OSRIC-262
+BAT, GIANT	CFXCHXCMXCPXDGXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 3d6; SIZE: Small; MOVE: 10 ft / 240 ft flying (AA: level V); AC: 4 to 8; HD: 1d4 hp; ATK: 1; DMG: 1d2; SA: Rabies 1%; SD: Missile attacks suffer -3 unless attacker has 13 dexterity or above; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 5+1/hp; TRS: None; BOOK: OSRIC-246
+BAT, MOBAT	DGXTFXTHXTM	6	3	Freq: Rare; #ENC: 1d8; SIZE: Medium; MOVE: 30 ft / 150 ft flying (AA: level IV); AC: 2 to 10 (See Page); HD: 4 to 6 (See Page); ATK: 1; DMG: 2d4; SA: See Page; SD: See Page; MR: Standard; LAIR: 15%; INT: Low; AL: N (E); XP: 135+3/hp(4 HD) or 300+6/hp(6 HD); TRS: In lair only: 1d12x1,000 cp (20%); 1d6x1,000 sp (30%); 1d4x1,000 ep (10%); 1d6 gems (25%); 1d3 jewelry (20%); any 2 magic (10%).; BOOK: OSRIC-246
+BAT, ORDINARY	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	13	Freq: Common; #ENC: 1d100x10; SIZE: Small; MOVE: 10 ft / 240 ft flying (AA: level V); AC: 4 to 8; HD: 1d2 hp; ATK: 1; DMG: 1; SA: Swarm (cause confusion or put out torches); SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 1; TRS: None; BOOK: OSRIC-246
+BATRACHIAN	DGXFWXPFXPSXTFXTS	2	3	Freq: Rare; #ENC: 10d8; SIZE: Small to Medium; MOVE: 30 ft hop/150 ft swim; AC: 6 or better; HD: 1; ATK: 1; DMG: By weapon; SA: Hop; SD: Camouflage; MR: Standard; LAIR: 20%; INT: Low to average; AL: CE; XP: 18+1/hp; TRS: 2d6 gp per individual, plus if encountered in their lair, a 20% chance of 1d3 pieces of jewelry and a 10% chance of 1d3 magic items.; BOOK: OSRIC-196
+BATRACHIAN, ANURAN	DGXFWXPFXPSXTFXTS	2	3	Freq: Rare; #ENC: 10d10; SIZE: Small to Medium; MOVE: 30 ft hop/150 ft swim; AC: 6; HD: 1; ATK: 3; DMG: 1d2/1d2/1d4+1; SA: Hop; SD: Camouflage; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 15+1/hp; TRS: 2d6 gp per individual, plus if encountered in their lair, a 20% chance of 1d3 pieces of jewelry and a 10% chance of 1d3 magic items.; BOOK: OSRIC-196
+BATRACHIAN, EFT	DGXFWXPFXPSXTFXTS	0	1	Freq: Very Rare; #ENC: 200% of no. of females; SIZE: Small; MOVE: 150 ft swim; AC: 8; HD: 1d2 hp; ATK: 1; DMG: 1d2; SA: None; SD: None; MR: Standard; LAIR: 100%; INT: Animal; AL: N; XP: 1; TRS: None; BOOK: OSRIC-196
+BATRACHIAN, FEMALE	DGXFWXPFXPSXTFXTS	0	3	Freq: Rare; #ENC: 75% of no. of males; SIZE: Small; MOVE: 30 ft hop/150 ft swim; AC: 6; HD: 1d6 hp; ATK: 3; DMG: 1d2/1d2/1d4; SA: Hop; SD: Camouflage; MR: Standard; LAIR: 80%; INT: Low to average; AL: CE; XP: 10+1/hp; TRS: 2d6 gp per individual, plus if encountered in their lair, a 20% chance of 1d3 pieces of jewelry and a 10% chance of 1d3 magic items.; BOOK: OSRIC-196
+BEAR, BLACK	CFXCHXCMXPFXPHXPMXPS	5	13	Freq: Common; #ENC: 1d3; SIZE: Medium; MOVE: 120 ft; AC: 7; HD: 3+3; ATK: 3; DMG: 1d3/1d3/1d6; SA: Hug: 2d4; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-247
+BEAR, BROWN	CFXCHXCMXPFXPHXPMXPS	7	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large (9 ft); MOVE: 120 ft; AC: 6; HD: 5+5; ATK: 3; DMG: 1d6/1d6/1d8; SA: Hug: 2d6; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 160+6/hp; TRS: None; BOOK: OSRIC-247
+BEAR, CAVE	CFXCHXCMXDGXPFXPHXPM	8	5	Freq: Uncommon; #ENC: 1d2; SIZE: Large (12 ft); MOVE: 120 ft; AC: 6; HD: 6+6; ATK: 3; DMG: 1d8/1d8/1d12; SA: Hug: 2d8; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 225+8/hp; TRS: None; BOOK: OSRIC-247
+BEAR, POLAR	CFXCHXCMXCPXPFXPHXPMXPP	10	3	Freq: Rare; #ENC: 1d6; SIZE: Large (14 ft); MOVE: 120 ft, 90 ft swim; AC: 6; HD: 8+8; ATK: 3; DMG: 1d10/1d10/2d6; SA: Hug: 3d6; SD: None; MR: Standard; LAIR: None; INT: Semi-; AL: N; XP: 600+12/hp; TRS: None; BOOK: OSRIC-247
+BEARDED DEVIL (LESSER DEVIL; BARBAZU, TOTHMYS, THISSUZIM)	DG	8	13	Freq: Common; #ENC: 1d2 or 1d6+4; SIZE: Medium; MOVE: 150 ft; AC: 1; HD: 6+6; ATK: 1 glaive or 2 claws/1 beardburn; DMG: 1d3 plus entangle or 1d2/1d2/1d8; SA: See Page; SD: See Page; MR: 45%; LAIR: 15%; INT: Average; AL: LE; XP: 1,125+10/hp; TRS: None; BOOK: OSRIC-222
+BEE, GIANT, BUMBLEBEE	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	3	Freq: Rare; #ENC: 1 (1d6+6 in lair); SIZE: Medium; MOVE: 60 ft, 240 ft flying (AA: level II); AC: 5; HD: 6+4; ATK: 1; DMG: 1d6; SA: Poison; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 300+8/hp; TRS: Giant bee hives or nests will always contain honey worth 10d10 gold pieces. There is a 15% chance that a hive will contain royal jelly. If it does, the royal jelly can be fashioned into 2d3 potions of extra healing by a magic user of 7th or higher level; BOOK: OSRIC-263
+BEE, GIANT, SOLDIER HONEYBEE	DGXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	1	Freq: Very Rare; #ENC: 1 (3d6 in lair); SIZE: Medium; MOVE: 120 ft, 300 ft flying (AA: level III); AC: 5; HD: 4+2; ATK: 1; DMG: 1d4; SA: Poison; SD: None; MR: Standard; LAIR: 90%; INT: Semi-; AL: N; XP: 150+5/hp; TRS: Giant bee hives or nests will always contain honey worth 10d10 gold pieces. There is a 15% chance that a hive will contain royal jelly. If it does, the royal jelly can be fashioned into 2d3 potions of extra healing by a magic user of 7th or higher level; BOOK: OSRIC-263
+BEE, GIANT, WORKER HONEYBEE	DGXPFXPHXPMXPPXPSXTFXTHXTMXTS	5	3	Freq: Rare; #ENC: 1d10 (20d10 in lair); SIZE: Medium; MOVE: 90 ft, 300 ft flying (AA: level IV); AC: 6; HD: 3+1; ATK: 1; DMG: 1d3; SA: Poison; SD: None; MR: Standard; LAIR: 20%; INT: Semi-; AL: N; XP: 100+4/hp; TRS: Giant bee hives or nests will always contain honey worth 10d10 gold pieces. There is a 15% chance that a hive will contain royal jelly. If it does, the royal jelly can be fashioned into 2d3 potions of extra healing by a magic user of 7th or higher level; BOOK: OSRIC-263
+BEETLE, GIANT BOMBARDIER	CFXCHXPFXPHXPSXTFXTHXTS	4	13	Freq: Common; #ENC: 3d4; SIZE: Medium; MOVE: 90 ft; AC: 4; HD: 2+2; ATK: 1; DMG: 2d6; SA: Acid cloud; SD: Firing cloud; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 65+2/hp; TRS: None; BOOK: OSRIC-263
+BEETLE, GIANT BORING	DGXPFXPHXPMXPSXTFXTHXTMXTS	6	13	Freq: Common; #ENC: 3d6; SIZE: Large; MOVE: 60 ft; AC: 3; HD: 5; ATK: 1; DMG: 5d4; SA: None; SD: None; MR: Standard; LAIR: 40%; INT: Non-; AL: N; XP: 110+4/hp; TRS: In Lair: 1d12x1,000 cp (20%); 1d6x1,000 sp (30%); 1d4x1,000 ep (10%); 2d4x100 gp (40%); 1d6x10 pp (50%); 3d8 gems (55%); 1d12 jewelry (45%); 2d4 potions (40%); 1d4 scrolls (50%); Any 2 magic items (10%).; BOOK: OSRIC-263
+BEETLE, GIANT DEATH WATCH	DGXPFXPHXPMXPSXTFXTHXTMXTS	11	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 120 ft; AC: 3; HD: 9+1; ATK: 1; DMG: 2d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 10%; INT: Non-; AL: N; XP: 1,100+12/hp; TRS: None; BOOK: OSRIC-263
+BEETLE, GIANT FIRE	DGXPFXPHXPMXPSXTFXTHXTMXTS	3	13	Freq: Common; #ENC: 3d4; SIZE: Small; MOVE: 120 ft; AC: 4; HD: 1+2; ATK: 1; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 30+1/hp; TRS: None; BOOK: OSRIC-263
+BEETLE, GIANT RHINOCEROS	TFXTHXTS	14	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large; MOVE: 60 ft; AC: 2; HD: 12; ATK: 2; DMG: 3d8/2d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 1,300+6/hp; TRS: None; BOOK: OSRIC-263
+BEETLE, GIANT STAG	PFXPHXPPXPS	8	13	Freq: Common; #ENC: 2d6; SIZE: Large; MOVE: 60 ft; AC: 3; HD: 7; ATK: 3; DMG: 4d4/1d10/1d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 225+8/hp; TRS: None; BOOK: OSRIC-263
+BEETLE, GIANT WATER	FW	5	13	Freq: Common; #ENC: 1d12; SIZE: Medium; MOVE: 30 ft, 120 ft swimming; AC: 3; HD: 4; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-263
+BEHIR	DGXPHXPMXTHXTM	13	3	Freq: Rare; #ENC: 1d2; SIZE: Large; MOVE: 150 ft; AC: 4; HD: 12; ATK: 2 or 7; DMG: 2d4/1d4+1 or 2d4/1d6/1d6/1d6/1d6/1d6/1d6; SA: Lightning bolt; SD: Immune to electricity and poison; MR: Standard; LAIR: None; INT: Low; AL: NE; XP: 2,750+16/hp; TRS: Inside the beast; BOOK: OSRIC-264
+BERSERKER	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	3	Freq: Rare; #ENC: 10d10; SIZE: Medium; MOVE: 120 ft; AC: 7; HD: 1d6+1hp; ATK: 1 (or 2); DMG: By weapon; SA: Leader types; SD: Leader types; MR: Standard; LAIR: 10%; INT: Mean (average to very); AL: N; XP: Variable; TRS: Individual 3d6 sp; Lair 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 pp (25%), 1d8 gems (30%), 1d4 jewelry (20%), 1 magic item (10%).; BOOK: OSRIC-191
+BIRD, GIANT	FWXSWXPMXPHXPFXCMXCHXCF	5	1	Freq: Very Rare; #ENC: 1d20; SIZE: Medium; MOVE: 30 ft, 360 ft flying (AA: level IV); AC: 7; HD: 4; ATK: 3; DMG: 1d6/1d6/2d6; SA: See Page; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 105+3/hp; TRS: None; BOOK: OSRIC-247
+BIRD, HUGE	FWXSWXPMXPHXPFXCMXCHXCF	3	3	Freq: Rare; #ENC: 1d20; SIZE: Small; MOVE: 30 ft, 360 ft flying (AA: level IV); AC: 5; HD: 2; ATK: 3; DMG: 1d4/1d4/2; SA: See Page; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 40+1/hp; TRS: None; BOOK: OSRIC-247
+BIRD, NORMAL	FWXSWXPMXPHXPFXCMXCHXCF	2	13	Freq: Common; #ENC: 1d20; SIZE: Small; MOVE: 30 ft, 360 ft flying (AA: level IV); AC: 6; HD: 1; ATK: 3; DMG: 1d2/1d2/1; SA: See Page; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 15+1/hp; TRS: None; BOOK: OSRIC-247
+BLINDHEIM	DG	6	1	Freq: Very Rare; #ENC: 1d4; SIZE: Small; MOVE: 90 ft; AC: 3; HD: 4+2; ATK: 1; DMG: 1d8; SA: Blinding; SD: None; MR: Standard; LAIR: 5%; INT: Animal; AL: CE; XP: 110+5/hp; TRS: In lair only: 2d6x1,000 cp (20%), 1d6x1,000 sp (35%), 1d6x1,000 ep (20%), 1d4 gems (20%), 1d4 jewelry (25%), random magic item or weapon (15%).; BOOK: OSRIC-264
+BLINK DOG	DGXPDXPFXPHXPMXPP	5	3	Freq: Rare; #ENC: 4d4; SIZE: Medium (3 ft at shoulder); MOVE: 120 ft; AC: 5; HD: 4; ATK: 1; DMG: 1d6; SA: Rear attack 75% of time; SD: Teleporting; MR: Standard; LAIR: 20%; INT: Average; AL: LG; XP: 175+5/hp; TRS: In lair only: 2d6x1,000 cp (20%), 1d6x1,000 sp (30%), 1d6x1,000 ep (15%), 1d6 gems (20%), 1d4 jewelry (25%), random magic item or weaponx2 (15%).; BOOK: OSRIC-265
+BOAR, GIANT	CFXCHXPFXPHXPSXTHXTS	8	5	Freq: Uncommon; #ENC: 2d4; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 7; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 225+8/hp; TRS: None; BOOK: OSRIC-248
+BOAR, WARTHOG	PFXPSXTFXTHXTS	4	13	Freq: Common; #ENC: 1d6; SIZE: Small; MOVE: 120 ft; AC: 7; HD: 3; ATK: 2; DMG: 2d4/2d4; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-248
+BOAR, WILD	CFXCHXCPXPDXPFXPHXPPXPSXTFXTHXTS	5	13	Freq: Common; #ENC: 1d12; SIZE: Medium; MOVE: 150 ft; AC: 7; HD: 3+3; ATK: 1; DMG: 3d4; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-248
+BONE DEVIL (LESSER DEVIL; OSYLUTH, GEROTEPHYS, CALCINNIM)	DG	10	5	Freq: Uncommon; #ENC: 1d2 or 2d4; SIZE: Large; MOVE: 150 ft; AC: -1; HD: 9; ATK: 1 bone hook; DMG: 3d4; SA: See Page; SD: See Page; MR: 40%; LAIR: 55%; INT: Very; AL: LE; XP: 2,800+12/hp; TRS: None; BOOK: OSRIC-222
+BRACHIOSAURUS	TMXTHXTFXTS	21	5	Freq: Uncommon; #ENC: 4d8; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 36; ATK: 1; DMG: 1d12; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,500+35/hp; TRS: None; BOOK: OSRIC-228
+BROWNIE	CFXCHXPFXPHXPSXTFXTHXTS	0	3	Freq: Rare; #ENC: 4d4; SIZE: Small; MOVE: 120 ft; AC: 3; HD: 1d4 hp; ATK: 1; DMG: 1d3; SA: See Page; SD: See Page; MR: See Page; LAIR: 20%; INT: High; AL: LG; XP: 50+1/hp; TRS: 1d8x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (20%), 1d10x1,000 gp (30%), 1d12 gems (20%), 1d8 jewelry (5%), any 2 magic items plus one potion and one scroll (15%).; BOOK: OSRIC-233
+BUCCANEER (PIRATE)	FWXPSXSWXTS	0	5	Freq: Uncommon; #ENC: 50d6; SIZE: Medium; MOVE: 120 ft; AC: By armor; HD: 1d6 hp; ATK: 1; DMG: By weapon; SA: Leader types; SD: Leader types; MR: Standard; LAIR: 80% or 100%; INT: Mean (average to very); AL: N (CE); XP: Variable; TRS: Individual 3d6 sp; Lair 5d6x1,000 gp (60%), 1d8x100 pp (15%), 1d8x10 gems (60%), 5d8 jewelry (50%), 1 map (55%).; BOOK: OSRIC-191
+BUGBEAR	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	5	5	Freq: Uncommon; #ENC: 6d6; SIZE: Large (7 ft tall); MOVE: 90 ft; AC: 5; HD: 3+1; ATK: 1; DMG: 2d8 or by weapon; SA: Surprise on a 1-3 on 1d6; SD: None; MR: Standard; LAIR: 25%; INT: Low to average; AL: CE; XP: 135+4/hp; TRS: 4d6 silver, 2d4 gold for individuals; 1d8x1,000 cp, 1d3x1,000 gp, 1d8 gems (30% chance), 1d4 jewelry (20% chance), miscellaneous magic weapon (10% chance).; BOOK: OSRIC-196
+BULETTE	PDXPFXPHXPP	10	1	Freq: Very Rare; #ENC: 1d2; SIZE: Large; MOVE: 140 ft, 30 ft burrowing; AC: -2/4/6; HD: 9; ATK: 3; DMG: 3d6/3d6/4d12; SA: 8 ft jump; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,000+12/hp; TRS: None; BOOK: OSRIC-265
+CAMARASAURUS	TMXTHXTFXTS	19	13	Freq: Common; #ENC: 5d10; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 18; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,000+30/hp; TRS: None; BOOK: OSRIC-228
+CAMEL	CFXCHXCPXPDXPFXPHXPPXPSXTFXTHXTS	4	13	Freq: Common; #ENC: 1d12; SIZE: Large; MOVE: 210 ft domedary, 180 ft bactrian; AC: 7; HD: 3; ATK: 1; DMG: 1d4; SA: Spit; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-248
+CARBUNCLE	DGXPFXPSXTFXTS	2	3	Freq: Rare; #ENC: 1; SIZE: Small; MOVE: 30 ft; AC: 2; HD: 1; ATK: None; DMG: None; SA: None; SD: See Page; MR: Standard; LAIR: 10%; INT: Average; AL: CN; XP: 5+1/hp; TRS: Set in the carbuncle; BOOK: OSRIC-265
+CARCASS CREEPER	DGXPM	5	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large; MOVE: 120 ft; AC: 3/7; HD: 3+1; ATK: 8; DMG: Paralysis; SA: Paralysis; SD: None; MR: Standard; LAIR: 50%; INT: Non-; AL: N; XP: 105+3/hp; TRS: In Lair: 1d8x1,000 cp (50%); 1d6x1,000 sp (25%); 1d4x1,000 ep (25%); 1d3x1,000 gp (25%); 1d8 gems (30%); 1d4 jewelry (20%); 1 sword, armour, or misc. weapon (20%).; BOOK: OSRIC-266
+CARYATID COLUMN	DG	6	1	Freq: Very Rare; #ENC: 1d12; SIZE: Medium; MOVE: 60 ft; AC: 5; HD: 5; ATK: 1; DMG: 2d4; SA: None; SD: See Page; MR: All saves at +4; LAIR: None; INT: Non-; AL: N; XP: 110+3/hp; TRS: None; BOOK: OSRIC-266
+CAT, DOMESTIC	X	0	13	Freq: Common; #ENC: 1 or 2d6; SIZE: Small; MOVE: 50 ft; AC: 6; HD: 1d2 hp; ATK: 1; DMG: 1d2-1; SA: Rear claws; SD: None; MR: Standard; LAIR: 75%; INT: Animal; AL: N; XP: 3+1/hp; TRS: None; BOOK: OSRIC-248
+CAT, LYNX, GIANT	CFXCHXCMXCP	4	3	Freq: Rare; #ENC: 1d4; SIZE: Medium; MOVE: 120 ft; AC: 5; HD: 2+2; ATK: 3; DMG: 1d2/1d2/1d4; SA: Rear claws; surprises on a 1d4; SD: Thief skills; MR: Standard; LAIR: 5%; INT: Animal; AL: N; XP: 90+3/hp; TRS: None; BOOK: OSRIC-248
+CAT, WILD	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 1 or 1d4+1; SIZE: Small; MOVE: 180 ft; AC: 5; HD: 1d6 hp; ATK: 3; DMG: 1/1/1d2; SA: Rear claws; SD: None; MR: Standard; LAIR: 5%; INT: Animal; AL: N; XP: 10+1/hp; TRS: None; BOOK: OSRIC-248
+CATERWAUL	CMXCPXDGXPMXPPXPSXTMXTS	6	3	Freq: Rare; #ENC: 1; SIZE: Medium; MOVE: 180 ft or 240 ft; AC: 6 (see page); HD: 4+2; ATK: 3; DMG: 1d4/1d4/1d6; SA: Screech; SD: See Page; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 400+5/hp; TRS: 1d6x1,000 gp (50%), 1d8 gems (40%), 5d6 jewelry (40%), 2d4 potions + 1 magic item (40%).; BOOK: OSRIC-266
+CATTLE, BUFFALO	TS	6	5	Freq: Uncommon; #ENC: 4d6; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 5; ATK: 2; DMG: 1d8/1d8; SA: Charge; SD: Head is AC 3; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 110+4/hp; TRS: None; BOOK: OSRIC-249
+CATTLE, BULL	PDXPFXPHXPPXPSXTFXTHXTS	5	13	Freq: Common; #ENC: 1, plus 50% chance of 3d6 cattle; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 4; ATK: 2; DMG: 1d6/1d6; SA: Charge; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-249
+CATTLE, WILD	PDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	13	Freq: Common; #ENC: 20d10; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 2-4 HD; ATK: 1; DMG: 1d4; SA: Stampede; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 10+1/hp; TRS: None; BOOK: OSRIC-249
+CAVEMAN (TRIBESMAN)	CFXCHXCMXDGXPFXPHXPMXTFXTHXTMXTS	3	3	Freq: Rare; #ENC: 10d10 (10d12); SIZE: Medium; MOVE: 120 ft; AC: 8 (7); HD: 2 (1); ATK: 1; DMG: By weapon; SA: None; SD: None; MR: Standard; LAIR: 40%; INT: Low (to average); AL: N; XP: 20+2/hp (10+10/hp); TRS: Cavemen may have ivory tusks, gold nuggets, or uncut gems (5% chance per 10 cavemen present). If one is present, it will be the only treasure there. The value of each is 1,000 gp per ivory tusk (2d6 tusks), 5 gp gold nuggets (2d4x10), and 10 gp gems (1d%). [Tribesmen may have large wooden shields, spears, shields, short bows, and clubs (treat as maces).]; BOOK: OSRIC-197
+CENTAUR	PFXPHXPP	5	3	Freq: Rare; #ENC: 4d6; SIZE: Large; MOVE: 180 ft; AC: 5(4); HD: 4; ATK: 2; DMG: 1d6/1d6; SA: None; SD: None; MR: Standard; LAIR: 5%; INT: Average; AL: N to CG; XP: 75+3/hp; TRS: Individuals: 2d4 gp (90%), 1d4 gems (50%); Lair: 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 3d6x100 pp (30%), 2d10 gems (55%), 1d12 jewelry (50%), 2 magic items (15%), 1d4 magic scrolls and 1 magic potion (50%).; BOOK: OSRIC-234
+CENTIPEDE, GIANT	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 180 ft; AC: 5; HD: 3; ATK: 1; DMG: 1d3; SA: Poison; SD: None; MR: Standard; LAIR: 15%; INT: Non-; AL: N; XP: 125+3/hp; TRS: None; BOOK: OSRIC-267
+CENTIPEDE, HUGE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	13	Freq: Common; #ENC: 2d12; SIZE: Small; MOVE: 150 ft; AC: 9; HD: 1 to 2 hp; ATK: 1; DMG: None; SA: Poison; SD: None; MR: Standard; LAIR: 15%; INT: Non-; AL: N; XP: 30+1/hp; TRS: None; BOOK: OSRIC-267
+CENTIPEDE, LARGE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 5d6; SIZE: Small; MOVE: 210 ft; AC: 9; HD: 1 hp; ATK: 1; DMG: None; SA: Poison; SD: None; MR: Standard; LAIR: 15%; INT: Non-; AL: N; XP: 31; TRS: None; BOOK: OSRIC-267
+CENTROSAURUS	TMXTHXTFXTS	8	3	Freq: Rare; #ENC: 1d6; SIZE: Large; MOVE: 120 ft; AC: 3/7; HD: 7; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 200+4/hp; TRS: None; BOOK: OSRIC-229
+CERATOSAURUS	TMXTHXTFXTS	9	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 150 ft; AC: 5; HD: 8; ATK: 3; DMG: 1d6/1d6/4d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 200+6/hp; TRS: None; BOOK: OSRIC-229
+CETIOSAURUS	TMXTHXTFXTS	21	13	Freq: Common; #ENC: 5d10; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 20; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,000+30/hp; TRS: None; BOOK: OSRIC-228
+CHARONOSAURUS	TMXTHXTFXTS	16	5	Freq: Uncommon; #ENC: 2d10; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 15; ATK: 1; DMG: 2d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,000+16/hp; TRS: None; BOOK: OSRIC-228
+CHIMERA	DGXPDXPHXPMXTHXTM	10	3	Freq: Rare; #ENC: 1d4; SIZE: Large; MOVE: 90 ft, 180 ft flying (AA: level II); AC: 4; HD: 9; ATK: 6; DMG: 1d3/1d3/1d4/1d4/2d4/3d4; SA: Breathing fire to a 60 ft for 3d8 damage.; SD: None; MR: Standard; LAIR: 40%; INT: Semi-; AL: CE; XP: 1,300+12/hp; TRS: 1d20x1,000 sp (10%) , 1d12x1,000 ep (15%) , 1d10x1,000 gp (40%), 1d8x100 pp (35%), 3d10 gems (20%), 1d10 jewelry (10%), 3 magic items (no magic weapons) and 1 magic scroll and 1 magic potion (30%).; BOOK: OSRIC-267
+COCKATRICE	DGXFWXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	5	Freq: Uncommon; #ENC: 1d6; SIZE: Small; MOVE: 60 ft, 180 ft flying (AA: level IV); AC: 6; HD: 5; ATK: 1; DMG: 1d3; SA: Touch petrifies; SD: None; MR: Standard; LAIR: 40%; INT: Animal; AL: N; XP: 170+4/hp; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems (15%), 1d8 jewelry (10%) and 3 magic items and 1 magic scroll (35%).; BOOK: OSRIC-267
+COEURL	DGXPDXPFXPHXPMXPP	8	1	Freq: Very Rare; #ENC: 1d4; SIZE: Large; MOVE: 150 ft; AC: 2; HD: 6+6; ATK: 2; DMG: 2d4/2d4; SA: None; SD: Save at +6; MR: Standard; LAIR: 25%; INT: Average; AL: N; XP: 400+6/hp; TRS: 1d8x1,000 cp (15%), 2d6x1,000 sp (20%), 1d6x1,000 ep (5%), 1d8x1,000 gp (35%), 2d6 gems (15%), 1d8 jewelry (10%) and 2 magic items (25%).; BOOK: OSRIC-268
+COFFER CORPSE	CHXCMXDGXPDXPHXPMXPSXTHXTMXTS	3	3	Freq: Rare; #ENC: 1; SIZE: Medium; MOVE: 60 ft; AC: 8; HD: 2; ATK: 1; DMG: 1d6 or by weapon; SA: None; SD: Can only be hit by magical weapons; MR: Standard; LAIR: 80%; INT: Low; AL: CE; XP: 30+2/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour, or misc. weapon (10%).; BOOK: OSRIC-239
+COMPSOGNATHUS	TFXTHXTMXTS	3	13	Freq: Common; #ENC: 8d4; SIZE: Small; MOVE: 180 ft; AC: 7; HD: 1+2; ATK: 1; DMG: 1d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 15+1/hp; TRS: None; BOOK: OSRIC-230
+COUATL	DGXTH	10	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 60 ft, 180 ft flying (AA: level VI); AC: 5; HD: 9; ATK: 2; DMG: 1d3/2d4; SA: Poison, magic use; SD: Ethereal; MR: Standard; LAIR: 10%; INT: Genius; AL: LG; XP: 2,000+12/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 3d4x100 pp (30%), 2d19 gems (55%), 1d12 jewelry (50%), any 1 magic item (15%).; BOOK: OSRIC-268
+CRABMEN	DGXPSXSWXTS	4	3	Freq: Rare; #ENC: 2d6; SIZE: Large (9 ft tall); MOVE: 90 ft, 60 ft swimming; AC: 4; HD: 3; ATK: 2; DMG: 1d4/1d4; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Low to average; AL: N; XP: 40+2/hp; TRS: 3d8 sp per individual.; BOOK: OSRIC-268
+CROCODILE, GIANT	FWXPSXTS	8	3	Freq: Rare; #ENC: 1 to 2d6; SIZE: Large; MOVE: 60 ft, 120 ft swimming; AC: 3; HD: 7; ATK: 2; DMG: 3d6/2d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 225+8/hp; TRS: None; BOOK: OSRIC-249
+CROCODILE, NORMAL	FWXPSXTS	4	13	Freq: Common; #ENC: 3d8; SIZE: Large; MOVE: 60 ft, 120 ft swimming; AC: 4; HD: 3; ATK: 2; DMG: 2d4/1d12; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-249
+CRUSTACEAN, GIANT CRAB	FWXPSXSWXTS	4	3	Freq: Rare; #ENC: 2d6; SIZE: Large; MOVE: 90 ft; AC: 3; HD: 3; ATK: 2; DMG: 2d4/2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-250
+CRUSTACEAN, GIANT CRAYFISH	FWXPSXSWXTS	6	5	Freq: Uncommon; #ENC: 2d6; SIZE: Large; MOVE: 60 ft, 120 ft swim; AC: 4; HD: 4+4; ATK: 2; DMG: 2d6/2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 110+4/hp; TRS: None; BOOK: OSRIC-250
+CRYPT THING	CMXDGXPDXPMXTM	7	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft; AC: 3; HD: 6; ATK: 1; DMG: 1d8; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: Very; AL: N; XP: 160+4/hp; TRS: 1d3x1,000 cp (20%), 1d4x1,000 sp (25%), 1d4x1,000 ep (25%), 1d4x1,000 gp (30%), 1d6x100pp (30%), 10d6 gems (55%), 5d6 jewelry (50%), 3 magic items (50%).; BOOK: OSRIC-269
+CYCLOPS	CHXCMXDGXPHXPMXTHXTM	14	1	Freq: Very Rare; #ENC: 1d2; SIZE: Large (20 ft tall); MOVE: 150 ft; AC: 2; HD: 13; ATK: 1; DMG: 6d6 or 4d10; SA: Rock throwing; SD: None; MR: Standard; LAIR: 80%; INT: Low; AL: CE; XP: 3,300+17/hp; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems (15%), 1d8 jewelry (10%), 3 magic items (25%), 2d8 potions and 1 scroll (40%).; BOOK: OSRIC-201
+DAKON	PDXPFXPHXPMXPPXTFXTHXTM	3	5	Freq: Uncommon; #ENC: 6d10; SIZE: Medium; MOVE: 60 ft; AC: 5; HD: 1+1; ATK: 2; DMG: 1d10/1d10; SA: None; SD: None; MR: Standard; LAIR: 50%; INT: Average; AL: LN; XP: 25+2/hp; TRS: 2d6x1,000 cp (5%), 2d6x1,000 sp (30%), 1d4x1,000 ep (20%), 1d10x1,000 gp (45%), 1d10x100pp (40%), 3d12 gems (25%), 1d10 jewelry (10%), any 3 maps or magic + 1 scroll (35%).; BOOK: OSRIC-269
+DARK CREEPER	DG	3	3	Freq: Rare; #ENC: 1 or (20d4 see page); SIZE: Small (4 ft tall); MOVE: 90 ft; AC: 0 or (8 see page); HD: 1+1; ATK: 1; DMG: 1d4 (dagger); SA: See Page; SD: None; MR: Standard; LAIR: 20%; INT: Average; AL: CN; XP: 50+2/hp; TRS: Solitary dark creepers tend to carry their treasure with them, concealed within the many loose folds of their dark clothing. There is a 20% chance a dark creeper will carry a magic dagger, 15% chance of a magic ring, and 10% chance of either 1d4 gems of random value or 1d3 items of random jewelry. Lair treasure probabilities for a lone dark creeper are 50% for a magic dagger, 10% for a magic ring, 30% for gems or jewelry. To generate treasure for a dark creeper village, multiply individual treasure chances by the number of males, adding 5d20 pp and 5d12 gp.; BOOK: OSRIC-269
+DARK STALKER	DG	4	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 90 ft; AC: 0 or (8 see page); HD: 2+1; ATK: 1; DMG: 1d6 (short sword); SA: See Page; SD: See Page; MR: Standard; LAIR: 20%; INT: Average; AL: CN; XP: 200+3/hp; TRS: Dark stalkers carry their treasure in their robes like dark creepers: 30% chance of magic short sword, 10% of magical rings (worn if possible), 10% chance of either 2d4 gems or 1d2 items of jewelry to be determined randomly by GM.; BOOK: OSRIC-269
+DEINONYCHUS	TFXTHXTS	6	5	Freq: Uncommon; #ENC: 1 or 2d4; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 5; ATK: 3; DMG: 1d3/1d3/2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 120+5/hp; TRS: None; BOOK: OSRIC-230
+DEMON, CLASS A (VROCK)	DGXPD	9	13	Freq: Common; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Large; MOVE: 120 ft, 180 ft flying (AA: level IV); AC: 0; HD: 8; ATK: 2 talons/2 claws/1 bite; DMG: 1d4/1d4/1d8/1d6; SA: See Page; SD: See Page; MR: 50%; LAIR: 5%; INT: Low; AL: CE; XP: 1,275+10/hp; TRS: If encountered in their lair, they will possess a hoard of 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%) and possibly a magical weapon (10%).; BOOK: OSRIC-214
+DEMON, CLASS B (HEZROU)	DG	10	13	Freq: Common; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Large; MOVE: 60 ft, 120 ft hopping; AC: -2; HD: 9; ATK: 2 claws/1 bite; DMG: 1d3/1d3/4d4; SA: See Page; SD: See Page; MR: 55%; LAIR: 10%; INT: Low; AL: CE; XP: 2,000+12/hp; TRS: If encountered in their lair, hezrou will have a pile of treasure including 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%) and 1d3 jewelry (20%). In addition, they might (10%) have 1d2 random magical items.; BOOK: OSRIC-214
+DEMON, CLASS C (GLABREZU)	DG	11	5	Freq: Uncommon; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Large; MOVE: 90 ft; AC: -4; HD: 10; ATK: 2 pincers/2 claws/1 bite; DMG: 2d6/2d6/1d3/1d3/1d4+1; SA: See Page; SD: See Page; MR: 60%; LAIR: 15%; INT: Average; AL: CE; XP: 2,400+14/hp; TRS: If encountered in their lair, glabrezu will have a cache of treasure made up of 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 1d10 gems (30%), 1d6 jewelry (25%), and 3 random magic items, including one potion (15%).; BOOK: OSRIC-214
+DEMON, CLASS D (NALFESHNEE AND OTHERS)	DG	12	5	Freq: Uncommon; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Large; MOVE: 90 ft, 120 ft flying (AA: level III); AC: -1; HD: 11; ATK: 1 claw/1 bite; DMG: 1d4/2d4; SA: +2 to hit, also see page; SD: +1 or better magic weapon to hit; MR: 65%; LAIR: 15%; INT: Very; AL: CE; XP: 3,000+16/hp; TRS: In the Abyss, these demons hoard the treasure they have acquired through service or other means. An individual nalfeshnee; BOOK: OSRIC-215
+DEMON, CLASS E (MARILITH AND OTHERS)	DG	9	3	Freq: Rare; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Large; MOVE: 120 ft; AC: -7; HD: 7+7; ATK: 6 arms/1 constriction; DMG: 2d4 (x6)/1d6; SA: See Page; SD: +1 or better magic weapon to hit; MR: 80%; LAIR: 10%; INT: High; AL: CE; XP: 3,000+12/hp; TRS: On their home plane, these demons hoard the treasure they have acquired through service or other means. Their cache will include 10d4x1000 gp (50%), 1d20x100 pp (50%), 5d4 gems (30%), 1d10 jewelry (10%), and 4 random magical items and a scroll (35%).; BOOK: OSRIC-215
+DEMON, CLASS F (BALOR AND OTHERS)	DG	10	3	Freq: Rare; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Large; MOVE: 60 ft, 150 ft flying (AA: level III); AC: -2; HD: 8+8; ATK: 1 bite; DMG: 1d12+1; SA: Flaming whip (3d6); SD: +1 or better magic weapon to hit; MR: 75%; LAIR: 20%; INT: High; AL: CE; XP: 3,600+12/hp; TRS: If encountered in their lair, they will have a cache of treasure equal to 1d20x1,000 sp (10%), 1d12x1,000 ep (15%), 1d10x1,000 gp (40%), 1d8x100 pp (35%), 3d10 gems (20%), and 1d10 jewelry (10%). They may (30%) also have 1 potion, 1 scroll, and 3 other magical items (no weapons).; BOOK: OSRIC-216
+DEMONETTE	DG	8	3	Freq: Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, 120 ft flying (AA: level IV); AC: 5; HD: 6+1d6; ATK: 1; DMG: By weapon type + strength bonus; SA: See Page; SD: Iron or +1 or better magic weapon to hit; MR: 30%; LAIR: 15%; INT: Very to genius; AL: CE; XP: 4,050+14/hp; TRS: Demonettes normally care little for coins. They love gems, jewelry and magical items however. If found in their lair, a demonette will have a cache that contains 1d4 random scrolls (50%), 2d4 random potions (40%), 1d8x10 gems (90%), 5d6 jewelry (80%) and 1d6 other random magical items (excluding potions and scrolls, 70%).; BOOK: OSRIC-216
+DEMONIAC	DG	8	1	Freq: Very Rare; #ENC: 1; SIZE: Medium to Large; MOVE: 150 ft; AC: 6; HD: 5 to 8 (1d4+4); ATK: 2; DMG: By weapon type + strength bonus; SA: See Page; SD: See Page; MR: 5%-20%; LAIR: See Page; INT: Low to exceptional; AL: CE; XP: 1,275+10/hp; TRS: Demoniacs normally care little for coins. They love gems, jewelry and magical items however. If found in their lair, a demoniac will have a cache that contains 1d4 random scrolls (50%), 2d4 random potions (40%), 1d8x10 gems (90%), 5d6 jewelry (80%) and 1d6 other random magical items (excluding potions and scrolls, 70% ... the GM should re-roll items that are not appropriate to the demoniac; BOOK: OSRIC-217
+DERVISH (NOMAD)	CPXPDXPP	0	3	Freq: Rare (Uncommon); #ENC: 30d10; SIZE: Medium; MOVE: 120 ft; AC: By armor; HD: 1d6 hp; ATK: 1; DMG: By weapon; SA: Leader types; SD: Leader types; MR: Standard; LAIR: 5% (15%); INT: Mean (average to very); AL: LG (N); XP: Variable; TRS: Individual 3d12 cp (2d6 ep); Lair 1d3x1,000 cp (20%), 1d4x1,000 sp (25%), 1d4x1,000 ep (25%), 1d4x1,000 gp (30%), 1d6x100 pp (30%), 1d6x10 gems (55%), jewelry (50%), 3 magic items (50%).; BOOK: OSRIC-192
+DEVILCAT (LESSER DEVIL)	DG	9	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 7+2; ATK: 2 claws/1 bite; DMG: 1d4+1/1d4+1/2d6; SA: None; SD: See Page; MR: 20%; LAIR: 30%; INT: Average; AL: LE; XP: 1,000+10/hp; TRS: None; BOOK: OSRIC-223
+DICERATUS	TMXTHXTFXTS	9	1	Freq: Very Rare; #ENC: 1d3; SIZE: Large; MOVE: 120 ft; AC: 3/7; HD: 8; ATK: 1; DMG: 1d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 500+8/hp; TRS: None; BOOK: OSRIC-229
+DILOPHOSAURUS	TMXTHXTFXTS	6	5	Freq: Uncommon; #ENC: 1d4+1; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 5; ATK: 1; DMG: 3d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 120+5/hp; TRS: None; BOOK: OSRIC-230
+DIMETRODON	TH	8	5	Freq: Uncommon; #ENC: 3d6; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 7; ATK: 1; DMG: 1d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 100+6/hp; TRS: None; BOOK: OSRIC-230
+DIPLODOCUS	TFXTS	21	13	Freq: Common; #ENC: 5d10; SIZE: Large; MOVE: 90 ft; AC: 7; HD: 25; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,500+35/hp; TRS: None; BOOK: OSRIC-228
+DISENCHANTER	CPXDGXPDXPP	6	1	Freq: Very Rare; #ENC: 1d2; SIZE: Medium (5 ft high at shoulder); MOVE: 120 ft; AC: 5; HD: 5; ATK: 1; DMG: See page - special effect only; SA: Disenchants, see page; SD: Can only be hit by magical weapons; MR: Standard; LAIR: None; INT: Average; AL: N; XP: 225+5/hp; TRS: None; BOOK: OSRIC-270
+DOG, WAR	CFXCHXCMXCPXPDXPS	4	5	Freq: Uncommon; #ENC: Varies; SIZE: Medium; MOVE: 120 ft; AC: 6 (or as armor); HD: 2+2; ATK: 1; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Semi-; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-250
+DOG, WILD	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	2	13	Freq: Common; #ENC: 4d4; SIZE: Small; MOVE: 150 ft; AC: 7; HD: 1; ATK: 1; DMG: 1d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Semi-; AL: N; XP: 10+1/hp; TRS: None; BOOK: OSRIC-250
+DOPPELGANGER	CMXDGXPMXPSXTMXTS	5	1	Freq: Very Rare; #ENC: 3d4; SIZE: Medium; MOVE: 90 ft; AC: 5; HD: 4; ATK: 1; DMG: 1d12; SA: Stealth (surprises with 1-4 on 1d6); SD: See Page; MR: See Page; LAIR: 20%; INT: Very; AL: N; XP: 285+3/hp; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems (15%), 1d8 jewelry (10%), 1 scroll and any 3 magic items (25%).; BOOK: OSRIC-271
+DRACOLISK	DGXPSXTS	9	1	Freq: Very Rare; #ENC: 1d2; SIZE: Large (20 ft); MOVE: 90 ft, 150 ft flying (AA: level III); AC: 3; HD: 7+3; ATK: 3; DMG: 1d6/1d6/3d4; SA: See Page; SD: None; MR: Standard; LAIR: 60%; INT: Low to average; AL: CE; XP: 1,000+10/hp; TRS: 1d10x1,000 cp (25%), 1d8x1,000 sp (25%), 1d6x1,000 gp (25%), 1d6x100 pp (25%), 3d6 gems (50%), 3d4 jewelry (50%) and any three magic items (25%).; BOOK: OSRIC-271
+DRAGON TURTLE	FWXSW	14	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 90 ft swimming; AC: 0; HD: 13; ATK: 3; DMG: 2d6/2d6/4d8; SA: Steam cloud; SD: None; MR: Standard; LAIR: 5%; INT: Very; AL: N; XP: 7,000+18/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%), 1d4 scrolls (50%).; BOOK: OSRIC-271
+DRAGON, BLACK	DGXFWXPMXPSXSWXTMXTS	8	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large (30 ft long); MOVE: 120 ft, flying 240 ft (AA: level II); AC: 3; HD: 6 to 8; ATK: 3; DMG: 1d4/1d4/3d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 30%; INT: Average; AL: CE; XP: 660+6/hp or 1,065+8/hp or 1,650+10/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%).; BOOK: OSRIC-208
+DRAGON, BLUE	DGXPDXPP	10	3	Freq: Rare; #ENC: 1d4; SIZE: Large (42 ft long); MOVE: 90 ft, flying 240 ft (AA: level II); AC: 2; HD: 8 to 10; ATK: 3; DMG: 1d6/1d6/3d8; SA: See Page; SD: See Page; MR: Standard; LAIR: 50%; INT: Very; AL: LE; XP: 1,650+10/hp or 2,400+12/hp or 3,000+13/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%).; BOOK: OSRIC-208
+DRAGON, BRASS	DGXTM	8	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large (30 ft long); MOVE: 120 ft, flying 240 ft (AA: level II); AC: 3; HD: 6 to 8; ATK: 3; DMG: 1d4/1d4/4d4; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: High; AL: CG or CN; XP: 660+6/hp or 1,065+8/hp or 1,650+10/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%).; BOOK: OSRIC-208
+DRAGON, BRONZE	DGXFWXPMXSWXTM	10	3	Freq: Rare; #ENC: 1d4; SIZE: Large (42 ft long); MOVE: 90 ft, flying 240 ft (AA: level II); AC: 2; HD: 8 to 10; ATK: 3; DMG: 1d6/1d6/4d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 45%; INT: Exceptional; AL: LG; XP: 1,650+10/hp or 2,400+12/hp or 3,000+13/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%), 1d4 scrolls (50%).; BOOK: OSRIC-209
+DRAGON, COPPER	DGXTM	9	3	Freq: Uncommon to Rare; #ENC: 1d4; SIZE: Large (36 ft long); MOVE: 90 ft, flying 240 ft (AA: level II); AC: 1; HD: 7 to 9; ATK: 3; DMG: 1d4/1d4/3d6+2; SA: See Page; SD: See Page; MR: Standard; LAIR: 35%; INT: High; AL: CG; XP: 1,065+8/hp or 1,650+10/hp or 2,400+12/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%).; BOOK: OSRIC-210
+DRAGON, GOLD	CFXCHXCMXCPXDGXFWXPDXPFXPHXPMXPPXPSXSWXTFXTHXTMXTS	12	1	Freq: Very Rare; #ENC: 1d3; SIZE: Large (54 ft long); MOVE: 120 ft, flying 300 ft (AA: level II); AC: -2; HD: 10 to 12; ATK: 3; DMG: 1d8/1d8/6d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 65%; INT: Genius; AL: LG; XP: 3,000+13/hp or 3,700+14/hp or 5,150+16/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 2d6x10,000 gp (55%), 10d10x100 pp (25%), 7d20 gems (50%), 1d6x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%), 1d4 scrolls (50%).; BOOK: OSRIC-210
+DRAGON, GREEN	CFXCHXDGXFWXPFXPHXPSXSWXTFXTHXTS	9	3	Freq: Rare; #ENC: 1d4; SIZE: Large (36 ft long); MOVE: 90 ft, flying 240 ft (AA: level II); AC: 2; HD: 7 to 9; ATK: 3; DMG: 1d6/1d6/2d10; SA: See Page; SD: See Page; MR: Standard; LAIR: 40%; INT: Average to very; AL: LE; XP: 1,065+8/hp or 1,650+10/hp or 2,400+12/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%), 1d4 scrolls (50%).; BOOK: OSRIC-211
+DRAGON, RED	DGXCFXCHXCMXFWXPFXPHXPMXSWXTFXTM	11	3	Freq: Rare; #ENC: 1d4; SIZE: Large (48 ft long); MOVE: 90 ft, flying 240 ft (AA: level II); AC: -1; HD: 9 to 11; ATK: 3; DMG: 1d8/1d8/3d10; SA: See Page; SD: See Page; MR: Standard; LAIR: 60%; INT: Exceptional; AL: CE; XP: 2,400+12/hp or 3,000+13/hp or 3,700+14/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 2d4 potions (40%), 1d4 scrolls (50%).; BOOK: OSRIC-211
+DRAGON, SILVER	CMXDGXFWXPMXSWXTM	11	1	Freq: Very Rare; #ENC: 1d4; SIZE: Large (48 ft long); MOVE: 90 ft, flying 240 ft (AA: level II); AC: -1; HD: 9 to 11; ATK: 3; DMG: 1d6/1d6/5d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 55%; INT: Exceptional; AL: LG; XP: 2,400+12/hp or 3,000+13/hp or 3,700+14/hp; TRS: (For a typical individual) 5d6x1,000 cp (25%), 1d100x1,000 sp (40%), 1d4x10,000 ep (40%), 1d6x10,000 gp (55%), 5d10x100 pp (25%), 1d100 gems (50%), 1d4x10 jewelry (50%), 4 magic items plus 1 potion and 1 scroll (15%), 1d4 scrolls (50%).; BOOK: OSRIC-212
+DRAGON, WHITE	CFXCHXCMXCPXDGXFWXPDXPS	7	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large (24 ft long); MOVE: 120 ft, flying 300 ft (AA: level II); AC: 3; HD: 5 to 7; ATK: 3; DMG: 1d4/1d4/2d8; SA: See Page; SD: See Page; MR: Standard; LAIR: 30%; INT: Low; AL: CE; XP: 440+4/hp or 660+6/hp or 1,065+8/hp; TRS: (For a typical individual) 1d12x1,000 cp (15%), 1d20x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems (15%), 1d8 jewelry (10%), 3 magic items plus 2d4 potions and 1 scroll (25%).; BOOK: OSRIC-212
+DRETCH	DG	5	13	Freq: Common; #ENC: 2d4 or 5d4 (in the Abyss); SIZE: Small; MOVE: 90 ft; AC: 2; HD: 4; ATK: 2 claws/1 bite; DMG: 1d4/1d4/1d4+1; SA: See Page; SD: See Page; MR: 30%; LAIR: 15%; INT: Low; AL: CE; XP: 175+4/hp; TRS: Dretch are not intelligent enough to hoard treasure socially. Individually they will carry some coinage, as follows: 3d8 cp, 3d6 sp, 2d6 ep, and 2d4 gp.; BOOK: OSRIC-217
+DRYAD	PF	3	1	Freq: Very Rare; #ENC: 1d6; SIZE: Medium; MOVE: 120 ft; AC: 10; HD: 2; ATK: 1; DMG: 1d2; SA: Charm; SD: See Page; MR: 50%; LAIR: 10%; INT: High; AL: N; XP: 30+10/hp; TRS: 2d4x100 gp (100%), 10d4 gems (50%).; BOOK: OSRIC-234
+DUNKLEOSTEUS	FWXSW	11	13	Freq: Common; #ENC: 1d2; SIZE: Large; MOVE: 210 ft swimming; AC: 6; HD: 10; ATK: 1; DMG: 5d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,000+12/hp; TRS: None; BOOK: OSRIC-230
+DWARF	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXTFXTHXTM	2	13	Freq: Common; #ENC: 40d10; SIZE: Small (4 ft tall); MOVE: 60 ft; AC: 4; HD: 1; ATK: 1; DMG: 1d8 or by weapon; SA: See Page; SD: Save at 4 levels higher (see page); MR: Save at 4 levels higher (see page); LAIR: 50%; INT: Very; AL: LG (N); XP: 30+1/hp; TRS: Individual 2d4x5 gp; lair 10d4x1,000 gp (50%), 1d20x100 pp (50%), 5d4 gems (30%), 1d4x20 gems (50%), 1d10 jewelry (25%), any 4 magic items (15%).; BOOK: OSRIC-194
+EDMONTOSAURUS	TMXTHXTFXTS	13	5	Freq: Uncommon; #ENC: 2d12; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 12; ATK: 1; DMG: 1d12; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,200+16/hp; TRS: None; BOOK: OSRIC-228
+EEL, GIANT ELECTRIC	SW	3	3	Freq: Rare; #ENC: 1d4; SIZE: Medium; MOVE: 120 ft swim; AC: 9; HD: 2; ATK: 1; DMG: 1d4; SA: Electricity; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 40+2/hp; TRS: None; BOOK: OSRIC-250
+EEL, GIANT MORAY	FWXSW	6	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 90 ft swim; AC: 6; HD: 5; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 110+4/hp; TRS: None; BOOK: OSRIC-250
+EEL, GIANT WEED	FWXSW	0	1	Freq: Very Rare; #ENC: 1d4; SIZE: Small; MOVE: 150 ft swim; AC: 8; HD: 1d6 hp; ATK: 1; DMG: 1; SA: Poison; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 30+1/hp; TRS: In lair: 1d4x1,000 cp (30%), 1d10x1,000 sp (50%), 1d3x1,000 ep (20%), 1d8x1,000 gp (45%), 2d8x100 pp (60%), 6d6 gems (50%), 2d6 jewelry 50%.; BOOK: OSRIC-250
+EKIVU (FLY DEMON)	DG	9	13	Freq: Common; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Medium; MOVE: 50 ft, 210 ft flying (AA: level III); AC: -1; HD: 7+2; ATK: 2 claws/1 bite; DMG: 2d4/2d4/1d4; SA: See Page; SD: See Page; MR: 40%; LAIR: 5%; INT: Average; AL: CE; XP: 1,275+10/hp; TRS: If encountered in their lair, they will possess a hoard of 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%) and possibly a magical weapon (10%).; BOOK: OSRIC-218
+ELASMOSAURUS	FWXSW	17	5	Freq: Uncommon; #ENC: 1d2; SIZE: Large; MOVE: 150 ft swimming; AC: 6; HD: 16; ATK: 1; DMG: 4d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,000+16/hp; TRS: None; BOOK: OSRIC-230
+ELEMENTAL, AIR	DG	13	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 360 ft flying (AA: level VI); AC: 2; HD: 8, 12 or 16; ATK: See Page; DMG: 2d10; SA: See Page; SD: Hit only by +2 or better magic weapons; MR: Standard; LAIR: None; INT: Low; AL: N; XP: 900+12/hp, 2,000+16/hp or 3,650+20/hp; TRS: None; BOOK: OSRIC-272
+ELEMENTAL, EARTH	DG	13	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 60 ft; AC: 2; HD: 8, 12 or 16; ATK: See Page; DMG: 4d8; SA: See Page; SD: Hit only by +2 or better magic weapons; MR: Standard; LAIR: None; INT: Low; AL: N; XP: 900+12/hp, 2,000+16/hp or 3,650+20/hp; TRS: None; BOOK: OSRIC-272
+ELEMENTAL, FIRE	DG	13	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 120 ft; AC: 2; HD: 8, 12 or 16; ATK: See Page; DMG: 3d8; SA: See Page; SD: Hit only by +2 or better magic weapons; MR: Standard; LAIR: None; INT: Low; AL: N; XP: 900+12/hp, 2,000+16/hp or 3,650+20/hp; TRS: None; BOOK: OSRIC-272
+ELEMENTAL, WATER	DG	13	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 60 ft, 180 ft swimming; AC: 2; HD: 8, 12 or 16; ATK: See Page; DMG: 5d6; SA: See Page; SD: Hit only by +2 or better magic weapons; MR: Standard; LAIR: None; INT: Low; AL: N; XP: 900+12/hp, 2,000+16/hp or 3,650+20/hp; TRS: None; BOOK: OSRIC-272
+ELEPHANT, AFRICAN	TFXTHXTS	12	13	Freq: Common; #ENC: 1d12; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 11; ATK: 5; DMG: 2d8/2d8/2d6/2d6/2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,400+14/hp; TRS: Ivory is worth 1d6x100gp per tusk. An elephant tusk is hugely encumbering.; BOOK: OSRIC-251
+ELEPHANT, ASIAN	TFXTHXTS	11	13	Freq: Common; #ENC: 1d12; SIZE: Large; MOVE: 150 ft; AC: 5; HD: 10; ATK: 5; DMG: 2d8/2d8/2d6/2d6/2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,100+13/hp; TRS: Ivory is worth 1d6x100gp per tusk. An elephant tusk is hugely encumbering.; BOOK: OSRIC-251
+ELEPHANT, MAMMOTH	TFXTHXTS	14	1	Freq: Very Rare; #ENC: 1d12; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 13; ATK: 5; DMG: 3d6/3d6/2d8/2d8/2d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,300+17/hp; TRS: Ivory is worth 1d6x100gp per tusk. An elephant tusk is hugely encumbering.; BOOK: OSRIC-251
+ELEPHANT, MASTODON	TFXTHXTS	13	1	Freq: Very Rare; #ENC: 1d12; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 12; ATK: 5; DMG: 2d8/2d8/2d6/2d6/2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,900+16/hp; TRS: Ivory is worth 1d6x100gp per tusk. An elephant tusk is hugely encumbering.; BOOK: OSRIC-251
+ELF	CFXCHXDGXPFXPHXPSXTFXTHXTS	3	5	Freq: Uncommon; #ENC: 20d10; SIZE: Medium; MOVE: 120 ft; AC: 5; HD: 1+1; ATK: 1; DMG: 1d8 or by weapon; SA: +1 to hit with pulled bow or sword; SD: See Page; MR: 90% to sleep or charm only; LAIR: 10%; INT: High; AL: CG; XP: 30+1/hp; TRS: 1d6 pp per individual. Typically elves will wear scale, ring, or chain armour and shield. They will be usually armed with spears, swords, and bows. Higher level fi ghter / magic users and fi ghter / magic user / clerics have a 10% chance per level per class to possess some sort of usable magic item.; BOOK: OSRIC-194
+ERINYES (LESSER DEVIL; SHE-DEVILS)	DG	8	5	Freq: Uncommon; #ENC: 1d3 or 4d4; SIZE: Medium; MOVE: 60 ft, 210 ft flying (AA: level IV); AC: 2; HD: 6+6; ATK: 1 dagger; DMG: 2d4 + poison (see page); SA: See Page; SD: See Page; MR: 30%; LAIR: 20%; INT: Average; AL: LE; XP: 875+8/hp; TRS: If encountered in their hellish aeries, these devils may have a treasure hoard made up of 2d4x1,000 gp (40%), 1d6x10 pp (50%), 4d8 gems (55%) and 1d12 jewelry (45%).; BOOK: OSRIC-223
+ETTERCAP	DGXPFXPHXPMXTFXTHXTM	7	3	Freq: Rare; #ENC: 1d2; SIZE: Medium; MOVE: 120 ft; AC: 6; HD: 5+1; ATK: 3; DMG: 1d4/1d4/1d8; SA: Poison; SD: See Page; MR: Standard; LAIR: 30%; INT: Semi-; AL: NE; XP: 150+5/hp; TRS: None; BOOK: OSRIC-273
+ETTIN	CMXDGXPMXTM	11	1	Freq: Very Rare; #ENC: 1d4; SIZE: Large (13 ft + tall); MOVE: 120 ft; AC: 3; HD: 10; ATK: 2; DMG: 2d8/3d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 1,370+14/hp; TRS: Individual: 2d10 gp, 1d6 gems (25%), 1d4 jewelry (20%) 2 magic items; Lair: 2d6x1,000 gp (70%).; BOOK: OSRIC-204
+EUPARKERIA	TFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 5d8; SIZE: Small; MOVE: 180 ft; AC: 9; HD: 1d4 hp; ATK: 3; DMG: 1d2/1d2/1d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 110+5/hp; TRS: None; BOOK: OSRIC-230
+EXECUTIONER`S HOOD	DGXPFXPMXTFXTM	6	3	Freq: Rare; #ENC: 1; SIZE: Small; MOVE: 60 ft; AC: 6; HD: 3 to 6; ATK: 1; DMG: 1d4; SA: See Page; SD: See Page; MR: Standard; LAIR: None; INT: Semi-; AL: NE; XP: 250+4/hp; TRS: None; BOOK: OSRIC-273
+EYE OF THE DEEP	SW	12	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 60 ft swimming; AC: 5; HD: 11; ATK: 3; DMG: 2d4/2d4/1d6; SA: See Page; SD: None; MR: Standard; LAIR: 20%; INT: Very; AL: LE; XP: 3,000+16/hp; TRS: 2d6x1,000 gp (50%), 1d4x1,000 pp (40%), 4d10 gems (40%), 2d6 jewelry (35%).; BOOK: OSRIC-273
+FAUN	PFXPH	6	5	Freq: Uncommon; #ENC: 2d4; SIZE: Medium; MOVE: 180 ft; AC: 5; HD: 5; ATK: 1; DMG: 2d4; SA: See Page; SD: See Page; MR: 50%; LAIR: 40%; INT: Very; AL: N; XP: 110+4/hp; TRS: 3d6x100 pp (30%), 2d10 gems (55%), 1d12 jewelry (50%), 1d12 potions (40%), 2 misc. magic items (60%).; BOOK: OSRIC-234
+FISH, GIANT, GAR	FW	9	3	Freq: Rare; #ENC: 1d6; SIZE: Large; MOVE: 300 ft swim; AC: 3; HD: 8; ATK: 1; DMG: 2d10; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 575+10/hp; TRS: None; BOOK: OSRIC-251
+FISH, GIANT, PIKE	FW	6	3	Freq: Rare; #ENC: 1d8; SIZE: Large; MOVE: 300 ft swim; AC: 5; HD: 5; ATK: 1; DMG: 3d6; SA: Surprise on a 1-4 on 1d6; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 90+4/hp; TRS: None; BOOK: OSRIC-251
+FISH, LEVIATHAN	SW	7	1	Freq: Very Rare; #ENC: 1; SIZE: Huge; MOVE: 300 ft swim; AC: 6; HD: 6; ATK: 1; DMG: 5d4; SA: Swallow whole; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 5,000+24/hp; TRS: None; BOOK: OSRIC-251
+FLY, GIANT, BLOW	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	3	Freq: Rare; #ENC: 1d12; SIZE: Medium; MOVE: 90 ft, 300 ft flying (AA: level III); AC: 6; HD: 3; ATK: 1; DMG: 1d8+1; SA: See Page; SD: Jump; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 40+3/hp; TRS: None; BOOK: OSRIC-274
+FLY, GIANT, HORSEFLY	CMXCPXPDXPFXPPXPSXTFXTMXTS	7	1	Freq: Very Rare; #ENC: 1d6; SIZE: Large (9 ft long); MOVE: 90 ft, 300 ft flying (AA: level III); AC: 5; HD: 6; ATK: 1; DMG: 2d6; SA: See Page; SD: Jump; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 165+6/hp; TRS: None; BOOK: OSRIC-274
+FROG, GIANT	DGXFWXPFXPPXPSXTFXTS	3	5	Freq: Uncommon; #ENC: 5d8; SIZE: Small to Medium; MOVE: 30 ft, swimming 90 ft; AC: 7; HD: 1 to 3; ATK: 1; DMG: 1d3, 1d6 or 2d4; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 10+5/hp, 30+10/hp or 50+15/hp; TRS: None; BOOK: OSRIC-251
+FUNGI VIOLET	DG	4	3	Freq: Rare; #ENC: 1d4; SIZE: Small to medium; MOVE: 10 ft; AC: 7; HD: 3; ATK: 1d4; DMG: See Page; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 50+f1/hp; TRS: None; BOOK: OSRIC-274
+GARGOYLE	CFXCMXDGXFWXPFXPMXPSXTFXTMXTS	6	5	Freq: Uncommon; #ENC: 2d8; SIZE: Medium; MOVE: 90 ft, 150 ft flying (AA: level IV); AC: 5; HD: 4+4; ATK: 4; DMG: 1d3/1d3/1d6/1d4; SA: None; SD: +1 or better weapon to hit; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 155+4/hp; TRS: None; BOOK: OSRIC-274
+GELATINOUS CUBE	DGXPMXTM	5	5	Freq: Uncommon; #ENC: 1; SIZE: Large (typically 10 ft cube); MOVE: 60 ft; AC: 8; HD: 4; ATK: 1; DMG: 2d4; SA: Paralyzing touch, surprise on a 1-3 on 1d6; SD: See Page; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: 150+4/hp; TRS: Gelatinous Cubes will sometimes sweep up inorganic substances (including metal items such as coins, glass or ceramic items such as potion bottles, etc.). These incidental items are sometimes kept in the body of the ; BOOK: OSRIC-274
+GENIE	DG	9	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 90 ft, 240 ft flying (AA: level VI); AC: 4; HD: 7+3; ATK: 1; DMG: 2d8; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Average to high; AL: CG; XP: 350+8/hp; TRS: None; BOOK: OSRIC-275
+GHAST	CHXCMXCPXDGXPHXPMXPPXPSXTHXTMXTS	5	3	Freq: Rare; #ENC: 1d6; SIZE: Medium; MOVE: 150 ft; AC: 4; HD: 4; ATK: 3; DMG: 1d4/1d4/1d8; SA: Paralyzation, Stench; SD: Standard undead immunities; MR: Standard; LAIR: 10%; INT: Very; AL: CE; XP: 195+4/hp; TRS: 1d8x1,000 cp (50%); 1d6x1,000 sp (25%); 1d4x1,000 ep (25%); d12x1,000 gp (65%); 1d6x1,000 pp (30%); 3d8 gems (50%); 2d6 jewelry (50%); a magic weapon or armour (25%); 1d4 scrolls (50%).; BOOK: OSRIC-239
+GHOST	CFXCHXCMXCPXDGXPFXPHXPMXPPXPSXTFXTHXTMXTS	12	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 90 ft hovering; AC: 0 when manifest/special; HD: 10+4; ATK: 1; DMG: Special; SA: Wither; Magic Jar; SD: Magic weapons or special metals required to hit when manifest; immune to spells when ethereal unless the caster is also ethereal.; MR: As Special Defenses; LAIR: 25%; INT: High; AL: Any E; XP: 4,200+14/hp; TRS: 1d10x1,000 cp (5%); 2d6x1,000 sp (30%); 1d6x1,000 ep (25%); 2d4x1,000 gp (25%); 2d6 gems (15%); 1d6 jewelry (20%); 1d3-1 scrolls (30%); 1d8 potions (40%); 1d4-1 any other magic items (25%).; BOOK: OSRIC-240
+GHOUL	CHXCMXCPXDGXPHXPMXPPXPSXTHXTMXTS	3	5	Freq: Uncommon; #ENC: 4d6; SIZE: Medium; MOVE: 90 ft loping; AC: 6; HD: 2; ATK: 3; DMG: 1d3/1d3/1d6; SA: Paralyzation; SD: Immune to sleep and charm spells; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 70+2/hp; TRS: 1d8x1,000 cp (50%); 1d6x1,000 sp (25%); 1d4x1,000 ep (25%); 1d3x1,000 gp (25%); 2d4 gems (30%); 1d4 jewelry (20%); magic weapon or armour (10%); 1d4 scrolls (10%).; BOOK: OSRIC-240
+GIANT, CLOUD	CHXCMXPHXPMXTHXTM	14	3	Freq: Rare; #ENC: 1d6; SIZE: Large (18 ft tall); MOVE: 150 ft; AC: 2; HD: 12+1d6+1; ATK: 1; DMG: 6d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 40%; INT: Average up to very; AL: NE or NG; XP: 3,520+16/hp; TRS: 10d4x100 gp, 4d6 + 6 gems (15%), 1d8 jewelry (10%), 4 magic items (25%).; BOOK: OSRIC-202
+GIANT, FIRE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXTFXTHXTM	13	5	Freq: Uncommon; #ENC: 1d8; SIZE: Large (12 ft tall); MOVE: 120 ft; AC: 3; HD: 11+1d4+1; ATK: 1; DMG: 5d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 35%; INT: Low up to average; AL: LE; XP: 2,720+16/hp; TRS: 10d4x100 gp, 1d12 gems (15%), 1d8 jewelry (10%), 4 magic items (25%).; BOOK: OSRIC-202
+GIANT, FROST	CFXCHXCMXDGXPFXPHXPM	12	3	Freq: Rare; #ENC: 1d8; SIZE: Large (15ft tall); MOVE: 120 ft; AC: 4; HD: 10+1d4; ATK: 1; DMG: 4d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 30%; INT: Low up to average; AL: CE; XP: 1,820+14/hp; TRS: 10d4x100 gp, 1d12 gems (15%), 1d8 jewelry (10%), 4 magic items (25%).; BOOK: OSRIC-203
+GIANT, HILL	CFXCHXCMXCPXDGXPFXPHXPMXPPXPSXTFXTHXTMXTS	10	13	Freq: Common; #ENC: 1d10; SIZE: Large (10 ft 6 in tall); MOVE: 120 ft; AC: 4; HD: 8+1d2; ATK: 1; DMG: 2d8; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: Low; AL: CE; XP: 1,200+12/hp; TRS: 2d10x100 gp, 1d10 gems (30%), 1d6 jewelry (25%), 3 magic items (15%).; BOOK: OSRIC-203
+GIANT, STONE	CHXCMXDGXPHXPMXTHXTM	11	5	Freq: Uncommon; #ENC: 1d8; SIZE: Large (12 ft tall); MOVE: 120 ft; AC: 0; HD: 9+1d4; ATK: 1; DMG: 3d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 30%; INT: Average; AL: N; XP: 1,500+14/hp; TRS: 2d10x100 gp, 1d10 gems (30%), 1d6 jewelry (25%), 3 magic items (15%).; BOOK: OSRIC-204
+GIANT, STORM	CMXFWXPMXSWXTM	17	3	Freq: Rare; #ENC: 1d4; SIZE: Large (21 ft tall); MOVE: 150 ft; AC: 1; HD: 15+1d6+1; ATK: 1; DMG: 7d6; SA: See Page; SD: See Page; MR: Standard; LAIR: 30%; INT: Exceptional; AL: CG; XP: 6,000+20/hp; TRS: 10d4x100 gp, 4d6 + 6 gems (15%), 1d8 jewelry (10%), 4 magic items (25%).; BOOK: OSRIC-204
+GNOLL	DGXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	5	Freq: Uncommon; #ENC: 20d10; SIZE: Large; MOVE: 90 ft; AC: 5; HD: 2; ATK: 1; DMG: 2d4 or by weapon; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Low to average; AL: CE; XP: 30+2/hp; TRS: Individual 2d6 ep, 2d4 gp; Lair 1d8x1,000 cp (60%), 1d6x1,000 sp (50%), 1d8x1,000 ep (35%), 1d6x1,000 gp (50%), 5d4 gems (30%), 1d6 jewelry (25%), 2d4 potions (40%).; BOOK: OSRIC-197
+GNOLL, FLIND	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	3	Freq: Rare; #ENC: 2d12; SIZE: Medium; MOVE: 120 ft; AC: 5; HD: 2+3; ATK: 1; DMG: 2d4 or by weapon; SA: Disarm; SD: None; MR: Standard; LAIR: 20%; INT: Average; AL: CE; XP: 40+4/hp; TRS: 1d6 gp per individual; in lair: 1d6x1,000 cp (30%); 1d6x1,000 sp (25%); 2d4x1,000 ep (35%); 1d10x1,000 gp (45%); 1d4x100 pp (20%); 5d8 gems (50%); 4d12 jewelry (65%); 25% chance of any 3 maps or magic.; BOOK: OSRIC-197
+GNOME	CFXCHXCMXDGXPFXPHXPMXTFXTHXTM	2	3	Freq: Rare; #ENC: 40d10; SIZE: Small; MOVE: 60 ft; AC: 5; HD: 1; ATK: 1; DMG: 1d6 or by weapon; SA: See Page; SD: Save at 4 levels higher (see page); MR: See Page; LAIR: 50%; INT: Very; AL: N to LG; XP: 10+1/hp; TRS: 6d4 gp per individual.; BOOK: OSRIC-195
+GOBLIN	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 40d10; SIZE: Small (4 ft tall); MOVE: 60 ft; AC: 6; HD: 1-1; ATK: 1; DMG: 1d6 or by weapon; SA: None; SD: None; MR: Standard; LAIR: 40%; INT: Average (low); AL: LE; XP: 10+1/hp; TRS: Individual 3d6 sp ; Lair 1d12x1,000 cp (75%), 1d6x1,000 sp (50%), 1d6 gems (25%), 1d3 jewelry (20%), 2d4 potions (40%).; BOOK: OSRIC-198
+GOLEM, CLAY	DG	9	1	Freq: Very Rare; #ENC: 1; SIZE: Large (8 ft tall); MOVE: 70 ft; AC: 7; HD: 50 hp; ATK: 1; DMG: 3d10; SA: See Page; SD: See Page; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: 2,800; TRS: None; BOOK: OSRIC-231
+GOLEM, FLESH	DG	8	1	Freq: Very Rare; #ENC: 1; SIZE: Large (7 1/2 ft tall); MOVE: 80 ft; AC: 9; HD: 40 hp; ATK: 2; DMG: 2d8/2d8; SA: See Page; SD: See Page; MR: See Page; LAIR: None; INT: Semi-; AL: N; XP: 2,180; TRS: None; BOOK: OSRIC-231
+GOLEM, IRON	DG	11	1	Freq: Very Rare; #ENC: 1; SIZE: Large (12 ft tall); MOVE: 60 ft; AC: 3; HD: 80 hp; ATK: 1; DMG: 4d10; SA: See Page; SD: See Page; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: 8,550; TRS: None; BOOK: OSRIC-231
+GOLEM, STONE	DG	10	1	Freq: Very Rare; #ENC: 1; SIZE: Large (9 1/2 ft tall); MOVE: 60 ft; AC: 5; HD: 60 hp; ATK: 1; DMG: 3d8; SA: See Page; SD: See Page; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: 4,040; TRS: None; BOOK: OSRIC-231
+GORGIMERA	DGXPDXPHXPMXTHXTM	12	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 120 ft, 150 ft flying (AA: level II); AC: 3; HD: 10+1; ATK: 5; DMG: 1d3/1d3/2d4/2d6/3d4; SA: Breathing fire to a 60 ft for 3d8 damage. The gorgon; SD: None; MR: Standard; LAIR: 30%; INT: Semi-; AL: CE; XP: 2,250+14/hp; TRS: 1d20x1,000 sp (20%) , 1d12x1,000 ep (25%) , 1d20x1,000 gp (50%), 1d10x100 pp (40%), 4d10 gems (25%), 1d12 jewelry (15%), 3 magic items (no magic weapons) and 1 magic scroll and 1 magic potion (40%).; BOOK: OSRIC-267
+GORGON	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	9	3	Freq: Rare; #ENC: 1d4; SIZE: Large; MOVE: 120 ft; AC: 2; HD: 8; ATK: 1; DMG: 2d6; SA: Petrifying breath; SD: None; MR: Standard; LAIR: 40%; INT: Animal; AL: N; XP: 1,500+10/hp; TRS: (In lair only) 1d8x1,000 cp (10%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d10 gems (15%), 1d8 jewelry (10%), any four magic items (25%).; BOOK: OSRIC-275
+GORGOSAURUS	TMXTHXTFXTS	15	5	Freq: Uncommon; #ENC: 1 or 2d8; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 14; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 1,500+18/hp; TRS: None; BOOK: OSRIC-227
+GREY OOZE	DG	5	3	Freq: Rare; #ENC: 1d3; SIZE: Medium to large; MOVE: 10 ft; AC: 8; HD: 3+3; ATK: 1; DMG: 2d8; SA: See Page; SD: See Page; MR: See Page; LAIR: None; INT: Animal; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-276
+GRIFFON	CHXCMXFWXPDXPHXPMXSWXTM	8	5	Freq: Uncommon; #ENC: 2d6; SIZE: Large; MOVE: 120 ft, 300 ft flying (AA: level IV); AC: 3; HD: 7; ATK: 3; DMG: 1d4/1d4/2d8; SA: None; SD: None; MR: Standard; LAIR: 25%; INT: Semi-; AL: N; XP: 225+8/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (20%), 2 magic items (10%), 2d4 potions (40%).; BOOK: OSRIC-276
+GRIMLOCK	DG	1	5	Freq: Uncommon; #ENC: 20d10; SIZE: Medium; MOVE: 120 ft; AC: 5; HD: 2; ATK: 1; DMG: 1d6 or by weapon; SA: None; SD: See Page; MR: Special; LAIR: 75%; INT: Average; AL: NE; XP: 28+2/hp; TRS: 1d6x1,000 cp (25%), 1d4x1,000 sp (25%), 2d10x100 gp (25%), 1d8 gems (25%), 1d4 jewelry (25%) and 1 magic item (10%, armour or weapon only).; BOOK: OSRIC-199
+HALFLING	CFXCHXCPXDG	0	3	Freq: Rare; #ENC: 30d10; SIZE: Small; MOVE: 90 ft; AC: 7; HD: 1d6 hp; ATK: 1; DMG: 1d6 or by weapon; SA: +3 to hit with bow or sling; SD: Save at 4 levels higher (see page); MR: See Page; LAIR: 70%; INT: Very; AL: LG; XP: 5+1/hp; TRS: 3d8 sp per individual.; BOOK: OSRIC-195
+HARPY	CFXCHXCMXCPXDGXFWXPDXPFXPHXPMXPPXPSXSWXTFXTHXTMXTS	4	3	Freq: Rare; #ENC: 2d6; SIZE: Medium; MOVE: 60 ft, 150 ft flying (AA: level IV); AC: 7; HD: 3; ATK: 3; DMG: 1d3/1d3/1d6; SA: Singing and charm; SD: None; MR: Standard; LAIR: 25%; INT: Low; AL: CE; XP: 50+3/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (20%), any 2 magic items (10%).; BOOK: OSRIC-276
+HELL HOUND	DGXPDXPHXPMXPSXTHXTMXTS	7	1	Freq: Very Rare; #ENC: 2d4; SIZE: Medium; MOVE: 120 ft; AC: 4; HD: 4 to 7; ATK: 1; DMG: 1d10; SA: Breathe fire; SD: See Page; MR: Standard; LAIR: 30%; INT: Low; AL: LE; XP: 75+4/hp, 110+5/hp, 160+6/hp, 225+8/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (25%), 2 magic items (10%).; BOOK: OSRIC-277
+HIPPOGRIFF	CHXCMXFWXPHXPMXSWXTHXTM	5	3	Freq: Rare; #ENC: 2d8; SIZE: Large; MOVE: 180 ft, 360 ft flying (AA: level IV); AC: 5; HD: 3+3; ATK: 3; DMG: 1d6/1d6/1d10; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 150+3/hp; TRS: 5d4 gems (50%).; BOOK: OSRIC-277
+HIPPOPOTAMUS	TS	9	5	Freq: Uncommon; #ENC: 2d6; SIZE: Large; MOVE: 90 ft, 120 ft swimming; AC: 6; HD: 8; ATK: 1; DMG: 2d6 or 3d6; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 600+12/hp; TRS: None; BOOK: OSRIC-252
+HOBGOBLIN	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTHXTMXTS	1	5	Freq: Uncommon; #ENC: 20d10; SIZE: Medium (6 1/2 ft tall); MOVE: 90 ft; AC: 5; HD: 1+1; ATK: 1; DMG: 1d8 or by weapon; SA: None; SD: None; MR: Standard; LAIR: 25%; INT: Average; AL: LE; XP: 20+2/hp; TRS: Individual 3d12 cp, 2d8 gp; Lair 1d8x1,000 cp (75%), 1d12x1,000 sp (60%), 1d8x1,000 ep (35%), 1d6x1,000 gp (50%), 5d4 gems (50%), 1d6 jewelry (25%), 1 potion (15%).; BOOK: OSRIC-199
+HOMONCULUS	X	3	1	Freq: Very Rare; #ENC: 1; SIZE: Small (18 in); MOVE: 60 ft, 180 flying (AA: level V); AC: 6; HD: 2; ATK: 1; DMG: 1d3; SA: Bite causes sleep; SD: See Page; MR: See Page; LAIR: None; INT: See Page; AL: See Page; XP: 81+2/hp; TRS: None; BOOK: OSRIC-277
+HORNED DEVIL (GREATER DEVIL; CORNUGON, MALIBRANCHAI)	DG	7	5	Freq: Uncommon; #ENC: 1d2 or 1d4+1; SIZE: Large; MOVE: 90 ft, 180 ft flying (AA: level III); AC: -5; HD: 5+5; ATK: 2 claws/1 bite/1 tail or 1 weapon/1 tail; DMG: 1d4/1d4/1d4+1/1d3 or by weapon/1d3; SA: See Page; SD: +1 or better magic weapon to hit; MR: 50%; LAIR: 55%; INT: High; AL: LE; XP: 1,320+6/hp; TRS: If a horned devil lair is found, it may contain a hoard of 3d6x100 pp (30%), 2d10 gems (55%), 1d12 jewelry (50%) and perhaps even a random magic item (15%).; BOOK: OSRIC-223
+HORSE, DRAFT	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	13	Freq: Common; #ENC: 1; SIZE: Large; MOVE: 120 ft; AC: 7; HD: 3; ATK: 1; DMG: 1d3; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-252
+HORSE, HEAVY	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	5	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 3+3; ATK: 3; DMG: 1d8/1d8/1d3; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-252
+HORSE, LIGHT	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 240 ft; AC: 7; HD: 2; ATK: 2; DMG: 1d4/1d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-252
+HORSE, MEDIUM	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 180 ft; AC: 7; HD: 2+2; ATK: 3; DMG: 1d6/1d6/1d3; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-252
+HORSE, PONY	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 120 ft; AC: 7; HD: 1+1; ATK: 1; DMG: 1d2; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-252
+HORSE, WILD	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	5	Freq: Uncommon; #ENC: 5d6; SIZE: Large; MOVE: 240 ft; AC: 7; HD: 2; ATK: 1; DMG: 1d3; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-252
+HYDRA	CFXCMXCPXPFXPMXPPXPSXTFXTMXTS	14	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 90 ft; AC: 5; HD: 5 to 16; ATK: 5 to 16; DMG: 1d6, 1d8, 1d10 or 1d12 based on size; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Semi-; AL: N; XP: 110+5/hp up to 5,000+20/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 p (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour or misc. weapon (10%).; BOOK: OSRIC-278
+HYENA, GIANT	TFXTHXTS	5	1	Freq: Very Rare; #ENC: 1d6; SIZE: Large; MOVE: 180 ft; AC: 5; HD: 4; ATK: 1; DMG: 2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 160+6/hp; TRS: None; BOOK: OSRIC-253
+HYENA, HUGE	TFXTHXTS	4	3	Freq: Rare; #ENC: 2d6; SIZE: Medium; MOVE: 120 ft; AC: 6; HD: 3; ATK: 1; DMG: 2d4+1; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-253
+HYENA, NORMAL	TFXTHXTS	3	13	Freq: Common; #ENC: 2d6; SIZE: Medium; MOVE: 120 ft; AC: 7; HD: 2; ATK: 1; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-253
+HYPACROSAURUS	TMXTHXTFXTS	10	5	Freq: Uncommon; #ENC: 5d8; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 9; ATK: 1; DMG: 1d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 750+10/hp; TRS: None; BOOK: OSRIC-228
+ICE DEVIL (GREATER DEVIL)	DG	12	5	Freq: Uncommon; #ENC: 1 or 1d4; SIZE: Large; MOVE: 60 ft; AC: -4; HD: 11; ATK: 2 claws/1 mandible/1 tail or spear; DMG: 1d4/1d4/2d4/3d4 or 2d6+4 plus freezing; SA: See Page; SD: +2 or better magic weapon to hit; MR: 55%; LAIR: 60%; INT: High; AL: LE; XP: 4,400+16/hp; TRS: If their lair is plundered, ice devils will have a buried cache containing 2d4x1,000 gp (40%), 1d6x10 pp (50%), 4d8 gems (55%) , and 1d12 jewelry (45%).; BOOK: OSRIC-224
+IGUANODON	TFXTHXTMXTS	7	13	Freq: Common; #ENC: 3d6; SIZE: Large; MOVE: 150 ft; AC: 4; HD: 6; ATK: 3; DMG: 1d3/1d3/2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 500+10/hp; TRS: None; BOOK: OSRIC-229
+IMP (LESSER DEVIL)	DG	4	1	Freq: Very Rare; #ENC: 1; SIZE: Small; MOVE: 60 ft, 180 ft flying (AA: level V); AC: 2; HD: 2+2; ATK: Tail; DMG: 1d4 + poison (see page); SA: See Page; SD: See Page; MR: 25%; LAIR: None; INT: Average; AL: LE; XP: 275+3/hp; TRS: Imps normally possess no treasure of any kind. If encountered in their lair in the lower planes however, they might have a small hoard of 1d4x1,000 cp (25%) and 1d3x1,000 sp (20%).; BOOK: OSRIC-224
+INDRICOTHERIUM	CFXCHXCMXCPXPDXPS	15	3	Freq: Rare; #ENC: 1d3; SIZE: Large; MOVE: 120 ft; AC: 5; HD: 14; ATK: 2; DMG: 5d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,800+18/hp; TRS: None; BOOK: OSRIC-253
+INVISIBLE STALKER	DG	9	1	Freq: Very Rare; #ENC: 1; SIZE: Large (8 ft tall); MOVE: 120 ft; AC: 3; HD: 8; ATK: 1; DMG: 2d8; SA: Surprise on 1-5 on 1d6; SD: Invisibility; MR: 30%; LAIR: None; INT: High; AL: N; XP: 1,100+10/hp; TRS: None; BOOK: OSRIC-278
+JACKAL, GIANT	PDXPFXPHXPPXPSXTFXTHXTS	5	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 180 ft; AC: 5; HD: 4; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: 25%; INT: Animal; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-253
+JACKAL, HUGE	PDXPFXPHXPPXPSXTFXTHXTS	3	3	Freq: Rare; #ENC: 1d6; SIZE: Small; MOVE: 150 ft; AC: 6; HD: 2; ATK: 1; DMG: 1d4+1; SA: None; SD: None; MR: Standard; LAIR: 25%; INT: Animal; AL: N; XP: 30+1/hp; TRS: None; BOOK: OSRIC-253
+JACKAL, NORMAL	PDXPFXPHXPPXPSXTFXTHXTS	2	13	Freq: Common; #ENC: 1d6; SIZE: Small; MOVE: 120 ft; AC: 7; HD: 1; ATK: 1; DMG: 1d4; SA: None; SD: None; MR: Standard; LAIR: 25%; INT: Animal; AL: N; XP: 10+1/hp; TRS: None; BOOK: OSRIC-253
+JACKALWERE	DGXPDXPFXPHXPSXTFXTHXTS	5	3	Freq: Rare; #ENC: 1d4; SIZE: Small (medium); MOVE: 120 ft; AC: 4; HD: 4; ATK: 1; DMG: 2d8 or by weapon; SA: Gaze causes sleep; SD: Iron or +1 weapon to hit; MR: Standard; LAIR: 30%; INT: Very; AL: CE; XP: 75+4/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (20%), any 2 magic items (10%).; BOOK: OSRIC-279
+KOBOLD	CFXCHXCMXDGXPFXPHXPMXPSXTFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 40d10; SIZE: Small (3 ft tall); MOVE: 60 ft; AC: 7; HD: 1d4 hp; ATK: 1; DMG: 1d4 or by weapon; SA: None; SD: None; MR: Standard; LAIR: 40%; INT: Average (low); AL: LE; XP: 5+1/hp; TRS: Individual 3d6 cp; Lair 1d4x1,000 cp (50%), 1d3x1,000 sp (30%), 1d4 gems (50%).; BOOK: OSRIC-200
+KRAKEN	SW	21	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 210 ft swimming; AC: 5/0; HD: 20; ATK: 9; DMG: 2d6(x8)/5d4; SA: See Page; SD: See Page; MR: Standard; LAIR: 75%; INT: Genius; AL: NE; XP: 17,500+30/hp; TRS: 12d4x1,000 gp (50%), 1d8x1,000 pp (50%), 9d6 gems (55%), 2d10 jewelry (45%), 4 magic items + 1d6 scrolls + 2d4 potions (50%).; BOOK: OSRIC-279
+KULLULE (DEMONIC HORDLING)	DG	2	3	Freq: Rare; #ENC: 4d4; SIZE: Small; MOVE: 30 ft; AC: 7; HD: 1; ATK: 2 claws/1 bite; DMG: 1d2/1d2/1d4; SA: None; SD: +1 or better magic weapon to hit; MR: Standard; LAIR: None; INT: Semi-; AL: CE; XP: 18+1/hp; TRS: None; BOOK: OSRIC-218
+LAMIA	PD	10	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 240 ft; AC: 3; HD: 9; ATK: 1; DMG: 1d4; SA: See Page; SD: None; MR: Standard; LAIR: 60%; INT: High; AL: CE; XP: 1,500+12/hp; TRS: 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 1d10 gems (30%), 1d6 jewelry (25%), any 2 magic item + 1 potion (15%).; BOOK: OSRIC-279
+LAMMASU	DGXFWXPDXPFXPHXPMXPPXPSXSWXTFXTHXTMXTS	9	3	Freq: Rare; #ENC: 1d8; SIZE: Large; MOVE: 120 ft, 240 ft flying (AA: level III); AC: 6; HD: 7+7; ATK: 2; DMG: 1d6+1/1d6+1; SA: See Page; SD: See Page; MR: 30%; LAIR: 25%; INT: Genius; AL: LG; XP: 875+10/hp; TRS: 2d4x1,000 gp (45%), 1d8x100pp (60%), 4d8 gems (50%), 2d6 jewelry (40%), 2d4 potions (40%), 1 misc magic (20%).; BOOK: OSRIC-280
+LEECH, GIANT	DGXFWXPSXTS	4	5	Freq: Uncommon; #ENC: 4d4; SIZE: Small; MOVE: 30 ft; AC: 9; HD: 1 to 4; ATK: 1; DMG: 1d4 (1 HD), 1d6 (2-3 HD) or 1d8 (4 HD); SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 50+3/hp; TRS: None; BOOK: OSRIC-280
+LEMURE (LEAST DEVIL)	DG	4	13	Freq: Common; #ENC: 5d6; SIZE: Medium; MOVE: 30 ft; AC: 7; HD: 3; ATK: 1 pseudopod; DMG: 1d3; SA: None; SD: See Page; MR: Standard; LAIR: 100%; INT: Semi-; AL: LE; XP: 65+3/hp; TRS: None; BOOK: OSRIC-224
+LEPRECHAUN	DGXPFXPHXPP	0	5	Freq: Uncommon; #ENC: 1d20; SIZE: Small; MOVE: 150 ft; AC: 8; HD: 1d4 + 1hp; ATK: None; DMG: None; SA: See Page; SD: See Page; MR: 80%; LAIR: 10%; INT: Exceptional; AL: N; XP: 50+3/hp; TRS: 1d20x1,000 sp (10%), 1d12x1,000 ep (15%), 1d8x1,000 gp (40%), 1d8x100 pp (35%), 3d10 gems (20%), 1d10 jewelry (10%), 3 magic items (no sword or misc. weapon), 1 potion, 1 scroll (30%).; BOOK: OSRIC-235
+LICH	DG	15	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 60 ft; AC: 0; HD: 12 or more; ATK: 1; DMG: 2d6 + paralyzation; SA: Spell use (as Magic User, Cleric or both) at at least 18th level of ability; fear.; SD: +1 or better weapon to hit; immune to cold, electrical, poison, paralysation, polymorph, and death magic, as well as sleep, charm, hold and other mental based attacks; spells that drain attributes or statistics also have no effect.; MR: Standard; LAIR: 95%; INT: Genius or higher; AL: Any E; XP: at least 10,000+16/hp; TRS: (1d4+1)x1,000 cp (30%); (d4+1)x1,000 sp (25%); 1d6x1,000 ep (40%); (1d8+1)x1,000 gp (45%); 1d4x1,000 pp (25%); 5d8 gems (55%); 8d4 jewelry (45%); any 3 magic items save potions (40%).; BOOK: OSRIC-240
+LION	PDXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	13	Freq: Common; #ENC: 2d6; SIZE: Large; MOVE: 120 ft; AC: 5; HD: 5+3; ATK: 3; DMG: 1d6/1d6/1d10; SA: Rear claws; SD: Only surprised on 1; MR: Standard; LAIR: 25%; INT: Semi-; AL: N; XP: 250+6/hp; TRS: None; BOOK: OSRIC-253
+LION, COUGAR	PDXPFXPHXPMXPPXPS	5	13	Freq: Common; #ENC: 1d2; SIZE: Medium; MOVE: 150 ft; AC: 6; HD: 3+2; ATK: 3; DMG: 1d4/1d4/1d6; SA: Rear claws; SD: Only surprised on 1; MR: Standard; LAIR: 15%; INT: Semi-; AL: N; XP: 100+3/hp; TRS: None; BOOK: OSRIC-253
+LION, PREHISTORIC	CFXCHXCMXCPXPDXPHXPMXPPXTFXTHXTM	8	3	Freq: Rare; #ENC: 2d4; SIZE: Large; MOVE: 120 ft; AC: 5; HD: 6+3; ATK: 3; DMG: 2d4/2d4/2d6; SA: Rear claws; SD: Only surprised on 1; MR: Standard; LAIR: 25%; INT: Semi-; AL: N; XP: 300+6/hp; TRS: None; BOOK: OSRIC-253
+LIZARD MAN	DGXFWXPSXTS	4	3	Freq: Rare; #ENC: 10d4; SIZE: Medium (7 ft tall); MOVE: 60 ft, swimming 120 ft; AC: 5 (4 with shield); HD: 2+1; ATK: 3; DMG: 1d2/1d2/1d8; SA: See Page; SD: None; MR: Standard; LAIR: 30%; INT: Low (average); AL: N; XP: 20+2/hp; TRS: Lair 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 1d10 gems (30%), 1d6 jewelry (25%), 2 magic items or 1 potion (15%).; BOOK: OSRIC-200
+LIZARD, GIANT	DGXPFXPPXPSXTFXTS	5	5	Freq: Uncommon; #ENC: 2d6; SIZE: Large (20 ft long); MOVE: 150 ft; AC: 5; HD: 3+1; ATK: 1; DMG: 1d8+1; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 120+4/hp; TRS: None; BOOK: OSRIC-280
+LIZARD, GIANT CAVE	DG	7	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large (20 ft long); MOVE: 120 ft; AC: 5; HD: 6; ATK: 1; DMG: 2d6; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 375+6/hp; TRS: In lair: 1d4x1,000 cp (30%), 2d4x1,000 sp (40%), 1d3x1,000 ep (25%), 1d4 gems (50%).; BOOK: OSRIC-280
+LIZARD, GIANT FIRE	PMXTM	11	1	Freq: Very Rare; #ENC: 1d4; SIZE: Large (30 ft long); MOVE: 90 ft; AC: 3; HD: 10; ATK: 3; DMG: 1d8/1d8/2d8; SA: See Page; SD: See Page; MR: Standard; LAIR: 40%; INT: Animal; AL: N; XP: 1,500+14/hp; TRS: In lair: 1d8x1,000 cp (45%), 1d6x1,000 sp (30%), 1d6x1,000 ep (25%), 1d4x1,000 gp (33%), 1d4x100 pp (10%), 2d4 gems (30%), 1d6 jewelry (20%), Magic Sword/Armor/Weapon (12%), 2d4 potions (50%), 1d6 scrolls (40%).; BOOK: OSRIC-280
+LIZARD, GIANT MONITOR	DGXTHXTM	9	3	Freq: Rare; #ENC: 1d6; SIZE: Large (40 ft long); MOVE: 60 ft; AC: 5; HD: 8; ATK: 3; DMG: 2d6/2d6/3d6; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 925+10/hp; TRS: In lair: 4d6 cp (90%), 3d6 sp (80%), 3d6 ep (70%), 2d6 gp (60%), 1d6 pp (50%), 2d6 gems (40%), 1d2 magic items (10%).; BOOK: OSRIC-280
+LOCATHAH	FWXSW	3	3	Freq: Rare; #ENC: 20d10; SIZE: Medium; MOVE: 120 ft; AC: 6; HD: 2; ATK: 1; DMG: By weapon; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Very; AL: N; XP: 30+1/hp; TRS: In lair: 1d4x1,000 cp (30%), 1d6x1,000 sp (20%), 1d8x1,000 ep (30%), 1d10x1,000 gp (40%), 1d6x100 pp (25%), 3d12 gems (65%), 4d10 jewelry (50%), 3 random magic sword/armor/misc. Item (33%).; BOOK: OSRIC-281
+LURKER ABOVE	DG	11	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: 10 ft, 90 ft flying; AC: 6; HD: 10; ATK: 1; DMG: 1d6; SA: See Page; SD: None; MR: Standard; LAIR: 95%; INT: Non-; AL: N; XP: 1,500+4/hp; TRS: 1d10x1,000 cp (25%), 1d8x1,000 sp (25%), 1d6x1,000 gp (25%), 1d6 gems (25%), 1d3 jewelry (25%) and any two Magic Items (10%).; BOOK: OSRIC-282
+MANTICORE	CFXCHXCMXCPXDGXFWXPDXPHXPMXPPXPSXSWXTFXTHXTMXTS	8	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 120 ft, 180 ft flying (AA: level II); AC: 4; HD: 6+3; ATK: 3; DMG: 1d3/1d3/1d8; SA: Tail spikes; SD: None; MR: Standard; LAIR: 20%; INT: Low; AL: LE; XP: 525+8/hp; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d8x1,000 gp (25%), 1d12 gems, 1d8 jewelry, 3 misc. magic and 1 scroll (25%).; BOOK: OSRIC-282
+MEDUSA	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	3	Freq: Rare; #ENC: 1d3; SIZE: Medium; MOVE: 90 ft; AC: 5; HD: 6+1; ATK: 1; DMG: 1d6; SA: Poison, petrification; SD: Non; MR: Standard; LAIR: 50%; INT: Very to high; AL: NE; XP: 750+6/hp; TRS: 1d6x1,000 sp (30%), 1d2x1,000 ep (25%), 2d6x1,000 gp (70%), 10d4 gems (50%), 1 misc magic + 1 potion (60%).; BOOK: OSRIC-282
+MEPHIT, FIRE	DG	5	1	Freq: Very Rare; #ENC: 1; SIZE: Medium (5 ft tall); MOVE: 120 ft, 240 ft flying (AA: level IV); AC: 5; HD: 3+1; ATK: 2; DMG: 1d3/1d3; SA: Breath weapon; SD: See Page; MR: Standard; LAIR: None; INT: Average; AL: E (Any); XP: 155+4/hp; TRS: 3d12pp per individual.; BOOK: OSRIC-282
+MEPHIT, LAVA	DG	4	1	Freq: Very Rare; #ENC: 1; SIZE: Medium (5 ft tall); MOVE: 120 ft, 240 ft flying (AA: level IV); AC: 6; HD: 3; ATK: 2; DMG: See Page; SA: Breath weapon; SD: See Page; MR: Standard; LAIR: None; INT: Average; AL: E (Any); XP: 110+3/hp; TRS: 3d12pp per individual.; BOOK: OSRIC-282
+MEPHIT, SMOKE	DG	4	1	Freq: Very Rare; #ENC: 1; SIZE: Medium (5 ft tall); MOVE: 120 ft, 240 ft flying (AA: level IV); AC: 4; HD: 3; ATK: 2; DMG: 1d2/1d2; SA: Breath weapon; SD: See Page; MR: Standard; LAIR: None; INT: Average; AL: E (Any); XP: 100+3/hp; TRS: 3d12pp per individual.; BOOK: OSRIC-282
+MEPHIT, STEAM	DG	5	1	Freq: Very Rare; #ENC: 1; SIZE: Medium (5 ft tall); MOVE: 120 ft, 240 ft flying (AA: level IV); AC: 7; HD: 3+3; ATK: 2; DMG: 1d4/1d4; SA: Breath weapon; SD: See Page; MR: Standard; LAIR: None; INT: Average; AL: E (Any); XP: 170+4/hp; TRS: 3d12pp per individual.; BOOK: OSRIC-282
+MERCHANT	CFXCHXCMXCPXFWXPDXPSXSW	0	13	Freq: Common; #ENC: 50d6; SIZE: Medium; MOVE: 120 ft; AC: By armor; HD: 1d6 hp; ATK: See Page; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: None; INT: Mean (very to high); AL: N; XP: Variable; TRS: Individual Merchants: 3d12 cp, 3d6 sp, 2d6 ep, 2d4 gp, 1d6 pp, 2d4 gp (40%), 1d6x10 pp (50%), 4d8 gems (55%), 1d12 pieces of jewelry (45%). Individual Mercenaries: 3d6 sp. Individual Leaders: 2d4 gp. Mercenary Pay Box (Hidden in caravan): 2,000; BOOK: OSRIC-193
+MERMAN	FWXSW	3	5	Freq: Uncommon; #ENC: 20d10; SIZE: Medium; MOVE: 10 ft, 180 ft swimming; AC: 7; HD: 1+1; ATK: 1; DMG: By weapon; SA: None; SD: None; MR: Standard; LAIR: 25%; INT: Average; AL: N; XP: 30+1/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 2d4x1,000 gp (40%), 1d6x1,000 pp (50%), 5d8 gems (55%), 1d12 jewelry (45%), 2 magic items (10%).; BOOK: OSRIC-284
+MINOTAUR	CFXCHXCMXDGXPFXPHXPMXPSXTFXTHXTMXTS	8	3	Freq: Rare; #ENC: 1d8; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 6+3; ATK: 2 or 1; DMG: 2d4/1d4, or by weapon; SA: None; SD: Surprised only on a 1; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 225+6/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (20%), any 2 magic items (10%).; BOOK: OSRIC-284
+MOLD, BROWN	DG	0	1	Freq: Very Rare; #ENC: 1 patch; SIZE: Small to Large; MOVE: None; AC: 10; HD: None; ATK: None; DMG: None; SA: Freezing; SD: See Page; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: None; TRS: None; BOOK: OSRIC-285
+MOLD, YELLOW	DG	0	1	Freq: Very Rare; #ENC: 1 patch; SIZE: Small to Large; MOVE: None; AC: 10; HD: None; ATK: None; DMG: None; SA: Freezing; SD: See Page; MR: See Page; LAIR: None; INT: Non-; AL: N; XP: None; TRS: None; BOOK: OSRIC-285
+MONGRELMAN	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	3	Freq: Rare; #ENC: 10d10; SIZE: Medium; MOVE: 90 ft; AC: 5; HD: 1 to 4 HD; ATK: 1; DMG: 1d4 (1 HD), 1d6 (2 HD), 1d8 (3 HD), 1d10 (4 HD); SA: None; SD: Camouflage; MR: Standard; LAIR: 40%; INT: Low to average; AL: LN; XP: 20+1/hp (1 HD), 30+2/hp (2 HD), 50+3/hp (3 HD), 100+4/hp (4 HD); TRS: (in lair) 2d6x1,000 cp (20%), 1d6x1,000 sp (35%), 1d4x1,000 ep (10%), 1d4 gems (25%), 1d3 jewelry (20%), any two magic items plus two potions (10%).; BOOK: OSRIC-285
+MONOCLONIUS	TFXTHXTS	9	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large; MOVE: 120 ft; AC: 4/7; HD: 8; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 400+8/hp; TRS: None; BOOK: OSRIC-229
+MOSASAURUS	FWXSW	13	5	Freq: Uncommon; #ENC: 1d3; SIZE: Large; MOVE: 150 ft swimming; AC: 6; HD: 12; ATK: 1; DMG: 4d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,200+16/hp; TRS: None; BOOK: OSRIC-230
+MULE	CFXCHXCMXCPXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	13	Freq: Common; #ENC: 1; SIZE: Large; MOVE: 120 ft; AC: 7; HD: 3; ATK: 1 or 2; DMG: 1d2 (bite) or 1d6/1d6 (kick); SA: None; SD: None; MR: Standard; LAIR: None; INT: Semi-; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-254
+MUMMY	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	3	Freq: Rare; #ENC: 2d4; SIZE: Medium; MOVE: 60 ft; AC: 3; HD: 6+3; ATK: 1; DMG: 1d12; SA: Fear; SD: See Page; MR: See Page; LAIR: 80%; INT: Low; AL: LE; XP: 985+8/hp; TRS: 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 1d10 gems (30%), 1d6 jewelry (25%), any 2 magic item + 1 potion (15%).; BOOK: OSRIC-241
+NAGA, GUARDIAN	CMXDGXPMXPSXTMXTS	12	1	Freq: Very Rare; #ENC: 1d2; SIZE: Large (20 ft long); MOVE: 150 ft; AC: 3; HD: 11 to 12; ATK: 2; DMG: 1d6/2d8; SA: See Page; SD: None; MR: Standard; LAIR: 75%; INT: Exceptional; AL: LG; XP: 1,500+16/hp; TRS: 5d6x1cp (25%), 1d%x1,000 sp (15%), 10d4x1,000 ep (40%), 10d6x1,000 gp (55%), 5d10x100 pp (25%), 1d% gems (50%), 10d4 jewelry (50%), any 4 magic item + 1 potion + 1 scroll (15%).; BOOK: OSRIC-285
+NAGA, SPIRIT	CMXDGXPMXPSXTMXTS	10	3	Freq: Rare; #ENC: 1d3; SIZE: Large (15 ft long); MOVE: 120 ft; AC: 4; HD: 9 to 10; ATK: 1; DMG: 1d3; SA: See Page; SD: None; MR: Standard; LAIR: 60%; INT: High; AL: CE; XP: 2,750+14/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d4x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour, or misc. weapon + 1d4 scrolls + 1 misc. magic + 1 potion (55%).; BOOK: OSRIC-285
+NAGA, WATER	FWXSW	8	5	Freq: Uncommon; #ENC: 1d4; SIZE: Medium (10 ft long); MOVE: 90 ft, 180 ft swimming; AC: 5; HD: 7 to 8; ATK: 1; DMG: 1d4; SA: See Page; SD: None; MR: Standard; LAIR: 45%; INT: Very; AL: N; XP: 1,350+10/hp; TRS: 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 1d10 gems (30%), 1d6 jewelry (25%), any 2 magic item + 1 potion (15%).; BOOK: OSRIC-285
+NECROPHIDIUS	DG	3	1	Freq: Very Rare; #ENC: 1; SIZE: Large (15 ft long); MOVE: 90 ft; AC: 2; HD: 2; ATK: 1; DMG: 1d8; SA: Paralyzation (and see page); SD: Immune to poison (and see page); MR: See Page; LAIR: None; INT: Average; AL: N; XP: 125+2/hp; TRS: None, unless set to guard a specifi c treasure by its master.; BOOK: OSRIC-286
+NEREID	FWXSW	5	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 120 ft; AC: 10; HD: 4; ATK: None; DMG: None; SA: See Page; SD: See Page; MR: 50%; LAIR: 100%; INT: Very; AL: CN; XP: 150+4/hp; TRS: One miscellaneous magic item and one potion (65%).; BOOK: OSRIC-287
+NIGHT HAG	CMXDGXPMXPSXTMXTS	9	1	Freq: Very Rare; #ENC: 1d2; SIZE: Medium; MOVE: 90 ft; AC: 10; HD: 8; ATK: 1; DMG: 2d6; SA: See Page; SD: See Page; MR: 65%; LAIR: None; INT: Exceptional; AL: NE; XP: 1,850+10/hp; TRS: A periapt that gives the possessor +2 on all saving throws, and cures diseases the possessor contracts. With each use by a good creature, the periapt decays; after ten uses, it vanishes.; BOOK: OSRIC-287
+NIGHTMARE	CMXDGXPMXTM	8	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 150 ft, 360 ft flying (AA: level IV); AC: -4; HD: 6+6; ATK: 3; DMG: 1d6+4/1d6+4/2d4; SA: Burning hooves; SD: Noxious smoke; MR: Standard; LAIR: 50%; INT: Very; AL: NE; XP: 525+8/hp; TRS: None; BOOK: OSRIC-288
+NILBOG	CMXDGXPMXTM	0	1	Freq: Very Rare; #ENC: 4d10; SIZE: Small (4 ft tall); MOVE: 60 ft; AC: 6; HD: 1-1 hp; ATK: 1; DMG: 1d6 or by weapon; SA: None; SD: See Page; MR: Standard; LAIR: 35%; INT: Average; AL: LE; XP: 55+1/hp; TRS: 1d10x1,000 cp (25%), 2d4x1,000 sp (33%), 1d6x1,000 ep (15%), 2d4 gems (30%), 2d4 jewelry (25%), 2 magic scrolls + 1 potion (25%).; BOOK: OSRIC-288
+NIXIE	FWXSW	0	3	Freq: Rare; #ENC: 10d10; SIZE: Small (4 ft tall); MOVE: 60 ft, swimming 120 ft; AC: 7; HD: 1d4 hp; ATK: 1; DMG: By weapon type; SA: Charm; SD: None; MR: 25%; LAIR: 95%; INT: Very; AL: N; XP: 35+1/hp; TRS: Carried: magic dagger or javelin, 10%. Lair: 1d10x1,000 cp (25%), 1d6x1,000 sp (25%), 1d6x1,000 ep (15%), 1d2x1,000 gp (5%), 4d6 gems (45%), 2d4 jewelry (30%), 2 random scrolls (10%).; BOOK: OSRIC-235
+NOTHOSAURUS	FWXSW	11	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 90 ft swimming; AC: 5; HD: 10; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,000+12/hp; TRS: None; BOOK: OSRIC-230
+NYMPH	CFXCHXCMXFWXPFXPHXPMXSWXTFXTH	4	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 120 ft; AC: 9; HD: 3; ATK: 1; DMG: 1d2 or by weapon; SA: See Page; SD: See Page; MR: 50%; LAIR: 95%; INT: Exceptional; AL: N; XP: 105+3/hp; TRS: 4d10 gems, 1d3 potions (75%).; BOOK: OSRIC-236
+OCTOPUS	FWXSW	9	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: 180 ft swimming; AC: 7; HD: 8; ATK: 7; DMG: 1d4+1(x7)/4d4; SA: Constriction; SD: See Page; MR: Standard; LAIR: 40%; INT: Non-; AL: N; XP: 500+10/hp; TRS: None; BOOK: OSRIC-255
+OGRE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	13	Freq: Common; #ENC: 2d10; SIZE: Large (9 ft + tall); MOVE: 90 ft; AC: 5; HD: 4+1; ATK: 1; DMG: 1d10 or by weapon; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Low; AL: CE; XP: 95+5/hp; TRS: Individual: 20d4 gp; Lair: 1d3x1,000 gp (30%), 5d8 gems (40%), 2 magic items (10%), 2d4 potions (40%).; BOOK: OSRIC-205
+OGRE MAGE	CMXDGXPMXTMXTS	7	3	Freq: Rare; #ENC: 1d6; SIZE: Large (9 ft + tall); MOVE: 90 ft, 150 ft flying (AA: level III); AC: 4; HD: 5+2; ATK: 1; DMG: 1d12 or by weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: Average to high; AL: CE; XP: 750+6/hp; TRS: 2d10x1,000 gp (50%), 1d10x1,000 pp (50%), 3d6 gems (25%), 1d6 jewelry (25%), 1d6 potions (100%) and 1d6 magic items (25%).; BOOK: OSRIC-205
+ORC	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTMXTS	2	13	Freq: Common; #ENC: 30d10; SIZE: Medium (6 ft tall); MOVE: 90 ft; AC: 6; HD: 1; ATK: 1; DMG: 1d8 or by weapon; SA: None; SD: None; MR: Standard; LAIR: 35%; INT: Average (low); AL: LE; XP: 10+1/hp; TRS: Individual 2d6 ep ; Lair 1d12x1,000 cp (50%), 1d6x1,000 sp (40%), 1d6 gems (25%), 1d3 jewelry (20%), 2d4 potions (40%).; BOOK: OSRIC-200
+ORNITHOLESTES	TH	4	13	Freq: Common; #ENC: 5d4; SIZE: Medium; MOVE: 120 ft; AC: 7; HD: 2+3; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 25+2/hp; TRS: None; BOOK: OSRIC-230
+OTYUGH, GREATER	CMXDGXPMXTM	12	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: 60 ft; AC: 0; HD: 9 to 12; ATK: 3; DMG: 1d12/1d12/1d4+1; SA: Grab, disease; SD: Never surprised; MR: Standard; LAIR: 75%; INT: Average; AL: N; XP: 1,000+12/hp (9 HD), 1,500+14/hp (10 HD), 1,500+14/hp (11 HD), 2,000+16/hp (12 HD); TRS: Otyughs possess little in the way of treasure; what meagre sums might be found in their lairs are either the remains of previous victims or have been accidentally discarded.; BOOK: OSRIC-289
+OTYUGH, LESSER	CMXDGXPMXTM	8	5	Freq: Uncommon; #ENC: 1d2; SIZE: Medium; MOVE: 60 ft; AC: 3; HD: 6 to 8; ATK: 3; DMG: 1d8/1d8/1d4+1; SA: Grab, disease; SD: Never surprised; MR: Standard; LAIR: 75%; INT: Low; AL: N; XP: 275+6/hp (6 HD), 400+8/hp (7 HD), 650+10/hp (8 HD); TRS: Otyughs possess little in the way of treasure; what meagre sums might be found in their lairs are either the remains of previous victims or have been accidentally discarded.; BOOK: OSRIC-289
+OWLBEAR	DGXPFXPMXPS	7	3	Freq: Rare; #ENC: 1d4+1; SIZE: Large (8 ft tall); MOVE: 120 ft; AC: 5; HD: 5+2; ATK: 3; DMG: 1d6/1d6/1d4; SA: Hug; SD: None; MR: Standard; LAIR: 30%; INT: Low; AL: N; XP: 225+8/hp; TRS: 1d12x1,000 cp, 1d6x1,000 sp, 1d6 gems (25%), 1d3 pieces of jewelry (20%).; BOOK: OSRIC-288
+PEGASUS	CFXCMXFWXPDXPFXPHXPMXSWXTFXTHXTM	5	1	Freq: Very Rare; #ENC: 1d10; SIZE: Large; MOVE: 240 ft, 480 ft flying (AA: level IV); AC: 6; HD: 4; ATK: 3; DMG: 1d8/1d8/1d3; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Average; AL: CG; XP: 75+3/hp; TRS: None; BOOK: OSRIC-289
+PENTACERATOPS	TMXTHXTFXTS	13	5	Freq: Uncommon; #ENC: 10d100; SIZE: Large; MOVE: 120 ft; AC: 3/7; HD: 12; ATK: 1; DMG: 2d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,000+18/hp; TRS: None; BOOK: OSRIC-229
+PHANTOM	DGXPSXTS	0	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 90 ft; AC: None; HD: None; ATK: None; DMG: None; SA: Fear; SD: None; MR: See Page; LAIR: None; INT: None; AL: Any; XP: None; TRS: None; BOOK: OSRIC-290
+PHOENIX	CFXCPXPFXPPXTF	21	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 60 ft, 400 ft flying (AA: III); AC: -3; HD: 20; ATK: 1 or 2; DMG: 1d12 or 1d8/1d8; SA: See Page; SD: See Page; MR: 50%; LAIR: None; INT: Genius; AL: NG; XP: 8,000+30/hp; TRS: None; BOOK: OSRIC-290
+PIERCER	DG	4	5	Freq: Uncommon; #ENC: 3d6; SIZE: Small to medium; MOVE: 10 ft; AC: 3; HD: 1 to 4; ATK: 1; DMG: 1d6, 1d6, 3d6 or 4d6; SA: 95% surprise; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 10+1/hp, 30+2/hp, 50+3/hp or 80+4/hp; TRS: None; BOOK: OSRIC-291
+PILGRIM	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	5	Freq: Uncommon; #ENC: 10d10; SIZE: Medium; MOVE: 120 ft; AC: By armor; HD: 1d6 hp; ATK: See Page; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: None; INT: Mean (very to high); AL: See Page; XP: Variable; TRS: Individual Pilgrims: 3d12 cp. Individual Fighters: 2d6 ep. Individual Clerics: 3d12 cp, 3d6 sp, and 2d4 gp. Individual Magic Users: 2d6 ep, 1d6 pp, and 1d4 gems (50%). Individual Thieves: 3d12 cp, 1d6 pp, and 1d4 gems (50%). There is also a chance (5%) that a holy item will be with the pilgrims. If so, it will be hidden and carefully guarded.; BOOK: OSRIC-192
+PIT FIEND (GREATER DEVIL)	DG	14	3	Freq: Rare; #ENC: 1 or 1d3; SIZE: Large; MOVE: 60 ft, 150 ft flying (AA: level III); AC: -3; HD: 13; ATK: 1 scimitar/1 spiked club or tail; DMG: 1d8+6/1d6+7 or 2d4 constriction; SA: See Page; SD: +2 or better magic weapon to hit; MR: 65%; LAIR: 65%; INT: Exceptional; AL: LE; XP: 7,900+18/hp; TRS: If encountered in their nethermost lair, they are liable to have a hoard of 2d4x1,000 gp (40%), 10d6 pp (50%), 4d8 gems (55%), and 1d12 jewelry (45%). Individual pit fiends will typically carry only 3d8 copper pieces.; BOOK: OSRIC-226
+PIXIE	CFXPFXTF	0	1	Freq: Very Rare; #ENC: 5d4; SIZE: Small; MOVE: 60 ft, flying 120 ft (AA: level V); AC: 5; HD: 1d4 hp; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: 25%; LAIR: 5%; INT: Exceptional; AL: N; XP: 50+1/hp; TRS: 2d4x1,000 gp (40%), 1d6x1,000 pp (50%), 4d8 gems (55%), 1d12 jewelry (45%), 2d4 potions (40%), 1d4 scrolls (50%), 1 misc. magic (60%).; BOOK: OSRIC-236
+PLATEOSAURUS	TMXTHXTFXTS	9	13	Freq: Common; #ENC: 5d4; SIZE: Large; MOVE: 120 ft; AC: 5; HD: 8; ATK: 1; DMG: 1d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 475+10/hp; TRS: None; BOOK: OSRIC-229
+PLESIOSAURUS	FWXSW	21	13	Freq: Common; #ENC: 1d3; SIZE: Large; MOVE: 150 ft swimming; AC: 6; HD: 20; ATK: 1; DMG: 5d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 5,000+25/hp; TRS: None; BOOK: OSRIC-230
+POLTERGEIST	CFXCMXPDXPS	0	3	Freq: Rare; #ENC: 1d8; SIZE: Medium; MOVE: 60 ft; AC: 10; HD: 1d4 hp; ATK: None; DMG: None; SA: Fear, telekinesis; SD: Invisible, silver/magic weapons to hit.; MR: Standard; LAIR: 97%; INT: Low; AL: LE; XP: 35+1/hp; TRS: None; BOOK: OSRIC-242
+PORTUGUESE MAN O` WAR, GIANT	SW	4	5	Freq: Uncommon; #ENC: 1d10; SIZE: Variable; MOVE: 10 ft swimming; AC: 9; HD: 1 to 4; ATK: 1; DMG: 1d10; SA: Paralyzation; SD: Transparent; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 45+1/hp(HD 1)...80+2/hp(HD 2)...110+3/hp(HD 3)...150+4/hp(HD 4); TRS: None; BOOK: OSRIC-254
+PSEUDO-DRAGON	PFXPHXPM	3	1	Freq: Very Rare; #ENC: 1; SIZE: Small (18 in); MOVE: 60 ft, 240 ft flying (AA: level V); AC: 2; HD: 2; ATK: 1; DMG: 1d3; SA: Poison sting; SD: Chameleon power; MR: 35%; LAIR: 5%; INT: Average; AL: NG; XP: 200+2/hp; TRS: 50% chance 1d4 gems (lair: 50% chance of 10d4 gems).; BOOK: OSRIC-291
+PTERANODON	TMXTHXTFXTS	5	13	Freq: Common; #ENC: 2d10; SIZE: Large; MOVE: 240 ft flying, (AA: lvl IV); AC: 7; HD: 4; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 75+4/hp; TRS: None; BOOK: OSRIC-231
+PTERODACTYL	TFXTHXTMXTS	3	13	Freq: Common; #ENC: 3d12; SIZE: Small; MOVE: 240 ft flying, (AA: lvl IV); AC: 8; HD: 1+2; ATK: 1; DMG: 1d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 15+1/hp; TRS: None; BOOK: OSRIC-231
+PURPLE WORM	CHXCPXDGXPDXPHXPPXTH	16	3	Freq: Rare; #ENC: 1d2; SIZE: Large; MOVE: 90 ft; AC: 6; HD: 15; ATK: 1 (+1, see page); DMG: 2d12/2d4; SA: See Page; SD: None; MR: Standard; LAIR: 30%; INT: Non-; AL: N; XP: 5,000+20/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d4x1,000 gp (25%), 1d20 gems (50%), 1d4 jewelry (20%), sword, armour, or misc. weapon (10%).; BOOK: OSRIC-291
+QUASIT	DG	4	1	Freq: Very Rare; #ENC: 1; SIZE: Small; MOVE: 150 ft; AC: 2; HD: 3; ATK: 2 claws/1 bite; DMG: 1d2/1d2/1d4; SA: See Page; SD: See Page; MR: 25%; LAIR: None; INT: Low; AL: CE; XP: 325+3/hp; TRS: None; BOOK: OSRIC-218
+QUETZALCOATLUS	TMXTHXTFXTS	8	3	Freq: Rare; #ENC: 1d2; SIZE: Large; MOVE: 180 ft flying, (AA: lvl IV); AC: 6; HD: 7; ATK: 1; DMG: 2d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 400+6/hp; TRS: None; BOOK: OSRIC-231
+QUICKLING	CFXDGXPFXPSXTFXTS	3	1	Freq: Very Rare; #ENC: 4d4; SIZE: Small; MOVE: 1,000 ft; AC: -3; HD: 2d6 hp; ATK: 3; DMG: 1d4/1d4/1d4; SA: See Page; SD: See Page; MR: See Page; LAIR: 10%; INT: High to genius; AL: CE; XP: 200+3/hp and higher; TRS: 2d4 gems (50%), one miscellaneous magic item plus two potions and a scroll (60%).; BOOK: OSRIC-237
+RAKSHASA	DG	8	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 150 ft; AC: -4; HD: 7; ATK: 3; DMG: 1d3/1d3/1d4+1; SA: See Page; SD: See Page; MR: See Page; LAIR: 25%; INT: Very; AL: LE; XP: 1,000+8/hp; TRS: 1d20x1,000 sp (10%), 1d12x1,000 ep (15%), 1d10x1,000 gp (40%), 1d8x100 pp (35%), 3d10 gems (20%), 1d10 jewelry (10%), 3 magic items except weapons + 1 potion + scroll (30%).; BOOK: OSRIC-292
+RAT, GIANT	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	13	Freq: Common; #ENC: 5d10; SIZE: Small; MOVE: 120 ft; AC: 7; HD: 1d4 hp; ATK: 1; DMG: 1d3; SA: None; SD: 5% chance of causing a disease unless save vs poison.; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 7+1/hp; TRS: None; BOOK: OSRIC-254
+RAT, HUGE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	0	13	Freq: Common; #ENC: 4d20; SIZE: Small; MOVE: 120 ft; AC: 8; HD: 1 hp; ATK: 1; DMG: 1; SA: None; SD: 5% chance of causing a disease unless save vs poison.; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 5+1/hp; TRS: None; BOOK: OSRIC-254
+REMORHAZ	CHXCMXCPXDGXPD	12	1	Freq: Very Rare; #ENC: 1; SIZE: Large (21 ft to 42 ft length); MOVE: 120 ft; AC: Body 0; head 2; underside 4; HD: 7 to 14; ATK: 1; DMG: 6d6; SA: See Page; SD: See Page; MR: 75%; LAIR: 20%; INT: Animal; AL: N; XP: HD7: 625+8/hp, HD8: 950+10/hp, HD9: 1,400+12/hp, HD10: 1,700+13/hp, HD11: 2,100+14/hp, HD12: 3,000+1; TRS: None; BOOK: OSRIC-292
+RHAMPHORYNCHUS	TMXTHXTFXTS	4	5	Freq: Uncommon; #ENC: 2d12; SIZE: Large; MOVE: 210 ft flying, (AA: lvl IV); AC: 7; HD: 2+4; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-231
+RHINOCEROS, COMMON	PDXPFXPHXPMXPPXPSXTHXTMXTS	9	13	Freq: Common; #ENC: 1d6; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 8 or 9; ATK: 1; DMG: 2d4 or 2d6; SA: Charge; SD: None; MR: Standard; LAIR: None; INT: Amimal; AL: N; XP: 550+10/hp; TRS: None; BOOK: OSRIC-255
+RHINOCEROS, WOOLLY	CFXCHXCMXCPXPDXPS	11	13	Freq: Common; #ENC: 1d4; SIZE: Large; MOVE: 120 ft; AC: 5; HD: 10; ATK: 1; DMG: 2d6; SA: Charge; SD: None; MR: Standard; LAIR: None; INT: Amimal; AL: N; XP: 900+12/hp; TRS: None; BOOK: OSRIC-255
+ROC	TM	19	3	Freq: Rare; #ENC: 1d2; SIZE: Large (60 ft + wingspan); MOVE: 30 ft, 300 ft flying (AA: level II); AC: 4; HD: 18; ATK: 1 or 2; DMG: 4d6 or 3d6/3d6; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 3,010+25/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d33 jewelry (20%), 2 magic items (10%).; BOOK: OSRIC-292
+ROPER	DG	12	3	Freq: Rare; #ENC: 1d4; SIZE: Large; MOVE: 30 ft; AC: 0; HD: 11; ATK: 1; DMG: 2d10+2; SA: See Page; SD: See Page; MR: 80%; LAIR: 93%; INT: Exceptional; AL: CE; XP: 2,700+16/hp; TRS: Ropers do not hoard treasure but their acidic bile cannot dissolve platinum or gemstones. Cutting open the gizzard of a roper has a 40% chance of yielding 3d6 (3-18) platinum pieces and 30% chance of 4d6 (4-24) gems.; BOOK: OSRIC-293
+ROPER, QUARTZ	DG	7	3	Freq: Rare; #ENC: 1; SIZE: Medium (5 ft); MOVE: 10 ft; AC: 0; HD: 6; ATK: 1; DMG: 1d10; SA: See Page; SD: See Page; MR: Standard; LAIR: 93%; INT: High; AL: CE; XP: 525+6/hp; TRS: Ropers do not hoard treasure but their acidic bile cannot dissolve platinum or gemstones. Cutting open the gizzard of a roper has a 40% chance of yielding 3d6 (3-18) platinum pieces and 30% chance of 4d6 (4-24) gems.; BOOK: OSRIC-293
+ROT GRUB	DG	0	3	Freq: Rare; #ENC: 5d4; SIZE: Small; MOVE: 10 ft; AC: 9; HD: 1 hp; ATK: 0; DMG: None; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 5+1/hp; TRS: None; BOOK: OSRIC-293
+RUST MONSTER	DG	6	5	Freq: Uncommon; #ENC: 1d2; SIZE: Medium (5 ft long); MOVE: 180 ft; AC: 2; HD: 5; ATK: 2; DMG: None; SA: See Page; SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 185+4/hp; TRS: 1d4 gems per individual (50%).; BOOK: OSRIC-294
+SAHUAGIN, BARON	SW	8	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 3; HD: 6+6; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: High; AL: LE; XP: 300+8/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, FEMALE	SW	3	5	Freq: Uncommon; #ENC: 30d4; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 6; HD: 2; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: High; AL: LE; XP: 20+2/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, GUARD	SW	5	5	Freq: Uncommon; #ENC: 3d6; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 5; HD: 3+3; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: High; AL: LE; XP: 50+4/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, HATCHLING	SW	2	5	Freq: Uncommon; #ENC: 10d4; SIZE: Small; MOVE: 120 ft, 240 ft swimming; AC: 7; HD: 1; ATK: 1; DMG: 1d4; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: High; AL: LE; XP: 10+1/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, KING	SW	12	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 1; HD: 10+10; ATK: 4; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: Exceptional; AL: LE; XP: 1,250+14/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, PRIESTESS	SW	5	1	Freq: Very Rare; #ENC: 1d4+1; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 5; HD: 2 to 6; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: Exceptional; AL: LE; XP: Variable; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, PRINCE	SW	10	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 2; HD: 8+8; ATK: 2; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 100%; INT: High; AL: LE; XP: 500+12/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, WARCHIEF	SW	6	3	Freq: Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 4; HD: 4+4; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: High; AL: LE; XP: 100+5/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAHUAGIN, WARRIOR	SW	4	5	Freq: Uncommon; #ENC: 20d4; SIZE: Medium; MOVE: 120 ft, 240 ft swimming; AC: 5; HD: 2+2; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 25%; INT: High; AL: LE; XP: 30+3/hp; TRS: Individuals :1d6 pp each; Lair: 2d6x1,000 gp (75%), 3d6x100 pp (50%), 3d8 gems (50%), 2d6 jewelry (50%), 1 miscellaneous magic and 1 potion (50%).; BOOK: OSRIC-294
+SAUROLOPHUS	TMXTHXTFXTS	9	5	Freq: Uncommon; #ENC: 4d8; SIZE: Large; MOVE: 150 ft; AC: 7; HD: 8; ATK: 1; DMG: 1d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 500+10/hp; TRS: None; BOOK: OSRIC-228
+SAUROPHAGANAX	TMXTHXTFXTS	17	5	Freq: Uncommon; #ENC: 1 or 2d8; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 16; ATK: 1; DMG: 3d8; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 2,250+20/hp; TRS: None; BOOK: OSRIC-227
+SCALY DEVIL, BLACK (LESSER DEVIL; ABYSSAI)	DG	9	13	Freq: Common; #ENC: 1d3 or 2d4; SIZE: Large; MOVE: 90 ft, 120 ft flying (AA: level IV); AC: 2; HD: 8; ATK: Halberd; DMG: 1d10+4; SA: See Page; SD: See Page; MR: 35%; LAIR: 20%; INT: Average; AL: LE; XP: 855+10/hp; TRS: If scaly devils are encountered in one of their hellish lairs they will have no treasure cache, but they may (10%) have another 1d4 other breeds of scaly devil with them. If encountered in transit however, they may (15%) have 1d4 large gems, which they are delivering to one of their devil masters.; BOOK: OSRIC-225
+SCALY DEVIL, BLUE (LESSER DEVIL; ABYSSAI)	DG	7	13	Freq: Common; #ENC: 1d4 or 2d4; SIZE: Medium; MOVE: 150 ft, 150 ft flying (AA: level IV); AC: 3; HD: 5+1; ATK: Trident; DMG: 1d6+4; SA: See Page; SD: See Page; MR: 20%; LAIR: 35%; INT: Average; AL: LE; XP: 550+6/hp; TRS: If scaly devils are encountered in one of their hellish lairs they will have no treasure cache, but they may (10%) have another 1d4 other breeds of scaly devil with them. If encountered in transit however, they may (15%) have 1d4 large gems, which they are delivering to one of their devil masters.; BOOK: OSRIC-225
+SCALY DEVIL, GREEN (LESSER DEVIL; ABYSSAI)	DG	7	13	Freq: Common; #ENC: 1d3 or 3d3; SIZE: Medium; MOVE: 120 ft, 150 ft flying (AA: level IV); AC: 3; HD: 6; ATK: Pole arm; DMG: 1d6+4; SA: See Page; SD: See Page; MR: 25%; LAIR: 30%; INT: Average; AL: LE; XP: 550+6/hp; TRS: If scaly devils are encountered in one of their hellish lairs they will have no treasure cache, but they may (10%) have another 1d4 other breeds of scaly devil with them. If encountered in transit however, they may (15%) have 1d4 large gems, which they are delivering to one of their devil masters.; BOOK: OSRIC-225
+SCALY DEVIL, RED (LESSER DEVIL; ABYSSAI)	DG	6	13	Freq: Common; #ENC: 1d4 or 3d4; SIZE: Small; MOVE: 180 ft, 180 ft flying (AA: level IV); AC: 1; HD: 4+2; ATK: Short sword; DMG: 1d4+1(x2); SA: See Page; SD: See Page; MR: 40%; LAIR: 40%; INT: Average; AL: LE; XP: 320+5/hp; TRS: If scaly devils are encountered in one of their hellish lairs they will have no treasure cache, but they may (10%) have another 1d4 other breeds of scaly devil with them. If encountered in transit however, they may (15%) have 1d4 large gems, which they are delivering to one of their devil masters.; BOOK: OSRIC-225
+SCALY DEVIL, WHITE (LESSER DEVIL; ABYSSAI)	DG	8	13	Freq: Common; #ENC: 1d3 or 3d4; SIZE: Medium; MOVE: 90 ft, 150 ft flying (AA: level IV); AC: 3; HD: 7; ATK: Flail; DMG: 1d6+3(x2); SA: See Page; SD: See Page; MR: 30%; LAIR: 25%; INT: Average; AL: LE; XP: 650+8/hp; TRS: If scaly devils are encountered in one of their hellish lairs they will have no treasure cache, but they may (10%) have another 1d4 other breeds of scaly devil with them. If encountered in transit however, they may (15%) have 1d4 large gems, which they are delivering to one of their devil masters.; BOOK: OSRIC-225
+SCORPION, GIANT	CFXCMXCPXDGXPDXPFXPHXPPXPSXTFXTHXTMXTS	7	5	Freq: Uncommon; #ENC: 1d3; SIZE: Medium; MOVE: 150 ft; AC: 3; HD: 5+5; ATK: 3; DMG: 1d10/1d10/1d4; SA: Poison sting; SD: None; MR: Standard; LAIR: 50%; INT: Non-; AL: N; XP: 600+6/hp; TRS: (lair only) 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (30%), 1d10 gems (10%), 1d6 jewelry (5%), 2 misc. magic + 1 potion (5%).; BOOK: OSRIC-295
+SCORPION, HUGE	CHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	5	Freq: Uncommon; #ENC: 1d4; SIZE: Small; MOVE: 120 ft; AC: 4; HD: 4+4; ATK: 3; DMG: 1d8/1d8/1d3; SA: Poison sting; SD: None; MR: Standard; LAIR: 25%; INT: Non-; AL: N; XP: 125+5/hp; TRS: (lair only) 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (30%), 1d10 gems (10%), 1d6 jewelry (5%), 2 misc. magic + 1 potion (5%).; BOOK: OSRIC-295
+SCORPION, LARGE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	13	Freq: Common; #ENC: 1d6; SIZE: Small; MOVE: 90 ft; AC: 5; HD: 2+2; ATK: 3; DMG: 1d4/1d4/1d2; SA: Poison sting; SD: None; MR: Standard; LAIR: 25%; INT: Non-; AL: N; XP: 75+3/hp; TRS: (lair only) 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (30%), 1d10 gems (10%), 1d6 jewelry (5%), 2 misc. magic + 1 potion (5%).; BOOK: OSRIC-295
+SEA HAG	SW	4	3	Freq: Rare; #ENC: 1d3; SIZE: Medium; MOVE: 90 ft, 150 ft swimming; AC: 7; HD: 3; ATK: 2 claws or 1 weapon; DMG: 1d3+3/1d3+3 or by weapon +3; SA: See Page; SD: See Page; MR: 50%; LAIR: 50%; INT: Average; AL: CE; XP: 410+2/hp; TRS: 1d10x1,000 cp (25%), 1d8x1,000 sp (25%), 1d6x1,000 go (25%), 1d6 gems (25%), 1d3 jewelry (25%) and any two magic items (10%).; BOOK: OSRIC-295
+SEA SERPENT	SW	11	5	Freq: Uncommon; #ENC: 1d2; SIZE: Large (50 ft long); MOVE: 120 ft swimming; AC: 5; HD: 10; ATK: 2; DMG: 1d6/3d6; SA: Poison, constrict; SD: None; MR: None; LAIR: 5%; INT: Animal; AL: N; XP: 1,000+12/hp; TRS: None; BOOK: OSRIC-296
+SHADOW	CFXCMXDGXPFXPMXPSXTFXTMXTS	5	3	Freq: Rare; #ENC: 2d10+1; SIZE: Medium; MOVE: 120 ft; AC: 7; HD: 3+1; ATK: 1; DMG: 1d6; SA: Drains strength, dexterity or constitution; SD: +1 or better weapon to hit; immune to cold, poison, and paralysation, as well as sleep, charm, hold and other mental attacks.; MR: Standard; LAIR: 40%; INT: Low; AL: CE; XP: 250+4/hp; TRS: 2d10x1,000 sp (10%); 2d6x1,000 ep (15%); 2d4x1,000 gp (45%); 1d6x1,000 pp (33%); 4d8 gems (20%); 2d4 jewelry (8%); any 3 magic items (33%).; BOOK: OSRIC-242
+SHAITAN (GREATER DEVIL; STYX FIEND)	DG	8	1	Freq: Very Rare; #ENC: 1d2; SIZE: Medium; MOVE: 60 ft, 150 ft flying (AA: level IV); AC: -1; HD: 6+6; ATK: 1 touch; DMG: 2d4; SA: See Page; SD: See Page; MR: 50%; LAIR: 60%; INT: High; AL: LE; XP: 1,275+8/hp; TRS: If encountered in their hellish lairs, Shaitan are likely to have 2d4x1,000 gp (40% chance), 1d6x10 pp (50%), 4d8 gems (55%) and 1d12 jewelry (45%). Individual shaitan will sometimes be found carrying 1d4 gems (50% chance) as well.; BOOK: OSRIC-225
+SHAMBLING MOUND	DGXPSXTS	11	3	Freq: Rare; #ENC: 1d3; SIZE: Large; MOVE: 60 ft; AC: 0; HD: 8 to 11; ATK: 2; DMG: 2d8/2d8; SA: Suffocation; SD: See Page; MR: See Page; LAIR: 30%; INT: Low; AL: N; XP: Variable; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour, or misc. weapon + 1d4 scrolls + 1 misc. magic item + 1 potion (60%).; BOOK: OSRIC-296
+SHANTUNGOSAURUS	TMXTHXTFXTS	11	5	Freq: Uncommon; #ENC: 3d10; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 10; ATK: 1; DMG: 1d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,500+14/hp; TRS: None; BOOK: OSRIC-228
+SHARK	SW	6	13	Freq: Common; #ENC: 3d4; SIZE: Medium to Large; MOVE: 240 ft swimming; AC: 6; HD: 3, 5 or 8; ATK: 1; DMG: 1d4+1, 2d4 or 3d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 50+2/hp or more; TRS: None; BOOK: OSRIC-255
+SHEDU	CFXCHXCMXCPXDGXFWXPDXPHXPMXPPXPSXSWXTFXTHXTMXTS	11	3	Freq: Rare; #ENC: 2d4; SIZE: Large; MOVE: 120 ft, 240 ft flying (AA: level IV); AC: 4; HD: 9+9; ATK: 2; DMG: 1d6/1d6; SA: See Page; SD: See Page; MR: 25%; LAIR: 25%; INT: Exceptional; AL: LG; XP: 1,950+14/hp; TRS: 10d4x1,000 gp (50%), 1d20x100 pp (50%), 5d4 gems (30%), 1d10 jewelry (25%), any 4 magic item + 1 scroll (35%).; BOOK: OSRIC-296
+SHRIEKER	DG	4	13	Freq: Common; #ENC: 2d4; SIZE: Small to large; MOVE: 10 ft; AC: 7; HD: 3; ATK: None; DMG: None; SA: None; SD: Noise; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-296
+SHUB	DG	7	13	Freq: Common; #ENC: 1d4 or 3d4 (in the Abyss); SIZE: Medium; MOVE: 120 ft; AC: 1; HD: 5+1; ATK: 2 claws or 1 weapon; DMG: 1d6+1/1d6+1 or by weapon; SA: See Page; SD: See Page; MR: 40%; LAIR: 20%; INT: Average; AL: CE; XP: 425+6/hp; TRS: Shub love treasure, and will try to steal or swindle to get it. Most Shub will have some coins in a sack or pouch (2d12x10 ep, 2d4x5 gp). If encountered in their lair, Shub may have 1d4x1,000 cp (25%), 1d3x1,000 sp (20%) and 1d4 random gems (50%).; BOOK: OSRIC-219
+SKELETON	DGXPSXTS	2	3	Freq: Rare; #ENC: 3d10; SIZE: Medium; MOVE: 120 ft; AC: 7; HD: 1; ATK: 1; DMG: 1d6; SA: None; SD: Immune to cold, sleep, charm, hold and other mental based attacks.; MR: Standard; LAIR: None; INT: None; AL: N; XP: 15+1/hp; TRS: None; BOOK: OSRIC-242
+SKELETON WARRIOR	DG	11	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 60 ft; AC: 2; HD: 9+2 or higher; ATK: 1; DMG: By weapon (+3 to hit); SA: See Page; SD: See Page; MR: 90%; LAIR: 5%; INT: Exceptional; AL: NE; XP: 2,000+16/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour, or misc. weapon + 1d4 scrolls + 1 misc. magic item + 1 potion (60%).; BOOK: OSRIC-297
+SLIME, GREEN	DG	3	3	Freq: Rare; #ENC: 1d4; SIZE: Small; MOVE: None; AC: 10; HD: 2; ATK: None; DMG: None; SA: See Page; SD: See Page; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-298
+SLITHERING TRACKER	DG	6	3	Freq: Rare; #ENC: 1; SIZE: Small; MOVE: 120 ft; AC: 5; HD: 5; ATK: None; DMG: None; SA: See Page; SD: See Page; MR: Standard; LAIR: 10%; INT: Average; AL: N; XP: 250+5/hp; TRS: (in lair) 1d10x1,000 cp (20%), 1d6x1,000 sp (25%), 1d3x1,000 ep (10%), 1d4 gems (20%), 1d2 jewelry (20%), any two magic items (5%).; BOOK: OSRIC-297
+SLUG, GIANT	DG	13	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 60 ft; AC: 8; HD: 12; ATK: 1; DMG: 1d12; SA: Spit acid; SD: See Page; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 2,000+16/hp; TRS: None; BOOK: OSRIC-298
+SNAKE, GIANT ADDER	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large; MOVE: 150 ft; AC: 5; HD: 4+2; ATK: 1; DMG: 1d4; SA: Poison; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 155+4/hp; TRS: None; BOOK: OSRIC-298
+SNAKE, GIANT AMPHISBAENA	DGXPFXPMXPPXPSXTFXTMXTS	7	1	Freq: Very Rare; #ENC: 1d3; SIZE: Medium (6 ft long); MOVE: 120 ft; AC: 3; HD: 6; ATK: 2; DMG: 1d4/1d4; SA: Poison; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 475+6/hp; TRS: None; BOOK: OSRIC-298
+SNAKE, GIANT BOA	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	5	Freq: Uncommon; #ENC: 1d2; SIZE: Large; MOVE: 90 ft; AC: 5; HD: 6+1; ATK: 2; DMG: 1d4/2d4; SA: Constriction; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 345+8/hp; TRS: None; BOOK: OSRIC-298
+SNAKE, GIANT COBRA	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	3	Freq: Rare; #ENC: 1d4; SIZE: Large; MOVE: 120 ft; AC: 5; HD: 4+2; ATK: 1; DMG: 1d4; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 190+4/hp; TRS: None; BOOK: OSRIC-298
+SOUL WORM	DG	2	13	Freq: Common; #ENC: 10d4; SIZE: Medium; MOVE: 60 ft; AC: 7; HD: 1; ATK: 1 bite; DMG: 1d4+1; SA: None; SD: None; MR: Standard; LAIR: 100%; INT: Low; AL: Any E; XP: 10+1/hp; TRS: None; BOOK: OSRIC-226
+SPECTRE	CMXDGXPMXPSXTMXTS	9	3	Freq: Rare; #ENC: 1d6; SIZE: Medium; MOVE: 150 ft hovering or 300 ft flying (AA: level IV); AC: 2; HD: 7+3; ATK: 1; DMG: 1d8; SA: Level drain; SD: +1 or better weapon to hit; immune to cold, poison, paralysation, and elemental spells, as well as sleep, charm, hold and other mental attacks.; MR: Standard; LAIR: 20%; INT: High; AL: LE; XP: 1,815+10/hp; TRS: 3d4 gems (50%); 3d4x1,000 gp (70%); 1 misc. magic item (60%); 1d2 potions (70%).; BOOK: OSRIC-243
+SPHINX, ANDRO-	DGXTM	11	1	Freq: Very Rare; #ENC: 1; SIZE: Large (12 ft long); MOVE: 180 ft, 240 ft flying (AA: level III); AC: -1; HD: 10; ATK: 2; DMG: 1d10+1/1d10+1; SA: See Page; SD: None; MR: Standard; LAIR: 50%; INT: Very; AL: N/NG; XP: 1,500+4/hp; TRS: 10d8 gems (85%), 5d6 jewelry (75%), 2d4 magic items (70%).; BOOK: OSRIC-299
+SPHINX, CRIO-	DGXTFXTHXTMXTS	10	1	Freq: Very Rare; #ENC: 1d2; SIZE: Large (9 ft long); MOVE: 160 ft, 240 ft flying (AA: level III); AC: -2; HD: 9; ATK: 3; DMG: 1d8/1d8/1d10; SA: See Page; SD: None; MR: Standard; LAIR: 20%; INT: Average; AL: N; XP: 900+4/hp; TRS: 3d6x1,000 sp (10%), 2d6x1,000 ep (15%), 1d8x1,000 gp (40%), 1d8x100pp (30%), 3d8 gems (15%), 1d12 jewelry (10%), any three magic plus one potion and one scroll (25%).; BOOK: OSRIC-299
+SPHINX, GYNO-	DGXTM	8	3	Freq: Rare; #ENC: 1; SIZE: Large (10 ft long); MOVE: 150 ft, 240 ft flying (AA: level III); AC: 0; HD: 7; ATK: 3; DMG: 1d6/1d6/1d12; SA: See Page; SD: None; MR: Standard; LAIR: 30%; INT: Very; AL: CN/CG; XP: 650+8/hp; TRS: 2d4x1,000 gp (40%), 1d6x1,000 pp (50%), 4d8 gems (50%), 2d6 jewelry (35%), 1 misc. magic plus one potion (50%).; BOOK: OSRIC-299
+SPHINX, HIERACO-	DGXTFXTHXTM	9	5	Freq: Uncommon; #ENC: 1; SIZE: Large (7 ft long); MOVE: 140 ft, 220 ft flying (AA: level III); AC: 0; HD: 8; ATK: 3; DMG: 1d8+1/1d8+1/1d8+1; SA: None; SD: None; MR: Standard; LAIR: 40%; INT: Average; AL: CN/CE; XP: 600+12/hp; TRS: 1d12x1,000 cp (5%), 1d10x1,000 sp (25%), 1d6x1,000 ep (25%), 1d6x1,000 gp (25%), 2d6 gems (10%), 1d8 jewelry (10%), any three magic plus one scroll (25%).; BOOK: OSRIC-300
+SPIDER, GIANT	DGXPFXPHXPMXTFXTHXTM	6	5	Freq: Uncommon; #ENC: 1d8; SIZE: Large; MOVE: 30 ft, 120 ft in web; AC: 4; HD: 4+4; ATK: 1; DMG: 1d8; SA: Poison, webs; SD: None; MR: Standard; LAIR: 75%; INT: Low; AL: CE; XP: 325+5/hp; TRS: 2d6x1,000 cp (20%), 1d6x1,000 sp (25%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (15%), 1d3 magic items (10%).; BOOK: OSRIC-300
+SPIDER, GIANT WATER	FW	5	13	Freq: Common; #ENC: 1; SIZE: Large; MOVE: 140 ft underwater; AC: 7; HD: 3+3; ATK: 1; DMG: 1d4+1; SA: Poison; SD: None; MR: Standard; LAIR: 40%; INT: Semi-; AL: N; XP: 200+4/hp; TRS: 1d8x1,000 cp (30%), 1d8x1,000 sp (30%), 1d8x1,000 ep (30%), 1d3 gems (20%), 1d6 jewelry (30%), 1d2 magic items (10%).; BOOK: OSRIC-301
+SPIDER, HUGE	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	13	Freq: Common; #ENC: 2d6; SIZE: Medium; MOVE: 180 ft; AC: 6; HD: 2+2; ATK: 1; DMG: 1d6; SA: See Page; SD: None; MR: Standard; LAIR: 50%; INT: Animal; AL: N; XP: 150+3/hp; TRS: 4d6 cp (90%), 3d6 sp (80%), 2d6 ep (70%), 2d6 gp (60%), 1d6 pp (50%), 1d3 gems (40%).; BOOK: OSRIC-301
+SPIDER, LARGE	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	13	Freq: Common; #ENC: 2d12; SIZE: Small; MOVE: 60 ft, 150 ft in web; AC: 6; HD: 1+1; ATK: 1; DMG: 1d4; SA: See Page; SD: None; MR: Standard; LAIR: 50%; INT: Animal; AL: N; XP: 75+2/hp; TRS: 4d6 cp (90%), 3d6 sp (80%), 2d6 ep (70%), 2d6 gp (60%), 1d6 pp (50%).; BOOK: OSRIC-301
+SPIDER, PHASE	DGXPFXPHXPMXTFXTHXTM	7	1	Freq: Very Rare; #ENC: 1; SIZE: Large; MOVE: 60 ft, 120 ft in web; AC: 7; HD: 5+5; ATK: 1; DMG: 1d4+1; SA: See Page; SD: See Page; MR: Standard; LAIR: 75%; INT: Low; AL: N; XP: 700+6/hp; TRS: 1d10x1,000 cp (20%), 1d10x1,000 sp (20%), 1d10x1,000 ep (20%), 1d10x1,000 gp (20%), 1d10x100 pp (20%), 1d4 gems (10%), 1d10 jewelry (10%), any three magic items plus one scroll (15%).; BOOK: OSRIC-301
+SPIKED DEVIL (LEAST DEVIL; SPINED FIEND)	DG	5	13	Freq: Common; #ENC: 2d4 or 5d4; SIZE: Small; MOVE: 60 ft, 180 ft flying (AA: level IV); AC: 3; HD: 3+3; ATK: 1 weapon and/or 2 claws; DMG: By weapon and/or 1d4/1d4; SA: See Page; SD: See Page; MR: 25%; LAIR: 10%; INT: Low; AL: LE; XP: 240+4/hp; TRS: These devils rarely have any sort of treasure or possessions beyond their weapon. Only when serving as a messenger are they likely to possess something of value. In these cases, the GM should decide what, if anything the spiked devil is carrying.; BOOK: OSRIC-226
+SPRITE	PF	2	3	Freq: Rare; #ENC: 10d10; SIZE: Small; MOVE: 90 ft, flying 180 ft (AA: level III); AC: 6; HD: 1; ATK: 1; DMG: By weapon; SA: See Page; SD: See Page; MR: Standard; LAIR: 20%; INT: Very; AL: NG; XP: 50+1/hp; TRS: In lair: 1d10x1,000 cp (25%), 1d6x1,000 sp (25%), 1d6x1,000 ep (15%), 1d2x1,000 gp (5%), 4d6 gems (45%), 2d4 jewelry (30%), 2 random scrolls (10%).; BOOK: OSRIC-237
+SQUEALER	DGXPFXPSXTFXTS	13	1	Freq: Very Rare; #ENC: 1 or 1d3+1; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 12; ATK: 3; DMG: 1d6+6/1d4/1d4; SA: See Page; SD: Camouflage; MR: Standard; LAIR: 20%; INT: Semi-; AL: N; XP: 2,000+16/hp; TRS: The squealer does not hoard treasure and places no value on it. However, its lair might contain treasure assigned by the GM; BOOK: OSRIC-302
+SQUID, GIANT	SW	13	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: 180 ft swimming; AC: 3/7; HD: 12; ATK: 9; DMG: 1d6(x8)/5d4; SA: Constriction; SD: See Page; MR: Standard; LAIR: 40%; INT: Non-; AL: N; XP: 2,000+16/hp; TRS: None; BOOK: OSRIC-255
+STEGOSAURUS	TMXTHXTFXTS	11	13	Freq: Common; #ENC: 2d4; SIZE: Large; MOVE: 60 ft; AC: 3; HD: 10; ATK: 1; DMG: 2d8; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 150+6/hp; TRS: None; BOOK: OSRIC-229
+STIRGE	CFXDGXPFXTF	3	5	Freq: Uncommon; #ENC: 3d10; SIZE: Small; MOVE: 30 ft, 180 ft flying (AA: level IV); AC: 8; HD: 1+1; ATK: 1; DMG: 1d3; SA: See Page; SD: None; MR: Standard; LAIR: 55%; INT: Animal; AL: N; XP: 35+2/hp; TRS: 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 2d6 gems (50%), 1d6 jewelry (25%), 1d2 magic items + 1 potion (15%).; BOOK: OSRIC-302
+STUNJELLY	DG	5	5	Freq: Uncommon; #ENC: 1; SIZE: Large; MOVE: 30 ft; AC: 8; HD: 4; ATK: 1; DMG: 2d4; SA: See Page; SD: See Page; MR: Standard; LAIR: 95%; INT: Non-; AL: N; XP: 150+4/hp; TRS: Stunjellies carry only what they have consumed. ; BOOK: OSRIC-302
+STYRACOSAURUS	TMXTHXTFXTS	10	5	Freq: Uncommon; #ENC: 1d20; SIZE: Large; MOVE: 120 ft; AC: 2/7; HD: 9; ATK: 1; DMG: 1d10; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 550+8/hp; TRS: None; BOOK: OSRIC-229
+SUCCUBUS	DGXPD	7	3	Freq: Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, 180 ft flying (AA: level IV); AC: 0; HD: 6; ATK: 2 claws; DMG: 1d3; SA: Energy drain; SD: +1 or better magic weapon to hit; MR: 70%; LAIR: 5%; INT: Exceptional; AL: CE; XP: 2,100+6/hp; TRS: If encountered in their lair, a succubus will have 3d6x1,000 pp (30%), 2d10 gems (55%), 1d12 jewelry (50%) and perhaps a random magic item (15%).; BOOK: OSRIC-219
+SYLPH	CMXPMXTM	4	1	Freq: Very Rare; #ENC: 1; SIZE: Medium; MOVE: 120 ft, flying 360 ft (AA: level V); AC: 10; HD: 3; ATK: None; DMG: None; SA: See Page; SD: See Page; MR: 50%; LAIR: 10%; INT: Exceptional; AL: N; XP: 100+3/hp; TRS: 10d4 gems (50%), 1 misc. magic and 1 potion (60%).; BOOK: OSRIC-237
+TARBOSAURUS	TMXTHXTFXTS	19	5	Freq: Uncommon; #ENC: 1 or 2d6; SIZE: Large; MOVE: 150 ft; AC: 5; HD: 18; ATK: 1; DMG: 3d8; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 3,500+20/hp; TRS: None; BOOK: OSRIC-227
+TELMATOSAURUS	TMXTHXTFXTS	5	5	Freq: Uncommon; #ENC: 6d10; SIZE: Large; MOVE: 150 ft; AC: 9; HD: 4; ATK: 1; DMG: 1d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 75+4/hp; TRS: None; BOOK: OSRIC-228
+TICK, GIANT	DGXPFXPSXTFXTS	4	3	Freq: Rare; #ENC: 3d4; SIZE: Small; MOVE: 30 ft; AC: 4; HD: 3; ATK: 1; DMG: 1d4; SA: See Page; SD: None; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-303
+TIGER	CFXCHXCMXCPXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	7	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 5+5; ATK: 3; DMG: 1d6/1d6/1d10; SA: See Page; SD: Surprised only on 1; MR: Standard; LAIR: 7%; INT: Animal; AL: N; XP: 250+6/hp; TRS: None; BOOK: OSRIC-256
+TIGER, SMILODON	TFXTHXTMXTS	9	3	Freq: Rare; #ENC: 1d2; SIZE: Large; MOVE: 120 ft; AC: 6; HD: 7+2; ATK: 3; DMG: 1d8/1d8/2d6; SA: See Page; SD: Surprised only on 1; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 525+10/hp; TRS: None; BOOK: OSRIC-256
+TITAN	CMXDGXPMXSWXTM	18	1	Freq: Very Rare; #ENC: 1; SIZE: Large (18 ft or more); MOVE: 17 HD: 210 ft, 18 HD: 210 ft, 19 HD: 150 ft, 20 HD: 150 ft, 21 HD: 150 ft, 22 HD: 150 ft; AC: 17 HD: 2, 18 HD: 1, 19 HD: 0, 20 HD: ; HD: 17 to 22; ATK: 1; DMG: 17 HD: 7d6, 18 HD: 7d6, 19 HD: 7d6, 20 HD: 7d6, 21 HD: 8d6, 22 HD: 8d6; SA: Spells; SD: See Page; MR: 60%; LAIR: 10%; INT: Genius or Supra-Genius; AL: CG; XP: Variable; TRS: 1d10x1,000 cp (5%), 1d12x1,000 sp (25%), 1d6x1,000 ep (25%), 1d12x1,000 gp (40%), 1d6x1,000 pp (50%), 2d20 gems (50%), 1d8 jewelry (10%), any 3 magic item + 1 scroll (25%).; BOOK: OSRIC-303
+TOAD, GIANT	DGXPDXPFXPHXPMXPPXPSXTFXTHXTS	4	13	Freq: Common; #ENC: 1d12; SIZE: Medium; MOVE: 60 ft plus, 60 ft leap; AC: 6; HD: 2+4; ATK: 1; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 20+2/hp; TRS: None; BOOK: OSRIC-256
+TOAD, GIANT POISONOUS	DGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	5	Freq: Uncommon; #ENC: 1d8; SIZE: Medium; MOVE: 60 ft plus, 60 ft leap; AC: 7; HD: 2; ATK: 1; DMG: 1d4+1; SA: Poisonous bite that kills unless poison save.; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-256
+TRAPPER	DG	13	3	Freq: Rare; #ENC: 1; SIZE: Large; MOVE: 30 ft; AC: 3; HD: 12; ATK: Special enfolding attack; DMG: See Page; SA: Enfolds and crushes (see page); SD: Half or no damage from fire or cold; MR: Standard; LAIR: 85%; INT: High; AL: N; XP: 3,000+16/hp; TRS: 1d4x10,000 gp (50%), 1d20x100 pp (50%), 5d4 gems (30%), 1d10 jewelry (10%), 1 potion, 1 scroll, and 3 other magic items (excluding weapons) (30%).; BOOK: OSRIC-303
+TREANT	CFXPFXPSXTFXTS	11	3	Freq: Rare; #ENC: 1d20; SIZE: Large; MOVE: 120 ft; AC: 0; HD: 7-12 (1d6+6 if randomly determined); ATK: 2 (fists); DMG: 7-8 HD: 2d8 damage per fist...9-10 HD: 3d6 damage per fist...11-12 HD: 4d6 damage per fist; SA: Animate trees; SD: Cannot be surprised; MR: Standard; LAIR: 10%; INT: Very; AL: CG; XP: 7HD: 1,295+8/hp...8HD: 1,600+10/hp...9HD: 2,050+12/hp...10HD: 2,350+13/hp...11HD: 2,750+14/hp...12HD; TRS: 10d4 gems (50%); 2d4 potions (40%).; BOOK: OSRIC-238
+TREE, ANIMATED	CFXPFXPSXTFXTS	13	3	Freq: Rare; #ENC: 1d2; SIZE: Large; MOVE: 30 ft; AC: 0; HD: 12; ATK: 2 (fists); DMG: 4d6; SA: None; SD: None; MR: Standard; LAIR: 100%; INT: Non-; AL: N; XP: 1,300+16/hp (none if animated by a treant); TRS: None; BOOK: OSRIC-238
+TRICERATOPS	TFXTHXTMXTS	17	13	Freq: Common; #ENC: 1d20; SIZE: Large; MOVE: 120 ft; AC: 3/7; HD: 16; ATK: 1; DMG: 3d6; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,000+20/hp; TRS: None; BOOK: OSRIC-229
+TRITON	SW	4	3	Freq: Rare; #ENC: 10d6; SIZE: Medium; MOVE: 150 ft, 150 ft swimming; AC: 4; HD: 3; ATK: 1 (weapon); DMG: By weapon; SA: See Page; SD: None; MR: 90%; LAIR: 25%; INT: High +; AL: NG; XP: Normal warrior 110+2/hp, Leader (4HD) 145+3/hp, Leader (5HD) 190+4/hp, Leader (6HD) 280+6/hp, Leader; TRS: In lair only: 1d12x1000cp (20%); 1d6x1000sp (30%); 1d4x1000ep (10%); 1d6 gems (25%); 1d3 jewelry (20%); any 2 magic items (10%); 2d4x1000gp (40%); 1d6x1000pp (50%); 4d8 gems (55%); 1d12 jewelry (45%); 2d4 potions (40%); 1d4 scrolls (50%); 1 miscellaneous magic and 1 potion (60%).; BOOK: OSRIC-304
+TROGLODYTE	DG	3	13	Freq: Common; #ENC: 10d10; SIZE: Medium; MOVE: 120 ft; AC: 5; HD: 2; ATK: 3 or 1; DMG: 1d3/1d3/1d4+1 or by weapon; SA: Repulsive Odor; SD: See Page; MR: Standard; LAIR: 15%; INT: Low; AL: CE; XP: 20+2/hp; TRS: Individual 2d6 ep; Lair 1d6x1,000 cp (25%), 1d6x1,000 sp (30%), 1d6x1,000 ep (35%), 1d10x1,000 gp (40%), 1d4x100 pp (25%), 4d10 gems (60%), 3d10 jewelry (50%), 3 magic items (30%).; BOOK: OSRIC-201
+TROLL	CFXCHXCMXCPXDGXPDXPFXPHXPPXPSXTFXTHXTMXTS	8	5	Freq: Uncommon; #ENC: 1d12; SIZE: Large (9 ft + tall); MOVE: 120 ft; AC: 4; HD: 6+6; ATK: 3; DMG: 1d4+4/1d4+4/2d6; SA: See Page; SD: Regeneration; MR: Standard; LAIR: 40%; INT: Low; AL: CE; XP: 525+8/hp; TRS: Lair 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 1d10 gems (30%), 1d6 jewelry (25%), 2 magic items or 1 potion (15%).; BOOK: OSRIC-206
+TROLL, GIANT	CFXCHXCMXCPXDGXPDXPFXPHXPSXTFXTHXTMXTS	9	3	Freq: Rare; #ENC: 1d12; SIZE: Large (10 ft tall); MOVE: 120 ft; AC: 4; HD: 8; ATK: 1; DMG: 2d8; SA: None; SD: Regeneration; MR: Standard; LAIR: 33%; INT: Low; AL: CE; XP: 750+10/hp; TRS: 2d6x1,000 cp (20%), 1d6x1,000 sp (35%), 1d4x1,000 ep (15%), 1d6 gems (25%), 1d4 jewelry (25%), any 2 maps or magic (10%).; BOOK: OSRIC-206
+TROLL, GIANT TWO-HEADED	CMXDGXPMXTM	11	1	Freq: Very Rare; #ENC: 1d3; SIZE: Large (10 ft tall); MOVE: 120 ft; AC: 4; HD: 10; ATK: 4; DMG: 1d6/1d6/1d10/1d10; SA: None; SD: Regeneration; MR: Standard; LAIR: 35%; INT: Average; AL: CE; XP: 1,750+15/hp; TRS: 1d8x1,000 cp (20%), 1d10x1,000 sp (30%), 1d10x1,000 ep (15%), 1d6x1,000 gp (60%), 2d6 gems (35%), 1d6 jewelry (20%), any 2 maps or magic plus 1 potion (25%).; BOOK: OSRIC-206
+TROLL, ICE	CFXCHXCMXCPXDGXFWXPDXPS	3	3	Freq: Rare; #ENC: 1d6; SIZE: Large (9 ft tall); MOVE: 90 ft; AC: 8; HD: 2; ATK: 2; DMG: 1d8/1d8; SA: None; SD: Regeneration, impervious to cold, magical weapons to hit; MR: Standard; LAIR: 10%; INT: Semi-; AL: CE; XP: 45+2/hp; TRS: 1d10x1,000 cp (10%), 1d20x1,000 sp (20%), 1d6x1,000 ep (10%), 1d8x1,000 gp (40%), 1d12 gems (25%), 1d8 jewelry (25%).; BOOK: OSRIC-206
+TROLL, SPECTRAL	DG	7	1	Freq: Very Rare; #ENC: 1d2; SIZE: Large (8 ft tall); MOVE: 150 ft; AC: 2; HD: 5+5; ATK: 3; DMG: 1d6/1d3/1d3; SA: Strength point drain; SD: Regeneration, impervious to cold, magical weapons to hit, invisibility; MR: 30%; LAIR: None; INT: Very; AL: CE; XP: 625+6/hp; TRS: None; BOOK: OSRIC-207
+TURTLE, GIANT SEA	SW	16	5	Freq: Uncommon; #ENC: 1d3; SIZE: Large; MOVE: 10 ft, 150 ft swimming; AC: 2 (shell) or 5 (head and flippers); HD: 15; ATK: 1; DMG: 4d4; SA: Overturn boats; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 2,400+20/hp; TRS: None; BOOK: OSRIC-256
+TURTLE, GIANT SNAPPING	FW	11	5	Freq: Uncommon; #ENC: 1d4; SIZE: Large; MOVE: 30 ft, 120 ft swimming; AC: 0 (shell) or 5 (head and legs); HD: 10; ATK: 1; DMG: 6d4; SA: Surprise on a 1-4 on 1d6; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,500+14/hp; TRS: None; BOOK: OSRIC-256
+TYRANNOSAURUS	TFXTHXTM	21	5	Freq: Uncommon; #ENC: 1 or 2d6; SIZE: Large; MOVE: 150 ft; AC: 5; HD: 20; ATK: 1; DMG: 3d10; SA: None; SD: None; MR: Standard; LAIR: 15%; INT: Animal; AL: N; XP: 5,000+25/hp; TRS: None; BOOK: OSRIC-227
+UDUK	DG	8	5	Freq: Uncommon; #ENC: 1d3 or 1d6 (in the Abyss); SIZE: Medium; MOVE: 90 ft, 150 ft in trees; AC: -3; HD: 6+6; ATK: 2 claws/1 bite; DMG: 1d6/1d6/2d6; SA: See Page; SD: See Page; MR: 45%; LAIR: 10%; INT: Very; AL: CE; XP: 1,725+10/hp; TRS: If encountered in their lair, uduk will have a pile of treasure including 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%) and 1d3 jewelry (20%). In addition, they might (10%) have 1d2 random magical items.; BOOK: OSRIC-220
+UNICORN	PH	6	3	Freq: Rare; #ENC: 1d4+1; SIZE: Large; MOVE: 240 ft; AC: 2; HD: 4+4; ATK: 3 (hoof/hoof/horn); DMG: 1d6/1d6/1d12; SA: Charge; SD: Save as level 11 magic user; immune to charm, hold, death magic, and poison; never surprised within 240 ft; surprise 1-5 on d6; dimension door 1/day (360 ft range); MR: Standard; LAIR: 5%; INT: Average; AL: CG; XP: 440+4/hp; TRS: 20d4 gems (50%); 1 miscellaneous magic item and 1 potion (60%).; BOOK: OSRIC-238
+VAMPIRE	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	10	3	Freq: Rare; #ENC: 1d4; SIZE: Medium; MOVE: 120 ft or 180 ft flying (AA: level V); AC: 1; HD: 8+3; ATK: 1; DMG: 1d6+4; SA: See Page; SD: See Page; MR: See Page; LAIR: 25%; INT: Exceptional; AL: CE; XP: 3,810+12/hp; TRS: 1d20x1,000 sp (10%); 1d12x1,000 ep (10%); 1d10x1,000 gp (40%); 1d8x100 pp (35%); 3d10 gems (20%); 1d10 jewelry (10%); 3 magic items (30%).; BOOK: OSRIC-243
+VELOCIRAPTOR	TMXTHXTFXTS	7	13	Freq: Common; #ENC: 4d4; SIZE: Large; MOVE: 150 ft; AC: 6; HD: 6; ATK: 1; DMG: 3d4; SA: None; SD: None; MR: Standard; LAIR: None; INT: Animal; AL: N; XP: 1,000+12/hp; TRS: None; BOOK: OSRIC-229
+VILSTRAK	CHXCMXDGXPHXPMXTHXTM	0	3	Freq: Rare; #ENC: 2d10; SIZE: Medium; MOVE: 90 ft; AC: 2; HD: 1d6; ATK: 2; DMG: 1d4+1/1d4+1; SA: Surprise on 1-4; SD: None; MR: Standard; LAIR: 10%; INT: Low; AL: NE; XP: 5+1/hp; TRS: None carried. Lair: 2d6x1,000 cp (30%), 1d6x1,000 sp (30%), 1d6x1,000 ep (10%), 1d6 gems (30%), 1d3 jewelry (15%), 1 potion or scroll (10%).; BOOK: OSRIC-304
+VOLT	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	5	Freq: Uncommon; #ENC: 2d12; SIZE: Small; MOVE: 60 ft levitating (AA: level II); AC: 3; HD: 2+1; ATK: 1; DMG: 1d4; SA: See Page; SD: Immune to electricity and lightning; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 50+3/hp; TRS: None; BOOK: OSRIC-304
+VULCHLING	CFXDGXPFXPMXPS	2	3	Freq: Rare; #ENC: 2d8; SIZE: Medium; MOVE: 60 ft, 30 ft flying (AA: level IV); AC: 7; HD: 1; ATK: 1 or 2; DMG: 1d4+1 or 1d4/1d4; SA: None; SD: None; MR: Standard; LAIR: 30%; INT: Low; AL: CE; XP: 10+1/hp; TRS: 3d6 each of cp, sp, ep (25%); 1d8 gp (25%).; BOOK: OSRIC-305
+WALRUS	SW	7	5	Freq: Uncommon; #ENC: 3d6; SIZE: Large; MOVE: 60 ft, 180 ft swimming; AC: 5; HD: 6; ATK: 3; DMG: 1d6/1d6/2d12; SA: None; SD: None; MR: Standard; LAIR: 20%; INT: Animal; AL: N; XP: 160+6/hp; TRS: The ivory tusks of this animal can be sold for 1d4+1x100 gp on the market.; BOOK: OSRIC-257
+WASP, GIANT	FWXPFXPHXPMXPPXPSXTFXTHXTMXTS	5	3	Freq: Rare; #ENC: 1d20; 1d20+20 in lair; SIZE: Medium; MOVE: 60 ft, 210 ft flying (AA: level V); AC: 4; HD: 4; ATK: 2 (bite/sting); DMG: 1d4/2d4; SA: Poison sting; SD: None; MR: Standard; LAIR: 25%; INT: Non-; AL: N; XP: 300+3/hp; TRS: 20d4 gems (50%).; BOOK: OSRIC-305
+WEASEL, GIANT	DGXPPXPS	5	3	Freq: Rare; #ENC: 1d8; SIZE: Medium; MOVE: 150 ft; AC: 6; HD: 3+3; ATK: 1; DMG: 2d6; SA: See Page; SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 75+3/hp; TRS: Giant weasel pelts for 2d6x100 gp or more.; BOOK: OSRIC-257
+WEASEL, HUGE	DGXPPXPS	3	5	Freq: Uncommon; #ENC: 2d6; SIZE: Small; MOVE: 150 ft; AC: 7; HD: 1+1; ATK: 3; DMG: 1d8; SA: See Page; SD: None; MR: Standard; LAIR: 10%; INT: Animal; AL: N; XP: 40+2/hp; TRS: Huge weasel pelts sell for 1d6x100 gp.; BOOK: OSRIC-257
+WEREBEAR	CFXCHXCMXDGXPFXPHXPMXPS	9	3	Freq: Rare; #ENC: 1d4; SIZE: Large; MOVE: 90 ft; AC: 2; HD: 7+3; ATK: 3; DMG: 1d3/1d3/2d4; SA: Hug for 2d8; SD: Hit only by silver or magic weapons; MR: Standard; LAIR: 10%; INT: Exceptional; AL: CG; XP: 850+10/hp; TRS: 2d4x1,000 gp (40%), 1d6x100 pp (50%), 4d8 gems (55%), 1d12 jewelry (50%), 1d4 scrolls + 1 misc. magic + 1 potion (60%).; BOOK: OSRIC-232
+WEREBOAR	CFXCHXCPXPDXPFXPHXPPXPSXTFXTHXTS	7	3	Freq: Rare; #ENC: 2d4; SIZE: Large; MOVE: 120 ft; AC: 4; HD: 5+2; ATK: 1; DMG: 2d6; SA: None; SD: Hit only by silver or magic weapons; MR: Standard; LAIR: 20%; INT: Average; AL: N; XP: 250+6/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour, or misc. wpn +2d4 potions (40%).; BOOK: OSRIC-232
+WERERAT	CFXCHXCMXCPXDGXPDXPS	5	5	Freq: Uncommon; #ENC: 4d6; SIZE: Small to medium; MOVE: 120 ft; AC: 6; HD: 3+1; ATK: 1; DMG: 1d8 (sword); SA: Surprises on 1-4 in 6; SD: Hit only by silver or magic weapons; MR: Standard; LAIR: 30%; INT: Very; AL: LE; XP: 150+4/hp; TRS: 1d12x1,000 cp (20%), 1d6x1,000 sp (30%), 1d4x1,000 ep (10%), 1d6 gems (25%), 1d3 jewelry (25%), any 2 magic items (10%).; BOOK: OSRIC-232
+WERETIGER	CFXCHXCMXCPXPFXPHXPMXPPXPSXTFXTHXTMXTS	8	1	Freq: Very Rare; #ENC: 1d6; SIZE: Large; MOVE: 120 ft; AC: 3; HD: 6+2; ATK: 3; DMG: 1d4/1d4/1d12; SA: Rake for 1d4+1/1d4+1; SD: Hit only by silver or magic weapons; MR: Standard; LAIR: 15%; INT: Average; AL: N; XP: 500+8/hp; TRS: 1d8x1,000 cp (10%), 1d12x1,000 sp (15%), 1d8x1,000 ep (15%), 1d6x1,000 gp (50%), 2d6 gems (50%), 1d6 jewelry (25%), any 2 magic item + 1 potion (15%).; BOOK: OSRIC-232
+WEREWOLF	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	6	13	Freq: Common; #ENC: 3d6; SIZE: Medium; MOVE: 150 ft; AC: 5; HD: 4+3; ATK: 1; DMG: 2d4; SA: Surprises on a 1-3 in 6; SD: Hit only by silver or magic weapons; MR: Standard; LAIR: 25%; INT: Average; AL: CE; XP: 200+5/hp; TRS: 1d8x1,000 cp (50%), 1d6x1,000 sp (25%), 1d4x1,000 ep (25%), 1d3x1,000 gp (25%), 1d8 gems (30%), 1d4 jewelry (20%), sword, armour, or misc. weapon (10%).; BOOK: OSRIC-232
+WHALE	SW	17	13	Freq: Common; #ENC: 1d8; SIZE: Large; MOVE: 180 ft to 240 ft swimming; AC: 4; HD: 12 to 36; ATK: 1 bite or 1 tail; DMG: 5-15 d4 (bite), 1-5 d8 (tail); SA: None; SD: None; MR: Standard; LAIR: None; INT: Low; AL: N; XP: Varies; TRS: Whale ambergris from a single whale is worth 1d20x1,000gp if properly collected. Whale meat is worth 100gp per hit die of the whale. Additionally, there is a 1% chance each of fi nding cp, sp, ep, pp, gems, jewelry, and magic items within the stomach of a whale. Coins found will number 1d3x1,000 of the types found, gems and jewelry will number 1d20 if found, and magic items will number 1d4.; BOOK: OSRIC-257
+WIGHT	CMXDGXPMXPSXTMXTS	6	5	Freq: Uncommon; #ENC: 2d8; SIZE: Medium; MOVE: 120 ft; AC: 5; HD: 4+3; ATK: 1 (claw); DMG: 1d4 + level drain; SA: Level drain; SD: Silver or magic weapon required to hit; spell immunities.; MR: Standard; LAIR: 70%; INT: Average; AL: LE; XP: 590+4/hp; TRS: 1d8x1,000 cp (50%); 1d6x1,000 sp (25%); 1d4x1,000 ep (25%); 1d3x1,000 gp (25%); 1d8 gems (30%); 1d4 jewelry (20%); 1 magic item (sword, armour, or miscellaneous magic) (10%).; BOOK: OSRIC-244
+WILL-O-THE-WISP	CMXDGXPMXPSXSWXTMXTS	10	5	Freq: Uncommon; #ENC: 1d3; SIZE: Small; MOVE: 180 ft flying (AA: level VI); AC: -8; HD: 9; ATK: 1 electrical shock; DMG: 2d8; SA: Electrical shock; SD: Spell immunities; MR: Standard; LAIR: 50%; INT: Exceptional; AL: CE; XP: 1,400+12/hp; TRS: 1d3x1000 cp (20%); 1d4x1000 sp (25%); 1d4x1000 ep (25%); 1d4x1000 gp (30%); 1d6x100 pp (30%); 10d6 gems (55%); 5d6 jewelry (50%); 1d3 magic items (50%).; BOOK: OSRIC-305
+WOLF	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	4	13	Freq: Common; #ENC: 3d10; SIZE: Small; MOVE: 180 ft; AC: 7; HD: 2+2; ATK: 1; DMG: 1d4+1; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 50+2/hp; TRS: None; BOOK: OSRIC-257
+WOLF, DIRE	CFXCHXCMXCPXDGXPDXPFXPMXPPXPSXTFXTHXTMXTS	5	3	Freq: Rare; #ENC: 3d4; SIZE: Medium; MOVE: 180 ft; AC: 6; HD: 3+3; ATK: 1; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Semi-; AL: N; XP: 75+3/hp; TRS: None; BOOK: OSRIC-257
+WOLVERINE	CFXCHXCMXCPXDG	4	5	Freq: Uncommon; #ENC: 1; SIZE: Small; MOVE: 120 ft; AC: 5; HD: 3; ATK: 3; DMG: 1d4/1d4/1d4+1; SA: Musk, +4 to hit; SD: None; MR: Standard; LAIR: 15%; INT: Semi-; AL: NE; XP: 125+2/hp; TRS: None; BOOK: OSRIC-258
+WOLVERINE, GIANT	CFXCHXCMXCPXDG	6	3	Freq: Rare; #ENC: 1; SIZE: Medium; MOVE: 150 ft; AC: 4; HD: 4+4; ATK: 3; DMG: 1d6/1d6/2d4; SA: Musk, +4 to hit; SD: None; MR: Standard; LAIR: 15%; INT: Semi-; AL: NE; XP: 235+4/hp; TRS: None; BOOK: OSRIC-258
+WORG	CFXCHXCMXCPXDGXPDXPFXPMXPPXPSXTFXTHXTMXTS	6	3	Freq: Rare; #ENC: 3d4; SIZE: Large; MOVE: 180 ft; AC: 6; HD: 4+4; ATK: 1 bite; DMG: 2d4; SA: None; SD: None; MR: Standard; LAIR: 10%; INT: Low; AL: NE; XP: 75+3/hp; TRS: None; BOOK: OSRIC-258
+WRAITH	CMXDGXPMXPSXTMXTS	7	5	Freq: Uncommon; #ENC: 2d6; SIZE: Medium; MOVE: 120 ft or 240 ft flying (AA: level IV); AC: 4; HD: 5+3; ATK: 1; DMG: 1d6 + level drain; SA: Level drain; SD: Only hit by silver or magic weapons; immune to certain spells.; MR: Standard; LAIR: 25%; INT: Very; AL: LE; XP: 550+6/hp; TRS: (in lair only) 1d10x1,000 cp (5%); 1d12x1,000 sp (25%); 1d6x1,000 ep (25%); 1d8x1,000 gp (25%); 1d12 gems (15%); 1d8 jewelry (10%); 3 magic items plus 1 scroll (25%).; BOOK: OSRIC-244
+WYVERN	DGXPDXPFXPMXPPXPSXTFXTMXTS	9	5	Freq: Uncommon; #ENC: 1d6; SIZE: Large (30-40 ft long); MOVE: 60 ft, 240 ft flying (AA: level III); AC: 3; HD: 7+7; ATK: 2; DMG: 1d6/2d8; SA: Poison sting; SD: None; MR: Standard; LAIR: 30%; INT: Low; AL: NE; XP: 850+10/hp; TRS: (in lair only) 1d10x1,000 cp (5%); 1d12x1,000 sp (25%); 1d6x1,000 ep (25%); 1d8x1,000 gp (25%); 1d12 gems (15%); 1d8 jewelry (15%); 3 magic items plus 1 scroll (25%).; BOOK: OSRIC-305
+XORN	CHXCMXDGXPHXPMXTHXTM	9	1	Freq: Very Rare; #ENC: 1d4; SIZE: Medium; MOVE: 90 ft; AC: -2; HD: 7+7; ATK: 3 claws, 1 bite; DMG: 1d3/1d3/1d3/6d4; SA: Surprises 1-5 on 1d6; SD: Immune to fire and cold. Half damage from electricity. Travel through stone.; MR: Standard; LAIR: 40%; INT: Average; AL: N; XP: 1,350+10/hp; TRS: 1d4x1,000 cp (25%), 1d8x1,000 sp (30%), 1d2x1,000 ep (25%), 2d6x1,000- gp (70%), 5d4 gems (50%), 1 misc. magic + 1 potion (60%).; BOOK: OSRIC-306
+YETI	CMXDG	6	1	Freq: Very Rare; #ENC: 1d6; SIZE: Large (8 ft tall); MOVE: 150 ft; AC: 6; HD: 4+4; ATK: 2; DMG: 1d6/1d6; SA: See Page; SD: Impervious to cold; MR: Standard; LAIR: 10%; INT: Average; AL: N; XP: 435+5/hp; TRS: None carried. In lair: 1d6x1,000 cp (10%), 1d10x1,000 sp (35%), 1d6x1,000 ep (15%), 1d6x1,000 gp (65%), 1d10 gems (35%), 2d4 jewelry (30%), 2 random magic items + 2 potions (10%).; BOOK: OSRIC-306
+ZOMBIE, JUJU	CMXCPXDGXPMXPPXPSXTMXTS	6	1	Freq: Very Rare; #ENC: 1d6; SIZE: Medium; MOVE: 90 ft; AC: 6; HD: 3+12; ATK: 1; DMG: 2d6+1; SA: See Page; SD: Can only be hit with magic weapons; MR: See Page; LAIR: None; INT: Low; AL: N (E); XP: 115+4/hp; TRS: None; BOOK: OSRIC-245
+ZOMBIE, MONSTER	DGXPSXTS	7	1	Freq: Very Rare; #ENC: 1d6; SIZE: Large; MOVE: 90 ft; AC: 6; HD: 6; ATK: 1; DMG: 2d8; SA: None; SD: See Page; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 145+6/hp; TRS: None; BOOK: OSRIC-244
+ZOMBIE, NORMAL	CFXCHXCMXCPXDGXPDXPFXPHXPMXPPXPSXTFXTHXTMXTS	3	3	Freq: Rare; #ENC: 3d8; SIZE: Medium; MOVE: 60 ft; AC: 8; HD: 2; ATK: 1; DMG: 1d8; SA: None; SD: See Page; MR: Standard; LAIR: None; INT: Non-; AL: N; XP: 30+1/hp; TRS: None; BOOK: OSRIC-244
+--END--
+acid spray
+bolt, crossbow
+bridge, collapsing
+bridge, illusory 
+caltrops drop from ceiling
+ceiling block drops behind players
+ceiling blocks drop in front of and behind players
+ceiling block drops in front of players
+ceiling block drops on players
+ceiling block seals players in room or area
+elevator room
+elevator room, deactivates for 24 hours
+elevator room, one way
+falling door
+flame jets
+flooding room
+gas, blinding
+gas, fear
+gas, flammable
+gas, sleep
+gas, slowing
+greased chute
+lightning bolt
+log trap, swinging
+obscuring fog
+oil-filled pit with dropping lit torch
+pit trap triggered by false door
+pit with dropping ceiling block
+pit with locking trap door
+pit, 10 ft
+poisoned bolt, crossbow
+poisoned caltrops
+poisoned spear, ballista
+poisoned spike pit
+portcullis drops behind players
+portcullises drop in front of and behind players
+portcullis drops in front of players
+rolling stone ball, height and width of corridor
+scything blade, ankle-high
+scything blade, neck-high
+sliding room changes facing or location
+spear, ballista
+spiked log trap
+spiked pit
+spring-loaded pile-driver disguised as a door
+stairs fold flat into a sliding chute
+stairs collapse
+teleporter
+trip wire
+wire, neck high
+--END--
+ashes
+badly dented helmet
+bent iron bar
+bits of hair or fur
+blunted javelin head
+bones
+broken arrow
+broken bottle
+corroded chain
+cobwebs
+bent copper coin
+cracks in ceiling
+cracks in floor
+cracks in wall
+cracked flask
+cracked hammer
+head
+dagger hilt
+dripping water
+dried blood
+dry leaves
+twigs 
+dung
+dust
+food
+fungi
+guano
+leather boot
+lantern
+mold
+pick handle
+rope
+pottery shards
+rags
+rats
+rubble
+sack
+scattered teeth or fang
+scratches on wall
+slime on ceiling
+slime on floor
+slime on wall
+spike
+sticks
+strap
+straw
+stones
+sword hilt
+torch stub
+water puddle
+wax drippings
+wax blob
+candle stub
+wood
+altar
+armchair
+armoire
+bag
+barrel
+bed
+bench
+blanket
+box
+brazier
+bucket
+buffet
+bunks
+barrel
+cabinet
+candelabrum
+carpet
+cask
+cauldron
+chandelier
+charcoal
+kettle
+loom
+mat
+mattress
+mural
+oven
+pail
+painting
+pallet
+pans
+pedestal
+pegs
+pillow
+pots
+quilt
+rug
+rushes
+sack
+sconce
+screen
+sheet
+shelf
+chair
+chest
+chest of drawers
+coal
+couch
+crate
+cupboard
+cushion
+desk
+fireplace with wood
+fountain
+grindstone
+hammock
+hamper
+hogshead
+idol
+shrine
+sideboard
+sofa
+spinning wheel
+staff
+stand
+statue
+stool
+table
+tapestry
+throne
+trunk
+tub
+utensil
+urn
+wall basin
+wardrobe
+wood billets
+workbench
+--END--
+Locked Chest
+Locked Huge Chest
+Locked Iron Trunk
+Loose
+Bag
+Sack
+Coffer
+Chest
+Huge Chest
+Hidden in Wall
+Hidden under Floor
+Hidden
+Iron Trunk
+--END--
+Potion	268	1
+Ring	70	2
+Rod, Staff or Wand	70	3
+Banded Mail	10	4
+Chain Mail	30	4
+Elfin Chain Mail	1	4
+Leather	20	4
+Plate Mail	30	4
+Ring Mail	10	4
+Splint Mail	20	4
+Scale Mail	20	4
+Studded Leather	10	4
+Shield	50	4
+Scroll (Protection)	70	5
+Scroll (Cursed)	10	0
+Scroll (Cleric)	27	16
+Scroll (Druid)	18	17
+Scroll (Illusionist)	18	18
+Scroll (Magic User)	117	19
+Common Magic Item	100	6
+Less Common Magic Item	55	7
+Uncommon Magic Item	35	8
+Rare Magic Item	10	9
+Arrow	28	4
+Axe	19	4
+Bolt	9	4
+Bow	5	4
+Crossbow	5	4
+Dagger	37	4
+Flail	9	4
+Hammer	9	4
+Javelin	9	4
+Mace	19	4
+Military Pick	5	4
+Morning Star	5	4
+Pole Arm	5	4
+Scimitar	9	4
+Spear	9	4
+Trident	5	4
+Sling	5	4
+Magic Sword	100	10
+Cursed Item	10	11
+Magic Weapon	100	12
+Gem	490	13
+Gems (1d4)	280	13
+Gems (1d6)	190	13
+Gems (1d8)	130	13
+Gems (1d10)	90	13
+Gems (1d12)	20	13
+Amulet	40	14
+Anklet	40	14
+Belt	40	14
+Box	40	14
+Bracelet	40	14
+Brooch	40	14
+Buckle	40	14
+Chain	40	14
+Chalice	40	14
+Choker	40	14
+Clasp	40	14
+Comb	40	14
+Coronet	40	14
+Crown	40	14
+Diadem	40	14
+Earring	40	14
+Goblet	40	14
+Idol	40	14
+Knife	40	14
+Locket	40	14
+Medal	40	14
+Medallion	40	14
+Necklace	40	14
+Orb	40	14
+Pendant	40	14
+Pin	40	14
+Ring	40	14
+Sceptre	40	14
+Seal	40	14
+Statuette	40	14
+Tiara	40	14
+Loot	500	15
+--END--
+Animal Control	1
+Clairaudience	1
+Clairvoyance	1
+Climbing	1
+Cursed	1
+Delusion	1
+Diminution	1
+Dragon Control	1
+ESP	1
+Extra-Healing	1
+Fire Resistance	1
+Flying	1
+Gaseous Form	1
+Giant Control	1
+Giant Strength	1
+Growth	1
+Healing	1
+Heroism	1
+Human Control	1
+Invisibility	1
+Invulnerability 	1
+Levitation	1
+Longevity 	1
+Oil of Etherealness	1
+Oil of Slipperiness	1
+Philtre of Love	1
+Philtre of Persuasiveness	1
+Plant Control	1
+Polymorph	1
+Speed	1
+Super-Heroism	1
+Sweet Water	1
+Treasure Finding	1
+Undead Control	1
+Water Breathing	1
+--END--
+Charisma	4
+Feather Falling	8
+Fire Resistance	4
+Free Action	4
+Genie Summoning	4
+Invisibility	4
+Protection	4
+Regeneration	1
+Spell Storing	3
+Spell Turning	4
+Swimming	4
+Telekinesis	2
+Three Wishes	2
+Warmth	4
+Water Walking	4
+Wizardry	4
+--END--
+Rod of Absorption	4
+Rod of Cancellation	8
+Rod of Captivation	1
+Rod of Lordly Might	2
+Rod of Resurrection	1
+Rod of Rulership	2
+Rod of Striking	2
+Staff of Compulsion	2
+Staff of Healing	2
+Staff of Power	1
+Staff of the Serpent	3
+Staff of Withering	3
+Staff of Wizardry	1
+Wand of Detecting Magic	4
+Wand of Detecting Minerals & Metals	4
+Wand of Detecting Traps & Secret Doors	4
+Wand of Enemy Detection	4
+Wand of Fear	2
+Wand of Fire	2
+Wand of Ice	2
+Wand of Light	2
+Wand of Illusion	2
+Wand of Lightning	2
+Wand of Magic Missiles	4
+Wand of Negation	4
+Wand of Paralysation	4
+Wand of Polymorphing	4
+Wand of Summoning	2
+Wand of Wonder	2
+--END--
+(+1)	30
+(+2)	15
+(+3)	3
+(+4)	2
+(+5)	1
+(Cursed -2)	3
+--END--
+Acid Warding	2
+Demon Warding	2
+Devil Warding	2
+Elemental Warding	2
+Lycanthrope Warding	2
+Magic Warding	3
+Petrifaction Warding	2
+Polymorph Warding	2
+Undead Warding	2
+--END--
+Incense of Meditation (1d4+1 cones)	1
+Javelin of the Raptor	1
+Thunder Spear	1
+Boots of Elvenkind	1
+Candle of Invocation	1
+Dust of Appearance	1
+Dust of Disappearance	1
+Rope of Climbing	1
+Scarab of Protection	1
+Slippers of Spider Climbing	1
+Strand of Prayer Beads	1
+Amulet of Natural Armour	1
+Blessed Book	1
+Brooch of Shielding	1
+Hat of Disguise	1
+Horn of Valhalla	1
+Periapt of Proof Against Poison	1
+Phylactery of Faithfulness	1
+Robe of Blending	1
+Pipes of the Sewers	1
+Restorative Ointment	1
+Robe of Useful Items	1
+Vest of Escape	1
+Cloak of Elvenkind	1
+Wings of Flying	1
+Cloak of Resistance	1
+Feather Token	1
+Figurines of Wondrous Power	1
+Bracers of Armour	1
+--END--
+Arrow of Direction	1
+Brazier of Commanding Fire Elementals	1
+Cape of the Mountebank	1
+Cloak of the Manta Ray	1
+Decanter of Endless Water	1
+Dust of Dryness	1
+Elixir of Swimming	1
+Gloves of Arrow Snaring	1
+Gloves of Swimming and Climbing	1
+Goggles of Night	1
+Horseshoes of Speed	1
+Necklace of Adaptation	1
+Orb of Storms	1
+Periapt of Health	1
+Pipes of Haunting	1
+Ring Gates	1
+Robe of Bones	1
+Unguent of Timelessness	1
+Universal Solvent	1
+Amulet of Proof Against Detection or Location	1
+Boots of Speed	1
+Boots of Striding and Springing	1
+Bracers of Archery, Lesser	1
+Candle of Truth	1
+Cloak of Displacement, Minor	1
+Cloak of the Bat	1
+Dark Skull	1
+Dust of Tracelessness	1
+Elixir of Truth	1
+Elixir of Vision	1
+Glove of Storing	1
+Horn of the Tritons	1
+Necklace of Fireballs	1
+Periapt of Wound Closure	1
+Phylactery of Undead Turning	1
+Rope of Entanglement	1
+Stone Horse	1
+Stone of Alarm	1
+Sustaining Spoon	1
+Wind Fan	1
+Bag of Holding	1
+Boots of Levitation	1
+Bottle of Air	1
+Broom of Flying	1
+Crystal Ball	1
+Elixir of Fire Breath	1
+Elixir of Hiding	1
+Handy Haversack	1
+Harp of Charming	1
+Helm of Comprehend Languages and Read Magic	1
+Helm of Underwater Action	1
+Horn of Fog	1
+--END--
+Ahmek’s Copious Coin Purse	1
+Alchemy Jug	1
+Amulet of Health	1
+Amulet of the Planes	1
+Apparatus of the Lobster	1
+Bag of Tricks	1
+Bead of Force	1
+Blemish Blotter	1
+Boots of the Winterlands	1
+Bowl of Commanding Water Elementals	1
+Bracelet of Friends	1
+Bracers of Archery, Greater	1
+Carpet of Flying	1
+Censer of Controlling Air Elementals	1
+Chime of Interruption	1
+Chime of Opening	1
+Circlet of Blasting, Minor	1
+Circlet of Persuasion	1
+Cloak of Etherealness	1
+Cloak of Arachnida	1
+Cloak of Charisma	1
+Cloak of Displacement, Major	1
+Cube of Force	1
+Cube of Frost Resistance	1
+Cubic Gate	1
+Deck of Illusion	1
+Dimensional Shackles	1
+Drums of Panic	1
+Dust of Illusion	1
+Efficient Quiver	1
+Elemental Gem	1
+Eyes of the Eagle	1
+Gauntlets of Ogre Power	1
+Gauntlets of Rust	1
+Gloves of Dexterity	1
+Goggles of Minute Seeing	1
+Headband of Intellect	1
+Helm of Telepathy	1
+Horn of Goodness or Evil	1
+Horseshoes of the Zephyr	1
+Instant Fortress	1
+Iron Bands of Binding	1
+Iron Flask	1
+Lantern of Revealing	1
+Mantle of Faith	1
+Mantle of Magic Resistance	1
+Marvellous Pigments (1d4 pots)	1
+Mask of the Skull	1
+Medallion of Thoughts	1
+Pearl of Power	1
+Pearl of the Sirines	1
+Periapt of Wisdom	1
+Pipes of Pain	1
+Pipes of Sounding	1
+Plentiful Vessel	1
+Robe of Stars	1
+Scabbard of Keen Edges	1
+Scarab of Golem Bane	1
+Silversheen	1
+Sovereign Glue	1
+Stone of Controlling Earth Elementals	1
+Stone of Good Luck	1
+Stone Salve	1
+Vestment, Druid’s	1
+Well of Many Worlds	1
+--END--
+Afreeti Bottle	1
+Amulet of Life Protection	1
+Amulet of Mighty Fists	1
+Belt of Dwarfkind	1
+Belt of Giant Strength	1
+Boat Folding	1
+Boots of Teleportation	1
+Boots, Winged	1
+Brooch of Instigation	1
+Circlet of Blasting, Major	1
+Eversmoking Bottle	1
+Eyes of Charming	1
+Eyes of Doom	1
+Eyes of Petrifaction	1
+Gem of Brightness	1
+Gem of Seeing	1
+Golem Manual	1
+Helm of Brilliance	1
+Helm of Teleportation	1
+Horn of Blasting	1
+Horn of Blasting, Greater	1
+Ioun Stones	1
+Lyre of Building	1
+Manual of Bodily Health	1
+Manual of Gainful Exercise	1
+Manual of Quickness of Action	1
+Mattock of the Titans	1
+Maul of the Titans	1
+Mirror of Life Trapping	1
+Mirror of Mental Prowess	1
+Mirror of Opposition	1
+Oil of Famishing	1
+Portable Hole	1
+Robe of Eyes	1
+Robe of Scintillating Colours	1
+Robe of the Archmagi	1
+Sagacious Volume	1
+Shrouds of Disintegration	1
+Tome of Clear Thought	1
+Tome of Leadership and Influence	1
+Tome of Understanding	1
+--END--
+Bleeding Sword	1
+Dancing Sword	5
+Defender	10
+Dragonbane	10
+Flaming Blade	10
+Frost Brand	5
+Giantbane	10
+Holy Sword	5
+Keenblade	2
+Luck Blade	10
+Magebane	5
+Nine Lives Stealer	5
+Trollbane	5
+Vampire Blade	5
+Vorpal Blade	1
+Werebane	5
+Wyrmbane	4
+Unusual Sword	1
+--END--
+Amulet of Inescapable Location	5
+Armour of Arrow Attraction	2
+Armour of Rage	3
+Bag of Devouring	3
+Boots of Dancing	4
+Bracers of Defencelessness	5
+Broom of Animated Attack	1
+Cloak of Poisonousness	1
+Crystal Hypnosis Ball	1
+Dust of Sneezing and Choking	2
+Flask of Curses	6
+Gauntlets of Fumbling	5
+Helm of Opposite Alignment	1
+Incense of Obsession	5
+Mace of Blood	5
+Medallion of Thought Projection	3
+Necklace of Strangulation	1
+Net of Snaring	2
+Periapt of Foul Rotting	3
+Potion of Poison	5
+Ring of Clumsiness	10
+Robe of Powerlessness	2
+Robe of Vermin	5
+Scarab of Death	1
+Spear, Cursed Backbiter	5
+Stone of Weight (Loadstone)	5
+Sword -2, Cursed	5
+Sword of the Berserker	3
+Vacuous Grimoire	1
+--END--
+Arrow of Slaying	1
+Axe of Hurling	1
+Crossbow of Accuracy	1
+Crossbow of Range	1
+Crossbow of Speed	1
+Dagger of Venom	1
+Hammer of the Dwarfs	1
+Holy Mace	1
+Sling of the Halfling	1
+Trident/Fork	1
+--END--
+Banded Eye (10gp)	20
+Moss Agate (10gp)	20
+Azurite (10gp)	20
+Blue Quartz (10gp)	20
+Hematite (10gp)	20
+Lapis Lazuli (10gp)	20
+Malachite (10gp)	20
+Obsidian (10gp)	20
+Rhodochrosite (10gp)	20
+Tiger Eye (10gp)	20
+Turquoise (10gp)	20
+Freshwater Pearl (10gp)	20
+Bloodstone (50gp)	16
+Carnelian (50gp)	16
+Chalcedony (50gp)	16
+Chryso-Prase (50gp)	16
+Citrine (50gp)	16
+Iolite (50gp)	16
+Jasper (50gp)	16
+Moonstone (50gp)	16
+Onyx (50gp)	16
+Peridot (50gp)	16
+Clear Quartz (50gp)	16
+Sardonyx (50gp)	16
+Rose Quartz (50gp)	16
+Smoky Quartz (50gp)	16
+Star Rose Quartz (50gp)	16
+Zircon (50gp)	16
+Amber (100gp)	8
+Amethyst (100gp)	8
+Chrysoberyl (100gp)	8
+Coral (100gp)	8
+Red Garnet (100gp)	8
+Green Garnet (100gp)	8
+Jade (100gp)	8
+White Pearl (100gp)	8
+Golden Pearl (100gp)	8
+Pink Pearl (100gp)	8
+Silver Pearl (100gp)	8
+Red Spinel (100gp)	8
+Green Spinel (100gp)	8
+Tourmaline (100gp)	8
+Alexandrite (500gp)	4
+Aquamarine (500gp)	4
+Violet Garnet (500gp)	4
+Black Pearl (500gp)	4
+Deep Blue Spinel (500gp)	4
+Golden Yellow Topaz (500gp)	4
+Emerald (1,000gp)	2
+White Opal (1,000gp)	2
+Black Opal (1,000gp)	2
+Fire Opal (1,000gp)	2
+Blue Sapphire (1,000gp)	2
+Fiery Yellow Corundum (1,000gp)	2
+Rich Purple Corundum (1,000gp)	2
+Blue Sapphire (1,000gp)	2
+Black Star Sapphire (1,000gp)	2
+Star Ruby (1,000gp)	2
+Diamond (5,000gp)	1
+--END--
+Silver (1d10x100gp)	32
+Silver and Gold (2d6x100gp)	16
+Gold (3d6x100gp)	8
+Silver and Gems (5d6x100gp)	4
+Gold and Gems (2d4x1,000gp)	2
+Exceptional (2d6x1,000gp)	1
+--END--
+JEWELRY: Silvery Gold Buckle (200gp)   1   0
+6pp / 3gp / 5ep / 8sp / 116cp   1   0
+1pp / 126ep / 201cp   1   0
+a magnificent crystal jug worth 293gp   1   0
+GEM: Azurite (3gp)   1   0
+JEWELRY: Golden Gemmed Comb/brush (520gp)   1   0
+4pp / 51gp / 26ep / 12sp / 60cp   1   0
+1pp / 12gp / 1ep / 10sp   1   0
+JEWELRY: Silvery Gold Choker (144gp)   1   0
+5gp / 2,425cp   1   0
+GEM: Chalcedony (8gp)   1   0
+an elegant ornamental knife made of adamant where the handle is decorated with 6 lapis lazulis and the name of `Anaxus` is engraved on the blade worth 17gp   1   0
+1pp / 6gp / 2ep / 15cp   1   0
+JEWELRY: Silvery Gemmed Buckle (132gp)   1   0
+301sp / 280cp   1   0
+a strange ceremonial dagger made of silver where the handle is decorated with 5 rhodochrosites and the name of `Cacosa` is engraved on the blade worth 6gp   1   0
+2pp / 4gp / 1ep / 6sp / 110cp   1   0
+5pp / 44gp / 11ep / 104sp / 470cp   1   0
+an exquisite purple, knitted cotton cloak worth 22gp   1   0
+a leather pouch of unique coins of a secret order that are made of bronze with a symbol of a eye on it (27 ea) worth 36gp   1   0
+GEM: Banded Agate (3gp)   1   0
+12sp / 4,260cp   1   0
+229pp / 933sp / 42,340cp   1   0
+13pp / 4ep / 200cp   1   0
+184gp / 56ep / 12,550cp   1   0
+6gp / 5sp / 50cp   1   0
+16gp / 1sp / 180cp   1   0
+3gp / 4,320cp   1   0
+107gp / 319ep / 507sp / 2,210cp   1   0
+8pp / 17gp / 114ep / 13sp / 1,340cp   1   0
+11sp / 305cp   1   0
+14pp / 4gp / 20ep / 5sp   1   0
+1gp / 5ep / 1sp / 5cp   1   0
+JEWELRY: Golden Gemmed Bracelet (140gp)   1   0
+2gp / 7sp / 260cp   1   0
+a magnificent ceremonial suit of armor made of iron with a axe symbol on the chest piece that is gold in color worth 30gp   1   0
+2pp / 3gp / 8ep / 12sp / 10cp   1   0
+29pp / 2gp / 12ep / 50sp / 500cp   1   0
+1pp / 20ep / 42sp / 90cp   1   0
+1pp / 2gp / 2ep / 28sp / 395cp   1   0
+GEM: Lapis Lazuli (1gp)   1   0
+16pp / 48gp / 7ep / 24sp / 20cp   1   0
+12pp / 120gp / 8ep / 157sp / 3,810cp   1   0
+593gp / 6ep / 19sp / 20cp   1   0
+1pp / 3ep / 10cp   1   0
+GEM: Fire Opal (5gp)   1   0
+GEM: Emerald (72gp)   1   0
+1pp / 3gp / 2sp / 1cp   1   0
+18gp / 129ep / 4sp / 445cp   1   0
+a rare, large manual titled `Lexicon of Jimondan the Monk` and is bound in brown demon skin with a amber colored symbol of a skull on the front, and is worth 36gp   1   0
+39pp / 86ep / 810sp / 5,000cp   1   0
+116pp / 187gp / 40ep / 1sp / 30cp   1   0
+207sp / 135cp   1   0
+41gp / 140ep / 776sp / 3,830cp   1   0
+13 inch tall granite statue of a lion worth 413gp   1   0
+10pp / 16ep / 19sp / 120cp   1   0
+GEM: Zircon (8gp)   1   0
+GEM: Rock Crystal (3gp)   1   0
+1,324sp / 33,520cp   1   0
+55pp / 110gp / 75ep / 111sp / 31,530cp   1   0
+13 inch tall onyx statue of a lion worth 1,275gp   1   0
+2pp / 1gp / 1sp / 5cp   1   0
+174sp / 19,920cp   1   0
+140pp / 10ep / 13sp / 740cp   1   0
+435ep / 789sp / 18,471cp   1   0
+2gp / 36ep / 10sp / 650cp   1   0
+3,750cp   1   0
+GEM: Golden Yellow Topaz (24gp)   1   0
+1pp / 1sp / 20cp   1   0
+a nice decorative knife made of gold worth 5gp   1   0
+2pp / 1gp / 7ep / 4sp / 90cp   1   0
+4ep / 111sp / 3,820cp   1   0
+3pp / 4gp / 7ep   1   0
+2gp / 2ep / 17sp / 125cp   1   0
+5pp / 57ep / 115sp / 226cp   1   0
+2pp / 1gp / 5ep   1   0
+67pp / 81gp / 71ep / 47sp / 1,160cp   1   0
+7pp / 3gp / 1ep / 8sp / 71cp   1   0
+JEWELRY: Silvery Gold Bracelet (150gp)   1   0
+GEM: Rich Purple Corundum (72gp)   1   0
+1pp / 1sp / 5cp   1   0
+3ep / 2sp / 35cp   1   0
+12gp / 8ep / 143sp / 40cp   1   0
+1,170cp   1   0
+GEM: Rose Quartz (9gp)   1   0
+a gorgeous decorative helm made of iron and the name of `Domnallys` is engraved on the inside worth 4gp   1   0
+110pp / 238gp / 6ep / 77sp / 360cp   1   0
+JEWELRY: Silvery Gold Earring (96gp)   1   0
+12gp / 16ep   1   0
+JEWELRY: Silvery Gold Clasp (216gp)   1   0
+25,650cp   1   0
+200pp / 781ep / 133sp / 29,290cp   1   0
+1pp / 1gp / 1sp / 11cp   1   0
+a splendid black, stitched hemp cloak worth 40gp   1   0
+1pp / 2gp / 20sp / 2,050cp   1   0
+112pp / 66gp / 2ep / 6sp / 180cp   1   0
+35ep / 5cp   1   0
+156gp / 501sp / 2,880cp   1   0
+4pp / 2ep   1   0
+JEWELRY: Silvery Gold Belt (104gp)   1   0
+169gp / 88ep / 3sp / 15cp   1   0
+54pp / 20gp / 22ep / 55sp / 301cp   1   0
+3pp / 1gp / 1sp   1   0
+2gp / 1ep / 2sp / 100cp   1   0
+11gp / 16ep / 7sp / 360cp   1   0
+a wonderful brass bottle worth 14gp   1   0
+GEM: Freshwater Pearl (1gp)   1   0
+a unique wine bottle of mystic dust worth 119gp to an herbalist   1   0
+JEWELRY: Exceptional Earring (320gp)   1   0
+21pp / 891gp / 1,720ep / 564sp / 3,120cp   1   0
+23pp / 151gp / 89ep / 20sp / 50cp   1   0
+12 inch tall stone statue of a pegasus worth 20gp   1   0
+9gp / 39sp / 720cp   1   0
+1pp / 4gp / 1ep / 10cp   1   0
+2pp / 15gp / 4ep   1   0
+65gp / 73ep / 31sp / 3,231cp   1   0
+3pp / 2gp / 17ep / 1sp / 56cp   1   0
+458sp / 7,041cp   1   0
+2pp / 4gp / 7ep / 30sp / 350cp   1   0
+6pp / 31gp / 1ep / 5sp   1   0
+40gp / 1,775cp   1   0
+159gp / 193ep / 13sp / 290cp   1   0
+JEWELRY: Exceptional Goblet (120gp)   1   0
+89ep / 2,010sp / 74,100cp   1   0
+30,000cp   1   0
+a delightful clay jug of goblin eyes worth 690gp to an alchemist   1   0
+GEM: Rich Purple Corundum (160gp)   1   0
+24ep / 1,500cp   1   0
+9gp / 2ep / 8sp / 490cp   1   0
+1pp / 1gp / 9ep / 4sp / 145cp   1   0
+a rare decorative axe made of mithril and the name of `Carnach` is engraved on the head worth 45gp   1   0
+21,001cp   1   0
+an unusual compendium titled `Unholy Mist of the Vampire` and is bound in red animal skin, and is worth 12gp   1   0
+5gp / 10sp / 1,865cp   1   0
+6pp / 6gp / 4ep / 8sp / 90cp   1   0
+JEWELRY: Silvery Gold Choker (234gp)   1   0
+153ep / 6,600cp   1   0
+302gp / 33ep / 957sp / 21,510cp   1   0
+70sp / 400cp   1   0
+GEM: Chrysoprase (8gp)   1   0
+29pp / 24gp / 56ep / 20sp / 150cp   1   0
+JEWELRY: Silver Arm-ring (52gp)   1   0
+JEWELRY: Silvery Gold Chalice (203gp)   1   0
+4,275cp   1   0
+5pp / 7gp / 16ep / 11sp / 505cp   1   0
+25pp / 20gp / 49ep / 88sp / 40cp   1   0
+a splendid clay vase worth 70gp   1   0
+3pp / 2gp / 2ep   1   0
+239gp / 183ep / 434sp / 270cp   1   0
+5pp / 3gp / 10ep / 13sp / 40cp   1   0
+3pp / 40gp / 172ep / 68sp / 1,865cp   1   0
+127ep / 34sp / 470cp   1   0
+1gp / 2ep / 9sp / 700cp   1   0
+a magnificent pair of brown boots made of basilisk skin worth 98gp   1   0
+1,402gp / 500ep / 509sp / 40,620cp   1   0
+1gp / 1ep / 15cp   1   0
+47gp / 1,375cp   1   0
+a delightful, large book titled `The Writings of Trethovian the Monk` and is bound in blue alligator skin with a jade colored symbol of a dog on the front, and is worth 64gp   1   0
+28gp / 200cp   1   0
+180gp / 942ep / 460sp / 8,200cp   1   0
+13pp / 47gp / 26ep / 1sp / 80cp   1   0
+2gp / 7ep / 12sp / 50cp   1   0
+71sp / 1,521cp   1   0
+JEWELRY: Exceptional Earring (2,640gp)   1   0
+1gp / 1sp   1   0
+GEM: Coral (37gp)   1   0
+a rare musical pipes worth 21gp   1   0
+a unique ceremonial dagger made of iron and the name of `Hrolkug` is engraved on the blade worth 250gp   1   0
+JEWELRY: Silvery Gemmed Coronet (39gp)   1   0
+50pp / 637gp / 240ep / 95sp / 1,900cp   1   0
+12pp / 15gp / 1ep / 12sp / 85cp   1   0
+7gp / 76sp / 1,980cp   1   0
+1,329ep / 4sp / 3,470cp   1   0
+5ep / 6sp / 20cp   1   0
+3pp / 3gp / 13sp / 115cp   1   0
+GEM: Hematite (3gp)   1   0
+2pp / 2ep / 28sp / 1,040cp   1   0
+JEWELRY: Silvery Gold Choker (244gp)   1   0
+an exquisite compendium titled `Sorceress and the Belt` and is bound in yellow crocodile skin, and is worth 54gp   1   0
+3pp / 141gp / 216ep / 44sp / 845cp   1   0
+GEM: Freshwater Pearl (1gp)   1   0
+1,761sp / 10,280cp   1   0
+JEWELRY: Silvery Gemmed Belt (40gp)   1   0
+3gp / 1ep / 2sp / 30cp   1   0
+1pp / 9gp / 3ep / 8sp   1   0
+51,000cp   1   0
+a unique decorative knife made of iron where the handle is decorated with 4 corals worth 120gp   1   0
+an elegant ceremonial shield made of adamant with a skull symbol on it that is violet in color worth 20gp   1   0
+19ep / 6,550cp   1   0
+8gp / 7ep / 114sp / 2,070cp   1   0
+28gp / 58ep / 26sp / 1,780cp   1   0
+3pp / 1gp / 9ep / 10sp   1   0
+2pp / 10gp / 2ep / 1sp / 130cp   1   0
+21pp / 9gp / 21ep / 41sp / 230cp   1   0
+a small leather backpack of unique coins from a lost city that are made of bronze with a symbol of a dragon on it (25 ea) worth 36gp   1   0
+3pp / 2gp / 4ep / 15sp / 50cp   1   0
+2pp / 6gp / 16ep / 23sp / 291cp   1   0
+22pp / 35gp / 10ep / 29sp / 20cp   1   0
+1pp / 6gp / 4ep / 2sp / 10cp   1   0
+36pp / 139gp / 536ep / 697sp / 8,110cp   1   0
+GEM: Banded Agate (1gp)   1   0
+3pp / 18gp / 94ep / 9sp / 820cp   1   0
+19pp / 162gp / 204ep / 110sp / 2,400cp   1   0
+GEM: Hematite (1gp)   1   0
+1,275cp   1   0
+4pp / 24gp / 178sp / 1,040cp   1   0
+4ep / 12sp / 145cp   1   0
+2gp / 2ep / 3sp   1   0
+JEWELRY: Golden Chalice (11gp)   1   0
+JEWELRY: Silver Amulet (174gp)   1   0
+35pp / 77gp / 7ep / 66sp / 205cp   1   0
+GEM: Golden Pearl (27gp)   1   0
+54,000cp   1   0
+42ep / 10sp / 700cp   1   0
+3gp / 1ep / 2sp / 90cp   1   0
+2pp / 3sp / 65cp   1   0
+89sp / 3,095cp   1   0
+JEWELRY: Silver Amulet (43gp)   1   0
+JEWELRY: Silver Anklet (33gp)   1   0
+42gp / 1ep / 1sp / 5cp   1   0
+1pp / 21gp / 17ep / 12sp / 91cp   1   0
+31pp / 44gp / 35ep / 81sp / 130cp   1   0
+JEWELRY: Golden Chain (140gp)   1   0
+81gp / 1,203ep / 160sp / 550cp   1   0
+2pp / 9gp / 11ep / 9sp / 370cp   1   0
+1ep / 1sp / 5cp   1   0
+2pp / 58gp / 5ep / 21sp / 530cp   1   0
+24pp / 73gp / 77ep / 1sp / 980cp   1   0
+8pp / 4gp / 2ep   1   0
+a superb bronze bowl worth 4gp   1   0
+7pp / 50ep / 5,700cp   1   0
+a delightful gray, stitched fur cloak worth 23gp   1   0
+54ep / 158sp / 6,140cp   1   0
+43ep / 820cp   1   0
+GEM: Golden Pearl (29gp)   1   0
+1pp / 9gp / 1ep / 25sp / 300cp   1   0
+2pp / 1ep / 1sp / 10cp   1   0
+GEM: Banded Agate (4gp)   1   0
+11pp / 10gp / 15ep / 13sp / 471cp   1   0
+1pp / 7gp / 2ep / 16sp / 180cp   1   0
+52pp / 22gp / 438ep / 308sp / 1,740cp   1   0
+17gp / 7sp / 860cp   1   0
+an exquisite ceramic jug of beetle bile worth 12gp to an alchemist   1   0
+18ep / 420cp   1   0
+GEM: Deep Blue Spinel (72gp)   1   0
+2pp / 1ep / 1sp / 10cp   1   0
+GEM: Coral (28gp)   1   0
+506gp / 32ep / 251sp / 8,780cp   1   0
+22sp / 4,060cp   1   0
+GEM: Citrine (2gp)   1   0
+15pp / 48gp / 59ep / 55sp / 150cp   1   0
+GEM: Deep Blue Spinel (169gp)   1   0
+27ep / 42sp / 1,410cp   1   0
+GEM: Rock Crystal (22gp)   1   0
+12sp / 4,800cp   1   0
+2pp / 12gp / 6ep / 8sp / 640cp   1   0
+342gp / 2ep / 260sp / 3,000cp   1   0
+GEM: Rhodochrosite (2gp)   1   0
+70pp / 107gp / 146ep / 266sp / 2,180cp   1   0
+65ep / 15sp / 2,075cp   1   0
+7pp / 225ep / 489sp / 220cp   1   0
+567ep / 75sp / 12,151cp   1   0
+9pp / 67gp / 110sp / 3,400cp   1   0
+4pp / 7gp / 3ep / 5sp / 170cp   1   0
+16pp / 22gp / 4ep / 4sp / 21cp   1   0
+JEWELRY: Silver Arm-ring (240gp)   1   0
+2gp / 6ep / 1sp / 425cp   1   0
+a small brown canvas knapsack of rare coins of lost race that are made of bronze with a symbol of a man on it (6 ea) worth 9gp   1   0
+48gp / 46ep / 307sp / 1,760cp   1   0
+4pp / 1gp / 6sp / 90cp   1   0
+GEM: White Pearl (30gp)   1   0
+3pp / 285sp / 1,200cp   1   0
+35,000cp   1   0
+13sp / 190cp   1   0
+JEWELRY: Silver Amulet (36gp)   1   0
+21ep / 60sp / 4,350cp   1   0
+187pp / 307gp / 1,349ep / 308sp / 5,190cp   1   0
+3pp / 1gp / 1sp   1   0
+1gp / 200cp   1   0
+JEWELRY: Silver Chain (203gp)   1   0
+61pp / 22gp / 75ep   1   0
+7pp / 146gp / 178ep / 154sp / 4,920cp   1   0
+17pp / 635ep / 92,750cp   1   0
+38gp / 853ep / 243sp / 940cp   1   0
+JEWELRY: Golden Buckle (26gp)   1   0
+a green cloth backpack of extraordinary coins of a far off land that are made of pewter with a symbol of a boar on it (38 ea) worth 23gp   1   0
+a small orange canvas bag of odd coins of a far off land that are made of sandstone with a symbol of a axe on it (24 ea) worth 5gp   1   0
+1pp / 3gp / 26ep   1   0
+1pp / 1gp / 7ep / 8sp / 15cp   1   0
+a delightful yellow, sewn wool cape worth 280gp   1   0
+1pp / 4gp / 5ep / 3sp / 51cp   1   0
+42sp / 3,720cp   1   0
+314sp / 14,720cp   1   0
+5 inch tall jade carving of a lion worth 11gp   1   0
+a purple cloth pouch of fine coins of a far off land that are made of pewter with a symbol of a buffalo on it (47 ea) worth 9gp   1   0
+a superb compendium titled `Tome of the Incredible Summoner` and is bound in brown unicorn skin with a azure colored symbol of a lion on the front, and is worth 10gp   1   0
+JEWELRY: Silvery Gemmed Bracelet (360gp)   1   0
+a small leather backpack of magnificent coins from an ancient race that are made of bronze with a symbol of a eye on it (19 ea) worth 760gp   1   0
+JEWELRY: Silvery Gold Goblet (33gp)   1   0
+13,500cp   1   0
+3pp / 2gp / 3ep / 2sp / 30cp   1   0
+453gp / 572ep / 558sp / 10,940cp   1   0
+JEWELRY: Silvery Gemmed Choker (120gp)   1   0
+11pp / 2ep / 1sp / 5cp   1   0
+33gp / 99ep / 80sp / 50cp   1   0
+a rare decorative crown made of gold and is decorated with 5 golden pearls and the name of `Zelik` is engraved on the inside worth 3gp   1   0
+JEWELRY: Exceptional Earring (500gp)   1   0
+a small brown canvas pouch of magnificent coins of a far off land that are made of mithril with a symbol of a spider on it (16 ea) worth 13gp   1   0
+85,500cp   1   0
+61pp / 23gp / 53ep / 77sp / 1,511cp   1   0
+60gp / 1,948ep / 62sp / 4,610cp   1   0
+GEM: Rhodochrosite (3gp)   1   0
+2pp / 5gp / 1ep / 16sp / 50cp   1   0
+1pp / 280cp   1   0
+5gp / 20ep / 36sp / 180cp   1   0
+114ep / 11,550cp   1   0
+74sp / 3,920cp   1   0
+GEM: Citrine (9gp)   1   0
+a superb muskrat fur cape worth 10gp   1   0
+26ep / 5,825cp   1   0
+an elegant brown, fashioned cloth dress worth 21gp   1   0
+GEM: Fire Opal (180gp)   1   0
+2pp / 4gp / 1ep / 1sp / 30cp   1   0
+a unique large black rug with a dark purple design on it worth 9gp   1   0
+a splendid tapestry of a house worth 53gp   1   0
+144ep / 8,325cp   1   0
+27pp / 31gp / 79ep / 20sp / 50cp   1   0
+an extraordinary glass jar of wisp dust worth 8gp to an alchemist   1   0
+6pp / 3gp / 43ep / 11sp / 540cp   1   0
+3pp / 9gp / 18ep / 4sp / 40cp   1   0
+1pp / 1gp / 5ep / 43sp / 90cp   1   0
+an odd ceremonial axe made of steel where the handle is decorated with 4 golden yellow topazs worth 13gp   1   0
+32gp / 18ep / 5sp / 1,065cp   1   0
+26pp / 51gp / 146ep / 25sp / 200cp   1   0
+--END--
+Bless	7
+Command	7
+Create Water	7
+Cure Light Wounds	7
+Detect Evil	7
+Detect Magic	7
+Light	7
+Protection From Evil	7
+Purify Food and Drink	7
+Remove Fear	7
+Resist Cold	7
+Sanctuary	7
+Augury	6
+Chant	6
+Detect Charm	6
+Find Traps	6
+Hold Person	6
+Know Alignment	6
+Resist Fire	6
+Silence 15` Radius	6
+Slow Poison	6
+Snake Charm	6
+Speak With Animals	6
+Spiritual Weapon	6
+Animate Dead	5
+Continual Light	5
+Create Food and Water	5
+Cure Blindness	5
+Cure Disease	5
+Dispel Magic	5
+Feign Death	5
+Glyph of Warding	5
+Locate Object	5
+Prayer	5
+Remove Curse	5
+Speak with Dead	5
+Cure Serious Wounds	4
+Detect Lie	4
+Divination	4
+Exorcise	4
+Lower Water	4
+Neutralize Poison	4
+Protection From Evil 10 ft Radius 	4
+Speak With Plants	4
+Sticks to Snakes	4
+Tongues	4
+Atonement	3
+Commune	3
+Cure Critical Wounds 	3
+Dispel Evil	3
+Flame Strike	3
+Insect Plague	3
+Plane Shift	3
+Quest	3
+Raise Dead	3
+True Seeing	3
+Aerial Servant	2
+Animate Object	2
+Blade Barrier	2
+Conjure Animals 	2
+Find the Path	2
+Heal	2
+Part Water	2
+Speak With Monsters 	2
+Stone Tell	2
+Word of Recall	2
+Astral Spell	1
+Control Weather	1
+Earthquake	1
+Gate	1
+Holy Word	1
+Regenerate	1
+Restoration	1
+Resurrection	1
+Symbol	1
+Wind Walk	1
+--END--
+Animal Friendship	7
+Detect Magic	7
+Detect Pits and Snares	7
+Entangle	7
+Faerie Fire	7
+Invisibility to Animals	7
+Locate Animals	7
+Pass Without Trace	7
+Predict Weather	7
+Purify Water	7
+Shillelagh	7
+Speak with Animals	7
+Barkskin	6
+Charm Person or Mammal	6
+Create Water	6
+Cure Light Wounds	6
+Feign Death	6
+Fire Trap	6
+Heat Metal	6
+Locate Plants	6
+Obscurement	6
+Produce Flame	6
+Trip	6
+Warp Wood	6
+Call Lightning	5
+Cure Disease	5
+Hold Animal	5
+Neutralize Poison	5
+Plant Growth	5
+Protection From Fire	5
+Pyrotechnics	5
+Snare	5
+Stone Shape	5
+Summon Insects	5
+Tree	5
+Water Breathing	5
+Animal Summoning I	4
+Call Woodland Beings	4
+Control Temperature 10` radius	4
+Cure Serious Wounds	4
+Dispel Magic	4
+Hallucinatory Forest	4
+Hold Plant	4
+Plant Door	4
+Produce Fire	4
+Protection From Lightning	4
+Repel Insects	4
+Speak with Plants	4
+Animal Growth	3
+Animal Summoning II	3
+Anti-Plant Shell	3
+Commune With Nature	3
+Control Winds	3
+Insect Plague	3
+Pass Plant	3
+Sticks to Snakes	3
+Transmute Rock to Mud	3
+Wall of Fire	3
+Animal Summoning III	2
+Anti-Animal Shell	2
+Conjure Fire Elemental	2
+Cure Critical Wounds	2
+Feeblemind	2
+Fire Seeds	2
+Transport via Plants	2
+Turn Wood	2
+Wall of Thorns	2
+Weather Summoning	2
+Animate Rock	1
+Chariot of Fire	1
+Confusion	1
+Conjure Earth Elemental	1
+Control Weather	1
+Creeping Doom	1
+Finger of Death	1
+Fire Storm	1
+Reincarnate	1
+Transmute Metal to Wood	1
+--END--
+Audible Glamour	7
+Change Self	7
+Color Spray	7
+Dancing Lights	7
+Darkness	7
+Detect Illusion	7
+Detect Invisibility	7
+Gaze Reflection	7
+Hypnotism	7
+Light	7
+Phantasmal Force	7
+Wall of Fog	7
+Blindness	6
+Blur	6
+Deafness	6
+Detect Magic	6
+Fog Cloud	6
+Hypnotic Pattern	6
+Improved Phantasmal Force	6
+Invisibility	6
+Magic Mouth	6
+Mirror Image	6
+Misdirection	6
+Ventriloquism	6
+Continual Darkness	5
+Continual Light	5
+Dispel Illusion	5
+Fear	5
+Hallucinatory Terrain	5
+Illusory Script	5
+Invisibility 10 ft Radius	5
+Non-Detection	5
+Paralyzation	5
+Rope Trick	5
+Spectral Force	5
+Suggestion	5
+Confusion	4
+Dispel Exhaustion 	4
+Emotion	4
+Improved Invisibility 	4
+Massmorph	4
+Minor Creation 	4
+Phantasmal Killer 	4
+Shadow Monsters	4
+Chaos	3
+Demi-Shadow Monsters 	3
+Major Creation	3
+Maze	3
+Project Image	3
+Shadow Door	3
+Shadow Magic	3
+Summon Shadow	3
+Conjure Animals	2
+Demi-Shadow Magic 	2
+Mass Suggestion	2
+Permanent Illusion	2
+Programmed Illusion 	2
+Shades	2
+True Sight	2
+Veil	2
+Alter Reality	1
+Astral Spell	1
+Prismatic Spray	1
+Prismatic Wall	1
+Vision	1
+--END--
+Affect Normal Fires	9
+Burning Hands	9
+Charm Person	9
+Comprehend Languages	9
+Dancing Lights	9
+Detect Magic	9
+Enlarge	9
+Erase	9
+Feather Fall	9
+Find Familiar	9
+Floating Disk	9
+Friends	9
+Hold Portal	9
+Identify	9
+Jump	9
+Light 	9
+Magic Aura	9
+Magic Missile	9
+Mending	9
+Message	9
+Protection From Evil	9
+Push	9
+Read Magic	9
+Shield	9
+Shocking Grasp	9
+Sleep	9
+Spider Climb	9
+Unseen Servant	9
+Ventriloquism	9
+Write	9
+Audible Glamour	8
+Continual Light	8
+Darkness 15 ft Radius	8
+Detect Evil	8
+Detect Invisibility	8
+ESP	8
+Fool`s Gold	8
+Forget	8
+Invisibility	8
+Knock	8
+False Trap	8
+Levitate	8
+Locate Object	8
+Magic Mouth	8
+Mirror Image	8
+Pyrotechnics	8
+Ray of Enfeeblement	8
+Rope Trick	8
+Scare	8
+Shatter	8
+Stinking Cloud	8
+Strength	8
+Web	8
+Wizard Lock	8
+Blink	7
+Clairaudience	7
+Clairvoyance	7
+Dispel Magic	7
+Explosive Runes	7
+Feign Death	7
+Fireball	7
+Flame Arrow	7
+Fly	7
+Gust of Wind	7
+Haste	7
+Hold Person	7
+Infravision	7
+Invisibility 10 ft Radius	7
+Lightning Bolt	7
+Monster Summoning I	7
+Phantasmal Force	7
+Protection From Evil 10 ft Radius	7
+Protection From Normal Missiles	7
+Slow	7
+Suggestion	7
+Tiny Hut	7
+Tongues	7
+Water Breathing	7
+Charm Monster	6
+Confusion	6
+Dig	6
+Dimension Door	6
+Enchanted Weapon	6
+Extension I	6
+Fear	6
+Fire Charm	6
+Fire Shield	6
+Fire Trap	6
+Fumble	6
+Hallucinatory Terrain	6
+Ice Storm	6
+Massmorph	6
+Minor Globe of Invulnerability	6
+Mnemonic Enhancement 	6
+Monster Summoning II	6
+Plant Growth	6
+Polymorph Other	6
+Polymorph Self	6
+Remove Curse	6
+Wall of Fire	6
+Wall of Ice	6
+Wizard Eye	6
+Airy Water	5
+Animal Growth	5
+Animate Dead	5
+Cloudkill	5
+Cone of Cold	5
+Conjure Elemental	5
+Contact Other Plane	5
+Distance Distortion	5
+Extension II	5
+Feeblemind	5
+Hold Monster	5
+Interposing Hand	5
+Mage`s Faithful Hound	5
+Magic Jar	5
+Monster Summoning III	5
+Passwall	5
+Secret Chest	5
+Stone Shape	5
+Telekinesis	5
+Teleport	5
+Transmute Rock to Mud	5
+Wall of Force	5
+Wall of Iron	5
+Wall of Stone	5
+Anti-Magic Shell	4
+Control Weather	4
+Death Spell	4
+Disintegrate	4
+Enchant an Item	4
+Extension III	4
+Forceful Hand	4
+Freezing Sphere	4
+Geas	4
+Glasseye	4
+Globe of Invulnerability	4
+Guards and Wards	4
+Invisible Stalker	4
+Legend Lore	4
+Lower Water	4
+Monster Summoning IV	4
+Move Earth	4
+Part Water	4
+Project Image	4
+Reincarnation	4
+Repulsion	4
+Spirit-rack	4
+Stone to Flesh	4
+Transformation	4
+Cacodemon	3
+Charm Plants	3
+Delayed Blast Fireball	3
+Duo-Dimension	3
+Grasping Hand	3
+Instant Summons	3
+Limited Wish	3
+Mage`s Sword	3
+Mass Invisibility	3
+Monster Summoning V	3
+Phase Door	3
+Power Word Stun	3
+Reverse Gravity	3
+Simulacrum	3
+Statue	3
+Vanish	3
+Antipathy/ Sympathy	2
+Clenched Fist	2
+Clone	2
+Glass-steel	2
+Incendiary Cloud	2
+Irresistible Dance	2
+Mass Charm	2
+Maze	2
+Mind Blank	2
+Monster Summoning VI	2
+Permanency	2
+Polymorph Object	2
+Power Word Blind	2
+Spell Immunity	2
+Symbol	2
+Trap the Soul	2
+Astral Spell	1
+Crushing Hand	1
+Gate	1
+Imprisonment	1
+Meteor Swarm	1
+Monster Summoning VII	1
+Power Word Kill	1
+Prismatic Sphere	1
+Shape Change	1
+Temporal Stasis	1
+Time Stop	1
+Wish	1
